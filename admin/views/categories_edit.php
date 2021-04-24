@@ -30,16 +30,23 @@
                                     <form data-parsley-validate novalidate method="post">
                                         <div class="form-group">
                                             <label for="">Name Category</label>
-                                            <input type="text" name="name" value="<?=$oneRecode['name']?>"  parsley-trigger="change" required
+                                            <input type="text" name="name_category" value="<?=$oneRecode['name']?>"  parsley-trigger="change" required
                                                    placeholder="Nhập tên danh mục" class="form-control" id="userName">
                                         </div>
-                                        <select class="custom-select form-group">
-                                            <option value="0" selected>Don't Belong</option>
+                                        <select class="custom-select form-group" name="IDcate">
+                                            
                                             <?php
-                                                foreach ($listchild as $key) {
-                                                    echo '<option value="'.$key['id'].'">'.$key['name'].'</option>';
-                                                }
+                                                
+                                                foreach ($listchild as $row) {
+                                                    if($row['id'] == $oneRecode['parent']){
+                                                        echo '<option value='.$row['id'].' selected>'.$row['name'].'</option>';
+                                                    }else{
+                                                        echo '<option value='.$row['id'].'>'.$row['name'].'</option>';
+                                                    }
+                                                }   
+                                            
                                             ?>
+                                            <option value="0" >Don't Belong</option>
                                         </select>
                                        
                                         <div class="form-group text-right mb-0 ">

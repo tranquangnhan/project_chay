@@ -36,7 +36,7 @@ class Model_product extends Model_db{
         $sql = "SELECT * FROM product WHERE id=?";
         return $this->result1(1,$sql,$id);
     }
-    function countAllPhone()
+    function countAllProduct()
     {
         $sql = "SELECT count(*) AS sodong FROM product";
         return $this->result1(1,$sql)['sodong'];

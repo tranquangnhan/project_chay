@@ -1,11 +1,11 @@
 <?php 
 require_once "models/categories.php"; 
-
+require_once "../lib/myfunctions.php"; 
 class categories{
     function __construct()
     {
         $this->model = new Model_categories();
-        // $this->lib = new lib();
+        $this->lib = new lib();
         $act = "index";
 
         if(isset($_GET["act"])==true) $act = $_GET['act'];
@@ -41,40 +41,38 @@ class categories{
         if(isset($_GET['id'])&&($_GET['act']='categories')){
             $oneRecode = $this->model->showOneProducer($_GET['id']);
             $listchild = $this->model->showChildrenCategori();
-            $page_title ="Sửa nhà sản xuất";
+            $page_title ="Sửa danh mục";
             $page_file = "views/categories_edit.php";
         }else{
             $listchild = $this->model->showChildrenCategori();
-            $page_title ="Thêm nhà sản xuất";
+            $page_title ="Thêm danh mục";
             $page_file = "views/categories_add.php";
         }
 
-        // if(isset($_POST['them'])&&$_POST['them']){
-        //     $name = $_POST['name'];
-        //     $order = $_POST['order'];
-        //     $showHide = ($_POST['showhide']) ? 1: 0;
-        //     $slug = $this->lib->slug($name);
-        //     if(isset($_GET['id'])){
-        //         $id = $_GET['id'];
-        //         settype($id,"int");
-        //         $this->edit($name,$parent,$slug,$id);
-        //     }else{
-        //         $this->store($name,$order,$showHide,$slug);
-        //     }
+        if(isset($_POST['them'])&&$_POST['them']){
+            $name = $_POST['name_category'];
+            $IDcate = $_POST['IDcate'];
+            $slug = $this->lib->slug($name);
+            if(isset($_GET['id'])){
+                $id = $_GET['id'];
+                settype($id,"int");
+                $this->edit($name,$IDcate,$slug,$id);
+            }else{
+                $this->store($name,$IDcate,$slug);
+            }
            
-        // }
+        }
      
         require_once "views/layout.php";
     }//thêm mới dữ liệu vào db
 
 
-    function store($name,$order,$showHide,$slug){   
+    function store($name,$IDcate,$slug){   
         $name = $this->lib->stripTags($name);
-        $showHide = settype($showHide,"integer");
-        if($this->model->addNewProducer($name,$order,$showHide,$slug))
+        if($this->model->addNewCate($name,$IDcate,$slug))
         {
             echo "<script>alert('Thêm thành công')</script>";
-            header("location: ?ctrl=nhasanxuat&act=index");
+            header("location: ?ctrl=categories");
         }else
         {
             echo "<script>alert('Thêm thất bại')</script>";
@@ -83,15 +81,15 @@ class categories{
         require_once "views/layout.php";
     }
 
-    function edit($name,$order,$showHide,$slug,$id)
+    function edit($name,$IDcate,$slug,$id)
     {
         if(isset($_GET['id']))
         {
             
-            if($this->model->editProducer($name,$order,$showHide,$slug,$id))
+            if($this->model->editCategory($name,$IDcate,$slug,$id))
             {
                 echo "<script>alert('Sửa thành công')</script>";
-                header("location: ?ctrl=nhasanxuat&act=index");
+                header("location: ?ctrl=categories");
             }else
             {
                 echo "<script>alert('Sửa thất bại')</script>";
@@ -102,13 +100,12 @@ class categories{
 
     function delete()
     {
-        if(isset($_GET['id'])&&($_GET['ctrl']=='nhasanxuat')){
+        if(isset($_GET['id'])&&($_GET['ctrl']=='categories')){
             $id = $_GET['id'];
             settype($id,"int");
-            
-            if($this->model->deleteProducer($id)){
+            if($this->model->deleteCate($id)){
                 echo "<script>alert('Xoá thành công')</script>";
-                header("location: ?ctrl=nhasanxuat&act=index");
+                header("location: ?ctrl=categories");
             }else{
                 echo "<script>alert('Xoá thất bại')</script>";
             }

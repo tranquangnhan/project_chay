@@ -40,7 +40,7 @@ class Product{
         if (isset($_GET['Page'])) $CurrentPage = $_GET['Page']; else $CurrentPage = 1;
      
         
-        $TotalProduct = $this->model->countAllPhone();
+        $TotalProduct = $this->model->countAllProduct();
 
         if($TotalProduct == 0) $TotalProduct =1;
   
