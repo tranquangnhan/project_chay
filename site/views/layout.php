@@ -13,9 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/vnd.microsoft.icon" href="/Prestashop/PRS01/PRS012/img/favicon.ico?1538137004">
     <link rel="shortcut icon" type="image/x-icon" href="/Prestashop/PRS01/PRS012/img/favicon.ico?1538137004">
-    <link rel="stylesheet"
-        href="views/assets/css/theme-3950e66.css"
-        type="text/css" media="all">
+    <link rel="stylesheet" href="views/assets/css/theme-3950e66.css" type="text/css" media="all">
     <script type="text/javascript">
     var baseDir = "\/project_chay\/site\/";
     var kkproductsblock = {
@@ -348,10 +346,7 @@
                                             class="dropdown-item">USD $</a>
                                     </li>
                                 </ul>
-                                <!--  <select class="link hidden-md-up" aria-labelledby="currency-selector-label">
-              <option value="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/?SubmitCurrency=1&amp;id_currency=2">EUR </option>
-              <option value="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/?SubmitCurrency=1&amp;id_currency=1" selected="selected">USD $</option>
-          </select> -->
+
                             </div>
 
                         </div>
@@ -409,7 +404,6 @@
                                                     <span class="cart-products-count">0</span>
                                                 </a>
                                             </div>
-                                            <!---dropdown-->
                                             <div class="dropdown-menu dropdown-menu-right">
 
                                                 <li class="cart-det2"
@@ -419,9 +413,18 @@
                                         </div>
 
                                     </div>
-                                    <!--dropdown-->
                                 </div>
                             </div>
+                            
+
+
+
+
+
+                            <!-- end cart -->
+
+
+
                         </div>
                     </div>
 
@@ -503,7 +506,7 @@
             <div class="position-static">
                 <div class="container">
                     <div class="row">
-                    
+
 
                         <div class="menu js-top-menu hidden-sm-down" id="_desktop_top_menu">
 
@@ -561,7 +564,7 @@
                                                 echo $kq;
                                     }
                                 ?>
-                               
+
 
                             </ul>
 
@@ -588,7 +591,7 @@
 
         <?php if (file_exists($viewFile)) require_once "$viewFile";?>
 
-     
+
         <div class="container">
             <div id="_mobile_left_column" class=""></div>
             <div id="_mobile_right_column" class=""></div>
@@ -997,23 +1000,23 @@
     <a id="back-to-top" title="Back to top" class=""><i class="material-icons arrow-up">&#xE316;</i></a>
     <div class="newsletter-pop">
     </div>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="views/assets/js/bottom-b769945.js"></script>
     <script src="views/assets/js/jquery.flexslider.js"></script>
     <script src="views/assets/js/jquery.addcart.js"></script>
     <script>
     $(window).load(function() {
-    if ($('.flexslider').length > 0) {
-        $('.flexslider').flexslider({
-            slideshowSpeed: $('.flexslider').data('interval'),
-            pauseOnHover: $('.flexslider').data('pause'),
-            animation: 'fade',
-            controlNav: !0,
-        })
-    }
-});
+        if ($('.flexslider').length > 0) {
+            $('.flexslider').flexslider({
+                slideshowSpeed: $('.flexslider').data('interval'),
+                pauseOnHover: $('.flexslider').data('pause'),
+                animation: 'fade',
+                controlNav: !0,
+            })
+        }
+    });
     </script>
-    
+
 
 
 </body>

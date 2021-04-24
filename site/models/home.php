@@ -56,6 +56,10 @@ class Model_home extends Model_db{
         $sql = "SELECT * FROM product WHERE 1 AND slug=?";
         return $this->result1(1,$sql,$slug);
     }
+    function getProById($id){   
+        $sql = "SELECT * FROM product WHERE id=?";
+        return $this->result1(1,$sql,$id);
+    }
     function getProperty($slug){ 
         $sql = "SELECT * FROM product WHERE slug = ?";
         $kq =  $this->result1(1,$sql,$slug)['idDT'];
