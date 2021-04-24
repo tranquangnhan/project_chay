@@ -120,18 +120,6 @@ if(is_array($sp)){
 
                                 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
                                 <div class="tax-shipping-delivery-label">
 
 
@@ -144,13 +132,7 @@ if(is_array($sp)){
 
                                 <div class="product-actions">
 
-                                    <form 
-                                        method="post" >
-                                        <input type="hidden" name="token" value="9407b95b9bb08d999434e20be614587e">
-                                        <input type="hidden" name="id_product" value="5" id="product_page_product_id">
-                                        <input type="hidden" name="id_customization" value="0"
-                                            id="product_customization_id">
-
+            
 
                                         <div class="product-variants">
                                           <?php 
@@ -178,9 +160,7 @@ if(is_array($sp)){
                                                 foreach ($color as $row) {
                                                   $kq1 .= ' <li class="float-xs-left input-container">
                                                               <label>
-                                                                  <input class="input-color" type="radio"
-                                                                      data-product-attribute="2" name="group[2]" value="10"
-                                                                      checked="checked">
+                                                                  <input class="input-color" type="radio" data-product-attribute="2" name="group[2]" value="'.$row.'">
                                                                   <span class="color" id="color" style="background-color:'.$row.'"><span
                                                                           class="sr-only">'.$row.'</span></span>
                                                               </label>
@@ -216,8 +196,8 @@ if(is_array($sp)){
 
                                                 <div class="add">
                                                     <button class="btn btn-primary add-to-cart"
-                                                        data-button-action="add-to-cart" onclick="return addCart(<?= $sp['id'] ?>)">
-                                                        <!-- <i class="material-icons shopping-cart">&#xE547;</i> -->
+                                                         onclick="return addCart(<?= $sp['id'] ?>)">
+                                                       
                                                         Add to cart
                                                     </button>
                                                 </div>
@@ -268,10 +248,6 @@ if(is_array($sp)){
 
 
                                         </div>
-
-
-
-                                    </form>
 
 
                                 </div>
