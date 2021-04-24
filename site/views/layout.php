@@ -514,18 +514,18 @@
                                         $menuCon = '';
                                         $kq = '';
                                         foreach ($this->model->showDmCon($row['id']) as $con) {
-                                            $menuCon .= ' <li class="category" id="category-10">
+                                            $menuCon .= ' <li class="category" >
                                                             <a class="dropdown-item"
-                                                                href="?act='.$con['ctrl'].'"
+                                                                href="'.ROOT_URL.'/?act=product&'.$con['id'].'"
                                                                 data-depth="2">
                                                                 '.$con['name'].'
                                                             </a>
                                                         </li>';
                                         }
 
-                                        $kq .= '<li class="category" id="category-3">
+                                        $kq .= '<li class="category" >
                                                     <a class="dropdown-item"
-                                                        href="?act='.$row['ctrl'].'"
+                                                        href="?act=product&'.$row['id'].'"
                                                         data-depth="0">
                                                         <span class="float-xs-right hidden-md-up">
                                                             <span data-target="#top_sub_menu_70770" data-toggle="collapse"

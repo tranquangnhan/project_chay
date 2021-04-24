@@ -358,4 +358,20 @@ class Model_home extends Model_db{
 //       $sql = "SELECT idDT FROM product WHERE slug=?";
 //       return $this->result1(1,$sql,$slug)['idDT'];
 //   }
+    function getCateByid($id){
+        $sql ="SELECT parent from catalog where id=?";
+        return $this->result1(1,$sql,$id);
+    }
+    function showProductByCate($id){
+        $sql ="SELECT * from catalog cate  inner join product pro on cate.id= pro.catalog_id
+        ";
+        $par = $this->getCateByid($id);
+        echo $par['parent'];
+        if($par['parent'] != 0){
+            $sql .= " where pro.catalog_id=?";
+        }else{
+            $sql .= " where cate.parent=?";
+        }
+        return $this->result1(0,$sql,$id);
+    }
 }

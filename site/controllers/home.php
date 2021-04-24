@@ -30,7 +30,7 @@ class Home{
          case "loginregister": $this->loginRegister();break;
          case "active":$this->active();break;
          case "logout":$this->logout();break; 
-         case "forgotpass":$this->forgotPass();break;
+         case "product":$this->product();break;
          case "changepass":$this->changePass();break;
          case "viewbill":$this->viewBill();break;
         }
@@ -49,6 +49,20 @@ class Home{
         $page_title ="Danh sách nhà sản xuất";
         $viewFile = "views/home.php";
         require_once "views/layout.php";  
+     }
+
+     function product()
+     {
+   
+      $url =  "//{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
+      $escaped_url = htmlspecialchars( $url, ENT_QUOTES, 'UTF-8' );
+      $idCate = substr($escaped_url, -1);
+      $listProduct = $this->model->showProductByCate($idCate);
+      // print_r($listProduct);
+       
+      $page_title ="Danh sách nhà sản xuất";
+      $viewFile = "views/product.php";
+      require_once "views/layout.php";  
      }
 
      function detail()
