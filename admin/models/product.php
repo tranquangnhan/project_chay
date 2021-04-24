@@ -3,31 +3,31 @@
 class Model_product extends Model_db{
     function listRecords() 
     {
-        $sql = "SELECT * FROM product";
+        $sql = "SELECT * FROM product order by id";
         return $this->result1(0,$sql);
     }
     
-    function addNewPhone($name,$price,$promo,$imgs,$date,$detail,$views,$buy,$hot,$idproducer,$showHide, $inventory,$slug)
+    function addNewProduct($name,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$color,$Description,$Properties)
     {
-        $sql = "INSERT INTO product(TenDT,Gia,GiaKM,urlHinh,ThoiDiemNhap,MoTa,SoLanXem,SoLanMua,Hot,idNSX,AnHien,SoLuongTonKho,slug) VALUE(?,?,?,?,?,?,?,?,?,?,?,?,?)";
-        return $this->getLastId($sql,$name,$price,$promo,$imgs,$date,$detail,$views,$buy,$hot,$idproducer,$showHide, $inventory,$slug);
+        $sql = "INSERT INTO product(name,slug,price,discount,image_list,catalog_id,hot,size,color,description,properties) VALUE(?,?,?,?,?,?,?,?,?,?,?)";
+        return $this->getLastId($sql,$name,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$color,$Description,$Properties);
     }
 
-    function deletePhone($id)
+    function deleteProduct($id)
     {   
         $sql = "DELETE FROM product WHERE id = ?";
         return $this->exec1($sql,$id);
     }
 
-    function editPhone($name,$price,$promo,$imgs,$date,$detail,$views,$buy,$hot,$idproducer,$showHide, $inventory,$slug,$id){
+    function editProduct($name,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$color,$Description,$Properties,$id){
         if($imgs == "")
         {
-            $sql = "UPDATE product SET TenDT= ?,Gia=?,GiaKM=?,ThoiDiemNhap=?,MoTa=?,SoLanXem=?,SoLanMua=?,Hot=?,idNSX=?,AnHien=?,SoLuongTonKho=?,slug=? WHERE id=?";
-            return $this->exec1($sql,$name,$price,$promo,$date,$detail,$views,$buy,$hot,$idproducer,$showHide, $inventory,$slug,$id);
+            $sql = "UPDATE product SET name= ?,slug=?,price=?,discount=?,catalog_id=?,hot=?,size=?,color=?,description=?,properties=? WHERE id=?";
+            return $this->exec1($sql,$name,$slug,$price,$discount,$IDCate,$hot,$size,$color,$Description,$Properties,$id);
         }else
         {
-            $sql = "UPDATE product SET TenDT= ?,Gia=?,GiaKM=?,urlHinh=?,ThoiDiemNhap=?,MoTa=?,SoLanXem=?,SoLanMua=?,Hot=?,idNSX=?,AnHien=?,SoLuongTonKho=?,slug=? WHERE id=?";
-            return $this->exec1($sql,$name,$price,$promo,$imgs,$date,$detail,$views,$buy,$hot,$idproducer,$showHide, $inventory,$slug,$id);
+            $sql = "UPDATE product SET name= ?,slug=?,price=?,discount=?,catalog_id=?,hot=?,size=?,color=?,description=?,properties=? WHERE id=?";
+            return $this->exec1($sql,$name,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$color,$Description,$Properties,$id);
         }
     }
 
@@ -137,7 +137,7 @@ class Model_product extends Model_db{
         return $PagedHTML.$NextButton.$LastButton;
     }
     function GetProductList($CurrentPage){
-        $sql = "SELECT * FROM product WHERE id != 0";
+        $sql = "SELECT * FROM product WHERE id != 0 ";
         if ($CurrentPage !== 0)
         {
             $sql .= " GROUP BY id LIMIT ".($CurrentPage - 1) * PAGE_SIZE.", ".PAGE_SIZE;

@@ -1,6 +1,6 @@
 <?php 
 require_once "models/product.php"; 
-// require_once "models/nhasanxuat.php"; 
+require_once "models/categories.php"; 
 require_once "../lib/myfunctions.php"; 
 class Product{
     function __construct()
@@ -57,11 +57,11 @@ class Product{
     {  
         if(isset($_GET['id'])&&($_GET['act']='product')){
             $oneRecode = $this->model->showOnePhone($_GET['id']);
-            $producer = $this->modelcate->listRecords();
+            $producer = $this->modelCate->getParentOfPro();
             $page_title ="Sửa Điện Thoại";
             $page_file = "views/product_edit.php";
         }else{
-            $producer = $this->modelNSX->listRecords();
+            $producer = $this->modelCate->getParentOfPro();
             $page_title ="Thêm Điện Thoại";
             $page_file = "views/product_add.php";
         }
@@ -69,29 +69,30 @@ class Product{
         if(isset($_POST['them'])&&$_POST['them'])
         {
 
-            $name =$this->lib->stripTags($_POST['name']);
+            $name =$this->lib->stripTags($_POST['name_product']);
             $price = $_POST['price'];
-            $promo = $_POST['promo'];
+            $discount = $_POST['discount'];
             $img = $_FILES['img'];
             $imgs = $this->lib->checkUpLoadMany($img);
-            $date = $_POST['data'];
-            $views = $_POST['views'];
-            $buy = $_POST['buy'];
-            $idproducer = $_POST['idproducer'];
             $inventory = $_POST['inventory'];
-            $showHide = $_POST['showhide'];
+            $IDCate = $_POST['IDCate'];
             $hot = $_POST['hot'];
-            $detail = $_POST['detail'];
+            if ($hot) {
+                $hot = 1;
+            }else{
+                $hot = 0;
+            }
+            $size = $_POST['size'];
+            $color = $_POST['color'];
+            $Description = $_POST['Description'];
+            $Properties = $_POST['Properties'];
             $slug = $this->lib->slug($name);
             
 
             settype($price,"float");
-            settype($promo,"int");
-            settype($views,"int");
-            settype($buy,"int");
-            settype($idproducer,"int");
+            settype($discount,"int");
+            settype($IDCate,"int");
             settype($inventory,"int");
-            settype($showHide,"int");
             settype($hot,"int");
             
             $_SESSION['message'] = "";
@@ -102,25 +103,14 @@ class Product{
             {
                 $_SESSION['message'] = "Bạn chưa nhập giá";
             }
-            elseif($promo == "")
-            {
-                $_SESSION['message'] = "Bạn chưa nhập giảm giá";
-            }
             elseif($img == "")
             {
                 $_SESSION['message'] = "Bạn chưa chọn ảnh";
             }
-            elseif($date == "")
+            
+            elseif($IDCate == "")
             {
-                $_SESSION['message'] = "Bạn chưa nhập ngày nhập hàng";
-            }
-            elseif($date == "")
-            {
-                $_SESSION['message'] = "Bạn chưa nhập ngày nhập hàng";
-            }
-            elseif($idproducer == "")
-            {
-                $_SESSION['message'] = "Bạn chưa chọn nhà sản xuất";
+                $_SESSION['message'] = "Bạn chưa chọn danh mục";
             }
             if($_SESSION['message']){
                 header("location: ?ctrl=thongbao");
@@ -131,11 +121,13 @@ class Product{
                 {
                     $id = $_GET['id'];
                     settype($id,"int");
-                    $this->edit($name,$price,$promo,$imgs,$date,$detail,$views,$buy,$hot,$idproducer,$showHide, $inventory,$slug,$id);
+                    // echo 'oke';
+                    $this->edit($name,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$color,$Description,$Properties,$id);
                 
                 }else
                 {
-                    $this->store($name,$price,$promo,$imgs,$date,$detail,$views,$buy,$hot,$idproducer,$showHide, $inventory,$slug);
+                    // echo 'oke';
+                    $this->store($name,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$color,$Description,$Properties);
                 }    
             }
 
@@ -146,12 +138,12 @@ class Product{
     }//thêm mới dữ liệu vào db
 
 
-    function store($name,$price,$promo,$imgs,$date,$detail,$views,$buy,$hot,$idproducer,$showHide, $inventory,$slug){   
-        $idLastPhone = $this->model->addNewPhone($name,$price,$promo,$imgs,$date,$detail,$views,$buy,$hot,$idproducer,$showHide, $inventory,$slug);
+    function store($name,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$color,$Description,$Properties){   
+        $idLastPhone = $this->model->addNewProduct($name,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$color,$Description,$Properties);
         if($idLastPhone != null)
         {
             echo "<script>alert('Thêm thành công')</script>";
-            header("location: ?ctrl=thuoctinh&act=addnew&id=$idLastPhone");
+            header("location: ?ctrl=product");
         }else
         {
             echo "<script>alert('Thêm thất bại')</script>";
@@ -160,12 +152,12 @@ class Product{
         require_once "views/layout.php";
     }
 
-    function edit($name,$price,$promo,$imgs,$date,$detail,$views,$buy,$hot,$idproducer,$showHide, $inventory,$slug,$id)
+    function edit($name,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$color,$Description,$Properties,$id)
     {
-        if($this->model->editPhone($name,$price,$promo,$imgs,$date,$detail,$views,$buy,$hot,$idproducer,$showHide, $inventory,$slug,$id))
+        if($this->model->editProduct($name,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$color,$Description,$Properties,$id))
         {
             echo "<script>alert('Sửa thành công')</script>";
-            header("location: ?ctrl=dienthoai&act=index");
+            header("location: ?ctrl=product");
         }else
         {
             echo "<script>alert('Sửa thất bại')</script>";
@@ -175,13 +167,13 @@ class Product{
 
     function delete()
     {
-        if(isset($_GET['id'])&&($_GET['ctrl']=='dienthoai')){
+        if(isset($_GET['id'])&&($_GET['ctrl']=='product')){
             $id = $_GET['id'];
             settype($id,"int");
             
-            if($this->model->deletePhone($id)){
+            if($this->model->deleteProduct($id)){
                 echo "<script>alert('Xoá thành công')</script>";
-                header("location: ?ctrl=dienthoai&act=index");
+                header("location: ?ctrl=product");
             }else{
                 echo "<script>alert('Xoá thất bại')</script>";
             }

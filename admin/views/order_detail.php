@@ -8,19 +8,20 @@
                         <div class="row">
                             <div class="col-7">
                                 <div class="card-box">
-                                    <h4 class="mt-0 header-title">Nhà Sản Xuất</h4>
+                                    <h4 class="mt-0 header-title">Order detail</h4>
                                     <p class="text-muted font-14 mb-3">
-                                    Đây là nhà sản xuất.
+                                    This is order detail.
                                     </p>
 
                                     <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap">
                                         <thead>
                                         <tr>
                                         <th>STT</th>
-                                        <th>Ảnh </th>
-                                        <th>Tên</th>
-                                        <th>Giá</th>
-                                        <th>Số Lượng</th>
+                                        <th>Order_ID </th>
+                                        <th>Image </th>
+                                        <th>Product_ID</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
                                         </tr>
                                         </thead>
 
@@ -30,19 +31,19 @@
                                         $stt = 0;
                                             foreach ($getProDetail as $row) {
                                                 $stt++;
-                                                $anHien = ($row['AnHien']=='1') ? '<input type="radio" checked onclick="return false">': '<input  type="radio" onclick="return false">';
-                                                if(is_file(PATH_IMG_SITE.explode(",",$row['urlHinh'])[0])){
-                                                    $img = PATH_IMG_SITE.explode(",",$row['urlHinh'])[0];
+                                                if(is_file(PATH_IMG_SITE.explode(",",$row['	image_list'])[0])){
+                                                    $img = PATH_IMG_SITE.explode(",",$row['	image_list'])[0];
                                                 }else{
                                                     $img = PATH_IMG_SITE.'logo.png';
                                                 }
                                           
                                                 echo '<tr>
                                                         <td>'.$stt.'</td>
+                                                        <td>'.$row['donhang_id'].'</td>
                                                         <td><img width="50" height="50" src="'.$img.'"></td>
-                                                        <td>'.$row['TenDT'].'</td>
-                                                        <td>'.$row['Gia'].'</td>
-                                                        <td>'.$row['SoLuong'].'</td>
+                                                        <td>'.$row['product_id'].'</td>
+                                                        <td>'.$row['price'].'</td>
+                                                        <td>'.$row['quantity'].'</td>
                                                     </tr>';
                                             }
                                         ?>
@@ -53,45 +54,45 @@
                             <div class="col-lg-5">
                                 <table>
                                     <tr>
-                                        <td>Tên:  </td>
-                                        <td><strong><?= $getInfoDetail['TenNguoiNhan']?></strong></td>
+                                        <td>Name Customer:  </td>
+                                        <td><strong><?= $getInfoDetail['name']?></strong></td>
                                     </tr>
                                     <tr>
                                         <td>Email: </td>
-                                        <td><strong><?= $getInfoDetail['EmailNguoiNhan']?></strong></td>
+                                        <td><strong><?= $getInfoDetail['email']?></strong></td>
                                     </tr>
                                     <tr>
-                                        <td>Điện Thoại: </td>
-                                        <td><strong><?= $getInfoDetail['dienthoai']?></strong></td>
+                                        <td>Phone number: </td>
+                                        <td><strong><?= $getInfoDetail['phone']?></strong></td>
                                     </tr>
                                     <tr>
-                                        <td>Địa Chỉ: </td>
-                                        <td><strong><?= $getInfoDetail['DiaChiNguoiNhan']?></strong></td>
+                                        <td>Address: </td>
+                                        <td><strong><?= $getInfoDetail['address']?></strong></td>
                                     </tr>
                                     <tr>
-                                        <td>Ghi Chú Của Khách: </td>
-                                        <td><strong><?= $getInfoDetail['GhiChuCuaKhach']?></strong></td>
+                                        <td>Note: </td>
+                                        <td><strong><?= $getInfoDetail['note']?></strong></td>
                                     </tr>
-                                    <tr>
+                                    <!-- <tr>
                                         <td>Ghi Chú Của Admin: </td>
                                         <td><strong><?= $getInfoDetail['GhiChuCuaAdmin']?></strong></td>
+                                    </tr> -->
+                                    <tr>
+                                        <td>Status: </td>
+                                        <td><strong><?= ($getInfoDetail['status']==0) ? 'Đang Xử Lý':'Hoàn thành' ?></strong></td>
                                     </tr>
                                     <tr>
-                                        <td>Trạng Thái: </td>
-                                        <td><strong><?= ($getInfoDetail['TrangThai']==0) ? 'Mới Đặt':'Đang Xử Lý' ?></strong></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Thời Điểm Đặt Hàng: </td>
+                                        <td>Order time: </td>
                                         <td><strong><?= $getInfoDetail['ThoiDiemDatHang']?></strong></td>
                                     </tr>
-                                    <tr>
+                                    <!-- <tr>
                                         <td>Thời Điểm Giao Hàng: </td>
                                         <td><strong><?= $getInfoDetail['ThoiDiemGiaoHang']?></strong></td>
-                                    </tr>
-                                    <tr>
+                                    </tr> -->
+                                    <!-- <tr>
                                         <td>Ẩn Hiện: </td>
                                         <td><strong><?= ($getInfoDetail['AnHien'] =='1') ? 'Hiện' : 'Ẩn'?></strong></td>
-                                    </tr>
+                                    </tr> -->
                                 </table>
                             </div>
                         </div>

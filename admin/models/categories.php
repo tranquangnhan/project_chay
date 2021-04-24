@@ -23,6 +23,11 @@ class Model_categories extends Model_db{
         $sql = "SELECT * FROM catalog WHERE parent = 0";
         return $this->result1(0,$sql,$id);
     }
+    function getParentOfPro() 
+    {
+        $sql = "SELECT * FROM catalog where parent !=0 ";
+        return $this->result1(0,$sql);
+    }
     function showOneProducer($id)
     {
         $sql = "SELECT * FROM catalog WHERE id=?";

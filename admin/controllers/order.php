@@ -1,11 +1,11 @@
 <?php 
-require_once "models/donhang.php"; 
+require_once "models/order.php"; 
 
 require_once "../lib/myfunctions.php"; 
-class Donhang{
+class order{
     function __construct()
     {
-        $this->model = new Model_donhang();
+        $this->model = new Model_order();
         $this->lib = new lib();
         $act = "index";
 
@@ -32,14 +32,14 @@ class Donhang{
     function index(){
         $getAllBill = $this->model->getAllBill();
        
-        $page_file = "views/donhang_index.php";
+        $page_file = "views/order_index.php";
         require_once "views/layout.php";
     }
     function detail()
     {
         $getProDetail = $this->model->getProDetail($_GET['id']);
         $getInfoDetail = $this->model->getInfoDetail($_GET['id']);
-        $page_file = "views/donhang_detail.php";
+        $page_file = "views/order_detail.php";
         require_once "views/layout.php";
     }
     function edit()
