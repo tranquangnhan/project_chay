@@ -14,8 +14,7 @@
 
                     <a href="http://www.prestashop.com/?utm_source=back-office&amp;utm_medium=v17_kkslider&amp;utm_campaign=back-office-EN&amp;utm_content=download"
                         title="kslider-1">
-                        <img src="views/assets/img/kslider-1.jpg"
-                            alt="kslider-1" title="KSlider1" />
+                        <img src="views/assets/img/kslider-1.jpg" alt="kslider-1" title="KSlider1" />
                     </a>
                     <!-- position absolute > li -->
 
@@ -24,8 +23,7 @@
 
                     <a href="http://www.prestashop.com/?utm_source=back-office&amp;utm_medium=v17_kkslider&amp;utm_campaign=back-office-EN&amp;utm_content=download"
                         title="kslider-2">
-                        <img src="views/assets/img/kslider-2.jpg"
-                            alt="kslider-2" title="KSlider2" />
+                        <img src="views/assets/img/kslider-2.jpg" alt="kslider-2" title="KSlider2" />
                     </a>
                     <!-- position absolute > li -->
 
@@ -40,27 +38,24 @@
             <div class="row">
                 <div class="center-banner list-unstyled">
                     <div class="slider banner1 col-lg-4 col-md-12">
-                        <a href="#"
-                            class="kk-customhover-fadeintopbottom">
-                            <img src="views/assets/img/kbanner-1.jpg"
-                                alt="kbanner-1" class="img-responsive center-block" />
+                        <a href="#" class="kk-customhover-fadeintopbottom">
+                            <img src="views/assets/img/kbanner-1.jpg" alt="kbanner-1"
+                                class="img-responsive center-block" />
                         </a>
                         <div class="overlay"></div>
                     </div>
 
                     <div class="slider banner2  col-lg-4 col-md-12">
-                        <a href="#"
-                            class="kk-customhover-fadeintopbottom">
-                            <img src="views/assets/img/kbanner-2.jpg"
-                                alt="kbanner-2" class="img-responsive center-block" />
+                        <a href="#" class="kk-customhover-fadeintopbottom">
+                            <img src="views/assets/img/kbanner-2.jpg" alt="kbanner-2"
+                                class="img-responsive center-block" />
                         </a>
                         <div class="overlay"></div>
                     </div>
                     <div class="slider banner2  col-lg-4 col-md-12">
-                        <a href="#"
-                            class="kk-customhover-fadeintopbottom">
-                            <img src="views/assets/img/kbanner-3.jpg"
-                                alt="kbanner-3" class="img-responsive center-block" />
+                        <a href="#" class="kk-customhover-fadeintopbottom">
+                            <img src="views/assets/img/kbanner-3.jpg" alt="kbanner-3"
+                                class="img-responsive center-block" />
                         </a>
                         <div class="overlay"></div>
                     </div>
@@ -503,8 +498,7 @@
                                                         <div class="inner">
                                                             <div class="product-img">
 
-                                                                <a href="#"
-                                                                    class="thumbnail product-thumbnail ">
+                                                                <a href="#" class="thumbnail product-thumbnail ">
 
                                                                     <img src="views/assets/img/the-adventure-begins-framed-poster.jpg"
                                                                         alt="Cum Sociis Natoque"
@@ -3553,8 +3547,6 @@
             <div class="kkspecial-list bottom-to-top hb-animate-element">
                 <div class="row">
                     <div id="infinityspecial-carousel" class="owl-carousel">
-
-
                         <article class="product-miniature js-product-miniature " data-id-product="17"
                             data-id-product-attribute="46" itemscope itemtype="http://schema.org/Product">
                             <div class="thumbnail-container">
@@ -3591,22 +3583,7 @@
                                         </div>
 
                                         <div class="kkproducthover">
-                                            <!--  <div class="cart-block">
-                <div class="product-add-to-cart">
-			<form action="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/cart" method="post" class="add-to-cart-or-refresh">
-			<div class="product-quantity" style="display:none;">
-				<input type="number" name="id_product" value="17" class="product_page_product_id">
-				<input type="number" name="id_customization" value="0" class="product_customization_id">
-				<input type="hidden" name="token" value="9407b95b9bb08d999434e20be614587e">
-				<input type="number" name="qty" class="quantity_wanted input-group" value="1" min="1"/>
-			</div>
-							<button class="button ajax_add_to_cart_button add-to-cart btn btn-default" data-button-action="add-to-cart" title="Add to cart" >
-					<span>Add to cart</span>
-				</button>
-					</form>
-	</div>              </div> -->
-
-
+                                 
                                             <div class="quick-view-block">
                                                 <a href="#" class="quick-view btn" data-link-action="quickview"
                                                     title="Quick view">
@@ -3697,905 +3674,6 @@
 
                                     </div>
                                     <div class="highlighted-informations hidden-sm-down">
-
-                                        <a class="quick-view" href="#" data-link-action="quickview">
-                                            <i class="material-icons search">&#xE8B6;</i> Quick view
-                                        </a>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </article>
-
-
-
-                        <article class="product-miniature js-product-miniature " data-id-product="1"
-                            data-id-product-attribute="1" itemscope itemtype="http://schema.org/Product">
-                            <div class="thumbnail-container">
-                                <div class="product-inner">
-                                    <div class="thumbnail-inner">
-                                        <div class="inner">
-
-                                            <div class="product-img">
-
-                                                <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/men/1-hummingbird-printed-t-shirt.html"
-                                                    class="thumbnail product-thumbnail">
-
-                                                    <img src="https://infinitytemplate.com/Prestashop/PRS01/PRS012/119-home_default/hummingbird-printed-t-shirt.jpg"
-                                                        alt="Vivamus Elementum Semper"
-                                                        data-full-size-image-url="https://infinitytemplate.com/Prestashop/PRS01/PRS012/119-large_default/hummingbird-printed-t-shirt.jpg">
-                                                    <img class="second_image img-responsive"
-                                                        src="https://infinitytemplate.com/Prestashop/PRS01/PRS012/117-home_default/hummingbird-printed-t-shirt.jpg"
-                                                        alt="" title="" />
-                                                </a>
-
-
-
-
-
-
-                                            </div>
-                                            <!-- @todo: use include file='catalog/_partials/product-flags.tpl'} -->
-
-                                            <ul class="product-flags">
-                                                <li class="product-flag discount">-20%</li>
-                                                <li class="product-flag new">New</li>
-                                            </ul>
-
-                                        </div>
-
-                                        <div class="kkproducthover">
-                                            <!--  <div class="cart-block">
-                <div class="product-add-to-cart">
-			<form action="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/cart" method="post" class="add-to-cart-or-refresh">
-			<div class="product-quantity" style="display:none;">
-				<input type="number" name="id_product" value="1" class="product_page_product_id">
-				<input type="number" name="id_customization" value="0" class="product_customization_id">
-				<input type="hidden" name="token" value="9407b95b9bb08d999434e20be614587e">
-				<input type="number" name="qty" class="quantity_wanted input-group" value="1" min="1"/>
-			</div>
-							<button class="button ajax_add_to_cart_button add-to-cart btn btn-default" data-button-action="add-to-cart" title="Add to cart" >
-					<span>Add to cart</span>
-				</button>
-					</form>
-	</div>              </div> -->
-
-
-                                            <div class="quick-view-block">
-                                                <a href="#" class="quick-view btn" data-link-action="quickview"
-                                                    title="Quick view">
-                                                    <i class="material-icons search">&#xE8B6;</i> <span>Quick
-                                                        view</span>
-                                                </a>
-                                            </div>
-
-
-                                        </div>
-                                    </div>
-
-
-                                    <div class="product-description">
-
-
-                                        <h3 class="h3 product-title" itemprop="name"><a
-                                                href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/men/1-hummingbird-printed-t-shirt.html">Vivamus
-                                                Elementum Semper</a></h3>
-
-
-
-                                        <div class="product-price-and-shipping">
-
-                                            <span class="sr-only">Regular price</span>
-                                            <span class="regular-price">$44.33</span>
-                                            <span class="discount-percentage discount-product">-20%</span>
-
-
-                                            <span class="sr-only">Price</span>
-                                            <span itemprop="price" class="price">$35.46</span>
-
-
-                                        </div>
-
-
-
-
-
-
-
-
-
-                                        <p class="product-desc" itemprop="description">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris
-                                            eleifend, quam a vulputate dictum
-                                        </p>
-
-
-
-                                        <div class="variant-links">
-                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/men/1-1-hummingbird-printed-t-shirt.html#/1-size-s/8-color-white"
-                                                class="color" title="White" style="background-color: #ffffff"><span
-                                                    class="sr-only">White</span></a>
-                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/men/1-2-hummingbird-printed-t-shirt.html#/1-size-s/11-color-black"
-                                                class="color" title="Black" style="background-color: #434A54"><span
-                                                    class="sr-only">Black</span></a>
-                                            <span class="js-count count"></span>
-                                        </div>
-
-
-                                        <div class="cart-block">
-                                            <div class="product-add-to-cart">
-                                                <form
-                                                    action="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/cart"
-                                                    method="post" class="add-to-cart-or-refresh">
-                                                    <div class="product-quantity" style="display:none;">
-                                                        <input type="number" name="id_product" value="1"
-                                                            class="product_page_product_id">
-                                                        <input type="number" name="id_customization" value="0"
-                                                            class="product_customization_id">
-                                                        <input type="hidden" name="token"
-                                                            value="9407b95b9bb08d999434e20be614587e">
-                                                        <input type="number" name="qty"
-                                                            class="quantity_wanted input-group" value="1" min="1" />
-                                                    </div>
-                                                    <button
-                                                        class="button ajax_add_to_cart_button add-to-cart btn btn-default"
-                                                        data-button-action="add-to-cart" title="Add to cart">
-                                                        <span>Add to cart</span>
-                                                    </button>
-                                                </form>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="highlighted-informations hidden-sm-down">
-
-                                        <a class="quick-view" href="#" data-link-action="quickview">
-                                            <i class="material-icons search">&#xE8B6;</i> Quick view
-                                        </a>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </article>
-
-
-
-                        <article class="product-miniature js-product-miniature " data-id-product="2"
-                            data-id-product-attribute="9" itemscope itemtype="http://schema.org/Product">
-                            <div class="thumbnail-container">
-                                <div class="product-inner">
-                                    <div class="thumbnail-inner">
-                                        <div class="inner">
-
-                                            <div class="product-img">
-
-                                                <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/home/2-brown-bear-printed-sweater.html"
-                                                    class="thumbnail product-thumbnail">
-
-                                                    <img src="https://infinitytemplate.com/Prestashop/PRS01/PRS012/115-home_default/brown-bear-printed-sweater.jpg"
-                                                        alt="Lorem ipsum dolor sit amet"
-                                                        data-full-size-image-url="https://infinitytemplate.com/Prestashop/PRS01/PRS012/115-large_default/brown-bear-printed-sweater.jpg">
-                                                    <img class="second_image img-responsive"
-                                                        src="https://infinitytemplate.com/Prestashop/PRS01/PRS012/114-home_default/brown-bear-printed-sweater.jpg"
-                                                        alt="" title="" />
-                                                </a>
-
-
-
-
-
-
-                                            </div>
-                                            <!-- @todo: use include file='catalog/_partials/product-flags.tpl'} -->
-
-                                            <ul class="product-flags">
-                                                <li class="product-flag on-sale">On sale!</li>
-                                                <li class="product-flag discount">-20%</li>
-                                                <li class="product-flag new">New</li>
-                                            </ul>
-
-                                        </div>
-
-                                        <div class="kkproducthover">
-                                            <!--  <div class="cart-block">
-                <div class="product-add-to-cart">
-			<form action="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/cart" method="post" class="add-to-cart-or-refresh">
-			<div class="product-quantity" style="display:none;">
-				<input type="number" name="id_product" value="2" class="product_page_product_id">
-				<input type="number" name="id_customization" value="0" class="product_customization_id">
-				<input type="hidden" name="token" value="9407b95b9bb08d999434e20be614587e">
-				<input type="number" name="qty" class="quantity_wanted input-group" value="1" min="1"/>
-			</div>
-							<button class="button ajax_add_to_cart_button add-to-cart btn btn-default" data-button-action="add-to-cart" title="Add to cart" >
-					<span>Add to cart</span>
-				</button>
-					</form>
-	</div>              </div> -->
-
-
-                                            <div class="quick-view-block">
-                                                <a href="#" class="quick-view btn" data-link-action="quickview"
-                                                    title="Quick view">
-                                                    <i class="material-icons search">&#xE8B6;</i> <span>Quick
-                                                        view</span>
-                                                </a>
-                                            </div>
-
-
-                                        </div>
-                                    </div>
-
-
-                                    <div class="product-description">
-
-
-                                        <h3 class="h3 product-title" itemprop="name"><a
-                                                href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/home/2-brown-bear-printed-sweater.html">Lorem
-                                                ipsum dolor sit...</a></h3>
-
-
-
-                                        <div class="product-price-and-shipping">
-
-                                            <span class="sr-only">Regular price</span>
-                                            <span class="regular-price">$44.33</span>
-                                            <span class="discount-percentage discount-product">-20%</span>
-
-
-                                            <span class="sr-only">Price</span>
-                                            <span itemprop="price" class="price">$35.46</span>
-
-
-                                        </div>
-
-
-
-
-
-
-
-
-
-                                        <p class="product-desc" itemprop="description">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris
-                                            eleifend, quam a vulputate dictum
-                                        </p>
-
-
-
-                                        <div class="variant-links">
-                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/home/2-64-brown-bear-printed-sweater.html#/8-color-white"
-                                                class="color" title="White" style="background-color: #ffffff"><span
-                                                    class="sr-only">White</span></a>
-                                            <span class="js-count count"></span>
-                                        </div>
-
-
-                                        <div class="cart-block">
-                                            <div class="product-add-to-cart">
-                                                <form
-                                                    action="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/cart"
-                                                    method="post" class="add-to-cart-or-refresh">
-                                                    <div class="product-quantity" style="display:none;">
-                                                        <input type="number" name="id_product" value="2"
-                                                            class="product_page_product_id">
-                                                        <input type="number" name="id_customization" value="0"
-                                                            class="product_customization_id">
-                                                        <input type="hidden" name="token"
-                                                            value="9407b95b9bb08d999434e20be614587e">
-                                                        <input type="number" name="qty"
-                                                            class="quantity_wanted input-group" value="1" min="1" />
-                                                    </div>
-                                                    <button
-                                                        class="button ajax_add_to_cart_button add-to-cart btn btn-default"
-                                                        data-button-action="add-to-cart" title="Add to cart">
-                                                        <span>Add to cart</span>
-                                                    </button>
-                                                </form>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="highlighted-informations hidden-sm-down">
-
-                                        <a class="quick-view" href="#" data-link-action="quickview">
-                                            <i class="material-icons search">&#xE8B6;</i> Quick view
-                                        </a>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </article>
-
-
-
-                        <article class="product-miniature js-product-miniature " data-id-product="18"
-                            data-id-product-attribute="40" itemscope itemtype="http://schema.org/Product">
-                            <div class="thumbnail-container">
-                                <div class="product-inner">
-                                    <div class="thumbnail-inner">
-                                        <div class="inner">
-
-                                            <div class="product-img">
-
-                                                <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/18-mountain-fox-notebook.html"
-                                                    class="thumbnail product-thumbnail">
-
-                                                    <img src="https://infinitytemplate.com/Prestashop/PRS01/PRS012/30-home_default/mountain-fox-notebook.jpg"
-                                                        alt="Vestibulum ut nulla"
-                                                        data-full-size-image-url="https://infinitytemplate.com/Prestashop/PRS01/PRS012/30-large_default/mountain-fox-notebook.jpg">
-                                                    <img class="second_image img-responsive"
-                                                        src="https://infinitytemplate.com/Prestashop/PRS01/PRS012/31-home_default/mountain-fox-notebook.jpg"
-                                                        alt="" title="" />
-                                                </a>
-
-
-
-
-
-
-                                            </div>
-                                            <!-- @todo: use include file='catalog/_partials/product-flags.tpl'} -->
-
-                                            <ul class="product-flags">
-                                                <li class="product-flag discount">-15%</li>
-                                                <li class="product-flag new">New</li>
-                                            </ul>
-
-                                        </div>
-
-                                        <div class="kkproducthover">
-                                            <!--  <div class="cart-block">
-                <div class="product-add-to-cart">
-			<form action="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/cart" method="post" class="add-to-cart-or-refresh">
-			<div class="product-quantity" style="display:none;">
-				<input type="number" name="id_product" value="18" class="product_page_product_id">
-				<input type="number" name="id_customization" value="0" class="product_customization_id">
-				<input type="hidden" name="token" value="9407b95b9bb08d999434e20be614587e">
-				<input type="number" name="qty" class="quantity_wanted input-group" value="1" min="1"/>
-			</div>
-							<button class="button ajax_add_to_cart_button add-to-cart btn btn-default" data-button-action="add-to-cart" title="Add to cart" >
-					<span>Add to cart</span>
-				</button>
-					</form>
-	</div>              </div> -->
-
-
-                                            <div class="quick-view-block">
-                                                <a href="#" class="quick-view btn" data-link-action="quickview"
-                                                    title="Quick view">
-                                                    <i class="material-icons search">&#xE8B6;</i> <span>Quick
-                                                        view</span>
-                                                </a>
-                                            </div>
-
-
-                                        </div>
-                                    </div>
-
-
-                                    <div class="product-description">
-
-
-                                        <h3 class="h3 product-title" itemprop="name"><a
-                                                href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/18-mountain-fox-notebook.html">Vestibulum
-                                                ut nulla</a></h3>
-
-
-
-                                        <div class="product-price-and-shipping">
-
-                                            <span class="sr-only">Regular price</span>
-                                            <span class="regular-price">$30.90</span>
-                                            <span class="discount-percentage discount-product">-15%</span>
-
-
-                                            <span class="sr-only">Price</span>
-                                            <span itemprop="price" class="price">$26.27</span>
-
-
-                                        </div>
-
-
-
-
-
-
-
-
-
-                                        <p class="product-desc" itemprop="description">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris
-                                            eleifend, quam a vulputate dictum, massa quam dapibus leo.
-                                        </p>
-
-
-
-                                        <div class="variant-links">
-                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/18-40-mountain-fox-notebook.html#/1-size-s/12-color-camel"
-                                                class="color" title="Camel" style="background-color: #C19A6B"><span
-                                                    class="sr-only">Camel</span></a>
-                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/18-41-mountain-fox-notebook.html#/1-size-s/13-color-orange"
-                                                class="color" title="Orange" style="background-color: #F39C11"><span
-                                                    class="sr-only">Orange</span></a>
-                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/18-42-mountain-fox-notebook.html#/1-size-s/14-color-blue"
-                                                class="color" title="Blue" style="background-color: #5D9CEC"><span
-                                                    class="sr-only">Blue</span></a>
-                                            <span class="js-count count"></span>
-                                        </div>
-
-
-                                        <div class="cart-block">
-                                            <div class="product-add-to-cart">
-                                                <form
-                                                    action="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/cart"
-                                                    method="post" class="add-to-cart-or-refresh">
-                                                    <div class="product-quantity" style="display:none;">
-                                                        <input type="number" name="id_product" value="18"
-                                                            class="product_page_product_id">
-                                                        <input type="number" name="id_customization" value="0"
-                                                            class="product_customization_id">
-                                                        <input type="hidden" name="token"
-                                                            value="9407b95b9bb08d999434e20be614587e">
-                                                        <input type="number" name="qty"
-                                                            class="quantity_wanted input-group" value="1" min="1" />
-                                                    </div>
-                                                    <button
-                                                        class="button ajax_add_to_cart_button add-to-cart btn btn-default"
-                                                        data-button-action="add-to-cart" title="Add to cart">
-                                                        <span>Add to cart</span>
-                                                    </button>
-                                                </form>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="highlighted-informations hidden-sm-down">
-
-                                        <a class="quick-view" href="#" data-link-action="quickview">
-                                            <i class="material-icons search">&#xE8B6;</i> Quick view
-                                        </a>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </article>
-
-
-
-                        <article class="product-miniature js-product-miniature " data-id-product="19"
-                            data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
-                            <div class="thumbnail-container">
-                                <div class="product-inner">
-                                    <div class="thumbnail-inner">
-                                        <div class="inner">
-
-                                            <div class="product-img">
-
-                                                <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/home-accessories/19-customizable-mug.html"
-                                                    class="thumbnail product-thumbnail">
-
-                                                    <img src="https://infinitytemplate.com/Prestashop/PRS01/PRS012/25-home_default/customizable-mug.jpg"
-                                                        alt="Neque Porro Suisquam"
-                                                        data-full-size-image-url="https://infinitytemplate.com/Prestashop/PRS01/PRS012/25-large_default/customizable-mug.jpg">
-                                                    <img class="second_image img-responsive"
-                                                        src="https://infinitytemplate.com/Prestashop/PRS01/PRS012/26-home_default/customizable-mug.jpg"
-                                                        alt="" title="" />
-                                                </a>
-
-
-
-
-
-
-                                            </div>
-                                            <!-- @todo: use include file='catalog/_partials/product-flags.tpl'} -->
-
-                                            <ul class="product-flags">
-                                                <li class="product-flag discount">-10%</li>
-                                                <li class="product-flag new">New</li>
-                                            </ul>
-
-                                        </div>
-
-                                        <div class="kkproducthover">
-                                            <!--  <div class="cart-block">
-                <div class="product-add-to-cart">
-			<form action="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/cart" method="post" class="add-to-cart-or-refresh">
-			<div class="product-quantity" style="display:none;">
-				<input type="number" name="id_product" value="19" class="product_page_product_id">
-				<input type="number" name="id_customization" value="0" class="product_customization_id">
-				<input type="hidden" name="token" value="9407b95b9bb08d999434e20be614587e">
-				<input type="number" name="qty" class="quantity_wanted input-group" value="1" min="1"/>
-			</div>
-							<button class="button ajax_add_to_cart_button add-to-cart btn btn-default" data-button-action="add-to-cart" title="Add to cart"               disabled
-            >
-					<span>Add to cart</span>
-				</button>
-					</form>
-	</div>              </div> -->
-
-
-                                            <div class="quick-view-block">
-                                                <a href="#" class="quick-view btn" data-link-action="quickview"
-                                                    title="Quick view">
-                                                    <i class="material-icons search">&#xE8B6;</i> <span>Quick
-                                                        view</span>
-                                                </a>
-                                            </div>
-
-
-                                        </div>
-                                    </div>
-
-
-                                    <div class="product-description">
-
-
-                                        <h3 class="h3 product-title" itemprop="name"><a
-                                                href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/home-accessories/19-customizable-mug.html">Neque
-                                                Porro Suisquam</a></h3>
-
-
-
-                                        <div class="product-price-and-shipping">
-
-                                            <span class="sr-only">Regular price</span>
-                                            <span class="regular-price">$15.55</span>
-                                            <span class="discount-percentage discount-product">-10%</span>
-
-
-                                            <span class="sr-only">Price</span>
-                                            <span itemprop="price" class="price">$14.00</span>
-
-
-                                        </div>
-
-
-
-
-
-
-
-
-
-                                        <p class="product-desc" itemprop="description">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris
-                                            eleifend, quam a vulputate dictum, massa quam dapibus leo.
-                                        </p>
-
-
-
-
-
-                                        <div class="cart-block">
-                                            <div class="product-add-to-cart">
-                                                <form
-                                                    action="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/cart"
-                                                    method="post" class="add-to-cart-or-refresh">
-                                                    <div class="product-quantity" style="display:none;">
-                                                        <input type="number" name="id_product" value="19"
-                                                            class="product_page_product_id">
-                                                        <input type="number" name="id_customization" value="0"
-                                                            class="product_customization_id">
-                                                        <input type="hidden" name="token"
-                                                            value="9407b95b9bb08d999434e20be614587e">
-                                                        <input type="number" name="qty"
-                                                            class="quantity_wanted input-group" value="1" min="1" />
-                                                    </div>
-                                                    <button
-                                                        class="button ajax_add_to_cart_button add-to-cart btn btn-default"
-                                                        data-button-action="add-to-cart" title="Add to cart" disabled>
-                                                        <span>Add to cart</span>
-                                                    </button>
-                                                </form>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="highlighted-informations no-variants hidden-sm-down">
-
-                                        <a class="quick-view" href="#" data-link-action="quickview">
-                                            <i class="material-icons search">&#xE8B6;</i> Quick view
-                                        </a>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </article>
-
-
-
-                        <article class="product-miniature js-product-miniature " data-id-product="16"
-                            data-id-product-attribute="52" itemscope itemtype="http://schema.org/Product">
-                            <div class="thumbnail-container">
-                                <div class="product-inner">
-                                    <div class="thumbnail-inner">
-                                        <div class="inner">
-
-                                            <div class="product-img">
-
-                                                <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/16-mountain-fox-notebook.html"
-                                                    class="thumbnail product-thumbnail">
-
-                                                    <img src="https://infinitytemplate.com/Prestashop/PRS01/PRS012/40-home_default/mountain-fox-notebook.jpg"
-                                                        alt="Eled doming deserunt"
-                                                        data-full-size-image-url="https://infinitytemplate.com/Prestashop/PRS01/PRS012/40-large_default/mountain-fox-notebook.jpg">
-                                                    <img class="second_image img-responsive"
-                                                        src="https://infinitytemplate.com/Prestashop/PRS01/PRS012/41-home_default/mountain-fox-notebook.jpg"
-                                                        alt="" title="" />
-                                                </a>
-
-
-
-
-
-
-                                            </div>
-                                            <!-- @todo: use include file='catalog/_partials/product-flags.tpl'} -->
-
-                                            <ul class="product-flags">
-                                                <li class="product-flag discount">-28%</li>
-                                                <li class="product-flag new">New</li>
-                                            </ul>
-
-                                        </div>
-
-                                        <div class="kkproducthover">
-                                            <!--  <div class="cart-block">
-                <div class="product-add-to-cart">
-			<form action="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/cart" method="post" class="add-to-cart-or-refresh">
-			<div class="product-quantity" style="display:none;">
-				<input type="number" name="id_product" value="16" class="product_page_product_id">
-				<input type="number" name="id_customization" value="0" class="product_customization_id">
-				<input type="hidden" name="token" value="9407b95b9bb08d999434e20be614587e">
-				<input type="number" name="qty" class="quantity_wanted input-group" value="1" min="1"/>
-			</div>
-							<button class="button ajax_add_to_cart_button add-to-cart btn btn-default" data-button-action="add-to-cart" title="Add to cart" >
-					<span>Add to cart</span>
-				</button>
-					</form>
-	</div>              </div> -->
-
-
-                                            <div class="quick-view-block">
-                                                <a href="#" class="quick-view btn" data-link-action="quickview"
-                                                    title="Quick view">
-                                                    <i class="material-icons search">&#xE8B6;</i> <span>Quick
-                                                        view</span>
-                                                </a>
-                                            </div>
-
-
-                                        </div>
-                                    </div>
-
-
-                                    <div class="product-description">
-
-
-                                        <h3 class="h3 product-title" itemprop="name"><a
-                                                href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/16-mountain-fox-notebook.html">Eled
-                                                doming deserunt</a></h3>
-
-
-
-                                        <div class="product-price-and-shipping">
-
-                                            <span class="sr-only">Regular price</span>
-                                            <span class="regular-price">$15.99</span>
-                                            <span class="discount-percentage discount-product">-28%</span>
-
-
-                                            <span class="sr-only">Price</span>
-                                            <span itemprop="price" class="price">$11.51</span>
-
-
-                                        </div>
-
-
-
-
-
-
-
-
-
-                                        <p class="product-desc" itemprop="description">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris
-                                            eleifend, quam a vulputate dictum, massa quam dapibus leo.
-                                        </p>
-
-
-
-                                        <div class="variant-links">
-                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/16-54-mountain-fox-notebook.html#/1-size-s/10-color-red"
-                                                class="color" title="Red" style="background-color: #E84C3D"><span
-                                                    class="sr-only">Red</span></a>
-                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/16-53-mountain-fox-notebook.html#/1-size-s/11-color-black"
-                                                class="color" title="Black" style="background-color: #434A54"><span
-                                                    class="sr-only">Black</span></a>
-                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/16-52-mountain-fox-notebook.html#/1-size-s/18-color-pink"
-                                                class="color" title="Pink" style="background-color: #FCCACD"><span
-                                                    class="sr-only">Pink</span></a>
-                                            <span class="js-count count"></span>
-                                        </div>
-
-
-                                        <div class="cart-block">
-                                            <div class="product-add-to-cart">
-                                                <form
-                                                    action="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/cart"
-                                                    method="post" class="add-to-cart-or-refresh">
-                                                    <div class="product-quantity" style="display:none;">
-                                                        <input type="number" name="id_product" value="16"
-                                                            class="product_page_product_id">
-                                                        <input type="number" name="id_customization" value="0"
-                                                            class="product_customization_id">
-                                                        <input type="hidden" name="token"
-                                                            value="9407b95b9bb08d999434e20be614587e">
-                                                        <input type="number" name="qty"
-                                                            class="quantity_wanted input-group" value="1" min="1" />
-                                                    </div>
-                                                    <button
-                                                        class="button ajax_add_to_cart_button add-to-cart btn btn-default"
-                                                        data-button-action="add-to-cart" title="Add to cart">
-                                                        <span>Add to cart</span>
-                                                    </button>
-                                                </form>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="highlighted-informations hidden-sm-down">
-
-                                        <a class="quick-view" href="#" data-link-action="quickview">
-                                            <i class="material-icons search">&#xE8B6;</i> Quick view
-                                        </a>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </article>
-
-
-
-                        <article class="product-miniature js-product-miniature " data-id-product="14"
-                            data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
-                            <div class="thumbnail-container">
-                                <div class="product-inner">
-                                    <div class="thumbnail-inner">
-                                        <div class="inner">
-
-                                            <div class="product-img">
-
-                                                <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/art/14-hummingbird-vector-graphics.html"
-                                                    class="thumbnail product-thumbnail">
-
-                                                    <img src="https://infinitytemplate.com/Prestashop/PRS01/PRS012/52-home_default/hummingbird-vector-graphics.jpg"
-                                                        alt="Brown bear cushion"
-                                                        data-full-size-image-url="https://infinitytemplate.com/Prestashop/PRS01/PRS012/52-large_default/hummingbird-vector-graphics.jpg">
-                                                    <img class="second_image img-responsive"
-                                                        src="https://infinitytemplate.com/Prestashop/PRS01/PRS012/58-home_default/hummingbird-vector-graphics.jpg"
-                                                        alt="" title="" />
-                                                </a>
-
-
-
-
-
-
-                                            </div>
-                                            <!-- @todo: use include file='catalog/_partials/product-flags.tpl'} -->
-
-                                            <ul class="product-flags">
-                                                <li class="product-flag discount">-45%</li>
-                                                <li class="product-flag new">New</li>
-                                            </ul>
-
-                                        </div>
-
-                                        <div class="kkproducthover">
-                                            <!--  <div class="cart-block">
-                <div class="product-add-to-cart">
-			<form action="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/cart" method="post" class="add-to-cart-or-refresh">
-			<div class="product-quantity" style="display:none;">
-				<input type="number" name="id_product" value="14" class="product_page_product_id">
-				<input type="number" name="id_customization" value="0" class="product_customization_id">
-				<input type="hidden" name="token" value="9407b95b9bb08d999434e20be614587e">
-				<input type="number" name="qty" class="quantity_wanted input-group" value="1" min="1"/>
-			</div>
-							<button class="button ajax_add_to_cart_button add-to-cart btn btn-default" data-button-action="add-to-cart" title="Add to cart" >
-					<span>Add to cart</span>
-				</button>
-					</form>
-	</div>              </div> -->
-
-
-                                            <div class="quick-view-block">
-                                                <a href="#" class="quick-view btn" data-link-action="quickview"
-                                                    title="Quick view">
-                                                    <i class="material-icons search">&#xE8B6;</i> <span>Quick
-                                                        view</span>
-                                                </a>
-                                            </div>
-
-
-                                        </div>
-                                    </div>
-
-
-                                    <div class="product-description">
-
-
-                                        <h3 class="h3 product-title" itemprop="name"><a
-                                                href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/art/14-hummingbird-vector-graphics.html">Brown
-                                                bear cushion</a></h3>
-
-
-
-                                        <div class="product-price-and-shipping">
-
-                                            <span class="sr-only">Regular price</span>
-                                            <span class="regular-price">$15.99</span>
-                                            <span class="discount-percentage discount-product">-45%</span>
-
-
-                                            <span class="sr-only">Price</span>
-                                            <span itemprop="price" class="price">$8.79</span>
-
-
-                                        </div>
-
-
-
-
-
-
-
-
-
-                                        <p class="product-desc" itemprop="description">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris
-                                            eleifend, quam a vulputate dictum, massa quam dapibus leo.
-                                        </p>
-
-
-
-
-
-                                        <div class="cart-block">
-                                            <div class="product-add-to-cart">
-                                                <form
-                                                    action="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/cart"
-                                                    method="post" class="add-to-cart-or-refresh">
-                                                    <div class="product-quantity" style="display:none;">
-                                                        <input type="number" name="id_product" value="14"
-                                                            class="product_page_product_id">
-                                                        <input type="number" name="id_customization" value="0"
-                                                            class="product_customization_id">
-                                                        <input type="hidden" name="token"
-                                                            value="9407b95b9bb08d999434e20be614587e">
-                                                        <input type="number" name="qty"
-                                                            class="quantity_wanted input-group" value="1" min="1" />
-                                                    </div>
-                                                    <button
-                                                        class="button ajax_add_to_cart_button add-to-cart btn btn-default"
-                                                        data-button-action="add-to-cart" title="Add to cart">
-                                                        <span>Add to cart</span>
-                                                    </button>
-                                                </form>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="highlighted-informations no-variants hidden-sm-down">
 
                                         <a class="quick-view" href="#" data-link-action="quickview">
                                             <i class="material-icons search">&#xE8B6;</i> Quick view
@@ -4767,68 +3845,65 @@
                         </div>
                     </section>
 
-                       <!-- Footer Start-->
-        </section>
-        <footer class="page-footer">
+                    <!-- Footer Start-->
+                </section>
+                <footer class="page-footer">
 
-            <!-- Footer content -->
+                    <!-- Footer content -->
 
-        </footer>
-        </section>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
-        </section>
-
-
-        <div id="bottom_home">
-            <section id="itspecialdeals"
-                class="container featured-products clearfix mt-3 hb-animate-element bottom-to-top">
-
-                <h2 class="kk-title">Deal of the day</h2>
-
-                <div id="itspecialdeals-carousel" class="owl-carousel products collapse data-toggler">
+                </footer>
+</section>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 
 
-                    <article class="product-miniature js-product-miniature " data-id-product="17"
-                        data-id-product-attribute="46" itemscope itemtype="http://schema.org/Product">
-                        <div class="thumbnail-container">
-                            <div class="product-inner col-xs-12">
-                                <div class="thumbnail-inner col-xs-12 col-sm-4">
-                                    <div class="inner">
+<div id="bottom_home">
+    <section id="itspecialdeals" class="container featured-products clearfix mt-3 hb-animate-element bottom-to-top">
 
-                                        <div class="product-img">
+        <h2 class="kk-title">Deal of the day</h2>
 
-                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/17-46-mountain-fox-notebook.html#/3-size-l/15-color-green"
-                                                class="thumbnail product-thumbnail ">
+        <div id="itspecialdeals-carousel" class="owl-carousel products collapse data-toggler">
 
-                                                <img src="views/assets/img/mountain-fox-notebook.jpg"
-                                                    alt="Pellentesque augue"
-                                                    data-full-size-image-url="views/assets/img/mountain-fox-notebook.jpg">
-                                                <img class="second_image img-responsive"
-                                                    src="views/assets/img/mountain-fox-notebook.jpg"
-                                                    alt="" title="" />
-                                            </a>
+
+            <article class="product-miniature js-product-miniature " data-id-product="17" data-id-product-attribute="46"
+                itemscope itemtype="http://schema.org/Product">
+                <div class="thumbnail-container">
+                    <div class="product-inner col-xs-12">
+                        <div class="thumbnail-inner col-xs-12 col-sm-4">
+                            <div class="inner">
+
+                                <div class="product-img">
+
+                                    <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/17-46-mountain-fox-notebook.html#/3-size-l/15-color-green"
+                                        class="thumbnail product-thumbnail ">
+
+                                        <img src="views/assets/img/mountain-fox-notebook.jpg" alt="Pellentesque augue"
+                                            data-full-size-image-url="views/assets/img/mountain-fox-notebook.jpg">
+                                        <img class="second_image img-responsive"
+                                            src="views/assets/img/mountain-fox-notebook.jpg" alt="" title="" />
+                                    </a>
 
 
 
 
 
 
-                                        </div>
+                                </div>
 
 
-                                        <!-- <ul class="product-flags">
+                                <!-- <ul class="product-flags">
                                   <li class="product-flag discount">-25%</li>
                                   <li class="product-flag new">New</li>
                               </ul> -->
 
-                                    </div>
+                            </div>
 
-                                    <div class="kkproducthover">
-                                        <!--  <div class="cart-block">
+                            <div class="kkproducthover">
+                                <!--  <div class="cart-block">
                 <div class="product-add-to-cart">
 			<form action="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/cart" method="post" class="add-to-cart-or-refresh">
 			<div class="product-quantity" style="display:none;">
@@ -4851,90 +3926,89 @@
                 </div>
                -->
 
-                                    </div>
-                                </div>
-
-
-                                <div class="product-description col-xs-12 col-sm-8">
-
-                                    <h3 class="h3 product-title" itemprop="name"><a
-                                            href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/17-46-mountain-fox-notebook.html#/3-size-l/15-color-green">Pellentesque
-                                            augue</a></h3>
-
-
-
-                                    <div class="product-price-and-shipping">
-
-                                        <span class="sr-only">Regular price</span>
-                                        <span class="regular-price">$64.90</span>
-                                        <span class="discount-percentage discount-product">-25%</span>
-                                        <span class="sr-only">Price</span>
-                                        <span itemprop="price" class="price">$48.68</span>
-                                    </div>
-
-                                    <p class="product-desc" itemprop="description">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris
-                                        eleifend, quam a vulputate dictum, massa quam dapibus leo.
-                                    </p>
-
-
-
-                                    <div class="variant-links">
-                                        <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/17-46-mountain-fox-notebook.html#/3-size-l/15-color-green"
-                                            class="color" title="Green" style="background-color: #A0D468"><span
-                                                class="sr-only">Green</span></a>
-                                        <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/17-47-mountain-fox-notebook.html#/3-size-l/16-color-yellow"
-                                            class="color" title="Yellow" style="background-color: #F1C40F"><span
-                                                class="sr-only">Yellow</span></a>
-                                        <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/17-48-mountain-fox-notebook.html#/3-size-l/17-color-brown"
-                                            class="color" title="Brown" style="background-color: #964B00"><span
-                                                class="sr-only">Brown</span></a>
-                                        <span class="js-count count"></span>
-                                    </div>
-
-
-                                </div>
-                                <div class="highlighted-informations hidden-sm-down">
-
-                                    <a class="quick-view" href="#" data-link-action="quickview">
-                                        <i class="material-icons search">&#xE8B6;</i> Quick view
-                                    </a>
-
-                                </div>
-
                             </div>
                         </div>
-                    </article>
+
+
+                        <div class="product-description col-xs-12 col-sm-8">
+
+                            <h3 class="h3 product-title" itemprop="name"><a
+                                    href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/17-46-mountain-fox-notebook.html#/3-size-l/15-color-green">Pellentesque
+                                    augue</a></h3>
 
 
 
-                    <article class="product-miniature js-product-miniature " data-id-product="1"
-                        data-id-product-attribute="1" itemscope itemtype="http://schema.org/Product">
-                        <div class="thumbnail-container">
-                            <div class="product-inner col-xs-12">
-                                <div class="thumbnail-inner col-xs-12 col-sm-4">
-                                    <div class="inner">
+                            <div class="product-price-and-shipping">
 
-                                        <div class="product-img">
+                                <span class="sr-only">Regular price</span>
+                                <span class="regular-price">$64.90</span>
+                                <span class="discount-percentage discount-product">-25%</span>
+                                <span class="sr-only">Price</span>
+                                <span itemprop="price" class="price">$48.68</span>
+                            </div>
 
-                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/men/1-1-hummingbird-printed-t-shirt.html#/1-size-s/8-color-white"
-                                                class="thumbnail product-thumbnail ">
+                            <p class="product-desc" itemprop="description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris
+                                eleifend, quam a vulputate dictum, massa quam dapibus leo.
+                            </p>
 
-                                                <img src="views/assets/img/hummingbird-printed-t-shirt.jpg"
-                                                    alt="Vivamus Elementum Semper"
-                                                    data-full-size-image-url="views/assets/img/hummingbird-printed-t-shirt.jpg">
-                                                <img class="second_image img-responsive"
-                                                    src="views/assets/img/hummingbird-printed-t-shirt.jpg"
-                                                    alt="" title="" />
-                                            </a>
-                                        </div>
-                                        <!-- <ul class="product-flags">
+
+
+                            <div class="variant-links">
+                                <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/17-46-mountain-fox-notebook.html#/3-size-l/15-color-green"
+                                    class="color" title="Green" style="background-color: #A0D468"><span
+                                        class="sr-only">Green</span></a>
+                                <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/17-47-mountain-fox-notebook.html#/3-size-l/16-color-yellow"
+                                    class="color" title="Yellow" style="background-color: #F1C40F"><span
+                                        class="sr-only">Yellow</span></a>
+                                <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/17-48-mountain-fox-notebook.html#/3-size-l/17-color-brown"
+                                    class="color" title="Brown" style="background-color: #964B00"><span
+                                        class="sr-only">Brown</span></a>
+                                <span class="js-count count"></span>
+                            </div>
+
+
+                        </div>
+                        <div class="highlighted-informations hidden-sm-down">
+
+                            <a class="quick-view" href="#" data-link-action="quickview">
+                                <i class="material-icons search">&#xE8B6;</i> Quick view
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+            </article>
+
+
+
+            <article class="product-miniature js-product-miniature " data-id-product="1" data-id-product-attribute="1"
+                itemscope itemtype="http://schema.org/Product">
+                <div class="thumbnail-container">
+                    <div class="product-inner col-xs-12">
+                        <div class="thumbnail-inner col-xs-12 col-sm-4">
+                            <div class="inner">
+
+                                <div class="product-img">
+
+                                    <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/men/1-1-hummingbird-printed-t-shirt.html#/1-size-s/8-color-white"
+                                        class="thumbnail product-thumbnail ">
+
+                                        <img src="views/assets/img/hummingbird-printed-t-shirt.jpg"
+                                            alt="Vivamus Elementum Semper"
+                                            data-full-size-image-url="views/assets/img/hummingbird-printed-t-shirt.jpg">
+                                        <img class="second_image img-responsive"
+                                            src="views/assets/img/hummingbird-printed-t-shirt.jpg" alt="" title="" />
+                                    </a>
+                                </div>
+                                <!-- <ul class="product-flags">
                                   <li class="product-flag discount">-20%</li>
                                   <li class="product-flag new">New</li>
                               </ul> -->
-                                    </div>
-                                    <div class="kkproducthover">
-                                        <!--  <div class="cart-block">
+                            </div>
+                            <div class="kkproducthover">
+                                <!--  <div class="cart-block">
                 <div class="product-add-to-cart">
 			<form action="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/cart" method="post" class="add-to-cart-or-refresh">
 			<div class="product-quantity" style="display:none;">
@@ -4957,90 +4031,89 @@
                 </div>
                -->
 
-                                    </div>
-                                </div>
-
-
-                                <div class="product-description col-xs-12 col-sm-8">
-
-                                    <h3 class="h3 product-title" itemprop="name"><a
-                                            href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/men/1-1-hummingbird-printed-t-shirt.html#/1-size-s/8-color-white">Vivamus
-                                            Elementum Semper</a></h3>
-
-
-
-                                    <div class="product-price-and-shipping">
-
-                                        <span class="sr-only">Regular price</span>
-                                        <span class="regular-price">$44.33</span>
-                                        <span class="discount-percentage discount-product">-20%</span>
-
-
-                                        <span class="sr-only">Price</span>
-                                        <span itemprop="price" class="price">$35.46</span>
-                                    </div>
-                                    <p class="product-desc" itemprop="description">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris
-                                        eleifend, quam a vulputate dictum
-                                    </p>
-                                    <div class="variant-links">
-                                        <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/men/1-1-hummingbird-printed-t-shirt.html#/1-size-s/8-color-white"
-                                            class="color" title="White" style="background-color: #ffffff"><span
-                                                class="sr-only">White</span></a>
-                                        <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/men/1-2-hummingbird-printed-t-shirt.html#/1-size-s/11-color-black"
-                                            class="color" title="Black" style="background-color: #434A54"><span
-                                                class="sr-only">Black</span></a>
-                                        <span class="js-count count"></span>
-                                    </div>
-
-
-                                </div>
-                                <div class="highlighted-informations hidden-sm-down">
-
-                                    <a class="quick-view" href="#" data-link-action="quickview">
-                                        <i class="material-icons search">&#xE8B6;</i> Quick view
-                                    </a>
-
-                                </div>
-
                             </div>
                         </div>
-                    </article>
+
+
+                        <div class="product-description col-xs-12 col-sm-8">
+
+                            <h3 class="h3 product-title" itemprop="name"><a
+                                    href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/men/1-1-hummingbird-printed-t-shirt.html#/1-size-s/8-color-white">Vivamus
+                                    Elementum Semper</a></h3>
 
 
 
-                    <article class="product-miniature js-product-miniature " data-id-product="2"
-                        data-id-product-attribute="9" itemscope itemtype="http://schema.org/Product">
-                        <div class="thumbnail-container">
-                            <div class="product-inner col-xs-12">
-                                <div class="thumbnail-inner col-xs-12 col-sm-4">
-                                    <div class="inner">
+                            <div class="product-price-and-shipping">
 
-                                        <div class="product-img">
-
-                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/home/2-9-brown-bear-printed-sweater.html#/1-size-s"
-                                                class="thumbnail product-thumbnail ">
-
-                                                <img src="views/assets/img/brown-bear-printed-sweater.jpg"
-                                                    alt="Lorem ipsum dolor sit amet"
-                                                    data-full-size-image-url="views/assets/img/brown-bear-printed-sweater.jpg">
-                                                <img class="second_image img-responsive"
-                                                    src="views/assets/img/brown-bear-printed-sweater.jpg"
-                                                    alt="" title="" />
-                                            </a>
-                                        </div>
+                                <span class="sr-only">Regular price</span>
+                                <span class="regular-price">$44.33</span>
+                                <span class="discount-percentage discount-product">-20%</span>
 
 
-                                        <!-- <ul class="product-flags">
+                                <span class="sr-only">Price</span>
+                                <span itemprop="price" class="price">$35.46</span>
+                            </div>
+                            <p class="product-desc" itemprop="description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris
+                                eleifend, quam a vulputate dictum
+                            </p>
+                            <div class="variant-links">
+                                <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/men/1-1-hummingbird-printed-t-shirt.html#/1-size-s/8-color-white"
+                                    class="color" title="White" style="background-color: #ffffff"><span
+                                        class="sr-only">White</span></a>
+                                <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/men/1-2-hummingbird-printed-t-shirt.html#/1-size-s/11-color-black"
+                                    class="color" title="Black" style="background-color: #434A54"><span
+                                        class="sr-only">Black</span></a>
+                                <span class="js-count count"></span>
+                            </div>
+
+
+                        </div>
+                        <div class="highlighted-informations hidden-sm-down">
+
+                            <a class="quick-view" href="#" data-link-action="quickview">
+                                <i class="material-icons search">&#xE8B6;</i> Quick view
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+            </article>
+
+
+
+            <article class="product-miniature js-product-miniature " data-id-product="2" data-id-product-attribute="9"
+                itemscope itemtype="http://schema.org/Product">
+                <div class="thumbnail-container">
+                    <div class="product-inner col-xs-12">
+                        <div class="thumbnail-inner col-xs-12 col-sm-4">
+                            <div class="inner">
+
+                                <div class="product-img">
+
+                                    <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/home/2-9-brown-bear-printed-sweater.html#/1-size-s"
+                                        class="thumbnail product-thumbnail ">
+
+                                        <img src="views/assets/img/brown-bear-printed-sweater.jpg"
+                                            alt="Lorem ipsum dolor sit amet"
+                                            data-full-size-image-url="views/assets/img/brown-bear-printed-sweater.jpg">
+                                        <img class="second_image img-responsive"
+                                            src="views/assets/img/brown-bear-printed-sweater.jpg" alt="" title="" />
+                                    </a>
+                                </div>
+
+
+                                <!-- <ul class="product-flags">
                                   <li class="product-flag on-sale">On sale!</li>
                                   <li class="product-flag discount">-20%</li>
                                   <li class="product-flag new">New</li>
                               </ul> -->
 
-                                    </div>
+                            </div>
 
-                                    <div class="kkproducthover">
-                                        <!--  <div class="cart-block">
+                            <div class="kkproducthover">
+                                <!--  <div class="cart-block">
                 <div class="product-add-to-cart">
 			<form action="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/cart" method="post" class="add-to-cart-or-refresh">
 			<div class="product-quantity" style="display:none;">
@@ -5063,89 +4136,87 @@
                 </div>
                -->
 
-                                    </div>
-                                </div>
-
-
-                                <div class="product-description col-xs-12 col-sm-8">
-
-                                    <h3 class="h3 product-title" itemprop="name"><a
-                                            href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/home/2-9-brown-bear-printed-sweater.html#/1-size-s">Lorem
-                                            ipsum dolor sit...</a></h3>
-
-
-
-                                    <div class="product-price-and-shipping">
-
-                                        <span class="sr-only">Regular price</span>
-                                        <span class="regular-price">$44.33</span>
-                                        <span class="discount-percentage discount-product">-20%</span>
-
-
-                                        <span class="sr-only">Price</span>
-                                        <span itemprop="price" class="price">$35.46</span>
-                                    </div>
-                                    <p class="product-desc" itemprop="description">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris
-                                        eleifend, quam a vulputate dictum
-                                    </p>
-                                    <div class="variant-links">
-                                        <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/home/2-64-brown-bear-printed-sweater.html#/8-color-white"
-                                            class="color" title="White" style="background-color: #ffffff"><span
-                                                class="sr-only">White</span></a>
-                                        <span class="js-count count"></span>
-                                    </div>
-
-
-                                </div>
-                                <div class="highlighted-informations hidden-sm-down">
-
-                                    <a class="quick-view" href="#" data-link-action="quickview">
-                                        <i class="material-icons search">&#xE8B6;</i> Quick view
-                                    </a>
-
-                                </div>
-
                             </div>
                         </div>
-                    </article>
-                    <article class="product-miniature js-product-miniature " data-id-product="18"
-                        data-id-product-attribute="40" itemscope itemtype="http://schema.org/Product">
-                        <div class="thumbnail-container">
-                            <div class="product-inner col-xs-12">
-                                <div class="thumbnail-inner col-xs-12 col-sm-4">
-                                    <div class="inner">
 
-                                        <div class="product-img">
 
-                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/18-40-mountain-fox-notebook.html#/1-size-s/12-color-camel"
-                                                class="thumbnail product-thumbnail ">
+                        <div class="product-description col-xs-12 col-sm-8">
 
-                                                <img src="views/assets/img/mountain-fox-notebook.jpg"
-                                                    alt="Vestibulum ut nulla"
-                                                    data-full-size-image-url="views/assets/img/mountain-fox-notebook.jpg">
-                                                <img class="second_image img-responsive"
-                                                    src="views/assets/img/mountain-fox-notebook.jpg"
-                                                    alt="" title="" />
-                                            </a>
+                            <h3 class="h3 product-title" itemprop="name"><a
+                                    href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/home/2-9-brown-bear-printed-sweater.html#/1-size-s">Lorem
+                                    ipsum dolor sit...</a></h3>
 
 
 
+                            <div class="product-price-and-shipping">
+
+                                <span class="sr-only">Regular price</span>
+                                <span class="regular-price">$44.33</span>
+                                <span class="discount-percentage discount-product">-20%</span>
+
+
+                                <span class="sr-only">Price</span>
+                                <span itemprop="price" class="price">$35.46</span>
+                            </div>
+                            <p class="product-desc" itemprop="description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris
+                                eleifend, quam a vulputate dictum
+                            </p>
+                            <div class="variant-links">
+                                <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/home/2-64-brown-bear-printed-sweater.html#/8-color-white"
+                                    class="color" title="White" style="background-color: #ffffff"><span
+                                        class="sr-only">White</span></a>
+                                <span class="js-count count"></span>
+                            </div>
+
+
+                        </div>
+                        <div class="highlighted-informations hidden-sm-down">
+
+                            <a class="quick-view" href="#" data-link-action="quickview">
+                                <i class="material-icons search">&#xE8B6;</i> Quick view
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+            </article>
+            <article class="product-miniature js-product-miniature " data-id-product="18" data-id-product-attribute="40"
+                itemscope itemtype="http://schema.org/Product">
+                <div class="thumbnail-container">
+                    <div class="product-inner col-xs-12">
+                        <div class="thumbnail-inner col-xs-12 col-sm-4">
+                            <div class="inner">
+
+                                <div class="product-img">
+
+                                    <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/18-40-mountain-fox-notebook.html#/1-size-s/12-color-camel"
+                                        class="thumbnail product-thumbnail ">
+
+                                        <img src="views/assets/img/mountain-fox-notebook.jpg" alt="Vestibulum ut nulla"
+                                            data-full-size-image-url="views/assets/img/mountain-fox-notebook.jpg">
+                                        <img class="second_image img-responsive"
+                                            src="views/assets/img/mountain-fox-notebook.jpg" alt="" title="" />
+                                    </a>
 
 
 
-                                        </div>
 
 
-                                        <!-- <ul class="product-flags">
+
+                                </div>
+
+
+                                <!-- <ul class="product-flags">
                                   <li class="product-flag discount">-15%</li>
                                   <li class="product-flag new">New</li>
                               </ul> -->
 
-                                    </div>
+                            </div>
 
-                                    <div class="kkproducthover">
-                                        <!--  <div class="cart-block">
+                            <div class="kkproducthover">
+                                <!--  <div class="cart-block">
                 <div class="product-add-to-cart">
 			<form action="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/cart" method="post" class="add-to-cart-or-refresh">
 			<div class="product-quantity" style="display:none;">
@@ -5168,111 +4239,109 @@
                 </div>
                -->
 
-                                    </div>
-                                </div>
-
-
-                                <div class="product-description col-xs-12 col-sm-8">
-
-                                    <h3 class="h3 product-title" itemprop="name"><a
-                                            href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/18-40-mountain-fox-notebook.html#/1-size-s/12-color-camel">Vestibulum
-                                            ut nulla</a></h3>
-
-
-
-                                    <div class="product-price-and-shipping">
-
-                                        <span class="sr-only">Regular price</span>
-                                        <span class="regular-price">$30.90</span>
-                                        <span class="discount-percentage discount-product">-15%</span>
-
-
-                                        <span class="sr-only">Price</span>
-                                        <span itemprop="price" class="price">$26.27</span>
-
-
-                                    </div>
-
-
-
-
-
-
-
-
-                                    <p class="product-desc" itemprop="description">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris
-                                        eleifend, quam a vulputate dictum, massa quam dapibus leo.
-                                    </p>
-
-
-
-                                    <div class="variant-links">
-                                        <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/18-40-mountain-fox-notebook.html#/1-size-s/12-color-camel"
-                                            class="color" title="Camel" style="background-color: #C19A6B"><span
-                                                class="sr-only">Camel</span></a>
-                                        <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/18-41-mountain-fox-notebook.html#/1-size-s/13-color-orange"
-                                            class="color" title="Orange" style="background-color: #F39C11"><span
-                                                class="sr-only">Orange</span></a>
-                                        <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/18-42-mountain-fox-notebook.html#/1-size-s/14-color-blue"
-                                            class="color" title="Blue" style="background-color: #5D9CEC"><span
-                                                class="sr-only">Blue</span></a>
-                                        <span class="js-count count"></span>
-                                    </div>
-
-
-                                </div>
-                                <div class="highlighted-informations hidden-sm-down">
-
-                                    <a class="quick-view" href="#" data-link-action="quickview">
-                                        <i class="material-icons search">&#xE8B6;</i> Quick view
-                                    </a>
-
-                                </div>
-
                             </div>
                         </div>
-                    </article>
+
+
+                        <div class="product-description col-xs-12 col-sm-8">
+
+                            <h3 class="h3 product-title" itemprop="name"><a
+                                    href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/18-40-mountain-fox-notebook.html#/1-size-s/12-color-camel">Vestibulum
+                                    ut nulla</a></h3>
 
 
 
-                    <article class="product-miniature js-product-miniature " data-id-product="19"
-                        data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
-                        <div class="thumbnail-container">
-                            <div class="product-inner col-xs-12">
-                                <div class="thumbnail-inner col-xs-12 col-sm-4">
-                                    <div class="inner">
+                            <div class="product-price-and-shipping">
 
-                                        <div class="product-img">
+                                <span class="sr-only">Regular price</span>
+                                <span class="regular-price">$30.90</span>
+                                <span class="discount-percentage discount-product">-15%</span>
 
-                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/home-accessories/19-customizable-mug.html"
-                                                class="thumbnail product-thumbnail ">
 
-                                                <img src="views/assets/img/customizable-mug.jpg"
-                                                    alt="Neque Porro Suisquam"
-                                                    data-full-size-image-url="views/assets/img/customizable-mug.jpg">
-                                                <img class="second_image img-responsive"
-                                                    src="views/assets/img/customizable-mug.jpg"
-                                                    alt="" title="" />
-                                            </a>
+                                <span class="sr-only">Price</span>
+                                <span itemprop="price" class="price">$26.27</span>
+
+
+                            </div>
 
 
 
 
 
 
-                                        </div>
 
 
-                                        <!-- <ul class="product-flags">
+                            <p class="product-desc" itemprop="description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris
+                                eleifend, quam a vulputate dictum, massa quam dapibus leo.
+                            </p>
+
+
+
+                            <div class="variant-links">
+                                <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/18-40-mountain-fox-notebook.html#/1-size-s/12-color-camel"
+                                    class="color" title="Camel" style="background-color: #C19A6B"><span
+                                        class="sr-only">Camel</span></a>
+                                <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/18-41-mountain-fox-notebook.html#/1-size-s/13-color-orange"
+                                    class="color" title="Orange" style="background-color: #F39C11"><span
+                                        class="sr-only">Orange</span></a>
+                                <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/18-42-mountain-fox-notebook.html#/1-size-s/14-color-blue"
+                                    class="color" title="Blue" style="background-color: #5D9CEC"><span
+                                        class="sr-only">Blue</span></a>
+                                <span class="js-count count"></span>
+                            </div>
+
+
+                        </div>
+                        <div class="highlighted-informations hidden-sm-down">
+
+                            <a class="quick-view" href="#" data-link-action="quickview">
+                                <i class="material-icons search">&#xE8B6;</i> Quick view
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+            </article>
+
+
+
+            <article class="product-miniature js-product-miniature " data-id-product="19" data-id-product-attribute="0"
+                itemscope itemtype="http://schema.org/Product">
+                <div class="thumbnail-container">
+                    <div class="product-inner col-xs-12">
+                        <div class="thumbnail-inner col-xs-12 col-sm-4">
+                            <div class="inner">
+
+                                <div class="product-img">
+
+                                    <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/home-accessories/19-customizable-mug.html"
+                                        class="thumbnail product-thumbnail ">
+
+                                        <img src="views/assets/img/customizable-mug.jpg" alt="Neque Porro Suisquam"
+                                            data-full-size-image-url="views/assets/img/customizable-mug.jpg">
+                                        <img class="second_image img-responsive"
+                                            src="views/assets/img/customizable-mug.jpg" alt="" title="" />
+                                    </a>
+
+
+
+
+
+
+                                </div>
+
+
+                                <!-- <ul class="product-flags">
                                   <li class="product-flag discount">-10%</li>
                                   <li class="product-flag new">New</li>
                               </ul> -->
 
-                                    </div>
+                            </div>
 
-                                    <div class="kkproducthover">
-                                        <!--  <div class="cart-block">
+                            <div class="kkproducthover">
+                                <!--  <div class="cart-block">
                 <div class="product-add-to-cart">
 			<form action="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/cart" method="post" class="add-to-cart-or-refresh">
 			<div class="product-quantity" style="display:none;">
@@ -5296,99 +4365,97 @@
                 </div>
                -->
 
-                                    </div>
-                                </div>
-
-
-                                <div class="product-description col-xs-12 col-sm-8">
-
-                                    <h3 class="h3 product-title" itemprop="name"><a
-                                            href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/home-accessories/19-customizable-mug.html">Neque
-                                            Porro Suisquam</a></h3>
-
-
-
-                                    <div class="product-price-and-shipping">
-
-                                        <span class="sr-only">Regular price</span>
-                                        <span class="regular-price">$15.55</span>
-                                        <span class="discount-percentage discount-product">-10%</span>
-
-
-                                        <span class="sr-only">Price</span>
-                                        <span itemprop="price" class="price">$14.00</span>
-
-
-                                    </div>
-
-
-
-
-
-
-
-
-                                    <p class="product-desc" itemprop="description">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris
-                                        eleifend, quam a vulputate dictum, massa quam dapibus leo.
-                                    </p>
-
-
-
-
-
-                                </div>
-                                <div class="highlighted-informations no-variants hidden-sm-down">
-
-                                    <a class="quick-view" href="#" data-link-action="quickview">
-                                        <i class="material-icons search">&#xE8B6;</i> Quick view
-                                    </a>
-
-                                </div>
-
                             </div>
                         </div>
-                    </article>
+
+
+                        <div class="product-description col-xs-12 col-sm-8">
+
+                            <h3 class="h3 product-title" itemprop="name"><a
+                                    href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/home-accessories/19-customizable-mug.html">Neque
+                                    Porro Suisquam</a></h3>
 
 
 
-                    <article class="product-miniature js-product-miniature " data-id-product="16"
-                        data-id-product-attribute="52" itemscope itemtype="http://schema.org/Product">
-                        <div class="thumbnail-container">
-                            <div class="product-inner col-xs-12">
-                                <div class="thumbnail-inner col-xs-12 col-sm-4">
-                                    <div class="inner">
+                            <div class="product-price-and-shipping">
 
-                                        <div class="product-img">
+                                <span class="sr-only">Regular price</span>
+                                <span class="regular-price">$15.55</span>
+                                <span class="discount-percentage discount-product">-10%</span>
 
-                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/16-52-mountain-fox-notebook.html#/1-size-s/18-color-pink"
-                                                class="thumbnail product-thumbnail ">
 
-                                                <img src="views/assets/img/mountain-fox-notebook.jpg"
-                                                    alt="Eled doming deserunt"
-                                                    data-full-size-image-url="views/assets/img/mountain-fox-notebook.jpg">
-                                                <img class="second_image img-responsive"
-                                                    src="views/assets/img/mountain-fox-notebook.jpg"
-                                                    alt="" title="" />
-                                            </a>
+                                <span class="sr-only">Price</span>
+                                <span itemprop="price" class="price">$14.00</span>
+
+
+                            </div>
 
 
 
 
 
 
-                                        </div>
 
 
-                                        <!-- <ul class="product-flags">
+                            <p class="product-desc" itemprop="description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris
+                                eleifend, quam a vulputate dictum, massa quam dapibus leo.
+                            </p>
+
+
+
+
+
+                        </div>
+                        <div class="highlighted-informations no-variants hidden-sm-down">
+
+                            <a class="quick-view" href="#" data-link-action="quickview">
+                                <i class="material-icons search">&#xE8B6;</i> Quick view
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+            </article>
+
+
+
+            <article class="product-miniature js-product-miniature " data-id-product="16" data-id-product-attribute="52"
+                itemscope itemtype="http://schema.org/Product">
+                <div class="thumbnail-container">
+                    <div class="product-inner col-xs-12">
+                        <div class="thumbnail-inner col-xs-12 col-sm-4">
+                            <div class="inner">
+
+                                <div class="product-img">
+
+                                    <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/16-52-mountain-fox-notebook.html#/1-size-s/18-color-pink"
+                                        class="thumbnail product-thumbnail ">
+
+                                        <img src="views/assets/img/mountain-fox-notebook.jpg" alt="Eled doming deserunt"
+                                            data-full-size-image-url="views/assets/img/mountain-fox-notebook.jpg">
+                                        <img class="second_image img-responsive"
+                                            src="views/assets/img/mountain-fox-notebook.jpg" alt="" title="" />
+                                    </a>
+
+
+
+
+
+
+                                </div>
+
+
+                                <!-- <ul class="product-flags">
                                   <li class="product-flag discount">-28%</li>
                                   <li class="product-flag new">New</li>
                               </ul> -->
 
-                                    </div>
+                            </div>
 
-                                    <div class="kkproducthover">
-                                        <!--  <div class="cart-block">
+                            <div class="kkproducthover">
+                                <!--  <div class="cart-block">
                 <div class="product-add-to-cart">
 			<form action="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/cart" method="post" class="add-to-cart-or-refresh">
 			<div class="product-quantity" style="display:none;">
@@ -5411,105 +4478,104 @@
                 </div>
                -->
 
-                                    </div>
-                                </div>
-
-
-                                <div class="product-description col-xs-12 col-sm-8">
-
-                                    <h3 class="h3 product-title" itemprop="name"><a
-                                            href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/16-52-mountain-fox-notebook.html#/1-size-s/18-color-pink">Eled
-                                            doming deserunt</a></h3>
-
-
-
-                                    <div class="product-price-and-shipping">
-
-                                        <span class="sr-only">Regular price</span>
-                                        <span class="regular-price">$15.99</span>
-                                        <span class="discount-percentage discount-product">-28%</span>
-
-
-                                        <span class="sr-only">Price</span>
-                                        <span itemprop="price" class="price">$11.51</span>
-
-
-                                    </div>
-
-
-
-
-
-
-
-
-                                    <p class="product-desc" itemprop="description">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris
-                                        eleifend, quam a vulputate dictum, massa quam dapibus leo.
-                                    </p>
-
-
-
-                                    <div class="variant-links">
-                                        <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/16-54-mountain-fox-notebook.html#/1-size-s/10-color-red"
-                                            class="color" title="Red" style="background-color: #E84C3D"><span
-                                                class="sr-only">Red</span></a>
-                                        <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/16-53-mountain-fox-notebook.html#/1-size-s/11-color-black"
-                                            class="color" title="Black" style="background-color: #434A54"><span
-                                                class="sr-only">Black</span></a>
-                                        <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/16-52-mountain-fox-notebook.html#/1-size-s/18-color-pink"
-                                            class="color" title="Pink" style="background-color: #FCCACD"><span
-                                                class="sr-only">Pink</span></a>
-                                        <span class="js-count count"></span>
-                                    </div>
-
-
-                                </div>
-                                <div class="highlighted-informations hidden-sm-down">
-
-                                    <a class="quick-view" href="#" data-link-action="quickview">
-                                        <i class="material-icons search">&#xE8B6;</i> Quick view
-                                    </a>
-
-                                </div>
-
                             </div>
                         </div>
-                    </article>
+
+
+                        <div class="product-description col-xs-12 col-sm-8">
+
+                            <h3 class="h3 product-title" itemprop="name"><a
+                                    href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/16-52-mountain-fox-notebook.html#/1-size-s/18-color-pink">Eled
+                                    doming deserunt</a></h3>
 
 
 
-                    <article class="product-miniature js-product-miniature " data-id-product="14"
-                        data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
-                        <div class="thumbnail-container">
-                            <div class="product-inner col-xs-12">
-                                <div class="thumbnail-inner col-xs-12 col-sm-4">
-                                    <div class="inner">
+                            <div class="product-price-and-shipping">
 
-                                        <div class="product-img">
-
-                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/art/14-hummingbird-vector-graphics.html"
-                                                class="thumbnail product-thumbnail ">
-
-                                                <img src="views/assets/img/hummingbird-vector-graphics.jpg"
-                                                    alt="Brown bear cushion"
-                                                    data-full-size-image-url="views/assets/img/hummingbird-vector-graphics.jpg">
-                                                <img class="second_image img-responsive"
-                                                    src="views/assets/img/hummingbird-vector-graphics.jpg"
-                                                    alt="" title="" />
-                                            </a>
-                                        </div>
+                                <span class="sr-only">Regular price</span>
+                                <span class="regular-price">$15.99</span>
+                                <span class="discount-percentage discount-product">-28%</span>
 
 
-                                        <!-- <ul class="product-flags">
+                                <span class="sr-only">Price</span>
+                                <span itemprop="price" class="price">$11.51</span>
+
+
+                            </div>
+
+
+
+
+
+
+
+
+                            <p class="product-desc" itemprop="description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris
+                                eleifend, quam a vulputate dictum, massa quam dapibus leo.
+                            </p>
+
+
+
+                            <div class="variant-links">
+                                <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/16-54-mountain-fox-notebook.html#/1-size-s/10-color-red"
+                                    class="color" title="Red" style="background-color: #E84C3D"><span
+                                        class="sr-only">Red</span></a>
+                                <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/16-53-mountain-fox-notebook.html#/1-size-s/11-color-black"
+                                    class="color" title="Black" style="background-color: #434A54"><span
+                                        class="sr-only">Black</span></a>
+                                <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/16-52-mountain-fox-notebook.html#/1-size-s/18-color-pink"
+                                    class="color" title="Pink" style="background-color: #FCCACD"><span
+                                        class="sr-only">Pink</span></a>
+                                <span class="js-count count"></span>
+                            </div>
+
+
+                        </div>
+                        <div class="highlighted-informations hidden-sm-down">
+
+                            <a class="quick-view" href="#" data-link-action="quickview">
+                                <i class="material-icons search">&#xE8B6;</i> Quick view
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+            </article>
+
+
+
+            <article class="product-miniature js-product-miniature " data-id-product="14" data-id-product-attribute="0"
+                itemscope itemtype="http://schema.org/Product">
+                <div class="thumbnail-container">
+                    <div class="product-inner col-xs-12">
+                        <div class="thumbnail-inner col-xs-12 col-sm-4">
+                            <div class="inner">
+
+                                <div class="product-img">
+
+                                    <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/art/14-hummingbird-vector-graphics.html"
+                                        class="thumbnail product-thumbnail ">
+
+                                        <img src="views/assets/img/hummingbird-vector-graphics.jpg"
+                                            alt="Brown bear cushion"
+                                            data-full-size-image-url="views/assets/img/hummingbird-vector-graphics.jpg">
+                                        <img class="second_image img-responsive"
+                                            src="views/assets/img/hummingbird-vector-graphics.jpg" alt="" title="" />
+                                    </a>
+                                </div>
+
+
+                                <!-- <ul class="product-flags">
                                   <li class="product-flag discount">-45%</li>
                                   <li class="product-flag new">New</li>
                               </ul> -->
 
-                                    </div>
+                            </div>
 
-                                    <div class="kkproducthover">
-                                        <!--  <div class="cart-block">
+                            <div class="kkproducthover">
+                                <!--  <div class="cart-block">
                 <div class="product-add-to-cart">
 			<form action="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/cart" method="post" class="add-to-cart-or-refresh">
 			<div class="product-quantity" style="display:none;">
@@ -5532,120 +4598,115 @@
                 </div>
                -->
 
-                                    </div>
-                                </div>
-
-
-                                <div class="product-description col-xs-12 col-sm-8">
-
-                                    <h3 class="h3 product-title" itemprop="name"><a
-                                            href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/art/14-hummingbird-vector-graphics.html">Brown
-                                            bear cushion</a></h3>
-
-
-
-                                    <div class="product-price-and-shipping">
-
-                                        <span class="sr-only">Regular price</span>
-                                        <span class="regular-price">$15.99</span>
-                                        <span class="discount-percentage discount-product">-45%</span>
-
-
-                                        <span class="sr-only">Price</span>
-                                        <span itemprop="price" class="price">$8.79</span>
-
-
-                                    </div>
-
-
-
-
-
-
-
-
-                                    <p class="product-desc" itemprop="description">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris
-                                        eleifend, quam a vulputate dictum, massa quam dapibus leo.
-                                    </p>
-
-
-
-
-
-                                </div>
-                                <div class="highlighted-informations no-variants hidden-sm-down">
-
-                                    <a class="quick-view" href="#" data-link-action="quickview">
-                                        <i class="material-icons search">&#xE8B6;</i> Quick view
-                                    </a>
-
-                                </div>
-
                             </div>
                         </div>
-                    </article>
-
-                </div>
-
-            </section>
 
 
-  
-            <div class="kkmanufacturer container hb-animate-element bottom-to-top clearfix">
+                        <div class="product-description col-xs-12 col-sm-8">
 
-                <h3 class="kk-title">Brands</h3>
+                            <h3 class="h3 product-title" itemprop="name"><a
+                                    href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/art/14-hummingbird-vector-graphics.html">Brown
+                                    bear cushion</a></h3>
 
 
-                <div class="block_content row">
-                    <div id="kkbrandlogo" class="owl-carousel">
-                        <div class="items">
-                            <div class="image-container">
-                                <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/brand/3-manufacture3"
-                                    title="Manufacture3">
-                                    <img src="views/assets/img/3.jpg"
-                                        alt="Manufacture3" />
-                                </a>
+
+                            <div class="product-price-and-shipping">
+
+                                <span class="sr-only">Regular price</span>
+                                <span class="regular-price">$15.99</span>
+                                <span class="discount-percentage discount-product">-45%</span>
+
+
+                                <span class="sr-only">Price</span>
+                                <span itemprop="price" class="price">$8.79</span>
+
+
                             </div>
+
+
+
+
+
+
+
+
+                            <p class="product-desc" itemprop="description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris
+                                eleifend, quam a vulputate dictum, massa quam dapibus leo.
+                            </p>
+
+
+
+
+
                         </div>
-                        <div class="items">
-                            <div class="image-container">
-                                <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/brand/4-manufacture4"
-                                    title="Manufacture4">
-                                    <img src="views/assets/img/4.jpg"
-                                        alt="Manufacture4" />
-                                </a>
-                            </div>
+                        <div class="highlighted-informations no-variants hidden-sm-down">
+
+                            <a class="quick-view" href="#" data-link-action="quickview">
+                                <i class="material-icons search">&#xE8B6;</i> Quick view
+                            </a>
+
                         </div>
-                        <div class="items">
-                            <div class="image-container">
-                                <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/brand/5-manufacture5"
-                                    title="Manufacture5">
-                                    <img src="views/assets/img/5.jpg"
-                                        alt="Manufacture5" />
-                                </a>
-                            </div>
-                        </div>
-                        <div class="items">
-                            <div class="image-container">
-                                <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/brand/6-manufacture6"
-                                    title="Manufacture6">
-                                    <img src="views/assets/img/6.jpg"
-                                        alt="Manufacture6" />
-                                </a>
-                            </div>
-                        </div>
-                        <div class="items">
-                            <div class="image-container">
-                                <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/brand/7-manufacture7"
-                                    title="Manufacture7">
-                                    <img src="views/assets/img/7.jpg"
-                                        alt="Manufacture7" />
-                                </a>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
+            </article>
 
+        </div>
+
+    </section>
+
+
+
+    <div class="kkmanufacturer container hb-animate-element bottom-to-top clearfix">
+
+        <h3 class="kk-title">Brands</h3>
+
+
+        <div class="block_content row">
+            <div id="kkbrandlogo" class="owl-carousel">
+                <div class="items">
+                    <div class="image-container">
+                        <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/brand/3-manufacture3"
+                            title="Manufacture3">
+                            <img src="views/assets/img/3.jpg" alt="Manufacture3" />
+                        </a>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="image-container">
+                        <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/brand/4-manufacture4"
+                            title="Manufacture4">
+                            <img src="views/assets/img/4.jpg" alt="Manufacture4" />
+                        </a>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="image-container">
+                        <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/brand/5-manufacture5"
+                            title="Manufacture5">
+                            <img src="views/assets/img/5.jpg" alt="Manufacture5" />
+                        </a>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="image-container">
+                        <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/brand/6-manufacture6"
+                            title="Manufacture6">
+                            <img src="views/assets/img/6.jpg" alt="Manufacture6" />
+                        </a>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="image-container">
+                        <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/brand/7-manufacture7"
+                            title="Manufacture7">
+                            <img src="views/assets/img/7.jpg" alt="Manufacture7" />
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
+
+    </div>
+</div>

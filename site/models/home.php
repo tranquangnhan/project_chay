@@ -3,7 +3,10 @@
  use SendGrid\Mail\Mail;
  use SendGrid\Mail\TypeException;
 class Model_home extends Model_db{
-    
+    function getAllProSpecial()
+    {
+        $sql = "SELECT * FROM product ORDER BY view DESC LIMIT 10";
+    }
     function getHotPro($sosp=3){ 
         $sql = "SELECT * FROM dienthoai WHERE AnHien=1 AND Hot=1 ORDER BY idDT DESC LIMIT 0, $sosp";
         return $this->result1(0,$sql);
