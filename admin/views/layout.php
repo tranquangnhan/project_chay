@@ -229,45 +229,42 @@
 
 
                             <li>
-                                <a href="index.html">
+                                <a href="#">
                                     <i class="mdi mdi-view-dashboard"></i>
-                                    <span> Trang Chủ </span>
+                                    <span> Dashboard </span>
                                 </a>
                             </li>
 
                             <li>
                                 <a href="javascript: void(0);">
                                     <i class="mdi mdi-page-layout-sidebar-left"></i>
-                                    <span> Sản Phẩm </span>
+                                    <span> Product </span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="?ctrl=product&act=addnew">Thêm Mới</a></li>
-                                    <li><a href="?ctrl=product&act=index">Danh Sách</a></li>
+                                    <li><a href="?ctrl=product&act=addnew">Add New</a></li>
+                                    <li><a href="?ctrl=product&act=index">List</a></li>
                                 </ul>
                             </li>
                             
                             <li>
                                 <a href="javascript: void(0);">
                                     <i class="mdi mdi-page-layout-sidebar-left"></i>
-                                    <span> Danh Mục</span>
+                                    <span> Category</span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="?ctrl=categories&act=addnew">Thêm Mới</a></li>
-                                    <li><a href="?ctrl=categories&act=index">Danh Sách</a></li>
+                                    <li><a href="?ctrl=categories&act=addnew">Add New</a></li>
+                                    <li><a href="?ctrl=categories&act=index">List</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="javascript: void(0);">
+                                <a href="?ctrl=order">
                                     <i class="mdi mdi-page-layout-sidebar-left"></i>
                                     <span>Đơn Hàng</span>
                                     <span class="menu-arrow"></span>
                                 </a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="?ctrl=donhang&act=addnew">Thêm Mới</a></li>
-                                    <li><a href="?ctrl=donhang&act=index">Danh Sách</a></li>
-                                </ul>
+                                
                             </li>
 
                         </ul>

@@ -25,16 +25,16 @@
                                         </div>
                                     </div>
 
-                                    <h4 class="header-title mt-0 mb-3">Danh Mục</h4>
+                                    <h4 class="header-title mt-0 mb-3">Category</h4>
 
                                     <form data-parsley-validate novalidate method="post">
                                         <div class="form-group">
-                                            <label for="">Tên Danh Mục</label>
+                                            <label for="">Name Category</label>
                                             <input type="text" name="name" value="<?=$oneRecode['name']?>"  parsley-trigger="change" required
                                                    placeholder="Nhập tên danh mục" class="form-control" id="userName">
                                         </div>
                                         <select class="custom-select form-group">
-                                            <option value="0" selected>Không thuộc</option>
+                                            <option value="0" selected>Don't Belong</option>
                                             <?php
                                                 foreach ($listchild as $key) {
                                                     echo '<option value="'.$key['id'].'">'.$key['name'].'</option>';
@@ -43,8 +43,8 @@
                                         </select>
                                        
                                         <div class="form-group text-right mb-0 ">
-                                            <input type="submit" name="them" class="btn btn-primary waves-effect waves-light mr-1" value="Sửa">
-                                            <a href="?ctrl=nhasanxuat&act=index" clas="btn btn-secondary waves-effect waves-light">Huỷ</a>
+                                            <input type="submit" name="them" class="btn btn-primary waves-effect waves-light mr-1" value="UPDATE">
+                                            <a href="?ctrl=nhasanxuat&act=index" clas="btn btn-secondary waves-effect waves-light">CANCEL</a>
                                         </div>
 
                                     </form>

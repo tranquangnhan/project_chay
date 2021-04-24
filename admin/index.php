@@ -5,7 +5,7 @@
     require_once "../system/database.php";
 
 
-    define('ARR_CONTROLLER',["home","product","donhang","categories","users","thongbao","properties"]);
+    define('ARR_CONTROLLER',["home","product","order","categories","users","thongbao","properties"]);
     $ctrl = 'nhasanxuat';
     if(isset($_GET['ctrl'])==true) $ctrl=$_GET['ctrl'];
     if(in_array($ctrl,ARR_CONTROLLER)==false) die("Không thấy địa chỉ not found 404");

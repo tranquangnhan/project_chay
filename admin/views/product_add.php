@@ -25,103 +25,101 @@
                                         </div>
                                     </div>
 
-                                    <h4 class="header-title mt-0 mb-3">Điện Thoại</h4>
+                                    <h4 class="header-title mt-0 mb-3">Product</h4>
 
                                     <form data-parsley-validate id="formadd" novalidate method="post" enctype="multipart/form-data">
                                         <div class="form-group">
                                             <?php if($message) echo "<h2 class='text-danger'>".$mesage."</h2>";   ?>    
                                         </div>
                                         <div class="form-group">
-                                            <label for="">Hình ảnh</label>
+                                            <label for="">Image Url</label>
                                            <input type="file" name="img[]" multiple>
                                         </div>
                                         <div class="row">
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="">Tên Điện Thoại</label>
-                                                    <input type="text" name="name"  parsley-trigger="change" required
-                                                        placeholder="Nhập tên nhà sản xuất" class="form-control" id="userName">
+                                                    <label for="">Name Product</label>
+                                                    <input type="text" name="name_product"  parsley-trigger="change" required
+                                                        placeholder="Type name product" value="<?=$oneRecode['TenDT']?>" class="form-control" >
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="">Giá</label>
+                                                    <label for="">Price</label>
                                                     <input  type="number" name="price" parsley-trigger="change" required
-                                                        placeholder="Nhập giá" class="form-control" id="emailAddress">
+                                                        placeholder="Type rice" value="<?=$oneRecode['Gia']?>" class="form-control" >
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row">
+                                       <div class="row">
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="">Giảm Giá</label>
-                                                    <input  type="number" name="promo" parsley-trigger="change" required
-                                                        placeholder="Nhập giảm giá" class="form-control" id="emailAddress">
+                                                    <label for="">Discount</label>
+                                                    <input  type="number" name="discount" parsley-trigger="change" required
+                                                        placeholder="Type discount (%)" value="<?=$oneRecode['GiaKM']?>" class="form-control" >
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="">Thời Điểm Nhập</label>
-                                                    <input type="date" name="data" class="form-control" >
-                                                </div>
+                                                    <label for="">Inventory number</label>
+                                                    <input type="number" class="form-control" value="<?=$oneRecode['SoLuongTonKho']?>" name="inventory" placeholder="Amount">
+                                                </div> 
                                             </div>
                                         </div>
+
+                                        
                                         <div class="row">
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="">Số lần xem</label>
-                                                    <input type="number" name="views" class="form-control" >
-                                                </div>  
+                                                    <label for="">Category</label>
+                                                    <select class="form-control" name="IDCate">
+                                                        <?php 
+                                                            foreach ($producer as $row) {
+                                                                if($producer['id'] == $oneRecode['id']){
+                                                                    echo '<option value='.$row['id'].' selected>'.$row['name'].'</option>';
+                                                                }else{
+                                                                    echo '<option value='.$row['id'].'>'.$row['name'].'</option>';
+                                                                }
+                                                            }   
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                                
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="">Số lần Mua</label>
-                                                    <input type="number" name="buy" class="form-control" >
+                                                    <label for="">Size</label>
+                                                    <input type="text" class="form-control" value="<?=$oneRecode['size']?>" name="size"  placeholder="Size">
                                                 </div> 
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-lg-6">
+                                        <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="">Nhà sản xuất</label>
-                                                    <select class="form-control" name="idproducer">
-                                                        <?php 
-                                                            foreach ($producer as $row) {
-                                                            echo '<option value='.$row['idNSX'].'>'.$row['TenNSX'].'</option>';
-                                                            }
-                                                        ?>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="">Số lượng tồn kho</label>
-                                                    <input type="number" class="form-control" name="inventory">
-                                                </div>           
+                                                    <label for="">Color</label>
+                                                    <input type="text" class="form-control" value="<?=$oneRecode['color']?>" name="color"  placeholder="Size">
+                                                </div> 
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-lg-3">
                                                 <div class="form-group">
                                                     <div class="checkbox">
-                                                        <input id="remember-1" type="checkbox" name="showhide" value="1" data-parsley-multiple="remember-1">
-                                                        <label for="remember-1">Ẩn Hiện ? </label>
-                                                    </div>
-                                                </div>            
-                                            </div>   
-                                            <div class="col-lg-3">
-                                                <div class="form-group">
-                                                    <div class="checkbox">
-                                                        <input id="remember-2" type="checkbox" name="hot" value="1" data-parsley-multiple="remember-1">
+                                                        <input id="remember-2" type="checkbox" name="hot" value="1" <?=($oneRecode['hot']==1) ? 'checked' : '';?> data-parsley-multiple="remember-1">
                                                         <label for="remember-2">Hot ? </label>
                                                     </div>
-                                                </div>           
-                                            </div>              
+                                                </div>          
+                                            </div>
                                         </div>
                                       
                                         
-                                      
-                                        <textarea id="editor1" style="height: 300px;width:100%" name="detail" >
+                                                            <label for="">Description</label>
+                                        <textarea id="editor1" style="height: 300px;width:100%" name="Description" >
+                                           
+                                        </textarea>
+                                        <br>
+                                        <label for="">Properties</label>
+                                        <textarea id="editor2" style="height: 300px;width:100%" name="Properties" >
                                            
                                         </textarea>
                                       
