@@ -24,25 +24,25 @@
                                         </div>
                                     </div>
 
-                                    <h4 class="header-title mt-0 mb-3">Nhà sản xuất</h4>
+                                    <h4 class="header-title mt-0 mb-3">Danh Mục</h4>
 
                                     <form data-parsley-validate novalidate method="post">
                                         <div class="form-group">
-                                            <label for="">Tên Nhà Sản Xuất</label>
+                                            <label for="">Tên Danh Mục</label>
                                             <input type="text" name="name"  parsley-trigger="change" required
-                                                   placeholder="Nhập tên nhà sản xuất" class="form-control" id="userName">
+                                                   placeholder="Nhập tên nhà sản xuất" class="form-control" id="category">
                                         </div>
-                                        <div class="form-group">
-                                            <label for="">Thứ Tự</label>
-                                            <input  type="number" name="order" parsley-trigger="change" required
-                                                   placeholder="Nhập thứ tự nhà sản xuất" class="form-control" id="emailAddress">
-                                        </div>
-                                        <div class="form-group pl-3">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" name="showhide" id="" value="1" >
-                                            Ẩn Hiện
-                                        </label>
-                                        </div>
+                                        <label for="">Thuộc</label>
+                                        <select class="custom-select form-group">
+                                        
+                                            <option value="0" selected>Không thuộc</option>
+                                            <?php
+                                                foreach ($listchild as $key) {
+                                                    echo '<option value="'.$key['id'].'">'.$key['name'].'</option>';
+                                                }
+                                            ?>
+                                        </select>
+                                        
             
                                         <div class="form-group text-right mb-0 ">
                                             <input type="submit" name="them" class="btn btn-primary waves-effect waves-light mr-1" value="Thêm">

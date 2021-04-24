@@ -1169,8 +1169,22 @@
     <a id="back-to-top" title="Back to top" class=""><i class="material-icons arrow-up">&#xE316;</i></a>
     <div class="newsletter-pop">
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
     <script type="text/javascript" src="views/assets/js/bottom-b769945.js"></script>
+    <script src="views/assets/js/jquery.flexslider.js"></script>
+    <script>
+    $(window).load(function() {
+    if ($('.flexslider').length > 0) {
+        $('.flexslider').flexslider({
+            slideshowSpeed: $('.flexslider').data('interval'),
+            pauseOnHover: $('.flexslider').data('pause'),
+            animation: 'fade',
+            controlNav: !0,
+        })
+    }
+});
+    </script>
+    
 
 
 </body>

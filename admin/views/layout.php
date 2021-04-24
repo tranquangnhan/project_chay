@@ -242,20 +242,20 @@
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="?ctrl=dienthoai&act=addnew">Thêm Mới</a></li>
-                                    <li><a href="?ctrl=dienthoai&act=index">Danh Sách</a></li>
+                                    <li><a href="?ctrl=product&act=addnew">Thêm Mới</a></li>
+                                    <li><a href="?ctrl=product&act=index">Danh Sách</a></li>
                                 </ul>
                             </li>
                             
                             <li>
                                 <a href="javascript: void(0);">
                                     <i class="mdi mdi-page-layout-sidebar-left"></i>
-                                    <span> Nhà Sản Xuất</span>
+                                    <span> Danh Mục</span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="?ctrl=nhasanxuat&act=addnew">Thêm Mới</a></li>
-                                    <li><a href="?ctrl=nhasanxuat&act=index">Danh Sách</a></li>
+                                    <li><a href="?ctrl=categories&act=addnew">Thêm Mới</a></li>
+                                    <li><a href="?ctrl=categories&act=index">Danh Sách</a></li>
                                 </ul>
                             </li>
                             <li>

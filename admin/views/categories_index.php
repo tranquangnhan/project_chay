@@ -17,9 +17,8 @@
                                         <thead>
                                         <tr>
                                         <th>STT</th>
-                                        <th>Tên Nhà Sản Xuất</th>
-                                        <th>Thứ Tự</th>
-                                        <th>Ẩn Hiện</th>
+                                        <th>Tên danh mục</th>                
+                                        <th>Thuộc</th>
                                         <th>Xoá</th>
                                         <th>Sửa</th>
                                         </tr>
@@ -33,13 +32,12 @@
                                                 $stt++;
                                                 $anHien = ($row['AnHien']=='1') ? '<input type="radio" checked onclick="return false">': '<input  type="radio" onclick="return false">';
                                                 
-                                                $linkDel = "'?ctrl=nhasanxuat&act=delete&id=".$row['idNSX']."'";
-                                                $linkEdit = '?ctrl=nhasanxuat&act=edit&id='.$row['idNSX'];
+                                                $linkDel = "'?ctrl=categories&act=delete&id=".$row['id']."'";
+                                                $linkEdit = '?ctrl=categories&act=edit&id='.$row['id'];
                                                 echo '<tr>
                                                         <td>'.$stt.'</td>
-                                                        <td>'.$row['TenNSX'].'</td>
-                                                        <td>'.$row['ThuTu'].'</td>
-                                                        <td>'.$anHien.'</td>
+                                                        <td>'.$row['name'].'</td>
+                                                        <td>'.$row['parent'].'</td>
                                                         <td><div  onclick="checkDelete('.$linkDel.')"  class="btn btn-danger" role="button"><i class="fa fa-trash"></i></div></td>
                                                         <td><a><a name="" id="" class="btn btn-primary" href="'.$linkEdit.'" role="button"><i class="fa fa-edit"></i></a></a></a></td>
                                                     </tr>';

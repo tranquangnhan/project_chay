@@ -1,44 +1,44 @@
 <?php
 
-class Model_dienThoai extends Model_db{
+class Model_product extends Model_db{
     function listRecords() 
     {
-        $sql = "SELECT * FROM dienthoai";
+        $sql = "SELECT * FROM product";
         return $this->result1(0,$sql);
     }
     
     function addNewPhone($name,$price,$promo,$imgs,$date,$detail,$views,$buy,$hot,$idproducer,$showHide, $inventory,$slug)
     {
-        $sql = "INSERT INTO dienthoai(TenDT,Gia,GiaKM,urlHinh,ThoiDiemNhap,MoTa,SoLanXem,SoLanMua,Hot,idNSX,AnHien,SoLuongTonKho,slug) VALUE(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO product(TenDT,Gia,GiaKM,urlHinh,ThoiDiemNhap,MoTa,SoLanXem,SoLanMua,Hot,idNSX,AnHien,SoLuongTonKho,slug) VALUE(?,?,?,?,?,?,?,?,?,?,?,?,?)";
         return $this->getLastId($sql,$name,$price,$promo,$imgs,$date,$detail,$views,$buy,$hot,$idproducer,$showHide, $inventory,$slug);
     }
 
     function deletePhone($id)
     {   
-        $sql = "DELETE FROM dienthoai WHERE idDT = ?";
+        $sql = "DELETE FROM product WHERE id = ?";
         return $this->exec1($sql,$id);
     }
 
     function editPhone($name,$price,$promo,$imgs,$date,$detail,$views,$buy,$hot,$idproducer,$showHide, $inventory,$slug,$id){
         if($imgs == "")
         {
-            $sql = "UPDATE dienthoai SET TenDT= ?,Gia=?,GiaKM=?,ThoiDiemNhap=?,MoTa=?,SoLanXem=?,SoLanMua=?,Hot=?,idNSX=?,AnHien=?,SoLuongTonKho=?,slug=? WHERE idDT=?";
+            $sql = "UPDATE product SET TenDT= ?,Gia=?,GiaKM=?,ThoiDiemNhap=?,MoTa=?,SoLanXem=?,SoLanMua=?,Hot=?,idNSX=?,AnHien=?,SoLuongTonKho=?,slug=? WHERE id=?";
             return $this->exec1($sql,$name,$price,$promo,$date,$detail,$views,$buy,$hot,$idproducer,$showHide, $inventory,$slug,$id);
         }else
         {
-            $sql = "UPDATE dienthoai SET TenDT= ?,Gia=?,GiaKM=?,urlHinh=?,ThoiDiemNhap=?,MoTa=?,SoLanXem=?,SoLanMua=?,Hot=?,idNSX=?,AnHien=?,SoLuongTonKho=?,slug=? WHERE idDT=?";
+            $sql = "UPDATE product SET TenDT= ?,Gia=?,GiaKM=?,urlHinh=?,ThoiDiemNhap=?,MoTa=?,SoLanXem=?,SoLanMua=?,Hot=?,idNSX=?,AnHien=?,SoLuongTonKho=?,slug=? WHERE id=?";
             return $this->exec1($sql,$name,$price,$promo,$imgs,$date,$detail,$views,$buy,$hot,$idproducer,$showHide, $inventory,$slug,$id);
         }
     }
 
     function showOnePhone($id)
     {
-        $sql = "SELECT * FROM dienthoai WHERE idDT=?";
+        $sql = "SELECT * FROM product WHERE id=?";
         return $this->result1(1,$sql,$id);
     }
     function countAllPhone()
     {
-        $sql = "SELECT count(*) AS sodong FROM dienthoai";
+        $sql = "SELECT count(*) AS sodong FROM product";
         return $this->result1(1,$sql)['sodong'];
     }
 
@@ -137,10 +137,10 @@ class Model_dienThoai extends Model_db{
         return $PagedHTML.$NextButton.$LastButton;
     }
     function GetProductList($CurrentPage){
-        $sql = "SELECT * FROM dienthoai WHERE idDT != 0";
+        $sql = "SELECT * FROM product WHERE id != 0";
         if ($CurrentPage !== 0)
         {
-            $sql .= " GROUP BY idDT LIMIT ".($CurrentPage - 1) * PAGE_SIZE.", ".PAGE_SIZE;
+            $sql .= " GROUP BY id LIMIT ".($CurrentPage - 1) * PAGE_SIZE.", ".PAGE_SIZE;
         }
         return $this->result1(0,$sql);
     }

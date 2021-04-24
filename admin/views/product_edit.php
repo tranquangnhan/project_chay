@@ -32,8 +32,8 @@
                                             <label for="">Hình ảnh</label>
                                             <br>
                                             <?php
-                                                if(is_file(PATH_IMG_SITE.explode(",",$oneRecode['urlHinh'])[0])){
-                                                    $img = PATH_IMG_SITE.explode(",",$oneRecode['urlHinh'])[0];
+                                                if(is_file(PATH_IMG_SITE.explode(",",$oneRecode['image_list'])[0])){
+                                                    $img = PATH_IMG_SITE.explode(",",$oneRecode['image_list'])[0];
                                                 }else{
                                                     $img = PATH_IMG_SITE.'logo.png';
                                                 }
@@ -46,14 +46,14 @@
                                         <div class="row">
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="">Tên Điện Thoại</label>
+                                                    <label for="">Name Product</label>
                                                     <input type="text" name="name"  parsley-trigger="change" required
                                                         placeholder="Nhập tên nhà sản xuất" value="<?=$oneRecode['TenDT']?>" class="form-control" id="userName">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="">Giá</label>
+                                                    <label for="">Price</label>
                                                     <input  type="number" name="price" parsley-trigger="change" required
                                                         placeholder="Nhập giá" value="<?=$oneRecode['Gia']?>" class="form-control" id="emailAddress">
                                                 </div>
@@ -62,50 +62,9 @@
                                        <div class="row">
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="">Giảm Giá</label>
+                                                    <label for="">Discount</label>
                                                     <input  type="number" name="promo" parsley-trigger="change" required
                                                         placeholder="Nhập giảm giá" value="<?=$oneRecode['GiaKM']?>" class="form-control" id="emailAddress">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                            
-                                                    <label for="">Thời Điểm Nhập</label>
-                                                    
-                                                    <input type="date" name="data" value="<?=explode(" ",$oneRecode['ThoiDiemNhap'])[0]?>" class="form-control" >
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="">Số lần xem</label>
-                                                    <input type="number" name="views" value="<?=$oneRecode['SoLanXem']?>" class="form-control" >
-                                                </div> 
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="">Số lần Mua</label>
-                                                    <input type="number" name="buy"  value="<?=$oneRecode['SoLanMua']?>" class="form-control" >
-                                                </div> 
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="">Nhà sản xuất</label>
-                                                    <select class="form-control" name="idproducer">
-                                                        <?php 
-                                                            foreach ($producer as $row) {
-                                                                if($producer['idNSX'] == $oneRecode['idNSX']){
-                                                                    echo '<option value='.$row['idNSX'].' selected>'.$row['TenNSX'].'</option>';
-                                                                }else{
-                                                                    echo '<option value='.$row['idNSX'].'>'.$row['TenNSX'].'</option>';
-                                                                }
-                                                            }   
-                                                        ?>
-                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
@@ -114,6 +73,30 @@
                                                     <input type="number" class="form-control" value="<?=$oneRecode['SoLuongTonKho']?>" name="inventory">
                                                 </div> 
                                             </div>
+                                        </div>
+
+                                        <div class="row">
+                                            
+                                           
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label for="">Danh Mục</label>
+                                                    <select class="form-control" name="idproducer">
+                                                        <?php 
+                                                            foreach ($producer as $row) {
+                                                                if($producer['id'] == $oneRecode['id']){
+                                                                    echo '<option value='.$row['id'].' selected>'.$row['name'].'</option>';
+                                                                }else{
+                                                                    echo '<option value='.$row['id'].'>'.$row['name'].'</option>';
+                                                                }
+                                                            }   
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                           
                                         </div>
                                         <div class="row">
                                             <div class="col-lg-3">
