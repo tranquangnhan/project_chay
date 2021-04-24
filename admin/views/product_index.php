@@ -33,7 +33,7 @@
                                             foreach ($ProductList as $row) {
                                                 $stt++;
                                                 // $anHien = ($row['AnHien']=='1') ? '<span class="badge badge-success">Hiện</span>': '<span class="badge badge-danger">Ẩn</span>';
-                                                $hot = ($row['Hot']=='1') ? '<input type="radio" checked onclick="return false">': '<input  type="radio" onclick="return false">';
+                                                 ($row['hot']=='1') ? $hot= '<input type="radio" checked >' : $hot='<input  type="radio" >';
                                                 
                                                 $linkProperty = '?ctrl=properties&act=edit&idedit='.$row['id'];
                                                 $linkDel = "'?ctrl=product&act=delete&id=".$row['id']."'";

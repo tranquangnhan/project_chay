@@ -21,6 +21,8 @@
                                         <th>Image </th>
                                         <th>Product_ID</th>
                                         <th>Price</th>
+                                        <th>Size</th>
+                                        <th>Color</th>
                                         <th>Quantity</th>
                                         </tr>
                                         </thead>
@@ -43,6 +45,8 @@
                                                         <td><img width="50" height="50" src="'.$img.'"></td>
                                                         <td>'.$row['product_id'].'</td>
                                                         <td>'.$row['price'].'</td>
+                                                        <td>'.$row['size'].'</td>
+                                                        <td>'.$row['color'].'</td>
                                                         <td>'.$row['quantity'].'</td>
                                                     </tr>';
                                             }

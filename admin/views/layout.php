@@ -229,7 +229,7 @@
 
 
                             <li>
-                                <a href="#">
+                                <a href="?ctrl=home">
                                     <i class="mdi mdi-view-dashboard"></i>
                                     <span> Dashboard </span>
                                 </a>

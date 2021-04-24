@@ -40,7 +40,7 @@ class Product{
         if (isset($_GET['Page'])) $CurrentPage = $_GET['Page']; else $CurrentPage = 1;
      
         
-        $TotalProduct = $this->model->countAllPhone();
+        $TotalProduct = $this->model->countAllProduct();
 
         if($TotalProduct == 0) $TotalProduct =1;
   
@@ -74,7 +74,7 @@ class Product{
             $discount = $_POST['discount'];
             $img = $_FILES['img'];
             $imgs = $this->lib->checkUpLoadMany($img);
-            $inventory = $_POST['inventory'];
+            // $inventory = $_POST['inventory'];
             $IDCate = $_POST['IDCate'];
             $hot = $_POST['hot'];
             if ($hot) {

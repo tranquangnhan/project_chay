@@ -29,11 +29,11 @@
                                     <form data-parsley-validate novalidate method="post">
                                         <div class="form-group">
                                             <label for="">Name Category</label>
-                                            <input type="text" name="name"  parsley-trigger="change" required
+                                            <input type="text" name="name_category"  parsley-trigger="change" required
                                                    placeholder="Type name category" class="form-control" id="category">
                                         </div>
                                         <label for="">Belong</label>
-                                        <select class="custom-select form-group">
+                                        <select class="custom-select form-group" name="IDcate">
                                         
                                             <option value="0" selected>Don't Belong</option>
                                             <?php
