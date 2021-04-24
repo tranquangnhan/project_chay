@@ -3,51 +3,72 @@
  use SendGrid\Mail\Mail;
  use SendGrid\Mail\TypeException;
 class Model_home extends Model_db{
+    function getMenuParent(){
+        $sql = "SELECT * FROM catalog WHERE parent =0 LIMIT 5";
+        return $this->result1(0,$sql);
+    }
+    function showDmCon($id){
+        $sql = "SELECT * FROM catalog WHERE parent =$id ";
+        return $this->result1(0,$sql);
+    }
     function getAllProSpecial()
     {
         $sql = "SELECT * FROM product ORDER BY view DESC LIMIT 10";
         return $this->result1(0,$sql);
     }
+    function getAllProByDeal(){
+        $sql = "SELECT * FROM product ORDER BY discount DESC LIMIT 10";
+        return $this->result1(0,$sql);
+    }
+    function getAllByBuyed(){
+        $sql = "SELECT * FROM product ORDER BY buyed DESC LIMIT 10";
+        return $this->result1(0,$sql);
+    }
+    function getAllByHotAsc(){
+        $sql = "SELECT * FROM product WHERE hot=1 ORDER BY id ASC LIMIT 10";
+        return $this->result1(0,$sql);
+    } 
+    function getAllProAsc(){
+        $sql = "SELECT * FROM product ORDER BY id ASC LIMIT 10";
+        return $this->result1(0,$sql);
+    }
     function getHotPro($sosp=3){ 
-        $sql = "SELECT * FROM dienthoai WHERE AnHien=1 AND Hot=1 ORDER BY idDT DESC LIMIT 0, $sosp";
+        $sql = "SELECT * FROM product WHERE AnHien=1 AND Hot=1 ORDER BY idDT DESC LIMIT 0, $sosp";
         return $this->result1(0,$sql);
      }
      function getAllPro($sosp=4){ 
-        $sql = "SELECT * FROM dienthoai WHERE AnHien=1 ORDER BY idDT ASC LIMIT 0, $sosp";
+        $sql = "SELECT * FROM product WHERE AnHien=1 ORDER BY idDT ASC LIMIT 0, $sosp";
         return $this->result1(0,$sql);
      }
      function getAllNewPro($sosp=4){
-        $sql = "SELECT * FROM dienthoai WHERE AnHien=1 ORDER BY idDT DESC LIMIT 0, $sosp";
+        $sql = "SELECT * FROM product WHERE AnHien=1 ORDER BY idDT DESC LIMIT 0, $sosp";
         return $this->result1(0,$sql);
      }
      function getAllViewsPro($sosp=4){
-        $sql = "SELECT * FROM dienthoai WHERE AnHien=1  ORDER BY SoLanXem DESC LIMIT 0, $sosp";
+        $sql = "SELECT * FROM product WHERE AnHien=1  ORDER BY SoLanXem DESC LIMIT 0, $sosp";
         return $this->result1(0,$sql);
      }
      function getAllProSelling($sosp=4){
-        $sql = "SELECT * FROM dienthoai WHERE AnHien=1  ORDER BY SoLanMua DESC LIMIT 0, $sosp";
+        $sql = "SELECT * FROM product WHERE AnHien=1  ORDER BY SoLanMua DESC LIMIT 0, $sosp";
         return $this->result1(0,$sql);
      }
     function getOnePro($slug){   
-        $sql = "SELECT * FROM dienthoai WHERE AnHien=1 AND slug=?";
+        $sql = "SELECT * FROM product WHERE 1 AND slug=?";
         return $this->result1(1,$sql,$slug);
     }
     function getProperty($slug){ 
-        $sql = "SELECT * FROM dienthoai WHERE slug = ?";
+        $sql = "SELECT * FROM product WHERE slug = ?";
         $kq =  $this->result1(1,$sql,$slug)['idDT'];
         $sql = "SELECT * FROM thuoctinhdt WHERE idDT=?";
         return $this->result1(1,$sql,$kq);
     }
-    function getOneProducer($id){
-      $sql = "SELECT * FROM nhasanxuat WHERE idNSX=?";
-      return $this->result1(1,$sql,$id);
-    }
+   
     function getAllProducer(){
       $sql = "SELECT * FROM nhasanxuat";
       return $this->result1(0,$sql);
     }
     function getSamePro($slug){
-      $sql = "SELECT * FROM dienthoai WHERE slug != ? ORDER BY idDT DESC LIMIT 4";
+      $sql = "SELECT * FROM product WHERE slug != ? ORDER BY idDT DESC LIMIT 4";
       return $this->result1(0,$sql,$slug);
     }
     function getCouponCode($coupon){
@@ -58,7 +79,7 @@ class Model_home extends Model_db{
     function luudonhangnhe($idDH, $hoten, $email,$phone,$address,$note,$keyBill){            
         if ($idDH==-1){
         $sql = "INSERT INTO donhang SET ThoiDiemDatHang=Now(),TenNguoiNhan=?, emailNguoiNhan=?
-         ,dienthoai=?,DiaChiNguoiNhan=?,AnHien=1,GhiChuCuaKhach=?,keybill=?";          
+         ,product=?,DiaChiNguoiNhan=?,AnHien=1,GhiChuCuaKhach=?,keybill=?";          
         $kq= $this->getLastId($sql,$hoten,$email,$phone,$address,$note,$keyBill);
         if ($kq == null) return false;
         else return $kq;
@@ -66,7 +87,7 @@ class Model_home extends Model_db{
       else
        {
         $sql = "UPDATE donhang SET ThoiDiemDatHang=Now(),TenNguoiNhan=?, emailNguoiNhan=?
-        ,dienthoai=?,DiaChiNguoiNhan=?,AnHien=1,GhiChuCuaKhach=?,keybill=? WHERE idDH=?";              
+        ,product=?,DiaChiNguoiNhan=?,AnHien=1,GhiChuCuaKhach=?,keybill=? WHERE idDH=?";              
          $kq= $this->exec1($sql,$hoten,$email,$phone,$address,$note,$keyBill,$idDH);
          
       if ($kq == null) return false;
@@ -91,7 +112,7 @@ class Model_home extends Model_db{
    }
 
    function getProductByIdPro($id){
-      $sql = "SELECT * FROM dienthoai WHERE idNSX = ?";
+      $sql = "SELECT * FROM product WHERE idNSX = ?";
       return $this->result1(0,$sql,$id);
    }
 
@@ -195,7 +216,7 @@ class Model_home extends Model_db{
       $sql = "SELECT idNSX FROM nhasanxuat WHERE slug=?";
       $idDT = $this->result1(1,$sql,$slug)['idNSX'];
 
-       $sql = "SELECT count(*) AS sodong FROM dienthoai WHERE idDT != 0";
+       $sql = "SELECT count(*) AS sodong FROM product WHERE idDT != 0";
          if ($idDT != NULL)
          {
             $sql .= " AND idNSX =".$idDT; 
@@ -222,7 +243,7 @@ class Model_home extends Model_db{
       $sql = "SELECT idNSX FROM nhasanxuat WHERE slug=?";
       $idDT = $this->result1(1,$sql,$slug)['idNSX'];
 
-      $sql = "SELECT * FROM dienthoai WHERE idDT != 0";
+      $sql = "SELECT * FROM product WHERE idDT != 0";
       if ($idDT != NULL)
       {
         $sql .= " AND idNSX = ".$idDT; 
@@ -252,7 +273,7 @@ class Model_home extends Model_db{
   }
 
   function addNewView($idsp){
-      $sql = "UPDATE dienthoai SET SoLanXem=SoLanXem+1 WHERE idDT = ?";
+      $sql = "UPDATE product SET SoLanXem=SoLanXem+1 WHERE idDT = ?";
       return $this->exec1($sql,$idsp);
   }
 
@@ -269,7 +290,7 @@ class Model_home extends Model_db{
   
   function getAllComment($slug){
       
-    $sql = "SELECT * FROM dienthoai WHERE slug = ?";
+    $sql = "SELECT * FROM product WHERE slug = ?";
     $kq =  $this->result1(1,$sql,$slug)['idDT'];
     $sql = "SELECT * FROM binhluan WHERE idDT = ? ORDER BY idDT DESC";
     return $this->result1(0,$sql,$kq);
@@ -334,7 +355,7 @@ class Model_home extends Model_db{
       }
   }
 //   function getIdProFromSlug($slug){
-//       $sql = "SELECT idDT FROM dienthoai WHERE slug=?";
+//       $sql = "SELECT idDT FROM product WHERE slug=?";
 //       return $this->result1(1,$sql,$slug)['idDT'];
 //   }
 }

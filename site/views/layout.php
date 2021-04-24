@@ -503,238 +503,66 @@
             <div class="position-static">
                 <div class="container">
                     <div class="row">
-
+                    
 
                         <div class="menu js-top-menu hidden-sm-down" id="_desktop_top_menu">
 
                             <ul class="top-menu" id="top-menu" data-depth="0">
-                                <li class="category" id="category-3">
-                                    <a class="dropdown-item"
-                                        href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes"
-                                        data-depth="0">
-                                        <span class="float-xs-right hidden-md-up">
-                                            <span data-target="#top_sub_menu_70770" data-toggle="collapse"
-                                                class="navbar-toggler collapse-icons">
-                                                <i class="material-icons add">&#xE313;</i>
-                                                <i class="material-icons remove">&#xE316;</i>
-                                            </span>
-                                        </span>
-                                        Clothes
-                                    </a>
-                                    <div class="popover sub-menu js-sub-menu collapse twocolumn"
-                                        id="top_sub_menu_70770">
+                                <?php 
+                                    $this->model = new Model_home();
+                                    foreach ($getMenuParent as $row) {
+                                        $menuCon = '';
+                                        $kq = '';
+                                        foreach ($this->model->showDmCon($row['id']) as $con) {
+                                            $menuCon .= ' <li class="category" id="category-10">
+                                                            <a class="dropdown-item"
+                                                                href="?act='.$con['ctrl'].'"
+                                                                data-depth="2">
+                                                                '.$con['name'].'
+                                                            </a>
+                                                        </li>';
+                                        }
 
-                                        <ul class="top-menu" data-depth="1">
-                                            <li class="category" id="category-4">
-                                                <a class="dropdown-item dropdown-submenu"
-                                                    href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/4-men"
-                                                    data-depth="1">
-                                                    <span class="float-xs-right hidden-md-up">
-                                                        <span data-target="#top_sub_menu_29761" data-toggle="collapse"
-                                                            class="navbar-toggler collapse-icons">
-                                                            <i class="material-icons add">&#xE313;</i>
-                                                            <i class="material-icons remove">&#xE316;</i>
+                                        $kq .= '<li class="category" id="category-3">
+                                                    <a class="dropdown-item"
+                                                        href="?act='.$row['ctrl'].'"
+                                                        data-depth="0">
+                                                        <span class="float-xs-right hidden-md-up">
+                                                            <span data-target="#top_sub_menu_70770" data-toggle="collapse"
+                                                                class="navbar-toggler collapse-icons">
+                                                                <i class="material-icons add">&#xE313;</i>
+                                                                <i class="material-icons remove">&#xE316;</i>
+                                                            </span>
                                                         </span>
-                                                    </span>
-                                                    Men
-                                                </a>
-                                                <div class="collapse" id="top_sub_menu_29761">
+                                                       '.$row['name'].'
+                                                    </a>';
+                                                    if($menuCon){
+                                                        $kq .= '<div class="popover sub-menu js-sub-menu collapse twocolumn"
+                                                        id="top_sub_menu_70770">
+                
+                                                        <ul class="top-menu" data-depth="1">
+                                                            
+                                                            <li class="category" id="category-4">
+                                                            
+                                                                <div class="collapse" id="top_sub_menu_29761">
+                
+                                                                    <ul class="top-menu" data-depth="2">
+                                                                        '.$menuCon.'
+                                                                    </ul>
+                
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                
+                                                    </div>';
+                                                    }
 
-                                                    <ul class="top-menu" data-depth="2">
-                                                        <li class="category" id="category-10">
-                                                            <a class="dropdown-item"
-                                                                href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/10-outlook"
-                                                                data-depth="2">
-                                                                Outlook
-                                                            </a>
-                                                        </li>
-                                                        <li class="category" id="category-11">
-                                                            <a class="dropdown-item"
-                                                                href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/11-t-shirt"
-                                                                data-depth="2">
-                                                                T-shirt
-                                                            </a>
-                                                        </li>
-                                                        <li class="category" id="category-12">
-                                                            <a class="dropdown-item"
-                                                                href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/12-jackets"
-                                                                data-depth="2">
-                                                                Jackets
-                                                            </a>
-                                                        </li>
-                                                    </ul>
+                                                $kq .= '</li>';
+                                                echo $kq;
+                                    }
+                                ?>
+                               
 
-                                                </div>
-                                            </li>
-                                            <li class="category" id="category-5">
-                                                <a class="dropdown-item dropdown-submenu"
-                                                    href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/5-women"
-                                                    data-depth="1">
-                                                    <span class="float-xs-right hidden-md-up">
-                                                        <span data-target="#top_sub_menu_88043" data-toggle="collapse"
-                                                            class="navbar-toggler collapse-icons">
-                                                            <i class="material-icons add">&#xE313;</i>
-                                                            <i class="material-icons remove">&#xE316;</i>
-                                                        </span>
-                                                    </span>
-                                                    Women
-                                                </a>
-                                                <div class="collapse" id="top_sub_menu_88043">
-
-                                                    <ul class="top-menu" data-depth="2">
-                                                        <li class="category" id="category-13">
-                                                            <a class="dropdown-item"
-                                                                href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/13-handbags"
-                                                                data-depth="2">
-                                                                Handbags
-                                                            </a>
-                                                        </li>
-                                                        <li class="category" id="category-14">
-                                                            <a class="dropdown-item"
-                                                                href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/14-loungewear"
-                                                                data-depth="2">
-                                                                Loungewear
-                                                            </a>
-                                                        </li>
-                                                        <li class="category" id="category-15">
-                                                            <a class="dropdown-item"
-                                                                href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/15-sports-wear"
-                                                                data-depth="2">
-                                                                Sports Wear
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-
-                                                </div>
-                                            </li>
-                                        </ul>
-
-                                    </div>
-                                </li>
-                                <li class="category" id="category-10">
-                                    <a class="dropdown-item"
-                                        href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/10-outlook"
-                                        data-depth="0">
-                                        Outlook
-                                    </a>
-                                </li>
-                                <li class="category" id="category-6">
-                                    <a class="dropdown-item"
-                                        href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/6-accessories"
-                                        data-depth="0">
-                                        <span class="float-xs-right hidden-md-up">
-                                            <span data-target="#top_sub_menu_87645" data-toggle="collapse"
-                                                class="navbar-toggler collapse-icons">
-                                                <i class="material-icons add">&#xE313;</i>
-                                                <i class="material-icons remove">&#xE316;</i>
-                                            </span>
-                                        </span>
-                                        Accessories
-                                    </a>
-                                    <div class="popover sub-menu js-sub-menu collapse twocolumn"
-                                        id="top_sub_menu_87645">
-
-                                        <ul class="top-menu" data-depth="1">
-                                            <li class="category" id="category-7">
-                                                <a class="dropdown-item dropdown-submenu"
-                                                    href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/7-stationery"
-                                                    data-depth="1">
-                                                    <span class="float-xs-right hidden-md-up">
-                                                        <span data-target="#top_sub_menu_67356" data-toggle="collapse"
-                                                            class="navbar-toggler collapse-icons">
-                                                            <i class="material-icons add">&#xE313;</i>
-                                                            <i class="material-icons remove">&#xE316;</i>
-                                                        </span>
-                                                    </span>
-                                                    Stationery
-                                                </a>
-                                                <div class="collapse" id="top_sub_menu_67356">
-
-                                                    <ul class="top-menu" data-depth="2">
-                                                        <li class="category" id="category-16">
-                                                            <a class="dropdown-item"
-                                                                href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/16-sunglasses"
-                                                                data-depth="2">
-                                                                Sunglasses
-                                                            </a>
-                                                        </li>
-                                                        <li class="category" id="category-17">
-                                                            <a class="dropdown-item"
-                                                                href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/17-wallets-belts"
-                                                                data-depth="2">
-                                                                Wallets &amp; Belts
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-
-                                                </div>
-                                            </li>
-                                            <li class="category" id="category-8">
-                                                <a class="dropdown-item dropdown-submenu"
-                                                    href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/8-home-accessories"
-                                                    data-depth="1">
-                                                    <span class="float-xs-right hidden-md-up">
-                                                        <span data-target="#top_sub_menu_26320" data-toggle="collapse"
-                                                            class="navbar-toggler collapse-icons">
-                                                            <i class="material-icons add">&#xE313;</i>
-                                                            <i class="material-icons remove">&#xE316;</i>
-                                                        </span>
-                                                    </span>
-                                                    Home Accessories
-                                                </a>
-                                                <div class="collapse" id="top_sub_menu_26320">
-
-                                                    <ul class="top-menu" data-depth="2">
-                                                        <li class="category" id="category-18">
-                                                            <a class="dropdown-item"
-                                                                href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/18-trendy-dresses"
-                                                                data-depth="2">
-                                                                Trendy Dresses
-                                                            </a>
-                                                        </li>
-                                                        <li class="category" id="category-19">
-                                                            <a class="dropdown-item"
-                                                                href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/19-traditional-dresses"
-                                                                data-depth="2">
-                                                                Traditional dresses
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-
-                                                </div>
-                                            </li>
-                                        </ul>
-
-                                    </div>
-                                </li>
-                                <li class="category" id="category-13">
-                                    <a class="dropdown-item"
-                                        href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/13-handbags"
-                                        data-depth="0">
-                                        Handbags
-                                    </a>
-                                </li>
-                                <li class="category" id="category-15">
-                                    <a class="dropdown-item"
-                                        href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/15-sports-wear"
-                                        data-depth="0">
-                                        Sports Wear
-                                    </a>
-                                </li>
-                                <li class="category" id="category-16">
-                                    <a class="dropdown-item"
-                                        href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/16-sunglasses"
-                                        data-depth="0">
-                                        Sunglasses
-                                    </a>
-                                </li>
-                                <li class="category" id="category-9">
-                                    <a class="dropdown-item"
-                                        href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/9-art"
-                                        data-depth="0">
-                                        Art
-                                    </a>
-                                </li>
                             </ul>
 
                             <div class="clearfix"></div>
@@ -1172,6 +1000,7 @@
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
     <script type="text/javascript" src="views/assets/js/bottom-b769945.js"></script>
     <script src="views/assets/js/jquery.flexslider.js"></script>
+    <script src="views/assets/js/jquery.addcart.js"></script>
     <script>
     $(window).load(function() {
     if ($('.flexslider').length > 0) {

@@ -39,13 +39,13 @@ class Home{
 
      function home()
      {
-      //   $producer = $this->model->getAllProducer();
-      //   $getHotPro =  $this->model->getHotPro();
-      //   $getAllPro = $this->model->getAllPro();
-      //   $getAllNewPro = $this->model->getAllNewPro();
-      //   $getAllViewsPro = $this->model->getAllViewsPro();
-      //   $getAllProSelling = $this->model->getAllProSelling();
+   
         $getAllProSpecial = $this->model->getAllProSpecial();
+        $getAllProAsc = $this->model->getAllProAsc();
+        $getAllByHotAsc = $this->model->getAllByHotAsc();
+        $getAllByBuyed = $this->model->getAllByBuyed();
+        $getAllProByDeal =  $this->model->getAllProByDeal();
+        $getMenuParent = $this->model->getMenuParent();
         $page_title ="Danh sách nhà sản xuất";
         $viewFile = "views/home.php";
         require_once "views/layout.php";  
@@ -53,19 +53,11 @@ class Home{
 
      function detail()
      {
-        $producer = $this->model->getAllProducer();
    
         $slug = $_GET['slug'];
       
         $sp = $this->model->getOnePro($slug);   
-        
-        $spSame = $this->model->getSamePro($slug);   
-
-        $property = $this->model->getProperty($slug);   
-
-        $comments = $this->model->getAllComment($slug);
-      
-        $viewFile = "views/detail.php";     
+        $viewFile = "views/Product-Detail.php";     
         require_once "views/layout.php";  
      }
 
