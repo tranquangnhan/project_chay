@@ -46,7 +46,6 @@ class Home{
       //   $getAllViewsPro = $this->model->getAllViewsPro();
       //   $getAllProSelling = $this->model->getAllProSelling();
         $getAllProSpecial = $this->model->getAllProSpecial();
-
         $page_title ="Danh sách nhà sản xuất";
         $viewFile = "views/home.php";
         require_once "views/layout.php";  

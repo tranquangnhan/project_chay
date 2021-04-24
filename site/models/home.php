@@ -6,6 +6,7 @@ class Model_home extends Model_db{
     function getAllProSpecial()
     {
         $sql = "SELECT * FROM product ORDER BY view DESC LIMIT 10";
+        return $this->result1(0,$sql);
     }
     function getHotPro($sosp=3){ 
         $sql = "SELECT * FROM dienthoai WHERE AnHien=1 AND Hot=1 ORDER BY idDT DESC LIMIT 0, $sosp";
