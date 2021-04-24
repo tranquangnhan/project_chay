@@ -35,22 +35,22 @@
                                                 $anHien = ($row['AnHien']=='1') ? '<span class="badge badge-success">Hiện</span>': '<span class="badge badge-danger">Ẩn</span>';
                                                 $hot = ($row['Hot']=='1') ? '<input type="radio" checked onclick="return false">': '<input  type="radio" onclick="return false">';
                                                 
-                                                $linkProperty = '?ctrl=thuoctinh&act=edit&idedit='.$row['idDT'];
-                                                $linkDel = "'?ctrl=dienthoai&act=delete&id=".$row['idDT']."'";
-                                                $linkEdit = '?ctrl=dienthoai&act=edit&id='.$row['idDT'];
+                                                $linkProperty = '?ctrl=properties&act=edit&idedit='.$row['id'];
+                                                $linkDel = "'?ctrl=product&act=delete&id=".$row['id']."'";
+                                                $linkEdit = '?ctrl=product&act=edit&id='.$row['id'];
                                                 
-                                                if(is_file(PATH_IMG_SITE.explode(",",$row['urlHinh'])[0])){
-                                                    $img = PATH_IMG_SITE.explode(",",$row['urlHinh'])[0];
+                                                if(is_file(PATH_IMG_SITE.explode(",",$row['image_list'])[0])){
+                                                    $img = PATH_IMG_SITE.explode(",",$row['image_list'])[0];
                                                 }else{
                                                     $img = PATH_IMG_SITE.'logo.png';
                                                 }
                                                 echo '<tr>
                                                         <td>'.$stt.'</td>
-                                                        <td class="" >'.$row['TenDT']." <br>". $anHien.'</td>
-                                                        <td><del class="giacu">'.$this->lib->forMatTien($row['Gia']).' đ</del><br> <span class="giamoi fw-bold text-danger ">'.$this->lib->forMatTien($row['GiaKM']).' đ</span> </td>
+                                                        <td class="" >'.$row['name']." <br>". $anHien.'</td>
+                                                        <td><del class="giacu">'.$this->lib->forMatTien($row['price']).' đ</del><br> <span class="giamoi fw-bold text-danger ">'.$this->lib->forMatTien($row['GiaKM']).' đ</span> </td>
                                                         <td><img style="object-fit:cover;" class="img-admin" width="100" height="100" src="'.$img.'"></td>
                                                         <td> '.$hot.'</td>
-                                                        <td>'.substr($row['MoTa'],0,10).' ..</td>
+                                                        <td>'.substr($row['description'],0,10).' ..</td>
                                                         <td><a href="'.$linkProperty.'"><div class="btn btn-success"><i class="fa fa-gear"></div></a></td>
                                                         <td><div  onclick="checkDelete('.$linkDel.')"  class="btn btn-danger" role="button"><i class="fa fa-trash"></i></div></td>
                                                         <td><a href=""><a name="" id="" class="btn btn-primary" href="'.$linkEdit.'" role="button"><span class="mdi mdi-pencil"></span></a></a></a></td>

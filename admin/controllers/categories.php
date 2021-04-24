@@ -1,11 +1,11 @@
 <?php 
-require_once "models/nhasanxuat.php"; 
+require_once "models/categories.php"; 
 
-class NhaSanXuat{
+class categories{
     function __construct()
     {
-        $this->model = new Model_nhaSanXuat();
-        $this->lib = new lib();
+        $this->model = new Model_categories();
+        // $this->lib = new lib();
         $act = "index";
 
         if(isset($_GET["act"])==true) $act = $_GET['act'];
@@ -31,35 +31,38 @@ class NhaSanXuat{
     }
     function index()
     {   $list = $this->model->listRecords();
-        $page_title ="Danh sách nhà sản xuất";
-        $page_file = "views/nhasanxuat_index.php";
+        
+        $page_title ="Danh sách danh mục";
+        $page_file = "views/categories_index.php";
         require_once "views/layout.php";
     }
     function addNew()
     {  
-        if(isset($_GET['id'])&&($_GET['act']='nhasanxuat')){
+        if(isset($_GET['id'])&&($_GET['act']='categories')){
             $oneRecode = $this->model->showOneProducer($_GET['id']);
+            $listchild = $this->model->showChildrenCategori();
             $page_title ="Sửa nhà sản xuất";
-            $page_file = "views/nhasanxuat_edit.php";
+            $page_file = "views/categories_edit.php";
         }else{
+            $listchild = $this->model->showChildrenCategori();
             $page_title ="Thêm nhà sản xuất";
-            $page_file = "views/nhasanxuat_add.php";
+            $page_file = "views/categories_add.php";
         }
 
-        if(isset($_POST['them'])&&$_POST['them']){
-            $name = $_POST['name'];
-            $order = $_POST['order'];
-            $showHide = ($_POST['showhide']) ? 1: 0;
-            $slug = $this->lib->slug($name);
-            if(isset($_GET['id'])){
-                $id = $_GET['id'];
-                settype($id,"int");
-                $this->edit($name,$order,$showHide,$slug,$id);
-            }else{
-                $this->store($name,$order,$showHide,$slug);
-            }
+        // if(isset($_POST['them'])&&$_POST['them']){
+        //     $name = $_POST['name'];
+        //     $order = $_POST['order'];
+        //     $showHide = ($_POST['showhide']) ? 1: 0;
+        //     $slug = $this->lib->slug($name);
+        //     if(isset($_GET['id'])){
+        //         $id = $_GET['id'];
+        //         settype($id,"int");
+        //         $this->edit($name,$parent,$slug,$id);
+        //     }else{
+        //         $this->store($name,$order,$showHide,$slug);
+        //     }
            
-        }
+        // }
      
         require_once "views/layout.php";
     }//thêm mới dữ liệu vào db

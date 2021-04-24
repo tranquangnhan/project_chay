@@ -1,12 +1,12 @@
 <?php 
-require_once "models/dienthoai.php"; 
-require_once "models/nhasanxuat.php"; 
+require_once "models/product.php"; 
+// require_once "models/nhasanxuat.php"; 
 require_once "../lib/myfunctions.php"; 
-class DienThoai{
+class Product{
     function __construct()
     {
-        $this->model = new Model_dienThoai();
-        $this->modelNSX = new Model_nhaSanXuat();
+        $this->model = new Model_product();
+        $this->modelCate = new Model_categories();
         $this->lib = new lib();
         $act = "index";
 
@@ -50,20 +50,20 @@ class DienThoai{
         $Pagination =  $this->model->Page($TotalProduct, $CurrentPage);
 
         $page_title ="Danh sách nhà sản xuất";
-        $page_file = "views/dienthoai_index.php";
+        $page_file = "views/product_index.php";
         require_once "views/layout.php";
     }
     function addNew()
     {  
-        if(isset($_GET['id'])&&($_GET['act']='dienthoai')){
+        if(isset($_GET['id'])&&($_GET['act']='product')){
             $oneRecode = $this->model->showOnePhone($_GET['id']);
-            $producer = $this->modelNSX->listRecords();
+            $producer = $this->modelcate->listRecords();
             $page_title ="Sửa Điện Thoại";
-            $page_file = "views/dienthoai_edit.php";
+            $page_file = "views/product_edit.php";
         }else{
             $producer = $this->modelNSX->listRecords();
             $page_title ="Thêm Điện Thoại";
-            $page_file = "views/dienthoai_add.php";
+            $page_file = "views/product_add.php";
         }
 
         if(isset($_POST['them'])&&$_POST['them'])
