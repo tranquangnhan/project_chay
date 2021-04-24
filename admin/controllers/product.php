@@ -74,7 +74,7 @@ class Product{
             $discount = $_POST['discount'];
             $img = $_FILES['img'];
             $imgs = $this->lib->checkUpLoadMany($img);
-            $inventory = $_POST['inventory'];
+            // $inventory = $_POST['inventory'];
             $IDCate = $_POST['IDCate'];
             $hot = $_POST['hot'];
             if ($hot) {

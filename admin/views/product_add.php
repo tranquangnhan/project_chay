@@ -61,8 +61,8 @@
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="">Inventory number</label>
-                                                    <input type="number" class="form-control" value="<?=$oneRecode['SoLuongTonKho']?>" name="inventory" placeholder="Amount">
+                                                    <label for="">Color</label>
+                                                    <input type="text" class="form-control" value="<?=$oneRecode['color']?>" name="color"  placeholder="Size">
                                                 </div> 
                                             </div>
                                         </div>
@@ -93,14 +93,7 @@
                                                 </div> 
                                             </div>
                                         </div>
-                                        <div class="row">
-                                        <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="">Color</label>
-                                                    <input type="text" class="form-control" value="<?=$oneRecode['color']?>" name="color"  placeholder="Size">
-                                                </div> 
-                                            </div>
-                                        </div>
+                                     
                                         <div class="row">
                                             <div class="col-lg-3">
                                                 <div class="form-group">
