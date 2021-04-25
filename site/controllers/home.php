@@ -4,11 +4,11 @@ require_once "../system/database.php";
 // require_once "../lib/myfunctions.php";
 
 require_once "models/home.php"; 
-// require_once "models/user.php";
+require_once "models/user.php";
 class Home{
     function __construct()   {
         $this->model = new model_home();
-      //   $this->modelUser = new Model_user();
+        $this->modelUser = new Model_user();
       //   $this->lib = new lib();
        
         if(isset($_GET['q'])){
@@ -215,7 +215,22 @@ class Home{
       }
 
       function login()
-      {
+      {  
+         if(isset($_POST['login'])&&($_POST['login'])){
+            $email= $_POST['email'];
+            $pass = $_POST['password'];
+            $exist = $this->modelUser->checkEmailTonTai($email);
+            if($exist != null){
+               $checklogin = $this->modelUser->checkUser($email,$pass);
+               if($checklogin == true){
+                  header('location: ?ctrl=home');
+               }else{
+                  $checkloginwarn = 'Your password is not valid';
+               }
+            }else{
+               $emailexist= 'Your email does not exist!';
+            }
+         }
 
          $viewFile ="views/login.php";
          require_once "views/layout.php";

@@ -4,29 +4,25 @@ use SendGrid\Mail\Mail;
 use SendGrid\Mail\TypeException;
 
     session_start(); 
-    $lib = new lib();    
+    // $lib = new lib();    
 class Model_user extends Model_db{ 
     
-    function checkUser($user,$pass,$remember){
-        if($remember) {
-            $_COOKIE['sessionId'] = session_id();
-        } else{
-            unset($_COOKIE);
-        } 
-        $user = str_replace(";","",$user);
-        $user = str_replace("'","",$user);
-        $user = str_replace('"',"",$user);
+    function checkUser($email,$pass){
+       
+        $email = str_replace(";","",$email);
+        $email = str_replace("'","",$email);
+        $email = str_replace('"',"",$email);
         $pass = str_replace(";","",$pass);
         $pass = str_replace("'","",$pass);
         $pass = str_replace('"',"",$pass);
-        $user = addslashes($user);
+        $email = addslashes($email);
         $pass = addslashes($pass);
-        $sql = "select * from users where Username=? and Password=?";
-        $user = $this->result1(1,$sql,$user,$pass);
-        if(is_array($user)){
-            $_SESSION['sid'] = $user['idUser'];
-            $_SESSION['suser']= $user['Username'];
-            $_SESSION['role'] = $user['VaiTro'];
+        $sql = "select * from user where email=? and pass=?";
+        $email = $this->result1(1,$sql,$email,$pass);
+        if(is_array($email)){
+            $_SESSION['sid'] = $email['idUser'];
+            $_SESSION['suser']= $email['name'];
+            $_SESSION['srole'] = $email['role'];
             return true;
         }else{
             return false;
@@ -64,9 +60,10 @@ class Model_user extends Model_db{
         return $this->result1(1,$sql,$user);
     }
     function checkEmailTonTai($email){
-        $sql = "select * from users where email=?";
+        $sql = "select * from user where email=?";
         return $this->result1(1,$sql,$email);
     }
+    
     function checkPhoneTonTai($phone){
         $sql = "select * from users where sodienthoai=?";
         return $this->result1(1,$sql,$phone);

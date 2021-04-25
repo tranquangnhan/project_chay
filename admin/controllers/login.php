@@ -29,28 +29,26 @@ class Login
     {   
         if(isset($_POST['login'])&&($_POST['login']))
         {
-            $user = $this->lib->stripTags($_POST['user']);
-            $pass = $this->lib->stripTags($_POST['password']);
-            $taiKhoan = $this->model->checkUser($user,$pass);
-
-            if($user == ""||$pass == ""){
-                $_SESSION['error_taikhoan'] = "Vui lòng điền đầy đủ thông tin.";
-            }elseif(empty($taiKhoan)){
-                $_SESSION['error_taikhoan'] = "Tài khoản hoặc mật khẩu không đúng.";
-            }
-            else
-            {
-                if($taiKhoan&&($taiKhoan['VaiTro']==1))
-                {
-                    $_SESSION['sid'] = $taiKhoan['idUser'];
-                    $_SESSION['suser'] = $taiKhoan['Username'];
-                    $_SESSION['role'] = $taiKhoan['VaiTro'];
-                    header("location: ".ROOT_URL."/admin.php");
+            
+                $email= $_POST['email'];
+                $pass = $_POST['password'];
+                $exist = $this->model->checkEmailTonTai($email);
+                if($exist != null){
+                   $checklogin = $this->model->checkUser($email,$pass);
+                   if($checklogin == true){
+                      
+                      if($_SESSION['srole'] == 0){
+                          $role = 'You are not admin';
+                      }else{
+                        header('location: ../?ctrl=home');
+                      }
+                   }else{
+                      $checkloginwarn = 'Your password is not valid';
+                   }
                 }else{
-
-                    header('location: login.php?act=login');
+                   $emailexist= 'Your email does not exist!';
                 }
-            }
+             
     
         }
         require_once "../views/login.php";

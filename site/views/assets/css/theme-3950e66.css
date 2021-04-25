@@ -22650,3 +22650,13 @@ html[xmlns] .flexslider .slides {
 .hidden {
     display: none !important;
 }
+
+.login,
+.kk-innertitle {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#submit-login {
+    margin-top: 20px;
+}

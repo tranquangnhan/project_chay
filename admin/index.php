@@ -1,6 +1,6 @@
 <?php
   session_start();
-  // if(isset($_SESSION['role'])&&($_SESSION['role']==1)){
+  if(isset($_SESSION['srole'])&&($_SESSION['srole']==1)){
     require_once "../system/config.php";
     require_once "../system/database.php";
 
@@ -16,8 +16,8 @@
     }
     else echo "controllers $ctrl not found 404";
     require_once "views/layout.php";
-  // }
-  // else{
-  //   header("location: controllers/login.php");
-  // }
+  }
+  else{
+    header("location: controllers/login.php");
+  }
 ?>
