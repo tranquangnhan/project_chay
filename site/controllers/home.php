@@ -27,7 +27,7 @@ class Home{
          case "cat": $this->cat(); break;
          case "vnpay": $this->vnpay(); break;
          case "ttthanhcong": $this->ttthanhcong(); break;
-         case "loginregister": $this->loginRegister();break;
+         case "login": $this->login();break;
          case "active":$this->active();break;
          case "logout":$this->logout();break; 
          case "product":$this->product();break;
@@ -62,9 +62,9 @@ class Home{
         $TotalProduct = $this->model->countAllProduct($idCate);
         if($TotalProduct == 0) $TotalProduct =1;
         $listProduct = $this->model-> GetProductList($idCate,$CurrentPage);
-      
+        $baselink = 'site/?act=product&slug=perfume&id=6&Page=2';
 
-        $Pagination =  $this->model->Page($TotalProduct, $CurrentPage);
+        $Pagination =  $this->model->Page($TotalProduct, $CurrentPage,$baselink);
          
          // $listProduct = $this->model->showProductByCate($idCate);
          
@@ -105,7 +105,7 @@ class Home{
          if($TotalProduct == 0) $TotalProduct =1;
    
          $ProductList = $this->model-> GetProductList($slug,$CurrentPage,$from,$to,$hot,$query);
- 
+         
  
          $Pagination =  $this->model->Page($TotalProduct, $CurrentPage);
 
@@ -202,10 +202,10 @@ class Home{
          require_once "views/layout.php";
       }
 
-      function loginRegister()
+      function login()
       {
 
-         $viewFile ="views/login-register.php";
+         $viewFile ="views/login.php";
          require_once "views/layout.php";
       }
       function active()
