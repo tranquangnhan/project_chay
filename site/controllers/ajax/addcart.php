@@ -85,6 +85,18 @@
                     $id = $motsp[0];
                     $gia = $motsp[5];
                     $slmotsp = $motsp[1];
+                    $size = $motsp[2];
+                    $mau = $motsp[3];
+                    if($size != 'null'){
+                        $size = '  <span class="label">Size: '.$size .'</span>';
+                    }else{
+                        $size ='';
+                    }
+                    if($mau != 'null'){
+                        $mau = '  <span class="label">Color: '.$mau.'</span>';
+                    }else{
+                        $mau ='';
+                    }
                     $kq .= '  <div class="product">
                     <!--  image-->
                     <div class="cart-img">
@@ -109,6 +121,10 @@
                         </div>
 
                         <ul class="product-atributes">
+                            <li class="atributes">
+                                '.$size.'
+                                '.$mau.'
+                            </li>
                         </ul>
 
                     </div>

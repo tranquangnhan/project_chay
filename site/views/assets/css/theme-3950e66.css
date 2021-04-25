@@ -94,7 +94,6 @@
 .owl-carousel .owl-item img {
     display: block;
     max-width: 100%;
-    width: auto
 }
 
 .owl-carousel .owl-dots.disabled,
@@ -9302,6 +9301,11 @@ body#checkout #gift_message textarea {
 
 .product-img {
     overflow: hidden
+}
+
+.product-img img {
+    width: 100%;
+    object-fit: cover;
 }
 
 #products .product-title a,

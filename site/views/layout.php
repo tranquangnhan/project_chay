@@ -8,12 +8,14 @@
     <title>Demo Shop</title>
     <meta name="description" content="Shop powered by PrestaShop">
     <meta name="keywords" content="">
-    <link rel="alternate" href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/" hreflang="en-us">
-    <link rel="alternate" href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/es/" hreflang="es-es">
+   
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/vnd.microsoft.icon" href="/Prestashop/PRS01/PRS012/img/favicon.ico?1538137004">
     <link rel="shortcut icon" type="image/x-icon" href="/Prestashop/PRS01/PRS012/img/favicon.ico?1538137004">
     <link rel="stylesheet" href="views/assets/css/theme-3950e66.css" type="text/css" media="all">
+    <link rel="stylesheet" href="views/assets/css/SweetAlert2.css">
     <script type="text/javascript">
     var baseDir = "\/project_chay\/site\/";
     var kkproductsblock = {
@@ -307,22 +309,15 @@
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="language-selector-label">
                                     <li class="current">
-                                        <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/"
+                                        <a href="#"
                                             class="dropdown-item" data-iso-code="en">English</a>
                                     </li>
                                     <li>
-                                        <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/es/"
+                                        <a href="#"
                                             class="dropdown-item" data-iso-code="es">Español</a>
                                     </li>
                                 </ul>
-                                <!-- <select class="link hidden-md-up" aria-labelledby="language-selector-label">
-                  <option value="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/" selected="selected" data-iso-code="en">
-            English
-          </option>
-                  <option value="https://infinitytemplate.com/Prestashop/PRS01/PRS012/es/" data-iso-code="es">
-            Español
-          </option>
-              </select> -->
+                              
 
                             </div>
 
@@ -337,12 +332,12 @@
                                 <ul class="dropdown-menu " aria-labelledby="currency-selector-label">
                                     <li>
                                         <a title="Euro" rel="nofollow"
-                                            href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/?SubmitCurrency=1&amp;id_currency=2"
+                                            href="#"
                                             class="dropdown-item">EUR </a>
                                     </li>
                                     <li class="current">
                                         <a title="US Dollar" rel="nofollow"
-                                            href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/?SubmitCurrency=1&amp;id_currency=1"
+                                            href="#"
                                             class="dropdown-item">USD $</a>
                                     </li>
                                 </ul>
@@ -384,7 +379,7 @@
                                 <div class="user-info-inner">
                                     <div class="kkuserheading"></div>
                                     <ul class="user-info">
-                                        <li><a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/my-account"
+                                        <li><a href="#"
                                                 title="Log in to your customer account" rel="nofollow">
                                                 <i class="material-icons user">&#xE7FF;</i>
                                                 <span class="hidden-sm-down">Sign in</span>
@@ -437,7 +432,7 @@
 
                     <div class="desktop_logo">
                         <h1>
-                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/">
+                            <a href="#">
                                 <img class="logo img-responsive" src="views/assets/img/demo-shop-logo-1538137004.jpg"
                                     alt="Demo Shop">
                             </a>
@@ -656,7 +651,7 @@
                                         <p class="newsletter-desc">Wants to get latest updates! sign up for free.</p>
 
 
-                                        <form action="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/#footer"
+                                        <form action="#"
                                             method="post">
                                             <div class="row">
                                                 <div class="newslatter-inner">
@@ -766,28 +761,28 @@
                                         <ul id="footer_sub_menu_8589" class="collapse">
                                             <li>
                                                 <a id="link-product-page-prices-drop-1" class="cms-page-link"
-                                                    href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/prices-drop"
+                                                    href="#"
                                                     title="Our special products">
                                                     Prices drop
                                                 </a>
                                             </li>
                                             <li>
                                                 <a id="link-product-page-new-products-1" class="cms-page-link"
-                                                    href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/new-products"
+                                                    href="#"
                                                     title="Our new products">
                                                     New products
                                                 </a>
                                             </li>
                                             <li>
                                                 <a id="link-product-page-best-sales-1" class="cms-page-link"
-                                                    href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/best-sales"
+                                                    href="#"
                                                     title="Our best sales">
                                                     Best sales
                                                 </a>
                                             </li>
                                             <li>
                                                 <a id="link-static-page-contact-1" class="cms-page-link"
-                                                    href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/contact-us"
+                                                    href="#"
                                                     title="Use our form to contact us">
                                                     Contact us
                                                 </a>
@@ -809,28 +804,28 @@
                                         <ul id="footer_sub_menu_3249" class="collapse">
                                             <li>
                                                 <a id="link-cms-page-4-2" class="cms-page-link"
-                                                    href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/content/4-about-us"
+                                                    href="#"
                                                     title="Learn more about us">
                                                     About us
                                                 </a>
                                             </li>
                                             <li>
                                                 <a id="link-cms-page-5-2" class="cms-page-link"
-                                                    href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/content/5-secure-payment"
+                                                    href="#"
                                                     title="Our secure payment method">
                                                     Secure payment
                                                 </a>
                                             </li>
                                             <li>
                                                 <a id="link-static-page-sitemap-2" class="cms-page-link"
-                                                    href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/sitemap"
+                                                    href="#"
                                                     title="Lost ? Find what your are looking for">
                                                     Sitemap
                                                 </a>
                                             </li>
                                             <li>
                                                 <a id="link-static-page-my-account-2" class="cms-page-link"
-                                                    href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/my-account"
+                                                    href="#"
                                                     title="">
                                                     My account
                                                 </a>
@@ -842,7 +837,7 @@
                             <div id="block_myaccount_infos" class="col-lg-3 links hb-animate-element bottom-to-top">
                                 <h3 class="myaccount-title hidden-sm-down">
                                     <a class="text-uppercase"
-                                        href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/my-account"
+                                        href="#"
                                         rel="nofollow">
                                         Your account
                                     </a>
@@ -859,25 +854,25 @@
                                 </div>
                                 <ul class="account-list collapse" id="footer_account_list">
                                     <li>
-                                        <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/identity"
+                                        <a href="#"
                                             title="Personal info" rel="nofollow">
                                             Personal info
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/order-history"
+                                        <a href="#"
                                             title="Orders" rel="nofollow">
                                             Orders
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/credit-slip"
+                                        <a href="#"
                                             title="Credit slips" rel="nofollow">
                                             Credit slips
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/addresses"
+                                        <a href="#"
                                             title="Addresses" rel="nofollow">
                                             Addresses
                                         </a>
@@ -1004,6 +999,7 @@
     <script type="text/javascript" src="views/assets/js/bottom-b769945.js"></script>
     <script src="views/assets/js/jquery.flexslider.js"></script>
     <script src="views/assets/js/jquery.addcart.js"></script>
+    <script src="views/assets/js/SweetAlert2.js"></script>
     <script>
     $(window).load(function() {
         if ($('.flexslider').length > 0) {
