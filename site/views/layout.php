@@ -12,8 +12,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/vnd.microsoft.icon" href="/Prestashop/PRS01/PRS012/img/favicon.ico?1538137004">
-    <link rel="shortcut icon" type="image/x-icon" href="/Prestashop/PRS01/PRS012/img/favicon.ico?1538137004">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="views/assets/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="views/assets/img/favicon.ico">
     <link rel="stylesheet" href="views/assets/css/theme-3950e66.css" type="text/css" media="all">
     <link rel="stylesheet" href="views/assets/css/SweetAlert2.css">
     <script type="text/javascript">
