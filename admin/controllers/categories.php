@@ -101,6 +101,7 @@ class categories{
 
     function delete()
     {
+        echo 'oke';
         if(isset($_GET['id'])&&($_GET['ctrl']=='categories')){
             $id = $_GET['id'];
             settype($id,"int");
