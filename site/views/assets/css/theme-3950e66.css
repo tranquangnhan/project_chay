@@ -13089,7 +13089,8 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 }
 
 #header .logo {
-    max-width: 100%
+    margin-top: -10px;
+    max-width: 30%
 }
 
 #header .blockcart .cart-desc {
@@ -18262,6 +18263,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 #kkstoreinfo #kkstoreinfo-container .store-logo {
     display: inline-block;
     margin-bottom: 25px
+}
+
+.store-logo img {
+    width: 50%;
+    margin-left: 70px;
 }
 
 #kkstoreinfo #kkstoreinfo-container .store-description p {

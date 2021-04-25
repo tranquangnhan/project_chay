@@ -1092,7 +1092,7 @@
   </div>
 </section>
 
-<div id="custom-leftbannerblock" class="leftbannercms col-lg-3 col-md-12 hb-animate-element left-to-right clearfix">
+<!-- <div id="custom-leftbannerblock" class="leftbannercms col-lg-3 col-md-12 hb-animate-element left-to-right clearfix">
 		<div id="custom-leftbannerblock" class="clearfix">
 		<div id="kkleftbanners" class="kkleftbanners-container">
 				<div class="image-container slider">
@@ -1102,7 +1102,7 @@
 				</div>
 		</div>
 	</div>
-	</div>
+	</div> -->
 <section class="featured-products clearfix mt-3 hb-animate-element left-to-right"> 
   <h3 class="h1 products-section-title left-product-title text-uppercase hidden-md-down ">
     Best Sellers

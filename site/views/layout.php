@@ -12,8 +12,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/vnd.microsoft.icon" href="views/assets/img/favicon.ico">
-    <link rel="shortcut icon" type="image/x-icon" href="views/assets/img/favicon.ico">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="views/assets/img/Logo-hang-Ella.png">
+    <link rel="shortcut icon" type="image/x-icon" href="views/assets/img/Logo-hang-Ella.png">
     <link rel="stylesheet" href="views/assets/css/theme-3950e66.css" type="text/css" media="all">
     <link rel="stylesheet" href="views/assets/css/SweetAlert2.css">
     <script type="text/javascript">
@@ -394,7 +394,7 @@
                     <div class="desktop_logo">
                         <h1>
                             <a href="#">
-                                <img class="logo img-responsive" src="views/assets/img/demo-shop-logo-1538137004.jpg"
+                                <img class="logo img-responsive" src="views/assets/img/Logo-hang-Ella.png"
                                     alt="Demo Shop">
                             </a>
                         </h1>
@@ -578,9 +578,9 @@
                                 </div>
 
                                 <div id="kkstoreinfo-container" class="kkstoreinfo-inner collapse footer-dropdown">
-                                    <a href="http://infinitytemplate.com/Prestashop/PRS01/PRS012/" class="store-logo">
-                                        <img src="views/assets/img/demo-shop-logo-1538137004-1.png"
-                                            alt="demo-shop-logo-1538137004-1.png">
+                                    <a href="#" class="store-logo">
+                                        <img src="views/assets/img/Logo-hang-Ella.png"
+                                            alt="Logo-hang-Ella.png">
                                     </a>
                                     <div class="store-description">
                                         <p>Sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
