@@ -261,7 +261,7 @@
                             <li>
                                 <a href="?ctrl=order">
                                     <i class="mdi mdi-page-layout-sidebar-left"></i>
-                                    <span>Đơn Hàng</span>
+                                    <span>Order</span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 

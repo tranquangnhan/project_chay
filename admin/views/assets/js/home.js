@@ -1,13 +1,13 @@
 function checkDelete(link) {
     Swal.fire({
-        title: 'Xoá?',
-        text: "Bạn có chắc xoá nó không!",
+        title: 'Delete?',
+        text: "Are you sure to delete!",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Xoá!',
-        cancelButtonText: 'Huỷ',
+        confirmButtonText: 'Yes!',
+        cancelButtonText: 'Cancel',
     }).then((result) => {
         if (result.isConfirmed) {
             window.location.href = link;
@@ -17,14 +17,14 @@ function checkDelete(link) {
 
 function checkStatus(iddh) {
     Swal.fire({
-        title: 'Cập nhật?',
-        text: "Bạn có đã xử lí xong?",
+        title: 'Update?',
+        text: "Are you done?",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Xong!',
-        cancelButtonText: 'Chưa',
+        confirmButtonText: 'Oke!',
+        cancelButtonText: 'No',
     }).then(async(result) => {
         if (result.isConfirmed) {
             let checkStatus = new FormData();
@@ -45,7 +45,7 @@ function checkStatus(iddh) {
                         await Swal.fire({
                             timer: 2000,
                             type: 'success',
-                            title: 'Thành công',
+                            title: 'Yeah',
                             showConfirmButton: false,
                             showCancelButton: false,
                             icon: "success"
@@ -54,7 +54,7 @@ function checkStatus(iddh) {
                     } else if (response.StatusCode === 1) {
                         Swal.fire({
                             type: 'error',
-                            title: 'Lỗi.',
+                            title: 'Oops.',
                             showConfirmButton: true,
                             showCancelButton: false,
                             icon: "error"

@@ -25,11 +25,11 @@
                                         </div>
                                     </div>
 
-                                    <h4 class="header-title mt-0 mb-3">Sản Phẩm</h4>
+                                    <h4 class="header-title mt-0 mb-3">Product</h4>
 
                                     <form data-parsley-validate novalidate method="post" enctype="multipart/form-data">
                                         <div class="form-group">
-                                            <label for="">Hình ảnh</label>
+                                            <label for="">Image</label>
                                             <br>
                                             <?php
                                                 if(is_file(PATH_IMG_SITE.explode(",",$oneRecode['image_list'])[0])){
@@ -122,8 +122,8 @@
                                         </textarea>
 
                                         <div class="form-group text-right mb-0 mt-5">
-                                            <input type="submit" name="them" class="btn btn-primary waves-effect waves-light mr-1" value="Sửa">
-                                           <a href="?ctrl=dienthoai&act=index" clas="btn btn-secondary waves-effect waves-light">Huỷ</a>
+                                            <input type="submit" name="them" class="btn btn-primary waves-effect waves-light mr-1" value="Edit">
+                                           <a href="?ctrl=dienthoai&act=index" clas="btn btn-secondary waves-effect waves-light">Cancel</a>
                                         </div>
 
                                     </form>
