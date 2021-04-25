@@ -1,7 +1,8 @@
 // show giỏ hàng
+
 $.post("controllers/ajax/addcart.php",
     function(data) {
-        $('#slcart').html(data);
+        $('#_desktop_cart').html(data);
     }
 );
 
@@ -13,28 +14,43 @@ function addCart(id) {
     $("#canhbao").css('display', 'none');
     $("#canhbao").text('');
 
-    if ($("#group_1") && $("#group_1").val() == '') {
-        alert('chọn size')
-        $("#canhbao").css('display', 'block');
-        $("#canhbao").text('Vui lòng chọn size !');
+    if ($("#group_1").length == 0) {
+        size = 'null';
+    }
+    if ($(".input-color").length == 0) {
+        mausac = 'null';
+    }
+    if ($("#group_1").length > 0 && !$("#group_1").val()) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Please choose a size',
+        })
+
         return false;
     }
-    if ($(".input-color") && !$(".input-color:checked").val()) {
-        alert('chọn màu')
-        $("#canhbao").css('display', 'block');
-        $("#canhbao").text('Vui lòng chọn màu sắc !');
+    if ($(".input-color").length > 0 && !$(".input-color:checked").val()) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Please choose a color',
+        })
+
         return false;
     } else {
-        // $("#canhbao").css('display', 'none');
         $.post("controllers/ajax/addcart.php", { id: id, sl: sl, size: size, mausac: mausac },
             function(data) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Oops...',
+                    text: 'Add to cart successfully',
+                })
                 $('#_desktop_cart').html(data);
             }
         );
     }
     return true;
 }
-addCart();
 
 
 

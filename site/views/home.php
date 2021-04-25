@@ -12,7 +12,7 @@
             <ul class="slides">
                 <li class="slide">
 
-                    <a href="http://www.prestashop.com/?utm_source=back-office&amp;utm_medium=v17_kkslider&amp;utm_campaign=back-office-EN&amp;utm_content=download"
+                    <a href="#"
                         title="kslider-1">
                         <img src="views/assets/img/kslider-1.jpg" alt="kslider-1" title="KSlider1" />
                     </a>
@@ -21,7 +21,7 @@
                 </li>
                 <li class="slide">
 
-                    <a href="http://www.prestashop.com/?utm_source=back-office&amp;utm_medium=v17_kkslider&amp;utm_campaign=back-office-EN&amp;utm_content=download"
+                    <a href="#"
                         title="kslider-2">
                         <img src="views/assets/img/kslider-2.jpg" alt="kslider-2" title="KSlider2" />
                     </a>
@@ -126,7 +126,7 @@
                                                           
                                                       </div>';
                                         }
-
+                                        $link = ROOT_URL."/product/".$row['slug'];
                                             echo '<div class="kktab-block">
                                           <article class="product-miniature js-product-miniature " data-id-product="17"
                                             data-id-product-attribute="46" itemscope itemtype="http://schema.org/Product">
@@ -137,15 +137,15 @@
                 
                                                             <div class="product-img">
                 
-                                                                <a href=""
+                                                                <a href="'. $link.'"
                                                                     class="thumbnail product-thumbnail">
                 
                                                                     <img src="'. $img.'"
                                                                         alt="Pellentesque augue"
-                                                                        data-full-size-image-url="../uploads/mountain-fox-notebook.jpg">
+                                                                        data-full-size-image-url="'. $img.'" height="250" >
                                                                     <img class="second_image img-responsive"
-                                                                        src="https://infinitytemplate.com/Prestashop/PRS01/PRS012/36-home_default/mountain-fox-notebook.jpg"
-                                                                        alt="" title="" />
+                                                                        src="'. $imgCover.'"
+                                                                        alt="" title="" height="250" width="200" />
                                                                 </a>
                                                             </div>
                                                             <ul class="product-flags">
@@ -159,10 +159,9 @@
                                                         <div class="kkproducthover">
                                                 
                                                             <div class="quick-view-block">
-                                                                <a href="#" class="quick-view btn" data-link-action="quickview"
+                                                                <a href="'. $link.'" class=" btn" 
                                                                     title="Quick view">
-                                                                    <i class="material-icons search">&#xE8B6;</i> <span>Quick
-                                                                        view</span>
+                                                                 
                                                                 </a>
                                                             </div>
                 
@@ -175,64 +174,14 @@
                 
                 
                                                         <h3 class="h3 product-title" itemprop="name"><a
-                                                                href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/17-mountain-fox-notebook.html">'.$row['name'].'</a></h3>
+                                                                href="'. $link.'">'.$row['name'].'</a></h3>
                 
                 
                                                         '.$giaDiscount.'
-
-                                                        <p class="product-desc" itemprop="description">
-                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris
-                                                            eleifend, quam a vulputate dictum, massa quam dapibus leo.
-                                                        </p>
                 
-                
-                
-                                                        <div class="variant-links">
-                                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/17-46-mountain-fox-notebook.html#/3-size-l/15-color-green"
-                                                                class="color" title="Green" style="background-color: #A0D468"><span
-                                                                    class="sr-only">Green</span></a>
-                                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/17-47-mountain-fox-notebook.html#/3-size-l/16-color-yellow"
-                                                                class="color" title="Yellow" style="background-color: #F1C40F"><span
-                                                                    class="sr-only">Yellow</span></a>
-                                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/17-48-mountain-fox-notebook.html#/3-size-l/17-color-brown"
-                                                                class="color" title="Brown" style="background-color: #964B00"><span
-                                                                    class="sr-only">Brown</span></a>
-                                                            <span class="js-count count"></span>
-                                                        </div>
-                
-                
-                                                        <div class="cart-block">
-                                                            <div class="product-add-to-cart">
-                                                                <form
-                                                                    action="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/cart"
-                                                                    method="post" class="add-to-cart-or-refresh">
-                                                                    <div class="product-quantity" style="display:none;">
-                                                                        <input type="number" name="id_product" value="17"
-                                                                            class="product_page_product_id">
-                                                                        <input type="number" name="id_customization" value="0"
-                                                                            class="product_customization_id">
-                                                                        <input type="hidden" name="token"
-                                                                            value="9407b95b9bb08d999434e20be614587e">
-                                                                        <input type="number" name="qty"
-                                                                            class="quantity_wanted input-group" value="1" min="1" />
-                                                                    </div>
-                                                                    <button
-                                                                        class="button ajax_add_to_cart_button add-to-cart btn btn-default"
-                                                                        data-button-action="add-to-cart" title="Add to cart">
-                                                                        <span>Add to cart</span>
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-                
+    
                                                     </div>
-                                                    <div class="highlighted-informations hidden-sm-down">
-                
-                                                        <a class="quick-view" href="#" data-link-action="quickview">
-                                                            <i class="material-icons search">&#xE8B6;</i> Quick view
-                                                        </a>
-                
-                                                    </div>
+                               
                 
                                                 </div>
                                             </div>
@@ -288,118 +237,68 @@
                                                           
                                                       </div>';
                                         }
-
-                                            echo '<div class="kktab-block">
-                                          <article class="product-miniature js-product-miniature " data-id-product="17"
-                                            data-id-product-attribute="46" itemscope itemtype="http://schema.org/Product">
-                                            <div class="thumbnail-container">
-                                                <div class="product-inner">
-                                                    <div class="thumbnail-inner">
-                                                        <div class="inner">
-                
-                                                            <div class="product-img">
-                
-                                                                <a href=""
-                                                                    class="thumbnail product-thumbnail">
-                
-                                                                    <img src="'. $img.'"
-                                                                        alt="Pellentesque augue"
-                                                                        data-full-size-image-url="../uploads/mountain-fox-notebook.jpg">
-                                                                    <img class="second_image img-responsive"
-                                                                        src="https://infinitytemplate.com/Prestashop/PRS01/PRS012/36-home_default/mountain-fox-notebook.jpg"
-                                                                        alt="" title="" />
-                                                                </a>
-                                                            </div>
-                                                            <ul class="product-flags">
-                                                              '.$discount.'
-                                                                '.$new.'
-                                                              
-                                                            </ul>
-                
+                                        $link = ROOT_URL."/product/".$row['slug'];
+                                        $link = ROOT_URL."/product/".$row['slug'];
+                                        echo '<div class="kktab-block">
+                                      <article class="product-miniature js-product-miniature " data-id-product="17"
+                                        data-id-product-attribute="46" itemscope itemtype="http://schema.org/Product">
+                                        <div class="thumbnail-container">
+                                            <div class="product-inner">
+                                                <div class="thumbnail-inner">
+                                                    <div class="inner">
+            
+                                                        <div class="product-img">
+            
+                                                            <a href="'. $link.'"
+                                                                class="thumbnail product-thumbnail">
+            
+                                                                <img src="'. $img.'"
+                                                                    alt="Pellentesque augue"
+                                                                    data-full-size-image-url="'. $img.'" height="250" >
+                                                                <img class="second_image img-responsive"
+                                                                    src="'. $imgCover.'"
+                                                                    alt="" title="" height="250" width="200" />
+                                                            </a>
                                                         </div>
-                
-                                                        <div class="kkproducthover">
-                                                
-                                                            <div class="quick-view-block">
-                                                                <a href="#" class="quick-view btn" data-link-action="quickview"
-                                                                    title="Quick view">
-                                                                    <i class="material-icons search">&#xE8B6;</i> <span>Quick
-                                                                        view</span>
-                                                                </a>
-                                                            </div>
-                
-                
-                                                        </div>
+                                                        <ul class="product-flags">
+                                                          '.$discount.'
+                                                            '.$new.'
+                                                          
+                                                        </ul>
+            
                                                     </div>
-                
-                
-                                                    <div class="product-description">
-                
-                
-                                                        <h3 class="h3 product-title" itemprop="name"><a
-                                                                href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/17-mountain-fox-notebook.html">'.$row['name'].'</a></h3>
-                
-                
-                                                        '.$giaDiscount.'
-
-                                                        <p class="product-desc" itemprop="description">
-                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris
-                                                            eleifend, quam a vulputate dictum, massa quam dapibus leo.
-                                                        </p>
-                
-                
-                
-                                                        <div class="variant-links">
-                                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/17-46-mountain-fox-notebook.html#/3-size-l/15-color-green"
-                                                                class="color" title="Green" style="background-color: #A0D468"><span
-                                                                    class="sr-only">Green</span></a>
-                                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/17-47-mountain-fox-notebook.html#/3-size-l/16-color-yellow"
-                                                                class="color" title="Yellow" style="background-color: #F1C40F"><span
-                                                                    class="sr-only">Yellow</span></a>
-                                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/17-48-mountain-fox-notebook.html#/3-size-l/17-color-brown"
-                                                                class="color" title="Brown" style="background-color: #964B00"><span
-                                                                    class="sr-only">Brown</span></a>
-                                                            <span class="js-count count"></span>
+            
+                                                    <div class="kkproducthover">
+                                            
+                                                        <div class="quick-view-block">
+                                                            <a href="'. $link.'" class=" btn" 
+                                                                title="Quick view">
+                                                             
+                                                            </a>
                                                         </div>
-                
-                
-                                                        <div class="cart-block">
-                                                            <div class="product-add-to-cart">
-                                                                <form
-                                                                    action="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/cart"
-                                                                    method="post" class="add-to-cart-or-refresh">
-                                                                    <div class="product-quantity" style="display:none;">
-                                                                        <input type="number" name="id_product" value="17"
-                                                                            class="product_page_product_id">
-                                                                        <input type="number" name="id_customization" value="0"
-                                                                            class="product_customization_id">
-                                                                        <input type="hidden" name="token"
-                                                                            value="9407b95b9bb08d999434e20be614587e">
-                                                                        <input type="number" name="qty"
-                                                                            class="quantity_wanted input-group" value="1" min="1" />
-                                                                    </div>
-                                                                    <button
-                                                                        class="button ajax_add_to_cart_button add-to-cart btn btn-default"
-                                                                        data-button-action="add-to-cart" title="Add to cart">
-                                                                        <span>Add to cart</span>
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-                
+            
+            
                                                     </div>
-                                                    <div class="highlighted-informations hidden-sm-down">
-                
-                                                        <a class="quick-view" href="#" data-link-action="quickview">
-                                                            <i class="material-icons search">&#xE8B6;</i> Quick view
-                                                        </a>
-                
-                                                    </div>
-                
                                                 </div>
+            
+            
+                                                <div class="product-description">
+            
+            
+                                                    <h3 class="h3 product-title" itemprop="name"><a
+                                                            href="'. $link.'">'.$row['name'].'</a></h3>
+            
+            
+                                                    '.$giaDiscount.'
+            
+
+                                                </div>
+                           
+            
                                             </div>
-                                        </article>
-                                        </div>';
+                                        </div>
+                                    </article>
+                                    </div>';
                                           }
                                       
                                       ?>
@@ -450,118 +349,67 @@
                                                           
                                                       </div>';
                                         }
-
-                                            echo '<div class="kktab-block">
-                                          <article class="product-miniature js-product-miniature " data-id-product="17"
-                                            data-id-product-attribute="46" itemscope itemtype="http://schema.org/Product">
-                                            <div class="thumbnail-container">
-                                                <div class="product-inner">
-                                                    <div class="thumbnail-inner">
-                                                        <div class="inner">
-                
-                                                            <div class="product-img">
-                
-                                                                <a href=""
-                                                                    class="thumbnail product-thumbnail">
-                
-                                                                    <img src="'. $img.'"
-                                                                        alt="Pellentesque augue"
-                                                                        data-full-size-image-url="../uploads/mountain-fox-notebook.jpg">
-                                                                    <img class="second_image img-responsive"
-                                                                        src="https://infinitytemplate.com/Prestashop/PRS01/PRS012/36-home_default/mountain-fox-notebook.jpg"
-                                                                        alt="" title="" />
-                                                                </a>
-                                                            </div>
-                                                            <ul class="product-flags">
-                                                              '.$discount.'
-                                                                '.$new.'
-                                                              
-                                                            </ul>
-                
+                                        $link = ROOT_URL."/product/".$row['slug'];
+                                        echo '<div class="kktab-block">
+                                      <article class="product-miniature js-product-miniature " data-id-product="17"
+                                        data-id-product-attribute="46" itemscope itemtype="http://schema.org/Product">
+                                        <div class="thumbnail-container">
+                                            <div class="product-inner">
+                                                <div class="thumbnail-inner">
+                                                    <div class="inner">
+            
+                                                        <div class="product-img">
+            
+                                                            <a href="'. $link.'"
+                                                                class="thumbnail product-thumbnail">
+            
+                                                                <img src="'. $img.'"
+                                                                    alt="Pellentesque augue"
+                                                                    data-full-size-image-url="'. $img.'" height="250" >
+                                                                <img class="second_image img-responsive"
+                                                                    src="'. $imgCover.'"
+                                                                    alt="" title="" height="250" width="200" />
+                                                            </a>
                                                         </div>
-                
-                                                        <div class="kkproducthover">
-                                                
-                                                            <div class="quick-view-block">
-                                                                <a href="#" class="quick-view btn" data-link-action="quickview"
-                                                                    title="Quick view">
-                                                                    <i class="material-icons search">&#xE8B6;</i> <span>Quick
-                                                                        view</span>
-                                                                </a>
-                                                            </div>
-                
-                
-                                                        </div>
+                                                        <ul class="product-flags">
+                                                          '.$discount.'
+                                                            '.$new.'
+                                                          
+                                                        </ul>
+            
                                                     </div>
-                
-                
-                                                    <div class="product-description">
-                
-                
-                                                        <h3 class="h3 product-title" itemprop="name"><a
-                                                                href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/17-mountain-fox-notebook.html">'.$row['name'].'</a></h3>
-                
-                
-                                                        '.$giaDiscount.'
-
-                                                        <p class="product-desc" itemprop="description">
-                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris
-                                                            eleifend, quam a vulputate dictum, massa quam dapibus leo.
-                                                        </p>
-                
-                
-                
-                                                        <div class="variant-links">
-                                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/17-46-mountain-fox-notebook.html#/3-size-l/15-color-green"
-                                                                class="color" title="Green" style="background-color: #A0D468"><span
-                                                                    class="sr-only">Green</span></a>
-                                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/17-47-mountain-fox-notebook.html#/3-size-l/16-color-yellow"
-                                                                class="color" title="Yellow" style="background-color: #F1C40F"><span
-                                                                    class="sr-only">Yellow</span></a>
-                                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/17-48-mountain-fox-notebook.html#/3-size-l/17-color-brown"
-                                                                class="color" title="Brown" style="background-color: #964B00"><span
-                                                                    class="sr-only">Brown</span></a>
-                                                            <span class="js-count count"></span>
+            
+                                                    <div class="kkproducthover">
+                                            
+                                                        <div class="quick-view-block">
+                                                            <a href="'. $link.'" class=" btn" 
+                                                                title="Quick view">
+                                                             
+                                                            </a>
                                                         </div>
-                
-                
-                                                        <div class="cart-block">
-                                                            <div class="product-add-to-cart">
-                                                                <form
-                                                                    action="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/cart"
-                                                                    method="post" class="add-to-cart-or-refresh">
-                                                                    <div class="product-quantity" style="display:none;">
-                                                                        <input type="number" name="id_product" value="17"
-                                                                            class="product_page_product_id">
-                                                                        <input type="number" name="id_customization" value="0"
-                                                                            class="product_customization_id">
-                                                                        <input type="hidden" name="token"
-                                                                            value="9407b95b9bb08d999434e20be614587e">
-                                                                        <input type="number" name="qty"
-                                                                            class="quantity_wanted input-group" value="1" min="1" />
-                                                                    </div>
-                                                                    <button
-                                                                        class="button ajax_add_to_cart_button add-to-cart btn btn-default"
-                                                                        data-button-action="add-to-cart" title="Add to cart">
-                                                                        <span>Add to cart</span>
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-                
+            
+            
                                                     </div>
-                                                    <div class="highlighted-informations hidden-sm-down">
-                
-                                                        <a class="quick-view" href="#" data-link-action="quickview">
-                                                            <i class="material-icons search">&#xE8B6;</i> Quick view
-                                                        </a>
-                
-                                                    </div>
-                
                                                 </div>
+            
+            
+                                                <div class="product-description">
+            
+            
+                                                    <h3 class="h3 product-title" itemprop="name"><a
+                                                            href="'. $link.'">'.$row['name'].'</a></h3>
+            
+            
+                                                    '.$giaDiscount.'
+            
+
+                                                </div>
+                           
+            
                                             </div>
-                                        </article>
-                                        </div>';
+                                        </div>
+                                    </article>
+                                    </div>';
                                           }
                                       
                                       ?>
@@ -574,7 +422,7 @@
             </div>
         </div>
         <div id="kkparallaxcms" class="parallax parallaxcms-outer hb-animate-element bottom-to-top "
-            data-source-url="https://infinitytemplate.com/Prestashop/PRS01/PRS012/modules/infinityparallaxblock/views/img/Parallax-1.jpg">
+            data-source-url="views/assets/img/Parallax-1.jpg">
             <div class="container">
                 <div class="parallaxcms-inner container">
                     <div class="parallaxcms">
@@ -583,7 +431,7 @@
                             <div class="parallax-caption1 ">Beauty &amp; Cosmetic</div>
                             <div class="parallax-caption2 ">Massage oils and creams containing only Natural Products
                             </div>
-                            <div class="parallax-btn "><a href="#" class="shopnow-button">Shop Now</a></div>
+                            <div class="parallax-btn "><a href="" class="shopnow-button">Shop Now</a></div>
 
                         </div>
                     </div>
@@ -637,8 +485,9 @@
                                               
                                           </div>';
                             }
-                            
-                              echo ' <article class="product-miniature js-product-miniature " data-id-product="17"
+                            $link = ROOT_URL."/product/".$row['slug'];
+                            echo '<div class="kktab-block">
+                            <article class="product-miniature js-product-miniature " data-id-product="17"
                               data-id-product-attribute="46" itemscope itemtype="http://schema.org/Product">
                               <div class="thumbnail-container">
                                   <div class="product-inner">
@@ -647,32 +496,31 @@
   
                                               <div class="product-img">
   
-                                                  <a href=""
+                                                  <a href="'. $link.'"
                                                       class="thumbnail product-thumbnail">
   
                                                       <img src="'. $img.'"
                                                           alt="Pellentesque augue"
-                                                          data-full-size-image-url="../uploads/mountain-fox-notebook.jpg">
+                                                          data-full-size-image-url="'. $img.'" height="250" >
                                                       <img class="second_image img-responsive"
-                                                          src="https://infinitytemplate.com/Prestashop/PRS01/PRS012/36-home_default/mountain-fox-notebook.jpg"
-                                                          alt="" title="" />
+                                                          src="'. $imgCover.'"
+                                                          alt="" title="" height="250" width="200" />
                                                   </a>
                                               </div>
                                               <ul class="product-flags">
-                                                 '.$discount.'
+                                                '.$discount.'
                                                   '.$new.'
-                                                 
+                                                
                                               </ul>
   
                                           </div>
   
                                           <div class="kkproducthover">
-                                   
+                                  
                                               <div class="quick-view-block">
-                                                  <a href="#" class="quick-view btn" data-link-action="quickview"
+                                                  <a href="'. $link.'" class=" btn" 
                                                       title="Quick view">
-                                                      <i class="material-icons search">&#xE8B6;</i> <span>Quick
-                                                          view</span>
+                                                   
                                                   </a>
                                               </div>
   
@@ -685,77 +533,19 @@
   
   
                                           <h3 class="h3 product-title" itemprop="name"><a
-                                                  href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/17-mountain-fox-notebook.html">Pellentesque
-                                                  augue</a></h3>
+                                                  href="'. $link.'">'.$row['name'].'</a></h3>
   
   
                                           '.$giaDiscount.'
   
-  
-  
-  
-  
-  
-  
-  
-  
-                                          <p class="product-desc" itemprop="description">
-                                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris
-                                              eleifend, quam a vulputate dictum, massa quam dapibus leo.
-                                          </p>
-  
-  
-  
-                                          <div class="variant-links">
-                                              <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/17-46-mountain-fox-notebook.html#/3-size-l/15-color-green"
-                                                  class="color" title="Green" style="background-color: #A0D468"><span
-                                                      class="sr-only">Green</span></a>
-                                              <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/17-47-mountain-fox-notebook.html#/3-size-l/16-color-yellow"
-                                                  class="color" title="Yellow" style="background-color: #F1C40F"><span
-                                                      class="sr-only">Yellow</span></a>
-                                              <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/17-48-mountain-fox-notebook.html#/3-size-l/17-color-brown"
-                                                  class="color" title="Brown" style="background-color: #964B00"><span
-                                                      class="sr-only">Brown</span></a>
-                                              <span class="js-count count"></span>
-                                          </div>
-  
-  
-                                          <div class="cart-block">
-                                              <div class="product-add-to-cart">
-                                                  <form
-                                                      action="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/cart"
-                                                      method="post" class="add-to-cart-or-refresh">
-                                                      <div class="product-quantity" style="display:none;">
-                                                          <input type="number" name="id_product" value="17"
-                                                              class="product_page_product_id">
-                                                          <input type="number" name="id_customization" value="0"
-                                                              class="product_customization_id">
-                                                          <input type="hidden" name="token"
-                                                              value="9407b95b9bb08d999434e20be614587e">
-                                                          <input type="number" name="qty"
-                                                              class="quantity_wanted input-group" value="1" min="1" />
-                                                      </div>
-                                                      <button
-                                                          class="button ajax_add_to_cart_button add-to-cart btn btn-default"
-                                                          data-button-action="add-to-cart" title="Add to cart">
-                                                          <span>Add to cart</span>
-                                                      </button>
-                                                  </form>
-                                              </div>
-                                          </div>
-  
+
                                       </div>
-                                      <div class="highlighted-informations hidden-sm-down">
-  
-                                          <a class="quick-view" href="#" data-link-action="quickview">
-                                              <i class="material-icons search">&#xE8B6;</i> Quick view
-                                          </a>
-  
-                                      </div>
+                 
   
                                   </div>
                               </div>
-                          </article>';
+                          </article>
+                          </div>';
                           }
                         ?>
 
@@ -809,7 +599,7 @@
                                         <div id="kktestimonialsblock">
                                             <div class="row">
                                                 <div class="testimonial-img">
-                                                    <img src="https://infinitytemplate.com/Prestashop/PRS01/PRS012/modules/kktestimonials/views/img/testimonial-1.jpg"
+                                                    <img src="views/assets/img/testimonial-1.jpg"
                                                         alt="Tammy Qualls" />
                                                 </div>
                                                 <div class="testimonial-data">
@@ -837,7 +627,7 @@
                                         <div id="kktestimonialsblock">
                                             <div class="row">
                                                 <div class="testimonial-img">
-                                                    <img src="https://infinitytemplate.com/Prestashop/PRS01/PRS012/modules/kktestimonials/views/img/testimonial-2.jpg"
+                                                    <img src="views/assets/img/testimonial-2.jpg"
                                                         alt="Tammy Qualls" />
                                                 </div>
                                                 <div class="testimonial-data">
@@ -865,7 +655,7 @@
                                         <div id="kktestimonialsblock">
                                             <div class="row">
                                                 <div class="testimonial-img">
-                                                    <img src="https://infinitytemplate.com/Prestashop/PRS01/PRS012/modules/kktestimonials/views/img/testimonial-3.jpg"
+                                                    <img src="views/assets/img/testimonial-3.jpg"
                                                         alt="Tammy Qualls" />
                                                 </div>
                                                 <div class="testimonial-data">

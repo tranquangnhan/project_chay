@@ -67,7 +67,9 @@ class Home{
 
      function detail()
      {
-   
+        $getAllProSpecial = $this->model->getAllProSpecial();
+        $getMenuParent = $this->model->getMenuParent();
+        
         $slug = $_GET['slug'];
       
         $sp = $this->model->getOnePro($slug);   

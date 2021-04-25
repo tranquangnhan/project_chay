@@ -23640,7 +23640,9 @@ $(document).ready(function() {
             });
             $('body').on('click', ('.js-qv-product-images .js-thumb'), function(e) {
                 e.preventDefault();
+
                 var zoom_val = $(this).attr('src');
+
                 $(".zoomLens").css("background-image", "url(" + $(this).attr('data-image-large-src') + ")");
                 $('.zoomWindowContainer div').css("background-image", "url(" + $(this).attr('data-image-large-src') + ")")
             })
