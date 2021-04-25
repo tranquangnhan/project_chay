@@ -120,7 +120,117 @@ class Model_home extends Model_db{
       return $this->result1(0,$sql,$id);
    }
 
-   public function Page (int $TotalProduct, int $CurrentPage,$BaseLink)
+   function Page($TotalProduct, $CurrentPage,$PageSize,$BaseLink)
+   {
+        print_r($CurrentPage);
+        $LimitPage = $PageSize; // 5 sản phẩm 2 trang
+
+       $PagedHTML = ''; // khởi tạo
+
+       $CurrentQuery = $_GET; //query hiện tại
+
+       $NextQuery = $_GET; //next query
+       $PrevQuery = $_GET; // query trước
+
+       $LastQuery = $_GET; // query trước đây
+       $FirstQuery = $_GET; // query đầu tiên
+
+       $IsLastButtonHidden = '';
+       $IsNextButtonHidden = '';
+
+       $IsFirstButtonHidden = '';
+       $IsPreviousButtonHidden = '';
+
+       $TotalPage = ceil($TotalProduct / $LimitPage); // tổng số page
+       
+       if($CurrentPage == 1)
+       {
+           $IsFirstButtonHidden .= 'hidden';
+           $IsPreviousButtonHidden .= 'hidden';
+       }
+       // nếu page == 1 thì không cho quay về trang trước
+
+       if ((int) $CurrentPage == (int) $TotalPage)
+       {
+           $IsLastButtonHidden .= 'hidden';
+           $IsNextButtonHidden .= 'hidden';
+       }
+       if($_GET['slug']){
+           $slug = '/'.$_GET['slug'].'-';
+       }else{
+           $slug = '';
+       }
+
+       // nếu tổng số page hiện tại == current page thì không có tiếp tục
+
+       $NextQuery['Page'] = $CurrentPage + 1; //tạo ra query tiếp theo
+       $LastQuery['Page'] = $TotalPage; // tạo ra query cuối
+       
+       $linkNextQuery  = ROOT_URL.'/'.$BaseLink. $slug.$_GET['maloai'].'/page-'.($NextQuery['Page']).'.html';
+       $linkLastQuery  = ROOT_URL.'/'.$BaseLink. $slug.$_GET['maloai'].'/page-'.($LastQuery['Page']).'.html';
+
+       $NextButton = '<li class="'.$IsNextButtonHidden.'"><a href="'.$linkNextQuery.'">></a></li>';
+       $LastButton = '<li class="'.$IsLastButtonHidden.'"><a href="'.$linkLastQuery.'">>|</a></li>';
+           
+
+       $PrevQuery['Page'] = $CurrentPage - 1; //trở về trang trước
+       $FirstQuery['Page'] = 1; // trở về trang 1
+
+       $linkPrevQuery  = ROOT_URL.'/'.$BaseLink. $slug.$_GET['maloai'].'/page-'.($PrevQuery['Page']).'.html';
+       $linkFirstQuery  = ROOT_URL.'/'.$BaseLink. $slug.$_GET['maloai'].'/page-'.($FirstQuery['Page']).'.html';
+
+       $PreviousButton = '<li class="'.$IsFirstButtonHidden.'"><a href="'.$linkPrevQuery.'"><</a></li>';
+       $FirstButton = '<li class="'.$IsPreviousButtonHidden.'"><a href="'.$linkFirstQuery.'">|<</a></li>';
+       // trở về trang trước
+       // trở về trang đâu
+       $PagedHTML .= $FirstButton.$PreviousButton;
+       //tạo html
+       if ($CurrentPage <= $TotalPage && $TotalPage >= 1) // nếu page hiện tại nhỏ hơn hoặc bằng tổng số page và và tổng số page >=1
+       {
+           $PageBreak = 1; // break page
+
+           if ($CurrentPage > ($LimitPage / 2)) // nếu page hiện tại lớn hon 5/2 
+           {
+               $CurrentQuery['Page'] = 1; // page hiện tại bằng 1 
+               $linkCurrentQuery  = ROOT_URL.'/'.$BaseLink.$slug.$_GET['maloai'].'/page-'.($CurrentQuery['Page']).'.html';
+
+               $PagedHTML .= '<li><a href="'.$linkCurrentQuery.'">1</a></li>'; // trang đầu
+               $PagedHTML .= '<li><a>...</a></li>'; // đến ....
+           }
+
+           $Loop = $CurrentPage; // lặp = page hiện tại
+          
+           while ($Loop <= $TotalPage) // curren page => tổng số page
+           {
+               if ($PageBreak < $LimitPage) // nếu pagebreak ++ nếu pagebreak < 5 (limit page)
+               {
+                   $CurrentQuery['Page'] = $Loop; // gán lại cho current query cate
+                   $linkCurrentQuery  = ROOT_URL.'/'.$BaseLink.$slug.$_GET['maloai'].'/page-'.($CurrentQuery['Page']).'.html';
+
+                   if ($CurrentPage === $Loop) // nếu currentpage == loop
+                   {
+                       $PagedHTML .= '<li class="active"><a href="'.$linkCurrentQuery.'">'.$Loop.'</a></li>';
+                   } else $PagedHTML .= '<li><a href="'.$linkCurrentQuery.'">'.$Loop.'</a></li>';
+               }
+
+               $PageBreak++;
+               $Loop++;
+           }
+
+           if ($CurrentPage < ($TotalPage - ($LimitPage / 2))) 
+           {
+               $CurrentQuery['Page'] = $TotalPage;
+               $linkCurrentQuery  = ROOT_URL.'/'.$BaseLink.$slug.$_GET['maloai'].'/page-'.($CurrentQuery['Page']).'.html';
+
+               $PagedHTML .= '<li><a href="'.$linkCurrentQuery.'">...</a></li>';
+               $PagedHTML .= '<li><a href="'.$linkCurrentQuery.'">'.$TotalPage.'</a></li>';
+           }
+       }
+
+       return $PagedHTML.$NextButton.$LastButton;
+   }
+
+   public function Page2 (int $TotalProduct, int $CurrentPage,$BaseLink)
    {
     $LimitPage = PAGE_SIZE_PRO; // 5 sản phẩm 2 trang
 
