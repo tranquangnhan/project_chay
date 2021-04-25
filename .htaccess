@@ -10,6 +10,7 @@ RewriteRule ^cam-on$ /project_chay/site/?act=thankyou [L]
 RewriteRule ^quen-mat-khau$ /project_chay/site/?act=forgotpass [L]
 RewriteRule ^thanh-toan-thanh-cong/$ /project_chay/site/?act=ttthanhcong [L]
 
-RewriteRule ^product/([a-zA-Z0-9-]+)$ /project_chay/site/?act=detail&id=$2&slug=$1 [L]
+RewriteRule ^cate/(.*)-(.*)$ /project_chay/site/?act=product&slug=$1&id=$2 [L]
+RewriteRule ^product/(.*)-(.*)$ /project_chay/site/?act=product&slug=$1&id=$2 [L]
 RewriteRule ^nsx/([a-zA-Z0-9-]+)$ /project_chay/site/?act=cat&id=$2&slug=$1 [L]
 RewriteRule ^xoa-khoi-gio/(.*)$ /project_chay/site/?act=cart&what=remove&id=$1 [L]

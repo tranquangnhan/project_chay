@@ -53,6 +53,7 @@ class categories{
             $name = $_POST['name_category'];
             $IDcate = $_POST['IDcate'];
             $slug = $this->lib->slug($name);
+            $slug = strtolower($slug);
             if(isset($_GET['id'])){
                 $id = $_GET['id'];
                 settype($id,"int");

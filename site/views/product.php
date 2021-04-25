@@ -1680,8 +1680,10 @@
   <div class="col-md-8 col-xs-12 pr-0 pagination-kkbtn">
     
              <ul class="page-list clearfix">
-                    
-            <li  class="current" >
+                    <?php
+                      echo $Pagination;
+                    ?>
+            <!-- <li  class="current" >
                               <a
                   rel="nofollow"
                   href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes"
@@ -1709,7 +1711,7 @@
                 >
                                       <i class="material-icons">&#xE315;</i>
                                   </a>
-                          </li>
+                          </li> -->
                   </ul>
           
   </div>
