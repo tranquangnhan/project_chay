@@ -365,4 +365,9 @@ class Model_home extends Model_db{
         }
         return $this->result1(0,$sql,$id);
     }
+    function storeContact($name,$email,$subject,$messenge)
+    {
+        $sql = "INSERT INTO contact(name,email,subject,messeges) VALUE(?,?,?,?)";
+        return $this->exec1($sql,$name,$email,$subject,$messenge);
+    }
 }

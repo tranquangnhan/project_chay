@@ -2,23 +2,32 @@
          <div class="container"></div>
 </aside>
 
-<section id="wrapper">
+<section id="wrapper" class="register">
          <div class="container">
                   <div class="row">
                            <div id="content-wrapper" class="col-xs-12">
-                                    <section id="main" class="login" >
+                                    <section id="main">
                                              <header class="page-header">
                                                       <h1 class="kk-innertitle">
-                                                               Log in to your account
+                                                               Create an account
                                                       </h1>
                                              </header>
 
                                              <section id="content" class="page-content card card-block">
-                                                      <section class="login-form">
-                                                               <form id="login-form" data-parsley-validate novalidate method="post">
+                                                      <section class="register-form">
+                                                               <form data-parsley-validate novalidate id="customer-form" class="js-customer-form" method="post">
                                                                         <section>
-                                                                                 <input type="hidden" name="back" value="my-account" />
+                                                                                 <input type="hidden" name="id_customer" value="" />
+                                                                                 <div class="form-group row">
+                                                                                          <label class="col-md-3 form-control-label required">
+                                                                                                   Name
+                                                                                          </label>
+                                                                                          <div class="col-md-6">
+                                                                                                   <input class="form-control" name="name" type="text" value="" required />
+                                                                                          </div>
 
+                                                                                          <div class="col-md-3 form-control-comment"></div>
+                                                                                 </div>
                                                                                  <div class="form-group row">
                                                                                           <label class="col-md-3 form-control-label required">
                                                                                                    Email
@@ -53,41 +62,33 @@
                                                                                                    </div>
                                                                                           </div>
 
-                                                                                         
+                                                                                          <div class="col-md-3 form-control-comment"></div>
                                                                                  </div>
                                                                                  <?php
-                                                                                 if($emailexist && $emailexist!=''){
-                                                                                    echo '<span style="color:red;">'.$emailexist.'</span>';
+                                                                                 if($nullerror && $nullerror!=''){
+                                                                                    echo '<span style="color:red;">'.$nullerror.'</span>';
                                                                                 }
-                                                                                  if($checkloginwarn && $checkloginwarn!=''){
-                                                                                    echo '<span style="color:red;">'.$checkloginwarn.'</span>';
+                                                                                  if($emailexist && $emailexist!=''){
+                                                                                    echo '<span style="color:red;">'.$emailexist.'</span>';
                                                                                   }
                                                                                  ?>
-                                                                                    
-                                                                                 <div class="forgot-password">
-                                                                                          <a href="#" rel="nofollow">
-                                                                                                   Forgot your password?
-                                                                                          </a>
-                                                                                 </div>
                                                                         </section>
+                                                                        <p>Already have an account? <a href="<?php echo ROOT_URL?>/login">Log in instead!</a></p>
 
-                                                                        <footer class="form-footer text-sm-center clearfix">
-                                                                                 <input type="hidden" name="submitLogin" value="1" />
+                                                                        <footer class="form-footer clearfix">
+                                                                                 <input type="hidden" name="submitCreate" value="1" />
 
-                                                                                 <button id="submit-login" class="btn btn-primary" name="login" data-link-action="sign-in" type="submit" class="form-control-submit">
-                                                                                          Sign in
+                                                                                 <button class="btn btn-primary form-control-submit " name="register" data-link-action="save-customer" type="submit">
+                                                                                          Register
                                                                                  </button>
                                                                         </footer>
                                                                </form>
                                                       </section>
-                                                      <hr />
-
-                                                      <div class="no-account">
-                                                               <a href="<?php echo ROOT_URL?>/register" data-link-action="display-register-form">
-                                                                        No account? Create one here
-                                                               </a>
-                                                      </div>
                                              </section>
+
+                                             <footer class="page-footer">
+                                                      <!-- Footer content -->
+                                             </footer>
                                     </section>
                            </div>
                   </div>

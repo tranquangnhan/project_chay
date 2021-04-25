@@ -262,11 +262,18 @@
                                 <a href="?ctrl=order">
                                     <i class="mdi mdi-page-layout-sidebar-left"></i>
                                     <span>Order</span>
-                                    <span class="menu-arrow"></span>
+                                    
                                 </a>
                                 
                             </li>
-
+                            <li>
+                                <a href="?ctrl=contact">
+                                    <i class="mdi mdi-page-layout-sidebar-left"></i>
+                                    <span>Contact</span>
+                                    
+                                </a>
+                                
+                            </li>
                         </ul>
 
                     </div>
