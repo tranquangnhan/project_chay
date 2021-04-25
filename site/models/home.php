@@ -140,7 +140,7 @@ class Model_home extends Model_db{
        $IsFirstButtonHidden = '';
        $IsPreviousButtonHidden = '';
 
-       $TotalPage = ceil($TotalProduct / PAGE_SIZE); // tổng số page
+       $TotalPage = ceil($TotalProduct / PAGE_SIZE_PRO); // tổng số page
 
        if($CurrentPage === 1)
        {
@@ -215,66 +215,35 @@ class Model_home extends Model_db{
        return $PagedHTML.$NextButton.$LastButton;
    }
 
-   function countAllPhone($slug,$from,$to,$hot,$query)
+   function countAllProduct($id)
    {
-      $sql = "SELECT idNSX FROM nhasanxuat WHERE slug=?";
-      $idDT = $this->result1(1,$sql,$slug)['idNSX'];
-
-       $sql = "SELECT count(*) AS sodong FROM product WHERE idDT != 0";
-         if ($idDT != NULL)
-         {
-            $sql .= " AND idNSX =".$idDT; 
-         }
-         if ($from != NULL)
-         {
-            $sql .= " AND Gia >= ".$from; 
-         }
-         if ($to != NULL)
-         {
-            $sql .= " AND Gia <= ".$to; 
-         }
-         if ($hot != NULL)
-         {
-             $sql .= " AND Hot = ".$hot; 
-         }
-         if($query != NULL)
-         {
-            $sql .= ' AND TenDT LIKE "%'.$query.'%"';
-         }
-       return $this->result1(1,$sql)['sodong'];
+        $sql ="SELECT count(*) AS sodong from catalog cate  inner join product pro on cate.id= pro.catalog_id
+        ";
+        $par = $this->getCateByid($id);
+        if($par['parent'] != 0){
+            $sql .= " where pro.catalog_id=?";
+        }else{
+            $sql .= " where cate.parent=?";
+        }    
+        return $this->result1(1,$sql,$id)['sodong'];
    }
-   function GetProductList($slug,$CurrentPage,$from,$to,$hot,$query){
-      $sql = "SELECT idNSX FROM nhasanxuat WHERE slug=?";
-      $idDT = $this->result1(1,$sql,$slug)['idNSX'];
-
-      $sql = "SELECT * FROM product WHERE idDT != 0";
-      if ($idDT != NULL)
-      {
-        $sql .= " AND idNSX = ".$idDT; 
-      }
-      if ($from != NULL)
-      {
-          $sql .= " AND Gia >= ".$from; 
-      }
-      if ($to != NULL)
-      {
-          $sql .= " AND Gia <= ".$to; 
-      }
-      if ($hot != NULL)
-      {
-          $sql .= " AND Hot = ".$hot; 
-      }
-      if($query != NULL)
-      {
-          $sql .= ' AND TenDT LIKE "%'.$query.'%" ';
-      }
-      if ($CurrentPage !== 0)
-      {
-          $sql .= " GROUP BY idDT LIMIT ".($CurrentPage - 1) * PAGE_SIZE.", ".PAGE_SIZE;
+   function GetProductList($id,$CurrentPage){
+      $sql ="SELECT * from catalog cate  inner join product pro on cate.id= pro.catalog_id
+      ";
+      $par = $this->getCateByid($id);
+      if($par['parent'] != 0){
+          $sql .= " where pro.catalog_id=?";
+      }else{
+          $sql .= " where cate.parent=?";
       }
       
-      return $this->result1(0,$sql);
-  }
+      if ($CurrentPage !== 0)
+      {
+          $sql .= " GROUP BY pro.id LIMIT ".($CurrentPage - 1) * PAGE_SIZE_PRO.", ".PAGE_SIZE_PRO;
+      }
+      
+      return $this->result1(0,$sql,$id);
+}
 
   function addNewView($idsp){
       $sql = "UPDATE product SET SoLanXem=SoLanXem+1 WHERE idDT = ?";

@@ -54,11 +54,22 @@ class Home{
      function product()
      {
    
-      $url =  "//{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
-      $escaped_url = htmlspecialchars( $url, ENT_QUOTES, 'UTF-8' );
-      $idCate = substr($escaped_url, -1);
-      $listProduct = $this->model->showProductByCate($idCate);
-      // print_r($listProduct);
+      
+      if (isset($_GET['Page'])) $CurrentPage = $_GET['Page']; else $CurrentPage = 1;
+     
+      $idCate = $_GET['id'];
+      settype($idCate, "int");
+        $TotalProduct = $this->model->countAllProduct($idCate);
+        if($TotalProduct == 0) $TotalProduct =1;
+        $listProduct = $this->model-> GetProductList($idCate,$CurrentPage);
+      
+
+        $Pagination =  $this->model->Page($TotalProduct, $CurrentPage);
+         
+         // $listProduct = $this->model->showProductByCate($idCate);
+         
+      
+      
        
       $page_title ="Danh sách nhà sản xuất";
       $viewFile = "views/product.php";

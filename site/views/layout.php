@@ -519,7 +519,7 @@
                                         foreach ($this->model->showDmCon($row['id']) as $con) {
                                             $menuCon .= ' <li class="category" >
                                                             <a class="dropdown-item"
-                                                                href="'.ROOT_URL.'/?act=product&'.$con['id'].'"
+                                                                href="'.ROOT_URL.'/cate/'.$con['slug'].'-'.$con['id'].'"
                                                                 data-depth="2">
                                                                 '.$con['name'].'
                                                             </a>
@@ -528,7 +528,7 @@
 
                                         $kq .= '<li class="category" >
                                                     <a class="dropdown-item"
-                                                        href="?act=product&'.$row['id'].'"
+                                                        href="'.ROOT_URL.'/cate/'.$row['slug'].'-'.$row['id'].'"
                                                         data-depth="0">
                                                         <span class="float-xs-right hidden-md-up">
                                                             <span data-target="#top_sub_menu_70770" data-toggle="collapse"
