@@ -12,7 +12,7 @@
             <ul class="slides">
                 <li class="slide">
 
-                    <a href="#"
+                    <a href="<?=ROOT_URL?>/cate/product-2"
                         title="kslider-1">
                         <img src="views/assets/img/kslider-1.jpg" alt="kslider-1" title="KSlider1" />
                     </a>
@@ -21,7 +21,7 @@
                 </li>
                 <li class="slide">
 
-                    <a href="#"
+                    <a href="<?=ROOT_URL?>/cate/product-2"
                         title="kslider-2">
                         <img src="views/assets/img/kslider-2.jpg" alt="kslider-2" title="KSlider2" />
                     </a>
@@ -38,7 +38,7 @@
             <div class="row">
                 <div class="center-banner list-unstyled">
                     <div class="slider banner1 col-lg-4 col-md-12">
-                        <a href="#" class="kk-customhover-fadeintopbottom">
+                        <a href="<?=ROOT_URL?>/cate/product-2" class="kk-customhover-fadeintopbottom">
                             <img src="views/assets/img/kbanner-1.jpg" alt="kbanner-1"
                                 class="img-responsive center-block" />
                         </a>
@@ -46,14 +46,14 @@
                     </div>
 
                     <div class="slider banner2  col-lg-4 col-md-12">
-                        <a href="#" class="kk-customhover-fadeintopbottom">
+                        <a href="<?=ROOT_URL?>/cate/product-2" class="kk-customhover-fadeintopbottom">
                             <img src="views/assets/img/kbanner-2.jpg" alt="kbanner-2"
                                 class="img-responsive center-block" />
                         </a>
                         <div class="overlay"></div>
                     </div>
                     <div class="slider banner2  col-lg-4 col-md-12">
-                        <a href="#" class="kk-customhover-fadeintopbottom">
+                        <a href="<?=ROOT_URL?>/cate/product-2" class="kk-customhover-fadeintopbottom">
                             <img src="views/assets/img/kbanner-3.jpg" alt="kbanner-3"
                                 class="img-responsive center-block" />
                         </a>
@@ -431,7 +431,7 @@
                             <div class="parallax-caption1 ">Beauty &amp; Cosmetic</div>
                             <div class="parallax-caption2 ">Massage oils and creams containing only Natural Products
                             </div>
-                            <div class="parallax-btn "><a href="" class="shopnow-button">Shop Now</a></div>
+                            <div class="parallax-btn "><a href="<?=ROOT_URL?>/cate/product-2" class="shopnow-button">Shop Now</a></div>
 
                         </div>
                     </div>
@@ -688,7 +688,7 @@
                         <div class="col-lg-6 col-xs-12 kk_banner clearfix hb-animate-element bottom-to-top">
                             <div class="kk_sub_banner row">
                                 <div class="slider banner1  col-lg-6 col-xs-12 hb-animate-element bottom-to-top">
-                                    <a href="#" class="kk-customhover-fadeintopbottom" title="This is Caption">
+                                    <a href="<?=ROOT_URL?>/cate/product-2" class="kk-customhover-fadeintopbottom" title="This is Caption">
                                         <div class="kkmultibanner-hover">
                                             <img src="views/assets/img/demo_img_1.jpg" class="img-responsive"
                                                 alt="This is Caption" />
@@ -698,7 +698,7 @@
 
 
                                 <div class="slider banner1  col-lg-6 col-xs-12 hb-animate-element bottom-to-top">
-                                    <a href="#" class="kk-customhover-fadeintopbottom" title="This is Caption">
+                                    <a href="<?=ROOT_URL?>/cate/product-2" class="kk-customhover-fadeintopbottom" title="This is Caption">
                                         <div class="kkmultibanner-hover">
                                             <img src="views/assets/img/demo_img_2.jpg" class="img-responsive"
                                                 alt="This is Caption" />
@@ -773,7 +773,7 @@
                               
                           </div>';
             }
-            
+                $link = ROOT_URL."/product/".$row['slug'];
                 echo '<article class="product-miniature js-product-miniature " data-id-product="17" data-id-product-attribute="46"
                 itemscope itemtype="http://schema.org/Product">
                 <div class="thumbnail-container">
@@ -783,11 +783,11 @@
 
                                 <div class="product-img">
 
-                                    <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/17-46-mountain-fox-notebook.html#/3-size-l/15-color-green"
+                                    <a href="'.$link.'"
                                         class="thumbnail product-thumbnail ">
 
                                         <img src="'.$img.'" alt="Pellentesque augue"
-                                            data-full-size-image-url="'.$img.'">
+                                            data-full-size-image-url="'.$img.'" width="120" height="130">
                                         <img class="second_image img-responsive"
                                             src="'.$imgCover.'" alt="" title="" />
                                     </a>
@@ -805,7 +805,7 @@
                         <div class="product-description col-xs-12 col-sm-8">
 
                             <h3 class="h3 product-title" itemprop="name"><a
-                                    href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/17-46-mountain-fox-notebook.html#/3-size-l/15-color-green">'.$row['name'].'</a></h3>
+                                    href="'.$link.'">'.$row['name'].'</a></h3>
 
 
 
@@ -818,29 +818,8 @@
 
 
 
-                            <div class="variant-links">
-                                <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/17-46-mountain-fox-notebook.html#/3-size-l/15-color-green"
-                                    class="color" title="Green" style="background-color: #A0D468"><span
-                                        class="sr-only">Green</span></a>
-                                <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/17-47-mountain-fox-notebook.html#/3-size-l/16-color-yellow"
-                                    class="color" title="Yellow" style="background-color: #F1C40F"><span
-                                        class="sr-only">Yellow</span></a>
-                                <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/stationery/17-48-mountain-fox-notebook.html#/3-size-l/17-color-brown"
-                                    class="color" title="Brown" style="background-color: #964B00"><span
-                                        class="sr-only">Brown</span></a>
-                                <span class="js-count count"></span>
-                            </div>
-
-
                         </div>
-                        <div class="highlighted-informations hidden-sm-down">
-
-                            <a class="quick-view" href="#" data-link-action="quickview">
-                                <i class="material-icons search">&#xE8B6;</i> Quick view
-                            </a>
-
-                        </div>
-
+                    
                     </div>
                 </div>
             </article>';

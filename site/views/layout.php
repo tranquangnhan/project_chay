@@ -322,27 +322,6 @@
                             </div>
 
 
-                            <div class="currency-selector dropdown js-dropdown">
-                                <span id="currency-selector-label">Currency:</span>
-                                <button data-target="#" data-toggle="dropdown" class=" btn-unstyle" aria-haspopup="true"
-                                    aria-expanded="false" aria-label="Currency dropdown">
-                                    <span class="expand-more _gray-darker">USD $</span>
-                                    <i class="material-icons expand-more"></i>
-                                </button>
-                                <ul class="dropdown-menu " aria-labelledby="currency-selector-label">
-                                    <li>
-                                        <a title="Euro" rel="nofollow"
-                                            href="#"
-                                            class="dropdown-item">EUR </a>
-                                    </li>
-                                    <li class="current">
-                                        <a title="US Dollar" rel="nofollow"
-                                            href="#"
-                                            class="dropdown-item">USD $</a>
-                                    </li>
-                                </ul>
-
-                            </div>
 
                         </div>
 
@@ -356,25 +335,7 @@
                         </div>
 
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 right-nav">
-                            <div id="_desktop_search-widget">
-                                <div class="search-widget-inner">
-                                    <div class="kkheading"></div>
-                                    <div id="search_widget" class="search-widget"
-                                        data-search-controller-url="//infinitytemplate.com/Prestashop/PRS01/PRS012/en/search">
-                                        <form method="get"
-                                            action="//infinitytemplate.com/Prestashop/PRS01/PRS012/en/search">
-                                            <input type="hidden" name="controller" value="search">
-                                            <input type="text" name="s" value="" placeholder="Search our catalog"
-                                                aria-label="Search">
-
-                                            <button type="submit">
-                                                <i class="material-icons search">&#xE8B6;</i>
-                                                <span class="hidden-xl-down">Search</span>
-                                            </button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
+                     
                             <div id="_desktop_user_info">
                                 <div class="user-info-inner">
                                     <div class="kkuserheading"></div>
@@ -813,21 +774,21 @@
                                                 <a id="link-cms-page-5-2" class="cms-page-link"
                                                     href="#"
                                                     title="Our secure payment method">
-                                                    Secure payment
+                                                    Terms of Services
                                                 </a>
                                             </li>
                                             <li>
                                                 <a id="link-static-page-sitemap-2" class="cms-page-link"
                                                     href="#"
                                                     title="Lost ? Find what your are looking for">
-                                                    Sitemap
+                                                    Impressum
                                                 </a>
                                             </li>
                                             <li>
                                                 <a id="link-static-page-my-account-2" class="cms-page-link"
                                                     href="#"
                                                     title="">
-                                                    My account
+                                                    Privacy policy 
                                                 </a>
                                             </li>
                                         </ul>
@@ -946,46 +907,13 @@
                             <p class="footer-aftertext ">
 
                                 <a class="_blank " href="http://www.prestashop.com" target="_blank">
-                                    © 2021 - Ecommerce software by PrestaShop™
+                                    © 2021 -shop make by Nhan-Anh"
                                 </a>
 
                             </p>
                         </div>
 
-                        <div class="col-lg-6 col-xs-12 hb-animate-element right-to-left">
-
-                            <div class="footer-bottom-link">
-
-                                <div class="payment-inner">
-
-                                    <div class="kkpaymentlogo">
-                                        <img src="views/assets/img/discover.png" alt="Discover" />
-                                    </div>
-
-                                    <div class="kkpaymentlogo">
-                                        <img src="views/assets/img/visa.png" alt="Visa" />
-                                    </div>
-
-                                    <div class="kkpaymentlogo">
-                                        <img src="views/assets/img/jcb.png" alt="JCB" />
-                                    </div>
-
-                                    <div class="kkpaymentlogo">
-                                        <img src="views/assets/img/paypal.png" alt="PayPal" />
-                                    </div>
-
-                                    <div class="kkpaymentlogo">
-                                        <img src="views/assets/img/mastercard.png" alt="Master Card" />
-                                    </div>
-
-                                    <div class="kkpaymentlogo">
-                                        <img src="views/assets/img/americanexpress.png" alt="American Express" />
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        </div>
+                        
 
                     </div>
                 </div>

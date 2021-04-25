@@ -100,7 +100,7 @@
                     $kq .= '  <div class="product">
                     <!--  image-->
                     <div class="cart-img">
-                        <img class="img-responsive" width="80"
+                        <img class="img-responsive" width="80" height="80"
                             src="'.$img.'"
                             alt="Duis Aute Irure begins">
                     </div>

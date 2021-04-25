@@ -47,7 +47,7 @@ if(is_array($sp)){
 
                                         <img id="zoom" class="js-qv-product-cover zoomLens"
                                             src="<?=$avt?>"
-                                            alt="" title="" style="width:100%;" itemprop="image">
+                                            alt="" title="" height="450" style="width:100%;object-fit:cover" itemprop="image">
 
                                         <div class="layer hidden-sm-down" data-toggle="modal"
                                             data-target="#product-modal">
@@ -109,8 +109,16 @@ if(is_array($sp)){
                                     <meta itemprop="priceCurrency" content="USD">
 
                                     <div class="current-price">
+                                        <?php
+                                        if($sp['discount']>0){
+                                        ?>
                                         <span itemprop="price" content="32.89" style="font-size:13pt;text-decoration:line-through"><?=$sp['price']?>€</span><br>
                                         <span itemprop="price" content="32.89" style="color:var(--it-brand-primary)"><?=($sp['price'] - ($sp['discount']*$sp['price'])/100)?>€</span>
+                                       
+                                         <?php }
+                                        else{?>
+                                            <span itemprop="price" content="32.89" style="color:var(--it-brand-primary)"><?=$sp['price']?>€</span>
+                                        <?php   } ?>
                                     </div>
 
 
