@@ -26,7 +26,7 @@ class Model_product extends Model_db{
             return $this->exec1($sql,$name,$slug,$price,$discount,$IDCate,$hot,$size,$color,$Description,$Properties,$id);
         }else
         {
-            $sql = "UPDATE product SET name= ?,slug=?,price=?,discount=?,catalog_id=?,hot=?,size=?,color=?,description=?,properties=? WHERE id=?";
+            $sql = "UPDATE product SET name= ?,slug=?,price=?,discount=?,image_list=?,catalog_id=?,hot=?,size=?,color=?,description=?,properties=? WHERE id=?";
             return $this->exec1($sql,$name,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$color,$Description,$Properties,$id);
         }
     }

@@ -55,22 +55,24 @@ class Home{
      {
    
       
-      if (isset($_GET['Page'])) $CurrentPage = $_GET['Page']; else $CurrentPage = 1;
-     
+      $CurrentPage = 1;
+      $url =  "//{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
+      $num = end(explode('/',trim($url,'/')));
+      
+      // echo preg_match('/(page)/',$num);
+      if (preg_match('/(page)/',$num) != 0) {
+         $num1 = end(explode('-',trim($url,'-')));
+         settype($num1,'integer');
+         $CurrentPage = $num1;
+      }      
       $idCate = $_GET['id'];
       settype($idCate, "int");
         $TotalProduct = $this->model->countAllProduct($idCate);
         if($TotalProduct == 0) $TotalProduct =1;
         $listProduct = $this->model-> GetProductList($idCate,$CurrentPage);
-        $baselink = 'site/?act=product&slug=perfume&id=6&Page=2';
+        $baselink = 'cate';
 
         $Pagination =  $this->model->Page($TotalProduct, $CurrentPage,$baselink);
-         
-         // $listProduct = $this->model->showProductByCate($idCate);
-         
-      
-      
-       
       $page_title ="Danh sách nhà sản xuất";
       $viewFile = "views/product.php";
       require_once "views/layout.php";  

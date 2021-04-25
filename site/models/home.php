@@ -155,7 +155,8 @@ class Model_home extends Model_db{
         $IsNextButtonHidden .= 'hidden';
     }
     if($_GET['slug']){
-        $slug = '/'.$_GET['slug'].'-';
+        preg_match("/[0-9a-zA-Z]+/",$_GET['slug'], $arr); print_r($arr); echo "<br>";
+        $slug = '/'.$arr[0].'-';
     }else{
         $slug = ''; 
     }
@@ -164,10 +165,13 @@ class Model_home extends Model_db{
 
     $NextQuery['Page'] = $CurrentPage + 1; //tạo ra query tiếp theo
     $LastQuery['Page'] = $TotalPage; // tạo ra query cuối
+    echo $slug.'<br>';
     
-    $linkNextQuery  = ROOT_URL.'/'.$BaseLink. $slug.$_GET['id'].'&page='.($NextQuery['Page']).'';
-    $linkLastQuery  = ROOT_URL.'/'.$BaseLink. $slug.$_GET['id'].'&page='.($LastQuery['Page']).'';
 
+    $linkNextQuery  = ROOT_URL.'/'.$BaseLink. $slug.$_GET['id'].'/page-'.($NextQuery['Page']);
+    echo $linkNextQuery;
+    $linkLastQuery  = ROOT_URL.'/'.$BaseLink. $slug.$_GET['id'].'/page-'.($LastQuery['Page']);
+    
     $NextButton = '<li class="'.$IsNextButtonHidden.'"><a href="'.$linkNextQuery.'">></a></li>';
     $LastButton = '<li class="'.$IsLastButtonHidden.'"><a href="'.$linkLastQuery.'">>|</a></li>';
         
@@ -175,8 +179,8 @@ class Model_home extends Model_db{
     $PrevQuery['Page'] = $CurrentPage - 1; //trở về trang trước
     $FirstQuery['Page'] = 1; // trở về trang 1
 
-    $linkPrevQuery  = ROOT_URL.'/'.$BaseLink. $slug.$_GET['id'].'&page='.($PrevQuery['Page']).'';
-    $linkFirstQuery  = ROOT_URL.'/'.$BaseLink. $slug.$_GET['id'].'&page='.($FirstQuery['Page']).'';
+    $linkPrevQuery  = ROOT_URL.'/'.$BaseLink. $slug.$_GET['id'].'/page-'.($PrevQuery['Page']);
+    $linkFirstQuery  = ROOT_URL.'/'.$BaseLink. $slug.$_GET['id'].'/page-'.($FirstQuery['Page']);
 
     $PreviousButton = '<li class="'.$IsFirstButtonHidden.'"><a href="'.$linkPrevQuery.'"><</a></li>';
     $FirstButton = '<li class="'.$IsPreviousButtonHidden.'"><a href="'.$linkFirstQuery.'">|<</a></li>';
@@ -191,7 +195,7 @@ class Model_home extends Model_db{
         if ($CurrentPage > ($LimitPage / 2)) // nếu page hiện tại lớn hon 5/2 
         {
             $CurrentQuery['Page'] = 1; // page hiện tại bằng 1 
-            $linkCurrentQuery  = ROOT_URL.'/'.$BaseLink.$slug.$_GET['id'].'&page='.($CurrentQuery['Page']).'';
+            $linkCurrentQuery  = ROOT_URL.'/'.$BaseLink.$slug.$_GET['id'].'/page-'.($CurrentQuery['Page']);
 
             $PagedHTML .= '<li><a href="'.$linkCurrentQuery.'">1</a></li>'; // trang đầu
             $PagedHTML .= '<li><a>...</a></li>'; // đến ....
@@ -204,7 +208,7 @@ class Model_home extends Model_db{
             if ($PageBreak < $LimitPage) // nếu pagebreak ++ nếu pagebreak < 5 (limit page)
             {
                 $CurrentQuery['Page'] = $Loop; // gán lại cho current query
-                $linkCurrentQuery  = ROOT_URL.'/'.$BaseLink.$slug.$_GET['id'].'&page='.($CurrentQuery['Page']).'';
+                $linkCurrentQuery  = ROOT_URL.'/'.$BaseLink.$slug.$_GET['id'].'/page-'.($CurrentQuery['Page']);
 
                 if ($CurrentPage === $Loop) // nếu currentpage == loop
                 {
@@ -219,7 +223,7 @@ class Model_home extends Model_db{
         if ($CurrentPage < ($TotalPage - ($LimitPage / 2))) 
         {
             $CurrentQuery['Page'] = $TotalPage;
-            $linkCurrentQuery  = ROOT_URL.'/'.$BaseLink.$slug.$_GET['id'].'&page='.($CurrentQuery['Page']).'';
+            $linkCurrentQuery  = ROOT_URL.'/'.$BaseLink.$slug.$_GET['id'].'/page-'.($CurrentQuery['Page']);
 
             $PagedHTML .= '<li><a href="'.$linkCurrentQuery.'">...</a></li>';
             $PagedHTML .= '<li><a href="'.$linkCurrentQuery.'">'.$TotalPage.'</a></li>';
