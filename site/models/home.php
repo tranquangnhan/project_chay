@@ -20,16 +20,20 @@ class Model_home extends Model_db{
         $sql = "SELECT * FROM product ORDER BY discount DESC LIMIT 10";
         return $this->result1(0,$sql);
     }
-    function getAllByBuyed(){
-        $sql = "SELECT * FROM product ORDER BY buyed DESC LIMIT 10";
+    function getAllByBuyed($limit,$offset){
+        $sql = "SELECT * FROM product ORDER BY buyed DESC LIMIT $offset,$limit";
         return $this->result1(0,$sql);
     }
     function getAllByHotAsc(){
         $sql = "SELECT * FROM product WHERE hot=1 ORDER BY id ASC LIMIT 10";
         return $this->result1(0,$sql);
     } 
-    function getAllProAsc(){
-        $sql = "SELECT * FROM product ORDER BY id ASC LIMIT 10";
+    function getAllProAsc($limit,$offset){
+        $sql = "SELECT * FROM product ORDER BY id ASC LIMIT $offset,$limit";
+        return $this->result1(0,$sql);
+    }
+    function getAllProDesc($limit,$offset){
+        $sql = "SELECT * FROM product ORDER BY id DESC LIMIT $offset,$limit";
         return $this->result1(0,$sql);
     }
     function getHotPro($sosp=3){ 
@@ -160,14 +164,19 @@ class Model_home extends Model_db{
        }else{
            $slug = '';
        }
+       if($_GET['order']&&$_GET['sortBy']){
+           $order = '/'.$_GET['sortBy'].$_GET['order'];
+       }else{
+           $order= '';
+       }
 
        // nếu tổng số page hiện tại == current page thì không có tiếp tục
 
        $NextQuery['Page'] = $CurrentPage + 1; //tạo ra query tiếp theo
        $LastQuery['Page'] = $TotalPage; // tạo ra query cuối
        
-       $linkNextQuery  = ROOT_URL.'/'.$BaseLink. $slug.$_GET['maloai'].'/page-'.($NextQuery['Page']);
-       $linkLastQuery  = ROOT_URL.'/'.$BaseLink. $slug.$_GET['maloai'].'/page-'.($LastQuery['Page']);
+       $linkNextQuery  = ROOT_URL.'/'.$BaseLink. $slug.$_GET['maloai'].'/page-'.($NextQuery['Page']).$order;
+       $linkLastQuery  = ROOT_URL.'/'.$BaseLink. $slug.$_GET['maloai'].'/page-'.($LastQuery['Page']).$order;
 
        $NextButton = '<li class="'.$IsNextButtonHidden.'"><a href="'.$linkNextQuery.'">></a></li>';
        $LastButton = '<li class="'.$IsLastButtonHidden.'"><a href="'.$linkLastQuery.'">>|</a></li>';
@@ -176,8 +185,8 @@ class Model_home extends Model_db{
        $PrevQuery['Page'] = $CurrentPage - 1; //trở về trang trước
        $FirstQuery['Page'] = 1; // trở về trang 1
 
-       $linkPrevQuery  = ROOT_URL.'/'.$BaseLink. $slug.$_GET['maloai'].'/page-'.($PrevQuery['Page']);
-       $linkFirstQuery  = ROOT_URL.'/'.$BaseLink. $slug.$_GET['maloai'].'/page-'.($FirstQuery['Page']);
+       $linkPrevQuery  = ROOT_URL.'/'.$BaseLink. $slug.$_GET['maloai'].'/page-'.($PrevQuery['Page']).$order;
+       $linkFirstQuery  = ROOT_URL.'/'.$BaseLink. $slug.$_GET['maloai'].'/page-'.($FirstQuery['Page']).$order;
 
        $PreviousButton = '<li class="'.$IsFirstButtonHidden.'"><a href="'.$linkPrevQuery.'"><</a></li>';
        $FirstButton = '<li class="'.$IsPreviousButtonHidden.'"><a href="'.$linkFirstQuery.'">|<</a></li>';
@@ -192,7 +201,7 @@ class Model_home extends Model_db{
            if ($CurrentPage > ($LimitPage / 2)) // nếu page hiện tại lớn hon 5/2 
            {
                $CurrentQuery['Page'] = 1; // page hiện tại bằng 1 
-               $linkCurrentQuery  = ROOT_URL.'/'.$BaseLink.$slug.$_GET['maloai'].'/page-'.($CurrentQuery['Page']);
+               $linkCurrentQuery  = ROOT_URL.'/'.$BaseLink.$slug.$_GET['maloai'].'/page-'.($CurrentQuery['Page']).$order;
 
                $PagedHTML .= '<li><a href="'.$linkCurrentQuery.'">1</a></li>'; // trang đầu
                $PagedHTML .= '<li><a>...</a></li>'; // đến ....
@@ -205,7 +214,7 @@ class Model_home extends Model_db{
                if ($PageBreak < $LimitPage) // nếu pagebreak ++ nếu pagebreak < 5 (limit page)
                {
                    $CurrentQuery['Page'] = $Loop; // gán lại cho current query
-                   $linkCurrentQuery  = ROOT_URL.'/'.$BaseLink.$slug.$_GET['maloai'].'/page-'.($CurrentQuery['Page']);
+                   $linkCurrentQuery  = ROOT_URL.'/'.$BaseLink.$slug.$_GET['maloai'].'/page-'.($CurrentQuery['Page']).$order;
 
                    if ($CurrentPage === $Loop) // nếu currentpage == loop
                    {
@@ -220,7 +229,7 @@ class Model_home extends Model_db{
            if ($CurrentPage < ($TotalPage - ($LimitPage / 2))) 
            {
                $CurrentQuery['Page'] = $TotalPage;
-               $linkCurrentQuery  = ROOT_URL.'/'.$BaseLink.$slug.$_GET['maloai'].'/page-'.($CurrentQuery['Page']);
+               $linkCurrentQuery  = ROOT_URL.'/'.$BaseLink.$slug.$_GET['maloai'].'/page-'.($CurrentQuery['Page']).$order;
 
                $PagedHTML .= '<li><a href="'.$linkCurrentQuery.'">...</a></li>';
                $PagedHTML .= '<li><a href="'.$linkCurrentQuery.'">'.$TotalPage.'</a></li>';
@@ -236,19 +245,39 @@ class Model_home extends Model_db{
     return  $this->result1(1,$sql,$id);
    }
 
+   function getAllCate()
+   {
+    $sql ="SELECT * FROM catalog WHERE parent>0  ORDER BY id DESC LIMIT 15";
+    return  $this->result1(0,$sql);
+   }
    function countAllProduct($id)
    {
         $sql ="SELECT count(*) AS sodong from catalog cate  inner join product pro on cate.id= pro.catalog_id
         ";
         $par = $this->getCateByid($id);
+        
         if($par['parent'] != 0){
             $sql .= " where pro.catalog_id=?";
         }else{
             $sql .= " where cate.parent=?";
-        }    
+        }   
         return $this->result1(1,$sql,$id)['sodong'];
    }
-   function GetProductList($id,$CurrentPage){
+   function countAllProductControl($id)
+   {
+        $sql ="SELECT count(*) AS sodong from catalog cate  inner join product pro on cate.id= pro.catalog_id
+        ";
+        $par = $this->getCateByid($id);
+        
+        if($par['parent'] != 0){
+            $sql .= " where pro.catalog_id=?";
+        }else{
+            $sql .= " where cate.parent=?";
+        }   
+     
+        return $this->result1(1,$sql,$id)['sodong'];
+   }
+   function GetProductList($id,$CurrentPage,$sortBy,$order){
       $sql ="SELECT * from catalog cate  inner join product pro on cate.id= pro.catalog_id
       ";
       $par = $this->getCateByid($id);
@@ -257,14 +286,19 @@ class Model_home extends Model_db{
       }else{
           $sql .= " where cate.parent=?";
       }
-      
+
       if ($CurrentPage !== 0)
       {
-          $sql .= " GROUP BY pro.id LIMIT ".($CurrentPage - 1) * PAGE_SIZE_PRO.", ".PAGE_SIZE_PRO;
+          $sql .= " GROUP BY pro.id";
       }
-      
+            
+      if ($sortBy != NULL && $order != NULL)
+      {
+         $sql .= " ORDER BY pro.$sortBy $order"; 
+      }
+      $sql .=" LIMIT ".($CurrentPage - 1) * PAGE_SIZE_PRO.", ".PAGE_SIZE_PRO;
       return $this->result1(0,$sql,$id);
-}
+    }
 
   function addNewView($idsp){
       $sql = "UPDATE product SET SoLanXem=SoLanXem+1 WHERE idDT = ?";

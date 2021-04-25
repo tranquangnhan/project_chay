@@ -476,7 +476,7 @@
                                         foreach ($this->model->showDmCon($row['id']) as $con) {
                                             $menuCon .= ' <li class="category" >
                                                             <a class="dropdown-item"
-                                                                href="'.ROOT_URL.'/cate/'.$con['slug'].'-'.$con['id'].'"
+                                                                href="'.ROOT_URL.'/cate/'.$con['slug'].'-'.$con['id'].'/page-1"
                                                                 data-depth="2">
                                                                 '.$con['name'].'
                                                             </a>
@@ -485,7 +485,7 @@
 
                                         $kq .= '<li class="category" >
                                                     <a class="dropdown-item"
-                                                        href="'.ROOT_URL.'/cate/'.$row['slug'].'-'.$row['id'].'"
+                                                        href="'.ROOT_URL.'/cate/'.$row['slug'].'-'.$row['id'].'/page-1"
                                                         data-depth="0">
                                                         <span class="float-xs-right hidden-md-up">
                                                             <span data-target="#top_sub_menu_70770'.$i.'" data-toggle="collapse"
@@ -578,7 +578,7 @@
                                 </div>
 
                                 <div id="kkstoreinfo-container" class="kkstoreinfo-inner collapse footer-dropdown">
-                                    <a href="http://infinitytemplate.com/Prestashop/PRS01/PRS012/" class="store-logo">
+                                    <a href="#" class="store-logo">
                                         <img src="views/assets/img/demo-shop-logo-1538137004-1.png"
                                             alt="demo-shop-logo-1538137004-1.png">
                                     </a>
@@ -872,22 +872,7 @@
                                 </ul>
                             </div>
 
-                            <script type="text/javascript">
-                            var Tawk_API = Tawk_API || {},
-                                Tawk_LoadStart = new Date();
-
-
-                            (function() {
-                                var s1 = document.createElement("script"),
-                                    s0 = document.getElementsByTagName("script")[0];
-                                s1.async = true;
-                                s1.src = 'https://embed.tawk.to/5b345e38d0b5a54796823f58/default';
-                                s1.charset = 'UTF-8';
-                                s1.setAttribute('crossorigin', '*');
-                                s0.parentNode.insertBefore(s1, s0);
-                            })();
-                            </script>
-
+                          
 
                         </div>
                     </div>

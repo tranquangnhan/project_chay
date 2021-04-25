@@ -41,9 +41,9 @@ class Home{
      {
    
         $getAllProSpecial = $this->model->getAllProSpecial();
-        $getAllProAsc = $this->model->getAllProAsc();
+        $getAllProAsc = $this->model->getAllProAsc(10,0);
         $getAllByHotAsc = $this->model->getAllByHotAsc();
-        $getAllByBuyed = $this->model->getAllByBuyed();
+        $getAllByBuyed = $this->model->getAllByBuyed(10,0);
         $getAllProByDeal =  $this->model->getAllProByDeal();
         $getMenuParent = $this->model->getMenuParent();
         $page_title ="Danh sách nhà sản xuất";
@@ -56,8 +56,17 @@ class Home{
       
       $getMenuParent = $this->model->getMenuParent();
       $getCateFromId = $this->model->getCateFromId($_GET['maloai']);
-
+      $getAllCate = $this->model->getAllCate();
+      $getAllProDesc = $this->model->getAllProDesc(3,0);
       
+      $getAllProDescoffset = $this->model->getAllProDesc(3,3);
+      $getAllByBuyed = $this->model->getAllByBuyed(3,0);
+      $etAllByBuyedoffset = $this->model->getAllByBuyed(3,3);
+      if(isset($_GET['sortBy'])) $sortBy = $_GET['sortBy']; else $sortBy = NULL;
+
+      if(isset($_GET['order'])) $order = $_GET['order']; else $order = NULL;
+
+   
       if(isset($_GET['maloai'])==true&&($_GET['maloai']>0))
       $maLoai= $_GET['maloai'];
 
@@ -71,8 +80,8 @@ class Home{
 
       if($maLoai)
       {
-          $ds = $this->model-> GetProductList($maLoai,$PageNum);
-          $TotalProduct = (int)$this->model->countAllProduct($maLoai);
+          $ds = $this->model-> GetProductList($maLoai,$PageNum,$sortBy,$order);
+          $TotalProduct = (int)$this->model->countAllProductControl($maLoai,$sortBy,$order);
       }
       
       if($TotalProduct == 0) $TotalProduct =1;
