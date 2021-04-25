@@ -1418,7 +1418,7 @@
       
           
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-          <a itemprop="item" href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/">
+          <a itemprop="item" href="#">
             <span itemprop="name">Home</span>
           </a>
           <meta itemprop="position" content="1">
@@ -1427,8 +1427,8 @@
       
           
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-          <a itemprop="item" href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes">
-            <span itemprop="name">Clothes</span>
+          <a itemprop="item" href="#">
+            <span itemprop="name"><?=$getCateFromId['name']?></span>
           </a>
           <meta itemprop="position" content="2">
         </li>
@@ -1453,61 +1453,15 @@
        <img src="https://infinitytemplate.com/Prestashop/PRS01/PRS012/c/3-category_default/clothes.jpg" alt="Clothes">
      </div>
    
-  <h1 class="h1 title-category">Clothes</h1>
-       <div id="category-description" class="text-muted"><p><span style="font-size:10pt;font-family:Arial;font-style:normal;">Discover our favorites fashionable discoveries, a selection of cool items to integrate in your wardrobe. Compose a unique style with personality which matches your own.</span></p></div>
-     </div>
+  <h1 class="h1 title-category"><?=$getCateFromId['name']?></h1>
 
+     
   <div class="text-sm-center hidden-md-up">
-    <h1 class="h1">Clothes</h1>
+    <h1 class="h1"><?=$getCateFromId['name']?></h1>
   </div>
   
 
-       <div id="subcategories">
-
-      <p class="subcategory-heading"><span>Subcategories</span></p>
-
-      <div class="row">
-        <div id="subcategory-carousel" class="owl-carousel clearfix">
-          
-                      <div class="item">
-              <div class="subcategory-container">
-                
-                <div class="subcategory-image">
-                  <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/4-men" title="Men" class="img">
-                    
-                                          <img class="replace-2x" src="https://infinitytemplate.com/Prestashop/PRS01/PRS012/c/4-category_default/men.jpg" alt="Men"  />
-                                      </a>
-                </div>
-
-                <div class="subcategory-content">
-                  <a class="subcategory-name" href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/4-men">
-                    Men
-                  </a>
-                </div>
-
-              </div>
-            </div>
-                      <div class="item">
-              <div class="subcategory-container">
-                
-                <div class="subcategory-image">
-                  <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/5-women" title="Women" class="img">
-                    
-                                          <img class="replace-2x" src="https://infinitytemplate.com/Prestashop/PRS01/PRS012/c/5-category_default/women.jpg" alt="Women"  />
-                                      </a>
-                </div>
-
-                <div class="subcategory-content">
-                  <a class="subcategory-name" href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/5-women">
-                    Women
-                  </a>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
+  
   
 
 
@@ -1524,7 +1478,7 @@
     </div>
   
 
-          <p>There are 18 products.</p>
+          <p>There are <?= $TotalProduct?> products.</p>
       </div>
   <div class="col-md-6">
     <div class="row sort-by-row">
@@ -1612,59 +1566,71 @@
   <div class="products product-thumbs row">
     
           <?php
-            foreach ($listProduct as $row) {
+            foreach ($ds as $row) {
+              if(is_file(PATH_IMG_SITE.explode(",",$row['image_list'])[0])){
+                  $img = PATH_IMG_SITE.explode(",",$row['image_list'])[0];
+              }else{
+                  $img = PATH_IMG_SITE.'logo.png';
+              }
+              if(is_file(PATH_IMG_SITE.explode(",",$row['image_list'])[1])){
+                $imgCover = PATH_IMG_SITE.explode(",",$row['image_list'])[1];
+              }else{
+                  $imgCover = PATH_IMG_SITE.'logo.png';
+              }
+              if($row['new'] == 1){
+                $new = ' <li class="product-flag new">New</li>';
+              }else{
+                $new = '';
+              }
+              if($row['discount'] > 0){
+                $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
+                $giaDiscount = ' <div class="product-price-and-shipping">
+
+                                <span class="sr-only">Regular price</span>
+                                <span class="regular-price">'.$row['price'].'</span>
+                                <span class="discount-percentage discount-product">-'.$row['discount'].'%</span>
+
+
+                                <span class="sr-only">Price</span>
+                                <span itemprop="price" class="price">'.($row['price'] - ($row['discount']*$row['price'])/100) .'€</span>
+                            </div>';
+              }else{
+                $discount = '';
+                $giaDiscount = '<div class="product-price-and-shipping">
+        
+
+                                  <span class="sr-only">Price</span>
+                                  <span itemprop="price" class="price">'.$row['price'].'€</span>
+                                
+                                
+                            </div>';
+              }
+              $link = ROOT_URL."/product/".$row['slug'];
               echo ' <article class="product-miniature js-product-miniature " data-id-product="19" data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
               <div class="thumbnail-container">
                 <div class="product-inner">
                   <div class="thumbnail-inner">
                     <div class="inner">
                       <div class="product-img">
-                                        <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/home-accessories/19-customizable-mug.html" class="thumbnail product-thumbnail">
+                                        <a href="'.$link.'" class="thumbnail product-thumbnail">
                             <img
-                                src = "https://infinitytemplate.com/Prestashop/PRS01/PRS012/25-home_default/customizable-mug.jpg"
-                                alt = "Neque Porro Suisquam"
-                                data-full-size-image-url = "https://infinitytemplate.com/Prestashop/PRS01/PRS012/25-large_default/customizable-mug.jpg"
-                              >
-                                                           <img class="second_image img-responsive" src = "https://infinitytemplate.com/Prestashop/PRS01/PRS012/26-home_default/customizable-mug.jpg" alt = "" title="" />
-                                                  </a> </div>
-                      
-                        <ul class="product-flags">
-                                            <li class="product-flag discount">-10%</li>
-                                            <li class="product-flag new">New</li>
-                                        </ul></div><div class="kkproducthover"><div class="quick-view-block">
-                            <a href="#" class="quick-view btn" data-link-action="quickview" title="Quick view">
-                              <i class="material-icons search">&#xE8B6;</i> <span>Quick view</span>
-                            </a>
-                          </div></div>
-                  </div><div class="product-description"><h1 class="h3 product-title" itemprop="name"><a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/home-accessories/19-customizable-mug.html">'.$row['name'].'</a></h1><div class="product-price-and-shipping"><span class="sr-only">Regular price</span>
-                        <span class="regular-price">$15.55</span>
-                        <span class="discount-percentage discount-product">-10%</span><span class="sr-only">Price</span>
-                        <span itemprop="price" class="price">$14.00</span>
-                  </div><p class="product-desc" itemprop="description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris eleifend, quam a vulputate dictum, massa quam dapibus leo.
-                    </p><div class="cart-block">
+                                src = "'.$img.'"
+                                alt = "loading..."
+                                data-full-size-image-url = "'.$img.'"  height="250">
+                                <img class="second_image img-responsive" height="250" width="200"  src = "'.$imgCover.'" alt = "" title="" />
+                               </a> </div>
+                  </div><div class="kkproducthover"></div>
+                  </div>
+                  <div class="product-description">
+                      <h1 class="h3 product-title" itemprop="name"><a href="'. $link.'">'.$row['name'].'</a></h1><div class="product-price-and-shipping"><span class="sr-only">Regular price</span>
+                      '.$giaDiscount.'
+                  </div>
+                  
+                  <div class="cart-block">
                     <div class="product-add-to-cart">
-                <form action="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/cart" method="post" class="add-to-cart-or-refresh">
-                <div class="product-quantity" style="display:none;">
-                  <input type="number" name="id_product" value="19" class="product_page_product_id">
-                  <input type="number" name="id_customization" value="0" class="product_customization_id">
-                  <input type="hidden" name="token" value="9407b95b9bb08d999434e20be614587e">
-                  <input type="number" name="qty" class="quantity_wanted input-group" value="1" min="1"/>
-                </div>
-                        <button class="button ajax_add_to_cart_button add-to-cart btn btn-default" data-button-action="add-to-cart" title="Add to cart"               disabled
-                      >
-                    <span>Add to cart</span>
-                  </button>
-                    </form>
+            
             </div>        </div>
-            </div>
-                <div class="highlighted-informations no-variants hidden-sm-down">
-                    <a class="quick-view" href="#" data-link-action="quickview">
-                      <i class="material-icons search">&#xE8B6;</i> Quick view
-                    </a>
-                </div>
-              </div>  
-            </div>
+       
           </article>';
             }
           ?></div>

@@ -22647,6 +22647,10 @@ html[xmlns] .flexslider .slides {
     display: none;
 }
 
+.hidden {
+    display: none !important;
+}
+
 .login,
 .kk-innertitle {
     text-align: center;

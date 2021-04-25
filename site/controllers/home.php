@@ -53,26 +53,34 @@ class Home{
 
      function product()
      {
-   
       
-      $CurrentPage = 1;
-      $url =  "//{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
-      $num = end(explode('/',trim($url,'/')));
-      
-      // echo preg_match('/(page)/',$num);
-      if (preg_match('/(page)/',$num) != 0) {
-         $num1 = end(explode('-',trim($url,'-')));
-         settype($num1,'integer');
-         $CurrentPage = $num1;
-      }      
-      $idCate = $_GET['id'];
-      settype($idCate, "int");
-        $TotalProduct = $this->model->countAllProduct($idCate);
-        if($TotalProduct == 0) $TotalProduct =1;
-        $listProduct = $this->model-> GetProductList($idCate,$CurrentPage);
-        $baselink = 'cate';
+      $getMenuParent = $this->model->getMenuParent();
+      $getCateFromId = $this->model->getCateFromId($_GET['maloai']);
 
-        $Pagination =  $this->model->Page($TotalProduct, $CurrentPage,$baselink);
+      
+      if(isset($_GET['maloai'])==true&&($_GET['maloai']>0))
+      $maLoai= $_GET['maloai'];
+
+      $PageNum=1;
+      if(isset($_GET['Page'])==true) $PageNum = $_GET['Page'];
+
+      settype($maLoai,"int");
+      settype($PageNum,"int");
+
+      if($PageNum<=0) $PageNum = 1;
+
+      if($maLoai)
+      {
+          $ds = $this->model-> GetProductList($maLoai,$PageNum);
+          $TotalProduct = (int)$this->model->countAllProduct($maLoai);
+      }
+      
+      if($TotalProduct == 0) $TotalProduct =1;
+
+      $BaseLink= 'cate';
+      $PageSize = PAGE_SIZE_PRO;
+      $Pagination =  $this->model->Page($TotalProduct ,$PageNum,$PageSize, $BaseLink);
+
       $page_title ="Danh sách nhà sản xuất";
       $viewFile = "views/product.php";
       require_once "views/layout.php";  
