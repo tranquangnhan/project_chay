@@ -22646,3 +22646,7 @@ html[xmlns] .flexslider .slides {
 .currency-selector.dropdown.js-dropdown {
     display: none;
 }
+
+.hidden {
+    display: none !important;
+}

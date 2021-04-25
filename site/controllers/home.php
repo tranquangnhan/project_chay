@@ -53,39 +53,34 @@ class Home{
 
      function product()
      {
-   
       
-      // $CurrentPage = 1;
-      // $url =  "//{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
-      // $num = end(explode('/',trim($url,'/')));
+      $getMenuParent = $this->model->getMenuParent();
+      $getCateFromId = $this->model->getCateFromId($_GET['maloai']);
+
       
-      // // echo preg_match('/(page)/',$num);
-      // if (preg_match('/(page)/',$num) != 0) {
-      //    $num1 = end(explode('-',trim($url,'-')));
-      //    settype($num1,'integer');
-      //    $CurrentPage = $num1;
-      // }      
-       $idCate = $_GET['id'];
-       settype($idCate, "int");
-       
-       if(isset($_GET['maloai'])==true&&($_GET['maloai']>0))
-       $maLoai= $_GET['maloai'];
+      if(isset($_GET['maloai'])==true&&($_GET['maloai']>0))
+      $maLoai= $_GET['maloai'];
 
-       $pageNum=1;
-       if(isset($_GET['Page'])==true) $pageNum = $_GET['Page'];
+      $PageNum=1;
+      if(isset($_GET['Page'])==true) $PageNum = $_GET['Page'];
+
+      settype($maLoai,"int");
+      settype($PageNum,"int");
+
+      if($PageNum<=0) $PageNum = 1;
+
+      if($maLoai)
+      {
+          $ds = $this->model-> GetProductList($maLoai,$PageNum);
+          $TotalProduct = (int)$this->model->countAllProduct($maLoai);
+      }
       
-       settype($maLoai,"int");
-       settype($pageNum,"int");
+      if($TotalProduct == 0) $TotalProduct =1;
 
-       if($pageNum<=0) $pageNum = 1;
-       $pageSize = PAGE_SIZE_PRO;
+      $BaseLink= 'cate';
+      $PageSize = PAGE_SIZE_PRO;
+      $Pagination =  $this->model->Page($TotalProduct ,$PageNum,$PageSize, $BaseLink);
 
-        $TotalProduct = $this->model->countAllProduct($idCate);
-        if($TotalProduct == 0) $TotalProduct =1;
-        $listProduct = $this->model-> GetProductList($idCate,$pageNum);
-        $baselink = 'cate';
-
-        $Pagination =  $this->model-> Page($TotalProduct, $pageNum,$pageSize,$baselink);
       $page_title ="Danh sách nhà sản xuất";
       $viewFile = "views/product.php";
       require_once "views/layout.php";  
