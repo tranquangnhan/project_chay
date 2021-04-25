@@ -22646,3 +22646,13 @@ html[xmlns] .flexslider .slides {
 .currency-selector.dropdown.js-dropdown {
     display: none;
 }
+
+.login,
+.kk-innertitle {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#submit-login {
+    margin-top: 20px;
+}

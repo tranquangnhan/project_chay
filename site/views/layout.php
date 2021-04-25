@@ -340,7 +340,7 @@
                                 <div class="user-info-inner">
                                     <div class="kkuserheading"></div>
                                     <ul class="user-info">
-                                        <li><a href="#"
+                                        <li><a href="<?php echo ROOT_URL?>/login"
                                                 title="Log in to your customer account" rel="nofollow">
                                                 <i class="material-icons user">&#xE7FF;</i>
                                                 <span class="hidden-sm-down">Sign in</span>
@@ -469,6 +469,7 @@
                             <ul class="top-menu" id="top-menu" data-depth="0">
                                 <?php 
                                     $this->model = new Model_home();
+                                    $i =0;
                                     foreach ($getMenuParent as $row) {
                                         $menuCon = '';
                                         $kq = '';
@@ -487,7 +488,7 @@
                                                         href="'.ROOT_URL.'/cate/'.$row['slug'].'-'.$row['id'].'"
                                                         data-depth="0">
                                                         <span class="float-xs-right hidden-md-up">
-                                                            <span data-target="#top_sub_menu_70770" data-toggle="collapse"
+                                                            <span data-target="#top_sub_menu_70770'.$i.'" data-toggle="collapse"
                                                                 class="navbar-toggler collapse-icons">
                                                                 <i class="material-icons add">&#xE313;</i>
                                                                 <i class="material-icons remove">&#xE316;</i>
@@ -497,23 +498,18 @@
                                                     </a>';
                                                     if($menuCon){
                                                         $kq .= '<div class="popover sub-menu js-sub-menu collapse twocolumn"
-                                                        id="top_sub_menu_70770">
+                                                        id="top_sub_menu_70770'.$i.'">
                 
                                                         <ul class="top-menu" data-depth="1">
                                                             
-                                                            <li class="category" id="category-4">
+                                                            <li class="category" id="category-4'.$i.'">
                                                             
-                                                                <div class="collapse" id="top_sub_menu_29761">
-                
-                                                                    <ul class="top-menu" data-depth="2">
-                                                                        '.$menuCon.'
-                                                                    </ul>
-                
-                                                                </div>
+                                                            '.$menuCon.'
                                                             </li>
                                                         </ul>
                 
                                                     </div>';
+                                                    $i++;
                                                     }
 
                                                 $kq .= '</li>';

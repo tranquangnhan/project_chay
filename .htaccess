@@ -1,6 +1,6 @@
 RewriteEngine on
 RewriteRule ^$ site/
-RewriteRule ^dang-nhap-dang-ky$ /project_chay/site/?act=loginregister [L]
+
 RewriteRule ^doi-mat-khau$ /project_chay/site/?act=changepass [L]
 RewriteRule ^dang-xuat$ /project_chay/site/?act=logout [L]
 RewriteRule ^gio-hang$ /project_chay/site/?act=cartview [L]
@@ -10,6 +10,7 @@ RewriteRule ^cam-on$ /project_chay/site/?act=thankyou [L]
 RewriteRule ^quen-mat-khau$ /project_chay/site/?act=forgotpass [L]
 RewriteRule ^thanh-toan-thanh-cong/$ /project_chay/site/?act=ttthanhcong [L]
 
+RewriteRule ^login$ /project_chay/site/?act=login [L]
 RewriteRule ^cate/(.*)-(.*)$ /project_chay/site/?act=product&slug=$1&id=$2 [L]
 RewriteRule ^product/([a-zA-Z0-9-]+)$ /project_chay/site/?act=detail&slug=$1&id=$2 [L]
 RewriteRule ^nsx/([a-zA-Z0-9-]+)$ /project_chay/site/?act=cat&id=$2&slug=$1 [L]

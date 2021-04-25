@@ -31,41 +31,53 @@
                                 <img src="../views/assets/images/logo-light.png" alt="" height="22" class="logo-light mx-auto">
                                <img src="../views/assets/images/logo-dark.png" alt="" height="22" class="logo-dark mx-auto">
                             </a>
-                            <p class="text-muted mt-2 mb-4">Đăng nhập vào để quản trị</p>
+                            <p class="text-muted mt-2 mb-4">Login to manage</p>
                         </div>
                         <div class="card">
 
                             <div class="card-body p-4">
                                 
                                 <div class="text-center mb-4">
-                                    <h4 class="text-uppercase mt-0">Đăng Nhập</h4>
+                                    <h4 class="text-uppercase mt-0">Login</h4>
                                 </div>
 
-                                <form method="POST" id="formlogin">
+                                <form method="POST" id="formlogin" data-parsley-validate novalidate> 
                                    
                                     <div class="form-group mb-3">
                                         <?php echo "<h3 class='text-danger'>".$_SESSION['error_taikhoan']."</h3>"; unset($_SESSION['error_taikhoan'])?>
-                                        <label for="user">Tên tài khoản</label>
-                                        <input class="form-control" type="user" name="user" id="user" required  placeholder="Nhập tên tài khoản">
+                                        <label for="user">Email</label>
+                                        <input class="form-control" type="user" name="email" id="user" required  placeholder="Email">
                                        
                                     </div>
 
                                     <div class="form-group mb-3">
-                                        <label for="password">Mật khẩu</label>
-                                        <input class="form-control" type="password" name="password" required id="password" placeholder="Nhập mật khẩu">
+                                        <label for="password">Password</label>
+                                        <input class="form-control" type="password" name="password" required id="password" placeholder="Password">
                                     </div>
-
+                                    <div class="form-group mb-3">
+                                    <?php
+                                        if($emailexist && $emailexist!=''){
+                                        echo '<span style="color:red;">'.$emailexist.'</span>';
+                                    }
+                                        if($checkloginwarn && $checkloginwarn!=''){
+                                        echo '<span style="color:red;">'.$checkloginwarn.'</span>';
+                                        }
+                                        if($role && $role!=''){
+                                            echo '<span style="color:red;">'.$role.'</span>';
+                                            }
+                                        ?>
+                                    </div>
                                     <div class="form-group mb-3">
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input" id="checkbox-signin" checked>
-                                            <label class="custom-control-label" for="checkbox-signin">Nhớ tài khoản</label>
+                                            <label class="custom-control-label" for="checkbox-signin">Remember</label>
                                         </div>
                                     </div>
 
                                     <div class="form-group mb-0 text-center">
                                         <input class="btn btn-primary btn-block" type="submit" name="login" value="Đăng Nhập">
                                     </div>
-
+                                    
                                 </form>
 
                             </div> <!-- end card-body -->
