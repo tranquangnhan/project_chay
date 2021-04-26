@@ -40,3 +40,5 @@ RewriteRule ^cate/page-([0-9]+)/namedesc$ /project_chay/site/?act=product&Page=$
 RewriteRule ^cate/page-([0-9]+)/priceasc$ /project_chay/site/?act=product&Page=$3&slug=$1&sortBy=price&order=asc [L]
 
 RewriteRule ^cate/page-([0-9]+)/pricedesc$ /project_chay/site/?act=product&Page=$3&slug=$1&sortBy=price&order=desc [L]
+
+ErrorDocument 404 /project_chay/site/views/Error404.php

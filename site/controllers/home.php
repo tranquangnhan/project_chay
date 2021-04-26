@@ -1,7 +1,7 @@
 <?php 
 require_once "../system/config.php";
 require_once "../system/database.php";
-// require_once "../lib/myfunctions.php";
+require_once "../lib/myfunctions.php";
 
 require_once "models/home.php"; 
 require_once "models/user.php";
@@ -9,7 +9,7 @@ class Home{
     function __construct()   {
         $this->model = new model_home();
         $this->modelUser = new Model_user();
-      //   $this->lib = new lib();
+        $this->lib = new lib();
        
         if(isset($_GET['q'])){
             $this->cat();
@@ -39,7 +39,6 @@ class Home{
 
      function home()
      {
-   
         $getAllProSpecial = $this->model->getAllProSpecial();
         $getAllProAsc = $this->model->getAllProAsc(10,0);
         $getAllByHotAsc = $this->model->getAllByHotAsc();
@@ -94,7 +93,7 @@ class Home{
          $PageSize = PAGE_SIZE_PRO;
          $Pagination =  $this->model->PageNotCate($TotalProduct ,$PageNum,$PageSize, $BaseLink);
       }
-      
+
       $page_title ="Danh sách nhà sản xuất";
       $viewFile = "views/product.php";
       require_once "views/layout.php";  
