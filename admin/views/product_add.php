@@ -27,7 +27,7 @@
 
                                     <h4 class="header-title mt-0 mb-3">Product</h4>
 
-                                    <form data-parsley-validate id="formadd" novalidate method="post" enctype="multipart/form-data">
+                                    <form data-parsley-validate id="formadd" novalidate onsubmit="return submitForm()" method="post" enctype="multipart/form-data">
                                         <div class="form-group">
                                             <?php if($message) echo "<h2 class='text-danger'>".$mesage."</h2>";   ?>    
                                         </div>
@@ -66,14 +66,15 @@
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label for="">Discount</label>
-                                                    <input  type="number" name="discount" parsley-trigger="change" required
-                                                        placeholder="Type discount (%)" value="<?=$oneRecode['GiaKM']?>" class="form-control" >
+                                                    <input  type="number" name="discount" min="0" max="100" parsley-trigger="change" required
+                                                        placeholder="Type discount (%)" value="<?=$oneRecode['GiaKM']?>" class="form-control" id="discount">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label for="">Color</label>
-                                                    <input type="text" class="form-control" value="<?=$oneRecode['color']?>" name="color"  placeholder="Size">
+                                                    <input type="text" class="form-control" value="<?=$oneRecode['color']?>" name="color" id="color"  placeholder="#000,#fff,#999,...">
+                                                    <span id="ErrorColor"></span>
                                                 </div> 
                                             </div>
                                         </div>
@@ -98,11 +99,27 @@
                                                 
                                             </div>
                                             <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="">Size</label>
-                                                    <input type="text" class="form-control" value="<?=$oneRecode['size']?>" name="size"  placeholder="Size">
-                                                </div> 
+                                                <div class="form-group"><label for="">Size</label><br/></div>
+                                                <div class="form-group radio">
+                                                    <div class="input-radio size">
+                                                        <label for="size1 ">S</label>
+                                                        <input type="checkbox" name="size1" id="size1" value="S" />
+                                                    </div>
+                                                    <div class="input-radio size">
+                                                        <label for="size2">M</label>
+                                                        <input type="checkbox" name="size2" id="size2" value="M" />
+                                                    </div>
+                                                    <div class="input-radio size">
+                                                        <label for="size3">L</label>
+                                                        <input type="checkbox" name="size3" id="size3" value="L" />
+                                                    </div>
+                                                    <div class="input-radio size">
+                                                        <label for="size4">XL</label>
+                                                        <input type="checkbox" name="size4" id="size4" value="XL" />
+                                                    </div>
+                                                </div>
                                             </div>
+
                                         </div>
                                      
                                         <div class="row">
@@ -128,8 +145,8 @@
                                         </textarea>
                                       
                                         <div class="form-group text-right mb-0 mt-5">
-                                            <input type="submit" name="them" class="btn btn-primary waves-effect waves-light mr-1" value="Thêm">
-                                            <a href="?ctrl=dienthoai&act=index" clas="btn btn-secondary waves-effect waves-light">Huỷ</a>
+                                            <input type="submit" name="them" class="btn btn-primary waves-effect waves-light mr-1" value="ADD" id='add_product'>
+                                            <a href="?ctrl=dienthoai&act=index" clas="btn btn-secondary waves-effect waves-light">CANCEL</a>
                                         </div>
 
                                     </form>

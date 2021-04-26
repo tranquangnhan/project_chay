@@ -278,6 +278,7 @@ class Home{
       {
          unset($_SESSION['suser']);
          unset($_SESSION['sid']);
+         unset($_SESSION['srole']);
          header('location: '.ROOT_URL.'');
       }
       function forgotPass(){

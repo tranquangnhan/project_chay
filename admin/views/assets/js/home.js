@@ -1,3 +1,16 @@
+function submitForm() {
+
+    let message = document.getElementById("ErrorColor");
+    let valColor = $('#color').val();
+    let arr = valColor.split(",")
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].charAt(0) != '#') { message.innerHTML = "Định dạng hợp lệ là #000, #fff, ..."; return false; } else { message.innerHTML = ""; }
+        if (arr[i].slice(1).length != 3) { message.innerHTML = "Định dạng hợp lệ là #000, #fff, ..."; return false; } else { message.innerHTML = ""; }
+    }
+
+}
+
 function checkDelete(link) {
     Swal.fire({
         title: 'Delete?',
@@ -72,14 +85,14 @@ $(document).ready(function() {
 
 
     jQuery(function($) {
-        $("#clear").click(function(event) {
-            event.preventDefault();
-            $("#inputhinh").replaceWith('<input type="file" class="imagefet" name="img[]" id="inputhinh" accept="image/png, image/jpg, image/jpeg" multiple="multiple" style="display: none">');
-            $("div.output-fet").replaceWith('<div class="output-fet"><output id="list"></output></div>');
-            $(".boxshowimg").addClass("hidden");
-        });
-    })
-
+            $("#clear").click(function(event) {
+                event.preventDefault();
+                $("#inputhinh").replaceWith('<input type="file" class="imagefet" name="img[]" id="inputhinh" accept="image/png, image/jpg, image/jpeg" multiple="multiple" style="display: none">');
+                $("div.output-fet").replaceWith('<div class="output-fet"><output id="list"></output></div>');
+                $(".boxshowimg").addClass("hidden");
+            });
+        })
+        // $('#list img').css("width", "300px");
     jQuery(function($) {
 
         var count = 0;
@@ -113,6 +126,8 @@ $(document).ready(function() {
         });
 
     })
+
+
 
 
 
