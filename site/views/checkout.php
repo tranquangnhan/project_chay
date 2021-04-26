@@ -364,14 +364,14 @@
                                 <div class="block-reassurance-item">
                                     <img src="https://infinitytemplate.com/Prestashop/PRS01/PRS012/modules/blockreassurance/img/ic_verified_user_black_36dp_1x.png"
                                         alt="Security policy (edit with Customer reassurance module)">
-                                    <span class="h6">Security policy (edit with Customer reassurance module)</span>
+                                    <span class="h6">Security policy (Edit with Customer reassurance module)</span>
                                 </div>
                             </li>
                             <li>
                                 <div class="block-reassurance-item">
                                     <img src="https://infinitytemplate.com/Prestashop/PRS01/PRS012/modules/blockreassurance/img/ic_local_shipping_black_36dp_1x.png"
                                         alt="Delivery policy (edit with Customer reassurance module)">
-                                    <span class="h6">Delivery policy (edit with Customer reassurance module)</span>
+                                    <span class="h6">Delivery policy (Edit with Customer reassurance module)</span>
                                 </div>
                             </li>
                             <li>
