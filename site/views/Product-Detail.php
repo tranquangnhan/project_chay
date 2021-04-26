@@ -100,7 +100,67 @@ if(is_array($sp)){
                             <h1 class="h1 kk-producttitle" itemprop="name"><?=$sp['name']?></h1>
 
 
+                            <?php if($sp['price'] == 0 || $sp['price'] ==''){?>
+                                <div class="product-prices">
 
+                                <div class="product-price h5 " itemprop="offers" itemscope
+                                    itemtype="https://schema.org/Offer">
+                                    <link itemprop="availability" href="https://schema.org/InStock" />
+                                    <meta itemprop="priceCurrency" content="USD">
+
+                                </div>
+
+                                <div class="tax-shipping-delivery-label">
+
+
+                                </div>
+                            </div>
+
+
+                            <div class="product-information">
+
+
+                                <div class="product-actions">
+
+            
+
+                                
+                                        <section class="product-discounts">
+                                        </section>
+
+
+                                              
+                                        <div class="product-add-to-cart">
+                                            
+
+
+                                            <div class="product-quantity clearfix">
+                                           
+                                                <div class="add">
+                                                    <input type="hidden" id="sp" value="<?=$sp['id']?>">
+                                                    <button class="btn btn-primary " onclick="contact()">
+                                                       
+                                                       Contact for more infomation
+                                                    </button>
+                                                </div>
+
+
+                                            </div>
+
+
+
+                                            <span id="product-availability">
+                                                <i class="material-icons rtl-no-flip product-available">&#xE5CA;</i>
+                                                In-stock
+                                            </span>
+
+
+
+                                            <p class="product-minimal-quantity">
+                                            </p>
+
+                                        </div>
+                            <?php }else{ ?>
                             <div class="product-prices">
 
                                 <div class="product-price h5 " itemprop="offers" itemscope
@@ -188,7 +248,7 @@ if(is_array($sp)){
                                         </section>
 
 
-
+                                              
                                         <div class="product-add-to-cart">
                                             <span class="control-label">Quantity</span>
 
@@ -223,7 +283,7 @@ if(is_array($sp)){
                                             </p>
 
                                         </div>
-
+                                 <?php }?>
 
 
                                         <div class="product-additional-info">
@@ -328,11 +388,6 @@ if(is_array($sp)){
 
 
                                 </div>
-
-
-
-
-
                             </div>
                         </div>
 
@@ -388,6 +443,9 @@ if(is_array($sp)){
                                                     
                                                     
                                                 </div>';
+                                    }
+                                    if($row['price']<=0 ||$row['price'] =='' ){
+                                        $giaDiscount = ' <span class="discount-percentage discount-product">contact</span>';
                                     }
                                     $link = ROOT_URL."/product/".$row['slug'];
                                     echo '<div class="kktab-block">

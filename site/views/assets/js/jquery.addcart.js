@@ -76,3 +76,71 @@ function delCart(iddel) {
         }
     });
 }
+const fetchAPi = async(url, option) => {
+    const dulieu = await fetch(url, option);
+    console.log(dulieu)
+}
+
+function contact() {
+    var idsp = document.getElementById('sp').value;
+    swal.fire({
+        title: 'Contact',
+        html: `
+            <select id="id_contact" class="swal2-input">
+                    <option value="2">Customer service</option>
+                    <option value="1">Webmaster</option>
+            </select>
+            <input id="name" placeholder="name" class="swal2-input">
+            <input id="email" placeholder="email" class="swal2-input">
+            <textarea id="message" class="form-control swal2-input" name="message" placeholder="How can we help?" rows="3" cols="3"></textarea>`,
+        focusConfirm: false,
+        preConfirm: async() => {
+            var id_contact = document.getElementById('id_contact').value;
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+            if (id_contact == '' || name == '' || email == '' || message == '') {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Enter your input',
+                })
+            } else {
+                var formData = new FormData();
+                formData.append('name', name);
+                formData.append('email', email);
+                formData.append('message', message);
+                formData.append('idsp', idsp);
+                formData.append('id_contact', id_contact);
+                formData.append('action', 'add');
+                await $.ajax({
+                    type: "POST",
+                    url: "controllers/ajax/contact.php",
+                    contentType: false,
+                    processData: false,
+                    dataType: 'JSON',
+                    data: formData,
+                    success: function(response) {
+                        if (response.StatusCode == 1) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'success...',
+                                text: 'Send contact success',
+                            })
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'Something went wrong!',
+                            })
+                        }
+
+                    }
+                });
+            }
+
+
+
+        }
+    })
+}

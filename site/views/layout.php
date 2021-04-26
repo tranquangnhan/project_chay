@@ -490,12 +490,21 @@
                                     $this->model = new Model_home();
                                     $i =0;
                                     foreach ($getMenuParent as $row) {
+                                        
+                                    
+                                        if($row['parent'] ==0){
+                                            $linkCha = ROOT_URL.'/'.$row['ctrl'];
+                                        }
+
                                         $menuCon = '';
                                         $kq = '';
                                         foreach ($this->model->showDmCon($row['id']) as $con) {
+                                          
+                                       
+                                           
                                             $menuCon .= ' <li class="category" >
                                                             <a class="dropdown-item"
-                                                                href="'.ROOT_URL.'/cate/'.$con['slug'].'-'.$con['id'].'/page-1"
+                                                                href="'.ROOT_URL.'/cate/'.$con['slug'].'-'.$con['id'].'/page-1'.'"
                                                                 data-depth="2">
                                                                 '.$con['name'].'
                                                             </a>
@@ -504,7 +513,7 @@
 
                                         $kq .= '<li class="category" >
                                                     <a class="dropdown-item"
-                                                        href="'.ROOT_URL.'/cate/'.$row['slug'].'-'.$row['id'].'/page-1"
+                                                        href="'.$linkCha.'"
                                                         data-depth="0">
                                                         <span class="float-xs-right hidden-md-up">
                                                             <span data-target="#top_sub_menu_70770'.$i.'" data-toggle="collapse"
@@ -877,6 +886,7 @@
     <div class="newsletter-pop">
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   
     <script type="text/javascript" src="views/assets/js/bottom-b769945.js"></script>
     <script src="views/assets/js/jquery.flexslider.js"></script>
     <script src="views/assets/js/jquery.addcart.js"></script>

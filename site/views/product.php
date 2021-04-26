@@ -496,6 +496,9 @@
                                                 $giaDiscount = '<span class="sr-only">Price</span>
                                                                 <span itemprop="price" class="price">'.$row['price'].'</span>';
                                               }
+                                              if($row['price']<=0 ||$row['price'] =='' ){
+                                                $giaDiscount = ' <span class="discount-percentage discount-product">contact</span>';
+                                             }
                                               $link = ROOT_URL."/product/".$row['slug'];
                                                 echo '<article class="product-miniature js-product-miniature" data-id-product="19"
                                                 data-id-product-attribute="0" itemscope
@@ -571,6 +574,9 @@
                                                 $discount = '';
                                                 $giaDiscount = '<span class="sr-only">Price</span>
                                                                 <span itemprop="price" class="price">'.floatval($row['price']).'</span>';
+                                              }
+                                              if($row['price']<=0 ||$row['price'] =='' ){
+                                                $giaDiscount = ' <span class="discount-percentage discount-product">contact</span>';
                                               }
                                               $link = ROOT_URL."/product/".$row['slug'];
                                                 echo '<article class="product-miniature js-product-miniature" data-id-product="19"
@@ -693,6 +699,9 @@
                                                 $giaDiscount = '<span class="sr-only">Price</span>
                                                                 <span itemprop="price" class="price">'.floatval($row['price']).'</span>';
                                               }
+                                              if($row['price']<=0 ||$row['price'] =='' ){
+                                                $giaDiscount = ' <span class="discount-percentage discount-product">contact</span>';
+                                             }
                                               $link = ROOT_URL."/product/".$row['slug'];
                                                 echo '<article class="product-miniature js-product-miniature" data-id-product="19"
                                                 data-id-product-attribute="0" itemscope
@@ -767,6 +776,9 @@
                                                 $giaDiscount = '<span class="sr-only">Price</span>
                                                                 <span itemprop="price" class="price">'.floatval($row['price']).'</span>';
                                               }
+                                              if($row['price']<=0 ||$row['price'] =='' ){
+                                                $giaDiscount = ' <span class="discount-percentage discount-product">contact</span>';
+                                                }
                                               $link = ROOT_URL."/product/".$row['slug'];
                                                 echo '<article class="product-miniature js-product-miniature" data-id-product="19"
                                                 data-id-product-attribute="0" itemscope
@@ -1011,6 +1023,9 @@
                                                             
                                                         </div>';
                                           }
+                                          if($row['price']<=0 ||$row['price'] =='' ){
+                                            $giaDiscount = ' <span class="discount-percentage discount-product">contact</span>';
+                                            }
                                           $link = ROOT_URL."/product/".$row['slug'];
                                           echo ' <article class="product-miniature js-product-miniature " data-id-product="19" data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
                                           <div class="thumbnail-container">

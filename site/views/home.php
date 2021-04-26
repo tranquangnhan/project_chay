@@ -12,7 +12,7 @@
             <ul class="slides">
                 <li class="slide">
 
-                    <a href="<?=ROOT_URL?>/cate/product-2"
+                    <a href="<?=ROOT_URL?>/product"
                         title="kslider-1">
                         <img src="views/assets/img/kslider-1.jpg" alt="kslider-1" title="KSlider1" />
                     </a>
@@ -21,7 +21,7 @@
                 </li>
                 <li class="slide">
 
-                    <a href="<?=ROOT_URL?>/cate/product-2"
+                    <a href="<?=ROOT_URL?>/product"
                         title="kslider-2">
                         <img src="views/assets/img/kslider-2.jpg" alt="kslider-2" title="KSlider2" />
                     </a>
@@ -38,7 +38,7 @@
             <div class="row">
                 <div class="center-banner list-unstyled">
                     <div class="slider banner1 col-lg-4 col-md-12">
-                        <a href="<?=ROOT_URL?>/cate/product-2" class="kk-customhover-fadeintopbottom">
+                        <a href="<?=ROOT_URL?>/product" class="kk-customhover-fadeintopbottom">
                             <img src="views/assets/img/kbanner-1.jpg" alt="kbanner-1"
                                 class="img-responsive center-block" />
                         </a>
@@ -46,14 +46,14 @@
                     </div>
 
                     <div class="slider banner2  col-lg-4 col-md-12">
-                        <a href="<?=ROOT_URL?>/cate/product-2" class="kk-customhover-fadeintopbottom">
+                        <a href="<?=ROOT_URL?>/product" class="kk-customhover-fadeintopbottom">
                             <img src="views/assets/img/kbanner-2.jpg" alt="kbanner-2"
                                 class="img-responsive center-block" />
                         </a>
                         <div class="overlay"></div>
                     </div>
                     <div class="slider banner2  col-lg-4 col-md-12">
-                        <a href="<?=ROOT_URL?>/cate/product-2" class="kk-customhover-fadeintopbottom">
+                        <a href="<?=ROOT_URL?>/product" class="kk-customhover-fadeintopbottom">
                             <img src="views/assets/img/kbanner-3.jpg" alt="kbanner-3"
                                 class="img-responsive center-block" />
                         </a>
@@ -125,6 +125,9 @@
                                                           
                                                           
                                                       </div>';
+                                        }
+                                        if($row['price']<=0 ||$row['price'] =='' ){
+                                            $giaDiscount = ' <span class="discount-percentage discount-product">contact</span>';
                                         }
                                         $link = ROOT_URL."/product/".$row['slug'];
                                             echo '<div class="kktab-block">
@@ -237,6 +240,9 @@
                                                           
                                                       </div>';
                                         }
+                                        if($row['price']<=0 ||$row['price'] =='' ){
+                                            $giaDiscount = ' <span class="discount-percentage discount-product">contact</span>';
+                                        }
                                         $link = ROOT_URL."/product/".$row['slug'];
                                         echo '<div class="kktab-block">
                                       <article class="product-miniature js-product-miniature " data-id-product="17"
@@ -348,6 +354,9 @@
                                                           
                                                       </div>';
                                         }
+                                        if($row['price']<=0 ||$row['price'] =='' ){
+                                            $giaDiscount = ' <span class="discount-percentage discount-product">contact</span>';
+                                        }
                                         $link = ROOT_URL."/product/".$row['slug'];
                                         echo '<div class="kktab-block">
                                       <article class="product-miniature js-product-miniature " data-id-product="17"
@@ -430,7 +439,7 @@
                             <div class="parallax-caption1 ">Beauty &amp; Cosmetic</div>
                             <div class="parallax-caption2 ">Massage oils and creams containing only Natural Products
                             </div>
-                            <div class="parallax-btn "><a href="<?=ROOT_URL?>/cate/product-2" class="shopnow-button">Shop Now</a></div>
+                            <div class="parallax-btn "><a href="<?=ROOT_URL?>/product" class="shopnow-button">Shop Now</a></div>
 
                         </div>
                     </div>
@@ -483,6 +492,9 @@
                                               
                                               
                                           </div>';
+                            }
+                            if($row['price']<=0 ||$row['price'] =='' ){
+                                $giaDiscount = ' <span class="discount-percentage discount-product">contact</span>';
                             }
                             $link = ROOT_URL."/product/".$row['slug'];
                             echo '<div class="kktab-block">
@@ -687,7 +699,7 @@
                         <div class="col-lg-6 col-xs-12 kk_banner clearfix hb-animate-element bottom-to-top">
                             <div class="kk_sub_banner row">
                                 <div class="slider banner1  col-lg-6 col-xs-12 hb-animate-element bottom-to-top">
-                                    <a href="<?=ROOT_URL?>/cate/product-2" class="kk-customhover-fadeintopbottom" title="This is Caption">
+                                    <a href="<?=ROOT_URL?>/product" class="kk-customhover-fadeintopbottom" title="This is Caption">
                                         <div class="kkmultibanner-hover">
                                             <img src="views/assets/img/demo_img_1.jpg" class="img-responsive"
                                                 alt="This is Caption" />
@@ -697,7 +709,7 @@
 
 
                                 <div class="slider banner1  col-lg-6 col-xs-12 hb-animate-element bottom-to-top">
-                                    <a href="<?=ROOT_URL?>/cate/product-2" class="kk-customhover-fadeintopbottom" title="This is Caption">
+                                    <a href="<?=ROOT_URL?>/product" class="kk-customhover-fadeintopbottom" title="This is Caption">
                                         <div class="kkmultibanner-hover">
                                             <img src="views/assets/img/demo_img_2.jpg" class="img-responsive"
                                                 alt="This is Caption" />
@@ -771,6 +783,9 @@
                               
                               
                           </div>';
+            }
+            if($row['price']<=0 ||$row['price'] =='' ){
+                $giaDiscount = ' <span class="discount-percentage discount-product">contact</span>';
             }
                 $link = ROOT_URL."/product/".$row['slug'];
                 echo '<article class="product-miniature js-product-miniature " data-id-product="17" data-id-product-attribute="46"

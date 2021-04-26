@@ -104,14 +104,20 @@ class Model_home extends Model_db{
    function luugiohangnhe($idDH, $giohang){
       $sql = "DELETE FROM donhangchitiet WHERE idDH=?";
       $this->exec1($sql,$idDH);
-      foreach ($giohang as $idDT=>$dt){
-         $image = $dt['image'];
-         $tenDT = $dt['TenDT'];
-         $gia= $dt['Gia'];
-         $Amount= $dt['Amount'];
-        $sql = "INSERT INTO donhangchitiet(idDH,idDT,TenDT,Gia,SoLuong,urlHinh) VALUE(?,?,?,?,?,?)";
-        $kq =$this->exec1($sql,$idDH,$idDT,$tenDT,$gia,$Amount,$image);
-      }
+
+      foreach ($giohang as $motsp) {
+
+        $product_id = $motsp[0]; 
+        $size = $motsp[2];
+        $mau = $motsp[3];
+        $quantity = $motsp[1];
+        $price = $motsp[5];
+        $sql = "INSERT INTO donhangchitiet(donhang_id,product_id,size,color,quantity,price) VALUE(?,?,?,?,?,?)";
+        
+        $kq =$this->exec1($sql,$idDH,$product_id,$size,$mau,$quantity,$price);
+        
+        }
+
       if($kq){
           return true;
       }
@@ -275,6 +281,14 @@ class Model_home extends Model_db{
      
         return $this->result1(1,$sql,$id)['sodong'];
    }
+   function countAllProductControl2()
+   {
+        $sql ="SELECT count(*) AS sodong from catalog cate  inner join product pro on cate.id= pro.catalog_id
+        ";
+      
+     
+        return $this->result1(1,$sql)['sodong'];
+   }
    function GetProductList($id,$CurrentPage,$sortBy,$order){
       $sql ="SELECT * from catalog cate  inner join product pro on cate.id= pro.catalog_id
       ";
@@ -297,6 +311,24 @@ class Model_home extends Model_db{
       $sql .=" LIMIT ".($CurrentPage - 1) * PAGE_SIZE_PRO.", ".PAGE_SIZE_PRO;
       return $this->result1(0,$sql,$id);
     }
+
+    function GetProductList2($CurrentPage,$sortBy,$order)
+    {
+        $sql ="SELECT * from catalog cate  inner join product pro on cate.id= pro.catalog_id
+        ";
+  
+        if ($CurrentPage !== 0)
+        {
+            $sql .= " GROUP BY pro.id";
+        }
+              
+        if ($sortBy != NULL && $order != NULL)
+        {
+           $sql .= " ORDER BY pro.$sortBy $order"; 
+        }
+        $sql .=" LIMIT ".($CurrentPage - 1) * PAGE_SIZE_PRO.", ".PAGE_SIZE_PRO;
+        return $this->result1(0,$sql);
+      }
 
   function addNewView($idsp){
       $sql = "UPDATE product SET SoLanXem=SoLanXem+1 WHERE idDT = ?";
@@ -404,5 +436,10 @@ class Model_home extends Model_db{
     {
         $sql = "INSERT INTO contact(name,email,subject,messeges) VALUE(?,?,?,?)";
         return $this->exec1($sql,$name,$email,$subject,$messenge);
+    }
+    function storeContactForDetail($name,$email,$subject,$messenge,$idsp)
+    {
+        $sql = "INSERT INTO contact(name,email,subject,messeges,idsp) VALUE(?,?,?,?,?)";
+        return $this->exec1($sql,$name,$email,$subject,$messenge,$idsp);
     }
 }

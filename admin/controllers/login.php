@@ -40,7 +40,7 @@ class Login
                       if($_SESSION['srole'] == 0){
                           $role = 'You are not admin';
                       }else{
-                        header('location: ../?ctrl=home');
+                        header('location: ../?ctrl=product');
                       }
                    }else{
                       $checkloginwarn = 'Your password is not valid';

@@ -82,6 +82,9 @@ class Home{
       {
           $ds = $this->model-> GetProductList($maLoai,$PageNum,$sortBy,$order);
           $TotalProduct = (int)$this->model->countAllProductControl($maLoai,$sortBy,$order);
+      }else{
+         $ds = $this->model-> GetProductList2($PageNum,$sortBy,$order);
+         $TotalProduct = (int)$this->model->countAllProductControl2($sortBy,$order);
       }
       
       if($TotalProduct == 0) $TotalProduct =1;
@@ -157,6 +160,7 @@ class Home{
 
       function checkout()
       {
+         $getMenuParent = $this->model->getMenuParent();
          $this->saveBill();
          $viewFile ="views/checkout.php";
          require_once "views/layout.php";
@@ -182,18 +186,15 @@ class Home{
             $tongtien += $row[5]*$row[1];
          }
       
-         $idDH = $this->model->luudonhangnhe($idDH,  $hoten, $email,$phone,$address,$note,$tongtien);
-         
-         
+         $idDH = $this->model->luudonhangnhe($idDH,  $hoten, $email,$phone,$address,$note,$tongtien); 
        
-         
-            // if ($idDH){
-            //    $_SESSION['idDH'] = $idDH;
+            if ($idDH){
+               $_SESSION['idDH'] = $idDH;
                
-            //    $giohang = $_SESSION['cart'];
-            //    $this->model->luugiohangnhe($idDH, $giohang);
-            //    header('location: '.ROOT_URL.'/cam-on');
-            // }  
+               $giohang = $_SESSION['cart'];
+               $this->model->luugiohangnhe($idDH, $giohang);
+               header('location: '.ROOT_URL.'/cam-on');
+            }  
                 
          }
       }
@@ -213,7 +214,7 @@ class Home{
       
       function thankYou()
       {
-         $producer = $this->model->getAllProducer();
+         $getMenuParent = $this->model->getMenuParent();
          $viewFile ="views/thankyou.php";
          require_once "views/layout.php";
       }
