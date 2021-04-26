@@ -4178,6 +4178,11 @@ h3.timeline-title {
     padding: 10px;
 }
 
+img.thumb {
+    width: 100px;
+    height: 130px;
+}
+
 .thumb-img {
     border-radius: 2px;
     overflow: hidden;

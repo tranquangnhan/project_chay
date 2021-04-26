@@ -85,14 +85,14 @@ $(document).ready(function() {
 
 
     jQuery(function($) {
-        $("#clear").click(function(event) {
-            event.preventDefault();
-            $("#inputhinh").replaceWith('<input type="file" class="imagefet" name="img[]" id="inputhinh" accept="image/png, image/jpg, image/jpeg" multiple="multiple" style="display: none">');
-            $("div.output-fet").replaceWith('<div class="output-fet"><output id="list"></output></div>');
-            $(".boxshowimg").addClass("hidden");
-        });
-    })
-
+            $("#clear").click(function(event) {
+                event.preventDefault();
+                $("#inputhinh").replaceWith('<input type="file" class="imagefet" name="img[]" id="inputhinh" accept="image/png, image/jpg, image/jpeg" multiple="multiple" style="display: none">');
+                $("div.output-fet").replaceWith('<div class="output-fet"><output id="list"></output></div>');
+                $(".boxshowimg").addClass("hidden");
+            });
+        })
+        // $('#list img').css("width", "300px");
     jQuery(function($) {
 
         var count = 0;
