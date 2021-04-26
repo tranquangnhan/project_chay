@@ -11,6 +11,8 @@ RewriteRule ^quen-mat-khau$ /project_chay/site/?act=forgotpass [L]
 RewriteRule ^thanh-toan-thanh-cong/$ /project_chay/site/?act=ttthanhcong [L]
 
 RewriteRule ^login$ /project_chay/site/?act=login [L]
+RewriteRule ^register$ /project_chay/site/?act=register [L]
+RewriteRule ^home$ /project_chay/site/?act=home [L]
 
 RewriteRule ^product/([a-zA-Z0-9-]+)$ /project_chay/site/?act=detail&slug=$1&id=$2 [L]
 RewriteRule ^nsx/([a-zA-Z0-9-]+)$ /project_chay/site/?act=cat&id=$2&slug=$1 [L]

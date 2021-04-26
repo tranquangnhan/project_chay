@@ -31,9 +31,20 @@
                                         <div class="form-group">
                                             <?php if($message) echo "<h2 class='text-danger'>".$mesage."</h2>";   ?>    
                                         </div>
+                                        <div class="boxform boxshowimg ">
+                                            <div class="ouputimg">
+                                                <br>
+                                                <div class="output-fet"><output id="list"></output></div>
+                                                <a href="#" id="clear">Xoá</a>
+                                            </div>
+                                        
+                                        </div>
                                         <div class="form-group">
+                                            <div class="inputhinh">
                                             <label for="">Image Url</label>
-                                           <input type="file" name="img[]" multiple>
+                                           <input type="file" name="img[]" style=" position: absolute;" class="imagefet" id="control" multiple>
+                                            </div>
+                                            
                                         </div>
                                         <div class="row">
                                             <div class="col-lg-6">

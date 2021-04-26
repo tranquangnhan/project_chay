@@ -55,6 +55,10 @@ class Model_user extends Model_db{
         $sql = "select * from users where Username=?";
         return $this->result1(1,$sql,$user);
     }
+    function registerUser($name,$email,$pass){
+        $sql = "INSERT INTO user(name,email,pass) VALUE(?,?,?)";
+        return $this->exec1($sql,$name,$email,$pass);
+    }
     function IsExist ($user){ // kiểm tra xem user đã tồn tại hay chưa
         $sql = "select * from users where Username=?";
         return $this->result1(1,$sql,$user);

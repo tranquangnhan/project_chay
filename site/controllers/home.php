@@ -25,14 +25,14 @@ class Home{
          case "savebill": $this->saveBill(); break;
          case "thankyou": $this->thankYou(); break;
          case "cat": $this->cat(); break;
-         case "vnpay": $this->vnpay(); break;
+         case "register": $this->register(); break;
          case "ttthanhcong": $this->ttthanhcong(); break;
          case "login": $this->login();break;
          case "active":$this->active();break;
          case "logout":$this->logout();break; 
          case "product":$this->product();break;
          case "changepass":$this->changePass();break;
-         case "viewbill":$this->viewBill();break;
+         case "contact":$this->contact();break;
         }
         
      }
@@ -225,14 +225,14 @@ class Home{
 
       function login()
       {  
-         if(isset($_POST['login'])&&($_POST['login'])){
+         if(isset($_POST['login'])){
             $email= $_POST['email'];
             $pass = $_POST['password'];
             $exist = $this->modelUser->checkEmailTonTai($email);
             if($exist != null){
                $checklogin = $this->modelUser->checkUser($email,$pass);
                if($checklogin == true){
-                  header('location: ?ctrl=home');
+                  header('location: ./home');
                }else{
                   $checkloginwarn = 'Your password is not valid';
                }
@@ -242,6 +242,27 @@ class Home{
          }
 
          $viewFile ="views/login.php";
+         require_once "views/layout.php";
+      }
+      function register()
+      {
+         if(isset($_POST['register'])){
+            $name = $_POST['name'];
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+            $exist = $this->modelUser->checkEmailTonTai($email);
+            if($name == '' || $email == '' ||$password == '' ){
+               $nullerror = "You have not entered enough information";
+            }else{
+               if($exist != null){
+                  $emailexist= 'Email already exists!';
+               }else{
+                  $exist = $this->modelUser->registerUser($name,$email,$password);
+                    echo '<script>alert("Register success")</script>';
+               }
+            } 
+         }
+         $viewFile ="views/register.php";
          require_once "views/layout.php";
       }
       function active()
@@ -274,11 +295,21 @@ class Home{
          $viewFile ="views/changepass.php";
          require_once "views/layout.php";
       }
-      function viewBill(){
+      function contact(){
         
-         $getProductFromIdBill = $this->model->getProductFromIdBill($_GET['id']);
-         $getInfoBill = $this->modelUser->getInfoBill($_GET['id']);
-         $viewFile ="views/viewbill.php";
+         if(isset($_POST['submitMessage'])){
+            $name = $_POST['name'];
+            $email = $_POST['email'];
+            $subject = $_POST['id_contact'];
+            $message = $_POST['message'];
+            if($name == '' || $email == '' ||$message == '' ){
+               $nullerror = "You have not entered enough information";
+            }else{
+               $this->model->storeContact($name,$email,$subject,$message);
+               echo '<script>alert("We wil call you soon !")</script>';
+            } 
+         }
+         $viewFile ="views/contact.php";
          require_once "views/layout.php";
       }
 }

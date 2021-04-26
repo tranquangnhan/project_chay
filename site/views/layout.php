@@ -12,8 +12,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/vnd.microsoft.icon" href="/Prestashop/PRS01/PRS012/img/favicon.ico?1538137004">
-    <link rel="shortcut icon" type="image/x-icon" href="/Prestashop/PRS01/PRS012/img/favicon.ico?1538137004">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="views/assets/img/Logo-hang-Ella.png">
+    <link rel="shortcut icon" type="image/x-icon" href="views/assets/img/Logo-hang-Ella.png">
     <link rel="stylesheet" href="views/assets/css/theme-3950e66.css" type="text/css" media="all">
     <link rel="stylesheet" href="views/assets/css/SweetAlert2.css">
     <script type="text/javascript">
@@ -394,7 +394,7 @@
                     <div class="desktop_logo">
                         <h1>
                             <a href="#">
-                                <img class="logo img-responsive" src="views/assets/img/demo-shop-logo-1538137004.jpg"
+                                <img class="logo img-responsive" src="views/assets/img/Logo-hang-Ella.png"
                                     alt="Demo Shop">
                             </a>
                         </h1>
@@ -579,62 +579,15 @@
 
                                 <div id="kkstoreinfo-container" class="kkstoreinfo-inner collapse footer-dropdown">
                                     <a href="#" class="store-logo">
-                                        <img src="views/assets/img/demo-shop-logo-1538137004-1.png"
-                                            alt="demo-shop-logo-1538137004-1.png">
+                                        <img src="views/assets/img/Logo-hang-Ella.png"
+                                            alt="Logo-hang-Ella.png">
                                     </a>
                                     <div class="store-description">
                                         <p>Sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
                                     </div>
                                 </div>
                             </div>
-                            <div id="newslatter" class="col-lg-12 links hb-animate-element left-to-right">
-
-                                <div class="title  hidden-md-up collapsed" data-target="#newslatter-container"
-                                    data-toggle="collapse">
-                                    <span class="h3">Newsletter</span>
-                                    <span class="float-xs-right">
-                                        <span class="navbar-toggler collapse-icons">
-                                            <i class="material-icons add">&#xE145;</i>
-                                            <i class="material-icons remove">&#xE15B;</i>
-                                        </span>
-                                    </span>
-                                </div>
-
-                                <div id="newslatter-container" class="collapse block_newsletter">
-                                    <h1 class="newslatter-title hidden-sm-down">Newsletter</h1>
-
-                                    <div class="kk-subscribeblock">
-
-                                        <p class="newsletter-desc">Wants to get latest updates! sign up for free.</p>
-
-
-                                        <form action="#"
-                                            method="post">
-                                            <div class="row">
-                                                <div class="newslatter-inner">
-                                                    <div class="input-wrapper">
-                                                        <input name="email" type="text" value=""
-                                                            placeholder="Your email address"
-                                                            aria-labelledby="block-newsletter-label">
-                                                        <div class="btn-subscribe">
-                                                            <input class="btn btn-primary  hidden-xs-down"
-                                                                name="submitNewsletter" type="submit" value="GO">
-                                                            <input class="btn btn-primary  hidden-sm-up"
-                                                                name="submitNewsletter" type="submit" value="OK">
-                                                        </div>
-                                                    </div>
-                                                    <input type="hidden" name="action" value="0">
-                                                    <div class="clearfix"></div>
-                                                </div>
-
-                                                <div class="newslatter-alert">
-                                                </div>
-
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
+                    
 
                         </div>
                     </div>
@@ -887,8 +840,8 @@
                         <div class="col-lg-6 col-xs-12 hb-animate-element left-to-right">
                             <p class="footer-aftertext ">
 
-                                <a class="_blank " href="http://www.prestashop.com" target="_blank">
-                                    © 2021 -shop make by Nhan-Anh"
+                                <a class="_blank " href="#" target="_blank">
+                                    © 2021 -shop make by Nhan-Anh
                                 </a>
 
                             </p>

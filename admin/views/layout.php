@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>admin- trang web bán hàng xịn xò</title>
+        <title>ADMIN - Manage</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -35,7 +35,7 @@
                         <form class="app-search">
                             <div class="app-search-box">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Tìm Kiếm...">
+                                    <input type="text" class="form-control" placeholder="Search...">
                                     <div class="input-group-append">
                                         <button class="btn" type="submit">
                                             <i class="fe-search"></i>
@@ -161,7 +161,7 @@
                     </li>
 
                     <li>
-                        <h4 class="page-title-main">Thống kê</h4>
+                        <h4 class="page-title-main"></h4>
                     </li>
         
                 </ul>
@@ -262,11 +262,18 @@
                                 <a href="?ctrl=order">
                                     <i class="mdi mdi-page-layout-sidebar-left"></i>
                                     <span>Order</span>
-                                    <span class="menu-arrow"></span>
+                                    
                                 </a>
                                 
                             </li>
-
+                            <li>
+                                <a href="?ctrl=contact">
+                                    <i class="mdi mdi-page-layout-sidebar-left"></i>
+                                    <span>Contact</span>
+                                    
+                                </a>
+                                
+                            </li>
                         </ul>
 
                     </div>
