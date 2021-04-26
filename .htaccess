@@ -18,6 +18,7 @@ RewriteRule ^contact$ /project_chay/site/?act=contact [L]
 
 RewriteRule ^product$ /project_chay/site/?act=product [L]
 
+RewriteRule ^cate/page-([0-9]+)$ /project_chay/site/?act=product&Page=$3&slug=$1 [L]
 
 RewriteRule ^product/([a-zA-Z0-9-]+)$ /project_chay/site/?act=detail&slug=$1&id=$2 [L]
 
@@ -32,4 +33,10 @@ RewriteRule ^cate/([a-zA-Z0-9-]+)-([0-9]+)/page-([0-9]+)/namedesc$ /project_chay
 RewriteRule ^cate/([a-zA-Z0-9-]+)-([0-9]+)/page-([0-9]+)/nameasc$ /project_chay/site/?act=product&maloai=$2&Page=$3&slug=$1&sortBy=name&order=asc [L]
 
 
-#RewriteRule ^cate/(.*)-(.*)$ /project_chay/site/?act=product&slug=$1&id=$2 [L]
+RewriteRule ^cate/page-([0-9]+)/nameasc$ /project_chay/site/?act=product&Page=$3&slug=$1&sortBy=name&order=asc [L]
+
+RewriteRule ^cate/page-([0-9]+)/namedesc$ /project_chay/site/?act=product&Page=$3&slug=$1&sortBy=name&order=desc [L]
+
+RewriteRule ^cate/page-([0-9]+)/priceasc$ /project_chay/site/?act=product&Page=$3&slug=$1&sortBy=price&order=asc [L]
+
+RewriteRule ^cate/page-([0-9]+)/pricedesc$ /project_chay/site/?act=product&Page=$3&slug=$1&sortBy=price&order=desc [L]

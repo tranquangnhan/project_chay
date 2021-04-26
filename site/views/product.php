@@ -497,7 +497,7 @@
                                                                 <span itemprop="price" class="price">'.$row['price'].'</span>';
                                               }
                                               if($row['price']<=0 ||$row['price'] =='' ){
-                                                $giaDiscount = ' <span class="discount-percentage discount-product">contact</span>';
+                                                $giaDiscount = ' ';
                                              }
                                               $link = ROOT_URL."/product/".$row['slug'];
                                                 echo '<article class="product-miniature js-product-miniature" data-id-product="19"
@@ -576,7 +576,7 @@
                                                                 <span itemprop="price" class="price">'.floatval($row['price']).'</span>';
                                               }
                                               if($row['price']<=0 ||$row['price'] =='' ){
-                                                $giaDiscount = ' <span class="discount-percentage discount-product">contact</span>';
+                                                $giaDiscount = ' ';
                                               }
                                               $link = ROOT_URL."/product/".$row['slug'];
                                                 echo '<article class="product-miniature js-product-miniature" data-id-product="19"
@@ -700,7 +700,7 @@
                                                                 <span itemprop="price" class="price">'.floatval($row['price']).'</span>';
                                               }
                                               if($row['price']<=0 ||$row['price'] =='' ){
-                                                $giaDiscount = ' <span class="discount-percentage discount-product">contact</span>';
+                                                $giaDiscount = ' ';
                                              }
                                               $link = ROOT_URL."/product/".$row['slug'];
                                                 echo '<article class="product-miniature js-product-miniature" data-id-product="19"
@@ -777,7 +777,7 @@
                                                                 <span itemprop="price" class="price">'.floatval($row['price']).'</span>';
                                               }
                                               if($row['price']<=0 ||$row['price'] =='' ){
-                                                $giaDiscount = ' <span class="discount-percentage discount-product">contact</span>';
+                                                $giaDiscount = ' ';
                                                 }
                                               $link = ROOT_URL."/product/".$row['slug'];
                                                 echo '<article class="product-miniature js-product-miniature" data-id-product="19"
@@ -881,7 +881,7 @@
                         </div>
 
                         <h1 class="h1 title-category"><?=$getCateFromId['name']?></h1>
-
+                        <p><?=$getCateFromId['description']?></p>
 
                         <div class="text-sm-center hidden-md-up">
                             <h1 class="h1"><?=$getCateFromId['name']?></h1>
@@ -913,37 +913,57 @@
 
                                                         // /print_r(http_build_query($_GET));
                                                       ?>
-
+                                                <?php 
+                                                    if($_GET['maloai'] == ''){
+                                                        $sortNameAsc = ROOT_URL.'/cate/page-'.$_GET['slug'].'/nameasc';
+                                                        $sortNameDesc = ROOT_URL.'/cate/page-'.$_GET['slug'].'/namedesc';
+                                                        $sortPriceAsc = ROOT_URL.'/cate/page-'.$_GET['slug'].'/priceasc';
+                                                        $sortPriceDesc = ROOT_URL.'/cate/page-'.$_GET['slug'].'/pricedesc';
+                                                    }else{
+                                                        $sortNameAsc = ROOT_URL.'/cate/'.$_GET['slug'].'-'.$_GET['maloai'].'/page-'.$_GET['Page'].'/nameasc';
+                                                        $sortNameDesc = ROOT_URL.'/cate/'.$_GET['slug'].'-'.$_GET['maloai'].'/page-'.$_GET['Page'].'/namedesc';
+                                                        $sortPriceAsc = ROOT_URL.'/cate/'.$_GET['slug'].'-'.$_GET['maloai'].'/page-'.$_GET['Page'].'/priceasc';
+                                                        $sortPriceDesc = ROOT_URL.'/cate/'.$_GET['slug'].'-'.$_GET['maloai'].'/page-'.$_GET['Page'].'/pricedesc';
+                                                    }
+                                                    if($_GET['slug']==''){
+                                                        $sortNameAsc = ROOT_URL.'/cate/page-1/nameasc';
+                                                        $sortNameDesc = ROOT_URL.'/cate/page-1/namedesc';
+                                                        $sortPriceAsc = ROOT_URL.'/cate/page-1/priceasc';
+                                                        $sortPriceDesc = ROOT_URL.'/cate/page-1/pricedesc';
+                                                    }
+                                                ?>
                                             <span class="col-sm-3 col-md-3 hidden-sm-down sort-by">Sort by:</span>
                                             <div class="col-sm-9 col-xs-8 col-md-9 products-sort-order dropdown">
                                                 <button class="btn-unstyle select-title" rel="nofollow"
                                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     Relevance <i class="material-icons float-xs-right">&#xE5C5;</i>
                                                 </button>
+                                               
                                                 <div class="dropdown-menu">
                                                     <a rel="nofollow"
                                                         href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes?order=product.position.asc"
                                                         class="select-list current js-search-link">
                                                         Relevance
                                                     </a>
+                                                    
                                                     <a rel="nofollow"
                                                     
-                                                        href="<?=ROOT_URL.'/cate/'.$_GET['slug'].'-'.$_GET['maloai'].'/page-'.$_GET['Page'].'/nameasc'?>"
+                                                        href="<?=$sortNameAsc?>"
                                                         class="select-list ">
                                                         Name, A to Z
                                                     </a>
                                                     <a rel="nofollow"
-                                                        href="<?=ROOT_URL.'/cate/'.$_GET['slug'].'-'.$_GET['maloai'].'/page-'.$_GET['Page'].'/namedesc'?>"
+                                                        href="<?=$sortNameDesc?>"
                                                         class="select-list ">
                                                         Name, Z to A
                                                     </a>
                                                     <a rel="nofollow"
-                                                        href="<?=ROOT_URL.'/cate/'.$_GET['slug'].'-'.$_GET['maloai'].'/page-'.$_GET['Page'].'/priceasc'?>"
+                                                        href="<?=$sortPriceAsc?>"
                                                         class="select-list ">
                                                         Price, low to high
                                                     </a>
                                                     <a rel="nofollow"
-                                                        href="<?=ROOT_URL.'/cate/'.$_GET['slug'].'-'.$_GET['maloai'].'/page-'.$_GET['Page'].'/pricedesc'?>"
+                                                        href="<?=$sortPriceDesc?>"
                                                         class="select-list ">
                                                         Price, high to low
                                                     </a>
@@ -1024,7 +1044,7 @@
                                                         </div>';
                                           }
                                           if($row['price']<=0 ||$row['price'] =='' ){
-                                            $giaDiscount = ' <span class="discount-percentage discount-product">contact</span>';
+                                            $giaDiscount = ' ';
                                             }
                                           $link = ROOT_URL."/product/".$row['slug'];
                                           echo ' <article class="product-miniature js-product-miniature " data-id-product="19" data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">

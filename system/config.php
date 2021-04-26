@@ -8,7 +8,7 @@ define('ADMIN_URL',ROOT_URL.'/admin');
 define('SITE_URL',ROOT_URL.'/site/');
 define('SYSTEM_PATH',ROOT_URL.'/system');
 define('PATH_IMG_ADMIN','../uploads/');
-define('PAGE_SIZE',5);
+define('PAGE_SIZE',10);
 define('PAGE_SIZE_PRO',16);
 define('PATH_IMG_SITE','../uploads/');
 session_start();

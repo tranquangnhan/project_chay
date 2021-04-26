@@ -82,17 +82,19 @@ class Home{
       {
           $ds = $this->model-> GetProductList($maLoai,$PageNum,$sortBy,$order);
           $TotalProduct = (int)$this->model->countAllProductControl($maLoai,$sortBy,$order);
+          if($TotalProduct == 0) $TotalProduct =1;
+          $BaseLink= 'cate';
+         $PageSize = PAGE_SIZE_PRO;
+         $Pagination =  $this->model->Page($TotalProduct ,$PageNum,$PageSize, $BaseLink);
       }else{
          $ds = $this->model-> GetProductList2($PageNum,$sortBy,$order);
          $TotalProduct = (int)$this->model->countAllProductControl2($sortBy,$order);
+         if($TotalProduct == 0) $TotalProduct =1;
+         $BaseLink= 'cate';
+         $PageSize = PAGE_SIZE_PRO;
+         $Pagination =  $this->model->PageNotCate($TotalProduct ,$PageNum,$PageSize, $BaseLink);
       }
       
-      if($TotalProduct == 0) $TotalProduct =1;
-
-      $BaseLink= 'cate';
-      $PageSize = PAGE_SIZE_PRO;
-      $Pagination =  $this->model->Page($TotalProduct ,$PageNum,$PageSize, $BaseLink);
-
       $page_title ="Danh sách nhà sản xuất";
       $viewFile = "views/product.php";
       require_once "views/layout.php";  

@@ -125,10 +125,7 @@ class Product{
             if($name == ""){
                 $_SESSION['message'] = "Bạn chưa nhập tên";
             } 
-            elseif($price == "")
-            {
-                $_SESSION['message'] = "Bạn chưa nhập giá";
-            }
+            
             elseif($img == "")
             {
                 $_SESSION['message'] = "Bạn chưa chọn ảnh";

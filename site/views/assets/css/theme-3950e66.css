@@ -13368,7 +13368,7 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
     color: #333;
     margin: 0 0 10px 0;
     padding: 0 0 7px 0;
-    position: relative;
+    /* position: relative; */
     text-transform: uppercase;
     text-align: center
 }

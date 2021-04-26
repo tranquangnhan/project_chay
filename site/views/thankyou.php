@@ -6,8 +6,8 @@
                         <div class="col-xl-4 col-lg-4 text-center" >
                             <div class="error thankyou">
                                 <h1>Thank you</h1>
-                                <h2>Cảm ơn bạn đã đặt hàng ở shop !</h2>
-                                <p>Đây là điều tuyệt vời nhất mà shop nhận được, xin chân thành cảm ơn bạn, chúc bạn có một ngày mới tốt lành!</p>
+                                <h2>Thanh for your shopping!</h2>
+                                <p></p>
                            
                                 <a href="index.php" class="btn">Home page</a>
                             </div>

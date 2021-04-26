@@ -33,10 +33,17 @@
                                             <input type="text" name="name_category" value="<?=$oneRecode['name']?>"  parsley-trigger="change" required
                                                    placeholder="Nhập tên danh mục" class="form-control" id="userName">
                                         </div>
+                                        <div class="form-group">
+                                            <label for="">Description</label>
+                                            <textarea id="editor1" style="height: 300px;width:100%" name="des_category" >
+                                            <?=$oneRecode['description']?>
+                                        </textarea>
+                                            
+                                        </div>
                                         <select class="custom-select form-group" name="IDcate">
                                             
                                             <?php
-                                               echo 'okela'.$oneRecode['parent'];
+                                            //    echo 'okela'.$oneRecode['parent'];
                                                print_r($listchild);
                                                 if($oneRecode['parent']==0){
                                                     echo '<option value="0" selected>Don\'t Belong</option>';
