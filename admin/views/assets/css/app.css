@@ -1908,7 +1908,8 @@ body[data-layout="horizontal"][data-layout-size="boxed"] .container-fluid {
     border-color: #fff;
 }
 
-.radio label {
+
+/* .radio label {
     display: inline-block;
     padding-left: 8px;
     position: relative;
@@ -1931,6 +1932,12 @@ body[data-layout="horizontal"][data-layout-size="boxed"] .container-fluid {
     width: 18px;
     outline: none !important;
     top: 2px;
+} */
+
+.size {
+    float: left;
+    margin-right: 50px;
+    margin-top: -10px;
 }
 
 .radio label::after {

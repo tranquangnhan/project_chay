@@ -82,7 +82,33 @@ class Product{
             }else{
                 $hot = 0;
             }
-            $size = $_POST['size'];
+            // xử lý chọn size
+            $arr = array();
+            if(isset($_POST['size1'])){
+                $size1 = $_POST['size1'];
+                array_push($arr,$size1);
+            }
+            if(isset($_POST['size2'])){
+                $size2 = $_POST['size2'];
+                array_push($arr,$size2);
+            }
+            if(isset($_POST['size3'])){
+                $size3 = $_POST['size3'];
+                array_push($arr,$size3);
+            }
+            if(isset($_POST['size4'])){
+                $size4 = $_POST['size4'];
+                array_push($arr,$size4);
+            }
+            $size='';
+            for ($i=0; $i < count($arr) ; $i++) { 
+                if($i<count($arr) - 1){
+                    $size .= $arr[$i] .',';
+                }else{
+                    $size .= $arr[$i];
+                }
+            }
+            
             $color = $_POST['color'];
             $Description = $_POST['Description'];
             $Properties = $_POST['Properties'];

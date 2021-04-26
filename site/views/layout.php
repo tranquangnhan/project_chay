@@ -338,14 +338,33 @@
                      
                             <div id="_desktop_user_info">
                                 <div class="user-info-inner">
-                                    <div class="kkuserheading"></div>
+                                <?php
+                                                if (isset($_SESSION['suser'])&&$_SESSION['suser']!='') {
+                                                    echo '<div class="logoutH">Welcome, '.$_SESSION['suser'].'</div>';
+                                                    echo '<ul class="user-info logout">
+                                                    <li>
+                                                           
+                                                    <a href="'.ROOT_URL.'/?act=logout"
+                                                            >
+                                                            
+                                                            <span class="hidden-sm-down">Log Out</span>
+                                                        </a></li>
+                                                </ul>'
+                                                
+                                            ?> 
+                                    
+                                    <?php }else{?> 
+                                        <div class="kkuserheading"></div>
                                     <ul class="user-info">
-                                        <li><a href="<?php echo ROOT_URL?>/login"
+                                        <li>
+                                               
+                                        <a href="<?php echo ROOT_URL?>/login"
                                                 title="Log in to your customer account" rel="nofollow">
                                                 <i class="material-icons user">&#xE7FF;</i>
                                                 <span class="hidden-sm-down">Sign in</span>
                                             </a></li>
                                     </ul>
+                                    <?php } ?> 
                                 </div>
                             </div>
                             <div id="_desktop_cart">
@@ -393,7 +412,7 @@
 
                     <div class="desktop_logo">
                         <h1>
-                            <a href="#">
+                            <a href="<?php echo ROOT_URL?>/home">
                                 <img class="logo img-responsive" src="views/assets/img/Logo-hang-Ella.png"
                                     alt="Demo Shop">
                             </a>
@@ -578,7 +597,7 @@
                                 </div>
 
                                 <div id="kkstoreinfo-container" class="kkstoreinfo-inner collapse footer-dropdown">
-                                    <a href="#" class="store-logo">
+                                    <a href="<?php echo ROOT_URL?>/home" class="store-logo">
                                         <img src="views/assets/img/Logo-hang-Ella.png"
                                             alt="Logo-hang-Ella.png">
                                     </a>

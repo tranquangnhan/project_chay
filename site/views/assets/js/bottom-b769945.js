@@ -23987,6 +23987,14 @@ $('.kkuserheading').click(function(event) {
     $(".user-info").slideToggle("slow");
     return !1
 });
+$('.logoutH').click(function(event) {
+    $(this).toggleClass('active');
+    event.stopPropagation();
+    $(".user-info").slideToggle("slow");
+    $(".user-info").css("right", "-20px");
+    $(".user-info").css("top", "34px");
+    return !1
+});
 $(document).on('click', '.kkuserheading', function() {
     $(this).siblings('.dropdown-menu-right').stop(!0, !0).slideToggle("slow")
 });

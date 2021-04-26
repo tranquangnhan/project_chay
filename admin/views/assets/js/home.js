@@ -1,3 +1,16 @@
+function submitForm() {
+
+    let message = document.getElementById("ErrorColor");
+    let valColor = $('#color').val();
+    let arr = valColor.split(",")
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].charAt(0) != '#') { message.innerHTML = "Định dạng hợp lệ là #000, #fff, ..."; return false; } else { message.innerHTML = ""; }
+        if (arr[i].slice(1).length != 3) { message.innerHTML = "Định dạng hợp lệ là #000, #fff, ..."; return false; } else { message.innerHTML = ""; }
+    }
+
+}
+
 function checkDelete(link) {
     Swal.fire({
         title: 'Delete?',
@@ -113,6 +126,8 @@ $(document).ready(function() {
         });
 
     })
+
+
 
 
 
