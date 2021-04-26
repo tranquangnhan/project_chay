@@ -20,6 +20,8 @@
                                                     <th width="130">Price</th>
                                                     <th width="20">Image</th>
                                                     <th width="10">Hot</th>
+                                                    <th >Viewd</th>
+                                                    <th>Buyed</th>
                                                     <th >Description</th>
                                                     <th width="5">properties</th>
                                                     <th width="5">Del</th>
@@ -50,6 +52,8 @@
                                                         <td><div >'.($row['price']).' $</div><br>  </td>
                                                         <td><img style="object-fit:cover;" class="img-admin" width="100" height="100" src="'.$img.'"></td>
                                                         <td> '.$hot.'</td>
+                                                        <td> '.$row['view'].'</td>
+                                                        <td> '.$row['buyed'].'</td>
                                                         <td>'.substr($row['description'],0,10).' ..</td>
                                                         <td>'.substr($row['properties'],0,10).' ..</td>
                                                         <td><div  onclick="checkDelete('.$linkDel.')"  class="btn btn-danger" role="button"><i class="fa fa-trash"></i></div></td>

@@ -5,19 +5,20 @@ class Model_categories extends Model_db{
         $sql = "SELECT * FROM catalog";
         return $this->result1(0,$sql);
     }
-    function addNewCate($name,$IDcate,$slug)
+    
+    function addNewCate($name,$IDcate,$slug,$des_category)
     {
-        $sql = "INSERT INTO catalog(name,parent,slug) VALUE(?,?,?)";
-        return $this->exec1($sql,$name,$IDcate,$slug);
+        $sql = "INSERT INTO catalog(name,parent,slug,description) VALUE(?,?,?,?)";
+        return $this->exec1($sql,$name,$IDcate,$slug,$des_category);
     }
     function deleteCate($id)
     {   
         $sql = "DELETE FROM catalog WHERE id = ?";
         return $this->exec1($sql,$id);
     }
-    function editCategory($name,$IDcate,$slug,$id){
-        $sql = "UPDATE catalog SET name= ?,parent=?,slug=? WHERE id=?";
-        return $this->exec1($sql,$name,$IDcate,$slug,$id);
+    function editCategory($name,$IDcate,$slug,$des_category,$id){
+        $sql = "UPDATE catalog SET name= ?,parent=?,slug=?,description=? WHERE id=?";
+        return $this->exec1($sql,$name,$IDcate,$slug,$des_category,$id);
     }
     function showChildrenCategori(){
         $sql = "SELECT * FROM catalog WHERE parent = 0";

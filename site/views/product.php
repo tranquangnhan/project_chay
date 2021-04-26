@@ -497,7 +497,7 @@
                                                                 <span itemprop="price" class="price">'.$row['price'].'</span>';
                                               }
                                               if($row['price']<=0 ||$row['price'] =='' ){
-                                                $giaDiscount = ' <span class="discount-percentage discount-product">contact</span>';
+                                                $giaDiscount = ' ';
                                              }
                                               $link = ROOT_URL."/product/".$row['slug'];
                                                 echo '<article class="product-miniature js-product-miniature" data-id-product="19"
@@ -576,7 +576,7 @@
                                                                 <span itemprop="price" class="price">'.floatval($row['price']).'</span>';
                                               }
                                               if($row['price']<=0 ||$row['price'] =='' ){
-                                                $giaDiscount = ' <span class="discount-percentage discount-product">contact</span>';
+                                                $giaDiscount = ' ';
                                               }
                                               $link = ROOT_URL."/product/".$row['slug'];
                                                 echo '<article class="product-miniature js-product-miniature" data-id-product="19"
@@ -700,7 +700,7 @@
                                                                 <span itemprop="price" class="price">'.floatval($row['price']).'</span>';
                                               }
                                               if($row['price']<=0 ||$row['price'] =='' ){
-                                                $giaDiscount = ' <span class="discount-percentage discount-product">contact</span>';
+                                                $giaDiscount = ' ';
                                              }
                                               $link = ROOT_URL."/product/".$row['slug'];
                                                 echo '<article class="product-miniature js-product-miniature" data-id-product="19"
@@ -777,7 +777,7 @@
                                                                 <span itemprop="price" class="price">'.floatval($row['price']).'</span>';
                                               }
                                               if($row['price']<=0 ||$row['price'] =='' ){
-                                                $giaDiscount = ' <span class="discount-percentage discount-product">contact</span>';
+                                                $giaDiscount = ' ';
                                                 }
                                               $link = ROOT_URL."/product/".$row['slug'];
                                                 echo '<article class="product-miniature js-product-miniature" data-id-product="19"
@@ -881,7 +881,7 @@
                         </div>
 
                         <h1 class="h1 title-category"><?=$getCateFromId['name']?></h1>
-
+                        <p><?=$getCateFromId['description']?></p>
 
                         <div class="text-sm-center hidden-md-up">
                             <h1 class="h1"><?=$getCateFromId['name']?></h1>
@@ -1024,7 +1024,7 @@
                                                         </div>';
                                           }
                                           if($row['price']<=0 ||$row['price'] =='' ){
-                                            $giaDiscount = ' <span class="discount-percentage discount-product">contact</span>';
+                                            $giaDiscount = ' ';
                                             }
                                           $link = ROOT_URL."/product/".$row['slug'];
                                           echo ' <article class="product-miniature js-product-miniature " data-id-product="19" data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">

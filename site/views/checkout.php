@@ -72,7 +72,7 @@
 
 
 
-                                                    <input class="form-control" name="name" type="text" value=""
+                                                    <input class="form-control" name="name" type="text" value=" <?php if(isset($_SESSION['suser'])) echo $_SESSION['suser'];?>"
                                                         required>
 
 

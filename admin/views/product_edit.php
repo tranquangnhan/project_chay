@@ -29,7 +29,7 @@
 
                                     <form data-parsley-validate novalidate method="post" enctype="multipart/form-data">
                                         <div class="form-group">
-                                            <label for="">Image</label>
+                                            <label for="">Image</label><span style="color:red;"> (*)</span>
                                             <br>
                                             <?php
                                                 if(is_file(PATH_IMG_SITE.explode(",",$oneRecode['image_list'])[0])){
@@ -46,7 +46,7 @@
                                         <div class="row">
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="">Name Product</label>
+                                                    <label for="">Name Product</label><span style="color:red;"> (*)</span>
                                                     <input type="text" name="name_product"  parsley-trigger="change" required
                                                         placeholder="Type name product" value="<?=$oneRecode['name']?>" class="form-control" id="userName">
                                                 </div>
@@ -54,7 +54,7 @@
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label for="">Price</label>
-                                                    <input  type="number" name="price" parsley-trigger="change" required
+                                                    <input  type="number" name="price" parsley-trigger="change" 
                                                         placeholder="Type price" value="<?=$oneRecode['price']?>" class="form-control" id="emailAddress">
                                                 </div>
                                             </div>
@@ -63,7 +63,7 @@
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label for="">Discount</label>
-                                                    <input  type="number" name="discount" parsley-trigger="change" required
+                                                    <input  type="number" name="discount" parsley-trigger="change" 
                                                         placeholder="Type discount (%)" value="<?=$oneRecode['discount']?>" class="form-control" id="emailAddress">
                                                 </div>
                                             </div>
@@ -79,7 +79,7 @@
                                         <div class="row">
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="">Category</label>
+                                                    <label for="">Category</label><span style="color:red;"> (*)</span>
                                                     <select class="form-control" name="IDCate">
                                                         <?php 
                                                             foreach ($producer as $row) {
@@ -94,11 +94,66 @@
                                                 </div>
                                                 
                                             </div>
+                                            <?php 
+                                                if($oneRecode['size']!=''){
+                                                    $arrsize = explode(',',$oneRecode['size']);
+                                                    
+                                                }
+                                            ?>
                                             <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="">Size</label>
-                                                    <input type="text" class="form-control" value="<?=$oneRecode['size']?>" name="size"  placeholder="Size">
-                                                </div> 
+                                                <div class="form-group"><label for="">Size</label><br/></div>
+                                                <div class="form-group radio">
+                                                    <div class="input-radio size">
+                                                        <label for="size1 ">S</label>
+                                                        <input type="checkbox" name="size1" id="size1" value="S" <?php 
+                                                        if(is_array($arrsize)){
+                                                            for ($i=0; $i < count($arrsize) ; $i++) { 
+                                                                if($arrsize[$i] == 'S'){
+                                                                    
+                                                                    echo 'checked';
+                                                                }
+                                                            } 
+                                                        }
+                                                        ?>/>
+                                                    </div>
+                                                    <div class="input-radio size">
+                                                        <label for="size2">M</label>
+                                                        <input type="checkbox" name="size2" id="size2" value="M" <?php 
+                                                        if(is_array($arrsize)){
+                                                            for ($i=0; $i < count($arrsize); $i++) { 
+                                                                if($arrsize[$i] == 'M'){
+                                                                    echo 'checked';
+                                                                }
+                                                            } 
+                                                        }
+                                                        ?>/>
+                                                    </div>
+                                                    <div class="input-radio size">
+                                                        <label for="size3">L</label>
+                                                        <input type="checkbox" name="size3" id="size3" value="L" <?php 
+                                                        if(is_array($arrsize)){
+                                                            for ($i=0; $i < count($arrsize); $i++) { 
+                                                                if($arrsize[$i] == 'L'){
+                                                                    echo 'checked';
+                                                                }
+                                                            } 
+                                                        }
+                                                        ?>/>
+                                                    </div>
+                                                    <div class="input-radio size">
+                                                        <label for="size4">XL</label>
+                                                        <input type="checkbox" name="size4" id="size4" value="XL" 
+                                                        <?php 
+                                                        if(is_array($arrsize)){
+                                                            for ($i=0; $i < count($arrsize); $i++) { 
+                                                                if($arrsize[$i] == 'XL'){
+                                                                    echo 'checked';
+                                                                }
+                                                            } 
+                                                        }
+                                                        ?>/>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="row">

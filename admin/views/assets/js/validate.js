@@ -22,8 +22,7 @@ $(function() {
 $(function() {
     $("#formadd").validate({
         rules: {
-            name: { required: true, maxlength: 20, minlength: 4 },
-            price: { required: true, min: 0 }
+            name: { required: true, maxlength: 20, minlength: 4 }
         },
         messages: {
             user: {

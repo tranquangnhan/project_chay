@@ -41,7 +41,7 @@
                                         </div>
                                         <div class="form-group">
                                             <div class="inputhinh">
-                                            <label for="">Image Url</label>
+                                            <label for="">Image Url</label><span style="color:red;"> (*)</span>
                                            <input type="file" name="img[]" style=" position: absolute;" class="imagefet" id="control" multiple>
                                             </div>
                                             
@@ -49,7 +49,7 @@
                                         <div class="row">
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="">Name Product</label>
+                                                    <label for="">Name Product</label><span style="color:red;"> (*)</span>
                                                     <input type="text" name="name_product"  parsley-trigger="change" required
                                                         placeholder="Type name product" value="<?=$oneRecode['TenDT']?>" class="form-control" >
                                                 </div>
@@ -57,7 +57,7 @@
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label for="">Price</label>
-                                                    <input  type="number" name="price" parsley-trigger="change" required
+                                                    <input  type="number" name="price" parsley-trigger="change" id="discount"
                                                         placeholder="Type rice" value="<?=$oneRecode['Gia']?>" class="form-control" >
                                                 </div>
                                             </div>
@@ -66,7 +66,7 @@
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label for="">Discount</label>
-                                                    <input  type="number" name="discount" min="0" max="100" parsley-trigger="change" required
+                                                    <input  type="number" name="discount" min="0" max="100" parsley-trigger="change" 
                                                         placeholder="Type discount (%)" value="<?=$oneRecode['GiaKM']?>" class="form-control" id="discount">
                                                 </div>
                                             </div>
@@ -83,7 +83,7 @@
                                         <div class="row">
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="">Category</label>
+                                                    <label for="">Category</label><span style="color:red;"> (*)</span>
                                                     <select class="form-control" name="IDCate">
                                                         <?php 
                                                             foreach ($producer as $row) {
@@ -99,6 +99,7 @@
                                                 
                                             </div>
                                             <div class="col-lg-6">
+                                            
                                                 <div class="form-group"><label for="">Size</label><br/></div>
                                                 <div class="form-group radio">
                                                     <div class="input-radio size">

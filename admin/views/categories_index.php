@@ -17,7 +17,8 @@
                                         <thead>
                                         <tr>
                                         <th>STT</th>
-                                        <th>Name Category</th>                
+                                        <th width="20%">Name Category</th> 
+                                        <th width="40%">Description</th>                
                                         <th>Belong</th>
                                         <th>Del</th>
                                         <th>Edit</th>
@@ -30,13 +31,12 @@
                                         $stt = 0;
                                             foreach ($list as $row) {
                                                 $stt++;
-                                                $anHien = ($row['AnHien']=='1') ? '<input type="radio" checked onclick="return false">': '<input  type="radio" onclick="return false">';
-                                                
                                                 $linkDel = "'?ctrl=categories&act=delete&id=".$row['id']."'";
                                                 $linkEdit = '?ctrl=categories&act=edit&id='.$row['id'];
                                                 echo '<tr>
                                                         <td>'.$stt.'</td>
                                                         <td>'.$row['name'].'</td>
+                                                        <td>'.substr($row['description'],0,100).'</td>
                                                         <td>'.$row['parent'].'</td>
                                                         <td><div  onclick="checkDelete('.$linkDel.')"  class="btn btn-danger" role="button"><i class="fa fa-trash"></i></div></td>
                                                         <td><a><a name="" id="" class="btn btn-primary" href="'.$linkEdit.'" role="button"><i class="fa fa-edit"></i></a></a></a></td>

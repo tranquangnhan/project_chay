@@ -52,14 +52,15 @@ class categories{
         if(isset($_POST['them'])&&$_POST['them']){
             $name = $_POST['name_category'];
             $IDcate = $_POST['IDcate'];
+            $des_category = $_POST['des_category'];
             $slug = $this->lib->slug($name);
             $slug = strtolower($slug);
             if(isset($_GET['id'])){
                 $id = $_GET['id'];
                 settype($id,"int");
-                $this->edit($name,$IDcate,$slug,$id);
+                $this->edit($name,$IDcate,$slug,$des_category,$id);
             }else{
-                $this->store($name,$IDcate,$slug);
+                $this->store($name,$IDcate,$slug,$des_category);
             }
            
         }
@@ -68,9 +69,9 @@ class categories{
     }//thêm mới dữ liệu vào db
 
 
-    function store($name,$IDcate,$slug){   
+    function store($name,$IDcate,$slug,$des_category){   
         $name = $this->lib->stripTags($name);
-        if($this->model->addNewCate($name,$IDcate,$slug))
+        if($this->model->addNewCate($name,$IDcate,$slug,$des_category))
         {
             echo "<script>alert('Thêm thành công')</script>";
             header("location: ?ctrl=categories");
@@ -82,12 +83,12 @@ class categories{
         require_once "views/layout.php";
     }
 
-    function edit($name,$IDcate,$slug,$id)
+    function edit($name,$IDcate,$slug,$des_category,$id)
     {
         if(isset($_GET['id']))
         {
             
-            if($this->model->editCategory($name,$IDcate,$slug,$id))
+            if($this->model->editCategory($name,$IDcate,$slug,$des_category,$id))
             {
                 echo "<script>alert('Sửa thành công')</script>";
                 header("location: ?ctrl=categories");

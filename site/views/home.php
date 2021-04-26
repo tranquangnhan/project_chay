@@ -127,7 +127,7 @@
                                                       </div>';
                                         }
                                         if($row['price']<=0 ||$row['price'] =='' ){
-                                            $giaDiscount = ' <span class="discount-percentage discount-product">contact</span>';
+                                            $giaDiscount = ' <span class="discount-percentage discount-product"></span>';
                                         }
                                         $link = ROOT_URL."/product/".$row['slug'];
                                             echo '<div class="kktab-block">
@@ -241,7 +241,7 @@
                                                       </div>';
                                         }
                                         if($row['price']<=0 ||$row['price'] =='' ){
-                                            $giaDiscount = ' <span class="discount-percentage discount-product">contact</span>';
+                                            $giaDiscount = ' <span class="discount-percentage discount-product"></span>';
                                         }
                                         $link = ROOT_URL."/product/".$row['slug'];
                                         echo '<div class="kktab-block">
@@ -355,7 +355,7 @@
                                                       </div>';
                                         }
                                         if($row['price']<=0 ||$row['price'] =='' ){
-                                            $giaDiscount = ' <span class="discount-percentage discount-product">contact</span>';
+                                            $giaDiscount = ' <span class="discount-percentage discount-product"></span>';
                                         }
                                         $link = ROOT_URL."/product/".$row['slug'];
                                         echo '<div class="kktab-block">
@@ -494,7 +494,7 @@
                                           </div>';
                             }
                             if($row['price']<=0 ||$row['price'] =='' ){
-                                $giaDiscount = ' <span class="discount-percentage discount-product">contact</span>';
+                                $giaDiscount = ' <span class="discount-percentage discount-product"></span>';
                             }
                             $link = ROOT_URL."/product/".$row['slug'];
                             echo '<div class="kktab-block">
@@ -785,7 +785,7 @@
                           </div>';
             }
             if($row['price']<=0 ||$row['price'] =='' ){
-                $giaDiscount = ' <span class="discount-percentage discount-product">contact</span>';
+                $giaDiscount = ' <span class="discount-percentage discount-product"></span>';
             }
                 $link = ROOT_URL."/product/".$row['slug'];
                 echo '<article class="product-miniature js-product-miniature " data-id-product="17" data-id-product-attribute="46"
