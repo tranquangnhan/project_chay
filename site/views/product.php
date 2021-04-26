@@ -477,9 +477,9 @@
                                                 }
                                                 if(is_file(PATH_IMG_SITE.explode(",",$row['image_list'])[1])){
                                                   $imgCover = PATH_IMG_SITE.explode(",",$row['image_list'])[1];
-                                              }else{
-                                                  $imgCover = PATH_IMG_SITE.'logo.png';
-                                              }
+                                                }else{
+                                                    $imgCover =  PATH_IMG_SITE.explode(",",$row['image_list'])[0];
+                                                }
                                               if($row['new'] == 1){
                                                 $new = ' <li class="product-flag new">New</li>';
                                               }else{
@@ -487,7 +487,7 @@
                                               }
                                               if($row['discount'] > 0){
                                                 $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
-                                                $giaDiscount = '<span class="sr-only">'.$row['price'].'</span>
+                                                $giaDiscount = '<span class="sr-only">'.floatval($row['price']).'</span>
                                                                 <span class="regular-price">'.($row['price'] - ($row['discount']*$row['price'])/100) .'€</span>
                                                                 <span class="discount-percentage discount-product">'.$row['discount'].'</span>';
                                                            
@@ -554,7 +554,7 @@
                                                 if(is_file(PATH_IMG_SITE.explode(",",$row['image_list'])[1])){
                                                   $imgCover = PATH_IMG_SITE.explode(",",$row['image_list'])[1];
                                               }else{
-                                                  $imgCover = PATH_IMG_SITE.'logo.png';
+                                                  $imgCover = PATH_IMG_SITE.explode(",",$row['image_list'])[0];
                                               }
                                               if($row['new'] == 1){
                                                 $new = ' <li class="product-flag new">New</li>';
@@ -563,14 +563,14 @@
                                               }
                                               if($row['discount'] > 0){
                                                 $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
-                                                $giaDiscount = '<span class="sr-only">'.$row['price'].'</span>
+                                                $giaDiscount = '<span class="sr-only">'.floatval($row['price']).'</span>
                                                                 <span class="regular-price">'.($row['price'] - ($row['discount']*$row['price'])/100) .'€</span>
                                                                 <span class="discount-percentage discount-product">'.$row['discount'].'</span>';
                                                            
                                               }else{
                                                 $discount = '';
                                                 $giaDiscount = '<span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">'.$row['price'].'</span>';
+                                                                <span itemprop="price" class="price">'.floatval($row['price']).'</span>';
                                               }
                                               $link = ROOT_URL."/product/".$row['slug'];
                                                 echo '<article class="product-miniature js-product-miniature" data-id-product="19"
@@ -675,7 +675,7 @@
                                                 if(is_file(PATH_IMG_SITE.explode(",",$row['image_list'])[1])){
                                                   $imgCover = PATH_IMG_SITE.explode(",",$row['image_list'])[1];
                                               }else{
-                                                  $imgCover = PATH_IMG_SITE.'logo.png';
+                                                  $imgCover =  PATH_IMG_SITE.explode(",",$row['image_list'])[0];
                                               }
                                               if($row['new'] == 1){
                                                 $new = ' <li class="product-flag new">New</li>';
@@ -684,14 +684,14 @@
                                               }
                                               if($row['discount'] > 0){
                                                 $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
-                                                $giaDiscount = '<span class="sr-only">'.$row['price'].'</span>
+                                                $giaDiscount = '<span class="sr-only">'.floatval($row['price']).'</span>
                                                                 <span class="regular-price">'.($row['price'] - ($row['discount']*$row['price'])/100) .'€</span>
                                                                 <span class="discount-percentage discount-product">'.$row['discount'].'</span>';
                                                            
                                               }else{
                                                 $discount = '';
                                                 $giaDiscount = '<span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">'.$row['price'].'</span>';
+                                                                <span itemprop="price" class="price">'.floatval($row['price']).'</span>';
                                               }
                                               $link = ROOT_URL."/product/".$row['slug'];
                                                 echo '<article class="product-miniature js-product-miniature" data-id-product="19"
@@ -749,7 +749,7 @@
                                                 if(is_file(PATH_IMG_SITE.explode(",",$row['image_list'])[1])){
                                                   $imgCover = PATH_IMG_SITE.explode(",",$row['image_list'])[1];
                                               }else{
-                                                  $imgCover = PATH_IMG_SITE.'logo.png';
+                                                  $imgCover =  PATH_IMG_SITE.explode(",",$row['image_list'])[0];
                                               }
                                               if($row['new'] == 1){
                                                 $new = ' <li class="product-flag new">New</li>';
@@ -758,14 +758,14 @@
                                               }
                                               if($row['discount'] > 0){
                                                 $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
-                                                $giaDiscount = '<span class="sr-only">'.$row['price'].'</span>
+                                                $giaDiscount = '<span class="sr-only">'.floatval($row['price']).'</span>
                                                                 <span class="regular-price">'.($row['price'] - ($row['discount']*$row['price'])/100) .'€</span>
                                                                 <span class="discount-percentage discount-product">'.$row['discount'].'</span>';
                                                            
                                               }else{
                                                 $discount = '';
                                                 $giaDiscount = '<span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">'.$row['price'].'</span>';
+                                                                <span itemprop="price" class="price">'.floatval($row['price']).'</span>';
                                               }
                                               $link = ROOT_URL."/product/".$row['slug'];
                                                 echo '<article class="product-miniature js-product-miniature" data-id-product="19"
@@ -981,7 +981,7 @@
                                           if(is_file(PATH_IMG_SITE.explode(",",$row['image_list'])[1])){
                                             $imgCover = PATH_IMG_SITE.explode(",",$row['image_list'])[1];
                                           }else{
-                                              $imgCover = PATH_IMG_SITE.'logo.png';
+                                              $imgCover = PATH_IMG_SITE.explode(",",$row['image_list'])[0];
                                           }
                                           if($row['new'] == 1){
                                             $new = ' <li class="product-flag new">New</li>';
@@ -993,7 +993,7 @@
                                             $giaDiscount = ' <div class="product-price-and-shipping">
 
                                                             <span class="sr-only">Regular price</span>
-                                                            <span class="regular-price">'.$row['price'].'</span>
+                                                            <span class="regular-price">'.floatval($row['price']).'</span>
                                                             <span class="discount-percentage discount-product">-'.$row['discount'].'%</span>
 
 
@@ -1006,7 +1006,7 @@
                                     
 
                                                               <span class="sr-only">Price</span>
-                                                              <span itemprop="price" class="price">'.$row['price'].'€</span>
+                                                              <span itemprop="price" class="price">'.floatval($row['price']).'€</span>
                                                             
                                                             
                                                         </div>';

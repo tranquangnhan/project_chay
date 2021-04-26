@@ -157,49 +157,44 @@ class Home{
 
       function checkout()
       {
-         $producer = $this->model->getAllProducer();
+         $this->saveBill();
          $viewFile ="views/checkout.php";
          require_once "views/layout.php";
       }
 
       function saveBill()
       {
-         $producer = $this->model->getAllProducer();
+         if(isset($_POST['continue'])){
+     
 
          $hoten = trim(strip_tags($_POST['name']));
          $email = trim(strip_tags($_POST['email']));
          $phone = trim(strip_tags($_POST['phone']));
          $address = trim(strip_tags($_POST['address']));
          $note = trim(strip_tags($_POST['note']));
-         $methodpay = $_POST['payment-method'];
-         $keyBill = $this->model->getLastIdBill(). rand(1000,1000); 
 
          if (isset($_SESSION['idDH']))
             $idDH= $_SESSION['idDH'];
          else $idDH="-1";
+            
+         $tongtien = 0;
+         foreach ($_SESSION['cart'] as $row) {
+            $tongtien += $row[5]*$row[1];
+         }
+      
+         $idDH = $this->model->luudonhangnhe($idDH,  $hoten, $email,$phone,$address,$note,$tongtien);
          
-         echo $idDH.'cũ';
-
-         $idDH = $this->model->luudonhangnhe($idDH, $hoten, $email,$phone, $address,$note,$keyBill);
          
-         echo $idDH.'mới';
        
-         if($methodpay == 'vnpay'){
-            if ($idDH){
-               $_SESSION['idDH'] = $idDH;
-               $giohang = $_SESSION['giohang'];
-               $this->model->luugiohangnhe($idDH, $giohang);
-               header("location: " . SITE_URL."?act=vnpay&idhd=".$idDH."");
-            }
-         }else{
-            if ($idDH){
-               $_SESSION['idDH'] = $idDH;
+         
+            // if ($idDH){
+            //    $_SESSION['idDH'] = $idDH;
                
-               $giohang = $_SESSION['giohang'];
-               $this->model->luugiohangnhe($idDH, $giohang);
-               $this->model->sendMailBill($keyBill,$email);
-               header('location: '.ROOT_URL.'/cam-on');
-            }  
+            //    $giohang = $_SESSION['cart'];
+            //    $this->model->luugiohangnhe($idDH, $giohang);
+            //    header('location: '.ROOT_URL.'/cam-on');
+            // }  
+                
          }
       }
       function vnpay()

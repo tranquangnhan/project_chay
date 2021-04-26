@@ -112,12 +112,12 @@ if(is_array($sp)){
                                         <?php
                                         if($sp['discount']>0){
                                         ?>
-                                        <span itemprop="price" content="32.89" style="font-size:13pt;text-decoration:line-through"><?=$sp['price']?>€</span><br>
+                                        <span itemprop="price" content="32.89" style="font-size:13pt;text-decoration:line-through"><?=floatval($sp['price'])?>€</span><br>
                                         <span itemprop="price" content="32.89" style="color:var(--it-brand-primary)"><?=($sp['price'] - ($sp['discount']*$sp['price'])/100)?>€</span>
                                        
                                          <?php }
                                         else{?>
-                                            <span itemprop="price" content="32.89" style="color:var(--it-brand-primary)"><?=$sp['price']?>€</span>
+                                            <span itemprop="price" content="32.89" style="color:var(--it-brand-primary)"><?=floatval($sp['price'])?>€</span>
                                         <?php   } ?>
                                     </div>
 
@@ -359,7 +359,7 @@ if(is_array($sp)){
                                     if(is_file(PATH_IMG_SITE.explode(",",$row['image_list'])[1])){
                                         $imgCover = PATH_IMG_SITE.explode(",",$row['image_list'])[1];
                                     }else{
-                                        $imgCover = PATH_IMG_SITE.'logo.png';
+                                        PATH_IMG_SITE.explode(",",$row['image_list'])[0];
                                     }
                                     if($row['new'] == 1){
                                     $new = ' <li class="product-flag new">New</li>';
@@ -371,7 +371,7 @@ if(is_array($sp)){
                                     $giaDiscount = ' <div class="product-price-and-shipping">
 
                                                     <span class="sr-only">Regular price</span>
-                                                    <span class="regular-price">'.$row['price'].'</span>
+                                                    <span class="regular-price">'.floatval($row['price']).'</span>
                                                     <span class="discount-percentage discount-product">-'.$row['discount'].'%</span>
 
 
@@ -384,7 +384,7 @@ if(is_array($sp)){
                             
 
                                                         <span class="sr-only">Price</span>
-                                                        <span itemprop="price" class="price">'.$row['price'].'€</span>
+                                                        <span itemprop="price" class="price">'.floatval($row['price']).'€</span>
                                                     
                                                     
                                                 </div>';

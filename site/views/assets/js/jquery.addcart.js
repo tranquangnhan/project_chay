@@ -56,6 +56,17 @@ function addCart(id) {
 
 //delCart
 function delCart(iddel) {
+
+    var getUrl = window.location.href;
+
+    var c = getUrl.indexOf("checkout");
+
+    if (c != -1) {
+        location.reload();
+    }
+
+
+
     $.ajax({
         url: "controllers/ajax/addcart.php",
         method: "post",

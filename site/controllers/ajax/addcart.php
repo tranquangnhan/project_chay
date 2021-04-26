@@ -93,7 +93,7 @@
                         $size ='';
                     }
                     if($mau != 'null'){
-                        $mau = '  <span class="label">Color: '.$mau.'</span>';
+                        $mau = ' <span class="color" id="color" style="background-color:'.$mau.'"><span class="sr-only">'.$mau.'</span></span>';
                     }else{
                         $mau ='';
                     }
@@ -112,7 +112,7 @@
                             <span>'.$slmotsp.' x </span>
                             <!-- End qty -->
                             <a class="label name-cart2"
-                                href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/home-accessories/7-mug-the-adventure-begins.html"
+                                href=""
                                 data-id_customization="0">'. $name.'
                             </a>
                         </div>
@@ -152,7 +152,7 @@
                             <!-- checkout -->
                             <div class="cart-btn col-xs-12">
                                 <div class="row">
-                                    <a href="//infinitytemplate.com/Prestashop/PRS01/PRS012/en/cart?action=show"
+                                    <a href="'.ROOT_URL.'/checkout'.'"
                                         class="btn btn-primary">CheckOut</a>
 
                                 </div>
