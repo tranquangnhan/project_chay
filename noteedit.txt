@@ -1,3 +1,5 @@
+sửa lại các field
+
 sửa lại giá trong add, edit sản phẩm có thể để trống hoặc  ==0
 sửa lại contact trong admin show sản phẩm khách hàng contact
 sửa lại btn detail, infomation k ấn dc
