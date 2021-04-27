@@ -52,10 +52,10 @@
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="">Price</label>
-                                                    <input  type="number" name="price" parsley-trigger="change" 
-                                                        placeholder="Type price" value="<?=$oneRecode['price']?>" class="form-control" id="emailAddress">
+                                            <div class="form-group">
+                                                    <label for="">Name (German)</label><span style="color:red;"> (*)</span>
+                                                    <input  type="text" name="name_product_ge" parsley-trigger="change" required
+                                                        placeholder="Type name product GE" value="<?=$oneRecode['name_ge']?>" class="form-control" >
                                                 </div>
                                             </div>
                                         </div>
@@ -102,7 +102,24 @@
                                                 }
                                             ?>
                                             <div class="col-lg-6">
-                                                <div class="form-group"><label for="">Size</label><br/></div>
+                                            <div class="form-group">
+                                                    <label for="">Price</label>
+                                                    <input  type="number" name="price" parsley-trigger="change" 
+                                                        placeholder="Type price" value="<?=$oneRecode['price']?>" class="form-control" id="emailAddress">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <div class="checkbox">
+                                                        <input id="remember-2" type="checkbox" name="hot" <?=($oneRecode['hot']==1) ? 'checked' : '';?> data-parsley-multiple="remember-1">
+                                                        <label for="remember-2">Hot ? </label>
+                                                    </div>
+                                                </div>          
+                                            </div>
+                                            <div class="col-lg-6">
+                                            <div class="form-group"><label for="">Size</label><br/></div>
                                                 <div class="form-group radio">
                                                     <div class="input-radio size">
                                                         <label for="size1 ">S</label>
@@ -157,20 +174,15 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-lg-3">
-                                                <div class="form-group">
-                                                    <div class="checkbox">
-                                                        <input id="remember-2" type="checkbox" name="hot" <?=($oneRecode['hot']==1) ? 'checked' : '';?> data-parsley-multiple="remember-1">
-                                                        <label for="remember-2">Hot ? </label>
-                                                    </div>
-                                                </div>          
-                                            </div>
-                                        </div>
-                                        
+                                        <label for="">Description</label>
                                         <textarea id="editor1"  style="height: 300px;width:100%" name="Description" >
                                         
                                         <?=$oneRecode["description"]?>
+                                        </textarea>
+                                        <label for="">Description (German)</label>
+                                        <textarea id="editor3"  style="height: 300px;width:100%" name="Description1" >
+                                        
+                                        <?=$oneRecode["description_ge"]?>
                                         </textarea>
                                         <label for="">Properties</label>
                                         <textarea id="editor2" style="height: 300px;width:100%" name="Properties" >

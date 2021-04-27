@@ -51,16 +51,18 @@ class categories{
 
         if(isset($_POST['them'])&&$_POST['them']){
             $name = $_POST['name_category'];
+            $name_ge = $_POST['name_category_ge'];
             $IDcate = $_POST['IDcate'];
             $des_category = $_POST['des_category'];
+            $des_category_ge = $_POST['des_category_ge'];
             $slug = $this->lib->slug($name);
             $slug = strtolower($slug);
             if(isset($_GET['id'])){
                 $id = $_GET['id'];
                 settype($id,"int");
-                $this->edit($name,$IDcate,$slug,$des_category,$id);
+                $this->edit($name,$name_ge,$IDcate,$slug,$des_category,$des_category_ge,$id);
             }else{
-                $this->store($name,$IDcate,$slug,$des_category);
+                $this->store($name,$name_ge,$IDcate,$slug,$des_category,$des_category_ge);
             }
            
         }
@@ -69,9 +71,9 @@ class categories{
     }//thêm mới dữ liệu vào db
 
 
-    function store($name,$IDcate,$slug,$des_category){   
+    function store($name,$name_ge,$IDcate,$slug,$des_category,$des_category_ge){   
         $name = $this->lib->stripTags($name);
-        if($this->model->addNewCate($name,$IDcate,$slug,$des_category))
+        if($this->model->addNewCate($name,$name_ge,$IDcate,$slug,$des_category,$des_category_ge))
         {
             echo "<script>alert('Thêm thành công')</script>";
             header("location: ?ctrl=categories");
@@ -83,12 +85,12 @@ class categories{
         require_once "views/layout.php";
     }
 
-    function edit($name,$IDcate,$slug,$des_category,$id)
+    function edit($name,$name_ge,$IDcate,$slug,$des_category,$des_category_ge,$id)
     {
         if(isset($_GET['id']))
         {
             
-            if($this->model->editCategory($name,$IDcate,$slug,$des_category,$id))
+            if($this->model->editCategory($name,$name_ge,$IDcate,$slug,$des_category,$des_category_ge,$id))
             {
                 echo "<script>alert('Sửa thành công')</script>";
                 header("location: ?ctrl=categories");

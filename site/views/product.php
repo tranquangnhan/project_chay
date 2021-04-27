@@ -119,6 +119,11 @@
                                   <?php
                                       $this->model = new Model_home();
                                       foreach ($getAllCate as $row) {
+                                          if ($_SESSION['lang'] === 'en') {
+                                              $name = $row['name'];
+                                          }else{
+                                              $name = $row['name_ge'];
+                                          }
                                         echo '  <li>
                                             <label class="facet-label" for="facet_input_21014_0">
                                                 <span class="custom-checkbox">
@@ -128,7 +133,7 @@
                                                 </span>
 
                                                 <a href="'.ROOT_URL.'/cate/'.$row['slug'].'-'.$row['id'].'/page-1" class="" >
-                                                    '.$row['name'].'
+                                                    '.$name.'
                                                     <span class="magnitude">('.$this->model->countAllProduct($row['id']).')</span>
                                                 </a>
                                             </label>
@@ -879,12 +884,15 @@
                             <img src="https://infinitytemplate.com/Prestashop/PRS01/PRS012/c/3-category_default/clothes.jpg"
                                 alt="Clothes">
                         </div>
-
-                        <h1 class="h1 title-category"><?=$getCateFromId['name']?></h1>
-                        <p><?=$getCateFromId['description']?></p>
+                        <?php
+                            
+                        
+                        ?>
+                        <h1 class="h1 title-category"><?php if($_SESSION['lang'] === 'en') echo $getCateFromId['name']; else echo $getCateFromId['name_ge'];?></h1>
+                        <p><?php if($_SESSION['lang'] === 'en') echo $getCateFromId['description']; else echo $getCateFromId['description_ge'];?></p>
 
                         <div class="text-sm-center hidden-md-up">
-                            <h1 class="h1"><?=$getCateFromId['name']?></h1>
+                            <h1 class="h1"><?php if($_SESSION['lang'] === 'en') echo $getCateFromId['name']; else echo $getCateFromId['name_ge'];?></h1>
                         </div>
 
 

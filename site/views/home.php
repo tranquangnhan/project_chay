@@ -14,18 +14,24 @@
 
                     <a href="<?=ROOT_URL?>/product"
                         title="kslider-1">
-                        <img src="views/assets/img/kslider-1.jpg" alt="kslider-1" title="KSlider1" />
+                        <img src="views/assets/img/banner1.jpg" alt="kslider-1" title="KSlider1" />
                     </a>
-                    <!-- position absolute > li -->
 
                 </li>
                 <li class="slide">
 
                     <a href="<?=ROOT_URL?>/product"
                         title="kslider-2">
-                        <img src="views/assets/img/kslider-2.jpg" alt="kslider-2" title="KSlider2" />
+                        <img src="views/assets/img/banner2.jpg" alt="kslider-2" title="KSlider2" />
                     </a>
-                    <!-- position absolute > li -->
+
+                </li>
+                <li class="slide">
+
+                    <a href="<?=ROOT_URL?>/product"
+                        title="kslider-3">
+                        <img src="views/assets/img/banner3.jpg" alt="kslider-3" title="KSlider3" />
+                    </a>
 
                 </li>
             </ul>
@@ -39,7 +45,7 @@
                 <div class="center-banner list-unstyled">
                     <div class="slider banner1 col-lg-4 col-md-12">
                         <a href="<?=ROOT_URL?>/product" class="kk-customhover-fadeintopbottom">
-                            <img src="views/assets/img/kbanner-1.jpg" alt="kbanner-1"
+                            <img src="views/assets/img/1.png" alt="kbanner-1"
                                 class="img-responsive center-block" />
                         </a>
                         <div class="overlay"></div>
@@ -47,14 +53,14 @@
 
                     <div class="slider banner2  col-lg-4 col-md-12">
                         <a href="<?=ROOT_URL?>/product" class="kk-customhover-fadeintopbottom">
-                            <img src="views/assets/img/kbanner-2.jpg" alt="kbanner-2"
+                            <img src="views/assets/img/2.png" alt="kbanner-2"
                                 class="img-responsive center-block" />
                         </a>
                         <div class="overlay"></div>
                     </div>
                     <div class="slider banner2  col-lg-4 col-md-12">
                         <a href="<?=ROOT_URL?>/product" class="kk-customhover-fadeintopbottom">
-                            <img src="views/assets/img/kbanner-3.jpg" alt="kbanner-3"
+                            <img src="views/assets/img/3.png" alt="kbanner-3"
                                 class="img-responsive center-block" />
                         </a>
                         <div class="overlay"></div>
@@ -430,7 +436,7 @@
             </div>
         </div>
         <div id="kkparallaxcms" class="parallax parallaxcms-outer hb-animate-element bottom-to-top "
-            data-source-url="views/assets/img/Parallax-1.jpg">
+            data-source-url="views/assets/img/4.png">
             <div class="container">
                 <div class="parallaxcms-inner container">
                     <div class="parallaxcms">
@@ -701,7 +707,7 @@
                                 <div class="slider banner1  col-lg-6 col-xs-12 hb-animate-element bottom-to-top">
                                     <a href="<?=ROOT_URL?>/product" class="kk-customhover-fadeintopbottom" title="This is Caption">
                                         <div class="kkmultibanner-hover">
-                                            <img src="views/assets/img/demo_img_1.jpg" class="img-responsive"
+                                            <img src="views/assets/img/5.png" class="img-responsive"
                                                 alt="This is Caption" />
                                         </div>
                                     </a>
@@ -711,7 +717,7 @@
                                 <div class="slider banner1  col-lg-6 col-xs-12 hb-animate-element bottom-to-top">
                                     <a href="<?=ROOT_URL?>/product" class="kk-customhover-fadeintopbottom" title="This is Caption">
                                         <div class="kkmultibanner-hover">
-                                            <img src="views/assets/img/demo_img_2.jpg" class="img-responsive"
+                                            <img src="views/assets/img/6.png" class="img-responsive"
                                                 alt="This is Caption" />
                                         </div>
                                     </a>

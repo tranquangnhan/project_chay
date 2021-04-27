@@ -34,9 +34,18 @@
                                                    placeholder="Nhập tên danh mục" class="form-control" id="userName">
                                         </div>
                                         <div class="form-group">
+                                            <label for="">Name Category (German)</label>
+                                            <input type="text" name="name_category_ge" value="<?=$oneRecode['name_ge']?>"  parsley-trigger="change" required
+                                                   placeholder="Type name category GE" class="form-control" id="category">
+                                        </div>
+                                        <div class="form-group">
                                             <label for="">Description</label>
                                             <textarea id="editor1" style="height: 300px;width:100%" name="des_category" >
                                             <?=$oneRecode['description']?>
+                                        </textarea>
+                                        <label for="">Description (German)</label>
+                                            <textarea id="editor2" style="height: 300px;width:100%" name="des_category_ge" >
+                                            <?=$oneRecode['description_ge']?>
                                         </textarea>
                                             
                                         </div>
