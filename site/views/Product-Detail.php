@@ -367,7 +367,7 @@ if(is_array($sp)){
 
                                     <div class="product-description">
                                         <p>
-                                            <?=$sp['description']?>
+                                            <?php if($_SESSION['lang'] === 'en') echo $sp['description']; else echo $sp['description_ge'];?>
                                         </p>
                                     </div>
 
@@ -379,7 +379,7 @@ if(is_array($sp)){
                                     role="tabpanel">
                                     <div class="product-description">
                                         <p>
-                                            <?=$sp['properties']?>
+                                            <?php if($_SESSION['lang'] === 'en') echo $sp['properties']; else echo $sp['properties_ge']?>
                                         </p>
                                     </div>
 

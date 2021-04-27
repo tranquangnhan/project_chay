@@ -188,6 +188,10 @@
                                         <textarea id="editor2" style="height: 300px;width:100%" name="Properties" >
                                         <?=$oneRecode["properties"]?>
                                         </textarea>
+                                        <label for="">Properties (German)</label>
+                                        <textarea id="editor4" style="height: 300px;width:100%" name="Properties_ge" >
+                                        <?=$oneRecode["properties_ge"]?>
+                                        </textarea>
 
                                         <div class="form-group text-right mb-0 mt-5">
                                             <input type="submit" name="them" class="btn btn-primary waves-effect waves-light mr-1" value="Edit">
