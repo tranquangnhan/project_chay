@@ -1,8 +1,9 @@
 <?php 
 require_once "../system/config.php";
+// require_once "../languages/".$_SESSION['lang'].".php";
 require_once "../system/database.php";
 require_once "../lib/myfunctions.php";
-
+echo $lang['title'];
 require_once "models/home.php"; 
 require_once "models/user.php";
 class Home{

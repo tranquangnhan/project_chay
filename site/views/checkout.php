@@ -42,7 +42,7 @@
                         <h1 class="step-title h3">
                             <i class="material-icons rtl-no-flip done">&#xE876;</i>
                             <span class="step-number">1</span>
-                            Personal Information
+                            <?=$lang['person']?>
                             <!-- <span class="step-edit text-muted"><i class="material-icons edit">mode_edit</i> Edit</span> -->
                         </h1>
 
@@ -66,7 +66,7 @@
 
                                             <div class="form-group row ">
                                                 <label class="col-md-3 form-control-label required">
-                                                   Full name
+                                                <?=$lang['fullname']?>
                                                 </label>
                                                 <div class="col-md-6">
 
@@ -96,7 +96,7 @@
 
                                             <div class="form-group row ">
                                                 <label class="col-md-3 form-control-label required">
-                                                  Phone
+                                                <?=$lang['phone']?>
                                                 </label>
                                                 <div class="col-md-6">
 
@@ -121,7 +121,7 @@
 
                                             <div class="form-group row ">
                                                 <label class="col-md-3 form-control-label required">
-                                                    Email
+                                                <?=$lang['email']?>
                                                 </label>
                                                 <div class="col-md-6">
 
@@ -144,7 +144,7 @@
                                             </div>
                                             <div class="form-group row ">
                                                 <label class="col-md-3 form-control-label required">
-                                                    Address
+                                                    <?=$lang['address']?>
                                                 </label>
                                                 <div class="col-md-6">
 
@@ -163,7 +163,7 @@
                                             </div>
                                             <div class="form-group row ">
                                                 <label class="col-md-3 form-control-label required">
-                                                    Note
+                                                <?=$lang['note']?>
                                                 </label>
                                                 <div class="col-md-6">
 
@@ -188,7 +188,7 @@
 
                                             <button class="continue btn btn-primary float-xs-right" name="continue"
                                                 data-link-action="register-new-customer" type="submit" value="1" >
-                                                Continue
+                                                <?=$lang['continue']?>
                                             </button>
 
                                         </footer>
@@ -227,11 +227,11 @@
 
                             <div class="cart-summary-products">
 
-                                <p><?=count($_SESSION['cart'])?> items</p>
+                                <p><?=count($_SESSION['cart'])?> <?=$lang['item']?></p>
 
                                 <p>
                                     <a href="#" data-toggle="collapse" data-target="#cart-summary-product-list">
-                                        show details
+                                    <?=$lang['showdetail']?>
                                         <i class="material-icons">expand_more</i>
                                     </a>
                                 </p>
@@ -345,7 +345,7 @@
 
 
                             <div class="cart-summary-line cart-total">
-                                <span class="label">Total </span>
+                                <span class="label"><?=$lang['total']?> </span>
                                 <span class="value"><?=$tongtien?>€</span>
                             </div>
 
@@ -364,21 +364,21 @@
                                 <div class="block-reassurance-item">
                                     <img src="https://infinitytemplate.com/Prestashop/PRS01/PRS012/modules/blockreassurance/img/ic_verified_user_black_36dp_1x.png"
                                         alt="Security policy (edit with Customer reassurance module)">
-                                    <span class="h6">Security policy (Edit with Customer reassurance module)</span>
+                                    <span class="h6"><?=$lang['security']?></span>
                                 </div>
                             </li>
                             <li>
                                 <div class="block-reassurance-item">
                                     <img src="https://infinitytemplate.com/Prestashop/PRS01/PRS012/modules/blockreassurance/img/ic_local_shipping_black_36dp_1x.png"
                                         alt="Delivery policy (edit with Customer reassurance module)">
-                                    <span class="h6">Delivery policy (Edit with Customer reassurance module)</span>
+                                    <span class="h6"><?=$lang['delivery']?></span>
                                 </div>
                             </li>
                             <li>
                                 <div class="block-reassurance-item">
                                     <img src="https://infinitytemplate.com/Prestashop/PRS01/PRS012/modules/blockreassurance/img/ic_swap_horiz_black_36dp_1x.png"
                                         alt="Return policy (edit with Customer reassurance module)">
-                                    <span class="h6">Return policy (edit with Customer reassurance module)</span>
+                                    <span class="h6"><?=$lang['return']?></span>
                                 </div>
                             </li>
                         </ul>

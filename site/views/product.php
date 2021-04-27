@@ -98,14 +98,14 @@
                         </div>
                         <div id="search_filters">
 
-                            <p class="text-uppercase h6 hidden-sm-down">Filter By</p>
+                            <p class="text-uppercase h6 hidden-sm-down"><?=$lang['filterby']?></p>
 
 
                             <section class="facet clearfix">
-                                <p class="h6 facet-title hidden-sm-down">Brand</p>
+                                <p class="h6 facet-title hidden-sm-down"><?=$lang['brand']?></p>
 
                                 <div class="title hidden-md-up" data-target="#facet_21014" data-toggle="collapse">
-                                    <p class="h6 facet-title">Brand</p>
+                                    <p class="h6 facet-title"><?=$lang['brand']?></p>
                                     <span class="float-xs-right">
                                         <span class="navbar-toggler collapse-icons">
                                             <i class="material-icons add">&#xE145;</i>
@@ -444,13 +444,13 @@
                     </div>
                     <section class="featured-products clearfix mt-3 hb-animate-element right-to-left">
                         <h3 class="h1 products-section-title left-product-title text-uppercase hidden-md-down ">
-                            New products
+                            <?=$lang['newpro']?>
                         </h3>
 
 
                         <div class="left-product-title  clearfix hidden-md-up collapsed"
                             data-target="#newproducts-container" data-toggle="collapse">
-                            <span class="h1 text-uppercase">New products</span>
+                            <span class="h1 text-uppercase"><?=$lang['newpro']?></span>
 
                             <span class="float-xs-right">
                                 <span class="navbar-toggler collapse-icons">
@@ -652,12 +652,12 @@
                     </div> -->
                     <section class="featured-products clearfix mt-3 hb-animate-element left-to-right">
                         <h3 class="h1 products-section-title left-product-title text-uppercase hidden-md-down ">
-                            Best Sellers
+                            <?=$lang['bestseller']?>
                         </h3>
 
                         <div class="left-product-title  clearfix hidden-md-up collapsed"
                             data-target="#BestSellers-container" data-toggle="collapse">
-                            <span class="h1 text-uppercase">Best Sellers</span>
+                            <span class="h1 text-uppercase"><?=$lang['bestseller']?></span>
                             <span class="float-xs-right">
                                 <span class="navbar-toggler collapse-icons">
                                     <i class="material-icons add">&#xE145;</i>
@@ -845,7 +845,7 @@
 
                             <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
                                 <a itemprop="item" href="#">
-                                    <span itemprop="name">Home</span>
+                                    <span itemprop="name"><?=$lang['homeproduct'] ?></span>
                                 </a>
                                 <meta itemprop="position" content="1">
                             </li>
@@ -905,7 +905,7 @@
                                         </div>
 
 
-                                        <p>There are <?= $TotalProduct?> products.</p>
+                                        <p><?= $lang['thereare']?> <?= $TotalProduct?> <?= $lang['product']?>.</p>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="row sort-by-row">
@@ -932,40 +932,40 @@
                                                         $sortPriceDesc = ROOT_URL.'/cate/page-1/pricedesc';
                                                     }
                                                 ?>
-                                            <span class="col-sm-3 col-md-3 hidden-sm-down sort-by">Sort by:</span>
+                                            <span class="col-sm-3 col-md-3 hidden-sm-down sort-by"> <?=$lang['sortby']?></span>
                                             <div class="col-sm-9 col-xs-8 col-md-9 products-sort-order dropdown">
                                                 <button class="btn-unstyle select-title" rel="nofollow"
                                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    Relevance <i class="material-icons float-xs-right">&#xE5C5;</i>
+                                                    <?=$lang['relevance']?> <i class="material-icons float-xs-right">&#xE5C5;</i>
                                                 </button>
                                                
                                                 <div class="dropdown-menu">
                                                     <a rel="nofollow"
                                                         href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes?order=product.position.asc"
                                                         class="select-list current js-search-link">
-                                                        Relevance
+                                                        <?=$lang['relevance']?>
                                                     </a>
                                                     
                                                     <a rel="nofollow"
                                                     
                                                         href="<?=$sortNameAsc?>"
                                                         class="select-list ">
-                                                        Name, A to Z
+                                                        <?=$lang['nameaz']?>
                                                     </a>
                                                     <a rel="nofollow"
                                                         href="<?=$sortNameDesc?>"
                                                         class="select-list ">
-                                                        Name, Z to A
+                                                        <?=$lang['nameza']?>
                                                     </a>
                                                     <a rel="nofollow"
                                                         href="<?=$sortPriceAsc?>"
                                                         class="select-list ">
-                                                        Price, low to high
+                                                        <?=$lang['pricetc']?>
                                                     </a>
                                                     <a rel="nofollow"
                                                         href="<?=$sortPriceDesc?>"
                                                         class="select-list ">
-                                                        Price, high to low
+                                                        <?=$lang['pricect']?>
                                                     </a>
                                                 </div>
                                             </div>

@@ -1,3 +1,6 @@
+<?php
+    require_once "../languages/".$_SESSION['lang'].".php";
+?>
 <!doctype html>
 <html lang="en">
 
@@ -5,7 +8,7 @@
     <base href="/project_chay/site/">
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Demo Shop</title>
+    <title>Hằng ELLA</title>
     <meta name="description" content="Shop powered by PrestaShop">
     <meta name="keywords" content="">
    
@@ -304,17 +307,17 @@
                             <div class="language-selector dropdown js-dropdown">
                                 <button data-toggle="dropdown" class=" btn-unstyle" aria-haspopup="true"
                                     aria-expanded="false" aria-label="Language dropdown">
-                                    <span class="expand-more">English</span>
+                                    <span class="expand-more"><?php echo $lang['lang_en'] ?></span>
                                     <i class="material-icons expand-more"></i>
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="language-selector-label">
                                     <li class="current">
-                                        <a href="#"
-                                            class="dropdown-item" data-iso-code="en">English</a>
+                                        <a href="index.php?lang=en"
+                                            class="dropdown-item" data-iso-code="en"><?php echo $lang['lang_en'] ?></a>
                                     </li>
                                     <li>
-                                        <a href="#"
-                                            class="dropdown-item" data-iso-code="es">Español</a>
+                                        <a href="index.php?lang=ge"
+                                            class="dropdown-item" data-iso-code="es"><?php echo $lang['lang_bs'] ?></a>
                                     </li>
                                 </ul>
                               
@@ -328,7 +331,7 @@
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 center-nav">
                             <div id="kkheaderblock" class="clearfix">
                                 <div id="kkcmsheader">
-                                    <div class="kkheader-service">Welcome To Cosmetics Store</div>
+                                    <div class="kkheader-service"><?php echo $lang['title'] ?></div>
                                 </div>
 
                             </div>
@@ -340,14 +343,14 @@
                                 <div class="user-info-inner">
                                 <?php
                                                 if (isset($_SESSION['suser'])&&$_SESSION['suser']!='') {
-                                                    echo '<div class="logoutH">Welcome, '.$_SESSION['suser'].'</div>';
+                                                    echo '<div class="logoutH">'.$lang['welcome'].', '.$_SESSION['suser'].'</div>';
                                                     echo '<ul class="user-info logout">
                                                     <li>
                                                            
                                                     <a href="'.ROOT_URL.'/?act=logout"
                                                             >
                                                             
-                                                            <span class="hidden-sm-down">Log Out</span>
+                                                            <span class="hidden-sm-down">'.$lang['logout'].'</span>
                                                         </a></li>
                                                 </ul>'
                                                 
@@ -361,7 +364,7 @@
                                         <a href="<?php echo ROOT_URL?>/login"
                                                 title="Log in to your customer account" rel="nofollow">
                                                 <i class="material-icons user">&#xE7FF;</i>
-                                                <span class="hidden-sm-down">Sign in</span>
+                                                <span class="hidden-sm-down"><?php echo $lang['Signin'] ?></span>
                                             </a></li>
                                     </ul>
                                     <?php } ?> 
@@ -383,7 +386,7 @@
 
                                                 <li class="cart-det2"
                                                     data-refresh-url="//infinitytemplate.com/Prestashop/PRS01/PRS012/en/cart?ajax=1&action=refresh">
-                                                    <span class="no-items">Your cart is empty!</span>
+                                                    <span class="no-items"><?php echo $lang['emptycart'] ?></span>
                                             </div>
                                         </div>
 
@@ -431,7 +434,7 @@
                                 </div>
 
                                 <div class="infinitycontact-dec">
-                                    <div class="contact-title">Call us :</div>
+                                    <div class="contact-title"><?=$lang['callus']?></div>
                                     <div class="contact-dec">+91 0123-456-789</div>
                                 </div>
 
@@ -451,7 +454,7 @@
 
                                 <div class="infinitycontact-dec">
 
-                                    <div class="email-title">Mail Us :</div>
+                                    <div class="email-title"><?php echo $lang['mailus'] ?></div>
 
                                     <div class="email-dec">admin@gmail.com</div>
 
@@ -468,7 +471,7 @@
                 <div id="mobile_kktop_menu_wrapper" class="hidden-md-up">
                     <div id="top_menu_closer">
                         <div class="leftmenu-title">
-                            <i class="material-icons"></i>Menu
+                            <i class="material-icons"></i><?=$lang['menu']?>
                         </div>
                     </div>
                     <div class="js-top-menu mobile" id="_mobile_top_menu"></div>
@@ -556,7 +559,7 @@
                         <div id="mobile_menu">
                             <div class="float-xs-left" id="menu-icon">
                                 <div class="leftmenu-title">
-                                    <i class="material-icons">&#xE5D2;</i>Menu
+                                    <i class="material-icons">&#xE5D2;</i><?=$lang['menu']?>
                                 </div>
                             </div>
                             <div class="float-xs-right" id="_mobile_cart"></div>
@@ -592,7 +595,7 @@
                                 <div class="title  hidden-md-up collapsed" data-target="#kkstoreinfo-container"
                                     data-toggle="collapse">
 
-                                    <span class="h3">About US</span>
+                                    <span class="h3"><?=$lang['aboutus']?></span>
 
                                     <span class="float-xs-right">
 
@@ -630,7 +633,7 @@
 
                                 <div class="title  hidden-md-up" data-toggle="collapse"
                                     data-target="#kkservice_block_container">
-                                    <span class="h3 block-contact-title">Our service</span>
+                                    <span class="h3 block-contact-title"><?=$lang['oursv']?></span>
                                     <span class="float-xs-right">
                                         <span class="navbar-toggler collapse-icons">
                                             <i class="material-icons add">&#xE145;</i>
@@ -646,8 +649,8 @@
                                             <div class="serviceblock subbanner-part-maininnner1">
                                                 <div class="subicon subicon1"><span class="hide">icon</span></div>
                                                 <div class="servicedec">
-                                                    <div class="subtitile subtitile1">Free Shipping</div>
-                                                    <div class="subtitile subtitile2">Orders over $99</div>
+                                                    <div class="subtitile subtitile1"><?php echo $lang['freeship'] ?></div>
+                                                    <div class="subtitile subtitile2"><?php echo $lang['orderover99'] ?></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -655,8 +658,8 @@
                                             <div class="serviceblock subbanner-part-maininnner2">
                                                 <div class="subicon subicon2"><span class="hide">icon</span></div>
                                                 <div class="servicedec">
-                                                    <div class="subtitile subtitile1"> Big Saving</div>
-                                                    <div class="subtitile subtitile2"> Money back guarantee.</div>
+                                                    <div class="subtitile subtitile1"> <?php echo $lang['bigsave'] ?></div>
+                                                    <div class="subtitile subtitile2"> <?php echo $lang['moneyback'] ?></div>
 
                                                 </div>
                                             </div>
@@ -665,8 +668,8 @@
                                             <div class="serviceblock subbanner-part-maininnner3">
                                                 <div class="subicon subicon3"><span class="hide">icon</span></div>
                                                 <div class="servicedec">
-                                                    <div class="subtitile subtitile1"> Gift voucher</div>
-                                                    <div class="subtitile subtitile2"> Free gift vouchers</div>
+                                                    <div class="subtitile subtitile1"> <?php echo $lang['gift'] ?></div>
+                                                    <div class="subtitile subtitile2"> <?php echo $lang['freegift'] ?></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -674,8 +677,8 @@
                                             <div class="serviceblock subbanner-part-maininnner4">
                                                 <div class="subicon subicon4"><span class="hide">icon</span></div>
                                                 <div class="servicedec">
-                                                    <div class="subtitile subtitile1"> 24x7 Support</div>
-                                                    <div class="subtitile subtitile2"> Free online support</div>
+                                                    <div class="subtitile subtitile1"><?php echo $lang['support'] ?></div>
+                                                    <div class="subtitile subtitile2"><?php echo $lang['freesupport'] ?></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -685,10 +688,10 @@
                             <div class="col-lg-6 linklist links">
                                 <div class="row">
                                     <div class="col-md-6 wrapper hb-animate-element bottom-to-top">
-                                        <h3 class="h3 hidden-sm-down">Products</h3>
+                                        <h3 class="h3 hidden-sm-down"><?php echo $lang['product'] ?></h3>
                                         <div class="title  hidden-md-up" data-target="#footer_sub_menu_8589"
                                             data-toggle="collapse">
-                                            <span class="h3">Products</span>
+                                            <span class="h3"><?php echo $lang['product'] ?></span>
                                             <span class="float-xs-right">
                                                 <span class="navbar-toggler collapse-icons">
                                                     <i class="material-icons add">&#xE145;</i>
@@ -701,37 +704,37 @@
                                                 <a id="link-product-page-prices-drop-1" class="cms-page-link"
                                                     href="#"
                                                     title="Our special products">
-                                                    Prices drop
+                                                    <?php echo $lang['priceshop'] ?>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a id="link-product-page-new-products-1" class="cms-page-link"
                                                     href="#"
                                                     title="Our new products">
-                                                    New products
+                                                    <?php echo $lang['newpro'] ?>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a id="link-product-page-best-sales-1" class="cms-page-link"
                                                     href="#"
                                                     title="Our best sales">
-                                                    Best sales
+                                                    <?php echo $lang['bestsell'] ?>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a id="link-static-page-contact-1" class="cms-page-link"
-                                                    href="#"
+                                                    href="<?=ROOT_URL?>/contact"
                                                     title="Use our form to contact us">
-                                                    Contact us
+                                                    <?php echo $lang['contact'] ?>
                                                 </a>
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="col-md-6 wrapper hb-animate-element bottom-to-top">
-                                        <h3 class="h3 hidden-sm-down">Our company</h3>
+                                        <h3 class="h3 hidden-sm-down"><?php echo $lang['ourcompany'] ?></h3>
                                         <div class="title  hidden-md-up" data-target="#footer_sub_menu_3249"
                                             data-toggle="collapse">
-                                            <span class="h3">Our company</span>
+                                            <span class="h3"><?php echo $lang['ourcompany'] ?></span>
                                             <span class="float-xs-right">
                                                 <span class="navbar-toggler collapse-icons">
                                                     <i class="material-icons add">&#xE145;</i>
@@ -744,28 +747,28 @@
                                                 <a id="link-cms-page-4-2" class="cms-page-link"
                                                     href="#"
                                                     title="Learn more about us">
-                                                    About us
+                                                    <?php echo $lang['aboutus'] ?>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a id="link-cms-page-5-2" class="cms-page-link"
                                                     href="#"
                                                     title="Our secure payment method">
-                                                    Terms of Services
+                                                    <?php echo $lang['termofsv'] ?>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a id="link-static-page-sitemap-2" class="cms-page-link"
                                                     href="#"
                                                     title="Lost ? Find what your are looking for">
-                                                    Impressum
+                                                    <?php echo $lang['Impressum'] ?>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a id="link-static-page-my-account-2" class="cms-page-link"
                                                     href="#"
                                                     title="">
-                                                    Privacy policy 
+                                                    <?php echo $lang['privacy'] ?> 
                                                 </a>
                                             </li>
                                         </ul>
@@ -777,12 +780,12 @@
                                     <a class="text-uppercase"
                                         href="#"
                                         rel="nofollow">
-                                        Your account
+                                        <?php echo $lang['youracc'] ?>
                                     </a>
                                 </h3>
                                 <div class="title  hidden-md-up" data-target="#footer_account_list"
                                     data-toggle="collapse">
-                                    <span class="h3">Your account</span>
+                                    <span class="h3"><?php echo $lang['youracc'] ?></span>
                                     <span class="float-xs-right">
                                         <span class="navbar-toggler collapse-icons">
                                             <i class="material-icons add">&#xE145;</i>
@@ -794,34 +797,34 @@
                                     <li>
                                         <a href="#"
                                             title="Personal info" rel="nofollow">
-                                            Personal info
+                                            <?php echo $lang['personalinfo'] ?>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#"
                                             title="Orders" rel="nofollow">
-                                            Orders
+                                            <?php echo $lang['order'] ?>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#"
                                             title="Credit slips" rel="nofollow">
-                                            Credit slips
+                                            <?php echo $lang['credit'] ?>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#"
                                             title="Addresses" rel="nofollow">
-                                            Addresses
+                                            <?php echo $lang['address'] ?>
                                         </a>
                                     </li>
 
                                 </ul>
                             </div>
                             <div class="block-contact contact-rich col-lg-3 links hb-animate-element bottom-to-top">
-                                <h3 class="hidden-sm-down">Store information</h3>
+                                <h3 class="hidden-sm-down"><?php echo $lang['storeinfo'] ?></h3>
                                 <div class="title  hidden-md-up" data-toggle="collapse" data-target="#contact-footer">
-                                    <span class="h3 block-contact-title">Store information</span>
+                                    <span class="h3 block-contact-title"><?php echo $lang['storeinfo'] ?></span>
                                     <span class="float-xs-right">
                                         <span class="navbar-toggler collapse-icons">
                                             <i class="material-icons add">&#xE145;</i>
@@ -832,12 +835,12 @@
                                 <ul id="contact-footer" class="collapse">
                                     <li class="block">
                                         <div class="icon"><i class="material-icons">&#xE55F;</i></div>
-                                        <div class="data">Demo Shop<br />United States</div>
+                                        <div class="data">Demo Shop<br /><?php echo $lang['unitedS'] ?></div>
                                     </li>
                                     <li class="block">
                                         <div class="data">
                                             <div class="icon"><i class="material-icons">&#xE0CD;</i></div>
-                                            <span class="title">Call us:</span> <span>+34 123-4567-890</span>
+                                            <span class="title"><?php echo $lang['callus'] ?></span> <span>+34 123-4567-890</span>
                                         </div>
                                     </li>
                                     <li class="block">

@@ -138,9 +138,9 @@ if(is_array($sp)){
                                            
                                                 <div class="add">
                                                     <input type="hidden" id="sp" value="<?=$sp['id']?>">
-                                                    <button class="btn btn-primary " onclick="contact()">
+                                                    <button class="btn btn-primary " onclick="contact('<?=$_SESSION['lang']?>')">
                                                        
-                                                       Contact for more infomation
+                                                       <?=$lang['contactformore']?>
                                                     </button>
                                                 </div>
 
@@ -250,7 +250,7 @@ if(is_array($sp)){
 
                                               
                                         <div class="product-add-to-cart">
-                                            <span class="control-label">Quantity</span>
+                                            <span class="control-label"><?=$lang['quantity']?></span>
 
 
                                             <div class="product-quantity clearfix">
@@ -261,9 +261,9 @@ if(is_array($sp)){
 
                                                 <div class="add">
                                                     <button class="btn btn-primary add-to-cart"
-                                                         onclick="return addCart(<?= $sp['id'] ?>)">
+                                                         onclick="return addCart(<?= $sp['id'] ?>,'<?= $_SESSION['lang'] ?>')">
                                                        
-                                                        Add to cart
+                                                         <?=$lang['addcart']?>
                                                     </button>
                                                 </div>
 
@@ -274,7 +274,7 @@ if(is_array($sp)){
 
                                             <span id="product-availability">
                                                 <i class="material-icons rtl-no-flip product-available">&#xE5CA;</i>
-                                                In-stock
+                                                <?=$lang['instock']?>
                                             </span>
 
 
@@ -290,7 +290,7 @@ if(is_array($sp)){
 
 
                                             <div class="social-sharing">
-                                                <span>Share</span>
+                                                <span><?=$lang['share']?></span>
                                                 <ul>
                                                     <?php 
                                                     $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
@@ -323,24 +323,21 @@ if(is_array($sp)){
                                             <div class="block-reassurance-item">
                                                 <img src="views/assets/img/ic_verified_user_black_36dp_1x.png"
                                                     alt="Security policy (edit with Customer reassurance module)">
-                                                <span class="h6">Security policy (edit with Customer reassurance
-                                                    module)</span>
+                                                <span class="h6"><?=$lang['security']?></span>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="block-reassurance-item">
                                                 <img src="views/assets/img/ic_local_shipping_black_36dp_1x.png"
                                                     alt="Delivery policy (edit with Customer reassurance module)">
-                                                <span class="h6">Delivery policy (edit with Customer reassurance
-                                                    module)</span>
+                                                <span class="h6"><?=$lang['delivery']?></span>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="block-reassurance-item">
                                                 <img src="views/assets/img/ic_swap_horiz_black_36dp_1x.png"
                                                     alt="Return policy (edit with Customer reassurance module)">
-                                                <span class="h6">Return policy (edit with Customer reassurance
-                                                    module)</span>
+                                                <span class="h6"><?=$lang['return']?></span>
                                             </div>
                                         </li>
                                     </ul>
@@ -357,11 +354,11 @@ if(is_array($sp)){
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link active" data-toggle="tab" href="#description" role="tab"
-                                        aria-controls="description" aria-selected="true">Description</a>
+                                        aria-controls="description" aria-selected="true"><?=$lang['description']?></a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" data-toggle="tab" href="#product-details" role="tab"
-                                        aria-controls="product-details">Product Details</a>
+                                        aria-controls="product-details"><?=$lang['prodetail']?></a>
                                 </li>
                             </ul>
 
