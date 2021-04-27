@@ -488,7 +488,11 @@
                                     $this->model = new Model_home();
                                     $i =0;
                                     foreach ($getMenuParent as $row) {
-                                        
+                                        if($_SESSION['lang'] === 'en'){
+                                            $namecha = $row['name'];
+                                        }else{
+                                            $namecha = $row['name_ge'];
+                                        }
                                     
                                         if($row['parent'] ==0){
                                             $linkCha = ROOT_URL.'/'.$row['ctrl'];
@@ -498,13 +502,17 @@
                                         $kq = '';
                                         foreach ($this->model->showDmCon($row['id']) as $con) {
                                           
-                                       
+                                            if($_SESSION['lang'] === 'en'){
+                                                $namecon = $con['name'];
+                                            }else{
+                                                $namecon = $con['name_ge'];
+                                            }
                                            
                                             $menuCon .= ' <li class="category" >
                                                             <a class="dropdown-item"
                                                                 href="'.ROOT_URL.'/cate/'.$con['slug'].'-'.$con['id'].'/page-1'.'"
                                                                 data-depth="2">
-                                                                '.$con['name'].'
+                                                                '.$namecon.'
                                                             </a>
                                                         </li>';
                                         }
@@ -520,7 +528,7 @@
                                                                 <i class="material-icons remove">&#xE316;</i>
                                                             </span>
                                                         </span>
-                                                       '.$row['name'].'
+                                                       '.$namecha.'
                                                     </a>';
                                                     if($menuCon){
                                                         $kq .= '<div class="popover sub-menu js-sub-menu collapse twocolumn"

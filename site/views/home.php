@@ -135,6 +135,11 @@
                                         if($row['price']<=0 ||$row['price'] =='' ){
                                             $giaDiscount = '';
                                         }
+                                        if ($_SESSION['lang'] === 'en') {
+                                            $name = $row['name'];
+                                        }else{
+                                            $name = $row['name_ge'];
+                                        }
                                         $link = ROOT_URL."/product/".$row['slug'];
                                             echo '<div class="kktab-block">
                                           <article class="product-miniature js-product-miniature " data-id-product="17"
@@ -183,7 +188,7 @@
                 
                 
                                                         <h3 class="h3 product-title" itemprop="name"><a
-                                                                href="'. $link.'">'.$row['name'].'</a></h3>
+                                                                href="'. $link.'">'.$name.'</a></h3>
                 
                 
                                                         '.$giaDiscount.'
@@ -249,6 +254,11 @@
                                         if($row['price']<=0 ||$row['price'] =='' ){
                                             $giaDiscount = '';
                                         }
+                                        if ($_SESSION['lang'] === 'en') {
+                                            $name = $row['name'];
+                                        }else{
+                                            $name = $row['name_ge'];
+                                        }
                                         $link = ROOT_URL."/product/".$row['slug'];
                                         echo '<div class="kktab-block">
                                       <article class="product-miniature js-product-miniature " data-id-product="17"
@@ -297,7 +307,7 @@
             
             
                                                     <h3 class="h3 product-title" itemprop="name"><a
-                                                            href="'. $link.'">'.$row['name'].'</a></h3>
+                                                            href="'. $link.'">'.$name.'</a></h3>
             
             
                                                     '.$giaDiscount.'
@@ -363,6 +373,11 @@
                                         if($row['price']<=0 ||$row['price'] =='' ){
                                             $giaDiscount = '';
                                         }
+                                        if ($_SESSION['lang'] === 'en') {
+                                            $name = $row['name'];
+                                        }else{
+                                            $name = $row['name_ge'];
+                                        }
                                         $link = ROOT_URL."/product/".$row['slug'];
                                         echo '<div class="kktab-block">
                                       <article class="product-miniature js-product-miniature " data-id-product="17"
@@ -411,7 +426,7 @@
             
             
                                                     <h3 class="h3 product-title" itemprop="name"><a
-                                                            href="'. $link.'">'.$row['name'].'</a></h3>
+                                                            href="'. $link.'">'.$name.'</a></h3>
             
             
                                                     '.$giaDiscount.'
@@ -502,6 +517,11 @@
                             if($row['price']<=0 ||$row['price'] =='' ){
                                 $giaDiscount = '';
                             }
+                            if ($_SESSION['lang'] === 'en') {
+                                $name = $row['name'];
+                            }else{
+                                $name = $row['name_ge'];
+                            }
                             $link = ROOT_URL."/product/".$row['slug'];
                             echo '<div class="kktab-block">
                             <article class="product-miniature js-product-miniature " data-id-product="17"
@@ -550,7 +570,7 @@
   
   
                                           <h3 class="h3 product-title" itemprop="name"><a
-                                                  href="'. $link.'">'.$row['name'].'</a></h3>
+                                                  href="'. $link.'">'.$name.'</a></h3>
   
   
                                           '.$giaDiscount.'
@@ -793,6 +813,11 @@
             if($row['price']<=0 ||$row['price'] =='' ){
                 $giaDiscount = '';
             }
+            if ($_SESSION['lang'] === 'en') {
+                $name = $row['name'];
+            }else{
+                $name = $row['name_ge'];
+            }
                 $link = ROOT_URL."/product/".$row['slug'];
                 echo '<article class="product-miniature js-product-miniature " data-id-product="17" data-id-product-attribute="46"
                 itemscope itemtype="http://schema.org/Product">
@@ -825,7 +850,7 @@
                         <div class="product-description col-xs-12 col-sm-8">
 
                             <h3 class="h3 product-title" itemprop="name"><a
-                                    href="'.$link.'">'.$row['name'].'</a></h3>
+                                    href="'.$link.'">'.$name.'</a></h3>
 
 
 

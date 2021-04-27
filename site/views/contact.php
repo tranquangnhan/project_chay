@@ -77,14 +77,14 @@
                                                                                  <div class="form-group row">
                                                                                           <label class="col-md-3 form-control-label"><?=$lang['emailadd']?></label>
                                                                                           <div class="col-md-6">
-                                                                                                   <input class="form-control" name="email" type="email" value="" placeholder="your@email.com" />
+                                                                                                   <input class="form-control" name="email" type="email" value="" placeholder="<?=$lang['emailadd']?>" />
                                                                                           </div>
                                                                                  </div>
 
                                                                                  <div class="form-group row">
                                                                                           <label class="col-md-3 form-control-label"><?=$lang['fullname']?></label>
                                                                                           <div class="col-md-6">
-                                                                                                   <input type="text" class="form-control"placeholder="your name"  name="name" class="filestyle"  />
+                                                                                                   <input type="text" class="form-control"placeholder="<?=$lang['fullname']?>"  name="name" class="filestyle"  />
                                                                                           </div>
                                                                                           
                                                                                  </div>
@@ -92,7 +92,7 @@
                                                                                  <div class="form-group row">
                                                                                           <label class="col-md-3 form-control-label"><?=$lang['mes']?></label>
                                                                                           <div class="col-md-9">
-                                                                                                   <textarea class="form-control" name="message" placeholder="How can we help?" rows="3"></textarea>
+                                                                                                   <textarea class="form-control" name="message" placeholder="<?=$lang['mes']?>" rows="3"></textarea>
                                                                                           </div>
                                                                                  </div>
                                                                                  <div class="form-group row">

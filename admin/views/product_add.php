@@ -152,8 +152,12 @@
                                         <?=$oneRecode["description"]?>
                                         </textarea>
                                         <br>
-                                        <label for="">Properties</label>
+                                        <label for="">Properties </label>
                                         <textarea id="editor2" style="height: 300px;width:100%" name="Properties" >
+                                           
+                                        </textarea>
+                                        <label for="">Properties (German)</label>
+                                        <textarea id="editor4" style="height: 300px;width:100%" name="Properties_ge" >
                                            
                                         </textarea>
                                       

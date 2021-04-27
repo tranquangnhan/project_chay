@@ -97,7 +97,11 @@ if(is_array($sp)){
                         <div class="col-xs-12 col-md-7">
 
 
-                            <h1 class="h1 kk-producttitle" itemprop="name"><?=$sp['name']?></h1>
+                            <h1 class="h1 kk-producttitle" itemprop="name"><?php if ($_SESSION['lang'] === 'en') {
+                                              echo $sp['name'];
+                                          }else{
+                                            echo $sp['name_ge'];
+                                          }?></h1>
 
 
                             <?php if($sp['price'] == 0 || $sp['price'] ==''){?>
@@ -367,7 +371,7 @@ if(is_array($sp)){
 
                                     <div class="product-description">
                                         <p>
-                                            <?=$sp['description']?>
+                                            <?php if($_SESSION['lang'] === 'en') echo $sp['description']; else echo $sp['description_ge'];?>
                                         </p>
                                     </div>
 
@@ -379,7 +383,7 @@ if(is_array($sp)){
                                     role="tabpanel">
                                     <div class="product-description">
                                         <p>
-                                            <?=$sp['properties']?>
+                                            <?php if($_SESSION['lang'] === 'en') echo $sp['properties']; else echo $sp['properties_ge']?>
                                         </p>
                                     </div>
 
