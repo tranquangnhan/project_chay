@@ -1,8 +1,9 @@
 <?php 
 require_once "../system/config.php";
+// require_once "../languages/".$_SESSION['lang'].".php";
 require_once "../system/database.php";
 require_once "../lib/myfunctions.php";
-
+echo $lang['title'];
 require_once "models/home.php"; 
 require_once "models/user.php";
 class Home{
@@ -33,6 +34,10 @@ class Home{
          case "product":$this->product();break;
          case "changepass":$this->changePass();break;
          case "contact":$this->contact();break;
+         case "aboutus":$this->aboutus();break;
+         case "impressum":$this->impressum();break;
+         case "privacypolicy":$this->privacypolicy();break;
+         case "termofservice":$this->termofservice();break;
         }
         
      }
@@ -158,6 +163,7 @@ class Home{
             header("location: ". ROOT_URL."/gio-hang");
          }
      }
+     
 
       function checkout()
       {
@@ -310,6 +316,22 @@ class Home{
          }
          $viewFile ="views/contact.php";
          require_once "views/layout.php";
+      }
+      function aboutus(){
+         $viewFile = "views/aboutus.php";
+        require_once "views/layout.php";
+      }
+      function impressum(){
+         $viewFile = "views/impressum.php";
+        require_once "views/layout.php";
+      }
+      function privacypolicy(){
+         $viewFile = "views/privacypolicy.php";
+        require_once "views/layout.php";
+      }
+      function termofservice(){
+         $viewFile = "views/termofservice.php";
+        require_once "views/layout.php";
       }
 }
 ?>

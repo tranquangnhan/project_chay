@@ -70,6 +70,7 @@ class Product{
         {
 
             $name =$this->lib->stripTags($_POST['name_product']);
+            $name_ge =$this->lib->stripTags($_POST['name_product_ge']);
             $price = $_POST['price'];
             $discount = $_POST['discount'];
             $img = $_FILES['img'];
@@ -124,6 +125,8 @@ class Product{
             
             $color = $_POST['color'];
             $Description = $_POST['Description'];
+            $Description_ge = $_POST['Description1'];
+            echo $Description_ge;
             $Properties = $_POST['Properties'];
             $slug = $this->lib->slug($name);
             
@@ -138,7 +141,10 @@ class Product{
             if($name == ""){
                 $_SESSION['message'] = "Bạn chưa nhập tên";
             } 
-            
+            elseif($name_ge == "")
+            {
+                $_SESSION['message'] = "Bạn chưa tên";
+            }
             elseif($img == "")
             {
                 $_SESSION['message'] = "Bạn chưa chọn ảnh";
@@ -161,12 +167,12 @@ class Product{
                     $id = $_GET['id'];
                     settype($id,"int");
                     // echo 'oke';
-                    $this->edit($name,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$color,$Description,$Properties,$id);
+                    $this->edit($name,$name_ge,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$color,$Description,$Description_ge,$Properties,$id);
                 
                 }else
                 {
                     // echo 'oke';
-                    $this->store($name,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$color,$Description,$Properties);
+                    // $this->store($name,$name_ge,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$color,$Description,$Description_ge,$Properties);
                 }    
             }
 
@@ -177,8 +183,8 @@ class Product{
     }//thêm mới dữ liệu vào db
 
 
-    function store($name,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$color,$Description,$Properties){   
-        $idLastPhone = $this->model->addNewProduct($name,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$color,$Description,$Properties);
+    function store($name,$name_ge,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$color,$Description,$Description_ge,$Properties){   
+        $idLastPhone = $this->model->addNewProduct($name,$name_ge,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$color,$Description,$Description_ge,$Properties);
         if($idLastPhone != null)
         {
             echo "<script>alert('Thêm thành công')</script>";
@@ -191,9 +197,9 @@ class Product{
         require_once "views/layout.php";
     }
 
-    function edit($name,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$color,$Description,$Properties,$id)
+    function edit($name,$name_ge,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$color,$Description,$Description_ge,$Properties,$id)
     {
-        if($this->model->editProduct($name,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$color,$Description,$Properties,$id))
+        if($this->model->editProduct($name,$name_ge,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$color,$Description,$Description_ge,$Properties,$id))
         {
             echo "<script>alert('Sửa thành công')</script>";
             header("location: ?ctrl=product");

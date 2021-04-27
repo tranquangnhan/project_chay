@@ -9,7 +9,7 @@
                                     <section id="main">
                                              <header class="page-header">
                                                       <h1 class="kk-innertitle">
-                                                               Create an account
+                                                               <?=$lang['creatacc']?>
                                                       </h1>
                                              </header>
 
@@ -20,7 +20,7 @@
                                                                                  <input type="hidden" name="id_customer" value="" />
                                                                                  <div class="form-group row">
                                                                                           <label class="col-md-3 form-control-label required">
-                                                                                                   Name
+                                                                                          <?=$lang['fullname']?>
                                                                                           </label>
                                                                                           <div class="col-md-6">
                                                                                                    <input class="form-control" name="name" type="text" value="" required />
@@ -30,7 +30,7 @@
                                                                                  </div>
                                                                                  <div class="form-group row">
                                                                                           <label class="col-md-3 form-control-label required">
-                                                                                                   Email
+                                                                                          <?=$lang['emailadd']?>
                                                                                           </label>
                                                                                           <div class="col-md-6">
                                                                                                    <input class="form-control" name="email" type="email" value="" required />
@@ -41,7 +41,7 @@
 
                                                                                  <div class="form-group row">
                                                                                           <label class="col-md-3 form-control-label required">
-                                                                                                   Password
+                                                                                          <?=$lang['pass']?>
                                                                                           </label>
                                                                                           <div class="col-md-6">
                                                                                                    <div class="input-group js-parent-focus">
@@ -73,13 +73,13 @@
                                                                                   }
                                                                                  ?>
                                                                         </section>
-                                                                        <p>Already have an account? <a href="<?php echo ROOT_URL?>/login">Log in instead!</a></p>
+                                                                        <p><?=$lang['already']?> <a href="<?php echo ROOT_URL?>/login"><?=$lang['logininsted']?></a></p>
 
                                                                         <footer class="form-footer clearfix">
                                                                                  <input type="hidden" name="submitCreate" value="1" />
 
                                                                                  <button class="btn btn-primary form-control-submit " name="register" data-link-action="save-customer" type="submit">
-                                                                                          Register
+                                                                                 <?=$lang['register']?>
                                                                                  </button>
                                                                         </footer>
                                                                </form>

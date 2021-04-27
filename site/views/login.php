@@ -9,7 +9,7 @@
                                     <section id="main" class="login" >
                                              <header class="page-header">
                                                       <h1 class="kk-innertitle">
-                                                               Log in to your account
+                                                               <?=$lang['login']?>
                                                       </h1>
                                              </header>
 
@@ -21,7 +21,7 @@
 
                                                                                  <div class="form-group row">
                                                                                           <label class="col-md-3 form-control-label required">
-                                                                                                   Email
+                                                                                          <?=$lang['email']?>
                                                                                           </label>
                                                                                           <div class="col-md-6">
                                                                                                    <input class="form-control" name="email" type="email" value="" required />
@@ -32,7 +32,7 @@
 
                                                                                  <div class="form-group row">
                                                                                           <label class="col-md-3 form-control-label required">
-                                                                                                   Password
+                                                                                          <?=$lang['pass']?>
                                                                                           </label>
                                                                                           <div class="col-md-6">
                                                                                                    <div class="input-group js-parent-focus">
@@ -66,7 +66,7 @@
                                                                                     
                                                                                  <div class="forgot-password">
                                                                                           <a href="#" rel="nofollow">
-                                                                                                   Forgot your password?
+                                                                                          <?=$lang['forgotpass']?>
                                                                                           </a>
                                                                                  </div>
                                                                         </section>
@@ -75,7 +75,7 @@
                                                                                  <input type="hidden" name="submitLogin" value="1" />
 
                                                                                  <button id="submit-login" class="btn btn-primary" name="login" data-link-action="sign-in" type="submit" class="form-control-submit">
-                                                                                          Sign in
+                                                                                 <?=$lang['Signin']?>
                                                                                  </button>
                                                                         </footer>
                                                                </form>
@@ -84,7 +84,7 @@
 
                                                       <div class="no-account">
                                                                <a href="<?php echo ROOT_URL?>/register" data-link-action="display-register-form">
-                                                                        No account? Create one here
+                                                               <?=$lang['noonesignup']?>
                                                                </a>
                                                       </div>
                                              </section>

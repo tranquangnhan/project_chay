@@ -6,8 +6,7 @@ $.post("controllers/ajax/addcart.php",
     }
 );
 
-function addCart(id) {
-
+function addCart(id, lang) {
     var sl = $("#quantity_wanted").val();
     var size = $("#group_1").val();
     var mausac = $(".input-color:checked").val();
@@ -20,36 +19,72 @@ function addCart(id) {
     if ($(".input-color").length == 0) {
         mausac = 'null';
     }
-    if ($("#group_1").length > 0 && !$("#group_1").val()) {
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Please choose a size',
-        })
+    if (lang === 'en') {
+        if ($("#group_1").length > 0 && !$("#group_1").val()) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Please choose a size',
+            })
 
-        return false;
-    }
-    if ($(".input-color").length > 0 && !$(".input-color:checked").val()) {
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Please choose a color',
-        })
+            return false;
+        }
+        if ($(".input-color").length > 0 && !$(".input-color:checked").val()) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Please choose a color',
+            })
 
-        return false;
+            return false;
+        } else {
+            $.post("controllers/ajax/addcart.php", { id: id, sl: sl, size: size, mausac: mausac },
+                function(data) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Oops...',
+                        text: 'Add to cart successfully',
+                    })
+                    $('#_desktop_cart').html(data);
+                }
+            );
+        }
+        return true;
     } else {
-        $.post("controllers/ajax/addcart.php", { id: id, sl: sl, size: size, mausac: mausac },
-            function(data) {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Oops...',
-                    text: 'Add to cart successfully',
-                })
-                $('#_desktop_cart').html(data);
-            }
-        );
+        if ($("#group_1").length > 0 && !$("#group_1").val()) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Bitte wählen Sie eine Größe',
+            })
+
+            return false;
+        }
+        if ($(".input-color").length > 0 && !$(".input-color:checked").val()) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Bitte wählen Sie eine Farbe',
+            })
+
+            return false;
+        } else {
+            $.post("controllers/ajax/addcart.php", { id: id, sl: sl, size: size, mausac: mausac },
+                function(data) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Oops...',
+                        text: 'Erfolgreich in den Warenkorb legen',
+                    })
+                    $('#_desktop_cart').html(data);
+                }
+            );
+        }
+        return true;
     }
-    return true;
+
+
+
 }
 
 
@@ -81,18 +116,29 @@ const fetchAPi = async(url, option) => {
     console.log(dulieu)
 }
 
-function contact() {
+function contact(e) {
     var idsp = document.getElementById('sp').value;
+    let bodyhtml = ''
+    if (e === 'en') {
+        bodyhtml = `<select id="id_contact" class="swal2-input">
+<option value="2">Customer service</option>
+<option value="1">Webmaster</option>
+</select>
+<input id="name" placeholder="name" class="swal2-input">
+<input id="email" placeholder="email" class="swal2-input">
+<textarea id="message" class="form-control swal2-input" name="message" placeholder="How can we help?" rows="3" cols="3"></textarea>`
+    } else {
+        bodyhtml = `<select id="id_contact" class="swal2-input">
+        <option value="2">Kundendienst</option>
+        <option value="1">Webmaster</option>
+</select>
+<input id="name" placeholder="Vollständiger Name" class="swal2-input">
+<input id="email" placeholder="E-Mail-Addresse" class="swal2-input">
+<textarea id="message" class="form-control swal2-input" name="message" placeholder="Botschaft" rows="3" cols="3"></textarea>`
+    }
     swal.fire({
         title: 'Contact',
-        html: `
-            <select id="id_contact" class="swal2-input">
-                    <option value="2">Customer service</option>
-                    <option value="1">Webmaster</option>
-            </select>
-            <input id="name" placeholder="name" class="swal2-input">
-            <input id="email" placeholder="email" class="swal2-input">
-            <textarea id="message" class="form-control swal2-input" name="message" placeholder="How can we help?" rows="3" cols="3"></textarea>`,
+        html: bodyhtml,
         focusConfirm: false,
         preConfirm: async() => {
             var id_contact = document.getElementById('id_contact').value;

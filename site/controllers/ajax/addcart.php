@@ -2,6 +2,7 @@
     require_once "../../../system/config.php";
     require_once "../../../system/database.php";
     require_once "../../models/home.php";
+
     $model = new Model_home();
 
     $canhbao= '';
@@ -53,6 +54,7 @@
     // show cart
     showSp();
     function showSp(){
+        require_once "../../../languages/".$_SESSION['lang'].".php";
         global $canhbao,$pathimg;
        
             if(isset($_SESSION['cart']) &&($_SESSION['cart'])){
@@ -78,7 +80,6 @@
                 foreach ($tatcasp as $motsp) {
                     $i++;
                     $img = PATH_IMG_SITE.$motsp[6];
-
                     $sltotal += $motsp[1];
                     $tongtien += $motsp[5]*$motsp[1];
                     $name = $motsp[4];
@@ -143,7 +144,7 @@
                                 <div class="row">
                                     
                                     <div class="Total col-xs-12 clearfix">
-                                        <span class="label  text-xs-left">Total:</span>
+                                        <span class="label  text-xs-left">'.$lang['total'].'</span>
                                         <span class="value   text-xs-right">'.$tongtien.'€</span>
                                     </div>
 
@@ -153,7 +154,7 @@
                             <div class="cart-btn col-xs-12">
                                 <div class="row">
                                     <a href="'.ROOT_URL.'/checkout'.'"
-                                        class="btn btn-primary">CheckOut</a>
+                                        class="btn btn-primary">'.$lang['checkout'].'</a>
 
                                 </div>
                                 <!--dropdown-->

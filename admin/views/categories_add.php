@@ -33,8 +33,17 @@
                                                    placeholder="Type name category" class="form-control" id="category">
                                         </div>
                                         <div class="form-group">
+                                            <label for="">Name Category (German)</label>
+                                            <input type="text" name="name_category_ge"  parsley-trigger="change" required
+                                                   placeholder="Type name category GE" class="form-control" id="category">
+                                        </div>
+                                        <div class="form-group">
                                             <label for="">Description</label>
                                             <textarea id="editor1" style="height: 300px;width:100%" name="des_category" >
+                                           
+                                        </textarea>
+                                        <label for="">Description (German)</label>
+                                            <textarea id="editor2" style="height: 300px;width:100%" name="des_category_ge" >
                                            
                                         </textarea>
                                         </div>
