@@ -312,11 +312,11 @@
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="language-selector-label">
                                     <li class="current">
-                                        <a href="index.php?lang=en"
+                                        <a href="<?=ROOT_URL?>/lang/en"
                                             class="dropdown-item" data-iso-code="en"><?php echo $lang['lang_en'] ?></a>
                                     </li>
                                     <li>
-                                        <a href="index.php?lang=ge"
+                                        <a href="<?=ROOT_URL?>/lang/ge"
                                             class="dropdown-item" data-iso-code="es"><?php echo $lang['lang_bs'] ?></a>
                                     </li>
                                 </ul>

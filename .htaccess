@@ -17,7 +17,7 @@ RewriteRule ^checkout$ /project_chay/site/?act=checkout [L]
 RewriteRule ^contact$ /project_chay/site/?act=contact [L]
 
 RewriteRule ^product$ /project_chay/site/?act=product [L]
-
+RewriteRule ^lang/(.*)$ /project_chay/site/?lang=$1 [L]
 RewriteRule ^cate/page-([0-9]+)$ /project_chay/site/?act=product&Page=$3&slug=$1 [L]
 
 RewriteRule ^product/([a-zA-Z0-9-]+)$ /project_chay/site/?act=detail&slug=$1&id=$2 [L]
