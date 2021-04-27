@@ -76,7 +76,6 @@ class Home{
 
       $PageNum=1;
       if(isset($_GET['Page'])==true) $PageNum = $_GET['Page'];
-
       settype($maLoai,"int");
       settype($PageNum,"int");
 
@@ -91,6 +90,7 @@ class Home{
          $PageSize = PAGE_SIZE_PRO;
          $Pagination =  $this->model->Page($TotalProduct ,$PageNum,$PageSize, $BaseLink);
       }else{
+         $PageNum = $_GET['slug'];
          $ds = $this->model-> GetProductList2($PageNum,$sortBy,$order);
          $TotalProduct = (int)$this->model->countAllProductControl2($sortBy,$order);
          if($TotalProduct == 0) $TotalProduct =1;
