@@ -102,7 +102,7 @@ class Model_home extends Model_db{
     }
 
    function luugiohangnhe($idDH, $giohang){
-      $sql = "DELETE FROM donhangchitiet WHERE idDH=?";
+      $sql = "DELETE FROM donhangchitiet WHERE id=?";
       $this->exec1($sql,$idDH);
 
       foreach ($giohang as $motsp) {
