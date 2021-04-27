@@ -504,6 +504,11 @@
                                               if($row['price']<=0 ||$row['price'] =='' ){
                                                 $giaDiscount = ' ';
                                              }
+                                             if ($_SESSION['lang'] === 'en') {
+                                                $name = $row['name'];
+                                            }else{
+                                                $name = $row['name_ge'];
+                                            }
                                               $link = ROOT_URL."/product/".$row['slug'];
                                                 echo '<article class="product-miniature js-product-miniature" data-id-product="19"
                                                 data-id-product-attribute="0" itemscope
@@ -529,7 +534,7 @@
                                                     <div class="product-description">
     
                                                         <h1 class="h3 product-title" itemprop="name"><a
-                                                                href="'.$link.'">'.$row['name'].'</a></h1>
+                                                                href="'.$link.'">'.$name.'</a></h1>
     
     
     
@@ -583,6 +588,11 @@
                                               if($row['price']<=0 ||$row['price'] =='' ){
                                                 $giaDiscount = ' ';
                                               }
+                                              if ($_SESSION['lang'] === 'en') {
+                                                $name = $row['name'];
+                                            }else{
+                                                $name = $row['name_ge'];
+                                            }
                                               $link = ROOT_URL."/product/".$row['slug'];
                                                 echo '<article class="product-miniature js-product-miniature" data-id-product="19"
                                                 data-id-product-attribute="0" itemscope
@@ -608,7 +618,7 @@
                                                     <div class="product-description">
     
                                                         <h1 class="h3 product-title" itemprop="name"><a
-                                                                href="'.$link.'">'.$row['name'].'</a></h1>
+                                                                href="'.$link.'">'.$name.'</a></h1>
     
     
     
@@ -707,6 +717,11 @@
                                               if($row['price']<=0 ||$row['price'] =='' ){
                                                 $giaDiscount = ' ';
                                              }
+                                             if ($_SESSION['lang'] === 'en') {
+                                                $name = $row['name'];
+                                            }else{
+                                                $name = $row['name_ge'];
+                                            }
                                               $link = ROOT_URL."/product/".$row['slug'];
                                                 echo '<article class="product-miniature js-product-miniature" data-id-product="19"
                                                 data-id-product-attribute="0" itemscope
@@ -732,7 +747,7 @@
                                                     <div class="product-description">
     
                                                         <h1 class="h3 product-title" itemprop="name"><a
-                                                                href="'.$link.'">'.$row['name'].'</a></h1>
+                                                                href="'.$link.'">'.$name.'</a></h1>
     
     
     
@@ -784,6 +799,11 @@
                                               if($row['price']<=0 ||$row['price'] =='' ){
                                                 $giaDiscount = ' ';
                                                 }
+                                                if ($_SESSION['lang'] === 'en') {
+                                                    $name = $row['name'];
+                                                }else{
+                                                    $name = $row['name_ge'];
+                                                }
                                               $link = ROOT_URL."/product/".$row['slug'];
                                                 echo '<article class="product-miniature js-product-miniature" data-id-product="19"
                                                 data-id-product-attribute="0" itemscope
@@ -809,7 +829,7 @@
                                                     <div class="product-description">
     
                                                         <h1 class="h3 product-title" itemprop="name"><a
-                                                                href="'.$link.'">'.$row['name'].'</a></h1>
+                                                                href="'.$link.'">'.$name.'</a></h1>
     
     
     
@@ -1054,6 +1074,11 @@
                                           if($row['price']<=0 ||$row['price'] =='' ){
                                             $giaDiscount = ' ';
                                             }
+                                            if ($_SESSION['lang'] === 'en') {
+                                                $name = $row['name'];
+                                            }else{
+                                                $name = $row['name_ge'];
+                                            }
                                           $link = ROOT_URL."/product/".$row['slug'];
                                           echo ' <article class="product-miniature js-product-miniature " data-id-product="19" data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
                                           <div class="thumbnail-container">
@@ -1071,7 +1096,7 @@
                                               </div><div class="kkproducthover"></div>
                                               </div>
                                               <div class="product-description">
-                                                  <h1 class="h3 product-title" itemprop="name"><a href="'. $link.'">'.$row['name'].'</a></h1><div class="product-price-and-shipping"><span class="sr-only">Regular price</span>
+                                                  <h1 class="h3 product-title" itemprop="name"><a href="'. $link.'">'.$name.'</a></h1><div class="product-price-and-shipping"><span class="sr-only">Regular price</span>
                                                   '.$giaDiscount.'
                                               </div>
                                               
