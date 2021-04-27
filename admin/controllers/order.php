@@ -1,11 +1,12 @@
 <?php 
 require_once "models/order.php"; 
-
+require_once "models/product.php"; 
 require_once "../lib/myfunctions.php"; 
 class order{
     function __construct()
     {
         $this->model = new Model_order();
+        $this->modelpro = new Model_product();
         $this->lib = new lib();
         $act = "index";
 

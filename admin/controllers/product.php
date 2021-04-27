@@ -73,8 +73,21 @@ class Product{
             $price = $_POST['price'];
             $discount = $_POST['discount'];
             $img = $_FILES['img'];
+            
             $imgs = $this->lib->checkUpLoadMany($img);
-            // $inventory = $_POST['inventory'];
+            if($imgs){
+                $checkIMG = explode(",",$imgs);
+            
+                for ($i=0; $i <count($checkIMG) ; $i++) { 
+                    $checkIMG[$i] = explode(".",$checkIMG[$i]);
+                    $checkIMG[$i][1] = strtolower($checkIMG[$i][1]);
+                    if($checkIMG[$i][1] != "jpg" && $checkIMG[$i][1] != "jpeg" && $checkIMG[$i][1] != "png" && $checkIMG[$i][1] != "gif"){
+                        $checkimg = "This is not IMAGE";
+                        break;
+                    }
+                }
+            }
+            
             $IDCate = $_POST['IDCate'];
             $hot = $_POST['hot'];
             if ($hot) {
@@ -130,7 +143,10 @@ class Product{
             {
                 $_SESSION['message'] = "Bạn chưa chọn ảnh";
             }
-            
+            elseif($checkimg)
+            {
+                $_SESSION['message'] = $checkimg;
+            }
             elseif($IDCate == "")
             {
                 $_SESSION['message'] = "Bạn chưa chọn danh mục";
@@ -193,7 +209,6 @@ class Product{
         if(isset($_GET['id'])&&($_GET['ctrl']=='product')){
             $id = $_GET['id'];
             settype($id,"int");
-            
             if($this->model->deleteProduct($id)){
                 echo "<script>alert('Xoá thành công')</script>";
                 header("location: ?ctrl=product");

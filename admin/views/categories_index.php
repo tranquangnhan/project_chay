@@ -38,7 +38,7 @@
                                                         <td>'.$row['name'].'</td>
                                                         <td>'.substr($row['description'],0,100).'</td>
                                                         <td>'.$row['parent'].'</td>
-                                                        <td><div  onclick="checkDelete('.$linkDel.')"  class="btn btn-danger" role="button"><i class="fa fa-trash"></i></div></td>
+                                                        <td><div  onclick="checkDeleteCate('.$linkDel.','.$row['id'].')"  class="btn btn-danger" role="button"><i class="fa fa-trash"></i></div></td>
                                                         <td><a><a name="" id="" class="btn btn-primary" href="'.$linkEdit.'" role="button"><i class="fa fa-edit"></i></a></a></a></td>
                                                     </tr>';
                                             }

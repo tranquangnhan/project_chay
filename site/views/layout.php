@@ -886,11 +886,11 @@
     <div class="newsletter-pop">
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-   
+    <script src="views/assets/js/SweetAlert2.js"></script>
     <script type="text/javascript" src="views/assets/js/bottom-b769945.js"></script>
     <script src="views/assets/js/jquery.flexslider.js"></script>
     <script src="views/assets/js/jquery.addcart.js"></script>
-    <script src="views/assets/js/SweetAlert2.js"></script>
+    
     <script>
     $(window).load(function() {
         if ($('.flexslider').length > 0) {

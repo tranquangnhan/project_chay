@@ -2,17 +2,18 @@ function submitForm() {
 
     let message = document.getElementById("ErrorColor");
     let valColor = $('#color').val();
-    console.log(valColor);
     if (valColor == "") {
         message.innerHTML = "";
         return true
     } else {
-        let arr = valColor.split(",")
 
+        let arr = valColor.split(",")
+        console.log(arr.length);
         for (let i = 0; i < arr.length; i++) {
-            if (arr[i].charAt(0) == '#') { message.innerHTML = "Định dạng hợp lệ là #000, #fff, ..."; return false; } else { message.innerHTML = ""; }
+            if (arr[i].charAt(0) != '#') { message.innerHTML = "Định dạng hợp lệ là #000, #fff, ..."; return false; } else { message.innerHTML = ""; }
             if (arr[i].slice(1).length != 3) { message.innerHTML = "Định dạng hợp lệ là #000, #fff, ..."; return false; } else { message.innerHTML = ""; }
         }
+
     }
 
 
@@ -32,6 +33,60 @@ function checkDelete(link) {
     }).then((result) => {
         if (result.isConfirmed) {
             window.location.href = link;
+        }
+    })
+}
+
+function checkDeleteCate(link, IDCATE) {
+    Swal.fire({
+        title: 'Delete?',
+        text: "Are you sure to delete!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes!',
+        cancelButtonText: 'Cancel',
+    }).then(async(result) => {
+        if (result.isConfirmed) {
+            let checkStatus = new FormData();
+
+            checkStatus.append('IDcate', IDCATE);
+            checkStatus.append('Action', 'CheckChildCate');
+            await $.ajax({
+                type: 'POST',
+                url: 'controllers/ajax/order.php',
+                dataType: 'JSON',
+                cache: false,
+                contentType: false,
+                processData: false,
+                data: checkStatus,
+                success: async function(response) {
+                    console.log(response[0]);
+                    if (response[0] === undefined) {
+                        await Swal.fire({
+                            timer: 2000,
+                            type: 'success',
+                            title: 'Yeah',
+                            showConfirmButton: false,
+                            showCancelButton: false,
+                            icon: "success"
+                        });
+                        window.location.href = link
+
+                    } else if (response[0] === 1) {
+                        Swal.fire({
+                            type: 'error',
+                            title: 'Oops.',
+                            text: 'This category contains subcategories and cannot be deleted!',
+                            showConfirmButton: true,
+                            showCancelButton: false,
+                            icon: "error"
+                        });
+
+                    }
+                }
+            });
         }
     })
 }

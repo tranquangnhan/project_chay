@@ -27,7 +27,7 @@
 
                                     <h4 class="header-title mt-0 mb-3">Product</h4>
 
-                                    <form data-parsley-validate novalidate method="post" enctype="multipart/form-data">
+                                    <form data-parsley-validate id="formadd" novalidate onsubmit="return submitForm()"  method="post" enctype="multipart/form-data">
                                         <div class="form-group">
                                             <label for="">Image</label><span style="color:red;"> (*)</span>
                                             <br>
@@ -69,8 +69,9 @@
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="">Color</label>
-                                                    <input type="text" class="form-control" value="<?=$oneRecode['color']?>" name="color"  placeholder="Size">
+                                                    <label for="">Color</label> 
+                                                    <input type="text" class="form-control" value="<?=$oneRecode['color']?>" name="color"  placeholder="#000,#fff,#999,..." id="color">
+                                                    <span id="ErrorColor"></span>
                                                 </div> 
                                             </div>
                                         </div>
@@ -178,7 +179,7 @@
 
                                         <div class="form-group text-right mb-0 mt-5">
                                             <input type="submit" name="them" class="btn btn-primary waves-effect waves-light mr-1" value="Edit">
-                                           <a href="?ctrl=dienthoai&act=index" clas="btn btn-secondary waves-effect waves-light">Cancel</a>
+                                           <a href="<?=ROOT_URL?>/admin/?ctrl=product&act=index" clas="btn btn-secondary waves-effect waves-light">Cancel</a>
                                         </div>
 
                                     </form>
