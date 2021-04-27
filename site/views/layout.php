@@ -320,12 +320,7 @@
                                             class="dropdown-item" data-iso-code="es"><?php echo $lang['lang_bs'] ?></a>
                                     </li>
                                 </ul>
-                              
-
                             </div>
-
-
-
                         </div>
 
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 center-nav">
@@ -745,28 +740,28 @@
                                         <ul id="footer_sub_menu_3249" class="collapse">
                                             <li>
                                                 <a id="link-cms-page-4-2" class="cms-page-link"
-                                                    href="#"
+                                                    href="<?=ROOT_URL?>/aboutus"
                                                     title="Learn more about us">
                                                     <?php echo $lang['aboutus'] ?>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a id="link-cms-page-5-2" class="cms-page-link"
-                                                    href="#"
+                                                    href="<?=ROOT_URL?>/term-of-services"
                                                     title="Our secure payment method">
                                                     <?php echo $lang['termofsv'] ?>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a id="link-static-page-sitemap-2" class="cms-page-link"
-                                                    href="#"
+                                                    href="<?=ROOT_URL?>/impressum"
                                                     title="Lost ? Find what your are looking for">
                                                     <?php echo $lang['Impressum'] ?>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a id="link-static-page-my-account-2" class="cms-page-link"
-                                                    href="#"
+                                                    href="<?=ROOT_URL?>/privacy"
                                                     title="">
                                                     <?php echo $lang['privacy'] ?> 
                                                 </a>
