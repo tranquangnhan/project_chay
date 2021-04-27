@@ -81,7 +81,7 @@ class Product{
                 for ($i=0; $i <count($checkIMG) ; $i++) { 
                     $checkIMG[$i] = explode(".",$checkIMG[$i]);
                     $checkIMG[$i][1] = strtolower($checkIMG[$i][1]);
-                    if($checkIMG[$i][1] != "jpg" && $checkIMG[$i][1] != "jpeg" && $checkIMG[$i][1] != "png" && $checkIMG[$i][1] != "gif"){
+                    if($checkIMG[$i][1] != "jpg" && $checkIMG[$i][1] != "jpeg" && $checkIMG[$i][1] != "png" && $checkIMG[$i][1] != "gif" && $checkIMG[$i][1] != "webp"){
                         $checkimg = "This is not IMAGE";
                         break;
                     }
