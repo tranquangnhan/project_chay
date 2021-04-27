@@ -12,17 +12,19 @@
             echo json_encode($array);
             break;
 
-        case 'comment':
+        case 'CheckChildCate':
             $array = array();
             
-            $lastId = $model->addComment($_POST['review'],$_POST['name'],$_POST['iddt'],$_POST['iduser']);
-
-
-            $array['datacmt'] = $model->getOneComment($lastId);
-
-            $array['statusCode'] = 1;
-
+           $kq = $model->CheckChildCate();
+           
+            foreach ($kq as $key) {
+                if($_POST['IDcate'] == $key['parent']){
+                    array_push($array,1);
+                    break;
+                }
+            }
             echo json_encode($array);
+            
             break;
         default:
             # code...

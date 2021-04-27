@@ -147,7 +147,7 @@
                                       
                                         <div class="form-group text-right mb-0 mt-5">
                                             <input type="submit" name="them" class="btn btn-primary waves-effect waves-light mr-1" value="ADD" id='add_product'>
-                                            <a href="?ctrl=dienthoai&act=index" clas="btn btn-secondary waves-effect waves-light">CANCEL</a>
+                                            <a href="<?=ROOT_URL?>/admin/?ctrl=product&act=index" clas="btn btn-secondary waves-effect waves-light">CANCEL</a>
                                         </div>
 
                                     </form>

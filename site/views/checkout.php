@@ -58,7 +58,7 @@
 
 
 
-                                    <form action="" 
+                                    <form action=""
                                         id="customer-form" class="js-customer-form" method="post">
                                         <section>
 
@@ -187,7 +187,7 @@
                                             <input type="hidden" name="submitCreate" value="1">
 
                                             <button class="continue btn btn-primary float-xs-right" name="continue"
-                                                data-link-action="register-new-customer" type="submit" value="1">
+                                                data-link-action="register-new-customer" type="submit" value="1" >
                                                 Continue
                                             </button>
 

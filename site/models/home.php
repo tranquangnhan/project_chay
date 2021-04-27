@@ -106,15 +106,16 @@ class Model_home extends Model_db{
       $this->exec1($sql,$idDH);
 
       foreach ($giohang as $motsp) {
-
+        $img = PATH_IMG_SITE.$motsp[6];
+        $name = $motsp[4];
         $product_id = $motsp[0]; 
         $size = $motsp[2];
         $mau = $motsp[3];
         $quantity = $motsp[1];
         $price = $motsp[5];
-        $sql = "INSERT INTO donhangchitiet(donhang_id,product_id,size,color,quantity,price) VALUE(?,?,?,?,?,?)";
+        $sql = "INSERT INTO donhangchitiet(donhang_id,product_id,name_product,img_product,size,color,quantity,price) VALUE(?,?,?,?,?,?,?,?)";
         
-        $kq =$this->exec1($sql,$idDH,$product_id,$size,$mau,$quantity,$price);
+        $kq =$this->exec1($sql,$idDH,$product_id,$name,$img,$size,$mau,$quantity,$price);
         
         }
 

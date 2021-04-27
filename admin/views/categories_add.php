@@ -52,7 +52,7 @@
             
                                         <div class="form-group text-right mb-0 ">
                                             <input type="submit" name="them" class="btn btn-primary waves-effect waves-light mr-1" value="ADD NEW">
-                                            <a href="?ctrl=nhasanxuat&act=index" clas="btn btn-secondary waves-effect waves-light">CANCEL</a>
+                                            <a href="<?=ROOT_URL?>/admin/?ctrl=categories" clas="btn btn-secondary waves-effect waves-light">CANCEL</a>
                                         </div>
 
                                     </form>

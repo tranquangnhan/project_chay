@@ -7,7 +7,7 @@
     }
     function getProDetail($id)
     {
-        $sql = "SELECT * FROM donhangchitiet WHERE id = ?";
+        $sql = "SELECT * FROM donhangchitiet WHERE donhang_id = ?";
         return $this->result1(0,$sql,$id);
     }
     function getInfoDetail($id)
@@ -32,5 +32,9 @@
     function del($id){
         $sql ="DELETE FROM donhang WHERE id = ?";
         return $this->exec1($sql,$id);
+    }
+    function CheckChildCate(){
+        $sql = "SELECT * FROM catalog ";
+        return $this->result1(0,$sql);
     }
 }

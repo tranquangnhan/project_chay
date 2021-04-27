@@ -6,7 +6,7 @@
 
     
                         <div class="row">
-                            <div class="col-7">
+                            <div class="col-12">
                                 <div class="card-box">
                                     <h4 class="mt-0 header-title">Order detail</h4>
                                     <p class="text-muted font-14 mb-3">
@@ -18,8 +18,9 @@
                                         <tr>
                                         <th>STT</th>
                                         <th>Order_ID </th>
-                                        <th>Image </th>
                                         <th>Product_ID</th>
+                                        <th>Name Product</th>
+                                        <th>Image </th>
                                         <th>Price</th>
                                         <th>Size</th>
                                         <th>Color</th>
@@ -32,9 +33,10 @@
                                         <?php
                                         $stt = 0;
                                             foreach ($getProDetail as $row) {
+                                                $inforPro = $this->modelpro->showOnePhone($row['product_id']);
                                                 $stt++;
-                                                if(is_file(PATH_IMG_SITE.explode(",",$row['	image_list'])[0])){
-                                                    $img = PATH_IMG_SITE.explode(",",$row['	image_list'])[0];
+                                                if(is_file(PATH_IMG_SITE.explode(",",$inforPro['image_list'])[0])){
+                                                    $img = PATH_IMG_SITE.explode(",",$inforPro['image_list'])[0];
                                                 }else{
                                                     $img = PATH_IMG_SITE.'logo.png';
                                                 }
@@ -42,8 +44,9 @@
                                                 echo '<tr>
                                                         <td>'.$stt.'</td>
                                                         <td>'.$row['donhang_id'].'</td>
-                                                        <td><img width="50" height="50" src="'.$img.'"></td>
                                                         <td>'.$row['product_id'].'</td>
+                                                        <td>'.$inforPro['name'].'</td>
+                                                        <td><img width="50" height="50" src="'.$img.'"></td>
                                                         <td>'.$row['price'].'</td>
                                                         <td>'.$row['size'].'</td>
                                                         <td>'.$row['color'].'</td>
@@ -55,7 +58,7 @@
                                     </table>
                                 </div>
                             </div>
-                            <div class="col-lg-5">
+                            <div class="col-lg-12">
                                 <table>
                                     <tr>
                                         <td>Name Customer:  </td>
@@ -103,8 +106,8 @@
                         <!-- end row -->
                         <div class="row d-flex justify-content-end">
                             <div class="col-lg-2">
-                                <a name="" id="" class="btn btn-danger" href="#" role="button">Huỷ</a>
-                                <a name="" id="" class="btn btn-primary" href="?ctrl=donhang&act=edit&id=<?=$_GET['id']?>" role="button">Sửa</a>
+                                <a name="" id="" class="btn btn-danger" href="<?=ROOT_URL?>/admin/?ctrl=order" role="button">Back</a>
+                                <!-- <a name="" id="" class="btn btn-primary" href="?ctrl=donhang&act=edit&id=<?=$_GET['id']?>" role="button">Sửa</a> -->
                             </div>
                         </div>
                         
