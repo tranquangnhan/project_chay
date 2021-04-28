@@ -187,7 +187,7 @@
 
                                             <li class="cart-det2"
                                                 data-refresh-url="//infinitytemplate.com/Prestashop/PRS01/PRS012/en/cart?ajax=1&action=refresh">
-                                                <span class="no-items">Your cart is empty!</span>
+                                                <span class="no-items">'.$lang['emptycart'].'</span>
                                         </div>
                                     </div>
 
