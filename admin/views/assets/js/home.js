@@ -62,8 +62,8 @@ function checkDeleteCate(link, IDCATE) {
                 processData: false,
                 data: checkStatus,
                 success: async function(response) {
-                    console.log(response[0]);
-                    if (response[0] === undefined) {
+                    console.log(response);
+                    if (response[0] === 0) {
                         await Swal.fire({
                             timer: 2000,
                             type: 'success',
@@ -78,12 +78,20 @@ function checkDeleteCate(link, IDCATE) {
                         Swal.fire({
                             type: 'error',
                             title: 'Oops.',
+                            text: 'This category contains products and cannot be deleted!',
+                            showConfirmButton: true,
+                            showCancelButton: false,
+                            icon: "error"
+                        });
+                    } else if (response[0] === 2) {
+                        Swal.fire({
+                            type: 'error',
+                            title: 'Oops.',
                             text: 'This category contains subcategories and cannot be deleted!',
                             showConfirmButton: true,
                             showCancelButton: false,
                             icon: "error"
                         });
-
                     }
                 }
             });

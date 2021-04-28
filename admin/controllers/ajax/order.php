@@ -13,13 +13,13 @@
             break;
 
         case 'CheckChildCate':
-            $array = array();
-            
+            $array =  [];
            $kq = $model->CheckChildCate();
-           
+           $kq1 = (int)($model->CheckChildHasPro($_POST['IDcate']));
+           if($kq1 > 0) $array[0] = 1; else $array[0] = 0;
             foreach ($kq as $key) {
                 if($_POST['IDcate'] == $key['parent']){
-                    array_push($array,1);
+                    $array[0] = 2;
                     break;
                 }
             }

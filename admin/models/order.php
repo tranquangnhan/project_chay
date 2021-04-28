@@ -37,4 +37,10 @@
         $sql = "SELECT * FROM catalog ";
         return $this->result1(0,$sql);
     }
+    function CheckChildHasPro($id){
+        $sql = "SELECT count(*) AS sodong FROM product where catalog_id=?";
+        return $this->result1(1,$sql,$id)['sodong'];
+        //  $row->rowCount();
+    }
+    
 }
