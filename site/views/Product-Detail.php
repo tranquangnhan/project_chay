@@ -570,7 +570,7 @@ if(is_array($sp)){
                             </div><!-- /.modal-content -->
                         </div><!-- /.modal-dialog -->
                     </div><!-- /.modal -->
-                   
+                   </div>
                    <?php
 }else{
     echo 'Sản phẩm này không có !';
