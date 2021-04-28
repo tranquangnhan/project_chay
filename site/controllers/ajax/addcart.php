@@ -16,9 +16,13 @@
             $sl = $_POST['sl'];
             $size = $_POST['size'];
             $mausac = $_POST['mausac'];
+            
             $sp = $model->getProById($id);
-        
-            $name = $sp['name'];
+            if ($_POST['lang'] == 'en') {
+                $name = $sp['name'];
+            }else{
+                $name = $sp['name_ge'];
+            }
             $gia =($sp['price'] - ($sp['discount']*$sp['price'])/100);
             $img = explode(",",$sp['image_list'])[0];
             $cart = array ();

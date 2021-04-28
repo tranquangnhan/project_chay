@@ -88,7 +88,7 @@
 		"register" => "Registrieren",
 		"logout" => "Ausloggen",
 		"welcome" => "Herzlich willkommen",
-		"lang_en" => "Englisch",
+		"lang_en" => "English",
 		"lang_bs" => "Deutsche"
 	);
 ?>

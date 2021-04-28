@@ -38,7 +38,7 @@ function addCart(id, lang) {
 
             return false;
         } else {
-            $.post("controllers/ajax/addcart.php", { id: id, sl: sl, size: size, mausac: mausac },
+            $.post("controllers/ajax/addcart.php", { id: id, sl: sl, size: size, mausac: mausac, lang: lang },
                 function(data) {
                     Swal.fire({
                         icon: 'success',
@@ -69,7 +69,7 @@ function addCart(id, lang) {
 
             return false;
         } else {
-            $.post("controllers/ajax/addcart.php", { id: id, sl: sl, size: size, mausac: mausac },
+            $.post("controllers/ajax/addcart.php", { id: id, sl: sl, size: size, mausac: mausac, lang: lang },
                 function(data) {
                     Swal.fire({
                         icon: 'success',

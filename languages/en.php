@@ -90,6 +90,6 @@
 		"logout" => "Log Out",
 		"welcome" => "Welcome",
 		"lang_en" => "English",
-		"lang_bs" => "German"
+		"lang_bs" => "Deutsche"
 	);
 ?>
