@@ -37,14 +37,14 @@
                                              <div class="container">
                                                       <ol itemscope itemtype="http://schema.org/BreadcrumbList">
                                                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                                                        <a itemprop="item" href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/">
+                                                                        <a itemprop="item" href="#">
                                                                                  <span itemprop="name"><?=$lang['homeproduct']?></span>
                                                                         </a>
                                                                         <meta itemprop="position" content="1" />
                                                                </li>
 
                                                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                                                        <a itemprop="item" href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/contact-us">
+                                                                        <a itemprop="item" href="#">
                                                                                  <span itemprop="name">Contact us</span>
                                                                         </a>
                                                                         <meta itemprop="position" content="2" />

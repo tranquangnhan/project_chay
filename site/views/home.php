@@ -27,12 +27,16 @@
 
                 </li>
                 <li class="slide">
-
                     <a href="<?=ROOT_URL?>/product"
                         title="kslider-3">
                         <img src="views/assets/img/banner3.jpg" alt="kslider-3" title="KSlider3" />
                     </a>
-
+                </li>
+                <li class="slide">
+                    <a href="<?=ROOT_URL?>/product"
+                        title="kslider-3">
+                        <img src="views/assets/img/banner4.png" alt="kslider-3" title="KSlider3" />
+                    </a>
                 </li>
             </ul>
         </div>

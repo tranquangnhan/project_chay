@@ -91,6 +91,7 @@ class Home{
          $Pagination =  $this->model->Page($TotalProduct ,$PageNum,$PageSize, $BaseLink);
       }else{
          $PageNum = $_GET['slug'];
+         if($PageNum<=0) $PageNum = 1;
          $ds = $this->model-> GetProductList2($PageNum,$sortBy,$order);
          $TotalProduct = (int)$this->model->countAllProductControl2($sortBy,$order);
          if($TotalProduct == 0) $TotalProduct =1;
@@ -301,7 +302,7 @@ class Home{
          require_once "views/layout.php";
       }
       function contact(){
-        
+         $getMenuParent = $this->model->getMenuParent();
          if(isset($_POST['submitMessage'])){
             $name = $_POST['name'];
             $email = $_POST['email'];
