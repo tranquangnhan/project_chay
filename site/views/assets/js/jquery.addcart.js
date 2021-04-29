@@ -3,6 +3,7 @@
 $.post("controllers/ajax/addcart.php",
     function(data) {
         $('#_desktop_cart').html(data);
+        $('#_mobile_cart').html(data);
     }
 );
 
@@ -46,6 +47,7 @@ function addCart(id, lang) {
                         text: 'Add to cart successfully',
                     })
                     $('#_desktop_cart').html(data);
+                    $('#_mobile_cart').html(data);
                 }
             );
         }
@@ -77,6 +79,7 @@ function addCart(id, lang) {
                         text: 'Erfolgreich in den Warenkorb legen',
                     })
                     $('#_desktop_cart').html(data);
+                    $('#_mobile_cart').html(data);
                 }
             );
         }
@@ -108,6 +111,7 @@ function delCart(iddel) {
         data: { iddel: iddel },
         success: function(data) {
             $('#_desktop_cart').html(data);
+            $('#_mobile_cart').html(data);
         }
     });
 }
@@ -146,11 +150,19 @@ function contact(e) {
             var email = document.getElementById('email').value;
             var message = document.getElementById('message').value;
             if (id_contact == '' || name == '' || email == '' || message == '') {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Enter your input',
-                })
+                if (e == 'en') {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Enter your input',
+                    })
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Geben Sie Ihre Eingabe ein',
+                    })
+                }
             } else {
                 var formData = new FormData();
                 formData.append('name', name);
@@ -168,17 +180,34 @@ function contact(e) {
                     data: formData,
                     success: function(response) {
                         if (response.StatusCode == 1) {
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'success...',
-                                text: 'Send contact success',
-                            })
+                            if (e == 'en') {
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'success...',
+                                    text: 'Send contact success',
+                                })
+                            } else {
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Oops...',
+                                    text: 'Erfolgreich in den Warenkorb legen',
+                                })
+                            }
+
                         } else {
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'Something went wrong!',
-                            })
+                            if (e == 'en') {
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'success...',
+                                    text: 'Send contact success',
+                                })
+                            } else {
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Oops...',
+                                    text: 'Erfolgreich in den Warenkorb legen',
+                                })
+                            }
                         }
 
                     }

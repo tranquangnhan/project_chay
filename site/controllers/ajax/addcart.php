@@ -174,7 +174,7 @@
                $kq = '  <div id="_desktop_cart">
                             <div class="shopping-cart">
                                 <div class="blockcart cart-preview inactive"
-                                    data-refresh-url="//infinitytemplate.com/Prestashop/PRS01/PRS012/en/module/ps_shoppingcart/ajax">
+                                    data-refresh-url="">
                                     <div class="header">
                                         <div class="cart-link">
                                             <a rel="nofollow">
@@ -186,8 +186,8 @@
                                         <div class="dropdown-menu dropdown-menu-right">
 
                                             <li class="cart-det2"
-                                                data-refresh-url="//infinitytemplate.com/Prestashop/PRS01/PRS012/en/cart?ajax=1&action=refresh">
-                                                <span class="no-items">Your cart is empty!</span>
+                                                data-refresh-url="">
+                                                <span class="no-items">'.$lang['emptycart'].'</span>
                                         </div>
                                     </div>
 
