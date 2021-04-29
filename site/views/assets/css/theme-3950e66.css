@@ -12251,7 +12251,7 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
     color: #a7a7a7;
     background: url(../img/footter.jpg) no-repeat center bottom;
     background-color: rgba(0, 0, 0, 0);
-    background-size: 100% 100%;
+    background-size: 100% 520px;
     background-attachment: scroll;
     background-color: rgba(0, 0, 0, .8);
     background-attachment: scroll;
@@ -12929,6 +12929,9 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 @media (max-width:543px) {
     .footer-before {
         padding: 25px 0 0
+    }
+    #footer {
+        background-size: 100% 360px;
     }
 }
 
