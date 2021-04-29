@@ -36,6 +36,7 @@ RewriteRule ^cate/([a-zA-Z0-9-]+)-([0-9]+)/page-([0-9]+)/namedesc$ /project_chay
 
 RewriteRule ^cate/([a-zA-Z0-9-]+)-([0-9]+)/page-([0-9]+)/nameasc$ /project_chay/site/?act=product&maloai=$2&Page=$3&slug=$1&sortBy=name&order=asc [L]
 
+RewriteRule ^paymentchecking$ /project_chay/site/?act=paymentchecking [L]
 
 RewriteRule ^cate/page-([0-9]+)/nameasc$ /project_chay/site/?act=product&Page=$3&slug=$1&sortBy=name&order=asc [L]
 
