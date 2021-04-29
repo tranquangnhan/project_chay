@@ -178,7 +178,6 @@ class Home{
       {
          if(isset($_POST['continue'])){
      
-
          $hoten = trim(strip_tags($_POST['name']));
          $email = trim(strip_tags($_POST['email']));
          $phone = trim(strip_tags($_POST['phone']));
