@@ -84,18 +84,18 @@ class Model_home extends Model_db{
        return $this->result1(1,$sql,$coupon,time());
     }
 
-    function luudonhangnhe($idDH, $hoten, $email,$phone,$address,$note,$tongtien){            
+    function luudonhangnhe($idDH, $fname,$lname, $email,$phone,$address,$note,$tongtien){            
         if ($idDH==-1){
-        $sql = "INSERT INTO donhang SET name=? ,email=?,phone=?,address=?,note=?,total=?,ngaydat=Now()";          
-        $kq= $this->getLastId($sql,$hoten,$email,$phone,$address,$note,$tongtien);
+        $sql = "INSERT INTO donhang SET firstname=?,lastname=? ,email=?,phone=?,address=?,note=?,total=?,ngaydat=Now()";          
+        $kq= $this->getLastId($sql,$fname,$lname,$email,$phone,$address,$note,$tongtien);
 
         if ($kq == null) return false;
         else return $kq;
       } 
       else
        {
-        $sql = "UPDATE donhang SET name=? ,email=?,phone=?,address=?,note=?,total=?,ngaydat=Now() WHERE id=?";              
-         $kq= $this->exec1($sql,$hoten,$email,$phone,$address,$note,$tongtien,$idDH);
+        $sql = "UPDATE donhang SET firstname=?,lastname=? ,email=?,phone=?,address=?,note=?,total=?,ngaydat=Now() WHERE id=?";              
+         $kq= $this->exec1($sql,$fname,$lname,$email,$phone,$address,$note,$tongtien,$idDH);
       if ($kq == null) return false;
             else return $idDH;
       }

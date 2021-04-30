@@ -19,22 +19,24 @@ $('.method').on('click', function() {
 
   $('#customer-form').on('submit', function(e) {
 	
-	var name = $("#name").val();
-  var phone = $("#phone").val();
-  var email = $("#email").val();
-  var address = $("#address").val();
-  var note = $("#note").val();
+	var fname = $("#firstname").val();
+   var lname = $("#lastname").val();
+   var phone = $("#phone").val();
+   var email = $("#email").val();
+   var address = $("#address").val();
+   var note = $("#note").val();
 	
 	$.ajax({
 		type: "POST",
 		url: "<?php echo ROOT_URL;?>/saveorder",
-		data: {name: name, phone:phone,email,email,address:address,note: note},
+		data: {fname: fname,lname:lname, phone:phone,email,email,address:address,note: note},
 		dataType: "json",
 		cache: false,
 		success: function(data)
 		{
 			if(data.status != "200")
 			{
+            console.log(data);
 				Swal.fire({
 				  icon: 'error',
 				  title: 'Oops...',
@@ -149,9 +151,13 @@ $('.method').on('click', function() {
                                     <label class="col-md-3 form-control-label required">
                                     <?=$lang['fullname']?>
                                     </label>
-                                    <div class="col-md-6">
-                                       <input class="form-control" name="name" id="name" type="text" value=" <?php if(isset($_SESSION['suser'])) echo $_SESSION['suser'];?>"
-                                          required>
+                                    <div class="col-md-3">
+                                          <input class="form-control" name="firstname" id="firstname" type="text" value="" placehoder="First name" required>
+                                       
+                                    </div>
+                                    <div class="col-md-3">
+                                          
+                                       <input class="form-control" name="lastname" id="lastname" type="text" value="" placehoder="Last name" required>
                                     </div>
                                     <div class="col-md-3 form-control-comment">
                                     </div>
@@ -454,7 +460,8 @@ $('.method').on('click', function() {
               // executes the payment
               return actions.payment.execute().then(function() {
                   // make an ajax call for saving the payment info
-				  var name = $("#name").val();
+				  var fname = $("#firstname").val();
+              var lname = $("#lastname").val();
 				  var phone = $("#phone").val();
 				  var email = $("#email").val();
 				  var address = $("#address").val();
@@ -464,7 +471,7 @@ $('.method').on('click', function() {
                   $.ajax({
 					type: "POST",
 					url: "<?php echo ROOT_URL;?>/paymentchecking",
-					data: {method: "paypal", name: name, phone: phone, email: email, address: address, note: note, paymentID: data.paymentID, payerID: data.payerID, token: data.paymentToken},
+					data: {method: "paypal", fname: fname,lname:lname, phone: phone, email: email, address: address, note: note, paymentID: data.paymentID, payerID: data.payerID, token: data.paymentToken},
 					dataType: "json",
 					cache: false,
 					success: function(data)
