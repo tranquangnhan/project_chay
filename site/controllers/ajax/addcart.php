@@ -67,19 +67,24 @@
                 $tongtien = 0;
                 $kq ='<div id="_desktop_cart">
                         <div class="shopping-cart">
+                        <i class="material-icons btn-hidecart" onclick="hideCart()">
+                        close
+                        </i>
                             <div class="blockcart cart-preview active">
                                 <div class="header">
-                                    <div class="cart-link">
-                                        <a rel="nofollow">
-                                            <i class="material-icons shopping-cart">shopping_cart</i>
+                                    <div class="cart-link" id="showcart">
+                                        <a rel="nofollow" >
+                                            <i class="material-icons shopping-cart" >shopping_cart</i>
                                             <span class="hidden-sm-down">Cart</span>
-                                            <span class="cart-products-count">12</span>
+                                            <span class="cart-products-count">'.count($_SESSION['cart']).'</span>
                                         </a>
                                     </div>
                                     <!---dropdown-->
+                                   
                                     <div class="dropdown-menu dropdown-menu-right">
 
-                                        <div class="product-container">';
+                                        <div class="product-container">
+                                       ';
                 $i = 0;
                 foreach ($tatcasp as $motsp) {
                     $i++;

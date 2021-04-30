@@ -5,7 +5,7 @@
 <html lang="en">
 
 <head>
-    <base href="/site/">
+    <base href="/project_chay/site/">
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Hằng ELLA </title>
@@ -19,6 +19,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="views/assets/img/Logo-hang-Ella.png">
     <link rel="stylesheet" href="views/assets/css/theme-3950e66.css" type="text/css" media="all">
     <link rel="stylesheet" href="views/assets/css/SweetAlert2.css">
+    <script src="views/assets/js/SweetAlert2.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" integrity="sha512-UdIMMlVx0HEynClOIFSyOrPggomfhBKJE28LKl8yR3ghkgugPnG6iLfRfHwushZl1MOPSY6TsuBDGPK2X4zYKg==" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/additional-methods.min.js" integrity="sha512-6Uv+497AWTmj/6V14BsQioPrm3kgwmK9HYIyWP+vClykX52b0zrDGP7lajZoIY1nNlX4oQuh7zsGjmF7D0VZYA==" crossorigin="anonymous"></script>
@@ -310,7 +311,7 @@
                             <div class="language-selector dropdown js-dropdown">
                                 <button data-toggle="dropdown" class=" btn-unstyle" aria-haspopup="true"
                                     aria-expanded="false" aria-label="Language dropdown">
-                                    <span class="expand-more"><?php echo $lang['lang_en'] ?></span>
+                                    <span class="expand-more"><?php echo $lang['lang'] ?></span>
                                     <i class="material-icons expand-more"></i>
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="language-selector-label">
@@ -375,7 +376,7 @@
                                         <div class="header">
                                             <div class="cart-link">
                                                 <a rel="nofollow">
-                                                    <i class="material-icons shopping-cart">shopping_cart</i>
+                                                    <i class="material-icons shopping-cart" > shopping_cart</i>
                                                     <span class="hidden-sm-down">Cart</span>
                                                     <span class="cart-products-count">0</span>
                                                 </a>
@@ -895,7 +896,7 @@
     <div class="newsletter-pop">
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="views/assets/js/SweetAlert2.js"></script>
+
     <script type="text/javascript" src="views/assets/js/bottom-b769945.js"></script>
     <script src="views/assets/js/jquery.flexslider.js"></script>
     <script src="views/assets/js/jquery.addcart.js"></script>

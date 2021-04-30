@@ -1,3 +1,35 @@
+window.onload = () => {
+    document.getElementsByClassName('blockcart')[0].addEventListener('click', () => {
+        displayCart()
+    })
+
+
+}
+$(".blockcart").click(function(e) {
+    e.stopPropagation(); // this stops the event from bubbling up to the body
+    displayCart()
+    $(document.body).on('click.dropdown-menu-right', function() {
+
+        hideCart()
+
+    });
+});
+
+
+
+
+function hideCart() {
+    alert(11)
+    $(".dropdown-menu-right")[0].classList.remove('cartdislay');
+    $("span.cart-products-count")[0].classList.remove('cartcount');
+}
+
+function displayCart() {
+    alert(222)
+    $(".dropdown-menu-right")[0].classList.add('cartdislay');
+    $("span.cart-products-count")[0].classList.add('cartcount');
+}
+
 // show giỏ hàng
 
 $.post("controllers/ajax/addcart.php",
@@ -8,6 +40,7 @@ $.post("controllers/ajax/addcart.php",
 );
 
 function addCart(id, lang) {
+
     var sl = $("#quantity_wanted").val();
     var size = $("#group_1").val();
     var mausac = $(".input-color:checked").val();
@@ -48,6 +81,7 @@ function addCart(id, lang) {
                     })
                     $('#_desktop_cart').html(data);
                     $('#_mobile_cart').html(data);
+                    displayCart()
                 }
             );
         }
@@ -71,6 +105,7 @@ function addCart(id, lang) {
 
             return false;
         } else {
+
             $.post("controllers/ajax/addcart.php", { id: id, sl: sl, size: size, mausac: mausac, lang: lang },
                 function(data) {
                     Swal.fire({
@@ -78,8 +113,10 @@ function addCart(id, lang) {
                         title: 'Oops...',
                         text: 'Erfolgreich in den Warenkorb legen',
                     })
+
                     $('#_desktop_cart').html(data);
                     $('#_mobile_cart').html(data);
+                    displayCart()
                 }
             );
         }
@@ -112,6 +149,7 @@ function delCart(iddel) {
         success: function(data) {
             $('#_desktop_cart').html(data);
             $('#_mobile_cart').html(data);
+            displayCart()
         }
     });
 }

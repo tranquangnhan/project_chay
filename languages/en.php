@@ -90,6 +90,9 @@
 		"logout" => "Log Out",
 		"welcome" => "Welcome",
 		"lang_en" => "English",
-		"lang_bs" => "Deutsche"
+		"lang_bs" => "Deutsche",
+		"lang"=>"English",
+		"resgistersucess"=>"Sign up success",
+		"returnpage"=>"return to the previous page"
 	);
 ?>

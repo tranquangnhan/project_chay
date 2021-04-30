@@ -175,14 +175,15 @@ a.more-link {
                         <div class="col-xl-12 col-lg-12 text-center" >
                             <div class="error thankyou">
                             <h1>Thanks You</h1>
-                                
+                               
                                 <section class="error-container">
                                 <span>F</span>
                                 <span><span class="screen-reader-text">0</span></span>
                                 <span>O</span>
                                 </section>
+                                <h3 style="text-align:center"><?=$thongbao?></h3>
                                 <div class="link-container">
-                                <a target="_blank" href="index.php" class="more-link">Home page</a>
+                                <a href="javascript:window.history.back()" class="more-link"><?=$lang['returnpage']?></a>
                                 </div>
                                 
                             </div>

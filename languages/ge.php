@@ -89,6 +89,9 @@
 		"logout" => "Ausloggen",
 		"welcome" => "Herzlich willkommen",
 		"lang_en" => "English",
-		"lang_bs" => "Deutsche"
+		"lang_bs" => "Deutsche",
+		"lang"=>"Deutsche",
+		"resgistersucess"=>"Erfolg anmelden",
+		"returnpage"=>"Kehre zur vorherigen Seite zurück"
 	);
 ?>

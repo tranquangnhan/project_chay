@@ -1,6 +1,7 @@
 <?php 
    require_once "../system/config.php";
-   // require_once "../languages/".$_SESSION['lang'].".php";
+//    require_once "../languages/".$_SESSION['lang'].".php";	
+
    require_once "../system/database.php";
    require_once "../lib/myfunctions.php";
    echo $lang['title'];
@@ -43,6 +44,7 @@
             case "impressum":$this->impressum();break;
             case "privacypolicy":$this->privacypolicy();break;
             case "termofservice":$this->termofservice();break;
+			case "notification":$this->notification();break;
            }
            
         }
@@ -490,6 +492,7 @@
 	 
 	 function thankYou()
 	 {
+		
 		$getMenuParent = $this->model->getMenuParent();
 		$viewFile ="views/thankyou.php";
 		require_once "views/layout.php";
@@ -518,6 +521,7 @@
 	 }
 	 function register()
 	 {
+		require_once "../languages/".$_SESSION['lang'].".php";	
 		if(isset($_POST['register'])){
 		   $name = $_POST['name'];
 		   $email = $_POST['email'];
@@ -530,7 +534,8 @@
 				 $emailexist= 'Email already exists!';
 			  }else{
 				 $exist = $this->modelUser->registerUser($name,$email,$password);
-				   echo '<script>alert("Register success")</script>';
+				$_SESSION['thongbao'] = $lang['resgistersucess'];
+				header("location: ".ROOT_URL."/notification");
 			  }
 		   } 
 		}
@@ -600,6 +605,16 @@
 	 function termofservice(){
 		$viewFile = "views/termofservice.php";
 	   require_once "views/layout.php";
+	 }
+	 function notification(){
+		require_once "../languages/".$_SESSION['lang'].".php";	
+		if(isset($_SESSION['thongbao'])){
+			$thongbao = $_SESSION['thongbao'];
+			unset($_SESSION['thongbao']);
+		}else{
+			$thongbao = "no notification";
+		}
+		require_once "views/thankyou.php";
 	 }
 }
    ?>
