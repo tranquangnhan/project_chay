@@ -53,9 +53,9 @@
 		"addcart" => "Add To Cart",
 		"instock" => "In-stock",
 		"share" => "Share",
-		"security" => " Security policy (edit with Customer reassurance module)",
-		"delivery" => "Delivery policy (edit with Customer reassurance module)",
-		"return" => "Return policy (edit with Customer reassurance module)",
+		"security" => " Security policy ",
+		"delivery" => "Delivery policy ",
+		"return" => "Return policy ",
 		"description" => "Description",
 		"prodetail" => "Product Details",
 		"contactformore" => "Contact for more infomation",
@@ -89,6 +89,7 @@
 		"register" => "Register",
 		"logout" => "Log Out",
 		"welcome" => "Welcome",
+		"postcode" => "Post code",
 		"lang_en" => "English",
 		"lang_bs" => "Deutsch"
 	);

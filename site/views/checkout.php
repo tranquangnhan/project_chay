@@ -23,13 +23,18 @@ $('.method').on('click', function() {
    var lname = $("#lastname").val();
    var phone = $("#phone").val();
    var email = $("#email").val();
-   var address = $("#address").val();
+   // var address = $("#address").val();
+   var street = $("#street").val();
+   var housenumber = $("#housenumber").val();
+   var city = $("#city").val();
+   var country = $("#country").val();
+   var postcode = $("#postcode").val();
    var note = $("#note").val();
 	
 	$.ajax({
 		type: "POST",
 		url: "<?php echo ROOT_URL;?>/saveorder",
-		data: {fname: fname,lname:lname, phone:phone,email,email,address:address,note: note},
+		data: {fname: fname,lname:lname, phone:phone,email,email,street: street,housenumber: housenumber,city: city,country: country,postcode:postcode,note: note},
 		dataType: "json",
 		cache: false,
 		success: function(data)
@@ -152,12 +157,12 @@ $('.method').on('click', function() {
                                     <?=$lang['fullname']?>
                                     </label>
                                     <div class="col-md-3">
-                                          <input class="form-control" name="firstname" id="firstname" type="text" value="" placehoder="First name" required>
+                                          <input class="form-control" name="firstname" id="firstname" type="text" value="" placeholder="First name" required>
                                        
                                     </div>
                                     <div class="col-md-3">
                                           
-                                       <input class="form-control" name="lastname" id="lastname" type="text" value="" placehoder="Last name" required>
+                                       <input class="form-control" name="lastname" id="lastname" type="text" value="" placeholder="Last name" required>
                                     </div>
                                     <div class="col-md-3 form-control-comment">
                                     </div>
@@ -167,7 +172,7 @@ $('.method').on('click', function() {
                                     <?=$lang['phone']?>
                                     </label>
                                     <div class="col-md-6">
-                                       <input class="form-control" name="phone" id="phone" type="number" value=""
+                                       <input class="form-control" name="phone" id="phone" type="number" value="" placeholder="Phone"
                                           required>
                                     </div>
                                     <div class="col-md-3 form-control-comment">
@@ -178,7 +183,7 @@ $('.method').on('click', function() {
                                     <?=$lang['email']?>
                                     </label>
                                     <div class="col-md-6">
-                                       <input class="form-control" name="email" id="email" type="email" value=""
+                                       <input class="form-control" name="email" id="email" type="email" value="" placeholder="Email address"
                                           required>
                                     </div>
                                     <div class="col-md-3 form-control-comment">
@@ -188,13 +193,37 @@ $('.method').on('click', function() {
                                     <label class="col-md-3 form-control-label required">
                                     <?=$lang['address']?>
                                     </label>
+                                    <div class="col-md-3">
+                                       <input class="form-control" name="address1" id="street" type="text" value="" required placeholder="Street">
+                                    </div>
+                                    
+                                    <div class="col-md-3">
+                                       <input class="form-control" name="address2" id="housenumber" type="text" value="" required placeholder="House number">
+                                    </div>
+                                 </div>
+                                 <div class="form-group row ">
+                                    <label class="col-md-3 form-control-label required">
+                                    </label>
+                                    <div class="col-md-3">
+                                       <input class="form-control" name="address3" id="city" type="text" value="" required placeholder="City">
+                                    </div>
+                                    
+                                    <div class="col-md-3">
+                                       <input class="form-control" name="address4" id="country" type="text" value="" required placeholder="Country">
+                                    </div>
+                                 </div>
+                                 <div class="form-group row ">
+                                    <label class="col-md-3 form-control-label required">
+                                    <?=$lang['postcode']?>
+                                    </label>
                                     <div class="col-md-6">
-                                       <input class="form-control" name="address" id="address" type="text" value=""
+                                       <input class="form-control" name="postcode" id="postcode" type="text" value="" placeholder="Postcode"
                                           required>
                                     </div>
                                     <div class="col-md-3 form-control-comment">
                                     </div>
                                  </div>
+                                 
                                  <div class="form-group row ">
                                     <label class="col-md-3 form-control-label required">
                                     <?=$lang['note']?>

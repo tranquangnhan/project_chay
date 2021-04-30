@@ -407,7 +407,12 @@
 		$lname = trim(strip_tags($_POST['lname']));
 		$email = trim(strip_tags($_POST['email']));
 		$phone = trim(strip_tags($_POST['phone']));
-		$address = trim(strip_tags($_POST['address']));
+		$street = trim(strip_tags($_POST['street']));
+		$housenumber = trim(strip_tags($_POST['housenumber']));
+		$city = trim(strip_tags($_POST['city']));
+		$country = trim(strip_tags($_POST['country']));
+		$postcode = trim(strip_tags($_POST['postcode']));
+		// $address = trim(strip_tags($_POST['address']));
 		$note = trim(strip_tags($_POST['note']));
 
 		if (isset($_SESSION['idDH']))
@@ -419,7 +424,7 @@
 		   $tongtien += $row[5]*$row[1];
 		}
 	 
-		$idDH = $this->model->luudonhangnhe($idDH, $fname,$lname, $email,$phone,$address,$note,$tongtien); 
+		$idDH = $this->model->luudonhangnhe($idDH, $fname,$lname, $email,$phone,$street,$housenumber,$city,$country,$postcode,$note,$tongtien); 
 	  
 		   if ($idDH){
 			  $_SESSION['idDH'] = $idDH;

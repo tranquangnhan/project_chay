@@ -53,9 +53,9 @@
 		"addcart" => "in den Warenkorb legen",
 		"instock" => "Auf Lager",
 		"share" => "Teilen",
-		"security" => "Sicherheitsrichtlinie (mit dem Modul 'Kundenversicherung' bearbeiten)",
-		"delivery" => "Lieferbedingungen (mit Kundensicherungsmodul bearbeiten)",
-		"return" => "Rückgaberecht (mit Kundensicherungsmodul bearbeiten)",
+		"security" => "Sicherheitsrichtlinie ",
+		"delivery" => "Lieferbedingungen ",
+		"return" => "Rückgaberecht ",
 		"description" => "Beschreibung",
 		"prodetail" => "Produktdetails",
 		"contactformore" => "Kontakt für weitere Informationen",
@@ -88,6 +88,7 @@
 		"register" => "Registrieren",
 		"logout" => "Ausloggen",
 		"welcome" => "Herzlich willkommen",
+		"postcode" => "Post code",
 		"lang_en" => "English",
 		"lang_bs" => "Deutsch"
 	);
