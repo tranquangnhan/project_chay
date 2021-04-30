@@ -100,7 +100,18 @@ class Model_home extends Model_db{
             else return $idDH;
       }
     }
-
+	function updatepaymentstatus($oid,$newstatus)
+	{
+		$result = $this->exec1("UPDATE donhang SET status = ? WHERE id=?",$newstatus,$oid);
+		if($result)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
    function luugiohangnhe($idDH, $giohang){
       $sql = "DELETE FROM donhangchitiet WHERE donhang_id=?";
       $this->exec1($sql,$idDH);

@@ -1,9 +1,10 @@
 <?php
+//error_reporting(~E_ALL);
 define('HOST_DB','localhost');
-define('NAME_DB','project_chay');
-define('USER_DB','root');
-define('PASS_DB','');
-define('ROOT_URL','/project_chay');
+define('NAME_DB','shopdemo_data');
+define('USER_DB','shopdemo_data');
+define('PASS_DB','RQMK2gOUsA');
+define('ROOT_URL','https://shopdemo.vcfmedia.com');
 define('ADMIN_URL',ROOT_URL.'/admin');
 define('SITE_URL',ROOT_URL.'/site/');
 define('SYSTEM_PATH',ROOT_URL.'/system');

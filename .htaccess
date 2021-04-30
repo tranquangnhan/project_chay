@@ -1,48 +1,53 @@
 RewriteEngine on
 RewriteRule ^$ site/
 
-RewriteRule ^doi-mat-khau$ /project_chay/site/?act=changepass [L]
-RewriteRule ^dang-xuat$ /project_chay/site/?act=logout [L]
-RewriteRule ^gio-hang$ /project_chay/site/?act=cartview [L]
-RewriteRule ^thanh-toan$ /project_chay/site/?act=checkout [L]
-RewriteRule ^xac-nhan-gio-hang$ /project_chay/site/?act=savebill [L]
-RewriteRule ^cam-on$ /project_chay/site/?act=thankyou [L]
-RewriteRule ^quen-mat-khau$ /project_chay/site/?act=forgotpass [L]
-RewriteRule ^thanh-toan-thanh-cong/$ /project_chay/site/?act=ttthanhcong [L]
+RewriteRule ^doi-mat-khau$ /site/?act=changepass [L]
+RewriteRule ^dang-xuat$ /site/?act=logout [L]
+RewriteRule ^gio-hang$ /site/?act=cartview [L]
+RewriteRule ^thanh-toan$ /site/?act=checkout [L]
+RewriteRule ^xac-nhan-gio-hang$ /site/?act=savebill [L]
+RewriteRule ^cam-on$ /site/?act=thankyou [L]
+RewriteRule ^quen-mat-khau$ /site/?act=forgotpass [L]
+RewriteRule ^thanh-toan-thanh-cong/$ /site/?act=ttthanhcong [L]
 
-RewriteRule ^login$ /project_chay/site/?act=login [L]
-RewriteRule ^register$ /project_chay/site/?act=register [L]
-RewriteRule ^home$ /project_chay/site/?act=home [L]
-RewriteRule ^checkout$ /project_chay/site/?act=checkout [L]
-RewriteRule ^contact$ /project_chay/site/?act=contact [L]
-RewriteRule ^aboutus$ /project_chay/site/?act=aboutus [L]
-RewriteRule ^term-of-services$ /project_chay/site/?act=termofservice [L]
-RewriteRule ^impressum$ /project_chay/site/?act=impressum [L]
-RewriteRule ^privacy$ /project_chay/site/?act=privacypolicy [L]
+RewriteRule ^login$ /site/?act=login [L]
+RewriteRule ^register$ /site/?act=register [L]
+RewriteRule ^home$ /site/?act=home [L]
+RewriteRule ^checkout$ /site/?act=checkout [L]
+RewriteRule ^paymentchecking$ /site/?act=paymentchecking [L]
+RewriteRule ^createcheckoutsession$ /site/?act=createcheckoutsession [L]
+RewriteRule ^stripecheckout$ /site/?act=stripecheckout [L]
+RewriteRule ^createklarnaqr$ /site/?act=createklarnaqr [L]
+RewriteRule ^saveorder$ /site/?act=saveorder [L]
+RewriteRule ^contact$ /site/?act=contact [L]
+RewriteRule ^aboutus$ /site/?act=aboutus [L]
+RewriteRule ^term-of-services$ /site/?act=termofservice [L]
+RewriteRule ^impressum$ /site/?act=impressum [L]
+RewriteRule ^privacy$ /site/?act=privacypolicy [L]
 
-RewriteRule ^product$ /project_chay/site/?act=product [L]
-RewriteRule ^lang/(.*)$ /project_chay/site/?lang=$1 [L]
-RewriteRule ^cate/page-([0-9]+)$ /project_chay/site/?act=product&Page=$3&slug=$1 [L]
+RewriteRule ^product$ /site/?act=product [L]
+RewriteRule ^lang/(.*)$ /site/?lang=$1 [L]
+RewriteRule ^cate/page-([0-9]+)$ /site/?act=product&Page=$3&slug=$1 [L]
 
-RewriteRule ^product/([a-zA-Z0-9-]+)$ /project_chay/site/?act=detail&slug=$1&id=$2 [L]
+RewriteRule ^product/([a-zA-Z0-9-]+)$ /site/?act=detail&slug=$1&id=$2 [L]
 
-RewriteRule ^cate/([a-zA-Z0-9-]+)-([0-9]+)/page-([0-9]+)$ /project_chay/site/?act=product&maloai=$2&Page=$3&slug=$1 [L]
+RewriteRule ^cate/([a-zA-Z0-9-]+)-([0-9]+)/page-([0-9]+)$ /site/?act=product&maloai=$2&Page=$3&slug=$1 [L]
 
-RewriteRule ^cate/([a-zA-Z0-9-]+)-([0-9]+)/page-([0-9]+)/pricedesc$ /project_chay/site/?act=product&maloai=$2&Page=$3&slug=$1&sortBy=price&order=desc [L]
+RewriteRule ^cate/([a-zA-Z0-9-]+)-([0-9]+)/page-([0-9]+)/pricedesc$ /site/?act=product&maloai=$2&Page=$3&slug=$1&sortBy=price&order=desc [L]
 
-RewriteRule ^cate/([a-zA-Z0-9-]+)-([0-9]+)/page-([0-9]+)/priceasc$ /project_chay/site/?act=product&maloai=$2&Page=$3&slug=$1&sortBy=price&order=asc [L]
+RewriteRule ^cate/([a-zA-Z0-9-]+)-([0-9]+)/page-([0-9]+)/priceasc$ /site/?act=product&maloai=$2&Page=$3&slug=$1&sortBy=price&order=asc [L]
 
-RewriteRule ^cate/([a-zA-Z0-9-]+)-([0-9]+)/page-([0-9]+)/namedesc$ /project_chay/site/?act=product&maloai=$2&Page=$3&slug=$1&sortBy=name&order=desc [L]
+RewriteRule ^cate/([a-zA-Z0-9-]+)-([0-9]+)/page-([0-9]+)/namedesc$ /site/?act=product&maloai=$2&Page=$3&slug=$1&sortBy=name&order=desc [L]
 
-RewriteRule ^cate/([a-zA-Z0-9-]+)-([0-9]+)/page-([0-9]+)/nameasc$ /project_chay/site/?act=product&maloai=$2&Page=$3&slug=$1&sortBy=name&order=asc [L]
+RewriteRule ^cate/([a-zA-Z0-9-]+)-([0-9]+)/page-([0-9]+)/nameasc$ /site/?act=product&maloai=$2&Page=$3&slug=$1&sortBy=name&order=asc [L]
 
 
-RewriteRule ^cate/page-([0-9]+)/nameasc$ /project_chay/site/?act=product&Page=$3&slug=$1&sortBy=name&order=asc [L]
+RewriteRule ^cate/page-([0-9]+)/nameasc$ /site/?act=product&Page=$3&slug=$1&sortBy=name&order=asc [L]
 
-RewriteRule ^cate/page-([0-9]+)/namedesc$ /project_chay/site/?act=product&Page=$3&slug=$1&sortBy=name&order=desc [L]
+RewriteRule ^cate/page-([0-9]+)/namedesc$ /site/?act=product&Page=$3&slug=$1&sortBy=name&order=desc [L]
 
-RewriteRule ^cate/page-([0-9]+)/priceasc$ /project_chay/site/?act=product&Page=$3&slug=$1&sortBy=price&order=asc [L]
+RewriteRule ^cate/page-([0-9]+)/priceasc$ /site/?act=product&Page=$3&slug=$1&sortBy=price&order=asc [L]
 
-RewriteRule ^cate/page-([0-9]+)/pricedesc$ /project_chay/site/?act=product&Page=$3&slug=$1&sortBy=price&order=desc [L]
+RewriteRule ^cate/page-([0-9]+)/pricedesc$ /site/?act=product&Page=$3&slug=$1&sortBy=price&order=desc [L]
 
-ErrorDocument 404 /project_chay/site/views/Error404.php
+ErrorDocument 404 /site/views/Error404.php

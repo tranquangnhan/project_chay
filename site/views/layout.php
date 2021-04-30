@@ -5,10 +5,10 @@
 <html lang="en">
 
 <head>
-    <base href="/project_chay/site/">
+    <base href="/site/">
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Hằng ELLA</title>
+    <title>Hằng ELLA </title>
     <meta name="description" content="Shop powered by PrestaShop">
     <meta name="keywords" content="">
    
@@ -19,6 +19,9 @@
     <link rel="shortcut icon" type="image/x-icon" href="views/assets/img/Logo-hang-Ella.png">
     <link rel="stylesheet" href="views/assets/css/theme-3950e66.css" type="text/css" media="all">
     <link rel="stylesheet" href="views/assets/css/SweetAlert2.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" integrity="sha512-UdIMMlVx0HEynClOIFSyOrPggomfhBKJE28LKl8yR3ghkgugPnG6iLfRfHwushZl1MOPSY6TsuBDGPK2X4zYKg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/additional-methods.min.js" integrity="sha512-6Uv+497AWTmj/6V14BsQioPrm3kgwmK9HYIyWP+vClykX52b0zrDGP7lajZoIY1nNlX4oQuh7zsGjmF7D0VZYA==" crossorigin="anonymous"></script>
     <script type="text/javascript">
     var baseDir = "\/project_chay\/site\/";
     var kkproductsblock = {
