@@ -89,6 +89,6 @@
 		"logout" => "Ausloggen",
 		"welcome" => "Herzlich willkommen",
 		"lang_en" => "English",
-		"lang_bs" => "Deutsche"
+		"lang_bs" => "Deutsch"
 	);
 ?>

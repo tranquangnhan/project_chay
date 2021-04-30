@@ -114,16 +114,25 @@
                                           $new = '';
                                         }
                                         if($row['discount'] > 0){
+                                            if ($_SESSION['lang'] === 'en') {
+                                                $price = $row['price'];
+                                                $do = "$";
+                                                $euro ="";
+                                            }else{
+                                                $price = $row['price_ge'];
+                                                $do = "";
+                                                $euro = "€";
+                                            }
                                           $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
                                           $giaDiscount = ' <div class="product-price-and-shipping">
               
                                                           <span class="sr-only">Regular price</span>
-                                                          <span class="regular-price">'.floatval($row['price']).'</span>
+                                                          <span class="regular-price">'.floatval($price).'</span>
                                                           <span class="discount-percentage discount-product">-'.$row['discount'].'%</span>
             
             
                                                           <span class="sr-only">Price</span>
-                                                          <span itemprop="price" class="price">'.($row['price'] - ($row['discount']*$row['price'])/100) .'€</span>
+                                                          <span itemprop="price" class="price">'.$do.''.($price - ($row['discount']*$price)/100).''.$euro.'</span>
                                                       </div>';
                                         }else{
                                           $discount = '';
@@ -131,12 +140,12 @@
                                   
                         
                                                             <span class="sr-only">Price</span>
-                                                            <span itemprop="price" class="price">'.floatval($row['price']).'€</span>
+                                                            <span itemprop="price" class="price">'.$do.''.floatval($price).''.$euro.'</span>
                                                           
                                                           
                                                       </div>';
                                         }
-                                        if($row['price']<=0 ||$row['price'] =='' ){
+                                        if($price<=0 ||$price =='' ){
                                             $giaDiscount = '';
                                         }
                                         if ($_SESSION['lang'] === 'en') {
@@ -233,16 +242,25 @@
                                           $new = '';
                                         }
                                         if($row['discount'] > 0){
+                                            if ($_SESSION['lang'] === 'en') {
+                                                $price = $row['price'];
+                                                $do = "$";
+                                                $euro ="";
+                                            }else{
+                                                $price = $row['price_ge'];
+                                                $do = "";
+                                                $euro = "€";
+                                            }
                                           $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
                                           $giaDiscount = ' <div class="product-price-and-shipping">
               
                                                           <span class="sr-only">Regular price</span>
-                                                          <span class="regular-price">'.floatval($row['price']).'</span>
+                                                          <span class="regular-price">'.floatval($price).'</span>
                                                           <span class="discount-percentage discount-product">-'.$row['discount'].'%</span>
             
             
                                                           <span class="sr-only">Price</span>
-                                                          <span itemprop="price" class="price">'.($row['price'] - ($row['discount']*$row['price'])/100) .'€</span>
+                                                          <span itemprop="price" class="price">'.$do.''.($price - ($row['discount']*$price)/100).''.$euro.'</span>
                                                       </div>';
                                         }else{
                                           $discount = '';
@@ -250,12 +268,12 @@
                                   
                         
                                                             <span class="sr-only">Price</span>
-                                                            <span itemprop="price" class="price">'.floatval($row['price']).'€</span>
+                                                            <span itemprop="price" class="price">'.$do.''.floatval($price).''.$euro.'</span>
                                                           
                                                           
                                                       </div>';
                                         }
-                                        if($row['price']<=0 ||$row['price'] =='' ){
+                                        if($price<=0 ||$price =='' ){
                                             $giaDiscount = '';
                                         }
                                         if ($_SESSION['lang'] === 'en') {
@@ -352,16 +370,25 @@
                                           $new = '';
                                         }
                                         if($row['discount'] > 0){
+                                            if ($_SESSION['lang'] === 'en') {
+                                                $price = $row['price'];
+                                                $do = "$";
+                                                $euro ="";
+                                            }else{
+                                                $price = $row['price_ge'];
+                                                $do = "";
+                                                $euro = "€";
+                                            }
                                           $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
                                           $giaDiscount = ' <div class="product-price-and-shipping">
               
                                                           <span class="sr-only">Regular price</span>
-                                                          <span class="regular-price">'.floatval($row['price']).'</span>
+                                                          <span class="regular-price">'.floatval($price).'</span>
                                                           <span class="discount-percentage discount-product">-'.$row['discount'].'%</span>
             
             
                                                           <span class="sr-only">Price</span>
-                                                          <span itemprop="price" class="price">'.($row['price'] - ($row['discount']*$row['price'])/100) .'€</span>
+                                                          <span itemprop="price" class="price">'.$do.''.($price - ($row['discount']*$price)/100).''.$euro.'</span>
                                                       </div>';
                                         }else{
                                           $discount = '';
@@ -369,12 +396,12 @@
                                   
                         
                                                             <span class="sr-only">Price</span>
-                                                            <span itemprop="price" class="price">'.floatval($row['price']).'€</span>
+                                                            <span itemprop="price" class="price">'.$do.''.floatval($price).''.$euro.'</span>
                                                           
                                                           
                                                       </div>';
                                         }
-                                        if($row['price']<=0 ||$row['price'] =='' ){
+                                        if($price<=0 ||$price =='' ){
                                             $giaDiscount = '';
                                         }
                                         if ($_SESSION['lang'] === 'en') {
@@ -496,16 +523,25 @@
                               $new = '';
                             }
                             if($row['discount'] > 0){
+                                if ($_SESSION['lang'] === 'en') {
+                                    $price = $row['price'];
+                                    $do = "$";
+                                    $euro ="";
+                                }else{
+                                    $price = $row['price_ge'];
+                                    $do = "";
+                                    $euro = "€";
+                                }
                               $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
                               $giaDiscount = ' <div class="product-price-and-shipping">
   
                                               <span class="sr-only">Regular price</span>
-                                              <span class="regular-price">'.floatval($row['price']).'</span>
+                                              <span class="regular-price">'.floatval($price).'</span>
                                               <span class="discount-percentage discount-product">-'.$row['discount'].'%</span>
 
 
                                               <span class="sr-only">Price</span>
-                                              <span itemprop="price" class="price">'.($row['price'] - ($row['discount']*$row['price'])/100) .'€</span>
+                                              <span itemprop="price" class="price">'.$do.''.($price - ($row['discount']*$price)/100).''.$euro.'</span>
                                           </div>';
                             }else{
                               $discount = '';
@@ -513,12 +549,12 @@
                       
             
                                                 <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price">'.floatval($row['price']).'€</span>
+                                                <span itemprop="price" class="price">'.$do.''.floatval($price).''.$euro.'</span>
                                               
                                               
                                           </div>';
                             }
-                            if($row['price']<=0 ||$row['price'] =='' ){
+                            if($price<=0 ||$price =='' ){
                                 $giaDiscount = '';
                             }
                             if ($_SESSION['lang'] === 'en') {
@@ -792,16 +828,25 @@
               $new = '';
             }
             if($row['discount'] > 0){
+                if ($_SESSION['lang'] === 'en') {
+                    $price = $row['price'];
+                    $do = "$";
+                    $euro ="";
+                }else{
+                    $price = $row['price_ge'];
+                    $do = "";
+                    $euro = "€";
+                }
               $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
               $giaDiscount = ' <div class="product-price-and-shipping">
 
                               <span class="sr-only">Regular price</span>
-                              <span class="regular-price">'.floatval($row['price']).'</span>
+                              <span class="regular-price">'.floatval($price).'</span>
                               <span class="discount-percentage discount-product">-'.$row['discount'].'%</span>
 
 
                               <span class="sr-only">Price</span>
-                              <span itemprop="price" class="price">'.($row['price'] - ($row['discount']*$row['price'])/100) .'€</span>
+                              <span itemprop="price" class="price">'.$do.''.($price - ($row['discount']*$price)/100).''.$euro.'</span>
                           </div>';
             }else{
               $discount = '';
@@ -809,12 +854,12 @@
       
 
                                 <span class="sr-only">Price</span>
-                                <span itemprop="price" class="price">'.floatval($row['price']).'€</span>
+                                <span itemprop="price" class="price">'.$do.''.floatval($price).''.$euro.'</span>
                               
                               
                           </div>';
             }
-            if($row['price']<=0 ||$row['price'] =='' ){
+            if($price<=0 ||$price =='' ){
                 $giaDiscount = '';
             }
             if ($_SESSION['lang'] === 'en') {

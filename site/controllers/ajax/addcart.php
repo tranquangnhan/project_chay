@@ -20,10 +20,12 @@
             $sp = $model->getProById($id);
             if ($_POST['lang'] == 'en') {
                 $name = $sp['name'];
+                $price = $sp['price'];
             }else{
                 $name = $sp['name_ge'];
+                $price = $sp['price_ge'];
             }
-            $gia =($sp['price'] - ($sp['discount']*$sp['price'])/100);
+            $gia =($price - ($sp['discount']*$price)/100);
             $img = explode(",",$sp['image_list'])[0];
             $cart = array ();
             if ($sl > 0) {
@@ -88,7 +90,16 @@
                     $tongtien += $motsp[5]*$motsp[1];
                     $name = $motsp[4];
                     $id = $motsp[0];
-                    $gia = $motsp[5];
+                    if ($_SESSION['lang'] === 'en') {
+                        $gia ="$".$motsp[5];
+                        $do = "$";
+                         $euro ="";
+                    }else{
+                        $gia = $motsp[5]."€";
+                        $do = "";
+                        $euro = "€";
+                    }
+                    
                     $slmotsp = $motsp[1];
                     $size = $motsp[2];
                     $mau = $motsp[3];
@@ -122,7 +133,7 @@
                             </a>
                         </div>
                         <!-- price -->
-                        <div class="product-price"> <span>'.$gia.' €</span>
+                        <div class="product-price"> <span>'.$gia.'</span>
                         </div>
 
                         <ul class="product-atributes">
@@ -149,7 +160,7 @@
                                     
                                     <div class="Total col-xs-12 clearfix">
                                         <span class="label  text-xs-left">'.$lang['total'].'</span>
-                                        <span class="value   text-xs-right">'.$tongtien.'€</span>
+                                        <span class="value   text-xs-right">'.$do.''.$tongtien.''.$euro.'</span>
                                     </div>
 
                                 </div>

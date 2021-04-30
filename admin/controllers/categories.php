@@ -52,6 +52,23 @@ class categories{
         if(isset($_POST['them'])&&$_POST['them']){
             $name = $_POST['name_category'];
             $name_ge = $_POST['name_category_ge'];
+            $img = $_FILES['img1'];
+            
+            $imgs = $this->lib->checkUpLoadMany($img);
+            
+            if($imgs){
+                $checkIMG = explode(",",$imgs);
+            
+                for ($i=0; $i <count($checkIMG) ; $i++) { 
+                    $checkIMG[$i] = explode(".",$checkIMG[$i]);
+                    $checkIMG[$i][1] = strtolower($checkIMG[$i][1]);
+                    if($checkIMG[$i][1] != "jpg" && $checkIMG[$i][1] != "jpeg" && $checkIMG[$i][1] != "png" && $checkIMG[$i][1] != "gif" && $checkIMG[$i][1] != "webp"){
+                        $checkimg = "This is not IMAGE";
+                        break;
+                    }
+                }
+            }
+
             $IDcate = $_POST['IDcate'];
             $des_category = $_POST['des_category'];
             $des_category_ge = $_POST['des_category_ge'];
@@ -60,9 +77,9 @@ class categories{
             if(isset($_GET['id'])){
                 $id = $_GET['id'];
                 settype($id,"int");
-                $this->edit($name,$name_ge,$IDcate,$slug,$des_category,$des_category_ge,$id);
+                $this->edit($name,$name_ge,$imgs,$IDcate,$slug,$des_category,$des_category_ge,$id);
             }else{
-                $this->store($name,$name_ge,$IDcate,$slug,$des_category,$des_category_ge);
+                $this->store($name,$name_ge,$imgs,$IDcate,$slug,$des_category,$des_category_ge);
             }
            
         }
@@ -71,9 +88,9 @@ class categories{
     }//thêm mới dữ liệu vào db
 
 
-    function store($name,$name_ge,$IDcate,$slug,$des_category,$des_category_ge){   
+    function store($name,$name_ge,$imgs,$IDcate,$slug,$des_category,$des_category_ge){   
         $name = $this->lib->stripTags($name);
-        if($this->model->addNewCate($name,$name_ge,$IDcate,$slug,$des_category,$des_category_ge))
+        if($this->model->addNewCate($name,$name_ge,$imgs,$IDcate,$slug,$des_category,$des_category_ge))
         {
             echo "<script>alert('Thêm thành công')</script>";
             header("location: ?ctrl=categories");
@@ -85,12 +102,12 @@ class categories{
         require_once "views/layout.php";
     }
 
-    function edit($name,$name_ge,$IDcate,$slug,$des_category,$des_category_ge,$id)
+    function edit($name,$name_ge,$imgs,$IDcate,$slug,$des_category,$des_category_ge,$id)
     {
         if(isset($_GET['id']))
         {
             
-            if($this->model->editCategory($name,$name_ge,$IDcate,$slug,$des_category,$des_category_ge,$id))
+            if($this->model->editCategory($name,$name_ge,$imgs,$IDcate,$slug,$des_category,$des_category_ge,$id))
             {
                 echo "<script>alert('Sửa thành công')</script>";
                 header("location: ?ctrl=categories");

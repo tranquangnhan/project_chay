@@ -302,10 +302,18 @@ $('.method').on('click', function() {
                                      $tongtien += $motsp[5]*$motsp[1];
                                      $name = $motsp[4];
                                      $id = $motsp[0];
-                                     $gia = $motsp[5];
                                      $slmotsp = $motsp[1];
                                      $size = $motsp[2];
                                      $mau = $motsp[3];
+                                     if ($_SESSION['lang'] === 'en') {
+                                       $gia ="$".$motsp[5];
+                                       $do = "$";
+                                        $euro ="";
+                                   }else{
+                                       $gia = $motsp[5]."€";
+                                       $do = "";
+                                       $euro = "€";
+                                   }
                                      if($size != 'null'){
                                          $size = '  <span class="label">Size: '.$size .'</span>';
                                      }else{
@@ -328,7 +336,7 @@ $('.method').on('click', function() {
                                      <div class="media-body">
                                          <span class="product-name">'.$name.'</span>
                                          <span class="product-quantity">x'.$slmotsp.'</span>
-                                         <span class="product-price float-xs-right">'.$gia.'€</span>
+                                         <span class="product-price float-xs-right">'.$gia.'</span>
                                          '. $size .'
                                          '. $mau .'
                                          <br />
@@ -336,6 +344,7 @@ $('.method').on('click', function() {
                                      </div>
                                  
                                  </li>';
+                                 $tongtien =$do.''.$tongtien.''.$euro;
                                  }
                                  $kq .= '';
                                  echo $kq;
@@ -375,7 +384,7 @@ $('.method').on('click', function() {
                   <div class="card-block ">
                      <div class="cart-summary-line cart-total">
                         <span class="label"><?=$lang['total']?> </span>
-                        <span class="value"><?=$tongtien?>€</span>
+                        <span class="value"><?=$tongtien?></span>
                      </div>
                   </div>
                   <hr class="separator">

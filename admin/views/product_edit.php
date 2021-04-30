@@ -101,12 +101,19 @@
                                                     
                                                 }
                                             ?>
-                                            <div class="col-lg-6">
+                                            <div class="col-lg-3">
                                             <div class="form-group">
-                                                    <label for="">Price</label>
-                                                    <input  type="number" name="price" parsley-trigger="change" 
-                                                        placeholder="Type price" value="<?=$oneRecode['price']?>" class="form-control" id="emailAddress">
-                                                </div>
+                                                    <label for="">Price ($)</label>
+                                                    <input  type="number" name="price" parsley-trigger="change" id="discount"
+                                                        placeholder="Type rice" value="<?=$oneRecode['price']?>" class="form-control" >
+                                                </div>    
+                                            </div>
+                                            <div class="col-lg-3">
+                                            <div class="form-group">
+                                                    <label for="">Price (€)</label>
+                                                    <input  type="number" name="price_ge" parsley-trigger="change" 
+                                                        placeholder="Type rice" value="<?=$oneRecode['price_ge']?>" class="form-control" >
+                                                </div>    
                                             </div>
                                         </div>
                                         <div class="row">

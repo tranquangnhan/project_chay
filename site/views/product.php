@@ -147,303 +147,7 @@
 
 
                             </section>
-                            <!-- <section class="facet clearfix">
-                                <p class="h6 facet-title hidden-sm-down">Size</p>
-
-                                <div class="title hidden-md-up" data-target="#facet_69753" data-toggle="collapse">
-                                    <p class="h6 facet-title">Size</p>
-                                    <span class="float-xs-right">
-                                        <span class="navbar-toggler collapse-icons">
-                                            <i class="material-icons add">&#xE145;</i>
-                                            <i class="material-icons remove">&#xE15B;</i>
-                                        </span>
-                                    </span>
-                                </div>
-
-
-                                <ul id="facet_69753" class="collapse">
-
-                                    <li>
-                                        <label class="facet-label" for="facet_input_69753_0">
-                                            <span class="custom-checkbox">
-                                                <input id="facet_input_69753_0"
-                                                    data-search-url="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes?q=Size-S"
-                                                    type="checkbox">
-                                                <span class="ps-shown-by-js"><i
-                                                        class="material-icons rtl-no-flip checkbox-checked">&#xE5CA;</i></span>
-                                            </span>
-
-                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes?q=Size-S"
-                                                class="_gray-darker search-link js-search-link" rel="nofollow">
-                                                S
-                                                <span class="magnitude">(4)</span>
-                                            </a>
-                                        </label>
-                                    </li>
-
-                                    <li>
-                                        <label class="facet-label" for="facet_input_69753_1">
-                                            <span class="custom-checkbox">
-                                                <input id="facet_input_69753_1"
-                                                    data-search-url="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes?q=Size-M"
-                                                    type="checkbox">
-                                                <span class="ps-shown-by-js"><i
-                                                        class="material-icons rtl-no-flip checkbox-checked">&#xE5CA;</i></span>
-                                            </span>
-
-                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes?q=Size-M"
-                                                class="_gray-darker search-link js-search-link" rel="nofollow">
-                                                M
-                                                <span class="magnitude">(5)</span>
-                                            </a>
-                                        </label>
-                                    </li>
-
-                                    <li>
-                                        <label class="facet-label" for="facet_input_69753_2">
-                                            <span class="custom-checkbox">
-                                                <input id="facet_input_69753_2"
-                                                    data-search-url="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes?q=Size-L"
-                                                    type="checkbox">
-                                                <span class="ps-shown-by-js"><i
-                                                        class="material-icons rtl-no-flip checkbox-checked">&#xE5CA;</i></span>
-                                            </span>
-
-                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes?q=Size-L"
-                                                class="_gray-darker search-link js-search-link" rel="nofollow">
-                                                L
-                                                <span class="magnitude">(5)</span>
-                                            </a>
-                                        </label>
-                                    </li>
-
-                                    <li>
-                                        <label class="facet-label" for="facet_input_69753_3">
-                                            <span class="custom-checkbox">
-                                                <input id="facet_input_69753_3"
-                                                    data-search-url="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes?q=Size-XL"
-                                                    type="checkbox">
-                                                <span class="ps-shown-by-js"><i
-                                                        class="material-icons rtl-no-flip checkbox-checked">&#xE5CA;</i></span>
-                                            </span>
-
-                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes?q=Size-XL"
-                                                class="_gray-darker search-link js-search-link" rel="nofollow">
-                                                XL
-                                                <span class="magnitude">(6)</span>
-                                            </a>
-                                        </label>
-                                    </li>
-                                </ul>
-
-
-                            </section>
-                            <section class="facet clearfix">
-                                <p class="h6 facet-title hidden-sm-down">Color</p>
-
-                                <div class="title hidden-md-up" data-target="#facet_90028" data-toggle="collapse">
-                                    <p class="h6 facet-title">Color</p>
-                                    <span class="float-xs-right">
-                                        <span class="navbar-toggler collapse-icons">
-                                            <i class="material-icons add">&#xE145;</i>
-                                            <i class="material-icons remove">&#xE15B;</i>
-                                        </span>
-                                    </span>
-                                </div>
-
-
-                                <ul id="facet_90028" class="collapse">
-
-                                    <li>
-                                        <label class="facet-label" for="facet_input_90028_0">
-                                            <span class="custom-checkbox">
-                                                <input id="facet_input_90028_0"
-                                                    data-search-url="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes?q=Color-Grey"
-                                                    type="checkbox">
-                                                <span class="color" style="background-color:#AAB2BD"></span>
-                                            </span>
-
-                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes?q=Color-Grey"
-                                                class="_gray-darker search-link js-search-link" rel="nofollow">
-                                                Grey
-                                                <span class="magnitude">(1)</span>
-                                            </a>
-                                        </label>
-                                    </li>
-
-                                    <li>
-                                        <label class="facet-label" for="facet_input_90028_1">
-                                            <span class="custom-checkbox">
-                                                <input id="facet_input_90028_1"
-                                                    data-search-url="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes?q=Color-White"
-                                                    type="checkbox">
-                                                <span class="color" style="background-color:#ffffff"></span>
-                                            </span>
-
-                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes?q=Color-White"
-                                                class="_gray-darker search-link js-search-link" rel="nofollow">
-                                                White
-                                                <span class="magnitude">(5)</span>
-                                            </a>
-                                        </label>
-                                    </li>
-
-                                    <li>
-                                        <label class="facet-label" for="facet_input_90028_2">
-                                            <span class="custom-checkbox">
-                                                <input id="facet_input_90028_2"
-                                                    data-search-url="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes?q=Color-Red"
-                                                    type="checkbox">
-                                                <span class="color" style="background-color:#E84C3D"></span>
-                                            </span>
-
-                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes?q=Color-Red"
-                                                class="_gray-darker search-link js-search-link" rel="nofollow">
-                                                Red
-                                                <span class="magnitude">(2)</span>
-                                            </a>
-                                        </label>
-                                    </li>
-
-                                    <li>
-                                        <label class="facet-label" for="facet_input_90028_3">
-                                            <span class="custom-checkbox">
-                                                <input id="facet_input_90028_3"
-                                                    data-search-url="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes?q=Color-Black"
-                                                    type="checkbox">
-                                                <span class="color" style="background-color:#434A54"></span>
-                                            </span>
-
-                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes?q=Color-Black"
-                                                class="_gray-darker search-link js-search-link" rel="nofollow">
-                                                Black
-                                                <span class="magnitude">(7)</span>
-                                            </a>
-                                        </label>
-                                    </li>
-
-                                    <li>
-                                        <label class="facet-label" for="facet_input_90028_4">
-                                            <span class="custom-checkbox">
-                                                <input id="facet_input_90028_4"
-                                                    data-search-url="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes?q=Color-Camel"
-                                                    type="checkbox">
-                                                <span class="color" style="background-color:#C19A6B"></span>
-                                            </span>
-
-                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes?q=Color-Camel"
-                                                class="_gray-darker search-link js-search-link" rel="nofollow">
-                                                Camel
-                                                <span class="magnitude">(1)</span>
-                                            </a>
-                                        </label>
-                                    </li>
-
-                                    <li>
-                                        <label class="facet-label" for="facet_input_90028_5">
-                                            <span class="custom-checkbox">
-                                                <input id="facet_input_90028_5"
-                                                    data-search-url="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes?q=Color-Orange"
-                                                    type="checkbox">
-                                                <span class="color" style="background-color:#F39C11"></span>
-                                            </span>
-
-                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes?q=Color-Orange"
-                                                class="_gray-darker search-link js-search-link" rel="nofollow">
-                                                Orange
-                                                <span class="magnitude">(1)</span>
-                                            </a>
-                                        </label>
-                                    </li>
-
-                                    <li>
-                                        <label class="facet-label" for="facet_input_90028_6">
-                                            <span class="custom-checkbox">
-                                                <input id="facet_input_90028_6"
-                                                    data-search-url="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes?q=Color-Blue"
-                                                    type="checkbox">
-                                                <span class="color" style="background-color:#5D9CEC"></span>
-                                            </span>
-
-                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes?q=Color-Blue"
-                                                class="_gray-darker search-link js-search-link" rel="nofollow">
-                                                Blue
-                                                <span class="magnitude">(1)</span>
-                                            </a>
-                                        </label>
-                                    </li>
-
-                                    <li>
-                                        <label class="facet-label" for="facet_input_90028_7">
-                                            <span class="custom-checkbox">
-                                                <input id="facet_input_90028_7"
-                                                    data-search-url="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes?q=Color-Green"
-                                                    type="checkbox">
-                                                <span class="color" style="background-color:#A0D468"></span>
-                                            </span>
-
-                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes?q=Color-Green"
-                                                class="_gray-darker search-link js-search-link" rel="nofollow">
-                                                Green
-                                                <span class="magnitude">(2)</span>
-                                            </a>
-                                        </label>
-                                    </li>
-
-                                    <li>
-                                        <label class="facet-label" for="facet_input_90028_8">
-                                            <span class="custom-checkbox">
-                                                <input id="facet_input_90028_8"
-                                                    data-search-url="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes?q=Color-Yellow"
-                                                    type="checkbox">
-                                                <span class="color" style="background-color:#F1C40F"></span>
-                                            </span>
-
-                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes?q=Color-Yellow"
-                                                class="_gray-darker search-link js-search-link" rel="nofollow">
-                                                Yellow
-                                                <span class="magnitude">(4)</span>
-                                            </a>
-                                        </label>
-                                    </li>
-
-                                    <li>
-                                        <label class="facet-label" for="facet_input_90028_9">
-                                            <span class="custom-checkbox">
-                                                <input id="facet_input_90028_9"
-                                                    data-search-url="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes?q=Color-Brown"
-                                                    type="checkbox">
-                                                <span class="color" style="background-color:#964B00"></span>
-                                            </span>
-
-                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes?q=Color-Brown"
-                                                class="_gray-darker search-link js-search-link" rel="nofollow">
-                                                Brown
-                                                <span class="magnitude">(2)</span>
-                                            </a>
-                                        </label>
-                                    </li>
-
-                                    <li>
-                                        <label class="facet-label" for="facet_input_90028_10">
-                                            <span class="custom-checkbox">
-                                                <input id="facet_input_90028_10"
-                                                    data-search-url="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes?q=Color-Pink"
-                                                    type="checkbox">
-                                                <span class="color" style="background-color:#FCCACD"></span>
-                                            </span>
-
-                                            <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes?q=Color-Pink"
-                                                class="_gray-darker search-link js-search-link" rel="nofollow">
-                                                Pink
-                                                <span class="magnitude">(2)</span>
-                                            </a>
-                                        </label>
-                                    </li>
-                                </ul>
-
-
-                            </section> -->
+                            
                         </div>
 
                     </div>
@@ -491,17 +195,26 @@
                                                 $new = '';
                                               }
                                               if($row['discount'] > 0){
+                                                if ($_SESSION['lang'] === 'en') {
+                                                    $price = $row['price'];
+                                                    $do = "$";
+                                                    $euro ="";
+                                                }else{
+                                                    $price = $row['price_ge'];
+                                                    $do = "";
+                                                    $euro = "€";
+                                                }
                                                 $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
-                                                $giaDiscount = '<span class="sr-only">'.floatval($row['price']).'</span>
-                                                                <span class="regular-price">'.($row['price'] - ($row['discount']*$row['price'])/100) .'€</span>
+                                                $giaDiscount = '<span class="sr-only">'.floatval($price).'</span>
+                                                                <span class="regular-price">'.$do.''.($price - ($row['discount']*$price)/100).''.$euro.'</span>
                                                                 <span class="discount-percentage discount-product">'.$row['discount'].'</span>';
                                                            
                                               }else{
                                                 $discount = '';
                                                 $giaDiscount = '<span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">'.$row['price'].'</span>';
+                                                                <span itemprop="price" class="price">'.$do.''.floatval($price).''.$euro.'</span>';
                                               }
-                                              if($row['price']<=0 ||$row['price'] =='' ){
+                                              if($price<=0 ||$price =='' ){
                                                 $giaDiscount = ' ';
                                              }
                                              if ($_SESSION['lang'] === 'en') {
@@ -575,17 +288,26 @@
                                                 $new = '';
                                               }
                                               if($row['discount'] > 0){
+                                                if ($_SESSION['lang'] === 'en') {
+                                                    $price = $row['price'];
+                                                    $do = "$";
+                                                    $euro ="";
+                                                }else{
+                                                    $price = $row['price_ge'];
+                                                    $do = "";
+                                                    $euro = "€";
+                                                }
                                                 $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
-                                                $giaDiscount = '<span class="sr-only">'.floatval($row['price']).'</span>
-                                                                <span class="regular-price">'.($row['price'] - ($row['discount']*$row['price'])/100) .'€</span>
+                                                $giaDiscount = '<span class="sr-only">'.floatval($price).'</span>
+                                                                <span class="regular-price">'.$do.''.($price - ($row['discount']*$price)/100).''.$euro.'</span>
                                                                 <span class="discount-percentage discount-product">'.$row['discount'].'</span>';
                                                            
                                               }else{
                                                 $discount = '';
                                                 $giaDiscount = '<span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">'.floatval($row['price']).'</span>';
+                                                                <span itemprop="price" class="price">'.$do.''.floatval($price).''.$euro.'</span>';
                                               }
-                                              if($row['price']<=0 ||$row['price'] =='' ){
+                                              if($price<=0 ||$price =='' ){
                                                 $giaDiscount = ' ';
                                               }
                                               if ($_SESSION['lang'] === 'en') {
@@ -704,17 +426,26 @@
                                                 $new = '';
                                               }
                                               if($row['discount'] > 0){
+                                                if ($_SESSION['lang'] === 'en') {
+                                                    $price = $row['price'];
+                                                    $do = "$";
+                                                    $euro ="";
+                                                }else{
+                                                    $price = $row['price_ge'];
+                                                    $do = "";
+                                                    $euro = "€";
+                                                }
                                                 $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
-                                                $giaDiscount = '<span class="sr-only">'.floatval($row['price']).'</span>
-                                                                <span class="regular-price">'.($row['price'] - ($row['discount']*$row['price'])/100) .'€</span>
+                                                $giaDiscount = '<span class="sr-only">'.floatval($price).'</span>
+                                                                <span class="regular-price">'.$do.''.($price - ($row['discount']*$price)/100).''.$euro.'</span>
                                                                 <span class="discount-percentage discount-product">'.$row['discount'].'</span>';
                                                            
                                               }else{
                                                 $discount = '';
                                                 $giaDiscount = '<span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">'.floatval($row['price']).'</span>';
+                                                                <span itemprop="price" class="price">'.$do.''.floatval($price).''.$euro.'</span>';
                                               }
-                                              if($row['price']<=0 ||$row['price'] =='' ){
+                                              if($price<=0 ||$price =='' ){
                                                 $giaDiscount = ' ';
                                              }
                                              if ($_SESSION['lang'] === 'en') {
@@ -786,17 +517,26 @@
                                                 $new = '';
                                               }
                                               if($row['discount'] > 0){
+                                                if ($_SESSION['lang'] === 'en') {
+                                                    $price = $row['price'];
+                                                    $do = "$";
+                                                    $euro ="";
+                                                }else{
+                                                    $price = $row['price_ge'];
+                                                    $do = "";
+                                                    $euro = "€";
+                                                }
                                                 $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
-                                                $giaDiscount = '<span class="sr-only">'.floatval($row['price']).'</span>
-                                                                <span class="regular-price">'.($row['price'] - ($row['discount']*$row['price'])/100) .'€</span>
+                                                $giaDiscount = '<span class="sr-only">'.floatval($price).'</span>
+                                                                <span class="regular-price">'.$do.''.($price - ($row['discount']*$price)/100).''.$euro.'</span>
                                                                 <span class="discount-percentage discount-product">'.$row['discount'].'</span>';
                                                            
                                               }else{
                                                 $discount = '';
                                                 $giaDiscount = '<span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">'.floatval($row['price']).'</span>';
+                                                                <span itemprop="price" class="price">'.$do.''.floatval($price).''.$euro.'</span>';
                                               }
-                                              if($row['price']<=0 ||$row['price'] =='' ){
+                                              if($price<=0 ||$price =='' ){
                                                 $giaDiscount = ' ';
                                                 }
                                                 if ($_SESSION['lang'] === 'en') {
@@ -1049,16 +789,25 @@
                                             $new = '';
                                           }
                                           if($row['discount'] > 0){
+                                            if ($_SESSION['lang'] === 'en') {
+                                                $price = $row['price'];
+                                                $do = "$";
+                                                $euro ="";
+                                            }else{
+                                                $price = $row['price_ge'];
+                                                $do = "";
+                                                $euro = "€";
+                                            }
                                             $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
                                             $giaDiscount = ' <div class="product-price-and-shipping">
 
                                                             <span class="sr-only">Regular price</span>
-                                                            <span class="regular-price">'.floatval($row['price']).'</span>
+                                                            <span class="regular-price">'.floatval($price).'</span>
                                                             <span class="discount-percentage discount-product">-'.$row['discount'].'%</span>
 
 
                                                             <span class="sr-only">Price</span>
-                                                            <span itemprop="price" class="price">'.($row['price'] - ($row['discount']*$row['price'])/100) .'€</span>
+                                                            <span itemprop="price" class="price">'.$do.''.($price - ($row['discount']*$price)/100).''.$euro.'</span>
                                                         </div>';
                                           }else{
                                             $discount = '';
@@ -1066,12 +815,12 @@
                                     
 
                                                               <span class="sr-only">Price</span>
-                                                              <span itemprop="price" class="price">'.floatval($row['price']).'€</span>
+                                                              <span itemprop="price" class="price">'.$do.''.floatval($price).''.$euro.'</span>
                                                             
                                                             
                                                         </div>';
                                           }
-                                          if($row['price']<=0 ||$row['price'] =='' ){
+                                          if($price<=0 ||$price =='' ){
                                             $giaDiscount = ' ';
                                             }
                                             if ($_SESSION['lang'] === 'en') {

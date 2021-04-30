@@ -5,7 +5,7 @@
 <html lang="en">
 
 <head>
-    <base href="/site/">
+    <base href="/project_chay/site/">
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Hằng ELLA </title>
@@ -433,7 +433,7 @@
 
                                 <div class="infinitycontact-dec">
                                     <div class="contact-title"><?=$lang['callus']?></div>
-                                    <div class="contact-dec">+91 0123-456-789</div>
+                                    <div class="contact-dec">+49 176 46778998</div>
                                 </div>
 
                             </div>
@@ -454,7 +454,7 @@
 
                                     <div class="email-title"><?php echo $lang['mailus'] ?></div>
 
-                                    <div class="email-dec">admin@gmail.com</div>
+                                    <div class="email-dec">hangella1506@gmail.com</div>
 
                                 </div>
 
@@ -841,12 +841,14 @@
                                 <ul id="contact-footer" class="collapse">
                                     <li class="block">
                                         <div class="icon"><i class="material-icons">&#xE55F;</i></div>
-                                        <div class="data">Demo Shop<br /><?php echo $lang['unitedS'] ?></div>
+                                        <div class="data">Steinbreite 17a  
+37603 Holzminden<br /></div>
+<!-- <?php echo $lang['unitedS'] ?> -->
                                     </li>
                                     <li class="block">
                                         <div class="data">
                                             <div class="icon"><i class="material-icons">&#xE0CD;</i></div>
-                                            <span class="title"><?php echo $lang['callus'] ?></span> <span>+34 123-4567-890</span>
+                                            <span class="title"><?php echo $lang['callus'] ?></span> <span>+49 176 46778998</span>
                                         </div>
                                     </li>
                                     <li class="block">
@@ -856,7 +858,7 @@
                                     <li class="block">
                                         <div class="data">
                                             <div class="icon"><i class="material-icons">&#xE158;</i></div>
-                                            <a href="mailto:admin@gmail.com">admin@gmail.com</a>
+                                            <a href="mailto:admin@gmail.com">hangella1506@gmail.com </a>
                                         </div>
                                     </li>
                                 </ul>

@@ -22,7 +22,8 @@
                                         <th>Phone number</th>
                                         <th>Address</th>
                                         <th>Note</th>  
-                                        <th>Status</th>                                        
+                                        <th>Status</th>
+                                        <th>Payments</th>                                        
                                         <th>More Detail</th>
                                         </tr>
                                         </thead>
@@ -47,6 +48,7 @@
                                                         <td>'.$row['address'].'</td>
                                                         <td>'.$row['note'].'</td>
                                                         '.$status.'
+                                                        <td>'.$row['payments'].'</td>
                                                         <td><a name="" id="" class="btn btn-success" href="'.$linkDetail.'" role="button"><i class="fa fa-bookmark"></i></a></td>    
                                                     </tr>';
                                             }

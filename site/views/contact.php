@@ -11,8 +11,9 @@
                                              <div class="block">
                                                       <div class="icon"><i class="material-icons">&#xE55F;</i></div>
                                                       <div class="data">
-                                                               Demo Shop<br />
-                                                               <?=$lang['unitedS']?>
+                                                      Steinbreite 17a  
+37603 Holzminden<br />
+                                                               <!-- <?=$lang['unitedS']?> -->
                                                       </div>
                                              </div>
 
@@ -20,14 +21,14 @@
                                                       <div class="icon"><i class="material-icons">&#xE0CD;</i></div>
                                                       <div class="data">
                                                       <?=$lang['callus']?><br />
-                                                               <a href="tel:+34 123-4567-890">+34 123-4567-890</a>
+                                                               <a href="tel:+34 123-4567-890">+49 176 46778998</a>
                                                       </div>
                                              </div>
 
                                              <div class="block">
                                                       <div class="icon"><i class="material-icons">&#xE158;</i></div>
                                                       <div class="data email"><?=$lang['emailus']?><br /></div>
-                                                      <a href="mailto:admin@gmail.com">admin@gmail.com</a>
+                                                      <a href="mailto:admin@gmail.com">hangella1506@gmail.com </a>
                                              </div>
                                     </div>
                            </div>

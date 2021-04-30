@@ -13565,8 +13565,30 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 }
 
 #top-menu>li:hover>a {
-    color: #fa929d;
+    color: #17E9E0;
     transition: all 0.5s ease 0s
+}
+
+.impressum {
+    text-align: center;
+}
+
+.impressum p {
+    font-weight: bold;
+}
+
+.impressum span {
+    font-weight: 500;
+}
+
+.impressum div {
+    margin-top: 50px;
+    margin-left: 25%;
+}
+
+.impressum h1 {
+    font-size: 50px;
+    margin: 10px 0 40px;
 }
 
 #top-menu>li>a::before {
