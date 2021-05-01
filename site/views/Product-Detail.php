@@ -585,6 +585,8 @@ if(is_array($sp)){
                         </div><!-- /.modal-dialog -->
                     </div><!-- /.modal -->
                    </div>
+</div>
+</div>
                    <?php
 }else{
     echo 'Sản phẩm này không có !';

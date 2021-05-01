@@ -13753,7 +13753,8 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 .cartdislay {
     opacity: 1 !important;
     visibility: visible !important;
-    transform: translate(0, 0) !important
+    transform: translate(0, 0) !important;
+    overflow: hidden;
 }
 
 .cartcount {
@@ -18109,7 +18110,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 #index .container {
     max-width: 1500px;
-    overflow: hidden;
 }
 
 #_desktop_currency_selector .currency-selector>span {

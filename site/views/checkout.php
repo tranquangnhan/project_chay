@@ -133,7 +133,7 @@ $('.method').on('click', function() {
 			}
 			else
 			{
-				window.location= ("<?php echo ROOT_URL;?>/cam-on");                
+				window.location= ("<?php echo ROOT_URL;?>/donecheckout");                
 			}
 		}
 	  })
@@ -352,6 +352,7 @@ $('.method').on('click', function() {
                                  $tatcasp = $_SESSION['cart'];
                                  $sltotal = 0; 
                                  $tongtien = 0;
+								 $shoptotal = 0;
                                  $kq ='';
                                      
                                  $i = 0;
@@ -406,6 +407,7 @@ $('.method').on('click', function() {
                                  
                                  </li>';
                                  $tongtien =$do.''.$tongtien.''.$euro;
+								 $shoptotal += $motsp[5]*$motsp[1];
                                  }
                                  $kq .= '';
                                  echo $kq;
@@ -504,7 +506,7 @@ $('.method').on('click', function() {
                   payment: {
                       transactions: [
                           {
-                              amount: { total: '<?=$tongtien?>', currency: 'EUR' }
+                              amount: { total: '<?=$shoptotal?>', currency: 'EUR' }
                           }
                       ]
                   }
