@@ -881,7 +881,7 @@
                                         class="thumbnail product-thumbnail ">
 
                                         <img src="'.$img.'" alt="Pellentesque augue"
-                                            data-full-size-image-url="'.$img.'" width="120" height="130">
+                                            data-full-size-image-url="'.$img.'" class="img-deal">
                                         <img class="second_image img-responsive"
                                             src="'.$imgCover.'" alt="" title="" />
                                     </a>

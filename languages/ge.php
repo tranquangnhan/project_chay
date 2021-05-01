@@ -93,6 +93,14 @@
 		"lang_bs" => "Deutsch",
 		"lang"=>"Deutsche",
 		"resgistersucess"=>"Erfolg anmelden",
-		"returnpage"=>"Kehre zur vorherigen Seite zurück"
+		"returnpage"=>"Kehre zur vorherigen Seite zurück",
+		"firstname"=>"Vorname",
+		"lastname"=>"Nachname",
+		"phone"=>"Telefon",
+		"street"=>"Straße",
+		"housenumber"=>"Hausnummer",
+		"city"=>"Stadt",
+		"country"=>"Land",
+		"postcode"=>"Postleitzahl",
 	);
 ?>

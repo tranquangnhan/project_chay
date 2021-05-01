@@ -1,5 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i);
 @import url(https://fonts.googleapis.com/css?family=Philosopher:400,400i,700,700i);
+body,
+img {
+    max-width: 100%;
+}
+
 :root {
     --it-brand-primary: #17E9E0;
     --it-brand-secondary: #000
@@ -13793,7 +13798,7 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 
 #header .dropdown-menu-right .product-container .product .product-details {
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
     font-size: 14px;
     font-weight: 400
 }
@@ -18103,7 +18108,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 #index .container {
-    max-width: 1500px
+    max-width: 1500px;
+    overflow: hidden;
 }
 
 #_desktop_currency_selector .currency-selector>span {
@@ -22482,12 +22488,22 @@ html[xmlns] .flexslider .slides {
     cursor: default
 }
 
+.img-deal {
+    width: 100%;
+    min-height: 160px;
+    height: 160px;
+    object-fit: cover;
+}
+
 @media screen and (max-width:860px) {
     .flex-direction-nav .flex-prev {
         opacity: 1
     }
     .flex-direction-nav .flex-next {
         opacity: 1
+    }
+    .img-deal {
+        height: 300px;
     }
 }
 
@@ -22513,6 +22529,9 @@ html[xmlns] .flexslider .slides {
 }
 
 @media (max-width:479px) {
+    .img-deal {
+        height: 300px;
+    }
     .flexslider {
         width: 100%
     }
