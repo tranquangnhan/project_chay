@@ -17,7 +17,8 @@ $('.method').on('click', function() {
   // Validation
   var $cardInput = $('.input-fields input');
 
-  $('#customer-form').on('submit', function(e) {
+  $('#customer-form').on('submit', function(e) 
+  {
 	
 	var fname = $("#firstname").val();
    var lname = $("#lastname").val();
@@ -31,36 +32,20 @@ $('.method').on('click', function() {
    var postcode = $("#postcode").val();
    var note = $("#note").val();
    var e = $("#language").val();
-
-    if(fname == '' || lname == '' || phone == ''  || email == ""
-   || street == "" || housenumber == "" 
-   || city == "" || country == "" || postcode == ""){
-      if (e == 'English') {
-            Swal.fire({
-               icon: 'error',
-               title: 'Oops...',
-               text: 'Enter your input',
-            })
-         } else {
-            Swal.fire({
-               icon: 'error',
-               title: 'Oops...',
-               text: 'Geben Sie Ihre Eingabe ein',
-            })
-         }
-         return false;
-   }else{
-      $.ajax({
+   //Sai đoạn tham số rồi
+   // chỗ nào a
+   $.ajax({
 		type: "POST",
 		url: "<?php echo ROOT_URL;?>/saveorder",
-		data: {fname: fname,lname:lname, phone:phone,email:email,street: street,housenumber: housenumber,city: city,country: country,postcode:postcode,note: note},
+		data: {fname: fname,lname:lname, phone:phone,email:email,street: street,housenumber: housenumber,city: city,country: country,postcode:postcode,note:note},
 		dataType: "json",
 		cache: false,
 		success: function(data)
 		{
+         // console.log(data);
 			if(data.status != "200")
 			{
-            console.log(data);
+            
 				Swal.fire({
 				  icon: 'error',
 				  title: 'Oops...',
@@ -76,8 +61,27 @@ $('.method').on('click', function() {
 			}
 		}
 	});
-    return false;
-   }
+   //  if(fname == '' || lname == '' || phone == ''  || email == ""
+   // || street == "" || housenumber == "" 
+   // || city == "" || country == "" || postcode == ""){
+   //    if (e == 'English') {
+   //          Swal.fire({
+   //             icon: 'error',
+   //             title: 'Oops...',
+   //             text: 'Enter your input',
+   //          })
+   //       } else {
+   //          Swal.fire({
+   //             icon: 'error',
+   //             title: 'Oops...',
+   //             text: 'Geben Sie Ihre Eingabe ein',
+   //          })
+   //       }
+   //       return false;
+   // }else{
+      
+   //  return false;
+   // }
 
     
 	return false;
@@ -511,18 +515,13 @@ $('.method').on('click', function() {
               // executes the payment
               return actions.payment.execute().then(function() {
                   // make an ajax call for saving the payment info
-				  var fname = $("#firstname").val();
-              var lname = $("#lastname").val();
-				  var phone = $("#phone").val();
-				  var email = $("#email").val();
-				  var address = $("#address").val();
-				  var note = $("#note").val();
-				  console.log(data);
+				  
+
 				  
                   $.ajax({
 					type: "POST",
 					url: "<?php echo ROOT_URL;?>/paymentchecking",
-					data: {method: "paypal", fname: fname,lname:lname, phone: phone, email: email, address: address, note: note, paymentID: data.paymentID, payerID: data.payerID, token: data.paymentToken},
+					data: {method: "paypal", paymentID: data.paymentID, payerID: data.payerID, token: data.paymentToken},
 					dataType: "json",
 					cache: false,
 					success: function(data)

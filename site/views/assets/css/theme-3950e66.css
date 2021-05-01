@@ -10832,7 +10832,7 @@ body#checkout #cart-summary-product-list .media-body .product-price {
     padding: 15px;
     background-color: #fff;
     border: 1px solid #e5e5e5;
-    text-align: center
+    /* text-align: center */
 }
 
 .tabs .tab-pane {
