@@ -113,16 +113,17 @@
                                         }else{
                                           $new = '';
                                         }
+                                        if ($_SESSION['lang'] === 'en') {
+                                            $price = $row['price'];
+                                            $do = "$";
+                                            $euro ="";
+                                        }else{
+                                            $price = $row['price_ge'];
+                                            $do = "";
+                                            $euro = "€";
+                                        }
                                         if($row['discount'] > 0){
-                                            if ($_SESSION['lang'] === 'en') {
-                                                $price = $row['price'];
-                                                $do = "$";
-                                                $euro ="";
-                                            }else{
-                                                $price = $row['price_ge'];
-                                                $do = "";
-                                                $euro = "€";
-                                            }
+                                            
                                           $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
                                           $giaDiscount = ' <div class="product-price-and-shipping">
               
@@ -241,16 +242,16 @@
                                         }else{
                                           $new = '';
                                         }
+                                        if ($_SESSION['lang'] === 'en') {
+                                            $price = $row['price'];
+                                            $do = "$";
+                                            $euro ="";
+                                        }else{
+                                            $price = $row['price_ge'];
+                                            $do = "";
+                                            $euro = "€";
+                                        }
                                         if($row['discount'] > 0){
-                                            if ($_SESSION['lang'] === 'en') {
-                                                $price = $row['price'];
-                                                $do = "$";
-                                                $euro ="";
-                                            }else{
-                                                $price = $row['price_ge'];
-                                                $do = "";
-                                                $euro = "€";
-                                            }
                                           $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
                                           $giaDiscount = ' <div class="product-price-and-shipping">
               
@@ -369,16 +370,16 @@
                                         }else{
                                           $new = '';
                                         }
+                                        if ($_SESSION['lang'] === 'en') {
+                                            $price = $row['price'];
+                                            $do = "$";
+                                            $euro ="";
+                                        }else{
+                                            $price = $row['price_ge'];
+                                            $do = "";
+                                            $euro = "€";
+                                        }
                                         if($row['discount'] > 0){
-                                            if ($_SESSION['lang'] === 'en') {
-                                                $price = $row['price'];
-                                                $do = "$";
-                                                $euro ="";
-                                            }else{
-                                                $price = $row['price_ge'];
-                                                $do = "";
-                                                $euro = "€";
-                                            }
                                           $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
                                           $giaDiscount = ' <div class="product-price-and-shipping">
               
@@ -522,16 +523,16 @@
                             }else{
                               $new = '';
                             }
+                            if ($_SESSION['lang'] === 'en') {
+                                $price = $row['price'];
+                                $do = "$";
+                                $euro ="";
+                            }else{
+                                $price = $row['price_ge'];
+                                $do = "";
+                                $euro = "€";
+                            }
                             if($row['discount'] > 0){
-                                if ($_SESSION['lang'] === 'en') {
-                                    $price = $row['price'];
-                                    $do = "$";
-                                    $euro ="";
-                                }else{
-                                    $price = $row['price_ge'];
-                                    $do = "";
-                                    $euro = "€";
-                                }
                               $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
                               $giaDiscount = ' <div class="product-price-and-shipping">
   
@@ -827,16 +828,16 @@
             }else{
               $new = '';
             }
+            if ($_SESSION['lang'] === 'en') {
+                $price = $row['price'];
+                $do = "$";
+                $euro ="";
+            }else{
+                $price = $row['price_ge'];
+                $do = "";
+                $euro = "€";
+            }
             if($row['discount'] > 0){
-                if ($_SESSION['lang'] === 'en') {
-                    $price = $row['price'];
-                    $do = "$";
-                    $euro ="";
-                }else{
-                    $price = $row['price_ge'];
-                    $do = "";
-                    $euro = "€";
-                }
               $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
               $giaDiscount = ' <div class="product-price-and-shipping">
 

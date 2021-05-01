@@ -194,16 +194,16 @@
                                               }else{
                                                 $new = '';
                                               }
+                                              if ($_SESSION['lang'] === 'en') {
+                                                  $price = $row['price'];
+                                                  $do = "$";
+                                                  $euro ="";
+                                              }else{
+                                                  $price = $row['price_ge'];
+                                                  $do = "";
+                                                  $euro = "€";
+                                              }
                                               if($row['discount'] > 0){
-                                                if ($_SESSION['lang'] === 'en') {
-                                                    $price = $row['price'];
-                                                    $do = "$";
-                                                    $euro ="";
-                                                }else{
-                                                    $price = $row['price_ge'];
-                                                    $do = "";
-                                                    $euro = "€";
-                                                }
                                                 $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
                                                 $giaDiscount = '<span class="sr-only">'.floatval($price).'</span>
                                                                 <span class="regular-price">'.$do.''.($price - ($row['discount']*$price)/100).''.$euro.'</span>
@@ -287,16 +287,16 @@
                                               }else{
                                                 $new = '';
                                               }
+                                              if ($_SESSION['lang'] === 'en') {
+                                                  $price = $row['price'];
+                                                  $do = "$";
+                                                  $euro ="";
+                                              }else{
+                                                  $price = $row['price_ge'];
+                                                  $do = "";
+                                                  $euro = "€";
+                                              }
                                               if($row['discount'] > 0){
-                                                if ($_SESSION['lang'] === 'en') {
-                                                    $price = $row['price'];
-                                                    $do = "$";
-                                                    $euro ="";
-                                                }else{
-                                                    $price = $row['price_ge'];
-                                                    $do = "";
-                                                    $euro = "€";
-                                                }
                                                 $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
                                                 $giaDiscount = '<span class="sr-only">'.floatval($price).'</span>
                                                                 <span class="regular-price">'.$do.''.($price - ($row['discount']*$price)/100).''.$euro.'</span>
@@ -425,16 +425,16 @@
                                               }else{
                                                 $new = '';
                                               }
+                                              if ($_SESSION['lang'] === 'en') {
+                                                  $price = $row['price'];
+                                                  $do = "$";
+                                                  $euro ="";
+                                              }else{
+                                                  $price = $row['price_ge'];
+                                                  $do = "";
+                                                  $euro = "€";
+                                              }
                                               if($row['discount'] > 0){
-                                                if ($_SESSION['lang'] === 'en') {
-                                                    $price = $row['price'];
-                                                    $do = "$";
-                                                    $euro ="";
-                                                }else{
-                                                    $price = $row['price_ge'];
-                                                    $do = "";
-                                                    $euro = "€";
-                                                }
                                                 $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
                                                 $giaDiscount = '<span class="sr-only">'.floatval($price).'</span>
                                                                 <span class="regular-price">'.$do.''.($price - ($row['discount']*$price)/100).''.$euro.'</span>
@@ -516,16 +516,16 @@
                                               }else{
                                                 $new = '';
                                               }
+                                              if ($_SESSION['lang'] === 'en') {
+                                                  $price = $row['price'];
+                                                  $do = "$";
+                                                  $euro ="";
+                                              }else{
+                                                  $price = $row['price_ge'];
+                                                  $do = "";
+                                                  $euro = "€";
+                                              }
                                               if($row['discount'] > 0){
-                                                if ($_SESSION['lang'] === 'en') {
-                                                    $price = $row['price'];
-                                                    $do = "$";
-                                                    $euro ="";
-                                                }else{
-                                                    $price = $row['price_ge'];
-                                                    $do = "";
-                                                    $euro = "€";
-                                                }
                                                 $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
                                                 $giaDiscount = '<span class="sr-only">'.floatval($price).'</span>
                                                                 <span class="regular-price">'.$do.''.($price - ($row['discount']*$price)/100).''.$euro.'</span>
@@ -788,16 +788,16 @@
                                           }else{
                                             $new = '';
                                           }
+                                          if ($_SESSION['lang'] === 'en') {
+                                              $price = $row['price'];
+                                              $do = "$";
+                                              $euro ="";
+                                          }else{
+                                              $price = $row['price_ge'];
+                                              $do = "";
+                                              $euro = "€";
+                                          }
                                           if($row['discount'] > 0){
-                                            if ($_SESSION['lang'] === 'en') {
-                                                $price = $row['price'];
-                                                $do = "$";
-                                                $euro ="";
-                                            }else{
-                                                $price = $row['price_ge'];
-                                                $do = "";
-                                                $euro = "€";
-                                            }
                                             $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
                                             $giaDiscount = ' <div class="product-price-and-shipping">
 
