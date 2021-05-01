@@ -12933,6 +12933,9 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
     #footer {
         background-size: 100% 360px;
     }
+    .logoutH {
+        margin-top: 17px;
+    }
 }
 
 @media (max-width:767px) {
@@ -12947,6 +12950,9 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
     .footer-container .links .h3 {
         line-height: 1.5;
         font-size: 16px
+    }
+    .logoutH {
+        margin-top: 17px;
     }
 }
 
