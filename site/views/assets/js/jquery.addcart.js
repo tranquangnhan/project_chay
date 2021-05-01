@@ -7,9 +7,13 @@ function cart() {
     if ($(".dropdown-menu-right").hasClass('cartdislay') == false) {
         $(".dropdown-menu-right")[0].classList.add('cartdislay');
         $("span.cart-products-count")[0].classList.add('cartcount');
+        $(".dropdown-menu-right")[1].classList.add('cartdislay');
+        $("span.cart-products-count")[1].classList.add('cartcount');
     } else {
         $(".dropdown-menu-right")[0].classList.remove('cartdislay');
         $("span.cart-products-count")[0].classList.remove('cartcount');
+        $(".dropdown-menu-right")[1].classList.remove('cartdislay');
+        $("span.cart-products-count")[1].classList.remove('cartcount');
     }
 
 }

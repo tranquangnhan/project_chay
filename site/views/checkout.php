@@ -133,7 +133,7 @@ $('.method').on('click', function() {
 			}
 			else
 			{
-				window.location= ("<?php echo ROOT_URL;?>/cam-on");                
+				window.location= ("<?php echo ROOT_URL;?>/donecheckout");                
 			}
 		}
 	  })
@@ -182,12 +182,12 @@ $('.method').on('click', function() {
                                     <?=$lang['fullname']?>
                                     </label>
                                     <div class="col-md-3">
-                                          <input class="form-control" name="firstname" id="firstname" type="text" value="" placeholder="First name" required>
+                                          <input class="form-control" name="firstname" id="firstname" type="text" value="" placeholder="<?=$lang['firstname']?>" required>
                                        
                                     </div>
                                     <div class="col-md-3">
                                           
-                                       <input class="form-control" name="lastname" id="lastname" type="text" value="" placeholder="Last name" required>
+                                       <input class="form-control" name="lastname" id="lastname" type="text" value="" placeholder="<?=$lang['lastname']?>" required>
                                     </div>
                                     <div class="col-md-3 form-control-comment">
                                     </div>
@@ -197,7 +197,7 @@ $('.method').on('click', function() {
                                     <?=$lang['phone']?>
                                     </label>
                                     <div class="col-md-6">
-                                       <input class="form-control" name="phone" id="phone" type="number" value="" placeholder="Phone"
+                                       <input class="form-control" name="phone" id="phone" type="number" value="" placeholder="<?=$lang['phone']?>"
                                           required>
                                     </div>
                                     <div class="col-md-3 form-control-comment">
@@ -208,7 +208,7 @@ $('.method').on('click', function() {
                                     <?=$lang['email']?>
                                     </label>
                                     <div class="col-md-6">
-                                       <input class="form-control" name="email" id="email" type="email" value="" placeholder="Email address"
+                                       <input class="form-control" name="email" id="email" type="email" value="" placeholder="Email"
                                           required>
                                     </div>
                                     <div class="col-md-3 form-control-comment">
@@ -219,22 +219,22 @@ $('.method').on('click', function() {
                                     <?=$lang['address']?>
                                     </label>
                                     <div class="col-md-3">
-                                       <input class="form-control" name="address1" id="street" type="text" value="" required placeholder="Street">
+                                       <input class="form-control" name="address1" id="street" type="text" value="" required placeholder="<?=$lang['street']?>">
                                     </div>
                                     
                                     <div class="col-md-3">
-                                       <input class="form-control" name="address2" id="housenumber" type="text" value="" required placeholder="House number">
+                                       <input class="form-control" name="address2" id="housenumber" type="text" value="" required placeholder="<?=$lang['housenumber']?>">
                                     </div>
                                  </div>
                                  <div class="form-group row ">
                                     <label class="col-md-3 form-control-label required">
                                     </label>
                                     <div class="col-md-3">
-                                       <input class="form-control" name="address3" id="city" type="text" value="" required placeholder="City">
+                                       <input class="form-control" name="address3" id="city" type="text" value="" required placeholder="<?=$lang['city']?>">
                                     </div>
                                     
                                     <div class="col-md-3">
-                                       <input class="form-control" name="address4" id="country" type="text" value="" required placeholder="Country">
+                                       <input class="form-control" name="address4" id="country" type="text" value="" required placeholder="<?=$lang['country']?>">
                                     </div>
                                  </div>
                                  <div class="form-group row ">
@@ -242,7 +242,7 @@ $('.method').on('click', function() {
                                     <?=$lang['postcode']?>
                                     </label>
                                     <div class="col-md-6">
-                                       <input class="form-control" name="postcode" id="postcode" type="text" value="" placeholder="Postcode"
+                                       <input class="form-control" name="postcode" id="postcode" type="text" value="" placeholder="<?=$lang['postcode']?>"
                                           required>
                                     </div>
                                     <div class="col-md-3 form-control-comment">
@@ -352,6 +352,7 @@ $('.method').on('click', function() {
                                  $tatcasp = $_SESSION['cart'];
                                  $sltotal = 0; 
                                  $tongtien = 0;
+								 $shoptotal = 0;
                                  $kq ='';
                                      
                                  $i = 0;
@@ -406,6 +407,7 @@ $('.method').on('click', function() {
                                  
                                  </li>';
                                  $tongtien =$do.''.$tongtien.''.$euro;
+								 $shoptotal += $motsp[5]*$motsp[1];
                                  }
                                  $kq .= '';
                                  echo $kq;
@@ -504,7 +506,7 @@ $('.method').on('click', function() {
                   payment: {
                       transactions: [
                           {
-                              amount: { total: '<?=$tongtien?>', currency: 'EUR' }
+                              amount: { total: '<?=$shoptotal?>', currency: 'EUR' }
                           }
                       ]
                   }

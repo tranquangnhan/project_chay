@@ -46,6 +46,7 @@
             case "privacypolicy":$this->privacypolicy();break;
             case "termofservice":$this->termofservice();break;
 			case "notification":$this->notification();break;
+			case "donecheckout": $this->donecheckout();break;
            }
            
         }
@@ -362,8 +363,8 @@
 		  "purchase_currency": "EUR",
 		  "locale": "en-GB",
 		  "merchant_urls": {
-			"place_order": "https://shopdemo.vcfmedia.com/verifyklarna",
-			"terms": "https://www.example.com/terms.php"
+			"place_order": "'.ROOT_URL.'/verifyklarna",
+			"terms": "'.ROOT_URL.'/terms"
 		  },
 		  "items": [
 			'.$itemtext.'
@@ -462,9 +463,9 @@
 	 function saveBill()
 	 {
 		if(isset($_POST['continue'])){
-	
-			$fname = trim(strip_tags($_POST['fname']));
-			$lname = trim(strip_tags($_POST['lname']));
+
+		$fname = trim(strip_tags($_POST['fname']));
+		$lname = trim(strip_tags($_POST['lname']));
 		$email = trim(strip_tags($_POST['email']));
 		$phone = trim(strip_tags($_POST['phone']));
 		$address = trim(strip_tags($_POST['address']));
@@ -487,7 +488,7 @@
 			  $giohang = $_SESSION['cart'];
 			  $this->model->luugiohangnhe($idDH, $giohang);
 			  unset($_SESSION['cart']);
-			  header('location: '.ROOT_URL.'/cam-on');
+			  header('location: '.ROOT_URL.'/donecheckout');
 		   }  
 			   
 		}
@@ -631,6 +632,10 @@
 			$thongbao = "no notification";
 		}
 		require_once "views/thankyou.php";
+	 }
+	 function donecheckout(){
+		$viewFile ="views/donecheckout.php";
+		require_once "views/layout.php";
 	 }
 }
    ?>

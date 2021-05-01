@@ -37,7 +37,7 @@ if(is_array($sp)){
 
                                         <img id="zoom" class="js-qv-product-cover zoomLens"
                                             src="<?=$avt?>"
-                                            alt="" title="" height="450" style="width:100%;object-fit:cover" itemprop="image">
+                                            alt="" title="" height="600" style="min-height:400px; width:100%;object-fit:cover" itemprop="image">
 
                                         <div class="layer hidden-sm-down" data-toggle="modal"
                                             data-target="#product-modal">

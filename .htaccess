@@ -25,6 +25,7 @@ RewriteRule ^term-of-services$ /project_chay/site/?act=termofservice [L]
 RewriteRule ^impressum$ /project_chay/site/?act=impressum [L]
 RewriteRule ^privacy$ /project_chay/site/?act=privacypolicy [L]
 RewriteRule ^notification$ /project_chay/site/?act=notification [L]
+RewriteRule ^donecheckout$ /project_chay/site/?act=donecheckout [L]
 
 RewriteRule ^product$ /project_chay/site/?act=product [L]
 RewriteRule ^lang/(.*)$ /project_chay/site/?lang=$1 [L]

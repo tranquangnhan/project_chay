@@ -94,6 +94,14 @@
 		"lang_bs" => "Deutsch",
 		"lang"=>"English",
 		"resgistersucess"=>"Sign up success",
-		"returnpage"=>"return to the previous page"
+		"returnpage"=>"return to the previous page",
+		"firstname"=>"firstname",
+		"lastname"=>"lastname",
+		"phone"=>"phone",
+		"street"=>"street",
+		"housenumber"=>"house number",
+		"city"=>"city",
+		"country"=>"country",
+		"postcode"=>"postcode"
 	);
 ?>

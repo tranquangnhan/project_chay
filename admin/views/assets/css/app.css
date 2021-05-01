@@ -6284,3 +6284,7 @@ div.hopscotch-bubble .hopscotch-content {
 .hidden {
     display: none;
 }
+
+a#cke_Upload_463 {
+    display: none;
+}
