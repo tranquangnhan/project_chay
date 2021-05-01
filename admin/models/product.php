@@ -7,10 +7,10 @@ class Model_product extends Model_db{
         return $this->result1(0,$sql);
     }
     
-    function addNewProduct($name,$name_ge,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$color,$Description,$Description_ge,$Properties,$Properties_ge)
+    function addNewProduct($name,$name_ge,$slug,$price,$price_ge,$discount,$imgs,$IDCate,$hot,$size,$color,$Description,$Description_ge,$Properties,$Properties_ge)
     {
-        $sql = "INSERT INTO product(name,name_ge,slug,price,discount,image_list,catalog_id,hot,size,color,description,description_ge,properties,properties_ge) VALUE(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-        return $this->getLastId($sql,$name,$name_ge,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$color,$Description,$Description_ge,$Properties,$Properties_ge);
+        $sql = "INSERT INTO product(name,name_ge,slug,price,price_ge,discount,image_list,catalog_id,hot,size,color,description,description_ge,properties,properties_ge) VALUE(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        return $this->getLastId($sql,$name,$name_ge,$slug,$price,$price_ge,$discount,$imgs,$IDCate,$hot,$size,$color,$Description,$Description_ge,$Properties,$Properties_ge);
     }
 
     function deleteProduct($id)
@@ -19,15 +19,15 @@ class Model_product extends Model_db{
         return $this->exec1($sql,$id);
     }
 
-    function editProduct($name,$name_ge,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$color,$Description,$Description_ge,$Properties,$Properties_ge,$id){
+    function editProduct($name,$name_ge,$slug,$price,$price_ge,$discount,$imgs,$IDCate,$hot,$size,$color,$Description,$Description_ge,$Properties,$Properties_ge,$id){
         if($imgs == "")
         {
-            $sql = "UPDATE product SET name= ?,name_ge=?,slug=?,price=?,discount=?,catalog_id=?,hot=?,size=?,color=?,description=?,description_ge=?,properties=?,properties_ge=? WHERE id=?";
-            return $this->exec1($sql,$name,$name_ge,$slug,$price,$discount,$IDCate,$hot,$size,$color,$Description,$Description_ge,$Properties,$Properties_ge,$id);
+            $sql = "UPDATE product SET name= ?,name_ge=?,slug=?,price=?,price_ge=?,discount=?,catalog_id=?,hot=?,size=?,color=?,description=?,description_ge=?,properties=?,properties_ge=? WHERE id=?";
+            return $this->exec1($sql,$name,$name_ge,$slug,$price,$price_ge,$discount,$IDCate,$hot,$size,$color,$Description,$Description_ge,$Properties,$Properties_ge,$id);
         }else
         {
-            $sql = "UPDATE product SET name= ?,name_ge=?,slug=?,price=?,discount=?,image_list=?,catalog_id=?,hot=?,size=?,color=?,description=?,description_ge=?,properties=?,properties_ge=? WHERE id=?";
-            return $this->exec1($sql,$name,$name_ge,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$color,$Description,$Description_ge,$Properties,$Properties_ge,$id);
+            $sql = "UPDATE product SET name= ?,name_ge=?,slug=?,price=?,price_ge=?,discount=?,image_list=?,catalog_id=?,hot=?,size=?,color=?,description=?,description_ge=?,properties=?,properties_ge=? WHERE id=?";
+            return $this->exec1($sql,$name,$name_ge,$slug,$price,$price_ge,$discount,$imgs,$IDCate,$hot,$size,$color,$Description,$Description_ge,$Properties,$Properties_ge,$id);
         }
     }
 
@@ -140,7 +140,7 @@ class Model_product extends Model_db{
         $sql = "SELECT * FROM product WHERE id != 0 ";
         if ($CurrentPage !== 0)
         {
-            $sql .= " GROUP BY id LIMIT ".($CurrentPage - 1) * PAGE_SIZE.", ".PAGE_SIZE;
+            $sql .= " GROUP BY id order by id desc LIMIT ".($CurrentPage - 1) * PAGE_SIZE.", ".PAGE_SIZE;
         }
         return $this->result1(0,$sql);
     }

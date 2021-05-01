@@ -19,22 +19,48 @@ $('.method').on('click', function() {
 
   $('#customer-form').on('submit', function(e) {
 	
-	var name = $("#name").val();
-  var phone = $("#phone").val();
-  var email = $("#email").val();
-  var address = $("#address").val();
-  var note = $("#note").val();
-	
-	$.ajax({
+	var fname = $("#firstname").val();
+   var lname = $("#lastname").val();
+   var phone = $("#phone").val();
+   var email = $("#email").val();
+   // var address = $("#address").val();
+   var street = $("#street").val();
+   var housenumber = $("#housenumber").val();
+   var city = $("#city").val();
+   var country = $("#country").val();
+   var postcode = $("#postcode").val();
+   var note = $("#note").val();
+   var e = $("#language").val();
+
+    if(fname == '' || lname == '' || phone == ''  || email == ""
+   || street == "" || housenumber == "" 
+   || city == "" || country == "" || postcode == ""){
+      if (e == 'English') {
+            Swal.fire({
+               icon: 'error',
+               title: 'Oops...',
+               text: 'Enter your input',
+            })
+         } else {
+            Swal.fire({
+               icon: 'error',
+               title: 'Oops...',
+               text: 'Geben Sie Ihre Eingabe ein',
+            })
+         }
+         return false;
+   }else{
+      $.ajax({
 		type: "POST",
 		url: "<?php echo ROOT_URL;?>/saveorder",
-		data: {name: name, phone:phone,email,email,address:address,note: note},
+		data: {fname: fname,lname:lname, phone:phone,email:email,street: street,housenumber: housenumber,city: city,country: country,postcode:postcode,note: note},
 		dataType: "json",
 		cache: false,
 		success: function(data)
 		{
 			if(data.status != "200")
 			{
+            console.log(data);
 				Swal.fire({
 				  icon: 'error',
 				  title: 'Oops...',
@@ -50,7 +76,9 @@ $('.method').on('click', function() {
 			}
 		}
 	});
-	
+    return false;
+   }
+
     
 	return false;
   });
@@ -149,9 +177,13 @@ $('.method').on('click', function() {
                                     <label class="col-md-3 form-control-label required">
                                     <?=$lang['fullname']?>
                                     </label>
-                                    <div class="col-md-6">
-                                       <input class="form-control" name="name" id="name" type="text" value=" <?php if(isset($_SESSION['suser'])) echo $_SESSION['suser'];?>"
-                                          required>
+                                    <div class="col-md-3">
+                                          <input class="form-control" name="firstname" id="firstname" type="text" value="" placeholder="First name" required>
+                                       
+                                    </div>
+                                    <div class="col-md-3">
+                                          
+                                       <input class="form-control" name="lastname" id="lastname" type="text" value="" placeholder="Last name" required>
                                     </div>
                                     <div class="col-md-3 form-control-comment">
                                     </div>
@@ -161,7 +193,7 @@ $('.method').on('click', function() {
                                     <?=$lang['phone']?>
                                     </label>
                                     <div class="col-md-6">
-                                       <input class="form-control" name="phone" id="phone" type="number" value=""
+                                       <input class="form-control" name="phone" id="phone" type="number" value="" placeholder="Phone"
                                           required>
                                     </div>
                                     <div class="col-md-3 form-control-comment">
@@ -172,7 +204,7 @@ $('.method').on('click', function() {
                                     <?=$lang['email']?>
                                     </label>
                                     <div class="col-md-6">
-                                       <input class="form-control" name="email" id="email" type="email" value=""
+                                       <input class="form-control" name="email" id="email" type="email" value="" placeholder="Email address"
                                           required>
                                     </div>
                                     <div class="col-md-3 form-control-comment">
@@ -182,13 +214,37 @@ $('.method').on('click', function() {
                                     <label class="col-md-3 form-control-label required">
                                     <?=$lang['address']?>
                                     </label>
+                                    <div class="col-md-3">
+                                       <input class="form-control" name="address1" id="street" type="text" value="" required placeholder="Street">
+                                    </div>
+                                    
+                                    <div class="col-md-3">
+                                       <input class="form-control" name="address2" id="housenumber" type="text" value="" required placeholder="House number">
+                                    </div>
+                                 </div>
+                                 <div class="form-group row ">
+                                    <label class="col-md-3 form-control-label required">
+                                    </label>
+                                    <div class="col-md-3">
+                                       <input class="form-control" name="address3" id="city" type="text" value="" required placeholder="City">
+                                    </div>
+                                    
+                                    <div class="col-md-3">
+                                       <input class="form-control" name="address4" id="country" type="text" value="" required placeholder="Country">
+                                    </div>
+                                 </div>
+                                 <div class="form-group row ">
+                                    <label class="col-md-3 form-control-label required">
+                                    <?=$lang['postcode']?>
+                                    </label>
                                     <div class="col-md-6">
-                                       <input class="form-control" name="address" id="address" type="text" value=""
+                                       <input class="form-control" name="postcode" id="postcode" type="text" value="" placeholder="Postcode"
                                           required>
                                     </div>
                                     <div class="col-md-3 form-control-comment">
                                     </div>
                                  </div>
+                                 
                                  <div class="form-group row ">
                                     <label class="col-md-3 form-control-label required">
                                     <?=$lang['note']?>
@@ -201,6 +257,7 @@ $('.method').on('click', function() {
                                  </div>
                               </section>
                               <footer class="form-footer clearfix">
+                                 <input type="hidden" id="language" value="<?=$lang['lang']?>">
                                  <input type="hidden" name="submitCreate" value="1">
                                  <button style="" class="continue btn btn-primary float-xs-right" name="continue"
                                     data-link-action="register-new-customer" id="btn-next" type="submit" value="1" >
@@ -302,10 +359,18 @@ $('.method').on('click', function() {
                                      $tongtien += $motsp[5]*$motsp[1];
                                      $name = $motsp[4];
                                      $id = $motsp[0];
-                                     $gia = $motsp[5];
                                      $slmotsp = $motsp[1];
                                      $size = $motsp[2];
                                      $mau = $motsp[3];
+                                     if ($_SESSION['lang'] === 'en') {
+                                       $gia ="$".$motsp[5];
+                                       $do = "$";
+                                        $euro ="";
+                                   }else{
+                                       $gia = $motsp[5]."€";
+                                       $do = "";
+                                       $euro = "€";
+                                   }
                                      if($size != 'null'){
                                          $size = '  <span class="label">Size: '.$size .'</span>';
                                      }else{
@@ -328,7 +393,7 @@ $('.method').on('click', function() {
                                      <div class="media-body">
                                          <span class="product-name">'.$name.'</span>
                                          <span class="product-quantity">x'.$slmotsp.'</span>
-                                         <span class="product-price float-xs-right">'.$gia.'€</span>
+                                         <span class="product-price float-xs-right">'.$gia.'</span>
                                          '. $size .'
                                          '. $mau .'
                                          <br />
@@ -336,6 +401,7 @@ $('.method').on('click', function() {
                                      </div>
                                  
                                  </li>';
+                                 $tongtien =$do.''.$tongtien.''.$euro;
                                  }
                                  $kq .= '';
                                  echo $kq;
@@ -344,7 +410,7 @@ $('.method').on('click', function() {
                                  $kq = '  <div id="_desktop_cart">
                                              <div class="shopping-cart">
                                                  <div class="blockcart cart-preview inactive"
-                                                     data-refresh-url="//infinitytemplate.com/Prestashop/PRS01/PRS012/en/module/ps_shoppingcart/ajax">
+                                                     data-refresh-url="">
                                                      <div class="header">
                                                          <div class="cart-link">
                                                              <a rel="nofollow">
@@ -356,7 +422,7 @@ $('.method').on('click', function() {
                                                          <div class="dropdown-menu dropdown-menu-right">
                                  
                                                              <li class="cart-det2"
-                                                                 data-refresh-url="//infinitytemplate.com/Prestashop/PRS01/PRS012/en/cart?ajax=1&action=refresh">
+                                                                 data-refresh-url="">
                                                                  <span class="no-items">Your cart is empty!</span>
                                                          </div>
                                                      </div>
@@ -375,7 +441,7 @@ $('.method').on('click', function() {
                   <div class="card-block ">
                      <div class="cart-summary-line cart-total">
                         <span class="label"><?=$lang['total']?> </span>
-                        <span class="value"><?=$tongtien?>€</span>
+                        <span class="value"><?=$tongtien?></span>
                      </div>
                   </div>
                   <hr class="separator">
@@ -387,21 +453,21 @@ $('.method').on('click', function() {
                   <ul>
                      <li>
                         <div class="block-reassurance-item">
-                           <img src="https://infinitytemplate.com/Prestashop/PRS01/PRS012/modules/blockreassurance/img/ic_verified_user_black_36dp_1x.png"
+                           <img src="views/assets/img/ic_verified_user_black_36dp_1x.png"
                               alt="Security policy (edit with Customer reassurance module)">
                            <span class="h6"><?=$lang['security']?></span>
                         </div>
                      </li>
                      <li>
                         <div class="block-reassurance-item">
-                           <img src="https://infinitytemplate.com/Prestashop/PRS01/PRS012/modules/blockreassurance/img/ic_local_shipping_black_36dp_1x.png"
+                           <img src="views/assets/img/ic_local_shipping_black_36dp_1x.png"
                               alt="Delivery policy (edit with Customer reassurance module)">
                            <span class="h6"><?=$lang['delivery']?></span>
                         </div>
                      </li>
                      <li>
                         <div class="block-reassurance-item">
-                           <img src="https://infinitytemplate.com/Prestashop/PRS01/PRS012/modules/blockreassurance/img/ic_swap_horiz_black_36dp_1x.png"
+                           <img src="views/assets/img/ic_swap_horiz_black_36dp_1x.png"
                               alt="Return policy (edit with Customer reassurance module)">
                            <span class="h6"><?=$lang['return']?></span>
                         </div>
@@ -445,7 +511,8 @@ $('.method').on('click', function() {
               // executes the payment
               return actions.payment.execute().then(function() {
                   // make an ajax call for saving the payment info
-				  var name = $("#name").val();
+				  var fname = $("#firstname").val();
+              var lname = $("#lastname").val();
 				  var phone = $("#phone").val();
 				  var email = $("#email").val();
 				  var address = $("#address").val();
@@ -455,7 +522,7 @@ $('.method').on('click', function() {
                   $.ajax({
 					type: "POST",
 					url: "<?php echo ROOT_URL;?>/paymentchecking",
-					data: {method: "paypal", name: name, phone: phone, email: email, address: address, note: note, paymentID: data.paymentID, payerID: data.payerID, token: data.paymentToken},
+					data: {method: "paypal", fname: fname,lname:lname, phone: phone, email: email, address: address, note: note, paymentID: data.paymentID, payerID: data.payerID, token: data.paymentToken},
 					dataType: "json",
 					cache: false,
 					success: function(data)

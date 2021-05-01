@@ -337,7 +337,7 @@
                         </div>
 
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 right-nav">
-                     
+               
                             <div id="_desktop_user_info">
                                 <div class="user-info-inner">
                                 <?php
@@ -434,7 +434,7 @@
 
                                 <div class="infinitycontact-dec">
                                     <div class="contact-title"><?=$lang['callus']?></div>
-                                    <div class="contact-dec">+91 0123-456-789</div>
+                                    <div class="contact-dec">+49 176 46778998</div>
                                 </div>
 
                             </div>
@@ -455,7 +455,7 @@
 
                                     <div class="email-title"><?php echo $lang['mailus'] ?></div>
 
-                                    <div class="email-dec">admin@gmail.com</div>
+                                    <div class="email-dec">hangella1506@gmail.com</div>
 
                                 </div>
 
@@ -842,12 +842,14 @@
                                 <ul id="contact-footer" class="collapse">
                                     <li class="block">
                                         <div class="icon"><i class="material-icons">&#xE55F;</i></div>
-                                        <div class="data">Demo Shop<br /><?php echo $lang['unitedS'] ?></div>
+                                        <div class="data">Steinbreite 17a  
+37603 Holzminden<br /></div>
+<!-- <?php echo $lang['unitedS'] ?> -->
                                     </li>
                                     <li class="block">
                                         <div class="data">
                                             <div class="icon"><i class="material-icons">&#xE0CD;</i></div>
-                                            <span class="title"><?php echo $lang['callus'] ?></span> <span>+34 123-4567-890</span>
+                                            <span class="title"><?php echo $lang['callus'] ?></span> <span>+49 176 46778998</span>
                                         </div>
                                     </li>
                                     <li class="block">
@@ -857,7 +859,7 @@
                                     <li class="block">
                                         <div class="data">
                                             <div class="icon"><i class="material-icons">&#xE158;</i></div>
-                                            <a href="mailto:admin@gmail.com">admin@gmail.com</a>
+                                            <a href="mailto:admin@gmail.com">hangella1506@gmail.com </a>
                                         </div>
                                     </li>
                                 </ul>
@@ -896,7 +898,7 @@
     <div class="newsletter-pop">
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"> </script>
     <script type="text/javascript" src="views/assets/js/bottom-b769945.js"></script>
     <script src="views/assets/js/jquery.flexslider.js"></script>
     <script src="views/assets/js/jquery.addcart.js"></script>

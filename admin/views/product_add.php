@@ -98,11 +98,18 @@
                                                 </div>
                                                 
                                             </div>
-                                            <div class="col-lg-6">
+                                            <div class="col-lg-3">
                                             <div class="form-group">
-                                                    <label for="">Price</label>
+                                                    <label for="">Price ($)</label>
                                                     <input  type="number" name="price" parsley-trigger="change" id="discount"
-                                                        placeholder="Type rice" value="<?=$oneRecode['Gia']?>" class="form-control" >
+                                                        placeholder="Type rice" value="" class="form-control" >
+                                                </div>    
+                                            </div>
+                                            <div class="col-lg-3">
+                                            <div class="form-group">
+                                                    <label for="">Price (€)</label>
+                                                    <input  type="number" name="price_ge" parsley-trigger="change" 
+                                                        placeholder="Type rice" value="" class="form-control" >
                                                 </div>    
                                             </div>
 

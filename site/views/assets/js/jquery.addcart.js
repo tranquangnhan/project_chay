@@ -1,34 +1,19 @@
 window.onload = () => {
-    document.getElementsByClassName('blockcart')[0].addEventListener('click', () => {
-        displayCart()
-    })
 
 
 }
-$(".blockcart").click(function(e) {
-    e.stopPropagation(); // this stops the event from bubbling up to the body
-    displayCart()
-    $(document.body).on('click.dropdown-menu-right', function() {
 
-        hideCart()
+function cart() {
+    if ($(".dropdown-menu-right").hasClass('cartdislay') == false) {
+        $(".dropdown-menu-right")[0].classList.add('cartdislay');
+        $("span.cart-products-count")[0].classList.add('cartcount');
+    } else {
+        $(".dropdown-menu-right")[0].classList.remove('cartdislay');
+        $("span.cart-products-count")[0].classList.remove('cartcount');
+    }
 
-    });
-});
-
-
-
-
-function hideCart() {
-    alert(11)
-    $(".dropdown-menu-right")[0].classList.remove('cartdislay');
-    $("span.cart-products-count")[0].classList.remove('cartcount');
 }
 
-function displayCart() {
-    alert(222)
-    $(".dropdown-menu-right")[0].classList.add('cartdislay');
-    $("span.cart-products-count")[0].classList.add('cartcount');
-}
 
 // show giỏ hàng
 
@@ -81,7 +66,7 @@ function addCart(id, lang) {
                     })
                     $('#_desktop_cart').html(data);
                     $('#_mobile_cart').html(data);
-                    displayCart()
+                    cart()
                 }
             );
         }
@@ -116,7 +101,7 @@ function addCart(id, lang) {
 
                     $('#_desktop_cart').html(data);
                     $('#_mobile_cart').html(data);
-                    displayCart()
+                    cart()
                 }
             );
         }
@@ -149,7 +134,7 @@ function delCart(iddel) {
         success: function(data) {
             $('#_desktop_cart').html(data);
             $('#_mobile_cart').html(data);
-            displayCart()
+            cart()
         }
     });
 }

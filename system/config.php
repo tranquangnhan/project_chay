@@ -1,5 +1,4 @@
 <?php
-//error_reporting(~E_ALL);
 define('HOST_DB','localhost');
 define('NAME_DB','project_chay');
 define('USER_DB','root');

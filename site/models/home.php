@@ -84,25 +84,25 @@ class Model_home extends Model_db{
        return $this->result1(1,$sql,$coupon,time());
     }
 
-    function luudonhangnhe($idDH, $hoten, $email,$phone,$address,$note,$tongtien){            
+    function luudonhangnhe($idDH, $fname,$lname, $email,$phone,$street,$housenumber,$city,$country,$postcode,$note,$tongtien){            
         if ($idDH==-1){
-        $sql = "INSERT INTO donhang SET name=? ,email=?,phone=?,address=?,note=?,total=?,ngaydat=Now()";          
-        $kq= $this->getLastId($sql,$hoten,$email,$phone,$address,$note,$tongtien);
+        $sql = "INSERT INTO donhang SET firstname=?,lastname=? ,email=?,phone=?,street=?,housenumber=?,city=?,country=?,postcode=?,note=?,total=?,ngaydat=Now()";          
+        $kq= $this->getLastId($sql,$fname,$lname,$email,$phone,$street,$housenumber,$city,$country,$postcode,$note,$tongtien);
 
         if ($kq == null) return false;
         else return $kq;
       } 
       else
        {
-        $sql = "UPDATE donhang SET name=? ,email=?,phone=?,address=?,note=?,total=?,ngaydat=Now() WHERE id=?";              
-         $kq= $this->exec1($sql,$hoten,$email,$phone,$address,$note,$tongtien,$idDH);
+        $sql = "UPDATE donhang SET firstname=?,lastname=? ,email=?,phone=?,street=?,housenumber=?,city=?,country=?,postcode=?,note=?,total=?,ngaydat=Now() WHERE id=?";              
+         $kq= $this->exec1($sql,$fname,$lname,$email,$phone,$street,$housenumber,$city,$country,$postcode,$note,$tongtien,$idDH);
       if ($kq == null) return false;
             else return $idDH;
       }
     }
-	function updatepaymentstatus($oid,$newstatus)
+	function updatepaymentstatus($oid,$newstatus,$paymentType)
 	{
-		$result = $this->exec1("UPDATE donhang SET status = ? WHERE id=?",$newstatus,$oid);
+		$result = $this->exec1("UPDATE donhang SET status = ?,payments=? WHERE id=?",$newstatus,$paymentType,$oid);
 		if($result)
 		{
 			return true;
@@ -432,6 +432,8 @@ class Model_home extends Model_db{
       if ($sortBy != NULL && $order != NULL)
       {
          $sql .= " ORDER BY pro.$sortBy $order"; 
+      }else{
+        $sql .= " ORDER BY pro.id DESC"; 
       }
       $sql .=" LIMIT ".($CurrentPage - 1) * PAGE_SIZE_PRO.", ".PAGE_SIZE_PRO;
       return $this->result1(0,$sql,$id);
@@ -450,7 +452,9 @@ class Model_home extends Model_db{
         if ($sortBy != NULL && $order != NULL)
         {
            $sql .= " ORDER BY pro.$sortBy $order"; 
-        }
+        }else{
+            $sql .= " ORDER BY pro.id DESC"; 
+          }
         $sql .=" LIMIT ".($CurrentPage - 1) * PAGE_SIZE_PRO.", ".PAGE_SIZE_PRO;
         return $this->result1(0,$sql);
       }

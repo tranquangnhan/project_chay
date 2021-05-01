@@ -20,9 +20,13 @@
                                         <th>Name customer</th>
                                         <th>Order time</th>
                                         <th>Phone number</th>
-                                        <th>Address</th>
+                                        <th>Street</th>
+                                        <th>Housenumber</th>
+                                        <th>City</th>
+                                        <th>Country</th>
                                         <th>Note</th>  
-                                        <th>Status</th>                                        
+                                        <th>Status</th>
+                                        <th>Payments</th>                                        
                                         <th>More Detail</th>
                                         </tr>
                                         </thead>
@@ -41,12 +45,16 @@
                                                 $linkDetail = '?ctrl=order&act=detail&id='.$row['id'];
                                                 echo '<tr>
                                                         <td>'.$stt.'</td>
-                                                        <td>'.$row['name'].'</td>
+                                                        <td>'.$row['firstname'].' '.$row['lastname'].'</td>
                                                         <td>'.$row['ngaydat'].'</td>
                                                         <td>'.$row['phone'].'</td>
-                                                        <td>'.$row['address'].'</td>
+                                                        <td>'.$row['street'].'</td>
+                                                        <td>'.$row['housenumber'].'</td>
+                                                        <td>'.$row['city'].'</td>
+                                                        <td>'.$row['country'].'</td>
                                                         <td>'.$row['note'].'</td>
                                                         '.$status.'
+                                                        <td>'.$row['payments'].'</td>
                                                         <td><a name="" id="" class="btn btn-success" href="'.$linkDetail.'" role="button"><i class="fa fa-bookmark"></i></a></td>    
                                                     </tr>';
                                             }

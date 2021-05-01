@@ -176,12 +176,12 @@ if(is_array($sp)){
                                         <?php
                                         if($sp['discount']>0){
                                         ?>
-                                        <span itemprop="price" content="32.89" style="font-size:13pt;text-decoration:line-through"><?=floatval($sp['price'])?>€</span><br>
-                                        <span itemprop="price" content="32.89" style="color:var(--it-brand-primary)"><?=($sp['price'] - ($sp['discount']*$sp['price'])/100)?>€</span>
+                                        <span itemprop="price" content="32.89" style="font-size:13pt;text-decoration:line-through"><?php if($_SESSION['lang'] === 'en') echo "$".floatval($sp['price']); else echo floatval($sp['price_ge'])."€"; ?></span><br>
+                                        <span itemprop="price" content="32.89" style="color:var(--it-brand-primary)"><?php if($_SESSION['lang'] === 'en') echo "$".($sp['price'] - ($sp['discount']*$sp['price'])/100); else echo ($sp['price_ge'] - ($sp['discount']*$sp['price_ge'])/100)."€"; ?></span>
                                        
                                          <?php }
                                         else{?>
-                                            <span itemprop="price" content="32.89" style="color:var(--it-brand-primary)"><?=floatval($sp['price'])?>€</span>
+                                            <span itemprop="price" content="32.89" style="color:var(--it-brand-primary)"><?php if($_SESSION['lang'] === 'en') echo "$".floatval($sp['price']); else echo floatval($sp['price_ge'])."€"; ?></span>
                                         <?php   } ?>
                                     </div>
 
@@ -423,16 +423,25 @@ if(is_array($sp)){
                                     $new = '';
                                     }
                                     if($row['discount'] > 0){
+                                        if ($_SESSION['lang'] === 'en') {
+                                            $price = $row['price'];
+                                            $do = "$";
+                                            $euro ="";
+                                        }else{
+                                            $price = $row['price_ge'];
+                                            $do = "";
+                                            $euro = "€";
+                                        }
                                     $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
                                     $giaDiscount = ' <div class="product-price-and-shipping">
 
                                                     <span class="sr-only">Regular price</span>
-                                                    <span class="regular-price">'.floatval($row['price']).'</span>
+                                                    <span class="regular-price">'.floatval($price).'</span>
                                                     <span class="discount-percentage discount-product">-'.$row['discount'].'%</span>
 
 
                                                     <span class="sr-only">Price</span>
-                                                    <span itemprop="price" class="price">'.($row['price'] - ($row['discount']*$row['price'])/100) .'€</span>
+                                                    <span itemprop="price" class="price">'.$do.''.($price - ($row['discount']*$price)/100).''.$euro.'</span>
                                                 </div>';
                                     }else{
                                     $discount = '';
@@ -440,13 +449,18 @@ if(is_array($sp)){
                             
 
                                                         <span class="sr-only">Price</span>
-                                                        <span itemprop="price" class="price">'.floatval($row['price']).'€</span>
+                                                        <span itemprop="price" class="price">'.$do.''.floatval($price).''.$euro.'</span>
                                                     
                                                     
                                                 </div>';
                                     }
-                                    if($row['price']<=0 ||$row['price'] =='' ){
+                                    if($price<=0 ||$price =='' ){
                                         $giaDiscount = ' <span class="discount-percentage discount-product">contact</span>';
+                                    }
+                                    if ($_SESSION['lang'] === 'en') {
+                                        $name = $row['name'];
+                                    }else{
+                                        $name = $row['name_ge'];
                                     }
                                     $link = ROOT_URL."/product/".$row['slug'];
                                     echo '<div class="kktab-block">
@@ -496,7 +510,7 @@ if(is_array($sp)){
 
 
                                                 <h3 class="h3 product-title" itemprop="name"><a
-                                                        href="'. $link.'">'.$row['name'].'</a></h3>
+                                                        href="'. $link.'">'.$name.'</a></h3>
 
 
                                                 '.$giaDiscount.'

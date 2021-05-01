@@ -18,7 +18,8 @@
                                         <tr>
                                         <th>STT</th>
                                         <th width="20%">Name Category</th> 
-                                        <th width="40%">Description</th>                
+                                        <th width="40%">Description</th>
+                                        <th >Image</th>                
                                         <th>Belong</th>
                                         <th>Del</th>
                                         <th>Edit</th>
@@ -33,10 +34,16 @@
                                                 $stt++;
                                                 $linkDel = "'?ctrl=categories&act=delete&id=".$row['id']."'";
                                                 $linkEdit = '?ctrl=categories&act=edit&id='.$row['id'];
+                                                if(is_file(PATH_IMG_SITE.explode(",",$row['image_list'])[0])){
+                                                    $img = PATH_IMG_SITE.explode(",",$row['image_list'])[0];
+                                                }else{
+                                                    $img = PATH_IMG_SITE.'logo.png';
+                                                }
                                                 echo '<tr>
                                                         <td>'.$stt.'</td>
                                                         <td>'.$row['name'].'</td>
                                                         <td>'.substr($row['description'],0,100).'</td>
+                                                        <td><img style="object-fit:cover;" class="img-admin" width="150" height="110" src="'.$img.'"></td>
                                                         <td>'.$row['parent'].'</td>
                                                         <td><div  onclick="checkDeleteCate('.$linkDel.','.$row['id'].')"  class="btn btn-danger" role="button"><i class="fa fa-trash"></i></div></td>
                                                         <td><a><a name="" id="" class="btn btn-primary" href="'.$linkEdit.'" role="button"><i class="fa fa-edit"></i></a></a></a></td>
