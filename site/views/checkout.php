@@ -20,8 +20,9 @@ $('.method').on('click', function() {
 
   $('#customer-form').on('submit', function(e) 
   {
-	
-	var fname = $("#firstname").val();
+	if($("#customer-form").valid())
+   {
+      var fname = $("#firstname").val();
    var lname = $("#lastname").val();
    var phone = $("#phone").val();
    var email = $("#email").val();
@@ -81,6 +82,8 @@ $('.method').on('click', function() {
             }
          }
       });
+   }
+	
       // return false;
       // }
 
