@@ -15,10 +15,6 @@ if(is_array($sp)){
 
     <div class="container">
         <div class="row">
-
-
-
-
             <div id="content-wrapper" class="col-xs-12" style="margin-top:2rem">
 
 
@@ -31,15 +27,9 @@ if(is_array($sp)){
                         <div class="col-xs-12 col-md-5">
 
                             <section class="page-content" id="content">
-
-                              
-
-                                <ul class="product-flags">
+                                <!-- <ul class="product-flags">
                                     <li class="product-flag new">New</li>
-                                </ul>
-
-
-
+                                </ul>  -->
                                 <div class="images-container">
 
                                     <div class="product-cover">
@@ -93,16 +83,13 @@ if(is_array($sp)){
 
                             </section>
 
-                        </div>
-                        <div class="col-xs-12 col-md-7">
-
-
+                        </div> 
+                         <div class="col-xs-12 col-md-7">
                             <h1 class="h1 kk-producttitle" itemprop="name"><?php if ($_SESSION['lang'] === 'en') {
                                               echo $sp['name'];
                                           }else{
                                             echo $sp['name_ge'];
                                           }?></h1>
-
 
                             <?php if($sp['price'] == 0 || $sp['price'] ==''){?>
                                 <div class="product-prices">
@@ -584,7 +571,11 @@ if(is_array($sp)){
                             </div><!-- /.modal-content -->
                         </div><!-- /.modal-dialog -->
                     </div><!-- /.modal -->
-                   </div>
+                    </section>
+            </div>
+        </div>
+    </div>
+</section>
                    <?php
 }else{
     echo 'Sản phẩm này không có !';
