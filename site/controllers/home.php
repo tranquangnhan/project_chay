@@ -29,6 +29,7 @@
             case "createklarnaqr": $this->createklarnaqr(); break;
             case "createcheckoutsession": $this->createcheckoutsession(); break;
             case "saveorder": $this->SaveOrder(); break;
+			case "unsetsession": $this->unsetsession(); break;
             case "savebill": $this->saveBill(); break;
             case "thankyou": $this->thankYou(); break;
             case "cat": $this->cat(); break;
@@ -398,12 +399,17 @@
 		$viewFile ="views/checkout.php";
 		require_once "views/layout.php";
 	 }
-	
+	 function unsetsession()
+	 {
+		 echo $_SESSION['idDH'];
+		 unset($_SESSION['idDH']);
+	 }
 	 function SaveOrder()
 	 {
 		 $result = array();
 		 $result["data"] = $_POST;
-		if(isset($_POST['fname'])){
+		 
+		if(isset($_POST['fname']) && $_POST['fname'] != ""){
 	
 		$fname = trim(strip_tags($_POST['fname']));
 		$lname = trim(strip_tags($_POST['lname']));
@@ -425,12 +431,13 @@
 		foreach ($_SESSION['cart'] as $row) {
 		   $tongtien += $row[5]*$row[1];
 		}
-	 
+		$result["oidold"] = $_SESSION['idDH'];
+		
 		$idDH = $this->model->luudonhangnhe($idDH, $fname,$lname, $email,$phone,$street,$housenumber,$city,$country,$postcode,$note,$tongtien); 
-	  
+		
 		   if ($idDH){
 			  $_SESSION['idDH'] = $idDH;
-			  
+			  $result["oidnew"] = $idDH;
 			  $giohang = $_SESSION['cart'];
 			  $this->model->luugiohangnhe($idDH, $giohang);
 			  //unset($_SESSION['cart']);
@@ -449,6 +456,7 @@
 				$result["status"] = 503;
 				$result["message"] = "Bad Request";
 			}
+			
 		echo json_encode($result);
 	 }
 	 function saveBill()

@@ -342,7 +342,7 @@
                                 <div class="user-info-inner">
                                 <?php
                                                 if (isset($_SESSION['suser'])&&$_SESSION['suser']!='') {
-                                                    echo '<div class="logoutH">'.$lang['welcome'].', '.$_SESSION['suser'].'</div>';
+                                                    echo '<div class="logoutH">'.$_SESSION['suser'].'</div>';
                                                     echo '<ul class="user-info logout">
                                                     <li>
                                                            
