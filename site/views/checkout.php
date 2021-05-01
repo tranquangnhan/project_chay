@@ -16,6 +16,7 @@ $('.method').on('click', function() {
 
   // Validation
   var $cardInput = $('.input-fields input');
+ 
 
   $('#customer-form').on('submit', function(e) 
   {
@@ -34,54 +35,54 @@ $('.method').on('click', function() {
    var e = $("#language").val();
    //Sai đoạn tham số rồi
    // chỗ nào a
-   $.ajax({
-		type: "POST",
-		url: "<?php echo ROOT_URL;?>/saveorder",
-		data: {fname: fname,lname:lname, phone:phone,email:email,street: street,housenumber: housenumber,city: city,country: country,postcode:postcode,note:note},
-		dataType: "json",
-		cache: false,
-		success: function(data)
-		{
-         // console.log(data);
-			if(data.status != "200")
-			{
-            
-				Swal.fire({
-				  icon: 'error',
-				  title: 'Oops...',
-				  text: data.message,
-				  footer: '<a href>More about this error?</a>'
-				})
-			}
-			else
-			{
-				$("#checkout-personal-information-step").fadeOut(100);
-				$("#select-payment-panel").fadeIn(100);
-				//window.location= ("<?php echo XC_URL;?>/");                
-			}
-		}
-	});
-   //  if(fname == '' || lname == '' || phone == ''  || email == ""
-   // || street == "" || housenumber == "" 
-   // || city == "" || country == "" || postcode == ""){
-   //    if (e == 'English') {
-   //          Swal.fire({
-   //             icon: 'error',
-   //             title: 'Oops...',
-   //             text: 'Enter your input',
-   //          })
-   //       } else {
-   //          Swal.fire({
-   //             icon: 'error',
-   //             title: 'Oops...',
-   //             text: 'Geben Sie Ihre Eingabe ein',
-   //          })
-   //       }
-   //       return false;
-   // }else{
-      
-   //  return false;
-   // }
+  
+      // if(fname == '' || lname == '' || phone == ''  || email == ""
+      // || street == "" || housenumber == "" 
+      // || city == "" || country == "" || postcode == ""){
+      //    if (e == 'English') {
+      //          Swal.fire({
+      //             icon: 'error',
+      //             title: 'Oops...',
+      //             text: 'Enter your input',
+      //          })
+      //       } else {
+      //          Swal.fire({
+      //             icon: 'error',
+      //             title: 'Oops...',
+      //             text: 'Geben Sie Ihre Eingabe ein',
+      //          })
+      //       }
+      //       return false;
+      // }else{
+         $.ajax({
+         type: "POST",
+         url: "<?php echo ROOT_URL;?>/saveorder",
+         data: {fname: fname,lname:lname, phone:phone,email:email,street: street,housenumber: housenumber,city: city,country: country,postcode:postcode,note:note},
+         dataType: "json",
+         cache: false,
+         success: function(data)
+         {
+            // console.log(data);
+            if(data.status != "200")
+            {
+               
+               Swal.fire({
+               icon: 'error',
+               title: 'Oops...',
+               text: data.message,
+               footer: '<a href>More about this error?</a>'
+               })
+            }
+            else
+            {
+               $("#checkout-personal-information-step").fadeOut(100);
+               $("#select-payment-panel").fadeIn(100);
+               //window.location= ("<?php echo XC_URL;?>/");                
+            }
+         }
+      });
+      // return false;
+      // }
 
     
 	return false;

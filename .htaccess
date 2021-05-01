@@ -52,4 +52,4 @@ RewriteRule ^cate/page-([0-9]+)/priceasc$ /site/?act=product&Page=$3&slug=$1&sor
 
 RewriteRule ^cate/page-([0-9]+)/pricedesc$ /site/?act=product&Page=$3&slug=$1&sortBy=price&order=desc [L]
 
-ErrorDocument 404 /site/views/Error404.php
+ErrorDocument 404 /project_chay/site/views/Error404.php
