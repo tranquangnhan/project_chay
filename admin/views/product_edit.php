@@ -25,7 +25,7 @@
                                         </div>
                                     </div>
 
-                                    <h4 class="header-title mt-0 mb-3">Product</h4>
+                                    <h4 class="header-title mt-0 mb-3">Sản phẩm</h4>
 
                                     <form data-parsley-validate id="formadd" novalidate onsubmit="return submitForm()"  method="post" enctype="multipart/form-data">
                                         <div class="form-group">
@@ -46,30 +46,30 @@
                                         <div class="row">
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="">Name Product</label><span style="color:red;"> (*)</span>
+                                                    <label for="">Tên sản phẩm</label><span style="color:red;"> (*)</span>
                                                     <input type="text" name="name_product"  parsley-trigger="change" required
                                                         placeholder="Type name product" value="<?=$oneRecode['name']?>" class="form-control" id="userName">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                             <div class="form-group">
-                                                    <label for="">Name (German)</label><span style="color:red;"> (*)</span>
-                                                    <input  type="text" name="name_product_ge" parsley-trigger="change" required
-                                                        placeholder="Type name product GE" value="<?=$oneRecode['name_ge']?>" class="form-control" >
-                                                </div>
+                                                    <label for="">Giá</label>
+                                                    <input  type="number" name="price" parsley-trigger="change" id="discount"
+                                                        placeholder="Type rice" value="<?=$oneRecode['price']?>" class="form-control" >
+                                                </div>    
                                             </div>
                                         </div>
                                        <div class="row">
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="">Discount</label>
+                                                    <label for="">Giảm giá</label>
                                                     <input  type="number" name="discount" parsley-trigger="change" 
                                                         placeholder="Type discount (%)" value="<?=$oneRecode['discount']?>" class="form-control" id="emailAddress">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="">Color</label> 
+                                                    <label for="">Màu</label> 
                                                     <input type="text" class="form-control" value="<?=$oneRecode['color']?>" name="color"  placeholder="#000,#fff,#999,..." id="color">
                                                     <span id="ErrorColor"></span>
                                                 </div> 
@@ -80,7 +80,7 @@
                                         <div class="row">
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="">Category</label><span style="color:red;"> (*)</span>
+                                                    <label for="">Danh mục</label><span style="color:red;"> (*)</span>
                                                     <select class="form-control" name="IDCate">
                                                         <?php 
                                                             foreach ($producer as $row) {
@@ -101,32 +101,8 @@
                                                     
                                                 }
                                             ?>
-                                            <div class="col-lg-3">
-                                            <div class="form-group">
-                                                    <label for="">Price ($)</label>
-                                                    <input  type="number" name="price" parsley-trigger="change" id="discount"
-                                                        placeholder="Type rice" value="<?=$oneRecode['price']?>" class="form-control" >
-                                                </div>    
-                                            </div>
-                                            <div class="col-lg-3">
-                                            <div class="form-group">
-                                                    <label for="">Price (€)</label>
-                                                    <input  type="number" name="price_ge" parsley-trigger="change" 
-                                                        placeholder="Type rice" value="<?=$oneRecode['price_ge']?>" class="form-control" >
-                                                </div>    
-                                            </div>
-                                        </div>
-                                        <div class="row">
                                             <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <div class="checkbox">
-                                                        <input id="remember-2" type="checkbox" name="hot" <?=($oneRecode['hot']==1) ? 'checked' : '';?> data-parsley-multiple="remember-1">
-                                                        <label for="remember-2">Hot ? </label>
-                                                    </div>
-                                                </div>          
-                                            </div>
-                                            <div class="col-lg-6">
-                                            <div class="form-group"><label for="">Size</label><br/></div>
+                                            <div class="form-group"><label for="">Kích cỡ</label><br/></div>
                                                 <div class="form-group radio">
                                                     <div class="input-radio size">
                                                         <label for="size1 ">S</label>
@@ -180,29 +156,34 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            
                                         </div>
-                                        <label for="">Description</label>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <div class="checkbox">
+                                                        <input id="remember-2" type="checkbox" name="hot" <?=($oneRecode['hot']==1) ? 'checked' : '';?> data-parsley-multiple="remember-1">
+                                                        <label for="remember-2">Hot ? </label>
+                                                    </div>
+                                                </div>          
+                                            </div>
+                                            
+                                        </div>
+                                        <label for="">Mô tả</label>
                                         <textarea id="editor1"  style="height: 300px;width:100%" name="Description" >
                                         
                                         <?=$oneRecode["description"]?>
                                         </textarea>
-                                        <label for="">Description (German)</label>
-                                        <textarea id="editor3"  style="height: 300px;width:100%" name="Description1" >
                                         
-                                        <?=$oneRecode["description_ge"]?>
-                                        </textarea>
-                                        <label for="">Properties</label>
+                                        <label for="">Thuộc tính</label>
                                         <textarea id="editor2" style="height: 300px;width:100%" name="Properties" >
                                         <?=$oneRecode["properties"]?>
                                         </textarea>
-                                        <label for="">Properties (German)</label>
-                                        <textarea id="editor4" style="height: 300px;width:100%" name="Properties_ge" >
-                                        <?=$oneRecode["properties_ge"]?>
-                                        </textarea>
+                                        
 
                                         <div class="form-group text-right mb-0 mt-5">
-                                            <input type="submit" name="them" class="btn btn-primary waves-effect waves-light mr-1" value="Edit">
-                                           <a href="<?=ROOT_URL?>/admin/?ctrl=product&act=index" clas="btn btn-secondary waves-effect waves-light">Cancel</a>
+                                            <input type="submit" name="them" class="btn btn-primary waves-effect waves-light mr-1" value="Sửa">
+                                           <a href="<?=ROOT_URL?>/admin/?ctrl=product&act=index" clas="btn btn-secondary waves-effect waves-light">Hủy</a>
                                         </div>
 
                                     </form>

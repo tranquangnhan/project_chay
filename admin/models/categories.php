@@ -6,25 +6,25 @@ class Model_categories extends Model_db{
         return $this->result1(0,$sql);
     }
     
-    function addNewCate($name,$name_ge,$imgs,$IDcate,$slug,$des_category,$des_category_ge)
+    function addNewCate($name,$imgs,$IDcate,$slug,$des_category)
     {
-        $sql = "INSERT INTO catalog(name,name_ge,image_list,parent,slug,description,description_ge) VALUE(?,?,?,?,?,?,?)";
-        return $this->exec1($sql,$name,$name_ge,$imgs,$IDcate,$slug,$des_category,$des_category_ge);
+        $sql = "INSERT INTO catalog(name,image_list,parent,slug,description) VALUE(?,?,?,?,?)";
+        return $this->exec1($sql,$name,$imgs,$IDcate,$slug,$des_category);
     }
     function deleteCate($id)
     {   
         $sql = "DELETE FROM catalog WHERE id = ?";
         return $this->exec1($sql,$id);
     }
-    function editCategory($name,$name_ge,$imgs,$IDcate,$slug,$des_category,$des_category_ge,$id){
+    function editCategory($name,$imgs,$IDcate,$slug,$des_category,$id){
         if($imgs == "")
         {
-            $sql = "UPDATE catalog SET name= ?,name_ge=?,parent=?,slug=?,description=?,description_ge=? WHERE id=?";
-        return $this->SqlExecDebug($sql,$name,$name_ge,$IDcate,$slug,$des_category,$des_category_ge,$id);
+            $sql = "UPDATE catalog SET name= ?,parent=?,slug=?,description=? WHERE id=?";
+        return $this->SqlExecDebug($sql,$name,$IDcate,$slug,$des_category,$id);
         }else
         {
-            $sql = "UPDATE catalog SET name= ?,name_ge=?,image_list=?,parent=?,slug=?,description=?,description_ge=? WHERE id=?";
-        return $this->SqlExecDebug($sql,$name,$name_ge,$imgs,$IDcate,$slug,$des_category,$des_category_ge,$id);
+            $sql = "UPDATE catalog SET name= ?,image_list=?,parent=?,slug=?,description=? WHERE id=?";
+        return $this->SqlExecDebug($sql,$name,$imgs,$IDcate,$slug,$des_category,$id);
         }
         
     }

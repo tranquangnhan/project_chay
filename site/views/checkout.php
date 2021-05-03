@@ -63,7 +63,6 @@ $('.method').on('click', function() {
          cache: false,
          success: function(data)
          {
-            // console.log(data);
             if(data.status != "200")
             {
                
@@ -156,7 +155,7 @@ $('.method').on('click', function() {
          <ol itemscope itemtype="http://schema.org/BreadcrumbList">
             <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
                <a itemprop="item" href="#">
-               <span itemprop="name">Home</span>
+               <span itemprop="name">Trang chủ</span>
                </a>
                <meta itemprop="position" content="1">
             </li>
@@ -170,9 +169,9 @@ $('.method').on('click', function() {
                <section id="checkout-personal-information-step"
                   class="checkout-step -current -reachable js-current-step">
                   <h1 class="step-title h3">
-                     <i class="material-icons rtl-no-flip done">&#xE876;</i>
-                     <span class="step-number">1</span>
-                     <?=$lang['person']?>
+                     <!-- <i class="material-icons rtl-no-flip done">&#xE876;</i> -->
+                     <!-- <span class="step-number">1</span> -->
+                     <!-- <?=$lang['person']?> -->
                      <!-- <span class="step-edit text-muted"><i class="material-icons edit">mode_edit</i> Edit</span> -->
                   </h1>
                   <div class="content">
@@ -183,25 +182,25 @@ $('.method').on('click', function() {
                               <section>
                                  <div class="form-group row ">
                                     <label class="col-md-3 form-control-label required">
-                                    <?=$lang['fullname']?>
+                                    Tên
                                     </label>
                                     <div class="col-md-3">
-                                          <input class="form-control" name="firstname" id="firstname" type="text" value="" placeholder="<?=$lang['firstname']?>" required>
+                                          <input class="form-control" name="firstname" id="firstname" type="text" value="" placeholder="Họ" required>
                                        
                                     </div>
                                     <div class="col-md-3">
                                           
-                                       <input class="form-control" name="lastname" id="lastname" type="text" value="" placeholder="<?=$lang['lastname']?>" required>
+                                       <input class="form-control" name="lastname" id="lastname" type="text" value="" placeholder="Tên" required>
                                     </div>
                                     <div class="col-md-3 form-control-comment">
                                     </div>
                                  </div>
                                  <div class="form-group row ">
                                     <label class="col-md-3 form-control-label required">
-                                    <?=$lang['phone']?>
+                                    Số điện thoại
                                     </label>
                                     <div class="col-md-6">
-                                       <input class="form-control" name="phone" id="phone" type="number" value="" placeholder="<?=$lang['phone']?>"
+                                       <input class="form-control" name="phone" id="phone" type="number" value="" placeholder="Số điện thoại"
                                           required>
                                     </div>
                                     <div class="col-md-3 form-control-comment">
@@ -209,7 +208,7 @@ $('.method').on('click', function() {
                                  </div>
                                  <div class="form-group row ">
                                     <label class="col-md-3 form-control-label required">
-                                    <?=$lang['email']?>
+                                    Email
                                     </label>
                                     <div class="col-md-6">
                                        <input class="form-control" name="email" id="email" type="email" value="" placeholder="Email"
@@ -220,33 +219,33 @@ $('.method').on('click', function() {
                                  </div>
                                  <div class="form-group row ">
                                     <label class="col-md-3 form-control-label required">
-                                    <?=$lang['address']?>
+                                    Địa chỉ
                                     </label>
                                     <div class="col-md-3">
-                                       <input class="form-control" name="address1" id="street" type="text" value="" required placeholder="<?=$lang['street']?>">
+                                       <input class="form-control" name="address1" id="street" type="text" value="" required placeholder="Đường">
                                     </div>
                                     
                                     <div class="col-md-3">
-                                       <input class="form-control" name="address2" id="housenumber" type="text" value="" required placeholder="<?=$lang['housenumber']?>">
+                                       <input class="form-control" name="address2" id="housenumber" type="text" value="" required placeholder="Số nhà">
                                     </div>
                                  </div>
                                  <div class="form-group row ">
                                     <label class="col-md-3 form-control-label required">
                                     </label>
                                     <div class="col-md-3">
-                                       <input class="form-control" name="address3" id="city" type="text" value="" required placeholder="<?=$lang['city']?>">
+                                       <input class="form-control" name="address3" id="city" type="text" value="" required placeholder="Thành phố">
                                     </div>
                                     
                                     <div class="col-md-3">
-                                       <input class="form-control" name="address4" id="country" type="text" value="" required placeholder="<?=$lang['country']?>">
+                                       <input class="form-control" name="address4" id="country" type="text" value="" required placeholder="Quốc gia">
                                     </div>
                                  </div>
                                  <div class="form-group row ">
                                     <label class="col-md-3 form-control-label required">
-                                    <?=$lang['postcode']?>
+                                    Mã postcode
                                     </label>
                                     <div class="col-md-6">
-                                       <input class="form-control" name="postcode" id="postcode" type="text" value="" placeholder="<?=$lang['postcode']?>"
+                                       <input class="form-control" name="postcode" id="postcode" type="text" value="" placeholder="Mã postcode"
                                           required>
                                     </div>
                                     <div class="col-md-3 form-control-comment">
@@ -255,7 +254,7 @@ $('.method').on('click', function() {
                                  
                                  <div class="form-group row ">
                                     <label class="col-md-3 form-control-label required">
-                                    <?=$lang['note']?>
+                                    Ghi chú
                                     </label>
                                     <div class="col-md-6">
                                        <textarea class="textarea" name="note" id="note" cols="55" rows="10"></textarea>
@@ -265,11 +264,11 @@ $('.method').on('click', function() {
                                  </div>
                               </section>
                               <footer class="form-footer clearfix">
-                                 <input type="hidden" id="language" value="<?=$lang['lang']?>">
+                                 <input type="hidden" id="language" value="">
                                  <input type="hidden" name="submitCreate" value="1">
                                  <button style="" class="continue btn btn-primary float-xs-right" name="continue"
                                     data-link-action="register-new-customer" id="btn-next" type="submit" value="1" >
-                                 <?=$lang['continue']?>
+                                 Tiếp tục
                                  </button>
                               </footer>
                            </form>
@@ -342,10 +341,10 @@ $('.method').on('click', function() {
                   data-refresh-url="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/cart?ajax=1&action=refresh">
                   <div class="card-block">
                      <div class="cart-summary-products">
-                        <p><?=count($_SESSION['cart'])?> <?=$lang['item']?></p>
+                        <p><?=count($_SESSION['cart'])?> Sản phẩm</p>
                         <p>
                            <a href="#" data-toggle="collapse" data-target="#cart-summary-product-list">
-                           <?=$lang['showdetail']?>
+                           Hiện chi tiết
                            <i class="material-icons">expand_more</i>
                            </a>
                         </p>
@@ -371,15 +370,8 @@ $('.method').on('click', function() {
                                      $slmotsp = $motsp[1];
                                      $size = $motsp[2];
                                      $mau = $motsp[3];
-                                     if ($_SESSION['lang'] === 'en') {
-                                       $gia ="$".$motsp[5];
-                                       $do = "$";
-                                        $euro ="";
-                                   }else{
-                                       $gia = $motsp[5]."€";
-                                       $do = "";
-                                       $euro = "€";
-                                   }
+                                       $gia =$motsp[5];
+                                     
                                      if($size != 'null'){
                                          $size = '  <span class="label">Size: '.$size .'</span>';
                                      }else{
@@ -433,7 +425,7 @@ $('.method').on('click', function() {
                                  
                                                              <li class="cart-det2"
                                                                  data-refresh-url="">
-                                                                 <span class="no-items">Your cart is empty!</span>
+                                                                 <span class="no-items">Giỏ hàng đang trống!</span>
                                                          </div>
                                                      </div>
                                  
@@ -450,7 +442,7 @@ $('.method').on('click', function() {
                   <hr class="separator">
                   <div class="card-block ">
                      <div class="cart-summary-line cart-total">
-                        <span class="label"><?=$lang['total']?> </span>
+                        <span class="label">Tổng </span>
                         <span class="value"><?=$tongtien?></span>
                      </div>
                   </div>
@@ -465,21 +457,21 @@ $('.method').on('click', function() {
                         <div class="block-reassurance-item">
                            <img src="views/assets/img/ic_verified_user_black_36dp_1x.png"
                               alt="Security policy (edit with Customer reassurance module)">
-                           <span class="h6"><?=$lang['security']?></span>
+                           <span class="h6">Bảo mật</span>
                         </div>
                      </li>
                      <li>
                         <div class="block-reassurance-item">
                            <img src="views/assets/img/ic_local_shipping_black_36dp_1x.png"
                               alt="Delivery policy (edit with Customer reassurance module)">
-                           <span class="h6"><?=$lang['delivery']?></span>
+                           <span class="h6">Giao hàng</span>
                         </div>
                      </li>
                      <li>
                         <div class="block-reassurance-item">
                            <img src="views/assets/img/ic_swap_horiz_black_36dp_1x.png"
                               alt="Return policy (edit with Customer reassurance module)">
-                           <span class="h6"><?=$lang['return']?></span>
+                           <span class="h6">Đổi trả</span>
                         </div>
                      </li>
                   </ul>

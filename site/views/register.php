@@ -9,7 +9,7 @@
                 <section id="main">
                     <header class="page-header">
                         <h1 class="kk-innertitle">
-                            <?=$lang['creatacc']?>
+                            Tạo tài khoản
                         </h1>
                     </header>
 
@@ -21,7 +21,7 @@
                                     <input type="hidden" name="id_customer" value="" />
                                     <div class="form-group row">
                                         <label class="col-md-3 form-control-label required">
-                                            <?=$lang['fullname']?>
+                                            Tên đầy đủ
                                         </label>
                                         <div class="col-md-6">
                                             <input class="form-control" name="name" type="text" value="" required />
@@ -31,7 +31,7 @@
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-md-3 form-control-label required">
-                                            <?=$lang['emailadd']?>
+                                            Email
                                         </label>
                                         <div class="col-md-6">
                                             <input class="form-control" name="email" type="email" value="" required />
@@ -42,7 +42,7 @@
 
                                     <div class="form-group row">
                                         <label class="col-md-3 form-control-label required">
-                                            <?=$lang['pass']?>
+                                           Mật khẩu
                                         </label>
                                         <div class="col-md-6">
                                             <div class="input-group js-parent-focus">
@@ -52,7 +52,7 @@
                                                 <span class="input-group-btn">
                                                     <button class="btn" type="button" data-action="show-password"
                                                         data-text-show="Show" data-text-hide="Hide">
-                                                        Show
+                                                        Hiện
                                                     </button>
                                                 </span>
                                             </div>
@@ -69,15 +69,15 @@
                                             }
                                             ?>
                                 </section>
-                                <p><?=$lang['already']?> <a
-                                        href="<?php echo ROOT_URL?>/login"><?=$lang['logininsted']?></a></p>
+                                Đã có tài khoản <a
+                                        href="<?php echo ROOT_URL?>/login">Đăng nhập ngay</a></p>
 
                                 <footer class="form-footer clearfix">
                                     <input type="hidden" name="submitCreate" value="1" />
 
                                     <button class="btn btn-primary form-control-submit " name="register"
                                         data-link-action="save-customer" type="submit">
-                                        <?=$lang['register']?>
+                                        Đăng kí
                                     </button>
                                 </footer>
                             </form>

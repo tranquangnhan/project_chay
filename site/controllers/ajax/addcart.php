@@ -67,6 +67,10 @@
                 $tatcasp = $_SESSION['cart'];
                 $sltotal = 0; 
                 $tongtien = 0;
+                $tongslsp= 0;
+                foreach ($tatcasp as $motsp) {
+                    $tongslsp += $motsp[1];
+                }
                 $kq ='<div id="_desktop_cart">
                         <div class="shopping-cart">
                       
@@ -76,7 +80,7 @@
                                         <a rel="nofollow" >
                                             <i class="material-icons shopping-cart" >shopping_cart</i>
                                             <span class="hidden-sm-down">Cart</span>
-                                            <span class="cart-products-count">'.count($_SESSION['cart']).'</span>
+                                            <span class="cart-products-count">'.$tongslsp.'</span>
                                         </a>
                                     </div>
                                     <!---dropdown-->
@@ -93,15 +97,8 @@
                     $tongtien += $motsp[5]*$motsp[1];
                     $name = $motsp[4];
                     $id = $motsp[0];
-                    if ($_SESSION['lang'] === 'en') {
-                        $gia ="$".$motsp[5];
-                        $do = "$";
-                         $euro ="";
-                    }else{
-                        $gia = $motsp[5]."€";
-                        $do = "";
-                        $euro = "€";
-                    }
+                        $gia =$motsp[5];
+                    
                     
                     $slmotsp = $motsp[1];
                     $size = $motsp[2];
@@ -162,8 +159,8 @@
                                 <div class="row">
                                     
                                     <div class="Total col-xs-12 clearfix">
-                                        <span class="label  text-xs-left">'.$lang['total'].'</span>
-                                        <span class="value   text-xs-right">'.$do.''.$tongtien.''.$euro.'</span>
+                                        <span class="label  text-xs-left">Tổng</span>
+                                        <span class="value   text-xs-right">'.$tongtien.'</span>
                                     </div>
 
                                 </div>
@@ -172,7 +169,7 @@
                             <div class="cart-btn col-xs-12">
                                 <div class="row">
                                     <a href="'.ROOT_URL.'/checkout'.'"
-                                        class="btn btn-primary">'.$lang['checkout'].'</a>
+                                        class="btn btn-primary">Kiểm tra giỏ hàng</a>
 
                                 </div>
                                 <!--dropdown-->
@@ -201,7 +198,7 @@
 
                                             <li class="cart-det2"
                                                 data-refresh-url="">
-                                                <span class="no-items">'.$lang['emptycart'].'</span>
+                                                <span class="no-items">Gio hàng trống !</span>
                                         </div>
                                     </div>
 

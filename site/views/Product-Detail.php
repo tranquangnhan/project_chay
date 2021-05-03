@@ -85,11 +85,7 @@ if(is_array($sp)){
 
                         </div> 
                          <div class="col-xs-12 col-md-7">
-                            <h1 class="h1 kk-producttitle" itemprop="name"><?php if ($_SESSION['lang'] === 'en') {
-                                              echo $sp['name'];
-                                          }else{
-                                            echo $sp['name_ge'];
-                                          }?></h1>
+                            <h1 class="h1 kk-producttitle" itemprop="name"><?php  echo $sp['name'];?></h1>
 
                             <?php if($sp['price'] == 0 || $sp['price'] ==''){?>
                                 <div class="product-prices">
@@ -129,9 +125,8 @@ if(is_array($sp)){
                                            
                                                 <div class="add">
                                                     <input type="hidden" id="sp" value="<?=$sp['id']?>">
-                                                    <button class="btn btn-primary " onclick="contact('<?=$_SESSION['lang']?>')">
-                                                       
-                                                       <?=$lang['contactformore']?>
+                                                    <button class="btn btn-primary " onclick="contact()">
+                                                       Liên hệ để đặt hàng
                                                     </button>
                                                 </div>
 
@@ -142,7 +137,7 @@ if(is_array($sp)){
 
                                             <span id="product-availability">
                                                 <i class="material-icons rtl-no-flip product-available">&#xE5CA;</i>
-                                                In-stock
+                                               Trong kho
                                             </span>
 
 
@@ -163,12 +158,12 @@ if(is_array($sp)){
                                         <?php
                                         if($sp['discount']>0){
                                         ?>
-                                        <span itemprop="price" content="32.89" style="font-size:13pt;text-decoration:line-through"><?php if($_SESSION['lang'] === 'en') echo "$".floatval($sp['price']); else echo floatval($sp['price_ge'])."€"; ?></span><br>
-                                        <span itemprop="price" content="32.89" style="color:var(--it-brand-primary)"><?php if($_SESSION['lang'] === 'en') echo "$".($sp['price'] - ($sp['discount']*$sp['price'])/100); else echo ($sp['price_ge'] - ($sp['discount']*$sp['price_ge'])/100)."€"; ?></span>
+                                        <span itemprop="price" content="32.89" style="font-size:13pt;text-decoration:line-through"><?php echo floatval($sp['price']);?></span><br>
+                                        <span itemprop="price" content="32.89" style="color:var(--it-brand-primary)"><?php  echo ($sp['price'] - ($sp['discount']*$sp['price'])/100); ?></span>
                                        
                                          <?php }
                                         else{?>
-                                            <span itemprop="price" content="32.89" style="color:var(--it-brand-primary)"><?php if($_SESSION['lang'] === 'en') echo "$".floatval($sp['price']); else echo floatval($sp['price_ge'])."€"; ?></span>
+                                            <span itemprop="price" content="32.89" style="color:var(--it-brand-primary)"><?php  echo floatval($sp['price']); ?></span>
                                         <?php   } ?>
                                     </div>
 
@@ -241,7 +236,7 @@ if(is_array($sp)){
 
                                               
                                         <div class="product-add-to-cart">
-                                            <span class="control-label"><?=$lang['quantity']?></span>
+                                            <span class="control-label">Số lượng</span>
 
 
                                             <div class="product-quantity clearfix">
@@ -252,9 +247,9 @@ if(is_array($sp)){
 
                                                 <div class="add">
                                                     <button class="btn btn-primary add-to-cart"
-                                                         onclick="return addCart(<?= $sp['id'] ?>,'<?= $_SESSION['lang'] ?>')">
+                                                         onclick="return addCart(<?= $sp['id'] ?>)">
                                                        
-                                                         <?=$lang['addcart']?>
+                                                         Thêm giỏ hàng
                                                     </button>
                                                 </div>
 
@@ -265,7 +260,7 @@ if(is_array($sp)){
 
                                             <span id="product-availability">
                                                 <i class="material-icons rtl-no-flip product-available">&#xE5CA;</i>
-                                                <?=$lang['instock']?>
+                                                Trong kho
                                             </span>
 
 
@@ -281,7 +276,7 @@ if(is_array($sp)){
 
 
                                             <div class="social-sharing">
-                                                <span><?=$lang['share']?></span>
+                                                Chia sẻ
                                                 <ul>
                                                     <?php 
                                                     $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
@@ -314,21 +309,21 @@ if(is_array($sp)){
                                             <div class="block-reassurance-item">
                                                 <img src="views/assets/img/ic_verified_user_black_36dp_1x.png"
                                                     alt="Security policy (edit with Customer reassurance module)">
-                                                <span class="h6"><?=$lang['security']?></span>
+                                                <span class="h6">Bảo mật</span>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="block-reassurance-item">
                                                 <img src="views/assets/img/ic_local_shipping_black_36dp_1x.png"
                                                     alt="Delivery policy (edit with Customer reassurance module)">
-                                                <span class="h6"><?=$lang['delivery']?></span>
+                                                <span class="h6">Giao hàng</span>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="block-reassurance-item">
                                                 <img src="views/assets/img/ic_swap_horiz_black_36dp_1x.png"
                                                     alt="Return policy (edit with Customer reassurance module)">
-                                                <span class="h6"><?=$lang['return']?></span>
+                                                <span class="h6">Đổi trả</span>
                                             </div>
                                         </li>
                                     </ul>
@@ -345,12 +340,12 @@ if(is_array($sp)){
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link active" data-toggle="tab" href="#description" role="tab"
-                                        aria-controls="description" aria-selected="true"><?=$lang['description']?></a>
+                                        aria-controls="description" aria-selected="true">Mô tả</a>
                                 </li>
-                                <li class="nav-item">
+                                <!-- <li class="nav-item">
                                     <a class="nav-link" data-toggle="tab" href="#product-details" role="tab"
-                                        aria-controls="product-details"><?=$lang['prodetail']?></a>
-                                </li>
+                                        aria-controls="product-details"></a>
+                                </li> -->
                             </ul>
 
                             <div class="tab-content" id="tab-content">
@@ -358,7 +353,7 @@ if(is_array($sp)){
 
                                     <div class="product-description">
                                         <p>
-                                            <?php if($_SESSION['lang'] === 'en') echo $sp['description']; else echo $sp['description_ge'];?>
+                                            <?php  echo $sp['description']; ?>
                                         </p>
                                     </div>
 
@@ -370,7 +365,7 @@ if(is_array($sp)){
                                     role="tabpanel">
                                     <div class="product-description">
                                         <p>
-                                            <?php if($_SESSION['lang'] === 'en') echo $sp['properties']; else echo $sp['properties_ge']?>
+                                            <?php  echo $sp['properties']; ?>
                                         </p>
                                     </div>
 
@@ -387,7 +382,7 @@ if(is_array($sp)){
 
                     <section class="container  hb-animate-element bottom-to-top ">
 
-                    <h3 class="kk-title">Special Products</h3>
+                    <h3 class="kk-title">Sản phẩm liên quan</h3>
 
                     <div class="kkspecial-list bottom-to-top hb-animate-element">
                         <div class="row">
@@ -409,16 +404,10 @@ if(is_array($sp)){
                                     }else{
                                     $new = '';
                                     }
+                                    $price = $row['price'];
                                     if($row['discount'] > 0){
-                                        if ($_SESSION['lang'] === 'en') {
-                                            $price = $row['price'];
-                                            $do = "$";
-                                            $euro ="";
-                                        }else{
-                                            $price = $row['price_ge'];
-                                            $do = "";
-                                            $euro = "€";
-                                        }
+                                       
+                                        
                                     $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
                                     $giaDiscount = ' <div class="product-price-and-shipping">
 
@@ -428,7 +417,7 @@ if(is_array($sp)){
 
 
                                                     <span class="sr-only">Price</span>
-                                                    <span itemprop="price" class="price">'.$do.''.($price - ($row['discount']*$price)/100).''.$euro.'</span>
+                                                    <span itemprop="price" class="price">'.($price - ($row['discount']*$price)/100).'</span>
                                                 </div>';
                                     }else{
                                     $discount = '';
@@ -436,7 +425,7 @@ if(is_array($sp)){
                             
 
                                                         <span class="sr-only">Price</span>
-                                                        <span itemprop="price" class="price">'.$do.''.floatval($price).''.$euro.'</span>
+                                                        <span itemprop="price" class="price">'.floatval($price).'</span>
                                                     
                                                     
                                                 </div>';
@@ -444,11 +433,8 @@ if(is_array($sp)){
                                     if($price<=0 ||$price =='' ){
                                         $giaDiscount = ' <span class="discount-percentage discount-product">contact</span>';
                                     }
-                                    if ($_SESSION['lang'] === 'en') {
                                         $name = $row['name'];
-                                    }else{
-                                        $name = $row['name_ge'];
-                                    }
+                                    
                                     $link = ROOT_URL."/product/".$row['slug'];
                                     echo '<div class="kktab-block">
                                     <article class="product-miniature js-product-miniature " data-id-product="17"

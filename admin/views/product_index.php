@@ -16,16 +16,16 @@
                                             <thead class="thead-light">
                                                 <tr>
                                                     <th width="10">STT</th>
-                                                    <th width="120">Name</th>
-                                                    <th width="130">Price</th>
-                                                    <th width="20">Image</th>
-                                                    <th width="10">Hot</th>
-                                                    <th >Viewd</th>
-                                                    <th>Buyed</th>
-                                                    <th >Description</th>
-                                                    <th width="5">properties</th>
-                                                    <th width="5">Del</th>
-                                                    <th width="5">Edit</th>
+                                                    <th width="120">Tên</th>
+                                                    <th width="130">Giá</th>
+                                                    <th width="20">Hình</th>
+                                                    <th width="10">Nổi</th>
+                                                    <th >Lượt Xem</th>
+                                                    <th>Lượt Mua</th>
+                                                    <th >Mô tả</th>
+                                                    <th width="5">Thuộc tính</th>
+                                                    <th width="5">Xóa</th>
+                                                    <th width="5">Sửa</th>
                                                     
                                                 </tr>
                                             </thead>
@@ -49,7 +49,7 @@
                                                 echo '<tr>
                                                         <td>'.$stt.'</td>
                                                         <td class="" >'.$row['name'].'</td>
-                                                        <td><div >'.($row['price']).' $</div><br>  </td>
+                                                        <td><div >'.($row['price']).'</div><br>  </td>
                                                         <td><img style="object-fit:cover;" class="img-admin" width="100" height="100" src="'.$img.'"></td>
                                                         <td> '.$hot.'</td>
                                                         <td> '.$row['view'].'</td>

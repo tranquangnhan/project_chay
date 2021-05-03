@@ -238,30 +238,30 @@
                             <li>
                                 <a href="javascript: void(0);">
                                     <i class="mdi mdi-page-layout-sidebar-left"></i>
-                                    <span> Product </span>
+                                    <span> Sản phẩm </span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="?ctrl=product&act=addnew">Add New</a></li>
-                                    <li><a href="?ctrl=product&act=index">List</a></li>
+                                    <li><a href="?ctrl=product&act=addnew">Thêm mới </a></li>
+                                    <li><a href="?ctrl=product&act=index">Danh sách</a></li>
                                 </ul>
                             </li>
                             
                             <li>
                                 <a href="javascript: void(0);">
                                     <i class="mdi mdi-page-layout-sidebar-left"></i>
-                                    <span> Category</span>
+                                    <span> Danh mục</span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="?ctrl=categories&act=addnew">Add New</a></li>
-                                    <li><a href="?ctrl=categories&act=index">List</a></li>
+                                    <li><a href="?ctrl=categories&act=addnew">Thêm mới</a></li>
+                                    <li><a href="?ctrl=categories&act=index">Danh sách</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <a href="?ctrl=order">
                                     <i class="mdi mdi-page-layout-sidebar-left"></i>
-                                    <span>Order</span>
+                                    <span>Đơn hàng</span>
                                     
                                 </a>
                                 
@@ -269,7 +269,7 @@
                             <li>
                                 <a href="?ctrl=contact">
                                     <i class="mdi mdi-page-layout-sidebar-left"></i>
-                                    <span>Contact</span>
+                                    <span>Liên hệ</span>
                                     
                                 </a>
                                 
