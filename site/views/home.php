@@ -6,7 +6,55 @@
     </div>
 </aside>
 
-<div id="top_column">
+<div class="container">
+    <div class="row ">
+        
+        <div class="col-md-3" id="danhmucdoc">
+            <div class="card" style="width: 100%;">
+                <div class="card-header" style="background-color: #6f9cba; color: black;">
+                    SẢN PHẨM
+                </div>
+                <ul class="list-group list-group-flush">
+                    <?php
+                        foreach ($getMenuParentdoc as $row) {
+                            echo '<li class="list-group-item">
+                            <a href="#">'.$row['name'].'
+                                
+                            </a>';
+                            $getMenuchilddoc = $this->model->showDmCondoc($row['id']);
+                            if($getMenuchilddoc){
+                                echo '<div class="pro_already">
+                                <ul>';
+                                foreach ($getMenuchilddoc as $row) {
+                                    $link = ROOT_URL."/brand/".$row['slug']."-".$row['hangcosan']."/page-1";
+                                    echo '<li><a href="'.$link.'">'.$row['name'].'</a>';
+                                    // show sản phẩm của danh mục
+                                    $probybrand = $this->model->getProByBrand($row['name'],$row['hangcosan']);
+                                    if($probybrand){
+                                        echo '<div class="pro_already1">
+                                        <ul>';
+                                        foreach ($probybrand as $row) {
+                                            $link = ROOT_URL."/product/".$row['slug'];
+                                            echo '<li><a href="'.$link.'">'.$row['name'].'</a></li>';
+                                        }
+                                        echo '</ul></div>';
+                                    }
+                                    echo '</li>';
+                                }
+                                echo '</ul></div>';
+                            }
+                            echo ' </li>';
+                        }
+                    ?>
+                    
+                </ul>
+                
+            </div>
+            
+        </div>
+        
+        <div class="col-md-9 ">
+        <div id="top_column">
     <div class="kkimgslider clearfix ">
         <div class="flexslider" data-interval="5000" data-pause="hover">
             <ul class="slides">
@@ -39,6 +87,9 @@
                     </a>
                 </li>
             </ul>
+        </div>
+    </div>
+</div>
         </div>
     </div>
 </div>

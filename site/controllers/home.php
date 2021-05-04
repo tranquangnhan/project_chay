@@ -62,6 +62,8 @@
            $getAllByBuyed = $this->model->getAllByBuyed(10,0);
            $getAllProByDeal =  $this->model->getAllProByDeal();
            $getMenuParent = $this->model->getMenuParent();
+		   $getMenuParentdoc = $this->model->getMenuParentdoc();
+		   
            $page_title ="Danh sách nhà sản xuất";
            $viewFile = "views/home.php";
            require_once "views/layout.php";  
@@ -69,54 +71,63 @@
    
         function product()
         {
+			
          
          $getMenuParent = $this->model->getMenuParent();
          $getCateFromId = $this->model->getCateFromId($_GET['maloai']);
-         $getAllCate = $this->model->getAllCate();
+         
          $getAllProDesc = $this->model->getAllProDesc(3,0);
          
          $getAllProDescoffset = $this->model->getAllProDesc(3,3);
          $getAllByBuyed = $this->model->getAllByBuyed(3,0);
          $etAllByBuyedoffset = $this->model->getAllByBuyed(3,3);
-         if(isset($_GET['sortBy'])) $sortBy = $_GET['sortBy']; else $sortBy = NULL;
-   
-         if(isset($_GET['order'])) $order = $_GET['order']; else $order = NULL;
-   
-      
-         if(isset($_GET['maloai'])==true&&($_GET['maloai']>0))
-         $maLoai= $_GET['maloai'];
-   
-         $PageNum=1;
+		 $PageNum=1;
          if(isset($_GET['Page'])==true) $PageNum = $_GET['Page'];
          settype($maLoai,"int");
          settype($PageNum,"int");
    
          if($PageNum<=0) $PageNum = 1;
+		if(isset($_GET['slug'])){
+			$GetProductListCosan = $this->model->GetProductListCosan($_GET['maloai'],$_GET['slug'],$PageNum);
+			$getsizeALLpro = $this->model->getsizeALLpro();
+		}else{
+			$GetProductListCosan = $this->model->GetProductListByloai($_GET['slug1'],$_GET['maloai'],$PageNum);
+			$getsizeALLpro = $this->model->getsizeALLpro();
+		}
+        //  if(isset($_GET['sortBy'])) $sortBy = $_GET['sortBy']; else $sortBy = NULL;
    
-         if($maLoai)
-         {
-             $ds = $this->model-> GetProductList($maLoai,$PageNum,$sortBy,$order);
-             $TotalProduct = (int)$this->model->countAllProductControl($maLoai,$sortBy,$order);
-             if($TotalProduct == 0) $TotalProduct =1;
-             $BaseLink= 'cate';
-            $PageSize = PAGE_SIZE_PRO;
-            $Pagination =  $this->model->Page($TotalProduct ,$PageNum,$PageSize, $BaseLink);
-         }else{
-            $PageNum = $_GET['slug'];
-            if($PageNum<=0) $PageNum = 1;
-            $ds = $this->model-> GetProductList2($PageNum,$sortBy,$order);
-            $TotalProduct = (int)$this->model->countAllProductControl2($sortBy,$order);
-            if($TotalProduct == 0) $TotalProduct =1;
-            $BaseLink= 'cate';
-            $PageSize = PAGE_SIZE_PRO;
-            $Pagination =  $this->model->PageNotCate($TotalProduct ,$PageNum,$PageSize, $BaseLink);
-         }
+        //  if(isset($_GET['order'])) $order = $_GET['order']; else $order = NULL;
+   
+      
+        //  if(isset($_GET['maloai'])==true&&($_GET['maloai']>0))
+        //  $maLoai= $_GET['maloai'];
+   
+        
+   
+        //  if($maLoai)
+        //  {
+        //      $ds = $this->model-> GetProductList($maLoai,$PageNum,$sortBy,$order);
+        //      $TotalProduct = (int)$this->model->countAllProductControl($maLoai,$sortBy,$order);
+        //      if($TotalProduct == 0) $TotalProduct =1;
+        //      $BaseLink= 'cate';
+        //     $PageSize = PAGE_SIZE_PRO;
+        //     $Pagination =  $this->model->Page($TotalProduct ,$PageNum,$PageSize, $BaseLink);
+        //  }else{
+        //     $PageNum = $_GET['slug'];
+        //     if($PageNum<=0) $PageNum = 1;
+        //     $ds = $this->model-> GetProductList2($PageNum,$sortBy,$order);
+        //     $TotalProduct = (int)$this->model->countAllProductControl2($sortBy,$order);
+        //     if($TotalProduct == 0) $TotalProduct =1;
+        //     $BaseLink= 'cate';
+        //     $PageSize = PAGE_SIZE_PRO;
+        //     $Pagination =  $this->model->PageNotCate($TotalProduct ,$PageNum,$PageSize, $BaseLink);
+        //  }
    
          $page_title ="Danh sách nhà sản xuất";
          $viewFile = "views/product.php";
          require_once "views/layout.php";  
         }
-   
+		
         function detail()
         {
            $getAllProSpecial = $this->model->getAllProSpecial();

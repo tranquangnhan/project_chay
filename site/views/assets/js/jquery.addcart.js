@@ -3,6 +3,7 @@ window.onload = () => {
 
 }
 
+
 function cart() {
     if ($(".dropdown-menu-right").hasClass('cartdislay') == false) {
         $(".dropdown-menu-right")[0].classList.add('cartdislay');

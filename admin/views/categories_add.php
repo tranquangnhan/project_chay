@@ -24,7 +24,7 @@
                                         </div>
                                     </div>
 
-                                    <h4 class="header-title mt-0 mb-3">Category</h4>
+                                    <h4 class="header-title mt-0 mb-3">Danh mục</h4>
 
                                     <form data-parsley-validate novalidate method="post" enctype="multipart/form-data">
                                     <div class="boxform boxshowimg ">
@@ -43,25 +43,34 @@
                                             
                                         </div>
                                         <div class="form-group">
-                                            <label for="">Name Category</label>
+                                            <label for="">Tên danh mục</label>
                                             <input type="text" name="name_category"  parsley-trigger="change" required
-                                                   placeholder="Type name category" class="form-control" id="category">
+                                                   placeholder="Nhập tên danh mục" class="form-control" id="category">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Kiểu</label>
+                                            <select name="kieu_menu" class="custom-select" id="">
+                                                <option value="0" selected>Ngang</option>
+                                                <option value="1">Dọc</option>
+                                            </select>
                                         </div>
                                         
                                         <div class="form-group">
-                                            <label for="">Description</label>
+                                            <label for="">Mô tả</label>
                                             <textarea id="editor1" style="height: 300px;width:100%" name="des_category" >
                                            
                                         </textarea>
                                         
                                         </div>
-                                        <label for="">Belong</label>
+                                        <label for="">Thuộc</label>
                                         <select class="custom-select form-group" name="IDcate">
-                                        
+                                            
                                             <option value="0" selected>Don't Belong</option>
                                             <?php
                                                 foreach ($listchild as $key) {
-                                                    echo '<option value="'.$key['id'].'">'.$key['name'].'</option>';
+                                                    if($key['style'] == 1) $style= " (dọc)";
+                                                    echo '<option value="'.$key['id'].','.$key['hangcosan'].'">'.$key['name'].''.$style.'</option>
+                                                    i';
                                                 }
                                             ?>
                                         </select>

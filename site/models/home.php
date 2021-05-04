@@ -4,11 +4,19 @@
  use SendGrid\Mail\TypeException;
 class Model_home extends Model_db{
     function getMenuParent(){
-        $sql = "SELECT * FROM catalog WHERE parent =0 LIMIT 5";
+        $sql = "SELECT * FROM catalog WHERE parent =0 and style=0 LIMIT 5";
         return $this->result1(0,$sql);
     }
     function showDmCon($id){
-        $sql = "SELECT * FROM catalog WHERE parent =$id ";
+        $sql = "SELECT * FROM catalog WHERE parent =$id  and style=0 ";
+        return $this->result1(0,$sql);
+    }
+    function getMenuParentdoc(){
+        $sql = "SELECT * FROM catalog WHERE parent =0 and style=1 LIMIT 5";
+        return $this->result1(0,$sql);
+    }
+    function showDmCondoc($id){
+        $sql = "SELECT * FROM catalog WHERE parent =$id and style=1 ";
         return $this->result1(0,$sql);
     }
     function getAllProSpecial()
@@ -63,6 +71,10 @@ class Model_home extends Model_db{
     function getProById($id){   
         $sql = "SELECT * FROM product WHERE id=?";
         return $this->result1(1,$sql,$id);
+    }
+    function getProByBrand($brand,$hangcosan){   
+        $sql = "SELECT * FROM product WHERE Brand=? and cosan=?";
+        return $this->result1(0,$sql,$brand,$hangcosan);
     }
     function getProperty($slug){ 
         $sql = "SELECT * FROM product WHERE slug = ?";
@@ -373,10 +385,20 @@ class Model_home extends Model_db{
     $sql ="SELECT * FROM catalog WHERE id = ?";
     return  $this->result1(1,$sql,$id);
    }
-
+   function getCateFromSlug($slug)
+   {
+    $sql ="SELECT * FROM catalog WHERE slug = ?";
+    return  $this->result1(1,$sql,$slug);
+   }
    function getAllCate()
    {
     $sql ="SELECT * FROM catalog WHERE parent>0  ORDER BY id DESC LIMIT 15";
+    return  $this->result1(0,$sql);
+   }
+   function getsizeALLpro()
+   {
+  
+    $sql ="SELECT DISTINCT name FROM catalog where parent !=0";
     return  $this->result1(0,$sql);
    }
    function countAllProduct($id)
@@ -414,31 +436,48 @@ class Model_home extends Model_db{
      
         return $this->result1(1,$sql)['sodong'];
    }
-   function GetProductList($id,$CurrentPage,$sortBy,$order){
-      $sql ="SELECT * from catalog cate  inner join product pro on cate.id= pro.catalog_id
+   function GetProductListCosan($id,$slug,$CurrentPage){
+      $sql ="SELECT * from product where cosan=? and Brand=?
       ";
-      $par = $this->getCateByid($id);
-      if($par['parent'] != 0){
-          $sql .= " where pro.catalog_id=?";
-      }else{
-          $sql .= " where cate.parent=?";
-      }
-
+     
       if ($CurrentPage !== 0)
       {
-          $sql .= " GROUP BY pro.id";
-      }
-            
-      if ($sortBy != NULL && $order != NULL)
-      {
-         $sql .= " ORDER BY pro.$sortBy $order"; 
-      }else{
-        $sql .= " ORDER BY pro.id DESC"; 
+          $sql .= " GROUP BY id";
       }
       $sql .=" LIMIT ".($CurrentPage - 1) * PAGE_SIZE_PRO.", ".PAGE_SIZE_PRO;
-      return $this->result1(0,$sql,$id);
+      return $this->result1(0,$sql,$id,$slug);
     }
+    function GetProductListByloai($id,$idcatalog,$CurrentPage){
+        $sql ="SELECT * from product where catalog_id=?
+        ";
 
+        $par = $this->getCateFromId($idcatalog);
+        if($par['parent'] != 2){
+            $idcatalog = $par['parent'];
+            $sql .= " AND cosan=?";
+            $id = $par['hangcosan'];
+            
+            if ($CurrentPage !== 0)
+        {
+            $sql .= " GROUP BY id";
+        }
+        $sql .=" LIMIT ".($CurrentPage - 1) * PAGE_SIZE_PRO.", ".PAGE_SIZE_PRO;
+
+            $kq = $this->result1(0,$sql,$idcatalog,$id);
+        }else{
+            $idcatalog = $par['id'];
+            if ($CurrentPage !== 0)
+            {
+                $sql .= " GROUP BY id";
+            }
+            $sql .=" LIMIT ".($CurrentPage - 1) * PAGE_SIZE_PRO.", ".PAGE_SIZE_PRO;
+
+            $kq = $this->result1(0,$sql,$idcatalog);
+        }
+        
+        
+        return $kq;
+      }
     function GetProductList2($CurrentPage,$sortBy,$order)
     {
         $sql ="SELECT * from catalog cate  inner join product pro on cate.id= pro.catalog_id

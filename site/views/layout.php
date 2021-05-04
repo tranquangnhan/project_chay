@@ -479,66 +479,55 @@
                                     $this->model = new Model_home();
                                     $i =0;
                                     foreach ($getMenuParent as $row) {
-                                        if($_SESSION['lang'] === 'en'){
-                                            $namecha = $row['name'];
-                                        }else{
-                                            $namecha = $row['name_ge'];
-                                        }
-                                    
-                                        if($row['parent'] ==0){
-                                            $linkCha = ROOT_URL.'/'.$row['ctrl'];
-                                        }
-
-                                        $menuCon = '';
-                                        $kq = '';
-                                        foreach ($this->model->showDmCon($row['id']) as $con) {
-                                          
-                                            if($_SESSION['lang'] === 'en'){
-                                                $namecon = $con['name'];
-                                            }else{
-                                                $namecon = $con['name_ge'];
-                                            }
-                                           
-                                            $menuCon .= ' <li class="category" >
-                                                            <a class="dropdown-item"
-                                                                href="'.ROOT_URL.'/cate/'.$con['slug'].'-'.$con['id'].'/page-1'.'"
-                                                                data-depth="2">
-                                                                '.$namecon.'
-                                                            </a>
-                                                        </li>';
-                                        }
-
-                                        $kq .= '<li class="category" >
-                                                    <a class="dropdown-item"
-                                                        href="'.$linkCha.'"
-                                                        data-depth="0">
-                                                        <span class="float-xs-right hidden-md-up">
-                                                            <span data-target="#top_sub_menu_70770'.$i.'" data-toggle="collapse"
-                                                                class="navbar-toggler collapse-icons">
-                                                                <i class="material-icons add">&#xE313;</i>
-                                                                <i class="material-icons remove">&#xE316;</i>
-                                                            </span>
+                                        // show dm cấp 0
+                                        echo '<li class="category" id="category-3">
+                                        <a class="dropdown-item" href="#" data-depth="0">
+                                            <span class="float-xs-right hidden-md-up">
+                                                <span data-target="#top_sub_menu_40711" data-toggle="collapse" class="navbar-toggler collapse-icons">
+                                                    <i class="material-icons add">&#xE313;</i>
+                                                    <i class="material-icons remove">&#xE316;</i>
+                                                </span>
+                                            </span>
+                                            '.$row['name'].'
+                                        </a>';
+                                        // show dm cap 1
+                                        $dmcap1 = $this->model->showDmCon($row['id']);
+                                        if ($dmcap1) {
+                                            echo '<div class="popover sub-menu js-sub-menu collapse twocolumn" id="top_sub_menu_40711'.$i.'">
+                                            <ul class="top-menu" data-depth="1">';
+                                            foreach ($dmcap1 as $row) {
+                                                $link = ROOT_URL."/cate/".$row['slug']."-".$row['id']."/page-1";
+                                                echo '
+                                                <li class="category" id="category-4">
+                                                <a class="dropdown-item dropdown-submenu" href="'.$link.'" data-depth="1">
+                                                    <span class="float-xs-right hidden-md-up">
+                                                        <span data-target="#top_sub_menu_63115'.$i.'" data-toggle="collapse" class="navbar-toggler collapse-icons">
+                                                            <i class="material-icons add">&#xE313;</i>
+                                                            <i class="material-icons remove">&#xE316;</i>
                                                         </span>
-                                                       '.$namecha.'
-                                                    </a>';
-                                                    if($menuCon){
-                                                        $kq .= '<div class="popover sub-menu js-sub-menu collapse twocolumn"
-                                                        id="top_sub_menu_70770'.$i.'">
-                
-                                                        <ul class="top-menu" data-depth="1">
-                                                            
-                                                            <li class="category" id="category-4'.$i.'">
-                                                            
-                                                            '.$menuCon.'
-                                                            </li>
-                                                        </ul>
-                
-                                                    </div>';
-                                                    $i++;
+                                                    </span>
+                                                    '.$row['name'].'
+                                                </a>';
+                                                // show dm cap 2
+                                                $dmcap2 = $this->model->showDmCon($row['id']);
+                                                if($dmcap2){
+                                                    echo '<div class="collapse" id="top_sub_menu_16353'.$i.'">
+                                                    <ul class="top-menu" data-depth="2">';
+                                                    foreach ($dmcap2 as $row) {
+                                                        $link = ROOT_URL."/cate/".$row['slug']."-".$row['id']."/page-1";
+                                                        echo '<li class="category" id="category-13'.$i.'">
+                                                        <a class="dropdown-item" href="'.$link.'" data-depth="2">
+                                                        '.$row['name'].'
+                                                        </a>
+                                                    </li>';
                                                     }
-
-                                                $kq .= '</li>';
-                                                echo $kq;
+                                                    echo '</ul></div>';
+                                                }
+                                            }
+                                            echo '</li></ul></div>';
+                                        }
+                                        
+                                        echo '</li>';
                                     }
                                 ?>
 

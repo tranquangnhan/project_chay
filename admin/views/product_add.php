@@ -86,13 +86,10 @@
                                                 <div class="form-group">
                                                     <label for="">Danh mục</label><span style="color:red;"> (*)</span>
                                                     <select class="form-control" name="IDCate">
+                                                        
                                                         <?php 
                                                             foreach ($producer as $row) {
-                                                                if($producer['id'] == $oneRecode['id']){
-                                                                    echo '<option value='.$row['id'].' selected>'.$row['name'].'</option>';
-                                                                }else{
-                                                                    echo '<option value='.$row['id'].'>'.$row['name'].'</option>';
-                                                                }
+                                                               echo '<option value="'.$row['parent'].'">'.$row['name'].'</option>';
                                                             }   
                                                         ?>
                                                     </select>
@@ -100,36 +97,43 @@
                                                 
                                             </div>
                                             <div class="col-lg-6">
-                                            <div class="form-group"><label for="">Kích cõ</label><br/></div>
-                                                <div class="form-group radio">
-                                                    <div class="input-radio size">
-                                                        <label for="size1 ">S</label>
-                                                        <input type="checkbox" name="size1" id="size1" value="S" />
-                                                    </div>
-                                                    <div class="input-radio size">
-                                                        <label for="size2">M</label>
-                                                        <input type="checkbox" name="size2" id="size2" value="M" />
-                                                    </div>
-                                                    <div class="input-radio size">
-                                                        <label for="size3">L</label>
-                                                        <input type="checkbox" name="size3" id="size3" value="L" />
-                                                    </div>
-                                                    <div class="input-radio size">
-                                                        <label for="size4">XL</label>
-                                                        <input type="checkbox" name="size4" id="size4" value="XL" />
-                                                    </div>
-                                                </div>
+                                                <div class="form-group">
+                                                    <label for="">Kích cỡ</label>
+                                                    <input type="text" class="form-control" value="<?=$oneRecode['size']?>" name="size" placeholder="">
+                                                </div> 
                                             </div>
                                             
 
                                         </div>
                                      
                                         <div class="row">
-                                            <div class="col-lg-6">
+                                        <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label for="">Nhãn hiệu</label><span style="color:red;"> (*)</span>
+                                                    <select class="form-control" name="brand">
+                                                        <?php 
+                                                            foreach ($listcate as $row) {
+                                                                if($row['hangcosan'] == 1) $co = " (Hàng order)"; else $co = "";
+                                                                echo '<option value="'.$row['name'].'">'.$row['name'].''.$co.'</option>';
+                                                            }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="col-lg-3">
                                                 <div class="form-group">
                                                     <div class="checkbox">
-                                                        <input id="remember-2" type="checkbox" name="hot" value="1" <?=($oneRecode['hot']==1) ? 'checked' : '';?> data-parsley-multiple="remember-1">
-                                                        <label for="remember-2">Nổi bật ? </label>
+                                                        <input id="remember-2" type="checkbox" name="cosan" value="" data-parsley-multiple="remember-2">
+                                                        <label for="remember-2">Có sẵn </label>
+                                                    </div>
+                                                </div>          
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="form-group">
+                                                    <div class="checkbox">
+                                                        <input id="remember-1" type="checkbox" name="hot" value=""  data-parsley-multiple="remember-1">
+                                                        <label for="remember-1">Nổi bật ? </label>
                                                     </div>
                                                 </div>          
                                             </div>

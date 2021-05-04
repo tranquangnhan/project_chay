@@ -67,17 +67,20 @@ class categories{
                     }
                 }
             }
-
-            $IDcate = $_POST['IDcate'];
+            $arr = explode(",",$_POST['IDcate']);
+            $IDcate = (int)($arr[0]);
+            $kieu = $_POST['kieu_menu'];
+            $hang = (int)($arr[1]);
+            echo $IDcate, $hang;
             $des_category = $_POST['des_category'];
             $slug = $this->lib->slug($name);
             $slug = strtolower($slug);
             if(isset($_GET['id'])){
                 $id = $_GET['id'];
                 settype($id,"int");
-                $this->edit($name,$imgs,$IDcate,$slug,$des_category,$id);
+                $this->edit($name,$imgs,$IDcate,$slug,$des_category,$kieu,$hang,$id);
             }else{
-                $this->store($name,$imgs,$IDcate,$slug,$des_category);
+                $this->store($name,$imgs,$IDcate,$slug,$des_category,$kieu,$hang);
             }
            
         }
@@ -86,9 +89,9 @@ class categories{
     }//thêm mới dữ liệu vào db
 
 
-    function store($name,$imgs,$IDcate,$slug,$des_category){   
+    function store($name,$imgs,$IDcate,$slug,$des_category,$kieu,$hang){   
         $name = $this->lib->stripTags($name);
-        if($this->model->addNewCate($name,$imgs,$IDcate,$slug,$des_category))
+        if($this->model->addNewCate($name,$imgs,$IDcate,$slug,$des_category,$kieu,$hang))
         {
             echo "<script>alert('Thêm thành công')</script>";
             header("location: ?ctrl=categories");
@@ -100,12 +103,12 @@ class categories{
         require_once "views/layout.php";
     }
 
-    function edit($name,$imgs,$IDcate,$slug,$des_category,$id)
+    function edit($name,$imgs,$IDcate,$slug,$des_category,$kieu,$hang,$id)
     {
         if(isset($_GET['id']))
         {
             
-            if($this->model->editCategory($name,$imgs,$IDcate,$slug,$des_category,$id))
+            if($this->model->editCategory($name,$imgs,$IDcate,$slug,$des_category,$kieu,$hang,$id))
             {
                 echo "<script>alert('Sửa thành công')</script>";
                 header("location: ?ctrl=categories");

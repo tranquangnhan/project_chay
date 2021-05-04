@@ -102,10 +102,10 @@
 
 
                             <section class="facet clearfix">
-                                <p class="h6 facet-title hidden-sm-down">Nhãn hiệu</p>
+                                <p class="h6 facet-title hidden-sm-down">THƯƠNG HIỆU</p>
 
                                 <div class="title hidden-md-up" data-target="#facet_21014" data-toggle="collapse">
-                                    <p class="h6 facet-title">Nhãn hiệu</p>
+                                    <p class="h6 facet-title">THƯƠNG HIỆU</p>
                                     <span class="float-xs-right">
                                         <span class="navbar-toggler collapse-icons">
                                             <i class="material-icons add">&#xE145;</i>
@@ -118,9 +118,10 @@
                                 <ul id="facet_21014" class="collapse">
                                   <?php
                                       $this->model = new Model_home();
-                                      foreach ($getAllCate as $row) {
-                                              $name = $row['name'];
-                                          
+                                      $arr = [];
+                                      $i =0;
+                                      foreach ($getsizeALLpro as $row) {
+                                            
                                         echo '  <li>
                                             <label class="facet-label" for="facet_input_21014_0">
                                                 <span class="custom-checkbox">
@@ -130,13 +131,12 @@
                                                 </span>
 
                                                 <a href="'.ROOT_URL.'/cate/'.$row['slug'].'-'.$row['id'].'/page-1" class="" >
-                                                    '.$name.'
+                                                    '.$row['name'].'
                                                     <span class="magnitude">('.$this->model->countAllProduct($row['id']).')</span>
                                                 </a>
                                             </label>
                                         </li>';
                                       }
-
                                   ?>
                                   
 
@@ -723,8 +723,8 @@
                                     <div class="products product-thumbs row">
 
                                         <?php
-                                        if(count($ds)>0){
-                                        foreach ($ds as $row) {
+                                        if(count($GetProductListCosan)>0){
+                                        foreach ($GetProductListCosan as $row) {
                                           if(is_file(PATH_IMG_SITE.explode(",",$row['image_list'])[0])){
                                               $img = PATH_IMG_SITE.explode(",",$row['image_list'])[0];
                                           }else{
@@ -782,7 +782,7 @@
                                                             src = "'.$img.'"
                                                             alt = "loading..."
                                                             data-full-size-image-url = "'.$img.'"  height="250">
-                                                            <img class="second_image img-responsive" height="250" width="200"  src = "'.$imgCover.'" alt = "" title="" />
+                                                            
                                                           </a> </div>
                                               </div><div class="kkproducthover"></div>
                                               </div>

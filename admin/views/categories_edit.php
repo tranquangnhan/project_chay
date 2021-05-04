@@ -48,6 +48,21 @@
                                             <input type="text" name="name_category" value="<?=$oneRecode['name']?>"  parsley-trigger="change" required
                                                    placeholder="Nhập tên danh mục" class="form-control" id="userName">
                                         </div>
+                                        <div class="form-group">
+                                            <label for="">Kiểu</label>
+                                            <select name="kieu_menu" class="custom-select" id="">
+                                                <?php
+                                                    if($oneRecode['style'] == 0){
+                                                        echo '<option value="0" selected>Ngang</option>
+                                                        <option value="1">Dọc</option>';
+                                                    }else{
+                                                        echo '<option value="0" >Ngang</option>
+                                                        <option value="1" selected>Dọc</option>';
+                                                    }
+                                                ?>
+                                                
+                                            </select>
+                                        </div>
                                         
                                         <div class="form-group">
                                             <label for="">Mô tả</label>
@@ -61,17 +76,19 @@
                                             
                                             <?php
                                                 if($oneRecode['parent']==0){
+                                                    if($row['style'] == 1) $style= " (dọc)";
                                                     echo '<option value="0" selected>Don\'t Belong</option>';
                                                     foreach ($listchild as $row) {
-                                                            echo '<option value='.$row['id'].'>'.$row['name'].'</option>';
+                                                            echo '<option value='.$row['id'].'>'.$row['name'].''.$style.'</option>';
                                                     } 
                                                 }
                                                 if($oneRecode['parent']!=0){                                                    
                                                     foreach ($listchild as $row) {
+                                                        if($row['style'] == 1) $style= " (dọc)";
                                                         if($row['id'] == $oneRecode['parent']){
-                                                            echo '<option value='.$row['id'].' selected>'.$row['name'].'</option>';
+                                                            echo '<option value='.$row['id'].' selected>'.$row['name'].''.$style.'</option>';
                                                         }else{
-                                                            echo '<option value='.$row['id'].'>'.$row['name'].'</option>';
+                                                            echo '<option value='.$row['id'].'>'.$row['name'].''.$style.'</option>';
                                                         }
                                                     } 
                                                 }

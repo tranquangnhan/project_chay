@@ -33,23 +33,7 @@ RewriteRule ^cate/page-([0-9]+)$ /project_chay/site/?act=product&Page=$3&slug=$1
 
 RewriteRule ^product/([a-zA-Z0-9-]+)$ /project_chay/site/?act=detail&slug=$1&id=$2 [L]
 
-RewriteRule ^cate/([a-zA-Z0-9-]+)-([0-9]+)/page-([0-9]+)$ /project_chay/site/?act=product&maloai=$2&Page=$3&slug=$1 [L]
-
-RewriteRule ^cate/([a-zA-Z0-9-]+)-([0-9]+)/page-([0-9]+)/pricedesc$ /project_chay/site/?act=product&maloai=$2&Page=$3&slug=$1&sortBy=price&order=desc [L]
-
-RewriteRule ^cate/([a-zA-Z0-9-]+)-([0-9]+)/page-([0-9]+)/priceasc$ /project_chay/site/?act=product&maloai=$2&Page=$3&slug=$1&sortBy=price&order=asc [L]
-
-RewriteRule ^cate/([a-zA-Z0-9-]+)-([0-9]+)/page-([0-9]+)/namedesc$ /project_chay/site/?act=product&maloai=$2&Page=$3&slug=$1&sortBy=name&order=desc [L]
-
-RewriteRule ^cate/([a-zA-Z0-9-]+)-([0-9]+)/page-([0-9]+)/nameasc$ /project_chay/site/?act=product&maloai=$2&Page=$3&slug=$1&sortBy=name&order=asc [L]
-
-
-RewriteRule ^cate/page-([0-9]+)/nameasc$ /site/?act=product&Page=$3&slug=$1&sortBy=name&order=asc [L]
-
-RewriteRule ^cate/page-([0-9]+)/namedesc$ /site/?act=product&Page=$3&slug=$1&sortBy=name&order=desc [L]
-
-RewriteRule ^cate/page-([0-9]+)/priceasc$ /site/?act=product&Page=$3&slug=$1&sortBy=price&order=asc [L]
-
-RewriteRule ^cate/page-([0-9]+)/pricedesc$ /site/?act=product&Page=$3&slug=$1&sortBy=price&order=desc [L]
+RewriteRule ^brand/([a-zA-Z0-9-]+)-([0-9]+)/page-([0-9]+)$ /project_chay/site/?act=product&maloai=$2&Page=$3&slug=$1 [L]
+RewriteRule ^cate/([a-zA-Z0-9-]+)-([0-9]+)/page-([0-9]+)$ /project_chay/site/?act=product&maloai=$2&Page=$3&slug1=$1 [L]
 
 ErrorDocument 404 /project_chay/site/views/Error404.php
