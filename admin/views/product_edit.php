@@ -111,7 +111,7 @@
                                                     <?php 
                                                             foreach ($listcate as $row) {
                                                                 if($row['hangcosan'] == 1) $co = " (Hàng order)"; else $co = "";
-                                                                if ($row['name'] === $oneRecode['Brand']) {
+                                                                if ($row['slug'] === $oneRecode['Brand']) {
                                                                     echo '<option value="'.$row['name'].'" selected>'.$row['name'].''.$co.'</option>';
                                                                 }else{
                                                                     echo '<option value="'.$row['name'].'">'.$row['name'].''.$co.'</option>';

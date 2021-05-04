@@ -398,7 +398,7 @@ class Model_home extends Model_db{
    function getsizeALLpro()
    {
   
-    $sql ="SELECT DISTINCT name FROM catalog where parent !=0";
+    $sql ="SELECT DISTINCT name FROM catalog where parent !=0 and style = 1";
     return  $this->result1(0,$sql);
    }
    function countAllProduct($id)

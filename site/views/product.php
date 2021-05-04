@@ -25,7 +25,7 @@
 
 
 
-                    <div class="block-categories">
+                    <!-- <div class="block-categories">
 
                         <div class="title clearfix hidden-md-up collapsed" data-target="#categories"
                             data-toggle="collapse">
@@ -86,7 +86,7 @@
                                 </ul>
                             </li>
                         </ul>
-                    </div>
+                    </div> -->
 
                     <div id="search_filters_wrapper" class="hidden-sm-down">
                         <div id="search_filter_controls" class="hidden-md-up">
@@ -95,6 +95,34 @@
                                 <i class="material-icons rtl-no-flip">&#xE876;</i>
                                 OK
                             </button>
+                        </div>
+                        <div id="search_filters">
+
+                            <p class="text-uppercase h6 hidden-sm-down">Lọc Giá</p>
+
+
+                            <section class="facet clearfix">
+                                <p class="h6 facet-title hidden-sm-down">GIÁ</p>
+
+                                <div class="title hidden-md-up" data-target="#facet_21014" data-toggle="collapse">
+                                    <p class="h6 facet-title">GIÁ</p>
+                                    <span class="float-xs-right">
+                                        <span class="navbar-toggler collapse-icons">
+                                            <i class="material-icons add">&#xE145;</i>
+                                            <i class="material-icons remove">&#xE15B;</i>
+                                        </span>
+                                    </span>
+                                </div>
+                                <ul id="facet_21014" class="collapse">
+                                <input type="hidden" id="hidden_minimum_price" value="1000" />
+                                <label for="customRange3" class="form-label">1.000đ - 60.000.000đ</label>
+                                <input type="range" class="form-range" min="1000" max="60000000" step="500000" id="hidden_maximum_price" value="60000000"> <br>
+                                <span class="ml-0 mt-2" id="SHOW_PRICE_FILTER">60000000đ</span>
+                         </ul>
+
+
+                            </section>
+                            
                         </div>
                         <div id="search_filters">
 
@@ -123,19 +151,20 @@
                                       foreach ($getsizeALLpro as $row) {
                                             
                                         echo '  <li>
-                                            <label class="facet-label" for="facet_input_21014_0">
+                                            <label class="facet-label" for="facet_input_21014_0'.$i.'">
                                                 <span class="custom-checkbox">
-                                                    <input id="facet_input_21014_0" data-search-url="" type="checkbox">
+                                                    <input id="facet_input_21014_0'.$i.'" type="checkbox" value="'.$row['name'].'" class="common_selector brand">
                                                     <span class="ps-shown-by-js"><i
                                                             class="material-icons rtl-no-flip checkbox-checked">&#xE5CA;</i></span>
                                                 </span>
 
-                                                <a href="'.ROOT_URL.'/cate/'.$row['slug'].'-'.$row['id'].'/page-1" class="" >
+                                                <a  class="" >
                                                     '.$row['name'].'
-                                                    <span class="magnitude">('.$this->model->countAllProduct($row['id']).')</span>
+                                                   
                                                 </a>
                                             </label>
                                         </li>';
+                                        $i++;
                                       }
                                   ?>
                                   
@@ -146,7 +175,7 @@
                             </section>
                             
                         </div>
-
+                        
                     </div>
                     <section class="featured-products clearfix mt-3 hb-animate-element right-to-left">
                         <h3 class="h1 products-section-title left-product-title text-uppercase hidden-md-down ">
@@ -336,34 +365,11 @@
                                         ?>
 
                                     </li>
-                                </ul>
-                                
-                                    
-
-                                       
-
-
-                                    
-                            </div>
-                            <!-- <a class="all-product-link h4" href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/new-products">
-      All new products<i class="material-icons">&#xE315;</i>
-    </a> -->
+                                </ul></div>
+                       
                         </div>
                     </section>
-                    <!-- 
-                    <div id="custom-leftbannerblock"
-                        class="leftbannercms col-lg-3 col-md-12 hb-animate-element left-to-right clearfix">
-                        <div id="custom-leftbannerblock" class="clearfix">
-                            <div id="kkleftbanners" class="kkleftbanners-container">
-                                <div class="image-container slider">
-                                    <a href="#" class="kk-customhover-fadeintopbottom" title="LeftCmsBanner 1">
-                                        <img src="views/assets/img/8ae59e977dd1c5a52a889a12ac2785f20660dd0c_Left-banners.jpg"
-                                            alt="LeftCmsBanner 1" title="LeftCmsBanner 1">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
+                    
                     <section class="featured-products clearfix mt-3 hb-animate-element left-to-right">
                         <h3 class="h1 products-section-title left-product-title text-uppercase hidden-md-down ">
                             Bán chạy
@@ -633,61 +639,25 @@
                                         <p>Có tất cả <?= $TotalProduct?> sản phẩm.</p>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="row sort-by-row">
-                                                     <?php 
-
-                                                        // /print_r(http_build_query($_GET));
-                                                      ?>
-                                                <?php 
-                                                    if($_GET['maloai'] == ''){
-                                                        $sortNameAsc = ROOT_URL.'/cate/page-'.$_GET['slug'].'/nameasc';
-                                                        $sortNameDesc = ROOT_URL.'/cate/page-'.$_GET['slug'].'/namedesc';
-                                                        $sortPriceAsc = ROOT_URL.'/cate/page-'.$_GET['slug'].'/priceasc';
-                                                        $sortPriceDesc = ROOT_URL.'/cate/page-'.$_GET['slug'].'/pricedesc';
-                                                    }else{
-                                                        $sortNameAsc = ROOT_URL.'/cate/'.$_GET['slug'].'-'.$_GET['maloai'].'/page-'.$_GET['Page'].'/nameasc';
-                                                        $sortNameDesc = ROOT_URL.'/cate/'.$_GET['slug'].'-'.$_GET['maloai'].'/page-'.$_GET['Page'].'/namedesc';
-                                                        $sortPriceAsc = ROOT_URL.'/cate/'.$_GET['slug'].'-'.$_GET['maloai'].'/page-'.$_GET['Page'].'/priceasc';
-                                                        $sortPriceDesc = ROOT_URL.'/cate/'.$_GET['slug'].'-'.$_GET['maloai'].'/page-'.$_GET['Page'].'/pricedesc';
-                                                    }
-                                                    if($_GET['slug']==''){
-                                                        $sortNameAsc = ROOT_URL.'/cate/page-1/nameasc';
-                                                        $sortNameDesc = ROOT_URL.'/cate/page-1/namedesc';
-                                                        $sortPriceAsc = ROOT_URL.'/cate/page-1/priceasc';
-                                                        $sortPriceDesc = ROOT_URL.'/cate/page-1/pricedesc';
-                                                    }
-                                                ?>
-                                            <span class="col-sm-3 col-md-3 hidden-sm-down sort-by"> Sắp xếp</span>
-                                            <div class="col-sm-9 col-xs-8 col-md-9 products-sort-order dropdown">
-                                                <button class="btn-unstyle select-title" rel="nofollow"
-                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    Tên từ a - z <i class="material-icons float-xs-right">&#xE5C5;</i>
-                                                </button>
-                                               
-                                                <div class="dropdown-menu">
-                                                    <a rel="nofollow"
-                                                        href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes?order=product.position.asc"
-                                                        class="select-list current js-search-link">
-                                                        Tên từ a - z
-                                                    </a>
-                                                    
-                                                    
-                                                    <a rel="nofollow"
-                                                        href="<?=$sortNameDesc?>"
-                                                        class="select-list ">
-                                                        Tên từ z - a
-                                                    </a>
-                                                    <a rel="nofollow"
-                                                        href="<?=$sortPriceAsc?>"
-                                                        class="select-list ">
+                                        <div class="row sort-by-row"><span class="col-sm-8 col-md-8 hidden-sm-down sort-by"> Sắp xếp</span>
+                                            <div class="col-sm-4 col-md-4 products-sort-order dropdown">
+                                            <div class="input-group ">
+                                                <select class="custom-select" id="sort_by">
+                                             
+                                                    <option value="price ASC" class="select-list ">
                                                         Giá từ thấp - cao
-                                                    </a>
-                                                    <a rel="nofollow"
-                                                        href="<?=$sortPriceDesc?>"
-                                                        class="select-list ">
+                                                    </option>
+                                                    <option value="price DESC" class="select-list ">
                                                         Giá từ cao - thấp
-                                                    </a>
+                                                    </option>
+                                                    <option value="Hot DESC" class="select-list ">
+                                                        Sản phẩm hot nhất
+                                                    </option>
+                                                </select>
+                                              
                                                 </div>
+                                               
+                                                
                                             </div>
 
 
@@ -720,9 +690,13 @@
                             <div>
 
                                 <div id="js-product-list">
-                                    <div class="products product-thumbs row">
+                                    <input type="hidden" name="" id="slug" value="<?php if(isset($_GET['slug'])) echo $_GET['slug']; ?>">
+                                    <input type="hidden" name="" id="slug1" value="<?php if(isset($_GET['slug1'])) echo $_GET['slug1']; ?>">
+                                    <input type="hidden" name="" id="maloai" value="<?php if(isset($_GET['maloai'])) echo $_GET['maloai']; ?>">
+                                    <div class="products product-thumbs row" id="filter_data">
 
                                         <?php
+                                        
                                         if(count($GetProductListCosan)>0){
                                         foreach ($GetProductListCosan as $row) {
                                           if(is_file(PATH_IMG_SITE.explode(",",$row['image_list'])[0])){
@@ -801,7 +775,8 @@
                                       }else{
                                         echo '<p style="margin-left:3rem"> No product !</p>';
                                       }
-                                      ?></div>
+                                      ?>
+                                      </div>
 
 
                                     <nav class="pagination">

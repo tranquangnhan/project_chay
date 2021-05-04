@@ -22817,6 +22817,10 @@ html[xmlns] .flexslider .slides {
     display: block;
 }
 
+#hidden_maximum_price {
+    width: 100%;
+}
+
 
 /* Add by SangTD */
 

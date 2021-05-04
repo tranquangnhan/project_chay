@@ -179,3 +179,57 @@ function contact() {
         }
     })
 }
+
+//ajax filter
+$(document).ready(function() {
+    // var page = $('#offset').val();
+    filter_data();
+
+    function filter_data() {
+        var action = 'fetch_data';
+        var sort_by = $('#sort_by').val();
+        var minimum_price = $('#hidden_minimum_price').val();
+        var maximum_price = $('#hidden_maximum_price').val();
+        var slug = $("#slug").val();
+        var slug1 = $("#slug1").val();
+        var maloai = $("#maloai").val();
+        var brand = get_filter('brand');
+        // var ram = get_filter('ram');
+        $.ajax({
+            url: "views/fetch_data.php",
+            method: "POST",
+            data: { action: action, minimum_price: minimum_price, maximum_price: maximum_price, brand: brand, key: sort_by, slug: slug, slug1: slug1, maloai: maloai },
+            success: function(data) {
+
+                $('#filter_data').html(data);
+            }
+        });
+
+    }
+
+    function get_filter(class_name) {
+        var filter = [];
+        $('.' + class_name + ':checked').each(function() {
+            filter.push($(this).val());
+        });
+        return filter;
+
+    }
+
+    $('.common_selector').click(function() {
+        filter_data();
+    });
+    $('#hidden_maximum_price').change(function() {
+        let oke = $('#hidden_maximum_price').val();
+        $('#SHOW_PRICE_FILTER').text(oke + "đ");
+        filter_data();
+    });
+    $('#sort_by').change(function() {
+        let oke = $('#sort_by').val();
+
+        // $('#SHOW_PRICE_FILTER').text(oke + "đ");
+        filter_data();
+    });
+
+
+});
