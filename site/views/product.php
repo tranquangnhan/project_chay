@@ -114,9 +114,9 @@
                                     </span>
                                 </div>
                                 <ul id="facet_21014" class="collapse">
-                                <input type="hidden" id="hidden_minimum_price" value="1000" />
-                                <label for="customRange3" class="form-label">1.000đ - 60.000.000đ</label>
-                                <input type="range" class="form-range" min="1000" max="60000000" step="500000" id="hidden_maximum_price" value="60000000"> <br>
+                                <input type="hidden" id="hidden_minimum_price" value="10000" />
+                                <label for="customRange3" class="form-label">10.000đ - 60.000.000đ</label>
+                                <input type="range" class="form-range" min="10000" max="60000000" step="10000" id="hidden_maximum_price" value="60000000"> <br>
                                 <span class="ml-0 mt-2" id="SHOW_PRICE_FILTER">60000000đ</span>
                          </ul>
 
@@ -636,7 +636,7 @@
                                         </div>
 
 
-                                        <p>Có tất cả <?= $TotalProduct?> sản phẩm.</p>
+                                        <p>Có tất cả <?= $TotalProduct?> sản phẩm. </p>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="row sort-by-row"><span class="col-sm-8 col-md-8 hidden-sm-down sort-by"> Sắp xếp</span>
@@ -647,10 +647,10 @@
                                                     <option value="price ASC" class="select-list ">
                                                         Giá từ thấp - cao
                                                     </option>
-                                                    <option value="price DESC" class="select-list ">
+                                                    <option value="price DESC" class="select-list" >
                                                         Giá từ cao - thấp
                                                     </option>
-                                                    <option value="Hot DESC" class="select-list ">
+                                                    <option value="hot DESC" class="select-list ">
                                                         Sản phẩm hot nhất
                                                     </option>
                                                 </select>
@@ -688,95 +688,139 @@
 
 
                             <div>
+                                <script>
+                                    //ajax filter
+                                        $(document).ready(function() {
+                                            // var page = $('#offset').val();
+                                            filter_data();
 
+                                            async function filter_data() {
+                                                var action = 'fetch_data';
+                                                // var sort_by = $('#sort_by').val();
+                                                var minimum_price = $('#hidden_minimum_price').val();
+                                                var maximum_price = $('#hidden_maximum_price').val();
+                                                var slug = $("#slug").val();
+                                                var slug1 = $("#slug1").val();
+                                                var maloai = $("#maloai").val();
+                                                var page = <?php if(isset($_GET['Page'])) echo $_GET['Page']; else echo 1;?>;
+                                                var brand = get_filter('brand');
+                                                var arrBrand = brand.join();
+                                                if(brand.length == 0) {
+                                                    if(sessionStorage.getItem("brand") && sessionStorage.getItem("brand") !=""){
+                                                        brand = sessionStorage.getItem("brand").split(",");
+                                                        let checkBrand = document.getElementsByClassName('common_selector');
+                                                        for (let i = 0; i < checkBrand.length; i++) {
+                                                            for (let j = 0; j < brand.length; j++) {
+                                                                if(brand[j] == checkBrand[i].value)
+                                                                {
+                                                                    checkBrand[i].setAttribute("checked","")
+                                                                }
+                                                            }
+                                                            
+                                                        }
+                                                    }
+                                                }else{
+                                                    sessionStorage.setItem("brand",arrBrand);
+                                                    if(sessionStorage.getItem("brand") && sessionStorage.getItem("brand") !=""){
+                                                        brand = sessionStorage.getItem("brand").split(",");
+                                                    }
+                                                }
+                                                
+                                                if(maximum_price == 60000000){
+                                                    if(sessionStorage.getItem("price") && sessionStorage.getItem("price") !=""){
+                                                        maximum_price = sessionStorage.getItem("price")
+                                                        let filterPrice = $('#hidden_maximum_price').val(maximum_price);
+                                                    }
+                                                }else{
+                                                    sessionStorage.setItem("price",maximum_price);
+                                                    if(sessionStorage.getItem("price") && sessionStorage.getItem("price") !=""){
+                                                        maximum_price = sessionStorage.getItem("price")
+                                                        let filterPrice = $('#hidden_maximum_price').val(maximum_price);
+                                                    }
+                                                }
+                                                if(sessionStorage.getItem("sort_by") && sessionStorage.getItem("sort_by") !=""){
+                                                   
+                                                    
+                                                   let oke = document.getElementsByTagName('option');
+                                                   for (let i = 0; i < oke.length; i++) {
+                                                       if(sessionStorage.getItem("sort_by") == oke[i].value){
+                                                           oke[i].setAttribute("selected","");
+                                                       } 
+                                                   }
+                                                   sessionStorage.setItem("sort_by", $('#sort_by').val());
+                                                   sort_by = sessionStorage.getItem("sort_by")
+                                                }else{
+                                                    sort_by = $('#sort_by').val()
+                                                    sessionStorage.setItem("sort_by",sort_by);
+                                                }
+                                               
+                                                await $.ajax({
+                                                    url: "views/fetch_data.php",
+                                                    method: "POST",
+                                                    // contentType: false,
+                                                    // processData: false,
+                                                    dataType: 'JSON',
+                                                    data: { action: action, minimum_price: minimum_price, maximum_price: maximum_price, brand: brand, key: sort_by, slug: slug, slug1: slug1, maloai: maloai,page:page },
+                                                    success: function(data) {
+                                                        console.log(data.query);
+                                                        $('#filter_data').html(data.html);
+                                                        let sotrang = Math.ceil(data.tongsp / data.tongsp1trang);
+                                                        let pageString = '';
+                                                        for (let i = 1; i <= sotrang; i++) {
+                                                            let link = "<?=ROOT_URL?>/" +data.ca+"/" +data.choose+ "-" + <?php if(isset($_GET['maloai'])) echo $_GET['maloai'];?> +"/page-"+i
+                                                            if(page == i){
+                                                                pageString += '<li><a href="'+link+'" class="page active">'+ i + '</a></li>';
+                                                            }else{
+                                                                pageString += '<li><a href="'+link+'" class="page ">'+ i + '</a></li>';
+                                                            }
+                                                            
+                                                        }
+                                                        document.getElementById('pageString').innerHTML = pageString;
+                                                        localStorage.setItem('tongsp', data.tongsp);
+
+                                                    }
+                                                });
+
+                                            }
+
+                                            function get_filter(class_name) {
+                                                var filter = [];
+                                                $('.' + class_name + ':checked').each(function() {
+                                                    filter.push($(this).val());
+                                                });
+                                              
+                                                return filter;
+
+                                            }
+
+                                            $('.common_selector').click(function() {
+                                                filter_data();
+                                            });
+                                            $('#hidden_maximum_price').change(function() {
+                                                let oke = $('#hidden_maximum_price').val();
+                                                $('#SHOW_PRICE_FILTER').text(oke + "đ");
+                                                filter_data();
+                                            });
+                                           
+                                            
+                                            $('#sort_by').change(function() {
+                                                let oke = $('#sort_by').val();
+
+                                                // $('#SHOW_PRICE_FILTER').text(oke + "đ");
+                                                filter_data();
+                                            });
+
+
+                                        });
+                                </script>
                                 <div id="js-product-list">
                                     <input type="hidden" name="" id="slug" value="<?php if(isset($_GET['slug'])) echo $_GET['slug']; ?>">
                                     <input type="hidden" name="" id="slug1" value="<?php if(isset($_GET['slug1'])) echo $_GET['slug1']; ?>">
                                     <input type="hidden" name="" id="maloai" value="<?php if(isset($_GET['maloai'])) echo $_GET['maloai']; ?>">
                                     <div class="products product-thumbs row" id="filter_data">
 
-                                        <?php
                                         
-                                        if(count($GetProductListCosan)>0){
-                                        foreach ($GetProductListCosan as $row) {
-                                          if(is_file(PATH_IMG_SITE.explode(",",$row['image_list'])[0])){
-                                              $img = PATH_IMG_SITE.explode(",",$row['image_list'])[0];
-                                          }else{
-                                              $img = PATH_IMG_SITE.'logo.png';
-                                          }
-                                          if(is_file(PATH_IMG_SITE.explode(",",$row['image_list'])[1])){
-                                            $imgCover = PATH_IMG_SITE.explode(",",$row['image_list'])[1];
-                                          }else{
-                                              $imgCover = PATH_IMG_SITE.explode(",",$row['image_list'])[0];
-                                          }
-                                          if($row['new'] == 1){
-                                            $new = ' <li class="product-flag new">New</li>';
-                                          }else{
-                                            $new = '';
-                                          }
-                                              $price = $row['price'];
-                                         
-                                          if($row['discount'] > 0){
-                                            $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
-                                            $giaDiscount = ' <div class="product-price-and-shipping">
-
-                                                            <span class="sr-only">Regular price</span>
-                                                            <span class="regular-price">'.floatval($price).'</span>
-                                                            <span class="discount-percentage discount-product">-'.$row['discount'].'%</span>
-
-
-                                                            <span class="sr-only">Price</span>
-                                                            <span itemprop="price" class="price">'.($price - ($row['discount']*$price)/100).'</span>
-                                                        </div>';
-                                          }else{
-                                            $discount = '';
-                                            $giaDiscount = '<div class="product-price-and-shipping">
-                                    
-
-                                                              <span class="sr-only">Price</span>
-                                                              <span itemprop="price" class="price">'.floatval($price).'</span>
-                                                            
-                                                            
-                                                        </div>';
-                                          }
-                                          if($price<=0 ||$price =='' ){
-                                            $giaDiscount = ' ';
-                                            }
-                                                $name = $row['name'];
-                                            
-                                          $link = ROOT_URL."/product/".$row['slug'];
-                                          echo ' <article class="product-miniature js-product-miniature " data-id-product="19" data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
-                                          <div class="thumbnail-container">
-                                            <div class="product-inner">
-                                              <div class="thumbnail-inner">
-                                                <div class="inner">
-                                                  <div class="product-img">
-                                                                    <a href="'.$link.'" class="thumbnail product-thumbnail">
-                                                        <img
-                                                            src = "'.$img.'"
-                                                            alt = "loading..."
-                                                            data-full-size-image-url = "'.$img.'"  height="250">
-                                                            
-                                                          </a> </div>
-                                              </div><div class="kkproducthover"></div>
-                                              </div>
-                                              <div class="product-description">
-                                                  <h1 class="h3 product-title" itemprop="name"><a href="'. $link.'">'.$name.'</a></h1><div class="product-price-and-shipping"><span class="sr-only">Regular price</span>
-                                                  '.$giaDiscount.'
-                                              </div>
-                                              
-                                              <div class="cart-block">
-                                                <div class="product-add-to-cart">
-                                        
-                                        </div>        </div>
-                                  
-                                      </article>';
-                                        }
-                                      }else{
-                                        echo '<p style="margin-left:3rem"> No product !</p>';
-                                      }
-                                      ?>
-                                      </div>
+                                    </div>
 
 
                                     <nav class="pagination">
@@ -787,10 +831,15 @@
 
                                         <div class="col-md-8 col-xs-12 pr-0 pagination-kkbtn">
 
-                                            <ul class="page-list clearfix">
-                                                <?php
-                                              echo $Pagination;
-                                            ?>
+                                            <ul class="page-list clearfix" id="pageString">
+                                            <!-- <input type="hidden" name="" id="tongsp" value=""> -->
+                                                
+                                                
+                                                <!-- <li><a href=""><</a></li>
+                                                <li><a href="">1</a></li>
+                                                <li><a href="">2</a></li>
+                                                <li><a href="">3</a></li>
+                                                <li><a href="">></a></li> -->
                                             </ul>
 
                                         </div>

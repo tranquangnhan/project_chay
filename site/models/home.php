@@ -73,7 +73,7 @@ class Model_home extends Model_db{
         return $this->result1(1,$sql,$id);
     }
     function getProByBrand($brand,$hangcosan){   
-        $sql = "SELECT * FROM product WHERE Brand=? and cosan=?";
+        $sql = "SELECT * FROM product WHERE Brand=? and cosan=? order by hot desc limit 10";
         return $this->result1(0,$sql,$brand,$hangcosan);
     }
     function getProperty($slug){ 

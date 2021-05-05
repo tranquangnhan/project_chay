@@ -15,8 +15,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/vnd.microsoft.icon" href="views/assets/img/Logo-hang-Ella.png">
-    <link rel="shortcut icon" type="image/x-icon" href="views/assets/img/Logo-hang-Ella.png">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="<?=ROOT_URL?>/uploads/logo.png">
+    <link rel="shortcut icon" type="image/x-icon" href="<?=ROOT_URL?>/uploads/logo.png">
     <link rel="stylesheet" href="views/assets/css/theme-3950e66.css" type="text/css" media="all">
     <link rel="stylesheet" href="views/assets/css/SweetAlert2.css">
     <script src="views/assets/js/SweetAlert2.js"></script>
@@ -403,7 +403,7 @@
                     <div class="desktop_logo">
                         <h1>
                             <a href="<?php echo ROOT_URL?>/home">
-                                <img class="logo img-responsive" src="views/assets/img/Logo-hang-Ella.png"
+                                <img class="logo img-responsive" src="<?=ROOT_URL?>/uploads/logo.png"
                                     alt="Demo Shop">
                             </a>
                         </h1>
@@ -593,7 +593,7 @@
 
                                 <div id="kkstoreinfo-container" class="kkstoreinfo-inner collapse footer-dropdown">
                                     <a href="<?php echo ROOT_URL?>/home" class="store-logo">
-                                        <img src="views/assets/img/Logo-hang-Ella.png"
+                                        <img src="<?=ROOT_URL?>/uploads/logo.png"
                                             alt="Logo-hang-Ella.png">
                                     </a>
                                     <div class="store-description">

@@ -25,8 +25,8 @@ function formatMoney($number, $fractional=false) {
 
 if(isset($_POST["action"]))
 {
-    $PageNum = 1;
-   
+    $array = array();
+       
     if(isset($_POST['slug']) && $_POST['slug'] != "")
     {
         $query ="SELECT * from product where cosan=? and Brand=?"; 
@@ -46,8 +46,10 @@ if(isset($_POST["action"]))
             $key = $_POST["key"];
             $query .= " ORDER BY ".$key;
         }
-            $query .=" LIMIT ".($PageNum - 1) * PAGE_SIZE_PRO.", ".PAGE_SIZE_PRO; 
+        $kqtongsp = $model->result1(0,$query,$_POST['maloai'],$_POST['slug']);
+            $query .=" LIMIT ".($_POST["page"] - 1) * PAGE_SIZE_PRO.", ".PAGE_SIZE_PRO; 
       $kqne = $model->result1(0,$query,$_POST['maloai'],$_POST['slug']);  
+      $choose = 1;
     }
     else
     {
@@ -73,7 +75,8 @@ if(isset($_POST["action"]))
                 $key = $_POST["key"];
                 $query .= " ORDER BY ".$key;
             }
-                $query .=" LIMIT ".($PageNum - 1) * PAGE_SIZE_PRO.", ".PAGE_SIZE_PRO; 
+                $kqtongsp = $model->result1(0,$query,$idcatalog,$id);
+                $query .=" LIMIT ".($_POST["page"] - 1) * PAGE_SIZE_PRO.", ".PAGE_SIZE_PRO; 
                 $kqne = $model->result1(0,$query,$idcatalog,$id);
         } else {
             $idcatalog = $par['id'];
@@ -93,16 +96,17 @@ if(isset($_POST["action"]))
                 $key = $_POST["key"];
                 $query .= " ORDER BY ".$key;
             }
-                $query .=" LIMIT ".($PageNum - 1) * PAGE_SIZE_PRO.", ".PAGE_SIZE_PRO; 
+                $kqtongsp = $model->result1(0,$query,$idcatalog);
+                $query .=" LIMIT ".($_POST["page"] - 1) * PAGE_SIZE_PRO.", ".PAGE_SIZE_PRO; 
                 $kqne = $model->result1(0,$query,$idcatalog);
         }
-        
+        $choose = 2;
          
     }
     // echo $query;
-    
+    $kq_Dem2 = count($kqtongsp);
     $kq_Dem = count($kqne);
-    
+    // echo $kq_Dem;
     if($kq_Dem > 0)
     {
         foreach ($kqne as $row) {
@@ -178,5 +182,19 @@ if(isset($_POST["action"]))
     {
         $output = '<h3 class="ml-4">Hông có sản phẩm nào hết</h3>';
     }
-    echo $output;
+    if($choose == 1){
+        $ca = "brand";
+        $choose = $_POST['slug']; 
+    }else{
+        $choose = $_POST['slug1'];
+        $ca = "cate";
+    } 
+    $array = [];
+    $array["html"] = $output;
+    $array["tongsp"] = $kq_Dem2;
+    $array["tongsp1trang"] = PAGE_SIZE_PRO;
+    $array["choose"] = $choose;
+    $array["ca"] = $ca;
+    $array['query'] = $query;
+    echo json_encode($array);
 }
