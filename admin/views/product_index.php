@@ -15,17 +15,17 @@
                                     <table class="table mb-0">
                                             <thead class="thead-light">
                                                 <tr>
-                                                    <th width="10">STT</th>
-                                                    <th width="120">Tên</th>
-                                                    <th width="130">Giá</th>
-                                                    <th width="20">Hình</th>
-                                                    <th width="10">Nổi</th>
-                                                    <th >Lượt Xem</th>
-                                                    <th>Lượt Mua</th>
-                                                    <th >Mô tả</th>
-                                                    <th width="5">Thuộc tính</th>
-                                                    <th width="5">Xóa</th>
-                                                    <th width="5">Sửa</th>
+                                                    <th width="5px">STT</th>
+                                                    <th width="120px">Tên</th>
+                                                    <th width="50px">Giá</th>
+                                                    <th width="20px">Hình</th>
+                                                    <th width="5px">Nổi</th>
+                                                    <th >Lượt Xem-Lượt Mua</th>
+                                                    
+                                                    <th width="280px">Mô tả</th>
+                                                    <!-- <th width="5">Thuộc tính</th> -->
+                                                    <th width="5px">Xóa</th>
+                                                    <th width="5px">Sửa</th>
                                                     
                                                 </tr>
                                             </thead>
@@ -52,10 +52,10 @@
                                                         <td><div >'.($row['price']).'</div><br>  </td>
                                                         <td><img style="object-fit:cover;" class="img-admin" width="100" height="100" src="'.$img.'"></td>
                                                         <td> '.$hot.'</td>
-                                                        <td> '.$row['view'].'</td>
-                                                        <td> '.$row['buyed'].'</td>
-                                                        <td>'.substr($row['description'],0,10).' ..</td>
-                                                        <td>'.substr($row['properties'],0,10).' ..</td>
+                                                        <td> '.$row['view'].'-'.$row['buyed'].'</td>
+                                                        
+                                                        <td>'.substr($row['description'],0,60).' ..</td>
+                                                        
                                                         <td><div  onclick="checkDelete('.$linkDel.')"  class="btn btn-danger" role="button"><i class="fa fa-trash"></i></div></td>
                                                         <td><a href=""><a name="" id="" class="btn btn-primary" href="'.$linkEdit.'" role="button"><span class="mdi mdi-pencil"></span></a></a></a></td>
                                                     </tr>';

@@ -111,8 +111,12 @@
                                                     <?php 
                                                             foreach ($listcate as $row) {
                                                                 if($row['hangcosan'] == 1) $co = " (Hàng order)"; else $co = "";
-                                                                if ($row['slug'] === $oneRecode['Brand']) {
-                                                                    echo '<option value="'.$row['name'].'" selected>'.$row['name'].''.$co.'</option>';
+                                                                if ($row['slug'] == $oneRecode['Brand'] && $row['hangcosan'] == $oneRecode['cosan']) {
+                                                                    if($row['hangcosan'] == 0){
+                                                                        echo '<option value="'.$row['name'].'" selected>'.$row['name'].'</option>';
+                                                                    }else{
+                                                                        echo '<option value="'.$row['name'].'" selected>'.$row['name'].''.$co.'</option>';
+                                                                    }
                                                                 }else{
                                                                     echo '<option value="'.$row['name'].'">'.$row['name'].''.$co.'</option>';
                                                                 }

@@ -17,11 +17,11 @@
                                         <thead>
                                         <tr>
                                         <th width="3%">STT</th>
-                                        <th>Name</th>
+                                        <th>Tên KH</th>
                                         <th width="25%">Email</th>
-                                        <th>Subject</th>
-                                        <th width="40%">Messenges</th>
-                                        <th >ID Product</th>
+                                        <th width="20%">Hỗ trợ</th>
+                                        <th width="40%">Tin nhắn</th>
+                                        <th >ID sản phẩm</th>
                                         
                                         </tr>
                                         </thead>

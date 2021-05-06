@@ -37,13 +37,14 @@
                                                 // }else{
                                                 //     $img = PATH_IMG_SITE.'logo.png';
                                                 // }
+                                                $name_Cate = $this->model->showOneProducer($row['parent']);
                                                 if ($row['style'] == 0) $style = 'Ngang'; else $style ='Dọc'; 
                                                 echo '<tr>
                                                         <td>'.$stt.'</td>
                                                         <td>'.$row['name'].'</td>
                                                         <td>'.substr($row['description'],0,100).'</td>
                                                         <td>'.$style.'</td>
-                                                        <td>'.$row['parent'].'</td>
+                                                        <td>'.$name_Cate['name'].'</td>
                                                         <td><div  onclick="checkDeleteCate('.$linkDel.','.$row['id'].')"  class="btn btn-danger" role="button"><i class="fa fa-trash"></i></div></td>
                                                         <td><a><a name="" id="" class="btn btn-primary" href="'.$linkEdit.'" role="button"><i class="fa fa-edit"></i></a></a></a></td>
                                                     </tr>';

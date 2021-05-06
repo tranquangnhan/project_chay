@@ -63,6 +63,12 @@
                                                 
                                             </select>
                                         </div>
+                                        <div class="form-group">
+                                                    <div class="checkbox">
+                                                        <input id="remember-2" type="checkbox" name="cosan" value="" <?=($oneRecode['hangcosan']==0) ? 'checked' : '';?> data-parsley-multiple="remember-2">
+                                                        <label for="remember-2">Có sẵn </label>
+                                                    </div>
+                                                </div> 
                                         
                                         <div class="form-group">
                                             <label for="">Mô tả</label>
@@ -72,21 +78,28 @@
                                        
                                             
                                         </div>
+                                        <label for="">Thuộc</label>
                                         <select class="custom-select form-group" name="IDcate">
                                             
                                             <?php
                                                 if($oneRecode['parent']==0){
                                                     if($row['style'] == 1) $style= " (dọc)";
-                                                    echo '<option value="0" selected>Don\'t Belong</option>';
+                                                    echo '<option value="0" selected>Không thuộc</option>';
                                                     foreach ($listchild as $row) {
                                                             echo '<option value='.$row['id'].'>'.$row['name'].''.$style.'</option>';
                                                     } 
                                                 }
                                                 if($oneRecode['parent']!=0){                                                    
                                                     foreach ($listchild as $row) {
-                                                        if($row['style'] == 1) $style= " (dọc)";
-                                                        if($row['id'] == $oneRecode['parent']){
-                                                            echo '<option value='.$row['id'].' selected>'.$row['name'].''.$style.'</option>';
+                                                        $name_Cate= $this->model->showOneProducer($row['parent']);
+                                                        if($row['style'] == 1) $style= " (dọc)(".$name_Cate['name'].")"; else $style = "(".$name_Cate['name'].")";
+                                                        if($row['id'] == $oneRecode['parent'] && $row['style'] == $oneRecode['style']){
+                                                            if($row['style'] == 1){
+                                                                echo '<option value='.$row['id'].' selected>'.$row['name'].''.$style.'</option>';
+                                                            }else{
+                                                                echo '<option value='.$row['id'].' selected>'.$row['name'].'</option>';
+                                                            }
+                                                            
                                                         }else{
                                                             echo '<option value='.$row['id'].'>'.$row['name'].''.$style.'</option>';
                                                         }

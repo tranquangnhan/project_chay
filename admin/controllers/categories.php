@@ -67,11 +67,14 @@ class categories{
                     }
                 }
             }
-            $arr = explode(",",$_POST['IDcate']);
-            $IDcate = (int)($arr[0]);
+            $IDcate = $_POST['IDcate'];
             $kieu = $_POST['kieu_menu'];
-            $hang = (int)($arr[1]);
-            echo $IDcate, $hang;
+            if($_POST['cosan']){
+                $hang=0;
+            }else{
+                $hang=1;
+            }
+            
             $des_category = $_POST['des_category'];
             $slug = $this->lib->slug($name);
             $slug = strtolower($slug);

@@ -54,7 +54,12 @@
                                                 <option value="1">Dọc</option>
                                             </select>
                                         </div>
-                                        
+                                        <div class="form-group">
+                                                    <div class="checkbox">
+                                                        <input id="remember-2" type="checkbox" name="cosan" value=""  data-parsley-multiple="remember-2">
+                                                        <label for="remember-2">Có sẵn </label>
+                                                    </div>
+                                                </div> 
                                         <div class="form-group">
                                             <label for="">Mô tả</label>
                                             <textarea id="editor1" style="height: 300px;width:100%" name="des_category" >
@@ -65,11 +70,12 @@
                                         <label for="">Thuộc</label>
                                         <select class="custom-select form-group" name="IDcate">
                                             
-                                            <option value="0" selected>Don't Belong</option>
+                                            <option value="0" selected>Không thuộc</option>
                                             <?php
                                                 foreach ($listchild as $key) {
-                                                    if($key['style'] == 1) $style= " (dọc)";
-                                                    echo '<option value="'.$key['id'].','.$key['hangcosan'].'">'.$key['name'].''.$style.'</option>
+                                                    $name_Cate= $this->model->showOneProducer($key['parent']);
+                                                    if($key['style'] == 1) $style= " (dọc)(".$name_Cate['name'].")"; else $style = "(".$name_Cate['name'].")";
+                                                    echo '<option value="'.$key['id'].'">'.$key['name'].''.$style.'</option>
                                                     i';
                                                 }
                                             ?>
@@ -77,8 +83,8 @@
                                         
             
                                         <div class="form-group text-right mb-0 ">
-                                            <input type="submit" name="them" class="btn btn-primary waves-effect waves-light mr-1" value="ADD NEW">
-                                            <a href="<?=ROOT_URL?>/admin/?ctrl=categories" clas="btn btn-secondary waves-effect waves-light">CANCEL</a>
+                                            <input type="submit" name="them" class="btn btn-primary waves-effect waves-light mr-1" value="Thêm mới">
+                                            <a href="<?=ROOT_URL?>/admin/?ctrl=categories" clas="btn btn-secondary waves-effect waves-light">Hủy</a>
                                         </div>
 
                                     </form>
