@@ -70,7 +70,7 @@
                                             ?>
                                 </section>
                                 Đã có tài khoản <a
-                                        href="<?php echo ROOT_URL?>/login">Đăng nhập ngay</a></p>
+                                        href="<?php echo ROOT_URL?>/dang-nhap">Đăng nhập ngay</a></p>
 
                                 <footer class="form-footer clearfix">
                                     <input type="hidden" name="submitCreate" value="1" />

@@ -25,68 +25,7 @@
 
 
 
-                    <!-- <div class="block-categories">
-
-                        <div class="title clearfix hidden-md-up collapsed" data-target="#categories"
-                            data-toggle="collapse">
-                            <a class="text-uppercase h6"
-                                href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes">Clothes</a>
-                            <span class="navbar-toggler collapse-icons">
-                                <i class="material-icons add">&#xE145;</i>
-                                <i class="material-icons remove">&#xE15B;</i>
-                            </span>
-                        </div>
-
-                        <ul id="categories" class="category-top-menu collapse toggle">
-                            <li><a class="left-product-title text-uppercase h6"
-                                    href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/3-clothes">Clothes</a>
-                            </li>
-                            <li>
-                                <ul class="category-sub-menu">
-                                    <li data-depth="0"><a
-                                            href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/4-men">Men</a>
-                                        <div class="navbar-toggler collapse-icons" data-toggle="collapse"
-                                            data-target="#exCollapsingNavbar4"><i
-                                                class="material-icons add">&#xE145;</i><i
-                                                class="material-icons remove">&#xE15B;</i></div>
-                                        <div class="collapse" id="exCollapsingNavbar4">
-                                            <ul class="category-sub-menu">
-                                                <li data-depth="1"><a class="category-sub-link"
-                                                        href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/10-outlook">Outlook</a>
-                                                </li>
-                                                <li data-depth="1"><a class="category-sub-link"
-                                                        href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/11-t-shirt">T-shirt</a>
-                                                </li>
-                                                <li data-depth="1"><a class="category-sub-link"
-                                                        href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/12-jackets">Jackets</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li data-depth="0"><a
-                                            href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/5-women">Women</a>
-                                        <div class="navbar-toggler collapse-icons" data-toggle="collapse"
-                                            data-target="#exCollapsingNavbar5"><i
-                                                class="material-icons add">&#xE145;</i><i
-                                                class="material-icons remove">&#xE15B;</i></div>
-                                        <div class="collapse" id="exCollapsingNavbar5">
-                                            <ul class="category-sub-menu">
-                                                <li data-depth="1"><a class="category-sub-link"
-                                                        href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/13-handbags">Handbags</a>
-                                                </li>
-                                                <li data-depth="1"><a class="category-sub-link"
-                                                        href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/14-loungewear">Loungewear</a>
-                                                </li>
-                                                <li data-depth="1"><a class="category-sub-link"
-                                                        href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/15-sports-wear">Sports
-                                                        Wear</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div> -->
+                    
 
                     <div id="search_filters_wrapper" class="hidden-sm-down">
                         <div id="search_filter_controls" class="hidden-md-up">
@@ -238,7 +177,7 @@
                                              }
                                                 $name = $row['name'];
                                             
-                                              $link = ROOT_URL."/product/".$row['slug'];
+                                              $link = ROOT_URL."/san-pham-chi-tiet/".$row['slug'];
                                                 echo '<article class="product-miniature js-product-miniature" data-id-product="19"
                                                 data-id-product-attribute="0" itemscope
                                                 itemtype="http://schema.org/Product">
@@ -321,7 +260,7 @@
                                               }
                                                 $name = $row['name'];
                                             
-                                              $link = ROOT_URL."/product/".$row['slug'];
+                                              $link = ROOT_URL."/san-pham-chi-tiet/".$row['slug'];
                                                 echo '<article class="product-miniature js-product-miniature" data-id-product="19"
                                                 data-id-product-attribute="0" itemscope
                                                 itemtype="http://schema.org/Product">
@@ -426,7 +365,7 @@
                                              }
                                                 $name = $row['name'];
                                             
-                                              $link = ROOT_URL."/product/".$row['slug'];
+                                              $link = ROOT_URL."/san-pham-chi-tiet/".$row['slug'];
                                                 echo '<article class="product-miniature js-product-miniature" data-id-product="19"
                                                 data-id-product-attribute="0" itemscope
                                                 itemtype="http://schema.org/Product">
@@ -507,7 +446,7 @@
                                                 }
                                                     $name = $row['name'];
                                                
-                                              $link = ROOT_URL."/product/".$row['slug'];
+                                              $link = ROOT_URL."/san-pham-chi-tiet/".$row['slug'];
                                                 echo '<article class="product-miniature js-product-miniature" data-id-product="19"
                                                 data-id-product-attribute="0" itemscope
                                                 itemtype="http://schema.org/Product">
@@ -674,7 +613,7 @@
                                 </div>
 
                             </div>
-
+                            
 
                             <div id="" class="hidden-sm-down">
                                 <section id="js-active-search-filters" class="hide">
@@ -688,6 +627,50 @@
 
 
                             <div>
+                                <!-- kiểm trả chuyển danh mục thì xóa filter  -->
+                               <?php
+                               
+                               if($_GET['maloai'] == ""){
+                                   $bool = false;
+                                   if(isset($_SESSION['slug2'])){
+                                       if($_SESSION['slug2'] == $_GET['slug2']){
+                                            $bool=true;
+                                       }
+                                    }else{
+                                    $_SESSION['slug2'] = $_GET['slug2'];
+                                    }
+                                    
+                                     if($bool == false ){
+                                        ?>
+                                            <script>
+                                                sessionStorage.removeItem("brand")
+                                                sessionStorage.removeItem("price")
+                                                sessionStorage.removeItem("sort_by")
+                                            </script>
+                                        <?php
+                                        
+                                     }
+                                }
+                                if(isset($_GET['maloai']) && $_GET['maloai']>0){
+                                    unset($_SESSION['slug2']);
+                                    if(isset($_SESSION['maloai'])){
+                                        if($_SESSION['maloai'] != $_GET['maloai']){
+                                            ?>
+                                            <script>
+                                                sessionStorage.removeItem("brand")
+                                                sessionStorage.removeItem("price")
+                                                sessionStorage.removeItem("sort_by")
+                                            </script>
+                                            <?php
+                                            $_SESSION['maloai'] = $_GET['maloai'];
+                                        }
+                                    }else{
+                                        $_SESSION['maloai'] = $_GET['maloai'];
+                                    }
+                                }         
+
+                               ?>
+
                                 <script>
                                     //ajax filter
                                         $(document).ready(function() {
@@ -701,10 +684,13 @@
                                                 var maximum_price = $('#hidden_maximum_price').val();
                                                 var slug = $("#slug").val();
                                                 var slug1 = $("#slug1").val();
+                                                var slug2 = $("#slug2").val();
                                                 var maloai = $("#maloai").val();
                                                 var page = <?php if(isset($_GET['Page'])) echo $_GET['Page']; else echo 1;?>;
+                                                
                                                 var brand = get_filter('brand');
                                                 var arrBrand = brand.join();
+                                                console.log(brand);
                                                 if(brand.length == 0) {
                                                     if(sessionStorage.getItem("brand") && sessionStorage.getItem("brand") !=""){
                                                         brand = sessionStorage.getItem("brand").split(",");
@@ -714,10 +700,15 @@
                                                                 if(brand[j] == checkBrand[i].value)
                                                                 {
                                                                     checkBrand[i].setAttribute("checked","")
+                                                                    if (checkBrand[i].checked == false) {
+                                                                        sessionStorage.removeItem("brand")
+                                                                        brand = "";
+                                                                    }
                                                                 }
                                                             }
                                                             
                                                         }
+                                                        
                                                     }
                                                 }else{
                                                     sessionStorage.setItem("brand",arrBrand);
@@ -760,21 +751,32 @@
                                                     // contentType: false,
                                                     // processData: false,
                                                     dataType: 'JSON',
-                                                    data: { action: action, minimum_price: minimum_price, maximum_price: maximum_price, brand: brand, key: sort_by, slug: slug, slug1: slug1, maloai: maloai,page:page },
+                                                    data: { action: action, minimum_price: minimum_price, maximum_price: maximum_price, brand: brand, key: sort_by, slug: slug, slug1: slug1,slug2: slug2, maloai: maloai,page:page },
                                                     success: function(data) {
                                                         console.log(data.query);
                                                         $('#filter_data').html(data.html);
                                                         let sotrang = Math.ceil(data.tongsp / data.tongsp1trang);
                                                         let pageString = '';
-                                                        for (let i = 1; i <= sotrang; i++) {
-                                                            let link = "<?=ROOT_URL?>/" +data.ca+"/" +data.choose+ "-" + <?php if(isset($_GET['maloai'])) echo $_GET['maloai'];?> +"/page-"+i
-                                                            if(page == i){
-                                                                pageString += '<li><a href="'+link+'" class="page active">'+ i + '</a></li>';
-                                                            }else{
-                                                                pageString += '<li><a href="'+link+'" class="page ">'+ i + '</a></li>';
+                                                        if(data.choose == ""){
+                                                            for (let i = 1; i <= sotrang; i++) {
+                                                                let link = "<?=ROOT_URL?>/" +data.ca+"/tat-ca/trang-"+i
+                                                                if(page == i){
+                                                                    pageString += '<li><a href="'+link+'" class="page active">'+ i + '</a></li>';
+                                                                }else{
+                                                                    pageString += '<li><a href="'+link+'" class="page ">'+ i + '</a></li>';
+                                                                }
                                                             }
-                                                            
+                                                        }else{
+                                                            for (let i = 1; i <= sotrang; i++) {
+                                                                let link = "<?=ROOT_URL?>/" +data.ca+"/" +data.choose+ "-" + <?php if(isset($_GET['maloai'])) echo $_GET['maloai'];?> +"/trang-"+i
+                                                                if(page == i){
+                                                                    pageString += '<li><a href="'+link+'" class="page active">'+ i + '</a></li>';
+                                                                }else{
+                                                                    pageString += '<li><a href="'+link+'" class="page ">'+ i + '</a></li>';
+                                                                }
+                                                            }
                                                         }
+                                                       
                                                         document.getElementById('pageString').innerHTML = pageString;
                                                         localStorage.setItem('tongsp', data.tongsp);
 
@@ -814,8 +816,9 @@
                                         });
                                 </script>
                                 <div id="js-product-list">
-                                    <input type="hidden" name="" id="slug" value="<?php if(isset($_GET['slug'])) echo $_GET['slug']; ?>">
-                                    <input type="hidden" name="" id="slug1" value="<?php if(isset($_GET['slug1'])) echo $_GET['slug1']; ?>">
+                                    <input type="hidden" name="" id="slug" value="<?php if(isset($_GET['slug'])) echo $_GET['slug'];  ?>">
+                                    <input type="hidden" name="" id="slug1" value="<?php if(isset($_GET['slug1'])) echo $_GET['slug1'];  ?>">
+                                    <input type="hidden" name="" id="slug2" value="<?php if(isset($_GET['slug2'])) echo $_GET['slug2'];  ?>">
                                     <input type="hidden" name="" id="maloai" value="<?php if(isset($_GET['maloai'])) echo $_GET['maloai']; ?>">
                                     <div class="products product-thumbs row" id="filter_data">
 

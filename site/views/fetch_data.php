@@ -34,7 +34,7 @@ if(isset($_POST["action"]))
         {
             $query .= " AND price BETWEEN ".$_POST["minimum_price"]." AND ".$_POST["maximum_price"]."";
         }
-        if(isset($_POST["brand"]))
+        if(isset($_POST["brand"]) && $_POST["brand"] !="")
         {
             $brand_filter = implode("','", $_POST["brand"]);
             // $brand_filter = $lib->slug($brand_filter);
@@ -51,7 +51,7 @@ if(isset($_POST["action"]))
       $kqne = $model->result1(0,$query,$_POST['maloai'],$_POST['slug']);  
       $choose = 1;
     }
-    else
+    else if(isset($_POST['slug1']) && $_POST['slug1'] != "")
     {
         $query ="SELECT * from product where catalog_id=?"; 
         $par = $home->getCateFromId($_POST['maloai']);
@@ -63,7 +63,7 @@ if(isset($_POST["action"]))
             {
                 $query .= " AND price BETWEEN ".$_POST["minimum_price"]." AND ".$_POST["maximum_price"]."";
             }
-            if(isset($_POST["brand"]))
+            if(isset($_POST["brand"]) && $_POST["brand"] !="")
             {
                 $brand_filter = implode("','", $_POST["brand"]);
                 // $brand_filter = $lib->slug($brand_filter);
@@ -84,7 +84,7 @@ if(isset($_POST["action"]))
             {
                 $query .= " AND price BETWEEN ".$_POST["minimum_price"]." AND ".$_POST["maximum_price"]."";
             }
-            if(isset($_POST["brand"]))
+            if(isset($_POST["brand"]) && $_POST["brand"] !="")
             {
                 $brand_filter = implode("','", $_POST["brand"]);
                 // $brand_filter = $lib->slug($brand_filter);
@@ -103,6 +103,31 @@ if(isset($_POST["action"]))
         $choose = 2;
          
     }
+    else if(isset($_POST['slug2']) && $_POST['slug2'] !=  "")
+    {
+        $query ="SELECT * from product"; 
+        if(isset($_POST["minimum_price"], $_POST["maximum_price"]) && !empty($_POST["minimum_price"]) && !empty($_POST["maximum_price"]))
+        {
+            $query .= " WHERE price BETWEEN ".$_POST["minimum_price"]." AND ".$_POST["maximum_price"]."";
+        }
+        if(isset($_POST["brand"]) && $_POST["brand"] !="")
+        {
+            $brand_filter = implode("','", $_POST["brand"]);
+            // $brand_filter = $lib->slug($brand_filter);
+            $query .= " AND Brand IN('".$brand_filter."')";
+        }
+        
+        if(isset($_POST["key"]))
+        {
+            $key = $_POST["key"];
+            $query .= " ORDER BY ".$key;
+        }
+        $kqtongsp = $model->result1(0,$query);
+        $query .=" LIMIT ".($_POST["page"] - 1) * PAGE_SIZE_PRO.", ".PAGE_SIZE_PRO; 
+        $kqne = $model->result1(0,$query);  
+        $choose = 3;
+    }
+    
     // echo $query;
     $kq_Dem2 = count($kqtongsp);
     $kq_Dem = count($kqne);
@@ -149,7 +174,7 @@ if(isset($_POST["action"]))
               }
                   $name = $row['name'];
               
-            $link = ROOT_URL."/product/".$row['slug'];
+            $link = ROOT_URL."/san-pham-chi-tiet/".$row['slug'];
             $output .= ' <article class="product-miniature js-product-miniature col-lg-3 col-md-4 col-sm-6 col-xs-12  " data-id-product="19" data-id-product-attribute="0" itemscope itemtype="">
             <div class="thumbnail-container">
               <div class="product-inner">
@@ -180,15 +205,18 @@ if(isset($_POST["action"]))
     }
     else
     {
-        $output = '<h3 class="ml-4">Hông có sản phẩm nào hết</h3>';
+        $output = '<h3 class="ml-5">Không có sản phẩm nào hết</h3>';
     }
     if($choose == 1){
-        $ca = "brand";
+        $ca = "hang";
         $choose = $_POST['slug']; 
-    }else{
+    }else if($choose == 2){
         $choose = $_POST['slug1'];
-        $ca = "cate";
-    } 
+        $ca = "danh-muc";
+    }else{
+        $ca = "san-pham";
+        $choose = "";
+    }
     $array = [];
     $array["html"] = $output;
     $array["tongsp"] = $kq_Dem2;

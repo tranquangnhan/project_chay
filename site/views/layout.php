@@ -291,6 +291,16 @@
     var kkpc_show_weeks = 0;
     </script>
 </head>
+<?php
+    if(isset($_GET['act']) && $_GET['act'] != "product"){
+?>
+<script>
+    sessionStorage.removeItem("brand")
+    sessionStorage.removeItem("price")
+</script>
+<?php
+    }
+?>
 
 <body id="index" class="lang-en country-us currency-usd layout-full-width page-index tax-display-disabled">
     <!-- <div id="page-loader"></div> -->
@@ -339,14 +349,14 @@
                                     <ul class="user-info">
                                         <li>
                                                
-                                        <a href="<?php echo ROOT_URL?>/login"
+                                        <a href="<?php echo ROOT_URL?>/dang-nhap"
                                                 title="Log in to your customer account" rel="nofollow">
                                                 <i class="material-icons user">&#xE7FF;</i>
                                                 <span class="hidden-sm-down">Đăng nhập</span>
                                             </a></li>
                                             <li>
                                                
-                                        <a href="<?php echo ROOT_URL?>/register"
+                                        <a href="<?php echo ROOT_URL?>/dang-ky"
                                                 title="sign up to your customer account" rel="nofollow1">
                                                 <i class="material-icons user">&#xE7FF;</i>
                                                 <span class="hidden-sm-down">Đăng kí</span>
@@ -400,7 +410,7 @@
 
                     <div class="desktop_logo">
                         <h1>
-                            <a href="<?php echo ROOT_URL?>/home">
+                            <a href="<?php echo ROOT_URL?>/trang-chu">
                                 <img class="logo img-responsive" src="<?=ROOT_URL?>/uploads/logo.png"
                                     alt="Demo Shop">
                             </a>
@@ -420,7 +430,7 @@
 
                                 <div class="infinitycontact-dec">
                                     <div class="contact-title">Liên hệ</div>
-                                    <div class="contact-dec">+49 176 46778998</div>
+                                    <div class="contact-dec">0901108244</div>
                                 </div>
 
                             </div>
@@ -441,7 +451,7 @@
 
                                     <div class="email-title">Email</div>
 
-                                    <div class="email-dec">demo@gmail.com</div>
+                                    <div class="email-dec">nguyendangquan28297@gmail.com</div>
 
                                 </div>
 
@@ -478,8 +488,14 @@
                                     $i =0;
                                     foreach ($getMenuParent as $row) {
                                         // show dm cấp 0
+                                        if($row['slug'] == "san-pham"){
+                                            $link = ROOT_URL."/".$row['slug']."/tat-ca/trang-1";
+                                        }else{
+                                            $link = ROOT_URL."/".$row['slug'];
+                                        }
+                                        
                                         echo '<li class="category" id="category-3">
-                                        <a class="dropdown-item" href="#" data-depth="0">
+                                        <a class="dropdown-item" href="'.$link.'" data-depth="0">
                                             <span class="float-xs-right hidden-md-up">
                                                 <span data-target="#top_sub_menu_40711" data-toggle="collapse" class="navbar-toggler collapse-icons">
                                                     <i class="material-icons add">&#xE313;</i>
@@ -494,7 +510,7 @@
                                             echo '<div class="popover sub-menu js-sub-menu collapse twocolumn" id="top_sub_menu_40711'.$i.'">
                                             <ul class="top-menu" data-depth="1">';
                                             foreach ($dmcap1 as $row) {
-                                                $link = ROOT_URL."/cate/".$row['slug']."-".$row['id']."/page-1";
+                                                $link = ROOT_URL."/danh-muc/".$row['slug']."-".$row['id']."/trang-1";
                                                 echo '
                                                 <li class="category" id="category-4">
                                                 <a class="dropdown-item dropdown-submenu" href="'.$link.'" data-depth="1">
@@ -512,7 +528,7 @@
                                                     echo '<div class="collapse" id="top_sub_menu_16353'.$i.'">
                                                     <ul class="top-menu" data-depth="2">';
                                                     foreach ($dmcap2 as $row) {
-                                                        $link = ROOT_URL."/cate/".$row['slug']."-".$row['id']."/page-1";
+                                                        $link = ROOT_URL."/danh-muc/".$row['slug']."-".$row['id']."/trang-1";
                                                         echo '<li class="category" id="category-13'.$i.'">
                                                         <a class="dropdown-item" href="'.$link.'" data-depth="2">
                                                         '.$row['name'].'
@@ -590,7 +606,7 @@
                                 </div>
 
                                 <div id="kkstoreinfo-container" class="kkstoreinfo-inner collapse footer-dropdown">
-                                    <a href="<?php echo ROOT_URL?>/home" class="store-logo">
+                                    <a href="<?php echo ROOT_URL?>/trang-chu" class="store-logo">
                                         <img src="<?=ROOT_URL?>/uploads/logo.png"
                                             alt="Logo-hang-Ella.png">
                                     </a>
@@ -683,21 +699,21 @@
                                         <ul id="footer_sub_menu_8589" class="collapse">
                                             <li>
                                                 <a id="link-product-page-prices-drop-1" class="cms-page-link"
-                                                    href="#"
+                                                    href="<?=ROOT_URL?>/san-pham/tat-ca/page-1"
                                                     title="Our special products">
                                                     Sản phẩm giảm giá
                                                 </a>
                                             </li>
                                             <li>
                                                 <a id="link-product-page-new-products-1" class="cms-page-link"
-                                                    href="#"
+                                                    href="<?=ROOT_URL?>/san-pham/tat-ca/page-1"
                                                     title="Our new products">
                                                     Sản phẩm mới
                                                 </a>
                                             </li>
                                             <li>
                                                 <a id="link-product-page-best-sales-1" class="cms-page-link"
-                                                    href="#"
+                                                    href="<?=ROOT_URL?>/san-pham/tat-ca/page-1"
                                                     title="Our best sales">
                                                     Bán chạy
                                                 </a>
@@ -720,7 +736,7 @@
                                         <ul id="footer_sub_menu_3249" class="collapse">
                                             <li>
                                                 <a id="link-cms-page-4-2" class="cms-page-link"
-                                                    href="<?=ROOT_URL?>/aboutus"
+                                                    href="<?=ROOT_URL?>/lien-he"
                                                     title="Learn more about us">
                                                     Liên hệ
                                                 </a>
@@ -757,19 +773,19 @@
                                 </div>
                                 <ul class="account-list collapse" id="footer_account_list">
                                     <li>
-                                        <a href="#"
+                                        <a href="<?=ROOT_URL?>/chinh-sach"
                                             title="Personal info" rel="nofollow">
                                             Chính sách đổi trả
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#"
+                                        <a href="<?=ROOT_URL?>/chinh-sach"
                                             title="Orders" rel="nofollow">
                                             Chính sách bảo hành
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#"
+                                        <a href="<?=ROOT_URL?>/chinh-sach"
                                             title="Credit slips" rel="nofollow">
                                             Chính sách hoàn tiền
                                         </a>
@@ -792,13 +808,13 @@
                                 <ul id="contact-footer" class="collapse">
                                     <li class="block">
                                         <div class="icon"><i class="material-icons">&#xE55F;</i></div>
-                                        <div class="data">123 gò vấp, HCM<br /></div>
+                                        <div class="data">2/9 Đoàn Thị Điểm phường 1 Phú Nhuận<br /></div>
 
                                     </li>
                                     <li class="block">
                                         <div class="data">
                                             <div class="icon"><i class="material-icons">&#xE0CD;</i></div>
-                                            <span class="title"></span> <span>091232353</span>
+                                            <span class="title"></span> <span>0901108244</span>
                                         </div>
                                     </li>
                                     <li class="block">
@@ -808,7 +824,7 @@
                                     <li class="block">
                                         <div class="data">
                                             <div class="icon"><i class="material-icons">&#xE158;</i></div>
-                                            <a href="mailto:admin@gmail.com">demo@gmail.com </a>
+                                            <a href="mailto:nguyendangquan28297@gmail.com">nguyendangquan28297@gmail.com</a>
                                         </div>
                                     </li>
                                 </ul>

@@ -37,7 +37,7 @@ class Model_home extends Model_db{
         return $this->result1(0,$sql);
     } 
     function getAllProAsc($limit,$offset){
-        $sql = "SELECT * FROM product ORDER BY id ASC LIMIT $offset,$limit";
+        $sql = "SELECT * FROM product ORDER BY hot ASC LIMIT $offset,$limit";
         return $this->result1(0,$sql);
     }
     function getAllProDesc($limit,$offset){

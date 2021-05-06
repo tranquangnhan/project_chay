@@ -7802,7 +7802,7 @@ body#checkout .custom-checkbox span,
 }
 
 .top-menu .sub-menu a:hover {
-    color: #fa929d
+    color: #17E9E0;
 }
 
 .top-menu .popover {
@@ -18780,10 +18780,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     text-transform: uppercase
 }
 
-.infinityheaderemail .email-inner:hover .email-title,
+
+/* .infinityheaderemail .email-inner:hover .email-title,
 .infinityheadercontact .contact-inner:hover .contact-title {
     color: var(--it-brand-primary)
-}
+} */
 
 .infinityheaderemail .email-dec {
     font-size: 14px;

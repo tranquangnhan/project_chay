@@ -190,7 +190,7 @@ if(is_array($sp)){
                                             if($sp['size']){
                                                 $size = explode(',',$sp['size']);
                                                 $kq .= ' <div class="clearfix product-variants-item">
-                                            <span class="control-label">Size</span>
+                                            <span class="control-label">Kích cỡ</span>
                                             <select class="form-control form-control-select" id="group_1"
                                                 data-product-attribute="1" name="group[1]">';
                                               foreach ($size as $row) {
@@ -206,7 +206,7 @@ if(is_array($sp)){
                                               if($sp['color']){
                                                   $color = explode(',',$sp['color']);
                                                   $kq1 .= '<div class="clearfix product-variants-item">
-                                                  <span class="control-label">Color</span>
+                                                  <span class="control-label">Màu</span>
                                                   <ul id="group_2">';
                                                 foreach ($color as $row) {
                                                   $kq1 .= ' <li class="float-xs-left input-container">
@@ -435,7 +435,7 @@ if(is_array($sp)){
                                     }
                                         $name = $row['name'];
                                     
-                                    $link = ROOT_URL."/product/".$row['slug'];
+                                    $link = ROOT_URL."/san-pham-chi-tiet/".$row['slug'];
                                     echo '<div class="kktab-block">
                                     <article class="product-miniature js-product-miniature " data-id-product="17"
                                     data-id-product-attribute="46" itemscope itemtype="http://schema.org/Product">

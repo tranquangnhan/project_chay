@@ -26,7 +26,7 @@
                                 echo '<div class="pro_already">
                                 <ul>';
                                 foreach ($getMenuchilddoc as $row) {
-                                    $link = ROOT_URL."/brand/".$row['slug']."-".$row['hangcosan']."/page-1";
+                                    $link = ROOT_URL."/hang/".$row['slug']."-".$row['hangcosan']."/trang-1";
                                     echo '<li><a href="'.$link.'">'.$row['name'].'</a>';
                                     // show sản phẩm của danh mục
                                     $probybrand = $this->model->getProByBrand($row['name'],$row['hangcosan']);
@@ -34,7 +34,7 @@
                                         echo '<div class="pro_already1">
                                         <ul>';
                                         foreach ($probybrand as $row) {
-                                            $link = ROOT_URL."/product/".$row['slug'];
+                                            $link = ROOT_URL."/san-pham-chi-tiet/".$row['slug'];
                                             echo '<li><a href="'.$link.'">'.$row['name'].'</a></li>';
                                         }
                                         echo '</ul></div>';
@@ -197,7 +197,7 @@
                                         
                                             $name = $row['name'];
                                         
-                                        $link = ROOT_URL."/product/".$row['slug'];
+                                        $link = ROOT_URL."/san-pham-chi-tiet/".$row['slug'];
                                             echo '<div class="kktab-block">
                                           <article class="product-miniature js-product-miniature " data-id-product="17"
                                             data-id-product-attribute="46" itemscope itemtype="http://schema.org/Product">
@@ -317,7 +317,7 @@
                                         
                                             $name = $row['name'];
                                         
-                                        $link = ROOT_URL."/product/".$row['slug'];
+                                        $link = ROOT_URL."/san-pham-chi-tiet/".$row['slug'];
                                         echo '<div class="kktab-block">
                                       <article class="product-miniature js-product-miniature " data-id-product="17"
                                         data-id-product-attribute="46" itemscope itemtype="http://schema.org/Product">
@@ -437,7 +437,7 @@
                                         
                                             $name = $row['name'];
                                         
-                                        $link = ROOT_URL."/product/".$row['slug'];
+                                        $link = ROOT_URL."/san-pham-chi-tiet/".$row['slug'];
                                         echo '<div class="kktab-block">
                                       <article class="product-miniature js-product-miniature " data-id-product="17"
                                         data-id-product-attribute="46" itemscope itemtype="http://schema.org/Product">
@@ -582,7 +582,7 @@
                             
                                 $name = $row['name'];
                             
-                            $link = ROOT_URL."/product/".$row['slug'];
+                            $link = ROOT_URL."/san-pham-chi-tiet/".$row['slug'];
                             echo '<div class="kktab-block">
                             <article class="product-miniature js-product-miniature " data-id-product="17"
                               data-id-product-attribute="46" itemscope itemtype="http://schema.org/Product">
@@ -879,7 +879,7 @@
             
                 $name = $row['name'];
             
-                $link = ROOT_URL."/product/".$row['slug'];
+                $link = ROOT_URL."/san-pham-chi-tiet/".$row['slug'];
                 echo '<article class="product-miniature js-product-miniature " data-id-product="17" data-id-product-attribute="46"
                 itemscope itemtype="http://schema.org/Product">
                 <div class="thumbnail-container">

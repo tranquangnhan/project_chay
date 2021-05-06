@@ -74,7 +74,11 @@
 			
          
          $getMenuParent = $this->model->getMenuParent();
-         $getCateFromId = $this->model->getCateFromId($_GET['maloai']);
+		 if(isset($_GET['maloai'])){
+			 $getCateFromId = $this->model->getCateFromId($_GET['maloai']);
+		 }else{
+			$getCateFromId = $this->model->getCateFromId(2);
+		 }
          
          $getAllProDesc = $this->model->getAllProDesc(3,0);
          

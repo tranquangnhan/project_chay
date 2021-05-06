@@ -32,9 +32,9 @@
                                         $stt = 1;
                                             foreach ($listcontact as $key) {
                                                 if($key['subject'] == 2){
-                                                    $sub = 'Customer service';
+                                                    $sub = 'Chăm sóc khách hàng';
                                                 }else{
-                                                    $sub = 'Webmaster';
+                                                    $sub = 'Sản phẩm mới';
                                                 }
                                                 echo '<tr>
                                                 <td width="3%">'.$stt++.'</td>

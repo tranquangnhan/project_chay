@@ -83,7 +83,7 @@
                                                       <hr />
 
                                                       <div class="no-account">
-                                                               <a href="<?php echo ROOT_URL?>/register" data-link-action="display-register-form">
+                                                               <a href="<?php echo ROOT_URL?>/dang-ky" data-link-action="display-register-form">
                                                                Chưa có tải khoản ? đăng kí ngay
                                                                </a>
                                                       </div>

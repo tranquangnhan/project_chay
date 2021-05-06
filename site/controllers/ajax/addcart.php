@@ -198,7 +198,7 @@
 
                                             <li class="cart-det2"
                                                 data-refresh-url="">
-                                                <span class="no-items">Gio hàng trống !</span>
+                                                <span class="no-items">Giỏ hàng trống !</span>
                                         </div>
                                     </div>
 
