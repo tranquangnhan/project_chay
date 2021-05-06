@@ -60,7 +60,7 @@
     // show cart
     showSp();
     function showSp(){
-        require_once "../../../languages/".$_SESSION['lang'].".php";
+        // require_once "../../../languages/".$_SESSION['lang'].".php";
         global $canhbao,$pathimg;
        
             if(isset($_SESSION['cart']) &&($_SESSION['cart'])){

@@ -549,7 +549,7 @@
 	 }
 	 function register()
 	 {
-		require_once "../languages/".$_SESSION['lang'].".php";	
+		// require_once "../languages/".$_SESSION['lang'].".php";	
 		if(isset($_POST['register'])){
 		   $name = $_POST['name'];
 		   $email = $_POST['email'];
@@ -562,7 +562,7 @@
 				 $emailexist= 'Email already exists!';
 			  }else{
 				 $exist = $this->modelUser->registerUser($name,$email,$password);
-				$_SESSION['thongbao'] = $lang['resgistersucess'];
+				$_SESSION['thongbao'] = "Đăng kí thành công";
 				header("location: ".ROOT_URL."/notification");
 			  }
 		   } 

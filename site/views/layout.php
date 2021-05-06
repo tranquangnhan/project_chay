@@ -1,6 +1,4 @@
-<?php
-    require_once "../languages/".$_SESSION['lang'].".php";
-?>
+
 <!doctype html>
 <html lang="en">
 
