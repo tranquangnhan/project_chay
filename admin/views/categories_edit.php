@@ -25,7 +25,7 @@
                                         </div>
                                     </div>
 
-                                    <h4 class="header-title mt-0 mb-3">Category</h4>
+                                    <h4 class="header-title mt-0 mb-3">Danh mục</h4>
 
                                     <form data-parsley-validate novalidate method="post" enctype="multipart/form-data">
                                     <div class="boxform boxshowimg ">
@@ -44,45 +44,64 @@
                                             
                                         </div>
                                         <div class="form-group">
-                                            <label for="">Name Category</label>
+                                            <label for="">Tên danh mục</label>
                                             <input type="text" name="name_category" value="<?=$oneRecode['name']?>"  parsley-trigger="change" required
                                                    placeholder="Nhập tên danh mục" class="form-control" id="userName">
                                         </div>
                                         <div class="form-group">
-                                            <label for="">Name Category (German)</label>
-                                            <input type="text" name="name_category_ge" value="<?=$oneRecode['name_ge']?>"  parsley-trigger="change" required
-                                                   placeholder="Type name category GE" class="form-control" id="category">
+                                            <label for="">Kiểu</label>
+                                            <select name="kieu_menu" class="custom-select" id="">
+                                                <?php
+                                                    if($oneRecode['style'] == 0){
+                                                        echo '<option value="0" selected>Ngang</option>
+                                                        <option value="1">Dọc</option>';
+                                                    }else{
+                                                        echo '<option value="0" >Ngang</option>
+                                                        <option value="1" selected>Dọc</option>';
+                                                    }
+                                                ?>
+                                                
+                                            </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="">Description</label>
+                                                    <div class="checkbox">
+                                                        <input id="remember-2" type="checkbox" name="cosan" value="" <?=($oneRecode['hangcosan']==0) ? 'checked' : '';?> data-parsley-multiple="remember-2">
+                                                        <label for="remember-2">Có sẵn </label>
+                                                    </div>
+                                                </div> 
+                                        
+                                        <div class="form-group">
+                                            <label for="">Mô tả</label>
                                             <textarea id="editor1" style="height: 300px;width:100%" name="des_category" >
                                             <?=$oneRecode['description']?>
                                         </textarea>
-                                        <label for="">Description (German)</label>
-                                            <textarea id="editor2" style="height: 300px;width:100%" name="des_category_ge" >
-                                            <?=$oneRecode['description_ge']?>
-                                        </textarea>
+                                       
                                             
                                         </div>
+                                        <label for="">Thuộc</label>
                                         <select class="custom-select form-group" name="IDcate">
                                             
                                             <?php
-                                            //    echo 'okela'.$oneRecode['parent'];
-                                               print_r($listchild);
                                                 if($oneRecode['parent']==0){
-                                                    echo '<option value="0" selected>Don\'t Belong</option>';
+                                                    if($row['style'] == 1) $style= " (dọc)";
+                                                    echo '<option value="0" selected>Không thuộc</option>';
                                                     foreach ($listchild as $row) {
-                                                            echo '<option value='.$row['id'].'>'.$row['name'].'</option>';
+                                                            echo '<option value='.$row['id'].'>'.$row['name'].''.$style.'</option>';
                                                     } 
                                                 }
-                                                if($oneRecode['parent']!=0){
-                                                    // echo '<option value="0" >Don\'t Belong</option>';
-                                                    
+                                                if($oneRecode['parent']!=0){                                                    
                                                     foreach ($listchild as $row) {
-                                                        if($row['id'] == $oneRecode['parent']){
-                                                            echo '<option value='.$row['id'].' selected>'.$row['name'].'</option>';
+                                                        $name_Cate= $this->model->showOneProducer($row['parent']);
+                                                        if($row['style'] == 1) $style= " (dọc)(".$name_Cate['name'].")"; else $style = "(".$name_Cate['name'].")";
+                                                        if($row['id'] == $oneRecode['parent'] && $row['style'] == $oneRecode['style']){
+                                                            if($row['style'] == 1){
+                                                                echo '<option value='.$row['id'].' selected>'.$row['name'].''.$style.'</option>';
+                                                            }else{
+                                                                echo '<option value='.$row['id'].' selected>'.$row['name'].'</option>';
+                                                            }
+                                                            
                                                         }else{
-                                                            echo '<option value='.$row['id'].'>'.$row['name'].'</option>';
+                                                            echo '<option value='.$row['id'].'>'.$row['name'].''.$style.'</option>';
                                                         }
                                                     } 
                                                 }
@@ -95,8 +114,8 @@
                                         </select>
                                        
                                         <div class="form-group text-right mb-0 ">
-                                            <input type="submit" name="them" class="btn btn-primary waves-effect waves-light mr-1" value="UPDATE">
-                                            <a href="<?=ROOT_URL?>/admin/?ctrl=categories" clas="btn btn-secondary waves-effect waves-light">CANCEL</a>
+                                            <input type="submit" name="them" class="btn btn-primary waves-effect waves-light mr-1" value="Cập nhật">
+                                            <a href="<?=ROOT_URL?>/admin/?ctrl=categories" clas="btn btn-secondary waves-effect waves-light">Hủy</a>
                                         </div>
 
                                     </form>

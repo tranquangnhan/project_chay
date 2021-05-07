@@ -1,6 +1,4 @@
-<?php
-    require_once "../languages/".$_SESSION['lang'].".php";
-?>
+
 <!doctype html>
 <html lang="en">
 
@@ -8,21 +6,21 @@
     <base href="/project_chay/site/">
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Hằng ELLA </title>
+    <title>Shop </title>
     <meta name="description" content="Shop powered by PrestaShop">
     <meta name="keywords" content="">
    
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/vnd.microsoft.icon" href="views/assets/img/Logo-hang-Ella.png">
-    <link rel="shortcut icon" type="image/x-icon" href="views/assets/img/Logo-hang-Ella.png">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="<?=ROOT_URL?>/uploads/logo.png">
+    <link rel="shortcut icon" type="image/x-icon" href="<?=ROOT_URL?>/uploads/logo.png">
     <link rel="stylesheet" href="views/assets/css/theme-3950e66.css" type="text/css" media="all">
     <link rel="stylesheet" href="views/assets/css/SweetAlert2.css">
     <script src="views/assets/js/SweetAlert2.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
-<script type="text/javascript">
-    var baseDir = "/";
+    <script type="text/javascript">
+    var baseDir = "\/project_chay\/site\/";
     var kkproductsblock = {
         "columnsmobile": "1",
         "columnstablet": "2",
@@ -293,6 +291,16 @@
     var kkpc_show_weeks = 0;
     </script>
 </head>
+<?php
+    if(isset($_GET['act']) && $_GET['act'] != "product"){
+?>
+<script>
+    sessionStorage.removeItem("brand")
+    sessionStorage.removeItem("price")
+</script>
+<?php
+    }
+?>
 
 <body id="index" class="lang-en country-us currency-usd layout-full-width page-index tax-display-disabled">
     <!-- <div id="page-loader"></div> -->
@@ -306,29 +314,12 @@
 
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 left-nav">
 
-                            <div class="language-selector dropdown js-dropdown">
-                                <button data-toggle="dropdown" class=" btn-unstyle" aria-haspopup="true"
-                                    aria-expanded="false" aria-label="Language dropdown">
-                                    <span class="expand-more"><?php echo $lang['lang'] ?></span>
-                                    <i class="material-icons expand-more"></i>
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="language-selector-label">
-                                    <li class="current">
-                                        <a href="<?=ROOT_URL?>/lang/en"
-                                            class="dropdown-item" data-iso-code="en"><?php echo $lang['lang_en'] ?></a>
-                                    </li>
-                                    <li>
-                                        <a href="<?=ROOT_URL?>/lang/ge"
-                                            class="dropdown-item" data-iso-code="es"><?php echo $lang['lang_bs'] ?></a>
-                                    </li>
-                                </ul>
-                            </div>
                         </div>
 
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 center-nav">
                             <div id="kkheaderblock" class="clearfix">
                                 <div id="kkcmsheader">
-                                    <div class="kkheader-service"><?php echo $lang['title'] ?></div>
+                                    <div class="kkheader-service">Chào mừng đến với cửa hàng</div>
                                 </div>
 
                             </div>
@@ -358,11 +349,19 @@
                                     <ul class="user-info">
                                         <li>
                                                
-                                        <a href="<?php echo ROOT_URL?>/login"
+                                        <a href="<?php echo ROOT_URL?>/dang-nhap"
                                                 title="Log in to your customer account" rel="nofollow">
                                                 <i class="material-icons user">&#xE7FF;</i>
-                                                <span class="hidden-sm-down"><?php echo $lang['Signin'] ?></span>
+                                                <span class="hidden-sm-down">Đăng nhập</span>
                                             </a></li>
+                                            <li>
+                                               
+                                        <a href="<?php echo ROOT_URL?>/dang-ky"
+                                                title="sign up to your customer account" rel="nofollow1">
+                                                <i class="material-icons user">&#xE7FF;</i>
+                                                <span class="hidden-sm-down">Đăng kí</span>
+                                            </a></li>
+                                            
                                     </ul>
                                     <?php } ?> 
                                 </div>
@@ -383,7 +382,7 @@
 
                                                 <li class="cart-det2"
                                                     data-refresh-url="">
-                                                    <span class="no-items"><?php echo $lang['emptycart'] ?></span>
+                                                    <span class="no-items"></span>
                                             </div>
                                         </div>
 
@@ -391,7 +390,6 @@
                                 </div>
                             </div>
                             
-
 
 
 
@@ -412,8 +410,8 @@
 
                     <div class="desktop_logo">
                         <h1>
-                            <a href="<?php echo ROOT_URL?>/home">
-                                <img class="logo img-responsive" src="views/assets/img/Logo-hang-Ella.png"
+                            <a href="<?php echo ROOT_URL?>/trang-chu">
+                                <img class="logo img-responsive" src="<?=ROOT_URL?>/uploads/logo.png"
                                     alt="Demo Shop">
                             </a>
                         </h1>
@@ -431,8 +429,8 @@
                                 </div>
 
                                 <div class="infinitycontact-dec">
-                                    <div class="contact-title"><?=$lang['callus']?></div>
-                                    <div class="contact-dec">+49 176 46778998</div>
+                                    <div class="contact-title">Liên hệ</div>
+                                    <div class="contact-dec">0901108244</div>
                                 </div>
 
                             </div>
@@ -451,9 +449,9 @@
 
                                 <div class="infinitycontact-dec">
 
-                                    <div class="email-title"><?php echo $lang['mailus'] ?></div>
+                                    <div class="email-title">Email</div>
 
-                                    <div class="email-dec">hangella1506@gmail.com</div>
+                                    <div class="email-dec">nguyendangquan28297@gmail.com</div>
 
                                 </div>
 
@@ -468,7 +466,7 @@
                 <div id="mobile_kktop_menu_wrapper" class="hidden-md-up">
                     <div id="top_menu_closer">
                         <div class="leftmenu-title">
-                            <i class="material-icons"></i><?=$lang['menu']?>
+                            <i class="material-icons"></i>Danh mục
                         </div>
                     </div>
                     <div class="js-top-menu mobile" id="_mobile_top_menu"></div>
@@ -482,7 +480,6 @@
                 <div class="container">
                     <div class="row">
 
-
                         <div class="menu js-top-menu hidden-sm-down" id="_desktop_top_menu">
 
                             <ul class="top-menu" id="top-menu" data-depth="0">
@@ -490,66 +487,61 @@
                                     $this->model = new Model_home();
                                     $i =0;
                                     foreach ($getMenuParent as $row) {
-                                        if($_SESSION['lang'] === 'en'){
-                                            $namecha = $row['name'];
+                                        // show dm cấp 0
+                                        if($row['slug'] == "san-pham"){
+                                            $link = ROOT_URL."/".$row['slug']."/tat-ca/trang-1";
                                         }else{
-                                            $namecha = $row['name_ge'];
+                                            $link = ROOT_URL."/".$row['slug'];
                                         }
-                                    
-                                        if($row['parent'] ==0){
-                                            $linkCha = ROOT_URL.'/'.$row['ctrl'];
-                                        }
-
-                                        $menuCon = '';
-                                        $kq = '';
-                                        foreach ($this->model->showDmCon($row['id']) as $con) {
-                                          
-                                            if($_SESSION['lang'] === 'en'){
-                                                $namecon = $con['name'];
-                                            }else{
-                                                $namecon = $con['name_ge'];
-                                            }
-                                           
-                                            $menuCon .= ' <li class="category" >
-                                                            <a class="dropdown-item"
-                                                                href="'.ROOT_URL.'/cate/'.$con['slug'].'-'.$con['id'].'/page-1'.'"
-                                                                data-depth="2">
-                                                                '.$namecon.'
-                                                            </a>
-                                                        </li>';
-                                        }
-
-                                        $kq .= '<li class="category" >
-                                                    <a class="dropdown-item"
-                                                        href="'.$linkCha.'"
-                                                        data-depth="0">
-                                                        <span class="float-xs-right hidden-md-up">
-                                                            <span data-target="#top_sub_menu_70770'.$i.'" data-toggle="collapse"
-                                                                class="navbar-toggler collapse-icons">
-                                                                <i class="material-icons add">&#xE313;</i>
-                                                                <i class="material-icons remove">&#xE316;</i>
-                                                            </span>
+                                        
+                                        echo '<li class="category" id="category-3">
+                                        <a class="dropdown-item" href="'.$link.'" data-depth="0">
+                                            <span class="float-xs-right hidden-md-up">
+                                                <span data-target="#top_sub_menu_40711" data-toggle="collapse" class="navbar-toggler collapse-icons">
+                                                    <i class="material-icons add">&#xE313;</i>
+                                                    <i class="material-icons remove">&#xE316;</i>
+                                                </span>
+                                            </span>
+                                            '.$row['name'].'
+                                        </a>';
+                                        // show dm cap 1
+                                        $dmcap1 = $this->model->showDmCon($row['id']);
+                                        if ($dmcap1) {
+                                            echo '<div class="popover sub-menu js-sub-menu collapse twocolumn" id="top_sub_menu_40711'.$i.'">
+                                            <ul class="top-menu" data-depth="1">';
+                                            foreach ($dmcap1 as $row) {
+                                                $link = ROOT_URL."/danh-muc/".$row['slug']."-".$row['id']."/trang-1";
+                                                echo '
+                                                <li class="category" id="category-4">
+                                                <a class="dropdown-item dropdown-submenu" href="'.$link.'" data-depth="1">
+                                                    <span class="float-xs-right hidden-md-up">
+                                                        <span data-target="#top_sub_menu_63115'.$i.'" data-toggle="collapse" class="navbar-toggler collapse-icons">
+                                                            <i class="material-icons add">&#xE313;</i>
+                                                            <i class="material-icons remove">&#xE316;</i>
                                                         </span>
-                                                       '.$namecha.'
-                                                    </a>';
-                                                    if($menuCon){
-                                                        $kq .= '<div class="popover sub-menu js-sub-menu collapse twocolumn"
-                                                        id="top_sub_menu_70770'.$i.'">
-                
-                                                        <ul class="top-menu" data-depth="1">
-                                                            
-                                                            <li class="category" id="category-4'.$i.'">
-                                                            
-                                                            '.$menuCon.'
-                                                            </li>
-                                                        </ul>
-                
-                                                    </div>';
-                                                    $i++;
+                                                    </span>
+                                                    '.$row['name'].'
+                                                </a>';
+                                                // show dm cap 2
+                                                $dmcap2 = $this->model->showDmCon($row['id']);
+                                                if($dmcap2){
+                                                    echo '<div class="collapse" id="top_sub_menu_16353'.$i.'">
+                                                    <ul class="top-menu" data-depth="2">';
+                                                    foreach ($dmcap2 as $row) {
+                                                        $link = ROOT_URL."/danh-muc/".$row['slug']."-".$row['id']."/trang-1";
+                                                        echo '<li class="category" id="category-13'.$i.'">
+                                                        <a class="dropdown-item" href="'.$link.'" data-depth="2">
+                                                        '.$row['name'].'
+                                                        </a>
+                                                    </li>';
                                                     }
-
-                                                $kq .= '</li>';
-                                                echo $kq;
+                                                    echo '</ul></div>';
+                                                }
+                                            }
+                                            echo '</li></ul></div>';
+                                        }
+                                        
+                                        echo '</li>';
                                     }
                                 ?>
 
@@ -564,7 +556,7 @@
                         <div id="mobile_menu">
                             <div class="float-xs-left" id="menu-icon">
                                 <div class="leftmenu-title">
-                                    <i class="material-icons">&#xE5D2;</i><?=$lang['menu']?>
+                                    <i class="material-icons">&#xE5D2;</i>Danh mục
                                 </div>
                             </div>
                             <div class="float-xs-right" id="_mobile_cart"></div>
@@ -600,7 +592,7 @@
                                 <div class="title  hidden-md-up collapsed" data-target="#kkstoreinfo-container"
                                     data-toggle="collapse">
 
-                                    <span class="h3"><?=$lang['aboutus']?></span>
+                                    <span class="h3">Chúng tôi</span>
 
                                     <span class="float-xs-right">
 
@@ -614,12 +606,12 @@
                                 </div>
 
                                 <div id="kkstoreinfo-container" class="kkstoreinfo-inner collapse footer-dropdown">
-                                    <a href="<?php echo ROOT_URL?>/home" class="store-logo">
-                                        <img src="views/assets/img/Logo-hang-Ella.png"
+                                    <a href="<?php echo ROOT_URL?>/trang-chu" class="store-logo">
+                                        <img src="<?=ROOT_URL?>/uploads/logo.png"
                                             alt="Logo-hang-Ella.png">
                                     </a>
                                     <div class="store-description">
-                                        <p>Sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                                        <p>Chào mừng đến với chúng tôi</p>
                                     </div>
                                 </div>
                             </div>
@@ -638,7 +630,7 @@
 
                                 <div class="title  hidden-md-up" data-toggle="collapse"
                                     data-target="#kkservice_block_container">
-                                    <span class="h3 block-contact-title"><?=$lang['oursv']?></span>
+                                    <span class="h3 block-contact-title"></span>
                                     <span class="float-xs-right">
                                         <span class="navbar-toggler collapse-icons">
                                             <i class="material-icons add">&#xE145;</i>
@@ -654,8 +646,8 @@
                                             <div class="serviceblock subbanner-part-maininnner1">
                                                 <div class="subicon subicon1"><span class="hide">icon</span></div>
                                                 <div class="servicedec">
-                                                    <div class="subtitile subtitile1"><?php echo $lang['freeship'] ?></div>
-                                                    <div class="subtitile subtitile2"><?php echo $lang['orderover99'] ?></div>
+                                                    <div class="subtitile subtitile1">Miễn phí giao hàng</div>
+                                                    <div class="subtitile subtitile2">Đơn hàng từ 500.000đ</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -663,8 +655,8 @@
                                             <div class="serviceblock subbanner-part-maininnner2">
                                                 <div class="subicon subicon2"><span class="hide">icon</span></div>
                                                 <div class="servicedec">
-                                                    <div class="subtitile subtitile1"> <?php echo $lang['bigsave'] ?></div>
-                                                    <div class="subtitile subtitile2"> <?php echo $lang['moneyback'] ?></div>
+                                                    <div class="subtitile subtitile1"> Tiết kiệm lớn</div>
+                                                    <div class="subtitile subtitile2"> Đảm bảo hoàn tiền</div>
 
                                                 </div>
                                             </div>
@@ -673,8 +665,8 @@
                                             <div class="serviceblock subbanner-part-maininnner3">
                                                 <div class="subicon subicon3"><span class="hide">icon</span></div>
                                                 <div class="servicedec">
-                                                    <div class="subtitile subtitile1"> <?php echo $lang['gift'] ?></div>
-                                                    <div class="subtitile subtitile2"> <?php echo $lang['freegift'] ?></div>
+                                                    <div class="subtitile subtitile1"> phiếu quà tặng</div>
+                                                    <div class="subtitile subtitile2"> miễn phí quà tặng</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -682,8 +674,8 @@
                                             <div class="serviceblock subbanner-part-maininnner4">
                                                 <div class="subicon subicon4"><span class="hide">icon</span></div>
                                                 <div class="servicedec">
-                                                    <div class="subtitile subtitile1"><?php echo $lang['support'] ?></div>
-                                                    <div class="subtitile subtitile2"><?php echo $lang['freesupport'] ?></div>
+                                                    <div class="subtitile subtitile1">24X7 hỗ trợ</div>
+                                                    <div class="subtitile subtitile2">Miễn phí hỗ trợ online</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -693,10 +685,10 @@
                             <div class="col-lg-6 linklist links">
                                 <div class="row">
                                     <div class="col-md-6 wrapper hb-animate-element bottom-to-top">
-                                        <h3 class="h3 hidden-sm-down"><?php echo $lang['product'] ?></h3>
+                                        <h3 class="h3 hidden-sm-down">Sản phẩm</h3>
                                         <div class="title  hidden-md-up" data-target="#footer_sub_menu_8589"
                                             data-toggle="collapse">
-                                            <span class="h3"><?php echo $lang['product'] ?></span>
+                                            <span class="h3">Sản phẩm</span>
                                             <span class="float-xs-right">
                                                 <span class="navbar-toggler collapse-icons">
                                                     <i class="material-icons add">&#xE145;</i>
@@ -707,39 +699,33 @@
                                         <ul id="footer_sub_menu_8589" class="collapse">
                                             <li>
                                                 <a id="link-product-page-prices-drop-1" class="cms-page-link"
-                                                    href="#"
+                                                    href="<?=ROOT_URL?>/san-pham/tat-ca/page-1"
                                                     title="Our special products">
-                                                    <?php echo $lang['priceshop'] ?>
+                                                    Sản phẩm giảm giá
                                                 </a>
                                             </li>
                                             <li>
                                                 <a id="link-product-page-new-products-1" class="cms-page-link"
-                                                    href="#"
+                                                    href="<?=ROOT_URL?>/san-pham/tat-ca/page-1"
                                                     title="Our new products">
-                                                    <?php echo $lang['newpro'] ?>
+                                                    Sản phẩm mới
                                                 </a>
                                             </li>
                                             <li>
                                                 <a id="link-product-page-best-sales-1" class="cms-page-link"
-                                                    href="#"
+                                                    href="<?=ROOT_URL?>/san-pham/tat-ca/page-1"
                                                     title="Our best sales">
-                                                    <?php echo $lang['bestsell'] ?>
+                                                    Bán chạy
                                                 </a>
                                             </li>
-                                            <li>
-                                                <a id="link-static-page-contact-1" class="cms-page-link"
-                                                    href="<?=ROOT_URL?>/contact"
-                                                    title="Use our form to contact us">
-                                                    <?php echo $lang['contact'] ?>
-                                                </a>
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                     <div class="col-md-6 wrapper hb-animate-element bottom-to-top">
-                                        <h3 class="h3 hidden-sm-down"><?php echo $lang['ourcompany'] ?></h3>
+                                        <h3 class="h3 hidden-sm-down">Chúng tôi</h3>
                                         <div class="title  hidden-md-up" data-target="#footer_sub_menu_3249"
                                             data-toggle="collapse">
-                                            <span class="h3"><?php echo $lang['ourcompany'] ?></span>
+                                            <span class="h3">Thông tin</span>
                                             <span class="float-xs-right">
                                                 <span class="navbar-toggler collapse-icons">
                                                     <i class="material-icons add">&#xE145;</i>
@@ -750,32 +736,19 @@
                                         <ul id="footer_sub_menu_3249" class="collapse">
                                             <li>
                                                 <a id="link-cms-page-4-2" class="cms-page-link"
-                                                    href="<?=ROOT_URL?>/aboutus"
+                                                    href="<?=ROOT_URL?>/lien-he"
                                                     title="Learn more about us">
-                                                    <?php echo $lang['aboutus'] ?>
+                                                    Liên hệ
                                                 </a>
                                             </li>
                                             <li>
                                                 <a id="link-cms-page-5-2" class="cms-page-link"
                                                     href="<?=ROOT_URL?>/term-of-services"
                                                     title="Our secure payment method">
-                                                    <?php echo $lang['termofsv'] ?>
+                                                    Dịch vụ
                                                 </a>
                                             </li>
-                                            <li>
-                                                <a id="link-static-page-sitemap-2" class="cms-page-link"
-                                                    href="<?=ROOT_URL?>/impressum"
-                                                    title="Lost ? Find what your are looking for">
-                                                    <?php echo $lang['Impressum'] ?>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a id="link-static-page-my-account-2" class="cms-page-link"
-                                                    href="<?=ROOT_URL?>/privacy"
-                                                    title="">
-                                                    <?php echo $lang['privacy'] ?> 
-                                                </a>
-                                            </li>
+                                          
                                         </ul>
                                     </div>
                                 </div>
@@ -785,12 +758,12 @@
                                     <a class="text-uppercase"
                                         href="#"
                                         rel="nofollow">
-                                        <?php echo $lang['youracc'] ?>
+                                        Chính sách
                                     </a>
                                 </h3>
                                 <div class="title  hidden-md-up" data-target="#footer_account_list"
                                     data-toggle="collapse">
-                                    <span class="h3"><?php echo $lang['youracc'] ?></span>
+                                    <span class="h3">Chính sách</span>
                                     <span class="float-xs-right">
                                         <span class="navbar-toggler collapse-icons">
                                             <i class="material-icons add">&#xE145;</i>
@@ -800,36 +773,31 @@
                                 </div>
                                 <ul class="account-list collapse" id="footer_account_list">
                                     <li>
-                                        <a href="#"
+                                        <a href="<?=ROOT_URL?>/chinh-sach"
                                             title="Personal info" rel="nofollow">
-                                            <?php echo $lang['personalinfo'] ?>
+                                            Chính sách đổi trả
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#"
+                                        <a href="<?=ROOT_URL?>/chinh-sach"
                                             title="Orders" rel="nofollow">
-                                            <?php echo $lang['order'] ?>
+                                            Chính sách bảo hành
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#"
+                                        <a href="<?=ROOT_URL?>/chinh-sach"
                                             title="Credit slips" rel="nofollow">
-                                            <?php echo $lang['credit'] ?>
+                                            Chính sách hoàn tiền
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="#"
-                                            title="Addresses" rel="nofollow">
-                                            <?php echo $lang['address'] ?>
-                                        </a>
-                                    </li>
+                                    
 
                                 </ul>
                             </div>
                             <div class="block-contact contact-rich col-lg-3 links hb-animate-element bottom-to-top">
-                                <h3 class="hidden-sm-down"><?php echo $lang['storeinfo'] ?></h3>
+                                <h3 class="hidden-sm-down">Thông tin cửa hàng</h3>
                                 <div class="title  hidden-md-up" data-toggle="collapse" data-target="#contact-footer">
-                                    <span class="h3 block-contact-title"><?php echo $lang['storeinfo'] ?></span>
+                                    <span class="h3 block-contact-title">Thông tin cửa hàng</span>
                                     <span class="float-xs-right">
                                         <span class="navbar-toggler collapse-icons">
                                             <i class="material-icons add">&#xE145;</i>
@@ -840,14 +808,13 @@
                                 <ul id="contact-footer" class="collapse">
                                     <li class="block">
                                         <div class="icon"><i class="material-icons">&#xE55F;</i></div>
-                                        <div class="data">Steinbreite 17a  
-37603 Holzminden<br /></div>
-<!-- <?php echo $lang['unitedS'] ?> -->
+                                        <div class="data">2/9 Đoàn Thị Điểm phường 1 Phú Nhuận<br /></div>
+
                                     </li>
                                     <li class="block">
                                         <div class="data">
                                             <div class="icon"><i class="material-icons">&#xE0CD;</i></div>
-                                            <span class="title"><?php echo $lang['callus'] ?></span> <span>+49 176 46778998</span>
+                                            <span class="title"></span> <span>0901108244</span>
                                         </div>
                                     </li>
                                     <li class="block">
@@ -857,7 +824,7 @@
                                     <li class="block">
                                         <div class="data">
                                             <div class="icon"><i class="material-icons">&#xE158;</i></div>
-                                            <a href="mailto:admin@gmail.com">hangella1506@gmail.com </a>
+                                            <a href="mailto:nguyendangquan28297@gmail.com">nguyendangquan28297@gmail.com</a>
                                         </div>
                                     </li>
                                 </ul>
@@ -917,6 +884,7 @@
 			"phone":{
 				required: true,
 				maxlength: 15,
+				minlenght: 8,
 				digits: true
 			},
 			"email":{
@@ -936,7 +904,7 @@
         }
     });
     </script>
-
+<script src="views/assets/js/cartview.js"></script>
 <!-- ============== DOAN NAY SANG THEM VAO ======================= -->
 
 </body>

@@ -18,13 +18,8 @@
             $mausac = $_POST['mausac'];
             
             $sp = $model->getProById($id);
-            if ($_POST['lang'] == 'en') {
-                $name = $sp['name'];
-                $price = $sp['price'];
-            }else{
-                $name = $sp['name_ge'];
-                $price = $sp['price_ge'];
-            }
+            $name = $sp['name'];
+            $price = $sp['price'];
             $gia =($price - ($sp['discount']*$price)/100);
             $img = explode(",",$sp['image_list'])[0];
             $cart = array ();
@@ -60,14 +55,14 @@
     // show cart
     showSp();
     function showSp(){
-        require_once "../../../languages/".$_SESSION['lang'].".php";
+        // require_once "../../../languages/".$_SESSION['lang'].".php";
         global $canhbao,$pathimg;
        
             if(isset($_SESSION['cart']) &&($_SESSION['cart'])){
                 $tatcasp = $_SESSION['cart'];
                 $sltotal = 0; 
                 $tongtien = 0;
-$tongslsp= 0;
+                $tongslsp= 0;
                 foreach ($tatcasp as $motsp) {
                     $tongslsp += $motsp[1];
                 }
@@ -97,15 +92,8 @@ $tongslsp= 0;
                     $tongtien += $motsp[5]*$motsp[1];
                     $name = $motsp[4];
                     $id = $motsp[0];
-                    if ($_SESSION['lang'] === 'en') {
-                        $gia ="$".$motsp[5];
-                        $do = "$";
-                         $euro ="";
-                    }else{
-                        $gia = $motsp[5]."€";
-                        $do = "";
-                        $euro = "€";
-                    }
+                        $gia =$motsp[5];
+                    
                     
                     $slmotsp = $motsp[1];
                     $size = $motsp[2];
@@ -166,8 +154,8 @@ $tongslsp= 0;
                                 <div class="row">
                                     
                                     <div class="Total col-xs-12 clearfix">
-                                        <span class="label  text-xs-left">'.$lang['total'].'</span>
-                                        <span class="value   text-xs-right">'.$do.''.$tongtien.''.$euro.'</span>
+                                        <span class="label  text-xs-left">Tổng</span>
+                                        <span class="value   text-xs-right">'.$tongtien.'</span>
                                     </div>
 
                                 </div>
@@ -175,9 +163,10 @@ $tongslsp= 0;
                             <!-- checkout -->
                             <div class="cart-btn col-xs-12">
                                 <div class="row">
+                                    <a href="'.ROOT_URL.'/gio-hang'.'"
+                                        class="btn btn-primary">Giỏ hàng</a>
                                     <a href="'.ROOT_URL.'/checkout'.'"
-                                        class="btn btn-primary">'.$lang['checkout'].'</a>
-
+                                    class="btn btn-primary">Thanh Toán</a>
                                 </div>
                                 <!--dropdown-->
                             </div>
@@ -205,7 +194,7 @@ $tongslsp= 0;
 
                                             <li class="cart-det2"
                                                 data-refresh-url="">
-                                                <span class="no-items">'.$lang['emptycart'].'</span>
+                                                <span class="no-items">Giỏ hàng trống !</span>
                                         </div>
                                     </div>
 

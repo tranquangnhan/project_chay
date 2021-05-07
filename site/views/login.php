@@ -9,7 +9,7 @@
                                     <section id="main" class="login" >
                                              <header class="page-header">
                                                       <h1 class="kk-innertitle">
-                                                               <?=$lang['login']?>
+                                                               Đăng nhập với tài khoản của bạn
                                                       </h1>
                                              </header>
 
@@ -21,7 +21,7 @@
 
                                                                                  <div class="form-group row">
                                                                                           <label class="col-md-3 form-control-label required">
-                                                                                          <?=$lang['email']?>
+                                                                                          Email
                                                                                           </label>
                                                                                           <div class="col-md-6">
                                                                                                    <input class="form-control" name="email" type="email" value="" required />
@@ -32,7 +32,7 @@
 
                                                                                  <div class="form-group row">
                                                                                           <label class="col-md-3 form-control-label required">
-                                                                                          <?=$lang['pass']?>
+                                                                                          Mật khẩu
                                                                                           </label>
                                                                                           <div class="col-md-6">
                                                                                                    <div class="input-group js-parent-focus">
@@ -47,7 +47,7 @@
                                                                                                             />
                                                                                                             <span class="input-group-btn">
                                                                                                                      <button class="btn" type="button" data-action="show-password" data-text-show="Show" data-text-hide="Hide">
-                                                                                                                              Show
+                                                                                                                              Hiện
                                                                                                                      </button>
                                                                                                             </span>
                                                                                                    </div>
@@ -66,7 +66,7 @@
                                                                                     
                                                                                  <div class="forgot-password">
                                                                                           <a href="#" rel="nofollow">
-                                                                                          <?=$lang['forgotpass']?>
+                                                                                          Quên mật khẩu
                                                                                           </a>
                                                                                  </div>
                                                                         </section>
@@ -75,7 +75,7 @@
                                                                                  <input type="hidden" name="submitLogin" value="1" />
 
                                                                                  <button id="submit-login" class="btn btn-primary" name="login" data-link-action="sign-in" type="submit" class="form-control-submit">
-                                                                                 <?=$lang['Signin']?>
+                                                                                 Đăng nhập
                                                                                  </button>
                                                                         </footer>
                                                                </form>
@@ -83,8 +83,8 @@
                                                       <hr />
 
                                                       <div class="no-account">
-                                                               <a href="<?php echo ROOT_URL?>/register" data-link-action="display-register-form">
-                                                               <?=$lang['noonesignup']?>
+                                                               <a href="<?php echo ROOT_URL?>/dang-ky" data-link-action="display-register-form">
+                                                               Chưa có tải khoản ? đăng kí ngay
                                                                </a>
                                                       </div>
                                              </section>

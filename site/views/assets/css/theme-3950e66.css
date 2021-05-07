@@ -4459,7 +4459,7 @@ tbody.collapse.in {
     -webkit-border-radius: 0;
     -khtml-border-radius: 0;
     display: block;
-    overflow: hidden;
+    /* overflow: hidden; */
     margin-bottom: 20px;
     position: relative;
     width: 100%
@@ -5363,6 +5363,11 @@ base::-moz-progress-bar {
     background-color: #fff;
     border: 1px solid #ddd
 }
+
+
+/* .list-group-item a {
+    position: relative;
+} */
 
 .list-group-item:first-child {
     border-top-right-radius: 0;
@@ -7797,7 +7802,7 @@ body#checkout .custom-checkbox span,
 }
 
 .top-menu .sub-menu a:hover {
-    color: #fa929d
+    color: #17E9E0;
 }
 
 .top-menu .popover {
@@ -9997,8 +10002,7 @@ body#checkout #gift_message textarea {
 
 .block-category .category-cover img {
     width: 100%;
-    height: auto;
-    height: 266px;
+    height: auto
 }
 
 .products-selection .sort-by-row {
@@ -18776,10 +18780,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     text-transform: uppercase
 }
 
-.infinityheaderemail .email-inner:hover .email-title,
+
+/* .infinityheaderemail .email-inner:hover .email-title,
 .infinityheadercontact .contact-inner:hover .contact-title {
     color: var(--it-brand-primary)
-}
+} */
 
 .infinityheaderemail .email-dec {
     font-size: 14px;
@@ -22763,6 +22768,63 @@ html[xmlns] .flexslider .slides {
     margin: 0;
     padding: 0;
     border: 1px solid rgba(0, 0, 0, .25)
+}
+
+.pro_already {
+    position: absolute;
+    top: 0px;
+    left: 314px;
+    display: none;
+    width: 200px;
+    min-height: 30px;
+    background-color: white;
+    box-shadow: 0px 0px 2px rgb(190, 190, 190);
+    z-index: 10123;
+    transition: .3s;
+}
+
+.pro_already1 {
+    position: absolute;
+    top: 0px;
+    left: 200px;
+    display: none;
+    width: 280px;
+    min-height: 30px;
+    background-color: white;
+    box-shadow: 0px 0px 2px rgb(190, 190, 190);
+    z-index: 10123;
+    transition: .3s;
+}
+
+.pro_already>ul>li {
+    position: relative;
+    margin: 0;
+    padding: 12px 20px;
+    border-bottom: 1px solid rgb(236, 236, 236);
+}
+
+.pro_already1>ul>li {
+    /* float: left; */
+    margin: 0;
+    padding: 12px 20px;
+    border-bottom: 1px solid rgb(236, 236, 236);
+}
+
+#danhmucdoc ul li:hover .pro_already {
+    display: block;
+}
+
+#danhmucdoc ul li ul li:hover .pro_already1 {
+    display: block;
+}
+
+#hidden_maximum_price {
+    width: 100%;
+}
+
+.page.active {
+    background-color: black;
+    color: white;
 }
 
 

@@ -24,7 +24,7 @@
                                         </div>
                                     </div>
 
-                                    <h4 class="header-title mt-0 mb-3">Category</h4>
+                                    <h4 class="header-title mt-0 mb-3">Danh mục</h4>
 
                                     <form data-parsley-validate novalidate method="post" enctype="multipart/form-data">
                                     <div class="boxform boxshowimg ">
@@ -43,40 +43,48 @@
                                             
                                         </div>
                                         <div class="form-group">
-                                            <label for="">Name Category</label>
+                                            <label for="">Tên danh mục</label>
                                             <input type="text" name="name_category"  parsley-trigger="change" required
-                                                   placeholder="Type name category" class="form-control" id="category">
+                                                   placeholder="Nhập tên danh mục" class="form-control" id="category">
                                         </div>
                                         <div class="form-group">
-                                            <label for="">Name Category (German)</label>
-                                            <input type="text" name="name_category_ge"  parsley-trigger="change" required
-                                                   placeholder="Type name category GE" class="form-control" id="category">
+                                            <label for="">Kiểu</label>
+                                            <select name="kieu_menu" class="custom-select" id="">
+                                                <option value="0" selected>Ngang</option>
+                                                <option value="1">Dọc</option>
+                                            </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="">Description</label>
+                                                    <div class="checkbox">
+                                                        <input id="remember-2" type="checkbox" name="cosan" value=""  data-parsley-multiple="remember-2">
+                                                        <label for="remember-2">Có sẵn </label>
+                                                    </div>
+                                                </div> 
+                                        <div class="form-group">
+                                            <label for="">Mô tả</label>
                                             <textarea id="editor1" style="height: 300px;width:100%" name="des_category" >
                                            
                                         </textarea>
-                                        <label for="">Description (German)</label>
-                                            <textarea id="editor2" style="height: 300px;width:100%" name="des_category_ge" >
-                                           
-                                        </textarea>
-                                        </div>
-                                        <label for="">Belong</label>
-                                        <select class="custom-select form-group" name="IDcate">
                                         
-                                            <option value="0" selected>Don't Belong</option>
+                                        </div>
+                                        <label for="">Thuộc</label>
+                                        <select class="custom-select form-group" name="IDcate">
+                                            
+                                            <option value="0" selected>Không thuộc</option>
                                             <?php
                                                 foreach ($listchild as $key) {
-                                                    echo '<option value="'.$key['id'].'">'.$key['name'].'</option>';
+                                                    $name_Cate= $this->model->showOneProducer($key['parent']);
+                                                    if($key['style'] == 1) $style= " (dọc)(".$name_Cate['name'].")"; else $style = "(".$name_Cate['name'].")";
+                                                    echo '<option value="'.$key['id'].'">'.$key['name'].''.$style.'</option>
+                                                    i';
                                                 }
                                             ?>
                                         </select>
                                         
             
                                         <div class="form-group text-right mb-0 ">
-                                            <input type="submit" name="them" class="btn btn-primary waves-effect waves-light mr-1" value="ADD NEW">
-                                            <a href="<?=ROOT_URL?>/admin/?ctrl=categories" clas="btn btn-secondary waves-effect waves-light">CANCEL</a>
+                                            <input type="submit" name="them" class="btn btn-primary waves-effect waves-light mr-1" value="Thêm mới">
+                                            <a href="<?=ROOT_URL?>/admin/?ctrl=categories" clas="btn btn-secondary waves-effect waves-light">Hủy</a>
                                         </div>
 
                                     </form>

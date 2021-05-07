@@ -17,11 +17,11 @@
                                         <thead>
                                         <tr>
                                         <th width="3%">STT</th>
-                                        <th>Name</th>
+                                        <th>Tên KH</th>
                                         <th width="25%">Email</th>
-                                        <th>Subject</th>
-                                        <th width="40%">Messenges</th>
-                                        <th >ID Product</th>
+                                        <th width="20%">Hỗ trợ</th>
+                                        <th width="40%">Tin nhắn</th>
+                                        <th >ID sản phẩm</th>
                                         
                                         </tr>
                                         </thead>
@@ -32,9 +32,9 @@
                                         $stt = 1;
                                             foreach ($listcontact as $key) {
                                                 if($key['subject'] == 2){
-                                                    $sub = 'Customer service';
+                                                    $sub = 'Chăm sóc khách hàng';
                                                 }else{
-                                                    $sub = 'Webmaster';
+                                                    $sub = 'Sản phẩm mới';
                                                 }
                                                 echo '<tr>
                                                 <td width="3%">'.$stt++.'</td>

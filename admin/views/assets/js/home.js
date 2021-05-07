@@ -22,14 +22,14 @@ function submitForm() {
 
 function checkDelete(link) {
     Swal.fire({
-        title: 'Delete?',
-        text: "Are you sure to delete!",
+        title: 'Xóa?',
+        text: "Bạn chắc chắn muốn xóa!",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes!',
-        cancelButtonText: 'Cancel',
+        confirmButtonText: 'Xóa!',
+        cancelButtonText: 'hủy',
     }).then((result) => {
         if (result.isConfirmed) {
             window.location.href = link;
@@ -39,14 +39,14 @@ function checkDelete(link) {
 
 function checkDeleteCate(link, IDCATE) {
     Swal.fire({
-        title: 'Delete?',
-        text: "Are you sure to delete!",
+        title: 'Xóa?',
+        text: "Bạn chắc chắn muốn xóa!",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes!',
-        cancelButtonText: 'Cancel',
+        confirmButtonText: 'Xóa!',
+        cancelButtonText: 'Hủy',
     }).then(async(result) => {
         if (result.isConfirmed) {
             let checkStatus = new FormData();
@@ -78,7 +78,7 @@ function checkDeleteCate(link, IDCATE) {
                         Swal.fire({
                             type: 'error',
                             title: 'Oops.',
-                            text: 'This category contains products and cannot be deleted!',
+                            text: 'Danh mục này chứa sản phẩm! không thể xóa!',
                             showConfirmButton: true,
                             showCancelButton: false,
                             icon: "error"
@@ -87,7 +87,7 @@ function checkDeleteCate(link, IDCATE) {
                         Swal.fire({
                             type: 'error',
                             title: 'Oops.',
-                            text: 'This category contains subcategories and cannot be deleted!',
+                            text: 'Danh mục này chưa danh mục con! không thể xóa',
                             showConfirmButton: true,
                             showCancelButton: false,
                             icon: "error"
@@ -101,8 +101,8 @@ function checkDeleteCate(link, IDCATE) {
 
 function checkStatus(iddh) {
     Swal.fire({
-        title: 'Update?',
-        text: "Are you done?",
+        title: 'Cập nhật?',
+        text: "Bạn chắc chắn?",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',

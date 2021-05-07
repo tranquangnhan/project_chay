@@ -58,10 +58,12 @@ class Product{
         if(isset($_GET['id'])&&($_GET['act']='product')){
             $oneRecode = $this->model->showOnePhone($_GET['id']);
             $producer = $this->modelCate->getParentOfPro();
+            $listcate = $this->modelCate->listRecordsdoc();
             $page_title ="Sửa Điện Thoại";
             $page_file = "views/product_edit.php";
         }else{
             $producer = $this->modelCate->getParentOfPro();
+            $listcate = $this->modelCate->listRecordsdoc();
             $page_title ="Thêm Điện Thoại";
             $page_file = "views/product_add.php";
         }
@@ -70,9 +72,7 @@ class Product{
         {
 
             $name =$this->lib->stripTags($_POST['name_product']);
-            $name_ge =$this->lib->stripTags($_POST['name_product_ge']);
             $price = $_POST['price'];
-            $price_ge = $_POST['price_ge'];
             $discount = $_POST['discount'];
             $img = $_FILES['img'];
             
@@ -92,44 +92,24 @@ class Product{
             
             $IDCate = $_POST['IDCate'];
             $hot = $_POST['hot'];
-            if ($hot) {
+            if (isset($hot)) {
                 $hot = 1;
             }else{
                 $hot = 0;
             }
-            // xử lý chọn size
-            $arr = array();
-            if(isset($_POST['size1'])){
-                $size1 = $_POST['size1'];
-                array_push($arr,$size1);
-            }
-            if(isset($_POST['size2'])){
-                $size2 = $_POST['size2'];
-                array_push($arr,$size2);
-            }
-            if(isset($_POST['size3'])){
-                $size3 = $_POST['size3'];
-                array_push($arr,$size3);
-            }
-            if(isset($_POST['size4'])){
-                $size4 = $_POST['size4'];
-                array_push($arr,$size4);
-            }
-            $size='';
-            for ($i=0; $i < count($arr) ; $i++) { 
-                if($i<count($arr) - 1){
-                    $size .= $arr[$i] .',';
-                }else{
-                    $size .= $arr[$i];
-                }
+            $cosan = $_POST['cosan'];
+            if (isset($cosan)) {
+                $cosan = 0;
+            }else{
+                $cosan = 1;
             }
             
             $color = $_POST['color'];
+            $size = $_POST['size'];
+            $brand = $_POST['brand'];
+            $brand = $this->lib->slug($brand);
             $Description = $_POST['Description'];
-            $Description_ge = $_POST['Description1'];
-            echo $Description_ge;
             $Properties = $_POST['Properties'];
-            $Properties_ge = $_POST['Properties_ge'];
             $slug = $this->lib->slug($name);
             
 
@@ -143,10 +123,7 @@ class Product{
             if($name == ""){
                 $_SESSION['message'] = "Bạn chưa nhập tên";
             } 
-            elseif($name_ge == "")
-            {
-                $_SESSION['message'] = "Bạn chưa tên";
-            }
+            
             elseif($img == "")
             {
                 $_SESSION['message'] = "Bạn chưa chọn ảnh";
@@ -169,12 +146,12 @@ class Product{
                     $id = $_GET['id'];
                     settype($id,"int");
                     // echo 'oke';
-                    $this->edit($name,$name_ge,$slug,$price,$price_ge,$discount,$imgs,$IDCate,$hot,$size,$color,$Description,$Description_ge,$Properties,$Properties_ge,$id);
+                    $this->edit($name,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$cosan,$brand,$color,$Description,$Properties,$id);
                 
                 }else
                 {
                     // echo 'oke';
-                    $this->store($name,$name_ge,$slug,$price,$price_ge,$discount,$imgs,$IDCate,$hot,$size,$color,$Description,$Description_ge,$Properties,$Properties_ge);
+                    $this->store($name,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$cosan,$brand,$color,$Description,$Properties);
                 }    
             }
 
@@ -185,8 +162,8 @@ class Product{
     }//thêm mới dữ liệu vào db
 
 
-    function store($name,$name_ge,$slug,$price,$price_ge,$discount,$imgs,$IDCate,$hot,$size,$color,$Description,$Description_ge,$Properties,$Properties_ge){   
-        $idLastPhone = $this->model->addNewProduct($name,$name_ge,$slug,$price,$price_ge,$discount,$imgs,$IDCate,$hot,$size,$color,$Description,$Description_ge,$Properties,$Properties_ge);
+    function store($name,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$cosan,$brand,$color,$Description,$Properties){   
+        $idLastPhone = $this->model->addNewProduct($name,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$cosan,$brand,$color,$Description,$Properties);
         if($idLastPhone != null)
         {
             echo "<script>alert('Thêm thành công')</script>";
@@ -199,9 +176,9 @@ class Product{
         require_once "views/layout.php";
     }
 
-    function edit($name,$name_ge,$slug,$price,$price_ge,$discount,$imgs,$IDCate,$hot,$size,$color,$Description,$Description_ge,$Properties,$Properties_ge,$id)
+    function edit($name,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$cosan,$brand,$color,$Description,$Properties,$id)
     {
-        if($this->model->editProduct($name,$name_ge,$slug,$price,$price_ge,$discount,$imgs,$IDCate,$hot,$size,$color,$Description,$Description_ge,$Properties,$Properties_ge,$id))
+        if($this->model->editProduct($name,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$cosan,$brand,$color,$Description,$Properties,$id))
         {
             echo "<script>alert('Sửa thành công')</script>";
             header("location: ?ctrl=product");

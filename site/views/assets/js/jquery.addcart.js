@@ -3,6 +3,7 @@ window.onload = () => {
 
 }
 
+
 function cart() {
     if ($(".dropdown-menu-right").hasClass('cartdislay') == false) {
         $(".dropdown-menu-right")[0].classList.add('cartdislay');
@@ -28,7 +29,7 @@ $.post("controllers/ajax/addcart.php",
     }
 );
 
-function addCart(id, lang) {
+function addCart(id) {
 
     var sl = $("#quantity_wanted").val();
     var size = $("#group_1").val();
@@ -42,75 +43,39 @@ function addCart(id, lang) {
     if ($(".input-color").length == 0) {
         mausac = 'null';
     }
-    if (lang === 'en') {
-        if ($("#group_1").length > 0 && !$("#group_1").val()) {
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Please choose a size',
-            })
+    if ($("#group_1").length > 0 && !$("#group_1").val()) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Bạn chưa chọn size',
+        })
 
-            return false;
-        }
-        if ($(".input-color").length > 0 && !$(".input-color:checked").val()) {
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Please choose a color',
-            })
-
-            return false;
-        } else {
-            $.post("controllers/ajax/addcart.php", { id: id, sl: sl, size: size, mausac: mausac, lang: lang },
-                function(data) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Oops...',
-                        text: 'Add to cart successfully',
-                    })
-                    $('#_desktop_cart').html(data);
-                    $('#_mobile_cart').html(data);
-                    cart()
-                }
-            );
-        }
-        return true;
-    } else {
-        if ($("#group_1").length > 0 && !$("#group_1").val()) {
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Bitte wählen Sie eine Größe',
-            })
-
-            return false;
-        }
-        if ($(".input-color").length > 0 && !$(".input-color:checked").val()) {
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Bitte wählen Sie eine Farbe',
-            })
-
-            return false;
-        } else {
-
-            $.post("controllers/ajax/addcart.php", { id: id, sl: sl, size: size, mausac: mausac, lang: lang },
-                function(data) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Oops...',
-                        text: 'Erfolgreich in den Warenkorb legen',
-                    })
-
-                    $('#_desktop_cart').html(data);
-                    $('#_mobile_cart').html(data);
-                    cart()
-                }
-            );
-        }
-        return true;
+        return false;
     }
+    if ($(".input-color").length > 0 && !$(".input-color:checked").val()) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Bạn chưa chọn màu',
+        })
+
+        return false;
+    } else {
+        $.post("controllers/ajax/addcart.php", { id: id, sl: sl, size: size, mausac: mausac },
+            function(data) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Yeah',
+                    text: 'Thêm giỏ hàng thành công',
+                })
+                $('#_desktop_cart').html(data);
+                $('#_mobile_cart').html(data);
+                cart()
+            }
+        );
+    }
+    return true;
+
 
 
 
@@ -121,16 +86,6 @@ function addCart(id, lang) {
 //delCart
 function delCart(iddel) {
 
-    var getUrl = window.location.href;
-
-    var c = getUrl.indexOf("checkout");
-
-    if (c != -1) {
-        location.reload();
-    }
-
-
-
     $.ajax({
         url: "controllers/ajax/addcart.php",
         method: "post",
@@ -139,34 +94,34 @@ function delCart(iddel) {
             $('#_desktop_cart').html(data);
             $('#_mobile_cart').html(data);
             cart()
+            var getUrl = window.location.href;
+
+            var c = getUrl.indexOf("checkout");
+            var d = getUrl.indexOf("cartview");
+            if (c != -1 || d != -1) {
+                location.reload();
+            }
         }
     });
+
 }
 const fetchAPi = async(url, option) => {
     const dulieu = await fetch(url, option);
     console.log(dulieu)
 }
 
-function contact(e) {
+function contact() {
     var idsp = document.getElementById('sp').value;
     let bodyhtml = ''
-    if (e === 'en') {
-        bodyhtml = `<select id="id_contact" class="swal2-input">
-<option value="2">Customer service</option>
-<option value="1">Webmaster</option>
+
+    bodyhtml = `<select id="id_contact" class="swal2-input">
+<option value="2">Dịch vụ khách hàng</option>
+<option value="1">Thông tin sản phẩm</option>
 </select>
-<input id="name" placeholder="name" class="swal2-input">
+<input id="name" placeholder="Tên" class="swal2-input">
 <input id="email" placeholder="email" class="swal2-input">
-<textarea id="message" class="form-control swal2-input" name="message" placeholder="How can we help?" rows="3" cols="3"></textarea>`
-    } else {
-        bodyhtml = `<select id="id_contact" class="swal2-input">
-        <option value="2">Kundendienst</option>
-        <option value="1">Webmaster</option>
-</select>
-<input id="name" placeholder="Vollständiger Name" class="swal2-input">
-<input id="email" placeholder="E-Mail-Addresse" class="swal2-input">
-<textarea id="message" class="form-control swal2-input" name="message" placeholder="Botschaft" rows="3" cols="3"></textarea>`
-    }
+<textarea id="message" class="form-control swal2-input" name="message" placeholder="Tôi có thể giúp gì?" rows="3" cols="3"></textarea>`
+
     swal.fire({
         title: 'Contact',
         html: bodyhtml,
@@ -177,19 +132,13 @@ function contact(e) {
             var email = document.getElementById('email').value;
             var message = document.getElementById('message').value;
             if (id_contact == '' || name == '' || email == '' || message == '') {
-                if (e == 'en') {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: 'Enter your input',
-                    })
-                } else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: 'Geben Sie Ihre Eingabe ein',
-                    })
-                }
+
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Bạn chưa nhập đủ thông tin',
+                })
+
             } else {
                 var formData = new FormData();
                 formData.append('name', name);
@@ -207,36 +156,18 @@ function contact(e) {
                     data: formData,
                     success: function(response) {
                         if (response.StatusCode == 1) {
-                            if (e == 'en') {
-                                Swal.fire({
-                                    icon: 'success',
-                                    title: 'success...',
-                                    text: 'Send contact success',
-                                })
-                            } else {
-                                Swal.fire({
-                                    icon: 'success',
-                                    title: 'Oops...',
-                                    text: 'Erfolgreich in den Warenkorb legen',
-                                })
-                            }
-
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'success...',
+                                text: 'Gửi liên hệ thành công',
+                            })
                         } else {
-                            if (e == 'en') {
-                                Swal.fire({
-                                    icon: 'success',
-                                    title: 'success...',
-                                    text: 'Send contact success',
-                                })
-                            } else {
-                                Swal.fire({
-                                    icon: 'success',
-                                    title: 'Oops...',
-                                    text: 'Erfolgreich in den Warenkorb legen',
-                                })
-                            }
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'success...',
+                                text: 'Gửi liên hệ thành công',
+                            })
                         }
-
                     }
                 });
             }
@@ -245,4 +176,5 @@ function contact(e) {
 
         }
     })
+
 }

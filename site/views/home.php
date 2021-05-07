@@ -6,7 +6,55 @@
     </div>
 </aside>
 
-<div id="top_column">
+<div class="container">
+    <div class="row ">
+        
+        <div class="col-md-3" id="danhmucdoc">
+            <div class="card" style="width: 100%;">
+                <div class="card-header" style="background-color: #17E9E0; color: black;">
+                    SẢN PHẨM
+                </div>
+                <ul class="list-group list-group-flush">
+                    <?php
+                        foreach ($getMenuParentdoc as $row) {
+                            echo '<li class="list-group-item">
+                            <a href="#">'.$row['name'].'
+                                
+                            </a>';
+                            $getMenuchilddoc = $this->model->showDmCondoc($row['id']);
+                            if($getMenuchilddoc){
+                                echo '<div class="pro_already">
+                                <ul>';
+                                foreach ($getMenuchilddoc as $row) {
+                                    $link = ROOT_URL."/hang/".$row['slug']."-".$row['hangcosan']."/trang-1";
+                                    echo '<li><a href="'.$link.'">'.$row['name'].'</a>';
+                                    // show sản phẩm của danh mục
+                                    $probybrand = $this->model->getProByBrand($row['name'],$row['hangcosan']);
+                                    if($probybrand){
+                                        echo '<div class="pro_already1">
+                                        <ul>';
+                                        foreach ($probybrand as $row) {
+                                            $link = ROOT_URL."/san-pham-chi-tiet/".$row['slug'];
+                                            echo '<li><a href="'.$link.'">'.$row['name'].'</a></li>';
+                                        }
+                                        echo '</ul></div>';
+                                    }
+                                    echo '</li>';
+                                }
+                                echo '</ul></div>';
+                            }
+                            echo ' </li>';
+                        }
+                    ?>
+                    
+                </ul>
+                
+            </div>
+            
+        </div>
+        
+        <div class="col-md-9 ">
+        <div id="top_column">
     <div class="kkimgslider clearfix ">
         <div class="flexslider" data-interval="5000" data-pause="hover">
             <ul class="slides">
@@ -39,6 +87,9 @@
                     </a>
                 </li>
             </ul>
+        </div>
+    </div>
+</div>
         </div>
     </div>
 </div>
@@ -75,17 +126,17 @@
         <div id="kkproductsblock" class="clearfix hb-animate-element bottom-to-top">
             <div class="kkproductsblock-container">
                 <div class="producttab">
-                    <h2 class="kk-title"><?=$lang['trendingpro']?></h2>
+                    <h2 class="kk-title">Sản phẩm hot</h2>
 
                     <ul id="kkproductstab" class="nav nav-tabs clearfix">
                         <li class="nav-item first_item">
-                            <a class="nav-link active" href="#featured-products-block" data-toggle="tab"><?=$lang['feature']?></h2></a>
+                            <a class="nav-link active" href="#featured-products-block" data-toggle="tab">Đặc sắc</h2></a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link " href="#new-products-block" data-toggle="tab"><?=$lang['latest']?></h2></a>
+                            <a class="nav-link " href="#new-products-block" data-toggle="tab">Mới nhất</h2></a>
                         </li>
                         <li class="nav-item last_item">
-                            <a class="nav-link " href="#bestseller-products-block" data-toggle="tab"><?=$lang['bestseller']?></h2></a>
+                            <a class="nav-link " href="#bestseller-products-block" data-toggle="tab">Bán chạy</h2></a>
                         </li>
                     </ul>
                 </div>
@@ -113,15 +164,9 @@
                                         }else{
                                           $new = '';
                                         }
-                                        if ($_SESSION['lang'] === 'en') {
+                                        
                                             $price = $row['price'];
-                                            $do = "$";
-                                            $euro ="";
-                                        }else{
-                                            $price = $row['price_ge'];
-                                            $do = "";
-                                            $euro = "€";
-                                        }
+                                            
                                         if($row['discount'] > 0){
                                             
                                           $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
@@ -133,7 +178,7 @@
             
             
                                                           <span class="sr-only">Price</span>
-                                                          <span itemprop="price" class="price">'.$do.''.($price - ($row['discount']*$price)/100).''.$euro.'</span>
+                                                          <span itemprop="price" class="price">'.($price - ($row['discount']*$price)/100).'</span>
                                                       </div>';
                                         }else{
                                           $discount = '';
@@ -141,7 +186,7 @@
                                   
                         
                                                             <span class="sr-only">Price</span>
-                                                            <span itemprop="price" class="price">'.$do.''.floatval($price).''.$euro.'</span>
+                                                            <span itemprop="price" class="price">'.floatval($price).'</span>
                                                           
                                                           
                                                       </div>';
@@ -149,12 +194,10 @@
                                         if($price<=0 ||$price =='' ){
                                             $giaDiscount = '';
                                         }
-                                        if ($_SESSION['lang'] === 'en') {
+                                        
                                             $name = $row['name'];
-                                        }else{
-                                            $name = $row['name_ge'];
-                                        }
-                                        $link = ROOT_URL."/product/".$row['slug'];
+                                        
+                                        $link = ROOT_URL."/san-pham-chi-tiet/".$row['slug'];
                                             echo '<div class="kktab-block">
                                           <article class="product-miniature js-product-miniature " data-id-product="17"
                                             data-id-product-attribute="46" itemscope itemtype="http://schema.org/Product">
@@ -242,15 +285,9 @@
                                         }else{
                                           $new = '';
                                         }
-                                        if ($_SESSION['lang'] === 'en') {
+                                        
                                             $price = $row['price'];
-                                            $do = "$";
-                                            $euro ="";
-                                        }else{
-                                            $price = $row['price_ge'];
-                                            $do = "";
-                                            $euro = "€";
-                                        }
+                                            
                                         if($row['discount'] > 0){
                                           $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
                                           $giaDiscount = ' <div class="product-price-and-shipping">
@@ -261,7 +298,7 @@
             
             
                                                           <span class="sr-only">Price</span>
-                                                          <span itemprop="price" class="price">'.$do.''.($price - ($row['discount']*$price)/100).''.$euro.'</span>
+                                                          <span itemprop="price" class="price">'.($price - ($row['discount']*$price)/100).'</span>
                                                       </div>';
                                         }else{
                                           $discount = '';
@@ -269,7 +306,7 @@
                                   
                         
                                                             <span class="sr-only">Price</span>
-                                                            <span itemprop="price" class="price">'.$do.''.floatval($price).''.$euro.'</span>
+                                                            <span itemprop="price" class="price">'.floatval($price).'</span>
                                                           
                                                           
                                                       </div>';
@@ -277,12 +314,10 @@
                                         if($price<=0 ||$price =='' ){
                                             $giaDiscount = '';
                                         }
-                                        if ($_SESSION['lang'] === 'en') {
+                                        
                                             $name = $row['name'];
-                                        }else{
-                                            $name = $row['name_ge'];
-                                        }
-                                        $link = ROOT_URL."/product/".$row['slug'];
+                                        
+                                        $link = ROOT_URL."/san-pham-chi-tiet/".$row['slug'];
                                         echo '<div class="kktab-block">
                                       <article class="product-miniature js-product-miniature " data-id-product="17"
                                         data-id-product-attribute="46" itemscope itemtype="http://schema.org/Product">
@@ -370,15 +405,9 @@
                                         }else{
                                           $new = '';
                                         }
-                                        if ($_SESSION['lang'] === 'en') {
+                                        
                                             $price = $row['price'];
-                                            $do = "$";
-                                            $euro ="";
-                                        }else{
-                                            $price = $row['price_ge'];
-                                            $do = "";
-                                            $euro = "€";
-                                        }
+                                            
                                         if($row['discount'] > 0){
                                           $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
                                           $giaDiscount = ' <div class="product-price-and-shipping">
@@ -389,7 +418,7 @@
             
             
                                                           <span class="sr-only">Price</span>
-                                                          <span itemprop="price" class="price">'.$do.''.($price - ($row['discount']*$price)/100).''.$euro.'</span>
+                                                          <span itemprop="price" class="price">'.($price - ($row['discount']*$price)/100).'</span>
                                                       </div>';
                                         }else{
                                           $discount = '';
@@ -397,7 +426,7 @@
                                   
                         
                                                             <span class="sr-only">Price</span>
-                                                            <span itemprop="price" class="price">'.$do.''.floatval($price).''.$euro.'</span>
+                                                            <span itemprop="price" class="price">'.floatval($price).'</span>
                                                           
                                                           
                                                       </div>';
@@ -405,12 +434,10 @@
                                         if($price<=0 ||$price =='' ){
                                             $giaDiscount = '';
                                         }
-                                        if ($_SESSION['lang'] === 'en') {
+                                        
                                             $name = $row['name'];
-                                        }else{
-                                            $name = $row['name_ge'];
-                                        }
-                                        $link = ROOT_URL."/product/".$row['slug'];
+                                        
+                                        $link = ROOT_URL."/san-pham-chi-tiet/".$row['slug'];
                                         echo '<div class="kktab-block">
                                       <article class="product-miniature js-product-miniature " data-id-product="17"
                                         data-id-product-attribute="46" itemscope itemtype="http://schema.org/Product">
@@ -489,10 +516,10 @@
                     <div class="parallaxcms">
                         <div class="parallax-inner">
 
-                            <div class="parallax-caption1 "><?=$lang['beautyandcos']?></div>
-                            <div class="parallax-caption2 "><?=$lang['desbeautyandcos']?>
+                            <div class="parallax-caption1 ">Thời trang và hàng hiệu</div>
+                            <div class="parallax-caption2 ">Sản phẩm được nhập chính hãng với giá tốt nhất
                             </div>
-                            <div class="parallax-btn "><a href="<?=ROOT_URL?>/product" class="shopnow-button"><?=$lang['shopnow']?></a></div>
+                            <div class="parallax-btn "><a href="<?=ROOT_URL?>/product" class="shopnow-button">Mua ngay</a></div>
 
                         </div>
                     </div>
@@ -501,7 +528,7 @@
         </div>
         <section class="container infinityspecial-products hb-animate-element bottom-to-top  clearfix">
 
-            <h3 class="kk-title"><?=$lang['specpro']?></h3>
+            <h3 class="kk-title">Sản phẩm đặc biệt</h3>
 
             <div class="kkspecial-list bottom-to-top hb-animate-element">
                 <div class="row">
@@ -523,15 +550,9 @@
                             }else{
                               $new = '';
                             }
-                            if ($_SESSION['lang'] === 'en') {
+                            
                                 $price = $row['price'];
-                                $do = "$";
-                                $euro ="";
-                            }else{
-                                $price = $row['price_ge'];
-                                $do = "";
-                                $euro = "€";
-                            }
+                                
                             if($row['discount'] > 0){
                               $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
                               $giaDiscount = ' <div class="product-price-and-shipping">
@@ -542,7 +563,7 @@
 
 
                                               <span class="sr-only">Price</span>
-                                              <span itemprop="price" class="price">'.$do.''.($price - ($row['discount']*$price)/100).''.$euro.'</span>
+                                              <span itemprop="price" class="price">'.($price - ($row['discount']*$price)/100).'</span>
                                           </div>';
                             }else{
                               $discount = '';
@@ -550,7 +571,7 @@
                       
             
                                                 <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price">'.$do.''.floatval($price).''.$euro.'</span>
+                                                <span itemprop="price" class="price">'.floatval($price).'</span>
                                               
                                               
                                           </div>';
@@ -558,12 +579,10 @@
                             if($price<=0 ||$price =='' ){
                                 $giaDiscount = '';
                             }
-                            if ($_SESSION['lang'] === 'en') {
+                            
                                 $name = $row['name'];
-                            }else{
-                                $name = $row['name_ge'];
-                            }
-                            $link = ROOT_URL."/product/".$row['slug'];
+                            
+                            $link = ROOT_URL."/san-pham-chi-tiet/".$row['slug'];
                             echo '<div class="kktab-block">
                             <article class="product-miniature js-product-miniature " data-id-product="17"
                               data-id-product-attribute="46" itemscope itemtype="http://schema.org/Product">
@@ -807,7 +826,7 @@
 <div id="bottom_home">
     <section id="itspecialdeals" class="container featured-products clearfix mt-3 hb-animate-element bottom-to-top">
 
-        <h2 class="kk-title"><?=$lang['dealofday']?></h2>
+        <h2 class="kk-title">Kinh doanh trong ngày</h2>
 
         <div id="itspecialdeals-carousel" class="owl-carousel products collapse data-toggler">
                   
@@ -828,15 +847,9 @@
             }else{
               $new = '';
             }
-            if ($_SESSION['lang'] === 'en') {
+            
                 $price = $row['price'];
-                $do = "$";
-                $euro ="";
-            }else{
-                $price = $row['price_ge'];
-                $do = "";
-                $euro = "€";
-            }
+                
             if($row['discount'] > 0){
               $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
               $giaDiscount = ' <div class="product-price-and-shipping">
@@ -847,7 +860,7 @@
 
 
                               <span class="sr-only">Price</span>
-                              <span itemprop="price" class="price">'.$do.''.($price - ($row['discount']*$price)/100).''.$euro.'</span>
+                              <span itemprop="price" class="price">'.($price - ($row['discount']*$price)/100).'</span>
                           </div>';
             }else{
               $discount = '';
@@ -855,7 +868,7 @@
       
 
                                 <span class="sr-only">Price</span>
-                                <span itemprop="price" class="price">'.$do.''.floatval($price).''.$euro.'</span>
+                                <span itemprop="price" class="price">'.floatval($price).'</span>
                               
                               
                           </div>';
@@ -863,12 +876,10 @@
             if($price<=0 ||$price =='' ){
                 $giaDiscount = '';
             }
-            if ($_SESSION['lang'] === 'en') {
+            
                 $name = $row['name'];
-            }else{
-                $name = $row['name_ge'];
-            }
-                $link = ROOT_URL."/product/".$row['slug'];
+            
+                $link = ROOT_URL."/san-pham-chi-tiet/".$row['slug'];
                 echo '<article class="product-miniature js-product-miniature " data-id-product="17" data-id-product-attribute="46"
                 itemscope itemtype="http://schema.org/Product">
                 <div class="thumbnail-container">
@@ -931,7 +942,7 @@
 
     <div class="kkmanufacturer container hb-animate-element bottom-to-top clearfix">
 
-        <h3 class="kk-title"><?=$lang['brand']?></h3>
+        <h3 class="kk-title">nhãn hiệu</h3>
 
 
         <div class="block_content row">

@@ -62,6 +62,8 @@
            $getAllByBuyed = $this->model->getAllByBuyed(10,0);
            $getAllProByDeal =  $this->model->getAllProByDeal();
            $getMenuParent = $this->model->getMenuParent();
+		   $getMenuParentdoc = $this->model->getMenuParentdoc();
+		   
            $page_title ="Danh sách nhà sản xuất";
            $viewFile = "views/home.php";
            require_once "views/layout.php";  
@@ -69,54 +71,67 @@
    
         function product()
         {
+			
          
          $getMenuParent = $this->model->getMenuParent();
-         $getCateFromId = $this->model->getCateFromId($_GET['maloai']);
-         $getAllCate = $this->model->getAllCate();
+		 if(isset($_GET['maloai'])){
+			 $getCateFromId = $this->model->getCateFromId($_GET['maloai']);
+		 }else{
+			$getCateFromId = $this->model->getCateFromId(2);
+		 }
+         
          $getAllProDesc = $this->model->getAllProDesc(3,0);
          
          $getAllProDescoffset = $this->model->getAllProDesc(3,3);
          $getAllByBuyed = $this->model->getAllByBuyed(3,0);
          $etAllByBuyedoffset = $this->model->getAllByBuyed(3,3);
-         if(isset($_GET['sortBy'])) $sortBy = $_GET['sortBy']; else $sortBy = NULL;
-   
-         if(isset($_GET['order'])) $order = $_GET['order']; else $order = NULL;
-   
-      
-         if(isset($_GET['maloai'])==true&&($_GET['maloai']>0))
-         $maLoai= $_GET['maloai'];
-   
-         $PageNum=1;
+		 $PageNum=1;
          if(isset($_GET['Page'])==true) $PageNum = $_GET['Page'];
          settype($maLoai,"int");
          settype($PageNum,"int");
    
          if($PageNum<=0) $PageNum = 1;
+		if(isset($_GET['slug'])){
+			// $GetProductListCosan = $this->model->GetProductListCosan($_GET['maloai'],$_GET['slug'],$PageNum);
+			$getsizeALLpro = $this->model->getsizeALLpro();
+		}else{
+			// $GetProductListCosan = $this->model->GetProductListByloai($_GET['slug1'],$_GET['maloai'],$PageNum);
+			$getsizeALLpro = $this->model->getsizeALLpro();
+		}
+        //  if(isset($_GET['sortBy'])) $sortBy = $_GET['sortBy']; else $sortBy = NULL;
    
-         if($maLoai)
-         {
-             $ds = $this->model-> GetProductList($maLoai,$PageNum,$sortBy,$order);
-             $TotalProduct = (int)$this->model->countAllProductControl($maLoai,$sortBy,$order);
-             if($TotalProduct == 0) $TotalProduct =1;
-             $BaseLink= 'cate';
-            $PageSize = PAGE_SIZE_PRO;
-            $Pagination =  $this->model->Page($TotalProduct ,$PageNum,$PageSize, $BaseLink);
-         }else{
-            $PageNum = $_GET['slug'];
-            if($PageNum<=0) $PageNum = 1;
-            $ds = $this->model-> GetProductList2($PageNum,$sortBy,$order);
-            $TotalProduct = (int)$this->model->countAllProductControl2($sortBy,$order);
-            if($TotalProduct == 0) $TotalProduct =1;
-            $BaseLink= 'cate';
-            $PageSize = PAGE_SIZE_PRO;
-            $Pagination =  $this->model->PageNotCate($TotalProduct ,$PageNum,$PageSize, $BaseLink);
-         }
+        //  if(isset($_GET['order'])) $order = $_GET['order']; else $order = NULL;
+   
+      
+        //  if(isset($_GET['maloai'])==true&&($_GET['maloai']>0))
+        //  $maLoai= $_GET['maloai'];
+   
+        
+   
+        //  if($maLoai)
+        //  {
+        //      $ds = $this->model-> GetProductList($maLoai,$PageNum,$sortBy,$order);
+        //      $TotalProduct = (int)$this->model->countAllProductControl($maLoai,$sortBy,$order);
+        //      if($TotalProduct == 0) $TotalProduct =1;
+        //      $BaseLink= 'cate';
+        //     $PageSize = PAGE_SIZE_PRO;
+        //     $Pagination =  $this->model->Page($TotalProduct ,$PageNum,$PageSize, $BaseLink);
+        //  }else{
+        //     $PageNum = $_GET['slug'];
+        //     if($PageNum<=0) $PageNum = 1;
+        //     $ds = $this->model-> GetProductList2($PageNum,$sortBy,$order);
+        //     $TotalProduct = (int)$this->model->countAllProductControl2($sortBy,$order);
+        //     if($TotalProduct == 0) $TotalProduct =1;
+        //     $BaseLink= 'cate';
+        //     $PageSize = PAGE_SIZE_PRO;
+        //     $Pagination =  $this->model->PageNotCate($TotalProduct ,$PageNum,$PageSize, $BaseLink);
+        //  }
    
          $page_title ="Danh sách nhà sản xuất";
          $viewFile = "views/product.php";
          require_once "views/layout.php";  
         }
-   
+		
         function detail()
         {
            $getAllProSpecial = $this->model->getAllProSpecial();
@@ -157,9 +172,8 @@
         }
    
         function cartView(){
-            $producer = $this->model->getAllProducer();
    
-            $viewFile ="views/product.php";
+            $viewFile ="views/cart.php";
             require_once "views/layout.php";
         }
    
@@ -179,7 +193,7 @@
       function createcheckoutsession()
 	  {
 		  //echo dirname(__FILE__) . '/vendor/autoload.php';
-		   $currency = ($_SESSION['lang'] = "en")? "USD" : "EUR";
+		  
 		  require dirname(__FILE__) . '/vendor/autoload.php';
 		
 		\Stripe\Stripe::setApiKey('sk_test_51Ila2jLKgBvDvyCU7Aqlt5aeu1LIBByZoqZ6PgAqUAXDqLTuutDkhj5ZqLxd79wuEF86Ke07U9hrPjpl6tCH70B8003iKIrfWQ');
@@ -192,7 +206,7 @@
 		  'payment_method_types' => ['card'],
 		  'line_items' => [[
 			'price_data' => [
-			  'currency' => $currency,
+			  'currency' => 'usd',
 			  'unit_amount' => 2000,
 			  'product_data' => [
 				'name' => 'Stubborn Attachments',
@@ -302,18 +316,14 @@
 		foreach ($_SESSION['cart'] as $row) {
 		   $tongtien += $row[5]*$row[1];
 		}
-		$currency = ($_SESSION['lang'] = "en")? "USD" : "EUR";
-		//echo $tongtien;
-		
 		\Stripe\Stripe::setApiKey('sk_test_51Ila2jLKgBvDvyCU7Aqlt5aeu1LIBByZoqZ6PgAqUAXDqLTuutDkhj5ZqLxd79wuEF86Ke07U9hrPjpl6tCH70B8003iKIrfWQ');
-		
 		try {
 		  $json_str = file_get_contents('php://input');
 		  $json_obj = json_decode($json_str);
 		
 		  $paymentIntent = \Stripe\PaymentIntent::create([
 			'amount' => $tongtien*100,
-			'currency' => $currency,
+			'currency' => 'eur',
 		  ]);
 
 		  $output = [
@@ -325,13 +335,11 @@
 		  http_response_code(500);
 		  echo json_encode(['error' => $e->getMessage()]);
 		}
-		
 	}
 	function createklarnaqr()
 	{
 		$result = array();
 		$items = array();
-		$currency = ($_SESSION['lang'] = "en")? "USD" : "EUR";
 		$tatcasp = $_SESSION['cart'];
 		 $sltotal = 0; 
 		 $tongtien = 0;
@@ -366,7 +374,7 @@
 		  CURLOPT_CUSTOMREQUEST => 'POST',
 		  CURLOPT_POSTFIELDS =>'{
 		  "purchase_country": "GB",
-		  "purchase_currency": "'.$currency.'",
+		  "purchase_currency": "EUR",
 		  "locale": "en-GB",
 		  "merchant_urls": {
 			"place_order": "'.ROOT_URL.'/verifyklarna",
@@ -544,7 +552,7 @@
 	 }
 	 function register()
 	 {
-		require_once "../languages/".$_SESSION['lang'].".php";	
+		// require_once "../languages/".$_SESSION['lang'].".php";	
 		if(isset($_POST['register'])){
 		   $name = $_POST['name'];
 		   $email = $_POST['email'];
@@ -557,7 +565,7 @@
 				 $emailexist= 'Email already exists!';
 			  }else{
 				 $exist = $this->modelUser->registerUser($name,$email,$password);
-				$_SESSION['thongbao'] = $lang['resgistersucess'];
+				$_SESSION['thongbao'] = "Đăng kí thành công";
 				header("location: ".ROOT_URL."/notification");
 			  }
 		   } 

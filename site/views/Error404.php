@@ -660,8 +660,8 @@ nav .menu .menu_icon:hover .icon:after {
                 <?php
                   require_once "../../system/config.php";
                 ?>
-                    <p>Uh oh! Looks like you got lost. <br>Go back to the homepage if you dare!</p>
-                    <a href="<?=ROOT_URL?>/home"><button >Home</button></a>
+                    <p>Uh oh! Có vẻ bạn sai địa chia. <br>Quay trở lại trang chủ nếu bạn muốn!</p>
+                    <a href="<?=ROOT_URL?>/trang-chu"><button >Trang chủ</button></a>
                 </article>
             </div>
 
