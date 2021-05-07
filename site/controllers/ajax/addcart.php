@@ -67,6 +67,10 @@
                 $tatcasp = $_SESSION['cart'];
                 $sltotal = 0; 
                 $tongtien = 0;
+$tongslsp= 0;
+                foreach ($tatcasp as $motsp) {
+                    $tongslsp += $motsp[1];
+                }
                 $kq ='<div id="_desktop_cart">
                         <div class="shopping-cart">
                       
@@ -76,7 +80,7 @@
                                         <a rel="nofollow" >
                                             <i class="material-icons shopping-cart" >shopping_cart</i>
                                             <span class="hidden-sm-down">Cart</span>
-                                            <span class="cart-products-count">'.count($_SESSION['cart']).'</span>
+                                            <span class="cart-products-count">'.$tongslsp.'</span>
                                         </a>
                                     </div>
                                     <!---dropdown-->

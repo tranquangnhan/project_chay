@@ -42,7 +42,7 @@
                                                 echo '<tr>
                                                         <td>'.$stt.'</td>
                                                         <td>'.$row['name'].'</td>
-                                                        <td>'.substr($row['description'],0,100).'</td>
+                                                        <td>'.addslashes(substr($row['description'],0,100)).'</td>
                                                         <td><img style="object-fit:cover;" class="img-admin" width="150" height="110" src="'.$img.'"></td>
                                                         <td>'.$row['parent'].'</td>
                                                         <td><div  onclick="checkDeleteCate('.$linkDel.','.$row['id'].')"  class="btn btn-danger" role="button"><i class="fa fa-trash"></i></div></td>

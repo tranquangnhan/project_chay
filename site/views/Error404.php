@@ -661,7 +661,7 @@ nav .menu .menu_icon:hover .icon:after {
                   require_once "../../system/config.php";
                 ?>
                     <p>Uh oh! Looks like you got lost. <br>Go back to the homepage if you dare!</p>
-                    <a href="<?=ROOT_URL?>"><button >Home</button></a>
+                    <a href="<?=ROOT_URL?>/home"><button >Home</button></a>
                 </article>
             </div>
 

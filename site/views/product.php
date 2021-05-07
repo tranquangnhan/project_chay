@@ -634,20 +634,24 @@
 
 
 
-
+                
                 <section id="main">
-
+                   <?php
+                   if(is_file(PATH_IMG_SITE.explode(",",$getCateFromId['image_list'])[0])){
+                    $imgCate = PATH_IMG_SITE.explode(",",$getCateFromId['image_list'])[0];
+                   }else{
+                    $imgCate = PATH_IMG_SITE.explode(",",$this->model->getImgProductFromCate())[0];
+                   }
+                   
+                   ?>
 
                     <div class="block-category card card-block hidden-sm-down">
-
+                                     
                         <div class="category-cover">
-                            <img src="https://infinitytemplate.com/Prestashop/PRS01/PRS012/c/3-category_default/clothes.jpg"
+                            <img width="100%" style="object-fit: cover;" src="<?=$imgCate?>"
                                 alt="Clothes">
                         </div>
-                        <?php
-                            
-                        
-                        ?>
+                       
                         <h1 class="h1 title-category"><?php if($_SESSION['lang'] === 'en') echo $getCateFromId['name']; else echo $getCateFromId['name_ge'];?></h1>
                         <p><?php if($_SESSION['lang'] === 'en') echo $getCateFromId['description']; else echo $getCateFromId['description_ge'];?></p>
 

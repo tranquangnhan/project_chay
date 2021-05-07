@@ -102,6 +102,8 @@
 		"housenumber"=>"house number",
 		"city"=>"city",
 		"country"=>"country",
-		"postcode"=>"postcode"
+		"postcode"=>"postcode",
+		"empty_cart_content" => "Your cart is currently empty.",
+		"back_to_shop_btn" => "Return to shop"
 	);
 ?>

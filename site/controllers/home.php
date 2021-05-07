@@ -179,7 +179,7 @@
       function createcheckoutsession()
 	  {
 		  //echo dirname(__FILE__) . '/vendor/autoload.php';
-		  
+		   $currency = ($_SESSION['lang'] = "en")? "USD" : "EUR";
 		  require dirname(__FILE__) . '/vendor/autoload.php';
 		
 		\Stripe\Stripe::setApiKey('sk_test_51Ila2jLKgBvDvyCU7Aqlt5aeu1LIBByZoqZ6PgAqUAXDqLTuutDkhj5ZqLxd79wuEF86Ke07U9hrPjpl6tCH70B8003iKIrfWQ');
@@ -192,7 +192,7 @@
 		  'payment_method_types' => ['card'],
 		  'line_items' => [[
 			'price_data' => [
-			  'currency' => 'usd',
+			  'currency' => $currency,
 			  'unit_amount' => 2000,
 			  'product_data' => [
 				'name' => 'Stubborn Attachments',
@@ -302,14 +302,18 @@
 		foreach ($_SESSION['cart'] as $row) {
 		   $tongtien += $row[5]*$row[1];
 		}
+		$currency = ($_SESSION['lang'] = "en")? "USD" : "EUR";
+		//echo $tongtien;
+		
 		\Stripe\Stripe::setApiKey('sk_test_51Ila2jLKgBvDvyCU7Aqlt5aeu1LIBByZoqZ6PgAqUAXDqLTuutDkhj5ZqLxd79wuEF86Ke07U9hrPjpl6tCH70B8003iKIrfWQ');
+		
 		try {
 		  $json_str = file_get_contents('php://input');
 		  $json_obj = json_decode($json_str);
 		
 		  $paymentIntent = \Stripe\PaymentIntent::create([
 			'amount' => $tongtien*100,
-			'currency' => 'eur',
+			'currency' => $currency,
 		  ]);
 
 		  $output = [
@@ -321,11 +325,13 @@
 		  http_response_code(500);
 		  echo json_encode(['error' => $e->getMessage()]);
 		}
+		
 	}
 	function createklarnaqr()
 	{
 		$result = array();
 		$items = array();
+		$currency = ($_SESSION['lang'] = "en")? "USD" : "EUR";
 		$tatcasp = $_SESSION['cart'];
 		 $sltotal = 0; 
 		 $tongtien = 0;
@@ -360,7 +366,7 @@
 		  CURLOPT_CUSTOMREQUEST => 'POST',
 		  CURLOPT_POSTFIELDS =>'{
 		  "purchase_country": "GB",
-		  "purchase_currency": "EUR",
+		  "purchase_currency": "'.$currency.'",
 		  "locale": "en-GB",
 		  "merchant_urls": {
 			"place_order": "'.ROOT_URL.'/verifyklarna",

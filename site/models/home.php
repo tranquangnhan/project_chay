@@ -567,8 +567,14 @@ class Model_home extends Model_db{
         return $this->exec1($sql,$name,$email,$subject,$messenge);
     }
     function storeContactForDetail($name,$email,$subject,$messenge,$idsp)
+   
     {
         $sql = "INSERT INTO contact(name,email,subject,messeges,idsp) VALUE(?,?,?,?,?)";
         return $this->exec1($sql,$name,$email,$subject,$messenge,$idsp);
+    }
+
+    function getImgProductFromCate(){
+        $sql = "SELECT image_list FROM catalog WHERE ctrl = ?";
+        return $this->result1(1,$sql,'product')['image_list'];
     }
 }

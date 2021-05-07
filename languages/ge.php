@@ -102,5 +102,7 @@
 		"city"=>"Stadt",
 		"country"=>"Land",
 		"postcode"=>"Postleitzahl",
+		"empty_cart_content" => "Ihr Warenkorb ist derzeit leer.",
+		"back_to_shop_btn" => "Kehre zum Laden zurück"
 	);
 ?>

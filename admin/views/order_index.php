@@ -20,14 +20,15 @@
                                         <th>Name customer</th>
                                         <th>Order time</th>
                                         <th>Phone number</th>
-                                        <th>Street</th>
-                                        <th>Housenumber</th>
-                                        <th>City</th>
-                                        <th>Country</th>
-                                        <th>Note</th>  
+                                        <th>Housenumber - Street</th>
+                                        
+                                        <th>City - Country</th>
+                                        
+                                        <th>Note</th>
+                                        <th>PC</th>   
                                         <th>Status</th>
                                         <th>Payments</th>                                        
-                                        <th>More Detail</th>
+                                        <th>More</th>
                                         </tr>
                                         </thead>
 
@@ -48,11 +49,12 @@
                                                         <td>'.$row['firstname'].' '.$row['lastname'].'</td>
                                                         <td>'.$row['ngaydat'].'</td>
                                                         <td>'.$row['phone'].'</td>
-                                                        <td>'.$row['street'].'</td>
-                                                        <td>'.$row['housenumber'].'</td>
-                                                        <td>'.$row['city'].'</td>
-                                                        <td>'.$row['country'].'</td>
+                                                        <td>'.$row['housenumber'].'-'.$row['street'].'</td>
+                                                        
+                                                        <td>'.$row['city'].'-'.$row['country'].'</td>
+                                                        
                                                         <td>'.$row['note'].'</td>
+                                                        <td>'.$row['postcode'].'</td>
                                                         '.$status.'
                                                         <td>'.$row['payments'].'</td>
                                                         <td><a name="" id="" class="btn btn-success" href="'.$linkDetail.'" role="button"><i class="fa fa-bookmark"></i></a></td>    

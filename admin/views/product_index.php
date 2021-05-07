@@ -54,8 +54,8 @@
                                                         <td> '.$hot.'</td>
                                                         <td> '.$row['view'].'</td>
                                                         <td> '.$row['buyed'].'</td>
-                                                        <td>'.substr($row['description'],0,10).' ..</td>
-                                                        <td>'.substr($row['properties'],0,10).' ..</td>
+                                                        <td>'.addslashes(substr($row['description'],0,10)).' ..</td>
+                                                        <td>'.addslashes(substr($row['properties'],0,10)).' ..</td>
                                                         <td><div  onclick="checkDelete('.$linkDel.')"  class="btn btn-danger" role="button"><i class="fa fa-trash"></i></div></td>
                                                         <td><a href=""><a name="" id="" class="btn btn-primary" href="'.$linkEdit.'" role="button"><span class="mdi mdi-pencil"></span></a></a></a></td>
                                                     </tr>';

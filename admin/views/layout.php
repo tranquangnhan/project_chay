@@ -135,7 +135,7 @@
 
                 <!-- LOGO -->
                 <div class="logo-box">
-                    <a href="index.html" class="logo logo-dark text-center">
+                    <a href="?ctrl=product" class="logo logo-dark text-center">
                         <span class="logo-lg">
                             <img src="views/assets/images/logo-dark.png" alt="" height="16">
                         </span>
@@ -143,7 +143,7 @@
                             <img src="views/assets/images/logo-sm.png" alt="" height="24">
                         </span>
                     </a>
-                    <a href="index.html" class="logo logo-light text-center">
+                    <a href="?ctrl=product" class="logo logo-light text-center">
                         <span class="logo-lg">
                             <img src="views/assets/images/logo-light.png" alt="" height="16">
                         </span>

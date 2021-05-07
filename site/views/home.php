@@ -938,44 +938,21 @@
             <div id="kkbrandlogo" class="owl-carousel">
                 <div class="items">
                     <div class="image-container">
-                        <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/brand/3-manufacture3"
+                        <a href="#"
                             title="Manufacture3">
-                            <img src="views/assets/img/3.jpg" alt="Manufacture3" />
+                            <img src="views/assets/img/brand1.jpg" alt="Manufacture3" />
                         </a>
                     </div>
                 </div>
                 <div class="items">
                     <div class="image-container">
-                        <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/brand/4-manufacture4"
+                        <a href="#"
                             title="Manufacture4">
-                            <img src="views/assets/img/4.jpg" alt="Manufacture4" />
+                            <img src="views/assets/img/brand2.jpg" alt="Manufacture4" />
                         </a>
                     </div>
                 </div>
-                <div class="items">
-                    <div class="image-container">
-                        <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/brand/5-manufacture5"
-                            title="Manufacture5">
-                            <img src="views/assets/img/5.jpg" alt="Manufacture5" />
-                        </a>
-                    </div>
-                </div>
-                <div class="items">
-                    <div class="image-container">
-                        <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/brand/6-manufacture6"
-                            title="Manufacture6">
-                            <img src="views/assets/img/6.jpg" alt="Manufacture6" />
-                        </a>
-                    </div>
-                </div>
-                <div class="items">
-                    <div class="image-container">
-                        <a href="https://infinitytemplate.com/Prestashop/PRS01/PRS012/en/brand/7-manufacture7"
-                            title="Manufacture7">
-                            <img src="views/assets/img/7.jpg" alt="Manufacture7" />
-                        </a>
-                    </div>
-                </div>
+                
             </div>
         </div>
 
