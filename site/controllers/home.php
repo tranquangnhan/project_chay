@@ -174,7 +174,7 @@
         function cartView(){
             $producer = $this->model->getAllProducer();
    
-            $viewFile ="views/product.php";
+            $viewFile ="views/cart.php";
             require_once "views/layout.php";
         }
    
