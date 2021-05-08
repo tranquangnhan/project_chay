@@ -246,14 +246,14 @@
                                              
                                               if($row['discount'] > 0){
                                                 $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
-                                                $giaDiscount = '<span class="sr-only">'.floatval($price).'</span>
-                                                                <span class="regular-price">'.($price - ($row['discount']*$price)/100).'</span>
+                                                $giaDiscount = '<span class="sr-only">'.$this->lib->forMatTien($price).' đ</span>
+                                                                <span class="regular-price">'.$this->lib->forMatTien($price - ($row['discount']*$price)/100).' đ</span>
                                                                 <span class="discount-percentage discount-product">'.$row['discount'].'</span>';
                                                            
                                               }else{
                                                 $discount = '';
                                                 $giaDiscount = '<span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">'.floatval($price).'</span>';
+                                                                <span itemprop="price" class="price">'.$this->lib->forMatTien($price).' đ</span>';
                                               }
                                               if($price<=0 ||$price =='' ){
                                                 $giaDiscount = ' ';
