@@ -46,7 +46,7 @@
 
                                             <div class="form-group row ">
                                                 <label class="col-md-3 form-control-label required">
-                                                   Full name
+                                                   Họ và tên
                                                 </label>
                                                 <div class="col-md-6">
 
@@ -76,7 +76,7 @@
 
                                             <div class="form-group row ">
                                                 <label class="col-md-3 form-control-label required">
-                                                  Phone
+                                                  Điện thoại
                                                 </label>
                                                 <div class="col-md-6">
 
@@ -124,7 +124,7 @@
                                             </div>
                                             <div class="form-group row ">
                                                 <label class="col-md-3 form-control-label required">
-                                                    Address
+                                                    Địa chỉ
                                                 </label>
                                                 <div class="col-md-6">
 
@@ -143,7 +143,7 @@
                                             </div>
                                             <div class="form-group row ">
                                                 <label class="col-md-3 form-control-label required">
-                                                    Note
+                                                    Ghi chú
                                                 </label>
                                                 <div class="col-md-6">
 
@@ -168,7 +168,7 @@
 
                                             <button class="continue btn btn-primary float-xs-right" name="continue"
                                                 data-link-action="register-new-customer" type="submit" value="1">
-                                                Continue
+                                                Tiếp tục
                                             </button>
 
                                         </footer>

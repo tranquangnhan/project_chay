@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i);
 @import url(https://fonts.googleapis.com/css?family=Philosopher:400,400i,700,700i);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
 body,
 img {
     max-width: 100%;
@@ -44,7 +45,6 @@ img {
     top: 3px;
     left: 5px;
     font-size: 9px;
-    font-weight: 400
 }
 
 .owl-carousel,
@@ -859,17 +859,14 @@ h6 {
 
 .display-2 {
     font-size: 2.188rem;
-    font-weight: 400
 }
 
 .display-3 {
     font-size: 1.563rem;
-    font-weight: 400
 }
 
 .display-4 {
     font-size: 1.25rem;
-    font-weight: 400
 }
 
 hr {
@@ -882,7 +879,6 @@ hr {
 .small,
 small {
     font-size: 80%;
-    font-weight: 400
 }
 
 .mark,
@@ -2548,7 +2544,6 @@ select.form-control-lg:not([size]):not([multiple]) {
 
 .btn {
     display: inline-block;
-    font-weight: 400;
     line-height: 1.25;
     text-align: center;
     white-space: nowrap;
@@ -3142,7 +3137,6 @@ fieldset[disabled] a.btn {
 }
 
 .btn-link {
-    font-weight: 400;
     color: #2fb5d2;
     border-radius: 0
 }
@@ -3294,7 +3288,6 @@ tbody.collapse.in {
     width: 100%;
     padding: 3px 1.5rem;
     clear: both;
-    font-weight: 400;
     padding: 4px 4px;
     color: #373a3c;
     text-align: inherit;
@@ -3624,7 +3617,6 @@ tbody.collapse.in {
     padding: .5rem .75rem;
     margin-bottom: 0;
     font-size: 1rem;
-    font-weight: 400;
     line-height: 1.25;
     color: #7a7a7a;
     text-align: center;
@@ -4510,7 +4502,8 @@ tbody.collapse.in {
     padding: .75rem 1.25rem;
     margin-bottom: 0;
     background-color: #f5f5f5;
-    border-bottom: 1px solid rgba(0, 0, 0, .125)
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+    font-weight: 600;
 }
 
 .card-header:after {
@@ -5638,7 +5631,6 @@ button.list-group-item-danger.active:hover {
 .close {
     float: right;
     font-size: 1.5rem;
-    font-weight: 400;
     line-height: 1;
     color: #fff;
     opacity: .2
@@ -5800,7 +5792,6 @@ button.close {
     display: block;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, poppins, Helvetica Neue, Arial, sans-serif;
     font-style: normal;
-    font-weight: 400;
     letter-spacing: normal;
     line-break: auto;
     line-height: 1.5;
@@ -5912,7 +5903,6 @@ button.close {
     padding: 1px;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Poppins, Helvetica Neue, Arial, sans-serif;
     font-style: normal;
-    font-weight: 400;
     letter-spacing: normal;
     line-break: auto;
     line-height: 1.5;
@@ -6873,9 +6863,7 @@ a.bg-inverse:hover {
     text-transform: capitalize!important
 }
 
-.font-weight-normal {
-    font-weight: 400
-}
+.font-weight-normal {}
 
 .font-weight-bold {
     font-weight: 700
@@ -7056,14 +7044,12 @@ a.text-gray-dark:hover {
 @font-face {
     font-family: Material Icons;
     font-style: normal;
-    font-weight: 400;
     src: url(../css/e79bfd88537def476913f3ed52f4f4b3.eot);
     src: local("Material Icons"), local("MaterialIcons-Regular"), url(../css/570eb83859dc23dd0eec423a49e147fe.woff2) format("woff2"), url(../css/012cf6a10129e2275d79d6adac7f3b02.woff) format("woff"), url(../css/a37b0c01c0baf1888ca812cc0508f6e2.ttf) format("truetype")
 }
 
 .material-icons {
     font-family: 'Material Icons';
-    font-weight: 400;
     font-style: normal;
     font-size: 24px;
     display: inline-block;
@@ -7089,8 +7075,9 @@ html {
 
 body {
     direction: ltr;
-    font-family: poppins, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: .875rem;
+    font-weight: 600;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #888;
@@ -7113,7 +7100,6 @@ a:hover {
 p {
     font-size: 14px;
     color: #7a7a7a;
-    font-weight: 400
 }
 
 .color,
@@ -7141,7 +7127,7 @@ p {
 .h2,
 .h3 {
     text-transform: uppercase;
-    color: #232323
+    color: #232323;
 }
 
 .h4 {
@@ -7169,7 +7155,6 @@ p {
 .btn-tertiary {
     color: #333;
     font-size: 13px;
-    font-weight: 400;
     margin: .25rem 0;
     padding: 6px 15px;
     text-transform: lowercase;
@@ -7234,7 +7219,6 @@ small.value {
     box-shadow: none;
     color: #fff;
     font-size: .6875rem;
-    font-weight: 400;
     margin-left: 0;
     padding: 11px 16px;
     text-transform: uppercase
@@ -7496,9 +7480,7 @@ body#checkout .custom-checkbox span,
     flex-wrap: wrap
 }
 
-.definition-list dl dt {
-    font-weight: 400
-}
+.definition-list dl dt {}
 
 .definition-list dl dd,
 .definition-list dl dt {
@@ -7574,7 +7556,6 @@ body#checkout .custom-checkbox span,
 .nav-item .nav-link,
 .nav-item .nav-separtor {
     color: #7a7a7a;
-    font-weight: 400
 }
 
 .nav-item .nav-link.active,
@@ -7697,7 +7678,6 @@ body#checkout .custom-checkbox span,
     height: 40px;
     text-transform: capitalize;
     font-size: 13px;
-    font-weight: 500;
     letter-spacing: .8px;
     color: #a5a5a5;
     border-radius: 5px
@@ -7771,13 +7751,12 @@ body#checkout .custom-checkbox span,
 .top-menu a:not([data-depth="0"]) {
     display: block;
     color: #333;
-    font-weight: 400
 }
 
 .top-menu a.dropdown-submenu {
+    font-weight: 600 !important;
     color: #232323;
     text-transform: uppercase;
-    font-weight: 500
 }
 
 .top-menu a[data-depth="0"] {
@@ -7927,9 +7906,7 @@ body.header-active #mobile_kktop_menu_wrapper {
     right: 0
 }
 
-#mobile_kktop_menu_wrapper .top-menu .sub-menu li>a {
-    font-weight: 400
-}
+#mobile_kktop_menu_wrapper .top-menu .sub-menu li>a {}
 
 #mobile_kktop_menu_wrapper #top-menu {
     margin-bottom: .625rem
@@ -8010,7 +7987,6 @@ body.header-active #mobile_kktop_menu_wrapper {
 
 #mobile_kktop_menu_wrapper .top-menu .sub-menu li>a {
     padding: 4px 20px;
-    font-weight: 400;
     font-size: 15px
 }
 
@@ -8091,7 +8067,6 @@ body#checkout section.checkout-step .step-title {
     text-transform: capitalize;
     cursor: pointer;
     margin-bottom: 0;
-    font-weight: 400
 }
 
 body#checkout section.checkout-step .content {
@@ -8100,7 +8075,6 @@ body#checkout section.checkout-step .content {
 
 body#checkout section.checkout-step .step-edit {
     text-transform: lowercase;
-    font-weight: 400
 }
 
 body#checkout section.checkout-step .step-edit .edit {
@@ -8254,13 +8228,11 @@ body#checkout section.checkout-step .address-item.selected {
 
 body#checkout section.checkout-step .address-alias {
     display: inline-block;
-    font-weight: 400;
     margin-bottom: .625rem
 }
 
 body#checkout section.checkout-step .address {
     margin-left: 1.563rem;
-    font-weight: 400;
     color: #888
 }
 
@@ -8487,7 +8459,6 @@ body#checkout #gift_message textarea {
 
 #cart .product-price strong {
     color: #333;
-    font-weight: 500
 }
 
 #order-details {
@@ -8677,7 +8648,6 @@ body#checkout #gift_message textarea {
 }
 
 .table-labeled .label {
-    font-weight: 400;
     border-radius: 3px;
     font-size: inherit;
     padding: .25rem .375rem;
@@ -8779,7 +8749,6 @@ body#checkout #gift_message textarea {
 .page-addresses .address .address-body h4 {
     background: #e5e5e5 none repeat scroll 0 0;
     font-size: 1rem;
-    font-weight: 400;
     padding: 10px
 }
 
@@ -9012,7 +8981,6 @@ body#checkout #gift_message textarea {
     background: #f5f5f5;
     padding: 1rem;
     font-size: 16px;
-    font-weight: 400;
     letter-spacing: .4px;
     text-transform: capitalize;
     text-align: left;
@@ -9335,7 +9303,6 @@ body#checkout #gift_message textarea {
     letter-spacing: .7px;
     text-decoration: none;
     text-align: center;
-    font-weight: 400;
     text-transform: capitalize
 }
 
@@ -9472,7 +9439,6 @@ body#checkout #gift_message textarea {
     background-color: var(--it-brand-primary);
     color: #fff;
     font-size: 14px;
-    font-weight: 400;
     letter-spacing: .5px;
     line-height: 24px;
     text-transform: uppercase;
@@ -9861,7 +9827,6 @@ body#checkout #gift_message textarea {
 .product-miniature .regular-price {
     color: #7a7a7a;
     font-size: 15px;
-    font-weight: 400;
     letter-spacing: .2px;
     text-decoration: line-through
 }
@@ -9922,13 +9887,11 @@ body#checkout #gift_message textarea {
 
 #custom-text p {
     color: #232323;
-    font-weight: 400;
     font-size: 1.1em
 }
 
 #custom-text p .dark {
     color: #7a7a7a;
-    font-weight: 400
 }
 
 .page-content.page-cms {
@@ -9987,7 +9950,6 @@ body#checkout #gift_message textarea {
 
 .block-category #category-description p,
 .block-category #category-description strong {
-    font-weight: 400;
     color: #7a7a7a
 }
 
@@ -10153,7 +10115,6 @@ body#checkout #gift_message textarea {
 #search_filters_suppliers .facet .facet-title {
     color: #333;
     font-size: 14px;
-    font-weight: 400;
     line-height: 28px;
     margin-bottom: 0;
     padding: 5px 0;
@@ -10266,7 +10227,6 @@ body#checkout #gift_message textarea {
     background-color: var(--it-brand-primary);
     color: #fff;
     display: block;
-    font-weight: 400;
     height: 35px;
     padding: 8px;
     width: 35px
@@ -10298,7 +10258,6 @@ body#checkout #gift_message textarea {
 .pagination .current a {
     background-color: #000;
     color: #fff;
-    font-weight: 400;
     text-align: center;
     text-decoration: none;
     font-size: 15px
@@ -10314,7 +10273,6 @@ body#checkout #gift_message textarea {
 
 .active_filters .active-filter-title {
     display: inline;
-    font-weight: 500;
     margin-bottom: 0;
     letter-spacing: .5px;
     margin-right: .625rem;
@@ -10589,7 +10547,6 @@ body#checkout #delivery label {
 .product-price {
     color: #333;
     font-size: 20px;
-    font-weight: 400
 }
 
 #product-description-short {
@@ -10666,13 +10623,11 @@ body#checkout #delivery label {
 body#checkout #cart-summary-product-list .media-body .product-quantity {
     display: inline-block;
     margin: 0 15px;
-    font-weight: 500
 }
 
 body#checkout #cart-summary-product-list .media-body .product-price {
     font-size: 16px;
     display: block;
-    font-weight: 400;
     margin: 5px 0;
     float: none!important
 }
@@ -10731,7 +10686,6 @@ body#checkout #cart-summary-product-list .media-body .product-price {
 }
 
 .product-discounts>.product-discounts-title {
-    font-weight: 400;
     font-size: .875rem
 }
 
@@ -10785,7 +10739,6 @@ body#checkout #cart-summary-product-list .media-body .product-price {
 
 .product-discount .regular-price {
     text-decoration: line-through;
-    font-weight: 400;
     margin-right: .625rem
 }
 
@@ -11073,7 +11026,6 @@ body#checkout #cart-summary-product-list .media-body .product-price {
 #blockcart-modal .modal-title {
     color: #fff;
     font-size: 1.03rem;
-    font-weight: 500;
     line-height: 30px
 }
 
@@ -11085,7 +11037,6 @@ body#checkout #cart-summary-product-list .media-body .product-price {
     color: #333;
     font-size: 16px;
     text-transform: capitalize;
-    font-weight: 400;
     line-height: 20px;
     margin-bottom: 15px;
     letter-spacing: .5px
@@ -11095,7 +11046,6 @@ body#checkout #cart-summary-product-list .media-body .product-price {
     color: #333;
     font-size: 16px;
     text-transform: capitalize;
-    font-weight: 400;
     line-height: 20px;
     margin-bottom: 15px
 }
@@ -11276,7 +11226,6 @@ body#checkout #cart-summary-product-list .media-body .product-price {
     -webkit-box-flex: 1;
     -ms-flex: 1 0 40%;
     flex: 1 0 40%;
-    font-weight: 400;
     background: #f1f1f1;
     padding: .625rem;
     margin-right: .625rem;
@@ -11324,7 +11273,6 @@ li.product-flag {
     color: #232323;
     text-transform: capitalize;
     font-size: 14px;
-    font-weight: 400;
     z-index: 2
 }
 
@@ -11603,9 +11551,7 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 }
 
 .cart-summary-line.cart-summary-subtotals .label,
-.cart-summary-line.cart-summary-subtotals .value {
-    font-weight: 400
-}
+.cart-summary-line.cart-summary-subtotals .value {}
 
 .cart-summary-line:after {
     content: "";
@@ -11615,7 +11561,6 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 
 .cart-summary-line .label {
     padding-left: 0;
-    font-weight: 400;
     white-space: inherit
 }
 
@@ -11625,9 +11570,7 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 }
 
 .cart-summary-line.cart-summary-subtotals .label,
-.cart-summary-line.cart-summary-subtotals .value {
-    font-weight: 400
-}
+.cart-summary-line.cart-summary-subtotals .value {}
 
 .cart-grid-body {
     margin-bottom: .75rem
@@ -11643,7 +11586,6 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 
 .cart-grid-body .card-block h1 {
     color: #333;
-    font-weight: 400;
     margin-bottom: 0;
     text-transform: capitalize
 }
@@ -11714,7 +11656,6 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 
 .block-promo .cart-summary-line .label a,
 .block-promo .promo-name a {
-    font-weight: 400;
     color: #232323;
     display: inline-block
 }
@@ -11835,12 +11776,12 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
     padding: 15px
 }
 
-#block-reassurance span {
-    font-weight: 500
-}
+
+/* #block-reassurance span {
+    
+} */
 
 #product #block-reassurance span {
-    font-weight: 500;
     letter-spacing: .2px
 }
 
@@ -11890,7 +11831,6 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
     border-bottom: 1px solid #e5e5e5;
     font-size: 18px;
     color: #000;
-    font-weight: 500;
     margin: 0 0 15px;
     padding: 0 0 10px
 }
@@ -12904,7 +12844,6 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
     .footer-container .links .h3,
     .footer-before .links .h3 {
         font-size: 16px;
-        font-weight: 400;
         line-height: 18px;
         margin: 0;
         color: #333;
@@ -13408,7 +13347,6 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
     border-bottom: 1px solid #d7d7d7;
     color: #333;
     font-size: 18px;
-    font-weight: 400;
     letter-spacing: normal;
     line-height: 24px;
     margin: 0 auto 15px;
@@ -13493,7 +13431,6 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
     display: none;
     width: 100%;
     height: 100%;
-    font-weight: 400;
     vertical-align: middle
 }
 
@@ -13523,7 +13460,6 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
     color: #fff;
     float: right;
     font-size: 12px;
-    font-weight: 500;
     height: 15px;
     line-height: 15px;
     margin: auto;
@@ -13587,8 +13523,8 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 
 #top-menu>li>a {
     padding: 15px 16px;
-    font: 400 14px/20px 'poppins';
-    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
     color: #000;
     letter-spacing: .5px
 }
@@ -13606,9 +13542,7 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
     font-weight: bold;
 }
 
-.impressum span {
-    font-weight: 500;
-}
+.impressum span {}
 
 .impressum div {
     margin-top: 50px;
@@ -13782,9 +13716,8 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
     background: #fff none repeat scroll 0 0;
     color: #888;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: .4px;
-    font-family: "poppins", sans-serif;
     left: auto;
     display: block;
     visibility: hidden;
@@ -13817,7 +13750,6 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
     position: relative;
     /* overflow: hidden; */
     font-size: 14px;
-    font-weight: 400
 }
 
 #header .dropdown-menu-right .product-container .product .product-details .product-name>a {
@@ -13852,7 +13784,6 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 .dropdown-menu-right .cart-info .label {
     color: #161616;
     font-size: 14px;
-    font-weight: 500;
     float: left
 }
 
@@ -13865,14 +13796,12 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 #header .dropdown-menu-right .product-container .product .product-details>.product-price {
     color: #888;
     font-size: 14px;
-    font-weight: 400;
     margin: 5px 0
 }
 
 .dropdown-menu-right .cart-info .label {
     color: #161616;
     font-size: 15px;
-    font-weight: 500
 }
 
 .dropdown-menu-right .cart-info .value {
@@ -14669,7 +14598,7 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
     color: #232323;
     float: left;
     width: 100%;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 18px;
     line-height: 24px;
     letter-spacing: .4px;
@@ -14853,7 +14782,6 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 .currency-selector>span {
     color: #333;
     font-size: 14px;
-    font-weight: 400
 }
 
 .currency-selector>button {
@@ -15070,7 +14998,6 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
     font-size: 14px;
     text-decoration: none;
     text-transform: capitalize;
-    font-weight: 500;
     color: #222;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -15154,7 +15081,6 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 #content-wrapper .block .page-item-title h3 {
     color: #000;
     font-family: "poppins", sans-serif;
-    font-weight: 500;
     text-transform: uppercase;
     padding: 15px 10px 0 0;
     font-size: 15px;
@@ -15165,7 +15091,6 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 
 #content-wrapper .block .post-info>span {
     color: #000;
-    font-weight: 400;
     font-size: 14px;
     text-transform: capitalize;
     letter-spacing: 1px;
@@ -15185,7 +15110,6 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
     font-size: 22px;
     text-transform: uppercase;
     color: #000;
-    font-weight: 500;
     font-family: "poppins", sans-serif
 }
 
@@ -15241,7 +15165,6 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 
 #content-wrapper .smartblogcomments h4 {
     margin-bottom: 15px;
-    font-weight: 500;
     color: #000;
     font-family: "poppins", sans-serif;
     font-size: 20px
@@ -15338,7 +15261,6 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 
 #content-wrapper #articleComments #comments .commentList li .name {
     font-size: 15px;
-    font-weight: 500
 }
 
 #content-wrapper #articleComments #comments .commentList li .created {
@@ -15384,7 +15306,6 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
     color: #000;
     font-family: "poppins", sans-serif;
     font-size: 16px;
-    font-weight: 500;
     text-decoration: none;
     padding: 15px 10px 0 0
 }
@@ -15397,7 +15318,6 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
     color: #888;
     font-family: "poppins", sans-serif;
     font-size: 14px;
-    font-weight: 400;
     line-height: 25px;
     letter-spacing: .7px;
     text-decoration: none
@@ -18149,7 +18069,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 #header .language-selector-wrapper {
     color: #fff;
     font-size: 14px;
-    font-weight: 400;
     text-transform: uppercase
 }
 
@@ -18222,7 +18141,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     display: inline-block;
     text-transform: capitalize;
     color: #000;
-    font-weight: 400;
     letter-spacing: .4px;
     font-size: 15px;
     margin: 0;
@@ -18350,7 +18268,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 #kkstoreinfo #kkstoreinfo-container .store-description p {
     color: #444;
-    font-weight: 400;
     font-size: 13px;
     letter-spacing: .8px;
     margin-bottom: 0
@@ -18398,7 +18315,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     cursor: pointer;
     text-decoration: none;
     letter-spacing: .4px;
-    font-weight: 400;
     font-size: 15px
 }
 
@@ -18425,7 +18341,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .kkservicecms .subtitile1 {
     font-size: 15px;
     color: #000;
-    font-weight: 400;
     letter-spacing: .4px;
     padding: 7px 0 0;
     cursor: pointer;
@@ -18440,7 +18355,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     font-size: 14px;
     color: #888;
     cursor: pointer;
-    font-weight: 400;
     text-transform: capitalize;
     margin-top: 4px;
     letter-spacing: .4px
@@ -18636,7 +18550,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 #kktestimonials-item #kktestimonialsblock .testimonial-data .testimonial-name {
-    font-weight: 500;
     color: var(--it-brand-primary);
     display: block;
     font-size: 14px;
@@ -18699,7 +18612,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .infinityheadercontact .contact-title {
     font-size: 15px;
     color: #333;
-    font-weight: 500;
     letter-spacing: 1px;
     cursor: pointer;
     text-transform: uppercase
@@ -18709,7 +18621,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     font-size: 14px;
     color: #888;
     cursor: pointer;
-    font-weight: 400;
     letter-spacing: .4px;
     margin-top: 2px;
     text-transform: uppercase
@@ -18774,7 +18685,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .infinityheaderemail .email-title {
     font-size: 15px;
     color: #333;
-    font-weight: 500;
     letter-spacing: 1px;
     cursor: pointer;
     text-transform: uppercase
@@ -18790,7 +18700,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     font-size: 14px;
     color: #888;
     cursor: pointer;
-    font-weight: 400;
     letter-spacing: .4px;
     margin-top: 2px
 }
@@ -18882,7 +18791,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 #right-column #itspecialdeals #itspecialdeals-carousel .product-miniature .product-title a {
     color: #000;
     font-size: 16px;
-    font-weight: 500;
     text-transform: uppercase
 }
 
@@ -18929,7 +18837,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     color: #888;
     display: inline-block;
     font-size: 16px;
-    font-weight: 400;
     line-height: 25px;
     padding: 6px 0;
     margin-top: 5px;
@@ -18951,7 +18858,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     padding: 10px 25px;
     vertical-align: middle;
     text-transform: uppercase;
-    font-weight: 400;
     text-decoration: none
 }
 
@@ -19077,7 +18983,6 @@ input[type=number] {
 }
 
 .kkpc-main .time {
-    font-weight: 400;
     margin-bottom: 0;
     border-radius: 5px;
     display: inline-block;
@@ -19113,7 +19018,6 @@ input[type=number] {
 }
 
 .kkpc-main .kkcount {
-    font-weight: 400;
     background: #f5f5f5;
     color: #444;
     display: block;
@@ -19818,17 +19722,14 @@ button.ui-button::-moz-focus-inner {
     padding: 2px .4em;
     line-height: 1.5;
     min-height: 0;
-    font-weight: 400
 }
 
 .ui-menu .ui-menu-item a.ui-state-focus,
 .ui-menu .ui-menu-item a.ui-state-active {
-    font-weight: 400;
     margin: -1px
 }
 
 .ui-menu .ui-state-disabled {
-    font-weight: 400;
     margin: .4em 0 .2em;
     line-height: 1.5
 }
@@ -20121,7 +20022,6 @@ body .ui-tooltip {
 .ui-widget-header .ui-state-default {
     border: 1px solid #d3d3d3;
     background: #e6e6e6 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAGQCAAAAABKM1UHAAAAH0lEQVQ4y2N4y8QwCgcR/AnEjGCMDBmYmKDio5CuEABaxAUQRVsJFgAAAABJRU5ErkJggg==) 50% 50% repeat-x;
-    font-weight: 400;
     color: #555
 }
 
@@ -20140,7 +20040,6 @@ body .ui-tooltip {
 .ui-widget-header .ui-state-focus {
     border: 1px solid #999;
     background: #dadada url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAGQCAAAAABKM1UHAAAAH0lEQVR42mN4wsQwiOAo/AbEjFDIBMIgEgbp7ZpRCABBfwUJFjr9hgAAAABJRU5ErkJggg==) 50% 50% repeat-x;
-    font-weight: 400;
     color: #212121
 }
 
@@ -20157,7 +20056,6 @@ body .ui-tooltip {
 .ui-widget-header .ui-state-active {
     border: 1px solid #aaa;
     background: #fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAGQCAAAAABKM1UHAAAAGElEQVR42mP4N6jgKPwPIdEhSIz+cBQCAN0ljbVRDamVAAAAAElFTkSuQmCC) 50% 50% repeat-x;
-    font-weight: 400;
     color: #212121
 }
 
@@ -20213,7 +20111,6 @@ body .ui-tooltip {
 .ui-widget-header .ui-priority-secondary {
     opacity: .7;
     filter: Alpha(Opacity=70);
-    font-weight: 400
 }
 
 .ui-state-disabled,
@@ -21055,7 +20952,6 @@ body .ui-tooltip {
 .ui-widget-header .ui-state-default {
     border: 1px solid #d3d3d3;
     background: #e6e6e6 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAGQCAAAAABKM1UHAAAAH0lEQVQ4y2N4y8QwCgcR/AnEjGCMDBmYmKDio5CuEABaxAUQRVsJFgAAAABJRU5ErkJggg==) 50% 50% repeat-x;
-    font-weight: 400;
     color: #555
 }
 
@@ -21074,7 +20970,6 @@ body .ui-tooltip {
 .ui-widget-header .ui-state-focus {
     border: 1px solid #999;
     background: #dadada url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAGQCAAAAABKM1UHAAAAH0lEQVR42mN4wsQwiOAo/AbEjFDIBMIgEgbp7ZpRCABBfwUJFjr9hgAAAABJRU5ErkJggg==) 50% 50% repeat-x;
-    font-weight: 400;
     color: #212121
 }
 
@@ -21091,7 +20986,6 @@ body .ui-tooltip {
 .ui-widget-header .ui-state-active {
     border: 1px solid #aaa;
     background: #fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAGQCAAAAABKM1UHAAAAGElEQVR42mP4N6jgKPwPIdEhSIz+cBQCAN0ljbVRDamVAAAAAElFTkSuQmCC) 50% 50% repeat-x;
-    font-weight: 400;
     color: #212121
 }
 
@@ -21147,7 +21041,6 @@ body .ui-tooltip {
 .ui-widget-header .ui-priority-secondary {
     opacity: .7;
     filter: Alpha(Opacity=70);
-    font-weight: 400
 }
 
 .ui-state-disabled,
@@ -21945,7 +21838,6 @@ body .ui-tooltip {
     font-family: 'flexslider-icon';
     src: url(../../../../modules/kkimageslider/views/css/fonts/flexslider-icon.eot);
     src: url('../../../../modules/kkimageslider/views/css/fonts/flexslider-icon.eot?#iefix') format('embedded-opentype'), url(../../../../modules/kkimageslider/views/css/fonts/flexslider-icon.woff) format('woff'), url(../../../../modules/kkimageslider/views/css/fonts/flexslider-icon.ttf) format('truetype'), url('../../../../modules/kkimageslider/views/css/fonts/flexslider-icon.svg#flexslider-icon') format('svg');
-    font-weight: 400;
     font-style: normal
 }
 
@@ -22655,12 +22547,15 @@ html[xmlns] .flexslider .slides {
 
 #left-column .all-product-link,
 #right-column .all-product-link {
-    font-weight: 400;
     margin: 0;
     font-size: 14px;
     padding: 0 10px 10px 10px;
     text-align: right;
     display: block
+}
+
+.product-title a {
+    font-weight: 600 !important;
 }
 
 #left-column .all-product-link:hover,
