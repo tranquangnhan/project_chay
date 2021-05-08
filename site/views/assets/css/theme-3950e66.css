@@ -9834,7 +9834,7 @@ body#checkout #gift_message textarea {
 .product-price-and-shipping .discount-percentage {
     background-color: var(--it-brand-primary);
     color: #fff;
-    font: 500 13px/14px "poppins";
+    font: 500;
     margin: 0 2px;
     padding: 0 4px
 }
@@ -10806,7 +10806,7 @@ body#checkout #cart-summary-product-list .media-body .product-price {
 .tabs .nav-tabs .nav-link {
     color: #fff;
     border: 0 solid transparent;
-    font: 400 14px/22px "poppins", Helvetica, sans-serif;
+    font: 400 14px/22px;
     padding: 10px;
     letter-spacing: .5px;
     background-color: var(--it-brand-primary)
@@ -12226,7 +12226,7 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 .footer-container .contact-rich h4 {
     color: #000;
     cursor: pointer;
-    font: 500 15px/18px "poppins";
+    font: 500 15px/18px;
     letter-spacing: 1px;
     margin: 0 0 10px;
     padding: 0;
@@ -12354,7 +12354,7 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 .contact-rich .block .data {
     color: #444;
     cursor: pointer;
-    font: 400 13px/30px "poppins";
+    font: 400 13px/30px;
     width: auto;
     overflow: hidden;
     letter-spacing: .9px
@@ -12363,7 +12363,7 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 #left-column .contact-rich .block .data {
     color: #333;
     cursor: pointer;
-    font: 400 14px/30px "poppins";
+    font: 400 14px/30px;
     width: auto;
     overflow: hidden;
     letter-spacing: .2px
@@ -12597,7 +12597,7 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 .footer-container li a {
     color: #444;
     cursor: pointer;
-    font: 400 13px/30px "poppins";
+    font: 400 13px/30px;
     letter-spacing: .5px;
     text-decoration: none
 }
@@ -12605,7 +12605,7 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 #newslatter .block_newsletter .newslatter-title {
     color: #000;
     float: left;
-    font: 500 15px/25px "poppins", Helvetica, sans-serif;
+    font: 500 15px/25px;
     letter-spacing: 1px;
     margin-bottom: 10px;
     text-align: left;
@@ -12625,7 +12625,7 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
     border-radius: 0 0 0 0;
     background: var(--it-brand-primary) none repeat scroll 0 0;
     color: #fff;
-    font: 400 14px/16px "poppins", Helvetica, sans-serif;
+    font: 400 14px/16px;
     height: 35px;
     letter-spacing: .4px;
     padding: 5px 15px;
@@ -12676,7 +12676,7 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 
 .block_newsletter p {
     color: #888;
-    font: 400 13px/25px "poppins"
+    font: 400 13px/25px;
 }
 
 .block_newsletter form .input-wrapper {
@@ -12706,7 +12706,7 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 #newslatter .block_newsletter .kk-subscribeblock .kk-desc {
     color: #777;
     float: left;
-    font: 400 15px/22px "poppins", Helvetica, sans-serif;
+    font: 400 15px/22px;
     letter-spacing: 1px;
     text-align: left;
     width: 100%;
@@ -12934,7 +12934,7 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 
 .footer-after p>a {
     color: #000;
-    font: 400 13px/28px "poppins", sans-serif;
+    font: 400 13px/28px;
     letter-spacing: .9px;
     text-transform: capitalize
 }
@@ -13198,7 +13198,7 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 
 #contact-link span {
     color: #000;
-    font: 400 14px/24px "poppins", Helvetica, sans-serif
+    font: 400 14px/24px
 }
 
 #contact-link li.email {
@@ -13595,7 +13595,7 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 
 #header .menu>ul>li.more_menu .top-menu.sub-menu li a[data-depth="0"] {
     float: left;
-    font: 400 14px/18px "poppins", Helvetica, sans-serif;
+    font: 400 14px/18px;
     letter-spacing: .4px;
     padding: 4px 10px;
     text-align: left;
@@ -13961,7 +13961,7 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 
 .kk-innertitle {
     color: #333;
-    font: 400 18px/30px 'poppins', sans-serif;
+    font: 400 18px/30px;
     letter-spacing: .4px;
     text-align: left;
     text-transform: capitalize
@@ -14993,7 +14993,6 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 }
 
 #smartblog_block .products_block_inner #smartblog-carousel .sds_blog_post .blog_post .blog_content .sds_post_title a {
-    font-family: "poppins", sans-serif;
     font-size: 14px;
     text-decoration: none;
     text-transform: capitalize;
@@ -15018,7 +15017,6 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 
 #smartblog_block .products_block_inner #smartblog-carousel .sds_blog_post .blog_post .blog_content p {
     margin-bottom: 10px;
-    font-family: "poppins", sans-serif;
     font-size: 14px;
     color: #888;
     letter-spacing: .5px;
@@ -15079,7 +15077,6 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 
 #content-wrapper .block .page-item-title h3 {
     color: #000;
-    font-family: "poppins", sans-serif;
     text-transform: uppercase;
     padding: 15px 10px 0 0;
     font-size: 15px;
@@ -15109,7 +15106,6 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
     font-size: 22px;
     text-transform: uppercase;
     color: #000;
-    font-family: "poppins", sans-serif
 }
 
 #content-wrapper .block .articleContent .post-info {
@@ -15123,7 +15119,6 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
     position: relative;
     text-transform: capitalize;
     color: #000;
-    font-family: "poppins", sans-serif;
     margin-bottom: 5px
 }
 
@@ -15134,7 +15129,6 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
     position: relative;
     text-transform: capitalize;
     color: #000;
-    font-family: "poppins", sans-serif
 }
 
 #content-wrapper .block .articleContent .post-info .fa {
@@ -15153,7 +15147,6 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
     text-align: center;
     line-height: 25px;
     letter-spacing: .5px;
-    font-family: "poppins", sans-serif;
     margin: 0 auto;
     width: 100%
 }
@@ -15165,7 +15158,6 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 #content-wrapper .smartblogcomments h4 {
     margin-bottom: 15px;
     color: #000;
-    font-family: "poppins", sans-serif;
     font-size: 20px
 }
 
@@ -15189,7 +15181,6 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
     padding: .5rem 15px;
     margin-bottom: 0;
     font-size: 15px;
-    font-family: "poppins", sans-serif;
     text-align: right
 }
 
@@ -15202,7 +15193,7 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 }
 
 #content-wrapper .smartblogcomments #commentform .form-group .submit #submitComment {
-    font: 400 15px/18px "poppins", sans-serif;
+    font: 400 15px/18px;
     padding: 8px 15px;
     background-color: #c96;
     color: #fff;
@@ -15232,7 +15223,7 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 }
 
 #content-wrapper #articleComments .commenttitle {
-    font: 400 14px "poppins", sans-serif;
+    font: 400 14px;
     margin: 10px 0
 }
 
@@ -15280,7 +15271,7 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 }
 
 #content-wrapper #articleComments #comments .commentList li .reply .comment-reply-link {
-    font: 600 11px/16px "poppins", sans-serif;
+    font: 600 11px/16px;
     padding: 6px 10px;
     background: #fff;
     border: 1px solid #888;
@@ -15303,7 +15294,6 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 
 #content-wrapper .blog_desc .sdstitle_block>a {
     color: #000;
-    font-family: "poppins", sans-serif;
     font-size: 16px;
     text-decoration: none;
     padding: 15px 10px 0 0
@@ -15315,7 +15305,6 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 
 #content-wrapper #smartblogcat .sdsarticleCat>div {
     color: #888;
-    font-family: "poppins", sans-serif;
     font-size: 14px;
     line-height: 25px;
     letter-spacing: .7px;
@@ -15333,7 +15322,6 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
     position: relative;
     text-transform: capitalize;
     color: #000;
-    font-family: "poppins", sans-serif;
     margin-bottom: 5px
 }
 

@@ -37,7 +37,7 @@ function checkDelete(link) {
     })
 }
 
-function checkDeleteCate(link, IDCATE) {
+function checkDeleteCate(link, IDCATE, style, slug) {
     Swal.fire({
         title: 'Xóa?',
         text: "Bạn chắc chắn muốn xóa!",
@@ -52,6 +52,8 @@ function checkDeleteCate(link, IDCATE) {
             let checkStatus = new FormData();
 
             checkStatus.append('IDcate', IDCATE);
+            checkStatus.append('style', style);
+            checkStatus.append('slug', slug);
             checkStatus.append('Action', 'CheckChildCate');
             await $.ajax({
                 type: 'POST',
@@ -72,7 +74,7 @@ function checkDeleteCate(link, IDCATE) {
                             showCancelButton: false,
                             icon: "success"
                         });
-                        window.location.href = link
+                        // window.location.href = link
 
                     } else if (response[0] === 1) {
                         Swal.fire({

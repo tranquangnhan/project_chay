@@ -15,7 +15,14 @@
         case 'CheckChildCate':
             $array =  [];
            $kq = $model->CheckChildCate();
-           $kq1 = (int)($model->CheckChildHasPro($_POST['IDcate']));
+           if($_POST['style'] == 0){
+            $kq1 = ($model->CheckChildHasPro($_POST['IDcate']));
+            $kq1 = count($kq1);
+           }else{
+            $kq1 = ($model->GetProductListCosan($_POST['IDcate'],$_POST['slug']));
+            $kq1 = count($kq1);
+           }
+           
            if($kq1 > 0) $array[0] = 1; else $array[0] = 0;
             foreach ($kq as $key) {
                 if($_POST['IDcate'] == $key['parent']){

@@ -33,7 +33,7 @@ class Model_categories extends Model_db{
         
     }
     function showChildrenCategori(){
-        $sql = "SELECT * FROM catalog where ";
+        $sql = "SELECT * FROM catalog ";
         return $this->result1(0,$sql);
     }
     function getParentOfPro() 
