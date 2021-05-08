@@ -42,15 +42,9 @@
                                                 echo '<tr>
                                                         <td>'.$stt.'</td>
                                                         <td>'.$row['name'].'</td>
-<<<<<<< HEAD
-                                                        <td>'.addslashes(substr($row['description'],0,100)).'</td>
-                                                        <td><img style="object-fit:cover;" class="img-admin" width="150" height="110" src="'.$img.'"></td>
-                                                        <td>'.$row['parent'].'</td>
-=======
                                                         <td>'.substr($row['description'],0,100).'</td>
                                                         <td>'.$style.'</td>
                                                         <td>'.$name_Cate['name'].'</td>
->>>>>>> 25b50fd6c981c0dbf7ae61583f1eff9d56c5389a
                                                         <td><div  onclick="checkDeleteCate('.$linkDel.','.$row['id'].')"  class="btn btn-danger" role="button"><i class="fa fa-trash"></i></div></td>
                                                         <td><a><a name="" id="" class="btn btn-primary" href="'.$linkEdit.'" role="button"><i class="fa fa-edit"></i></a></a></a></td>
                                                     </tr>';

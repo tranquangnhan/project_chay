@@ -191,7 +191,7 @@
                                                                 <img src="'.$img.'"
                                                                     alt="Neque Porro Suisquam"
                                                                     data-full-size-image-url="'.$img.'" width="70" height="90">
-                                                                <img class="second_image img-responsive"
+                                                                <img class="second_image img-responsive" width="70" height="90"
                                                                     src="'.$imgCover.'"
                                                                     alt="" title="" />
                                                             </a>
@@ -274,7 +274,7 @@
                                                                 <img src="'.$img.'"
                                                                     alt="Neque Porro Suisquam"
                                                                     data-full-size-image-url="'.$img.'" width="70" height="90">
-                                                                <img class="second_image img-responsive"
+                                                                <img class="second_image img-responsive" width="70" height="90"
                                                                     src="'.$imgCover.'"
                                                                     alt="" title="" />
                                                             </a>

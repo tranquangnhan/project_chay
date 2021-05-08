@@ -474,12 +474,13 @@
 			
 		echo json_encode($result);
 	 }
+	 
 	 function saveBill()
 	 {
 		if(isset($_POST['continue'])){
+	
 
-		$fname = trim(strip_tags($_POST['fname']));
-		$lname = trim(strip_tags($_POST['lname']));
+		$hoten = trim(strip_tags($_POST['name']));
 		$email = trim(strip_tags($_POST['email']));
 		$phone = trim(strip_tags($_POST['phone']));
 		$address = trim(strip_tags($_POST['address']));
@@ -494,19 +495,19 @@
 		   $tongtien += $row[5]*$row[1];
 		}
 	 
-		$idDH = $this->model->luudonhangnhe($idDH,  $fname,$lname, $email,$phone,$address,$note,$tongtien); 
+		$idDH = $this->model->luudonhangnhe($idDH,  $hoten, $email,$phone,$address,$note,$tongtien); 
 	  
 		   if ($idDH){
 			  $_SESSION['idDH'] = $idDH;
 			  
 			  $giohang = $_SESSION['cart'];
 			  $this->model->luugiohangnhe($idDH, $giohang);
-			  unset($_SESSION['cart']);
 			  header('location: '.ROOT_URL.'/donecheckout');
 		   }  
 			   
 		}
 	 }
+	 
 	 function vnpay()
 	 {
 		

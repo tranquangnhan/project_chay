@@ -5,146 +5,7 @@
 <script src="https://www.paypalobjects.com/api/checkout.js"></script>
 <script src="https://js.stripe.com/v3/"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
-<script>
-$(document).ready(function() {
-	
- 
-$('.method').on('click', function() {
-    $('.method').removeClass('blue-border');
-    $(this).addClass('blue-border');
-  });
 
-  // Validation
-  var $cardInput = $('.input-fields input');
- 
-
-  $('#customer-form').on('submit', function(e) 
-  {
-	if($("#customer-form").valid())
-   {
-      var fname = $("#firstname").val();
-   var lname = $("#lastname").val();
-   var phone = $("#phone").val();
-   var email = $("#email").val();
-   // var address = $("#address").val();
-   var street = $("#street").val();
-   var housenumber = $("#housenumber").val();
-   var city = $("#city").val();
-   var country = $("#country").val();
-   var postcode = $("#postcode").val();
-   var note = $("#note").val();
-   var e = $("#language").val();
-   //Sai đoạn tham số rồi
-   // chỗ nào a
-  
-      // if(fname == '' || lname == '' || phone == ''  || email == ""
-      // || street == "" || housenumber == "" 
-      // || city == "" || country == "" || postcode == ""){
-      //    if (e == 'English') {
-      //          Swal.fire({
-      //             icon: 'error',
-      //             title: 'Oops...',
-      //             text: 'Enter your input',
-      //          })
-      //       } else {
-      //          Swal.fire({
-      //             icon: 'error',
-      //             title: 'Oops...',
-      //             text: 'Geben Sie Ihre Eingabe ein',
-      //          })
-      //       }
-      //       return false;
-      // }else{
-         $.ajax({
-         type: "POST",
-         url: "<?php echo ROOT_URL;?>/saveorder",
-         data: {fname: fname,lname:lname, phone:phone,email:email,street: street,housenumber: housenumber,city: city,country: country,postcode:postcode,note:note},
-         dataType: "json",
-         cache: false,
-         success: function(data)
-         {
-            if(data.status != "200")
-            {
-               
-               Swal.fire({
-               icon: 'error',
-               title: 'Oops...',
-               text: data.message,
-               footer: '<a href>More about this error?</a>'
-               })
-            }
-            else
-            {
-               $("#checkout-personal-information-step").fadeOut(100);
-               $("#select-payment-panel").fadeIn(100);
-               //window.location= ("<?php echo XC_URL;?>/");                
-            }
-         }
-      });
-   }
-	
-      // return false;
-      // }
-
-    
-	return false;
-  });
-  $('.method').on('click', function(e) {
-
-    var tab = $(this).attr("data-tab");
-	if(tab == "klarna")
-	{
-		$.ajax({
-			type: "POST",
-			url: "<?php echo ROOT_URL;?>/createklarnaqr",
-			data: {},
-			dataType: "json",
-			cache: false,
-			success: function(data)
-			{
-				console.log(data);
-				if(data.status != "200")
-				{
-					alert(data.message);
-				}
-				else
-				{
-					$("#klarnaid").attr("src",data.qr);
-					$("#klarnaurl").attr("href",data.url);
-				}
-			}
-		  })
-	}
-	$(".tab-payment").fadeOut(100);
-	$("#"+tab).fadeIn(100);
-	
-  });
-  $('#btn-cod').on('click', function(e) {
-
-    $.ajax({
-		type: "POST",
-		url: "<?php echo ROOT_URL;?>/paymentchecking",
-		data: {method: "cod", id: ""},
-		dataType: "json",
-		cache: false,
-		success: function(data)
-		{
-			console.log(data);
-			if(data.status != "200")
-			{
-				alert("Thanh toán không thành công!");
-			}
-			else
-			{
-				window.location= ("<?php echo ROOT_URL;?>/donecheckout");                
-			}
-		}
-	  })
-	
-  });
-
-});
-</script>
 <aside id="notifications">
    <div class="container">
    </div>
@@ -177,162 +38,149 @@ $('.method').on('click', function() {
                   <div class="content">
                      <div class="tab-content">
                         <div class="tab-pane active" id="checkout-guest-form" role="tabpanel">
-                           <form action=""
-                              id="customer-form" name="customer-form" class="js-customer-form" method="post">
-                              <section>
-                                 <div class="form-group row ">
-                                    <label class="col-md-3 form-control-label required">
-                                    Tên
-                                    </label>
-                                    <div class="col-md-3">
-                                          <input class="form-control" name="firstname" id="firstname" type="text" value="" placeholder="Họ" required>
-                                       
-                                    </div>
-                                    <div class="col-md-3">
-                                          
-                                       <input class="form-control" name="lastname" id="lastname" type="text" value="" placeholder="Tên" required>
-                                    </div>
-                                    <div class="col-md-3 form-control-comment">
-                                    </div>
-                                 </div>
-                                 <div class="form-group row ">
-                                    <label class="col-md-3 form-control-label required">
-                                    Số điện thoại
-                                    </label>
-                                    <div class="col-md-6">
-                                       <input class="form-control" name="phone" id="phone" type="number" value="" placeholder="Số điện thoại"
-                                          required>
-                                    </div>
-                                    <div class="col-md-3 form-control-comment">
-                                    </div>
-                                 </div>
-                                 <div class="form-group row ">
-                                    <label class="col-md-3 form-control-label required">
-                                    Email
-                                    </label>
-                                    <div class="col-md-6">
-                                       <input class="form-control" name="email" id="email" type="email" value="" placeholder="Email"
-                                          required>
-                                    </div>
-                                    <div class="col-md-3 form-control-comment">
-                                    </div>
-                                 </div>
-                                 <div class="form-group row ">
-                                    <label class="col-md-3 form-control-label required">
-                                    Địa chỉ
-                                    </label>
-                                    <div class="col-md-3">
-                                       <input class="form-control" name="address1" id="street" type="text" value="" required placeholder="Đường">
-                                    </div>
-                                    
-                                    <div class="col-md-3">
-                                       <input class="form-control" name="address2" id="housenumber" type="text" value="" required placeholder="Số nhà">
-                                    </div>
-                                 </div>
-                                 <div class="form-group row ">
-                                    <label class="col-md-3 form-control-label required">
-                                    </label>
-                                    <div class="col-md-3">
-                                       <input class="form-control" name="address3" id="city" type="text" value="" required placeholder="Thành phố">
-                                    </div>
-                                    
-                                    <div class="col-md-3">
-                                       <input class="form-control" name="address4" id="country" type="text" value="" required placeholder="Quốc gia">
-                                    </div>
-                                 </div>
-                                 <div class="form-group row ">
-                                    <label class="col-md-3 form-control-label required">
-                                    Mã postcode
-                                    </label>
-                                    <div class="col-md-6">
-                                       <input class="form-control" name="postcode" id="postcode" type="text" value="" placeholder="Mã postcode"
-                                          required>
-                                    </div>
-                                    <div class="col-md-3 form-control-comment">
-                                    </div>
-                                 </div>
-                                 
-                                 <div class="form-group row ">
-                                    <label class="col-md-3 form-control-label required">
-                                    Ghi chú
-                                    </label>
-                                    <div class="col-md-6">
-                                       <textarea class="textarea" name="note" id="note" cols="55" rows="10"></textarea>
-                                    </div>
-                                    <div class="col-md-3 form-control-comment">
-                                    </div>
-                                 </div>
-                              </section>
-                              <footer class="form-footer clearfix">
-                                 <input type="hidden" id="language" value="">
-                                 <input type="hidden" name="submitCreate" value="1">
-                                 <button style="" class="continue btn btn-primary float-xs-right" name="continue"
-                                    data-link-action="register-new-customer" id="btn-next" type="submit" value="1" >
-                                 Tiếp tục
-                                 </button>
-                              </footer>
-                           </form>
+                        <form action="" 
+                                        id="customer-form" class="js-customer-form" method="post">
+                                        <section>
+
+
+
+                                            <div class="form-group row ">
+                                                <label class="col-md-3 form-control-label required">
+                                                   Full name
+                                                </label>
+                                                <div class="col-md-6">
+
+
+
+                                                    <input class="form-control" name="name" type="text" value=""
+                                                        required>
+
+
+
+
+
+
+                                                </div>
+
+                                                <div class="col-md-3 form-control-comment">
+
+
+                                                </div>
+                                            </div>
+
+
+
+
+
+
+
+                                            <div class="form-group row ">
+                                                <label class="col-md-3 form-control-label required">
+                                                  Phone
+                                                </label>
+                                                <div class="col-md-6">
+
+
+
+                                                    <input class="form-control" name="phone" type="number" value=""
+                                                        required>
+
+                                                </div>
+
+                                                <div class="col-md-3 form-control-comment">
+
+
+                                                </div>
+                                            </div>
+
+
+
+
+
+
+
+                                            <div class="form-group row ">
+                                                <label class="col-md-3 form-control-label required">
+                                                    Email
+                                                </label>
+                                                <div class="col-md-6">
+
+
+
+                                                    <input class="form-control" name="email" type="email" value=""
+                                                        required>
+
+
+
+
+
+
+                                                </div>
+
+                                                <div class="col-md-3 form-control-comment">
+
+
+                                                </div>
+                                            </div>
+                                            <div class="form-group row ">
+                                                <label class="col-md-3 form-control-label required">
+                                                    Address
+                                                </label>
+                                                <div class="col-md-6">
+
+
+
+                                                    <input class="form-control" name="address" type="text" value=""
+                                                        required>
+
+
+                                                </div>
+
+                                                <div class="col-md-3 form-control-comment">
+
+
+                                                </div>
+                                            </div>
+                                            <div class="form-group row ">
+                                                <label class="col-md-3 form-control-label required">
+                                                    Note
+                                                </label>
+                                                <div class="col-md-6">
+
+
+
+                                                    <textarea class="textarea" name="note" id="" cols="55" rows="10"></textarea>
+
+
+                                                </div>
+
+                                                <div class="col-md-3 form-control-comment">
+
+
+                                                </div>
+                                            </div>
+
+                                        </section>
+
+
+                                        <footer class="form-footer clearfix">
+                                            <input type="hidden" name="submitCreate" value="1">
+
+                                            <button class="continue btn btn-primary float-xs-right" name="continue"
+                                                data-link-action="register-new-customer" type="submit" value="1">
+                                                Continue
+                                            </button>
+
+                                        </footer>
+
+
+                                    </form>
                         </div>
                      </div>
                   </div>
                </section>
 			   
-               <section id="select-payment-panel" style="display: none;">
-				<div class="checkout-panel">
-  <div class="panel-body">
-    <h2 class="title">Select Payment</h2>
- 
-    
-    <div class="payment-method">
-		<label for="cod" class="method cod" data-tab="cod">
-        <img src="views/assets/img/cod.png"/>
-      </label>
-	  <label for="paypal" class="method paypal" data-tab="paypal">
-        <img src="https://designmodo.com/demo/checkout-panel/img/paypal_logo.png"/>
-      </label>
-      <label for="card" class="method card" data-tab="stripe">
-        <img src="https://europeansting.files.wordpress.com/2016/02/stripe-logo.png"/>
-      </label>
-	<label for="klarna" class="method klarna" data-tab="klarna">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Klarna_Logo_black.svg/1280px-Klarna_Logo_black.svg.png"/>
-      </label>
- 
-      
-    </div>
- 
-    <div class="">
-		<div id="cod" class="tab-payment" style="display: none">
-			<button style="" class="continue btn btn-info" id="btn-cod" type="button" value="1" >
-			 Place Order
-			 </button>
-		</div>
-		<div id="paypal" class="tab-payment" style="display: none;">
-			<div id="paypal-button" style="margin-top: 20px;"></div>
-		</div>
-		<div id="klarna" class="tab-payment" style="display: none;">
-			<div id="klarna-payments-container" style="text-align: center;"><img style="width: 25%" src="" id="klarnaid"><br>Scan for Pay with Klarna or <a href="" id="klarnaurl">Click Here to Open Payment Popup</a></div>
-		</div>
-		<div id="stripe" class="tab-payment" style="display: none;">
-			<form id="payment-form">
-      <div id="card-element"><!--Stripe.js injects the Card Element--></div>
-      <button id="submit">
-        <div class="spinner hidden" id="spinner"></div>
-        <span id="button-text">Pay now</span>
-      </button>
-      <p id="card-error" role="alert"></p>
-      <p class="result-message hidden">
-        Payment succeeded, see the result in your
-        <a href="" target="_blank">Stripe dashboard.</a> Refresh the page to pay again.
-      </p>
-    </form>
-		</div>
-      
-    </div>
-  </div>
- 
-  
-</div>
-               </section>
+           
 			   
             </div>
 			
@@ -480,211 +328,6 @@ $('.method').on('click', function() {
          </div>
       </section>
    </div>
-   <script>
-      paypal.Button.render({
-          env: 'sandbox', // 'sandbox' or 'production'
-          style: {
-              label: 'paypal',
-              size:  'responsive',    // small | medium | large | responsive
-              shape: 'rect',     // pill | rect
-              color: 'blue',     // gold | blue | silver | black
-              tagline: false
-          },
-          client: {
-              sandbox:    'AbCu3fG9p3fMVFvNu2cfWfz---znFAPVL0JM0XIn8vk-krzZvEHm62FIo7OL_bSWrqXQ0lEMeTjaDKCW',
-              production: 'AbCu3fG9p3fMVFvNu2cfWfz---znFAPVL0JM0XIn8vk-krzZvEHm62FIo7OL_bSWrqXQ0lEMeTjaDKCW'
-          },
-      
-          commit: true, // Show a 'Pay Now' button
-      
-          payment: function(data, actions) {
-              return actions.payment.create({
-                  payment: {
-                      transactions: [
-                          {
-                              amount: { total: '<?=$shoptotal?>', currency: 'EUR' }
-                          }
-                      ]
-                  }
-              });
-          },
-      
-          onAuthorize: function(data, actions) {
-              // executes the payment
-              return actions.payment.execute().then(function() {
-                  // make an ajax call for saving the payment info
-				  
+   
 
-				  
-                  $.ajax({
-					type: "POST",
-					url: "<?php echo ROOT_URL;?>/paymentchecking",
-					data: {method: "paypal", paymentID: data.paymentID, payerID: data.payerID, token: data.paymentToken},
-					dataType: "json",
-					cache: false,
-					success: function(data)
-					{
-						console.log(data);
-						if(data.status != "200")
-						{
-							alert("Thanh toán không thành công!");
-						}
-						else
-						{
-							window.location= ("<?php echo ROOT_URL;?>/cam-on");                
-							//alert('OK');
-						}
-					}
-                  }).done(function () {
-                      //window.location = '';
-                  });
-				  
-              });
-          }
-      
-      }, '#paypal-button');
-   </script>
-   <script>
-// A reference to Stripe.js initialized with a fake API key.
-// Sign in to see examples pre-filled with your key.
-var stripe = Stripe("pk_test_51Ila2jLKgBvDvyCUiqMdG8nou2Ai9VyQQg6CjUHRNBvVMOdiNelHRXuebkj0hixJTY99WBbbyyb4vWfwRZ2Sdqtv00eMi8FXsV");
-
-// The items the customer wants to buy
-var purchase = {
-	method: "stripe",
-  items: [{}]
-};
-
-// Disable the button until we have Stripe set up on the page
-document.querySelector("button").disabled = true;
-fetch("../stripecheckout", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify(purchase)
-})
-  .then(function(result) {
-    return result.json();
-  })
-  .then(function(data) {
-    var elements = stripe.elements();
-
-    var style = {
-      base: {
-        color: "#32325d",
-        fontFamily: 'Arial, sans-serif',
-        fontSmoothing: "antialiased",
-        fontSize: "16px",
-        "::placeholder": {
-          color: "#32325d"
-        }
-      },
-      invalid: {
-        fontFamily: 'Arial, sans-serif',
-        color: "#fa755a",
-        iconColor: "#fa755a"
-      }
-    };
-
-    var card = elements.create("card", { style: style });
-    // Stripe injects an iframe into the DOM
-    card.mount("#card-element");
-
-    card.on("change", function (event) {
-      // Disable the Pay button if there are no card details in the Element
-      document.querySelector("button").disabled = event.empty;
-      document.querySelector("#card-error").textContent = event.error ? event.error.message : "";
-    });
-
-    var form = document.getElementById("payment-form");
-    form.addEventListener("submit", function(event) {
-      event.preventDefault();
-      // Complete payment when the submit button is clicked
-      payWithCard(stripe, card, data.clientSecret);
-    });
-  });
-
-// Calls stripe.confirmCardPayment
-// If the card requires authentication Stripe shows a pop-up modal to
-// prompt the user to enter authentication details without leaving your page.
-var payWithCard = function(stripe, card, clientSecret) {
-  loading(true);
-  stripe
-    .confirmCardPayment(clientSecret, {
-      payment_method: {
-        card: card
-      }
-    })
-    .then(function(result) {
-      if (result.error) {
-        // Show error to your customer
-        showError(result.error.message);
-      } else {
-        // The payment succeeded!
-		$.ajax({
-			type: "POST",
-			url: "<?php echo ROOT_URL;?>/paymentchecking",
-			data: {method: "stripe", id: result.paymentIntent.id},
-			dataType: "json",
-			cache: false,
-			success: function(data)
-			{
-				console.log(data);
-				if(data.status != "200")
-				{
-					alert("Thanh toán không thành công!");
-				}
-				else
-				{
-					window.location= ("<?php echo ROOT_URL;?>/cam-on");                
-					//alert('OK');
-				}
-			}
-		  })
-        //orderComplete(result.paymentIntent.id);
-      }
-    });
-};
-
-/* ------- UI helpers ------- */
-
-// Shows a success message when the payment is complete
-var orderComplete = function(paymentIntentId) {
-  loading(false);
-  document
-    .querySelector(".result-message a")
-    .setAttribute(
-      "href",
-      "https://dashboard.stripe.com/test/payments/" + paymentIntentId
-    );
-  document.querySelector(".result-message").classList.remove("hidden");
-  document.querySelector("button").disabled = true;
-};
-
-// Show the customer the error from Stripe if their card fails to charge
-var showError = function(errorMsgText) {
-  loading(false);
-  var errorMsg = document.querySelector("#card-error");
-  errorMsg.textContent = errorMsgText;
-  setTimeout(function() {
-    errorMsg.textContent = "";
-  }, 4000);
-};
-
-// Show a spinner on payment submission
-var loading = function(isLoading) {
-  if (isLoading) {
-    // Disable the button and show a spinner
-    document.querySelector("button").disabled = true;
-    document.querySelector("#spinner").classList.remove("hidden");
-    document.querySelector("#button-text").classList.add("hidden");
-  } else {
-    document.querySelector("button").disabled = false;
-    document.querySelector("#spinner").classList.add("hidden");
-    document.querySelector("#button-text").classList.remove("hidden");
-  }
-};
-
-</script>
 </section>

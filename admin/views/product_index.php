@@ -20,7 +20,6 @@
                                                     <th width="50px">Giá</th>
                                                     <th width="20px">Hình</th>
                                                     <th width="5px">Nổi</th>
-                                                    <th >Lượt Xem-Lượt Mua</th>
                                                     
                                                     <th width="280px">Mô tả</th>
                                                     <!-- <th width="5">Thuộc tính</th> -->
@@ -52,17 +51,9 @@
                                                         <td><div >'.($row['price']).'</div><br>  </td>
                                                         <td><img style="object-fit:cover;" class="img-admin" width="100" height="100" src="'.$img.'"></td>
                                                         <td> '.$hot.'</td>
-<<<<<<< HEAD
-                                                        <td> '.$row['view'].'</td>
-                                                        <td> '.$row['buyed'].'</td>
-                                                        <td>'.addslashes(substr($row['description'],0,10)).' ..</td>
-                                                        <td>'.addslashes(substr($row['properties'],0,10)).' ..</td>
-=======
-                                                        <td> '.$row['view'].'-'.$row['buyed'].'</td>
                                                         
-                                                        <td>'.substr($row['description'],0,60).' ..</td>
+                                                        <td>'.addslashes(substr($row['description'],0,60)).' ..</td>
                                                         
->>>>>>> 25b50fd6c981c0dbf7ae61583f1eff9d56c5389a
                                                         <td><div  onclick="checkDelete('.$linkDel.')"  class="btn btn-danger" role="button"><i class="fa fa-trash"></i></div></td>
                                                         <td><a href=""><a name="" id="" class="btn btn-primary" href="'.$linkEdit.'" role="button"><span class="mdi mdi-pencil"></span></a></a></a></td>
                                                     </tr>';

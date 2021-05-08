@@ -607,7 +607,7 @@
 
                                 <div id="kkstoreinfo-container" class="kkstoreinfo-inner collapse footer-dropdown">
                                     <a href="<?php echo ROOT_URL?>/trang-chu" class="store-logo">
-                                        <img src="<?=ROOT_URL?>/uploads/logo.png"
+                                        <img src="views/assets/img/logofooter.png"
                                             alt="Logo-hang-Ella.png">
                                     </a>
                                     <div class="store-description">

@@ -99,7 +99,7 @@
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label for="">Kích cỡ</label>
-                                                    <input type="text" class="form-control" value="<?=$oneRecode['size']?>" name="size" placeholder="">
+                                                    <input type="text" class="form-control" value="" name="size" placeholder="S,M,X,XL">
                                                 </div> 
                                             </div>
                                             

@@ -182,7 +182,7 @@ a.more-link {
                                 <span>O</span>
                                 </section>
                                 <div class="link-container">
-                                <a href="#" class="more-link"><?=$lang['returnpage']?></a>
+                                <a href="#" class="more-link">Về Trang Chủ</a>
                                 </div>
                                 
                             </div>
