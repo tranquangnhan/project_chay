@@ -135,7 +135,7 @@ if(isset($_POST["action"]))
     if($kq_Dem > 0)
     {
         foreach ($kqne as $row) {
-            if($row['image_list']){
+            if(is_file("../".PATH_IMG_SITE.explode(",",$row['image_list'])[0])){
                 $img = PATH_IMG_SITE.explode(",",$row['image_list'])[0];
             }else{
                 $img = PATH_IMG_SITE.'logo.png';
