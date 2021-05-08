@@ -146,29 +146,29 @@ if(isset($_POST["action"]))
                 $imgCover = PATH_IMG_SITE.explode(",",$row['image_list'])[0];
             }
                 $price = $row['price'];
-            if($row['discount'] > 0){
-              $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
-              $giaDiscount = ' <div class="product-price-and-shipping">
+                if($row['discount'] > 0){
+                                        
+                    $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
+                    $giaDiscount = ' <div class="product-price-and-shipping">
+
+                                    <span class="sr-only">Regular price</span>
+                                    <span class="regular-price">'.$lib->forMatTien($price).' đ</span>
+                                    <span class="discount-percentage discount-product">-'.$row['discount'].'%</span>
+
+
+                                    <span class="sr-only">Price</span>
+                                    <span itemprop="price" class="price">'.$lib->forMatTien(($price - ($row['discount']*$price)/100)).' đ</span>
+                                </div>';
+                    }else{
+                    $discount = '';
+                    $giaDiscount = '<div class="product-price-and-shipping">
+            
     
-                              <span class="sr-only">Regular price</span>
-                              <span class="regular-price">'.floatval($price).'</span>
-                              <span class="discount-percentage discount-product">-'.$row['discount'].'%</span>
-    
-    
-                              <span class="sr-only">Price</span>
-                              <span itemprop="price" class="price">'.($price - ($row['discount']*$price)/100).'</span>
-                          </div>';
-            }else{
-              $discount = '';
-              $giaDiscount = '<div class="product-price-and-shipping">
-      
-    
-                                <span class="sr-only">Price</span>
-                                <span itemprop="price" class="price">'.floatval($price).'</span>
-                              
-                              
-                          </div>';
-            }
+                                        <span class="sr-only">Price</span>
+                                        <span itemprop="price" class="price">'.$lib->forMatTien($price).' đ</span>
+
+                                </div>';
+                    }
             if($price<=0 ||$price =='' ){
               $giaDiscount = ' ';
               }
