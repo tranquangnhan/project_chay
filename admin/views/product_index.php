@@ -48,7 +48,7 @@
                                                 echo '<tr>
                                                         <td>'.$stt.'</td>
                                                         <td class="" >'.$row['name'].'</td>
-                                                        <td><div >'.($row['price']).'</div><br>  </td>
+                                                        <td><div >'.$this->lib->forMatTien($row['price']).' đ</div><br>  </td>
                                                         <td><img style="object-fit:cover;" class="img-admin" width="100" height="100" src="'.$img.'"></td>
                                                         <td> '.$hot.'</td>
                                                         

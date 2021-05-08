@@ -21,6 +21,7 @@
                                         <th>Số nhà - Đường</th>
                                     
                                         <th>Ghi chú</th>  
+                                        <th>Tổng Tiền</th>
                                         <th>Trạng thái</th>                                       
                                         <th>Chi tiết</th>
                                         </tr>
@@ -44,7 +45,8 @@
                                                         <td>'.$row['ngaydat'].'</td>
                                                         <td>'.$row['phone'].'</td>
                                                         <td>'.$row['housenumber'].'-'.$row['street'].'</td>
-                                                        <td>'.$row['note'].'</td>
+                                                        <td>'.strip_tags(substr($row['note'],0,100)).'</td>
+                                                        <td>'.$this->lib->forMatTien($row['total']).' đ</td>   
                                                         '.$status.'
                                                       
                                                         <td><a name="" id="" class="btn btn-success" href="'.$linkDetail.'" role="button"><i class="fa fa-bookmark"></i></a></td>    

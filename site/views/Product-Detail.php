@@ -37,7 +37,7 @@ if(is_array($sp)){
 
                                         <img id="zoom" class="js-qv-product-cover zoomLens"
                                             src="<?=$avt?>"
-                                            alt="" title="" height="600" style="min-height:400px; width:100%;object-fit:cover" itemprop="image">
+                                            alt="" title="" height="600" style="min-height:350px; width:100%;object-fit:cover" itemprop="image">
 
                                         <div class="layer hidden-sm-down" data-toggle="modal"
                                             data-target="#product-modal">
@@ -64,7 +64,7 @@ if(is_array($sp)){
                                                   echo '<li class="thumb-container">
                                                   <img class="thumb js-thumb selected" data-image-large-src="'.$imgdetail[$i].'"
                                                       src="'.$imgdetail[$i].'"
-                                                      alt="" title="" width="100" height="150" itemprop="image">
+                                                      alt="" title="" width="100" height="120" itemprop="image">
                                                 </li>';
                                                 }
                                             ?>
@@ -158,12 +158,12 @@ if(is_array($sp)){
                                         <?php
                                         if($sp['discount']>0){
                                         ?>
-                                        <span itemprop="price" content="32.89" style="font-size:13pt;text-decoration:line-through"><?php echo floatval($sp['price']);?></span><br>
-                                        <span itemprop="price" content="32.89" style="color:var(--it-brand-primary)"><?php  echo ($sp['price'] - ($sp['discount']*$sp['price'])/100); ?></span>
+                                        <span itemprop="price" content="32.89" style="font-size:13pt;text-decoration:line-through"><?=$this->lib->forMatTien($sp['price'])?> đ</span><br>
+                                        <span itemprop="price" content="32.89" style="color:var(--it-brand-primary)"><?=$this->lib->forMatTien($sp['price'] - ($sp['discount']*$sp['price'])/100); ?> đ</span>
                                        
                                          <?php }
                                         else{?>
-                                            <span itemprop="price" content="32.89" style="color:var(--it-brand-primary)"><?php  echo floatval($sp['price']); ?></span>
+                                            <span itemprop="price" content="32.89" style="color:var(--it-brand-primary)"><?=$this->lib->forMatTien($sp['price']); ?> đ</span>
                                         <?php   } ?>
                                     </div>
 
@@ -406,30 +406,28 @@ if(is_array($sp)){
                                     }
                                     $price = $row['price'];
                                     if($row['discount'] > 0){
-                                       
-                                        
-                                    $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
-                                    $giaDiscount = ' <div class="product-price-and-shipping">
-
-                                                    <span class="sr-only">Regular price</span>
-                                                    <span class="regular-price">'.floatval($price).'</span>
-                                                    <span class="discount-percentage discount-product">-'.$row['discount'].'%</span>
-
-
-                                                    <span class="sr-only">Price</span>
-                                                    <span itemprop="price" class="price">'.($price - ($row['discount']*$price)/100).'</span>
-                                                </div>';
-                                    }else{
-                                    $discount = '';
-                                    $giaDiscount = '<div class="product-price-and-shipping">
+                                
+                                        $discount = ' <li class="product-flag discount">'.$row['discount'].'%</li>';
+                                        $giaDiscount = ' <div class="product-price-and-shipping">
                             
-
+                                                        <span class="sr-only">Regular price</span>
+                                                        <span class="regular-price">'.$this->lib->forMatTien($price).' đ</span>
+                                                        <span class="discount-percentage discount-product">-'.$row['discount'].'%</span>
+                            
+                            
                                                         <span class="sr-only">Price</span>
-                                                        <span itemprop="price" class="price">'.floatval($price).'</span>
-                                                    
-                                                    
-                                                </div>';
-                                    }
+                                                        <span itemprop="price" class="price">'.$this->lib->forMatTien(($price - ($row['discount']*$price)/100)).' đ</span>
+                                                    </div>';
+                                        }else{
+                                        $discount = '';
+                                        $giaDiscount = '<div class="product-price-and-shipping">
+                                
+                            
+                                                            <span class="sr-only">Price</span>
+                                                            <span itemprop="price" class="price">'.$this->lib->forMatTien($price).' đ</span>
+                            
+                                                    </div>';
+                                        }
                                     if($price<=0 ||$price =='' ){
                                         $giaDiscount = ' <span class="discount-percentage discount-product">contact</span>';
                                     }

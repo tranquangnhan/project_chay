@@ -7075,7 +7075,7 @@ html {
 
 body {
     direction: ltr;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif !important;
     font-size: .875rem;
     font-weight: 600;
     -webkit-font-smoothing: antialiased;
@@ -13334,7 +13334,6 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 }
 
 .kk-title {
-    font: 500 18px/32px "poppins";
     color: #333;
     margin: 0 0 10px 0;
     padding: 0 0 7px 0;
@@ -18817,7 +18816,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 .parallaxcms-outer {
     color: #09111c;
-    font-family: 'poppins'
 }
 
 .parallax-caption1 {
@@ -19021,7 +19019,6 @@ input[type=number] {
     background: #f5f5f5;
     color: #444;
     display: block;
-    font-family: 'poppins';
     font-size: 18px;
     line-height: 2.3em;
     overflow: hidden;

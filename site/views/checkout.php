@@ -242,7 +242,7 @@
                                      <div class="media-body">
                                          <span class="product-name">'.$name.'</span>
                                          <span class="product-quantity">x'.$slmotsp.'</span>
-                                         <span class="product-price float-xs-right">'.$gia.'</span>
+                                         <span class="product-price float-xs-right">'.$this->lib->forMatTien($gia).' đ</span>
                                          '. $size .'
                                          '. $mau .'
                                          <br />
@@ -250,8 +250,8 @@
                                      </div>
                                  
                                  </li>';
-                                 $tongtien =$do.''.$tongtien.''.$euro;
-								 $shoptotal += $motsp[5]*$motsp[1];
+                               
+								         $shoptotal += $this->lib->forMatTien($motsp[5]*$motsp[1]);
                                  }
                                  $kq .= '';
                                  echo $kq;
@@ -291,7 +291,7 @@
                   <div class="card-block ">
                      <div class="cart-summary-line cart-total">
                         <span class="label">Tổng </span>
-                        <span class="value"><?=$tongtien?></span>
+                        <span class="value"><?=$this->lib->forMatTien($tongtien)?> đ</span>
                      </div>
                   </div>
                   <hr class="separator">

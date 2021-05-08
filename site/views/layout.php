@@ -335,10 +335,8 @@
                                                     echo '<ul class="user-info logout">
                                                     <li>
                                                            
-                                                    <a href="'.ROOT_URL.'/?act=logout"
-                                                            >
-                                                            
-                                                            <span class="hidden-sm-down">'.$lang['logout'].'</span>
+                                                    <a href="'.ROOT_URL.'/?act=logout">
+                                                           <span class="hidden-sm-down">'.$lang['logout'].'</span>
                                                         </a></li>
                                                 </ul>'
                                                 

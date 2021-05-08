@@ -45,7 +45,7 @@
                                                         <td>'.$row['product_id'].'</td>
                                                         <td>'.$inforPro['name'].'</td>
                                                         <td><img width="50" height="50" src="'.$img.'"></td>
-                                                        <td>'.$row['price'].'</td>
+                                                        <td>'.$this->lib->forMatTien($row['price']).' đ</td>
                                                         <td>'.$row['size'].'</td>
                                                         <td>'.$row['color'].'</td>
                                                         <td>'.$row['quantity'].'</td>
@@ -76,7 +76,7 @@
                                     </tr>
                                     <tr>
                                         <td>Ghi chú: </td>
-                                        <td><strong><?= $getInfoDetail['note']?></strong></td>
+                                        <td><strong><?=strip_tags($getInfoDetail['note'])?></strong></td>
                                     </tr>
                                     <!-- <tr>
                                         <td>Ghi Chú Của Admin: </td>

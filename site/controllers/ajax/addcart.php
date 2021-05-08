@@ -2,8 +2,10 @@
     require_once "../../../system/config.php";
     require_once "../../../system/database.php";
     require_once "../../models/home.php";
-
+    require_once "../../../lib/myfunctions.php";
     $model = new Model_home();
+    $lib = new lib();
+
 
     $canhbao= '';
     if(isset($_POST['id'])&&($_POST['id']>0)&&
@@ -56,7 +58,7 @@
     showSp();
     function showSp(){
         // require_once "../../../languages/".$_SESSION['lang'].".php";
-        global $canhbao,$pathimg;
+        global $canhbao,$pathimg,$lib;
        
             if(isset($_SESSION['cart']) &&($_SESSION['cart'])){
                 $tatcasp = $_SESSION['cart'];
@@ -128,7 +130,7 @@
                             </a>
                         </div>
                         <!-- price -->
-                        <div class="product-price"> <span>'.$gia.'</span>
+                        <div class="product-price"> <span>'.$lib->forMatTien($gia).' đ</span>
                         </div>
 
                         <ul class="product-atributes">
@@ -155,7 +157,7 @@
                                     
                                     <div class="Total col-xs-12 clearfix">
                                         <span class="label  text-xs-left">Tổng</span>
-                                        <span class="value   text-xs-right">'.$tongtien.'</span>
+                                        <span class="value   text-xs-right">'.$lib->forMatTien($tongtien).' đ</span>
                                     </div>
 
                                 </div>
