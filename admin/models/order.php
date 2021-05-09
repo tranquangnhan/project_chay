@@ -37,9 +37,37 @@
         $sql = "SELECT * FROM catalog ";
         return $this->result1(0,$sql);
     }
-    function CheckChildHasPro($id){
-        $sql = "SELECT count(*) AS sodong FROM product where catalog_id=?";
-        return $this->result1(1,$sql,$id)['sodong'];
+    function getCateFromId($id)
+   {
+    $sql ="SELECT * FROM catalog WHERE id = ?";
+    return  $this->result1(1,$sql,$id);
+   }
+   function GetProductListCosan($id,$slug){
+    $par = $this->getCateFromId($id);
+    $hangcosan = $par['hangcosan'];
+    $sql ="SELECT * from product where cosan=? and Brand=?
+    ";
+   
+    return $this->result1(0,$sql,$hangcosan,$slug);
+  }
+    function CheckChildHasPro($idcatalog){
+        $sql = "SELECT * FROM product where catalog_id=?";
+        $par = $this->getCateFromId($idcatalog);
+        if($par['parent'] != 2){
+            $idcatalog = $par['parent'];
+            $sql .= " AND cosan=?";
+            $id = $par['hangcosan'];
+            
+         
+
+            $kq = $this->result1(0,$sql,$idcatalog,$id);
+        }else{
+            $idcatalog = $par['id'];
+           
+
+            $kq = $this->result1(0,$sql,$idcatalog);
+        }
+        return $kq;
         //  $row->rowCount();
     }
     

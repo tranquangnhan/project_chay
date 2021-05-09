@@ -38,7 +38,7 @@ class categories{
     }
     function addNew()
     {  
-        if(isset($_GET['id'])&&($_GET['act']='categories')){
+        if(isset($_GET['id'])&&($_GET['ctrl']='categories')){
             $oneRecode = $this->model->showOneProducer($_GET['id']);
             $listchild = $this->model->showChildrenCategori();
             $page_title ="Sửa danh mục";
@@ -129,12 +129,12 @@ class categories{
         if(isset($_GET['id'])&&($_GET['ctrl']=='categories')){
             $id = $_GET['id'];
             settype($id,"int");
-            if($this->model->deleteCate($id)){
-                echo "<script>alert('Xoá thành công')</script>";
-                header("location: ?ctrl=categories");
-            }else{
-                echo "<script>alert('Xoá thất bại')</script>";
-            }
+            // if($this->model->deleteCate($id)){
+            //     echo "<script>alert('Xoá thành công')</script>";
+            //     header("location: ?ctrl=categories");
+            // }else{
+            //     echo "<script>alert('Xoá thất bại')</script>";
+            // }
         }
         require_once "views/layout.php";
     }

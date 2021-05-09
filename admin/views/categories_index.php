@@ -32,6 +32,7 @@
                                                 $stt++;
                                                 $linkDel = "'?ctrl=categories&act=delete&id=".$row['id']."'";
                                                 $linkEdit = '?ctrl=categories&act=edit&id='.$row['id'];
+                                                $slug = "'".$row['slug']."'";
                                                 // if(is_file(PATH_IMG_SITE.explode(",",$row['image_list'])[0])){
                                                 //     $img = PATH_IMG_SITE.explode(",",$row['image_list'])[0];
                                                 // }else{
@@ -45,7 +46,7 @@
                                                         <td>'.substr($row['description'],0,100).'</td>
                                                         <td>'.$style.'</td>
                                                         <td>'.$name_Cate['name'].'</td>
-                                                        <td><div  onclick="checkDeleteCate('.$linkDel.','.$row['id'].')"  class="btn btn-danger" role="button"><i class="fa fa-trash"></i></div></td>
+                                                        <td><div  onclick="checkDeleteCate('.$linkDel.','.$row['id'].','.$row['style'].','.$slug.')"  class="btn btn-danger" role="button"><i class="fa fa-trash"></i></div></td>
                                                         <td><a><a name="" id="" class="btn btn-primary" href="'.$linkEdit.'" role="button"><i class="fa fa-edit"></i></a></a></a></td>
                                                     </tr>';
                                             }
