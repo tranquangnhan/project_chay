@@ -428,7 +428,7 @@
 
                                 <div class="infinitycontact-dec">
                                     <div class="contact-title">Liên hệ</div>
-                                    <div class="contact-dec">0901108244</div>
+                                    <div class="contact-dec"><a href="tel:0901108244">0901108244</a></div>
                                 </div>
 
                             </div>
@@ -611,7 +611,7 @@
 
                                 <div id="kkstoreinfo-container" class="kkstoreinfo-inner collapse footer-dropdown">
                                     <a href="<?php echo ROOT_URL?>/trang-chu" class="store-logo">
-                                        <img src="views/assets/img/logofooter.png"
+                                        <img src="../uploads/logo.png"
                                             alt="Logo-hang-Ella.png">
                                     </a>
                                     <div class="store-description">
