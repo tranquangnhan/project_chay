@@ -493,14 +493,18 @@
                                         }
                                         
                                         echo '<li class="category" id="category-3'.$i.'">
-                                        <a class="dropdown-item" href="'.$link.'" data-depth="0">
-                                            <span class="float-xs-right hidden-md-up">
-                                                <span data-target="#top_sub_menu_40711'.$i.'" data-toggle="collapse" class="navbar-toggler collapse-icons">
-                                                    <i class="material-icons add">&#xE313;</i>
-                                                    <i class="material-icons remove">&#xE316;</i>
-                                                </span>
+                                        <a class="dropdown-item" href="'.$link.'" data-depth="0">';
+                                        $dmcap112 = $this->model->showDmCon($row['id']);
+                                        if($dmcap112) {
+                                            echo '<span class="float-xs-right hidden-md-up">
+                                            <span data-target="#top_sub_menu_40711'.$i.'" data-toggle="collapse" class="navbar-toggler collapse-icons">
+                                                <i class="material-icons add">&#xE313;</i>
+                                                <i class="material-icons remove">&#xE316;</i>
                                             </span>
-                                            '.$row['name'].'
+                                        </span>';
+                                        }
+                                            
+                                           echo $row['name'].'
                                         </a>';
                                         // show dm cap 1
                                         $dmcap1 = $this->model->showDmCon($row['id']);
