@@ -502,6 +502,7 @@
 			  
 			  $giohang = $_SESSION['cart'];
 			  $this->model->luugiohangnhe($idDH, $giohang);
+			  unset($_SESSION['cart']);
 			  header('location: '.ROOT_URL.'/donecheckout');
 		   }  
 			   

@@ -492,25 +492,30 @@
                                             $link = ROOT_URL."/".$row['slug'];
                                         }
                                         
-                                        echo '<li class="category" id="category-3">
-                                        <a class="dropdown-item" href="'.$link.'" data-depth="0">
-                                            <span class="float-xs-right hidden-md-up">
-                                                <span data-target="#top_sub_menu_40711" data-toggle="collapse" class="navbar-toggler collapse-icons">
-                                                    <i class="material-icons add">&#xE313;</i>
-                                                    <i class="material-icons remove">&#xE316;</i>
-                                                </span>
+                                        echo '<li class="category" id="category-3'.$i.'">
+                                        <a class="dropdown-item" href="'.$link.'" data-depth="0">';
+                                        $dmcap112 = $this->model->showDmCon($row['id']);
+                                        if($dmcap112) {
+                                            echo '<span class="float-xs-right hidden-md-up">
+                                            <span data-target="#top_sub_menu_40711'.$i.'" data-toggle="collapse" class="navbar-toggler collapse-icons">
+                                                <i class="material-icons add">&#xE313;</i>
+                                                <i class="material-icons remove">&#xE316;</i>
                                             </span>
-                                            '.$row['name'].'
+                                        </span>';
+                                        }
+                                            
+                                           echo $row['name'].'
                                         </a>';
                                         // show dm cap 1
                                         $dmcap1 = $this->model->showDmCon($row['id']);
                                         if ($dmcap1) {
                                             echo '<div class="popover sub-menu js-sub-menu collapse twocolumn" id="top_sub_menu_40711'.$i.'">
                                             <ul class="top-menu" data-depth="1">';
+                                            $h=0;
                                             foreach ($dmcap1 as $row) {
                                                 $link = ROOT_URL."/danh-muc/".$row['slug']."-".$row['id']."/trang-1";
                                                 echo '
-                                                <li class="category" id="category-4">
+                                                <li class="category" id="category-4'.$h.'">
                                                 <a class="dropdown-item dropdown-submenu" href="'.$link.'" data-depth="1">
                                                     <span class="float-xs-right hidden-md-up">
                                                         <span data-target="#top_sub_menu_63115'.$i.'" data-toggle="collapse" class="navbar-toggler collapse-icons">
@@ -520,26 +525,31 @@
                                                     </span>
                                                     '.$row['name'].'
                                                 </a>';
+                                                $h++;
                                                 // show dm cap 2
                                                 $dmcap2 = $this->model->showDmCon($row['id']);
                                                 if($dmcap2){
-                                                    echo '<div class="collapse" id="top_sub_menu_16353'.$i.'">
+                                                    echo '<div class="collapse" id="top_sub_menu_63115'.$i.'">
                                                     <ul class="top-menu" data-depth="2">';
+                                                    $z=0;
                                                     foreach ($dmcap2 as $row) {
                                                         $link = ROOT_URL."/danh-muc/".$row['slug']."-".$row['id']."/trang-1";
-                                                        echo '<li class="category" id="category-13'.$i.'">
+                                                        echo '<li class="category" id="category-13'.$z.'">
                                                         <a class="dropdown-item" href="'.$link.'" data-depth="2">
                                                         '.$row['name'].'
                                                         </a>
                                                     </li>';
+                                                    $z++;
                                                     }
                                                     echo '</ul></div>';
                                                 }
+                                                $i++;
                                             }
                                             echo '</li></ul></div>';
                                         }
                                         
                                         echo '</li>';
+                                        
                                     }
                                 ?>
 
@@ -697,21 +707,21 @@
                                         <ul id="footer_sub_menu_8589" class="collapse">
                                             <li>
                                                 <a id="link-product-page-prices-drop-1" class="cms-page-link"
-                                                    href="<?=ROOT_URL?>/san-pham/tat-ca/page-1"
+                                                    href="<?=ROOT_URL?>/san-pham/tat-ca/trang-1"
                                                     title="Our special products">
                                                     Sản phẩm giảm giá
                                                 </a>
                                             </li>
                                             <li>
                                                 <a id="link-product-page-new-products-1" class="cms-page-link"
-                                                    href="<?=ROOT_URL?>/san-pham/tat-ca/page-1"
+                                                    href="<?=ROOT_URL?>/san-pham/tat-ca/trang-1"
                                                     title="Our new products">
                                                     Sản phẩm mới
                                                 </a>
                                             </li>
                                             <li>
                                                 <a id="link-product-page-best-sales-1" class="cms-page-link"
-                                                    href="<?=ROOT_URL?>/san-pham/tat-ca/page-1"
+                                                    href="<?=ROOT_URL?>/san-pham/tat-ca/trang-1"
                                                     title="Our best sales">
                                                     Bán chạy
                                                 </a>

@@ -98,7 +98,7 @@ class Model_home extends Model_db{
 
     function luudonhangnhe($idDH, $hoten, $email,$phone,$address,$note,$tongtien){            
         if ($idDH==-1){
-        $sql = "INSERT INTO donhang SET firstname=? ,email=?,phone=?,street=?,note=?,total=?,ngaydat=Now()";          
+        $sql = "INSERT INTO donhang SET firstname=? ,email=?,phone=?,address=?,note=?,total=?,ngaydat=Now()";          
         $kq= $this->getLastId($sql,$hoten,$email,$phone,$address,$note,$tongtien);
 
         if ($kq == null) return false;
@@ -106,7 +106,7 @@ class Model_home extends Model_db{
       } 
       else
        {
-        $sql = "UPDATE donhang SET firstname=? ,email=?,phone=?,street=?,note=?,total=?,ngaydat=Now() WHERE id=?";              
+        $sql = "UPDATE donhang SET firstname=? ,email=?,phone=?,address=?,note=?,total=?,ngaydat=Now() WHERE id=?";              
          $kq= $this->exec1($sql,$hoten,$email,$phone,$address,$note,$tongtien,$idDH);
       if ($kq == null) return false;
             else return $idDH;

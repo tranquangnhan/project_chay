@@ -7754,8 +7754,8 @@ body#checkout .custom-checkbox span,
 }
 
 .top-menu a.dropdown-submenu {
-    font-weight: 600 !important;
-    color: #232323;
+    font-weight: bold !important;
+    color: #033888;
     text-transform: uppercase;
 }
 
@@ -12893,6 +12893,9 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
     }
     #footer {
         background-size: 100% 360px;
+    }
+    #danhmucdoc {
+        display: none;
     }
     .logoutH {
         margin-top: 17px;
