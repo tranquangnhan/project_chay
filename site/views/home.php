@@ -11,7 +11,7 @@
         
         <div class="col-md-3" id="danhmucdoc">
             <div class="card" style="width: 100%;">
-                <div class="card-header" style="background-color: #17E9E0; color: black;">
+                <div class="card-header" style="background-color: var(--it-brand-primary); color: white;">
                     SẢN PHẨM
                 </div>
                 <ul class="list-group list-group-flush">
@@ -60,32 +60,27 @@
             <ul class="slides">
                 <li class="slide">
 
-                    <a href="<?=ROOT_URL?>/product"
+                    <a href="<?=ROOT_URL?>/san-pham/tat-ca/trang-1"
                         title="kslider-1">
-                        <img src="views/assets/img/banner1.jpg" alt="kslider-1" title="KSlider1" />
+                        <img src="views/assets/img/bannergiay17.jpg" alt="kslider-1" title="KSlider1" />
                     </a>
 
                 </li>
                 <li class="slide">
 
-                    <a href="<?=ROOT_URL?>/product"
+                    <a href="<?=ROOT_URL?>/san-pham/tat-ca/trang-1"
                         title="kslider-2">
-                        <img src="views/assets/img/banner2.jpg" alt="kslider-2" title="KSlider2" />
+                        <img src="views/assets/img/bannergiay28.jpg" alt="kslider-2" title="KSlider2" />
                     </a>
 
                 </li>
                 <li class="slide">
-                    <a href="<?=ROOT_URL?>/product"
+                    <a href="<?=ROOT_URL?>/san-pham/tat-ca/trang-1"
                         title="kslider-3">
-                        <img src="views/assets/img/banner3.jpg" alt="kslider-3" title="KSlider3" />
+                        <img src="views/assets/img/bannergiay18.jpg" alt="kslider-3" title="KSlider3" />
                     </a>
                 </li>
-                <li class="slide">
-                    <a href="<?=ROOT_URL?>/product"
-                        title="kslider-3">
-                        <img src="views/assets/img/banner4.png" alt="kslider-3" title="KSlider3" />
-                    </a>
-                </li>
+             
             </ul>
         </div>
     </div>
@@ -99,23 +94,23 @@
             <div class="row">
                 <div class="center-banner list-unstyled">
                     <div class="slider banner1 col-lg-4 col-md-12">
-                        <a href="<?=ROOT_URL?>/product" class="kk-customhover-fadeintopbottom">
-                            <img src="views/assets/img/1.png" alt="kbanner-1"
+                        <a href="<?=ROOT_URL?>/san-pham/tat-ca/trang-1" class="kk-customhover-fadeintopbottom">
+                            <img src="views/assets/img/bannergiay19.jpg" alt="kbanner-1"
                                 class="img-responsive center-block" />
                         </a>
                         <div class="overlay"></div>
                     </div>
 
                     <div class="slider banner2  col-lg-4 col-md-12">
-                        <a href="<?=ROOT_URL?>/product" class="kk-customhover-fadeintopbottom">
-                            <img src="views/assets/img/2.png" alt="kbanner-2"
+                        <a href="<?=ROOT_URL?>/san-pham/tat-ca/trang-1" class="kk-customhover-fadeintopbottom">
+                            <img src="views/assets/img/bannergiay20.jpg" alt="kbanner-2"
                                 class="img-responsive center-block" />
                         </a>
                         <div class="overlay"></div>
                     </div>
                     <div class="slider banner2  col-lg-4 col-md-12">
-                        <a href="<?=ROOT_URL?>/product" class="kk-customhover-fadeintopbottom">
-                            <img src="views/assets/img/3.png" alt="kbanner-3"
+                        <a href="<?=ROOT_URL?>/san-pham/tat-ca/trang-1" class="kk-customhover-fadeintopbottom">
+                            <img src="views/assets/img/bannergiay21.jpg" alt="kbanner-3"
                                 class="img-responsive center-block" />
                         </a>
                         <div class="overlay"></div>
@@ -509,7 +504,7 @@
             </div>
         </div>
         <div id="kkparallaxcms" class="parallax parallaxcms-outer hb-animate-element bottom-to-top "
-            data-source-url="views/assets/img/4.png">
+            data-source-url="views/assets/img/bannergiay25.jpg">
             <div class="container">
                 <div class="parallaxcms-inner container">
                     <div class="parallaxcms">
@@ -518,7 +513,7 @@
                             <div class="parallax-caption1 ">Thời trang và hàng hiệu</div>
                             <div class="parallax-caption2 ">Sản phẩm được nhập chính hãng với giá tốt nhất
                             </div>
-                            <div class="parallax-btn "><a href="<?=ROOT_URL?>/product" class="shopnow-button">Mua ngay</a></div>
+                            <div class="parallax-btn "><a href="<?=ROOT_URL?>/san-pham/tat-ca/trang-1" class="shopnow-button">Mua ngay</a></div>
 
                         </div>
                     </div>
@@ -784,9 +779,9 @@
                         <div class="col-lg-6 col-xs-12 kk_banner clearfix hb-animate-element bottom-to-top">
                             <div class="kk_sub_banner row">
                                 <div class="slider banner1  col-lg-6 col-xs-12 hb-animate-element bottom-to-top">
-                                    <a href="<?=ROOT_URL?>/product" class="kk-customhover-fadeintopbottom" title="This is Caption">
+                                    <a href="<?=ROOT_URL?>/san-pham/tat-ca/trang-1" class="kk-customhover-fadeintopbottom" title="This is Caption">
                                         <div class="kkmultibanner-hover">
-                                            <img src="views/assets/img/5.png" class="img-responsive"
+                                            <img src="views/assets/img/bannergiay22.jpg" class="img-responsive"
                                                 alt="This is Caption" />
                                         </div>
                                     </a>
@@ -794,9 +789,9 @@
 
 
                                 <div class="slider banner1  col-lg-6 col-xs-12 hb-animate-element bottom-to-top">
-                                    <a href="<?=ROOT_URL?>/product" class="kk-customhover-fadeintopbottom" title="This is Caption">
+                                    <a href="<?=ROOT_URL?>/san-pham/tat-ca/trang-1" class="kk-customhover-fadeintopbottom" title="This is Caption">
                                         <div class="kkmultibanner-hover">
-                                            <img src="views/assets/img/6.png" class="img-responsive"
+                                            <img src="views/assets/img/bannergiay23.jpg" class="img-responsive"
                                                 alt="This is Caption" />
                                         </div>
                                     </a>

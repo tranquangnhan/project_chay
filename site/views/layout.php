@@ -409,7 +409,7 @@
                     <div class="desktop_logo">
                         <h1>
                             <a href="<?php echo ROOT_URL?>/trang-chu">
-                                <img class="logo img-responsive" src="<?=ROOT_URL?>/uploads/logo.png"
+                                <img class="logo img-responsive"  src="<?=ROOT_URL?>/uploads/logo.png"
                                     alt="Demo Shop">
                             </a>
                         </h1>
