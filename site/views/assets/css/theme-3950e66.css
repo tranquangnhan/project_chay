@@ -61,7 +61,7 @@ img {
 
 .owl-carousel .owl-stage {
     position: relative;
-    -ms-touch-action: pan-Y
+    -ms-touch-action: pan-Y;
 }
 
 .owl-carousel .owl-stage:after {
@@ -12208,15 +12208,11 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 }
 
 #footer {
-   
     background-attachment: fixed;
     color: #a7a7a7;
     background: url(../img/bannergiay27.jpg) no-repeat center center;
     background-color: rgba(0, 0, 0, 0);
     background-size: cover;
-    
-    
-
     color: #a7a7a7;
 }
 
@@ -12787,7 +12783,6 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
 }
 
 @media (max-width:991px) {
-
     #kkstoreinfo-container {
         margin: 8px 0;
         border-bottom: none
@@ -12885,12 +12880,12 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
     .footer-before {
         padding: 35px 0 0
     }
-
 }
+
 @media (max-width:1099px) {
-    
-.pro_already{
-left: 225px !important;}
+    .pro_already {
+        left: 225px !important;
+    }
 }
 
 @media (max-width:543px) {
@@ -13004,7 +12999,6 @@ left: 225px !important;}
         text-align: center;
         padding: 0
     }
-
 }
 
 #back-to-top {
@@ -13297,7 +13291,6 @@ left: 225px !important;}
         display: block;
         padding: 15px 0;
         position: relative;
-        
         text-transform: uppercase
     }
     .leftmenu-title .material-icons {
@@ -14200,19 +14193,21 @@ left: 225px !important;}
 
 .image_cate a {
     transition: .3s;
-background-color: white;
+    background-color: white;
     color: black !important;
 }
-.image_cate h4 {
 
+.image_cate h4 {
     color: white !important;
 }
+
 .image_cate a:hover {
     background-color: rgb(202, 202, 202);
 }
 
 .slider>a img {
-    max-width: 100%
+    max-width: 100%;
+    height: 300px;
 }
 
 .kk_banner .center-banner .slider>a::after,
