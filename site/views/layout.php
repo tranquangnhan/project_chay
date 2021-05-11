@@ -319,7 +319,7 @@
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 center-nav">
                             <div id="kkheaderblock" class="clearfix">
                                 <div id="kkcmsheader">
-                                    <div class="kkheader-service">Chào mừng đến với cửa hàng</div>
+                                    <div class="kkheader-service"></div>
                                 </div>
 
                             </div>
@@ -409,7 +409,7 @@
                     <div class="desktop_logo">
                         <h1>
                             <a href="<?php echo ROOT_URL?>/trang-chu">
-                                <img class="logo img-responsive" src="<?=ROOT_URL?>/uploads/logo.png"
+                                <img class="logo img-responsive"  src="<?=ROOT_URL?>/uploads/logo.png"
                                     alt="Demo Shop">
                             </a>
                         </h1>

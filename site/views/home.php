@@ -11,7 +11,7 @@
         
         <div class="col-md-3" id="danhmucdoc">
             <div class="card" style="width: 100%;">
-                <div class="card-header" style="background-color: #17E9E0; color: black;">
+                <div class="card-header" style="background-color: var(--it-brand-primary); color: white;">
                     SẢN PHẨM
                 </div>
                 <ul class="list-group list-group-flush">
@@ -60,32 +60,27 @@
             <ul class="slides">
                 <li class="slide">
 
-                    <a href="<?=ROOT_URL?>/product"
+                    <a href="<?=ROOT_URL?>/san-pham/tat-ca/trang-1"
                         title="kslider-1">
-                        <img src="views/assets/img/banner1.jpg" alt="kslider-1" title="KSlider1" />
+                        <img src="views/assets/img/bannergiay17.jpg" alt="kslider-1" title="KSlider1" />
                     </a>
 
                 </li>
                 <li class="slide">
 
-                    <a href="<?=ROOT_URL?>/product"
+                    <a href="<?=ROOT_URL?>/san-pham/tat-ca/trang-1"
                         title="kslider-2">
-                        <img src="views/assets/img/banner2.jpg" alt="kslider-2" title="KSlider2" />
+                        <img src="views/assets/img/bannergiay28.jpg" alt="kslider-2" title="KSlider2" />
                     </a>
 
                 </li>
                 <li class="slide">
-                    <a href="<?=ROOT_URL?>/product"
+                    <a href="<?=ROOT_URL?>/san-pham/tat-ca/trang-1"
                         title="kslider-3">
-                        <img src="views/assets/img/banner3.jpg" alt="kslider-3" title="KSlider3" />
+                        <img src="views/assets/img/bannergiay18.jpg" alt="kslider-3" title="KSlider3" />
                     </a>
                 </li>
-                <li class="slide">
-                    <a href="<?=ROOT_URL?>/product"
-                        title="kslider-3">
-                        <img src="views/assets/img/banner4.png" alt="kslider-3" title="KSlider3" />
-                    </a>
-                </li>
+             
             </ul>
         </div>
     </div>
@@ -99,23 +94,23 @@
             <div class="row">
                 <div class="center-banner list-unstyled">
                     <div class="slider banner1 col-lg-4 col-md-12">
-                        <a href="<?=ROOT_URL?>/product" class="kk-customhover-fadeintopbottom">
-                            <img src="views/assets/img/1.png" alt="kbanner-1"
+                        <a href="<?=ROOT_URL?>/san-pham/tat-ca/trang-1" class="kk-customhover-fadeintopbottom">
+                            <img src="views/assets/img/bannergiay19.jpg" alt="kbanner-1"
                                 class="img-responsive center-block" />
                         </a>
                         <div class="overlay"></div>
                     </div>
 
                     <div class="slider banner2  col-lg-4 col-md-12">
-                        <a href="<?=ROOT_URL?>/product" class="kk-customhover-fadeintopbottom">
-                            <img src="views/assets/img/2.png" alt="kbanner-2"
+                        <a href="<?=ROOT_URL?>/san-pham/tat-ca/trang-1" class="kk-customhover-fadeintopbottom">
+                            <img src="views/assets/img/bannergiay20.jpg" alt="kbanner-2"
                                 class="img-responsive center-block" />
                         </a>
                         <div class="overlay"></div>
                     </div>
                     <div class="slider banner2  col-lg-4 col-md-12">
-                        <a href="<?=ROOT_URL?>/product" class="kk-customhover-fadeintopbottom">
-                            <img src="views/assets/img/3.png" alt="kbanner-3"
+                        <a href="<?=ROOT_URL?>/san-pham/tat-ca/trang-1" class="kk-customhover-fadeintopbottom">
+                            <img src="views/assets/img/bannergiay21.jpg" alt="kbanner-3"
                                 class="img-responsive center-block" />
                         </a>
                         <div class="overlay"></div>
@@ -509,7 +504,7 @@
             </div>
         </div>
         <div id="kkparallaxcms" class="parallax parallaxcms-outer hb-animate-element bottom-to-top "
-            data-source-url="views/assets/img/4.png">
+            data-source-url="views/assets/img/bannergiay25.jpg">
             <div class="container">
                 <div class="parallaxcms-inner container">
                     <div class="parallaxcms">
@@ -518,7 +513,7 @@
                             <div class="parallax-caption1 ">Thời trang và hàng hiệu</div>
                             <div class="parallax-caption2 ">Sản phẩm được nhập chính hãng với giá tốt nhất
                             </div>
-                            <div class="parallax-btn "><a href="<?=ROOT_URL?>/product" class="shopnow-button">Mua ngay</a></div>
+                            <div class="parallax-btn "><a href="<?=ROOT_URL?>/san-pham/tat-ca/trang-1" class="shopnow-button">Mua ngay</a></div>
 
                         </div>
                     </div>
@@ -684,123 +679,55 @@
 
 
 
-                        <div id="kktestimonials" class="col-lg-6 col-sm-12 hb-animate-element bottom-to-top clearfix">
-
-                            <div class="parallax" data-source-url="">
-                                <div class="testimonial_inner">
-
-                                    <h3 class="kk-title">Khách Hàng Nói Về Chúng Tôi</h3>
-
-                                    <div id="kktestimonials-item" class="container owl-carousel">
-                                        <div id="kktestimonialsblock">
-                                            <div class="row">
-                                                <div class="testimonial-img">
-                                                    <img src="views/assets/img/testimonial-1.jpg"
-                                                        alt="Tammy Qualls" />
-                                                </div>
-                                                <div class="testimonial-data">
-
-                                                    <div class="tes_userinfo">
-                                                        <div class="testi-userinfo">
-
-                                                            <span class="testimonial-name">
-                                                                Tammy Qualls
-                                                            </span>
-                                                            <span class="testimonial-author">
-                                                                Web Designer / Consultant
-                                                            </span>
-                                                        </div>
-                                                        <div class="testimonial-disc">
-                                                            Lorem Ipsum is simply dummy text of the printing and
-                                                            typesetting industry. Lorem Ipsum has been the
-                                                            industry&#039;s standard dummy text ever since the 1500s.
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
+                        
+                        <div class="col-lg-12 col-xs-12 kk_banner clearfix hb-animate-element bottom-to-top">
+                            <div class="kk_sub_banner row">
+                                <div class="slider banner1  col-lg-4 col-xs-12 hb-animate-element bottom-to-top">
+                                    <div  class="kk-customhover-fadeintopbottom" title="This is Caption">
+                                        <div class="kkmultibanner-hover">
+                                            <img src="views/assets/img/bannergiay22.jpg" class="img-responsive"
+                                                alt="This is Caption" />
+                                                
                                         </div>
-                                        <div id="kktestimonialsblock">
-                                            <div class="row">
-                                                <div class="testimonial-img">
-                                                    <img src="views/assets/img/testimonial-2.jpg"
-                                                        alt="Tammy Qualls" />
-                                                </div>
-                                                <div class="testimonial-data">
-
-                                                    <div class="tes_userinfo">
-                                                        <div class="testi-userinfo">
-
-                                                            <span class="testimonial-name">
-                                                                Tammy Qualls
-                                                            </span>
-                                                            <span class="testimonial-author">
-                                                                Web Designer / Consultant
-                                                            </span>
-                                                        </div>
-                                                        <div class="testimonial-disc">
-                                                            Lorem Ipsum is simply dummy text of the printing and
-                                                            typesetting industry. Lorem Ipsum has been the
-                                                            industry&#039;s standard dummy text ever since the 1500s.
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
+                                        <div class="image_cate">
+                                            <h4 class="display-4" >QUẦN ÁO</h4>
+                                            <p></p>
+                                            <a href="<?=ROOT_URL?>/danh-muc/quan-ao-7/trang-1" class="btn btn-light">XEM THÊM</a>
                                         </div>
-                                        <div id="kktestimonialsblock">
-                                            <div class="row">
-                                                <div class="testimonial-img">
-                                                    <img src="views/assets/img/testimonial-3.jpg"
-                                                        alt="Tammy Qualls" />
-                                                </div>
-                                                <div class="testimonial-data">
-
-                                                    <div class="tes_userinfo">
-                                                        <div class="testi-userinfo">
-
-                                                            <span class="testimonial-name">
-                                                                Tammy Qualls
-                                                            </span>
-                                                            <span class="testimonial-author">
-                                                                Web Designer / Consultant
-                                                            </span>
-                                                        </div>
-                                                        <div class="testimonial-disc">
-                                                            Lorem Ipsum is simply dummy text of the printing and
-                                                            typesetting industry. Lorem Ipsum has been the
-                                                            industry&#039;s standard dummy text ever since the 1500s.
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
+                                        
+                                    </div>
+                                </div><div class="slider banner1  col-lg-4 col-xs-12 hb-animate-element bottom-to-top">
+                                    <div  class="kk-customhover-fadeintopbottom" title="This is Caption">
+                                        <div class="kkmultibanner-hover">
+                                            <img src="views/assets/img/bannergiay23.jpg" class="img-responsive"
+                                                alt="This is Caption" />
+                                                
                                         </div>
-
+                                        <div class="image_cate">
+                                            <h4 class="display-4" >GIÀY</h4>
+                                            <p></p>
+                                            <a href="<?=ROOT_URL?>/danh-muc/giay-6/trang-1" class="btn btn-light">XEM THÊM</a>
+                                        </div>
+                                        
+                                    </div>
+                                </div><div class="slider banner1  col-lg-4 col-xs-12 hb-animate-element bottom-to-top">
+                                    <div  class="kk-customhover-fadeintopbottom" title="This is Caption">
+                                        <div class="kkmultibanner-hover">
+                                            <img src="views/assets/img/bannergiay23.jpg" class="img-responsive"
+                                                alt="This is Caption" />
+                                                
+                                        </div>
+                                        <div class="image_cate">
+                                            <h4 class="display-4" >PHỤ KIỆN</h4>
+                                            <p></p>
+                                            <a href="<?=ROOT_URL?>/danh-muc/phu-kien-8/trang-1" class="btn btn-light">XEM THÊM</a>
+                                        </div>
+                                        
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-xs-12 kk_banner clearfix hb-animate-element bottom-to-top">
-                            <div class="kk_sub_banner row">
-                                <div class="slider banner1  col-lg-6 col-xs-12 hb-animate-element bottom-to-top">
-                                    <a href="<?=ROOT_URL?>/product" class="kk-customhover-fadeintopbottom" title="This is Caption">
-                                        <div class="kkmultibanner-hover">
-                                            <img src="views/assets/img/5.png" class="img-responsive"
-                                                alt="This is Caption" />
-                                        </div>
-                                    </a>
-                                </div>
+                                
 
 
-                                <div class="slider banner1  col-lg-6 col-xs-12 hb-animate-element bottom-to-top">
-                                    <a href="<?=ROOT_URL?>/product" class="kk-customhover-fadeintopbottom" title="This is Caption">
-                                        <div class="kkmultibanner-hover">
-                                            <img src="views/assets/img/6.png" class="img-responsive"
-                                                alt="This is Caption" />
-                                        </div>
-                                    </a>
-                                </div>
 
                             </div>
                         </div>

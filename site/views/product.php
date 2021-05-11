@@ -513,7 +513,7 @@
 
             <div id="content-wrapper" class="left-column col-xs-12 col-sm-12 col-md-12 col-lg-9">
 
-                <nav data-depth="2" class="breadcrumb hidden-sm-down">
+                <nav data-depth="2" class="breadcrumb hidden-sm-down m-0">
                     <div class="container">
                         <ol itemscope itemtype="http://schema.org/BreadcrumbList">
 
@@ -551,7 +551,7 @@
                     <div class="block-category card card-block hidden-sm-down">
 
                         <div class="category-cover">
-                            <img src="https://infinitytemplate.com/Prestashop/PRS01/PRS012/c/3-category_default/clothes.jpg"
+                            <img src="views/assets/img/bannergiay11.jpg" 
                                 alt="Clothes">
                         </div>
                         <?php

@@ -95,13 +95,13 @@
                                                     class="product-line-grid-right product-line-actions col-md-5 col-xs-12">
                                                     <div class="row">
                                                         <div class="col-xs-1 hidden-md-up"></div>
-                                                        <div class="col-md-10 col-xs-6">
+                                                        <div class="col-md-10 col-xs-10 p-0">
                                                             <div class="row">
-                                                                <div class="col-md-6 col-xs-6 qty">
+                                                                <div class="col-md-6 col-xs-6 qty p-0">
                                                                     <input class="js-cart-line-product-quantity getquantity" data-product-id="15" type="number" value="'.$row[1].'"
                                                                         name="product-quantity-spin" min="1" />
                                                                 </div>
-                                                                <div class="col-md-6 col-xs-2 price">
+                                                                <div class="col-md-6 col-xs-6 price p-0">
                                                                     <span class="product-price">
                                                                         <strong class="totalmoney">
                                                                            '.$this->lib->forMatTien($row[5] * $row[1]).' đ
@@ -110,7 +110,7 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-2 col-xs-2 text-xs-right">
+                                                        <div class="col-md-2 col-xs-0 p-0 text-xs-right">
                                                             <div class="cart-line-product-actions">
                                                                 <a class="remove-from-cart" rel="nofollow"
                                                                    

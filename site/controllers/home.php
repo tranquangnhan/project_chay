@@ -172,7 +172,7 @@
         }
    
         function cartView(){
-   
+   $getMenuParent = $this->model->getMenuParent();
             $viewFile ="views/cart.php";
             require_once "views/layout.php";
         }
@@ -502,7 +502,6 @@
 			  
 			  $giohang = $_SESSION['cart'];
 			  $this->model->luugiohangnhe($idDH, $giohang);
-			  unset($_SESSION['cart']);
 			  header('location: '.ROOT_URL.'/donecheckout');
 		   }  
 			   
