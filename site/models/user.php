@@ -21,7 +21,7 @@ class Model_user extends Model_db{
         $email = $this->result1(1,$sql,$email,$pass);
         if(is_array($email)){
             $_SESSION['sid'] = $email['idUser'];
-            $_SESSION['suser']= $email['firstname'];
+            $_SESSION['suser']= $email['name'];
             $_SESSION['srole'] = $email['role'];
             return true;
         }else{
