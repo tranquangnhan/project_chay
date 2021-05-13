@@ -93,7 +93,7 @@
         <div class="kk_banner hb-animate-element  bottom-to-top clearfix ">
             <div class="row">
                 <div class="center-banner list-unstyled">
-                    <div class="slider banner1 col-lg-4 col-md-12">
+                    <div class="slider banner2 col-lg-4 col-md-12">
                         <a href="<?=ROOT_URL?>/san-pham/tat-ca/trang-1" class="kk-customhover-fadeintopbottom">
                             <img src="views/assets/img/bannergiay19.jpg" alt="kbanner-1"
                                 class="img-responsive center-block" />
@@ -713,7 +713,7 @@
                                 </div><div class="slider banner1  col-lg-4 col-xs-12 hb-animate-element bottom-to-top">
                                     <div  class="kk-customhover-fadeintopbottom" title="This is Caption">
                                         <div class="kkmultibanner-hover">
-                                            <img src="views/assets/img/bannergiay23.jpg" class="img-responsive"
+                                            <img src="views/assets/img/bannergiay2.jpg" class="img-responsive"
                                                 alt="This is Caption" />
                                                 
                                         </div>
@@ -877,7 +877,7 @@
                     <div class="image-container">
                         <a href="#"
                             title="Manufacture3">
-                            <img src="views/assets/img/brand1.jpg" alt="Manufacture3" />
+                            <img src="views/assets/img/nike-logo.jpg" alt="Manufacture3" />
                         </a>
                     </div>
                 </div>
@@ -885,7 +885,7 @@
                     <div class="image-container">
                         <a href="#"
                             title="Manufacture4">
-                            <img src="views/assets/img/brand2.jpg" alt="Manufacture4" />
+                            <img src="views/assets/img/adidas-logo.jpg" alt="Manufacture4" />
                         </a>
                     </div>
                 </div>

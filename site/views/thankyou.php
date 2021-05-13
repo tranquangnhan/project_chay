@@ -183,7 +183,7 @@ a.more-link {
                                 </section>
                                 <h3 style="text-align:center"><?=$thongbao?></h3>
                                 <div class="link-container">
-                                <a href="javascript:window.history.back()" class="more-link"><?=$lang['returnpage']?></a>
+                                <a href="<?=ROOT_URL?>/trang-chu" class="more-link">Trang chủ</a>
                                 </div>
                                 
                             </div>

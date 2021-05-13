@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <base href="/project_chay/site/">
+    <base href="/site/">
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Shop </title>
@@ -15,6 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/vnd.microsoft.icon" href="<?=ROOT_URL?>/uploads/logo.png">
     <link rel="shortcut icon" type="image/x-icon" href="<?=ROOT_URL?>/uploads/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="views/assets/css/theme-3950e66.css" type="text/css" media="all">
     <link rel="stylesheet" href="views/assets/css/SweetAlert2.css">
     <script src="views/assets/js/SweetAlert2.js"></script>
@@ -336,7 +337,7 @@
                                                     <li>
                                                            
                                                     <a href="'.ROOT_URL.'/?act=logout">
-                                                           <span class="hidden-sm-down">'.$lang['logout'].'</span>
+                                                           <span class="hidden-sm-down">Đăng xuất</span>
                                                         </a></li>
                                                 </ul>'
                                                 
@@ -427,8 +428,8 @@
                                 </div>
 
                                 <div class="infinitycontact-dec">
-                                    <div class="contact-title">Liên hệ</div>
-                                    <div class="contact-dec"><a href="tel:0901108244">0901108244</a></div>
+                                    <div class="contact-title">Zalo</div>
+                                    <div class="contact-dec"><a href="#">0901108244</a></div>
                                 </div>
 
                             </div>
@@ -440,16 +441,19 @@
                         <div class="headercontact">
 
                             <div class="email-inner">
-
-                                <div class="subicon emailicon">
-                                    <span class="hide">icon</span>
-                                </div>
+                                <a href="https://www.facebook.com/QT9093/">
+                                    <div class="subicon ">
+                        
+                                        <i style="font-size:2rem; margin-left:2rem" class="fa fa-facebook" aria-hidden="true"></i>
+                                        
+                                    </div>
+                                </a>
 
                                 <div class="infinitycontact-dec">
 
-                                    <div class="email-title">Email</div>
+                                    
 
-                                    <div class="email-dec">nguyendangquan28297@gmail.com</div>
+                                    
 
                                 </div>
 
@@ -709,24 +713,30 @@
                                                 <a id="link-product-page-prices-drop-1" class="cms-page-link"
                                                     href="<?=ROOT_URL?>/san-pham/tat-ca/trang-1"
                                                     title="Our special products">
-                                                    Sản phẩm giảm giá
+                                                    Tất cả sản phẩm
                                                 </a>
                                             </li>
                                             <li>
                                                 <a id="link-product-page-new-products-1" class="cms-page-link"
-                                                    href="<?=ROOT_URL?>/san-pham/tat-ca/trang-1"
+                                                    href="<?=ROOT_URL?>/danh-muc/giay-6/trang-1"
                                                     title="Our new products">
-                                                    Sản phẩm mới
+                                                    Giày
                                                 </a>
                                             </li>
                                             <li>
                                                 <a id="link-product-page-best-sales-1" class="cms-page-link"
-                                                    href="<?=ROOT_URL?>/san-pham/tat-ca/trang-1"
+                                                    href="<?=ROOT_URL?>/danh-muc/quan-ao-7/trang-1"
                                                     title="Our best sales">
-                                                    Bán chạy
+                                                    Quần áo
                                                 </a>
                                             </li>
-                                            
+                                            <li>
+                                                <a id="link-product-page-best-sales-1" class="cms-page-link"
+                                                    href="<?=ROOT_URL?>/danh-muc/phu-kien-8/trang-1"
+                                                    title="Our best sales">
+                                                    Phụ kiện
+                                                </a>
+                                            </li>
                                         </ul>
                                     </div>
                                     <div class="col-md-6 wrapper hb-animate-element bottom-to-top">
@@ -749,13 +759,7 @@
                                                     Liên hệ
                                                 </a>
                                             </li>
-                                            <li>
-                                                <a id="link-cms-page-5-2" class="cms-page-link"
-                                                    href="<?=ROOT_URL?>/term-of-services"
-                                                    title="Our secure payment method">
-                                                    Dịch vụ
-                                                </a>
-                                            </li>
+                                           
                                           
                                         </ul>
                                     </div>
@@ -781,23 +785,18 @@
                                 </div>
                                 <ul class="account-list collapse" id="footer_account_list">
                                     <li>
-                                        <a href="<?=ROOT_URL?>/chinh-sach"
+                                        <a href="<?=ROOT_URL?>/chinh-sach-van-chuyen"
                                             title="Personal info" rel="nofollow">
-                                            Chính sách đổi trả
+                                            Chính sách vận chuyển
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="<?=ROOT_URL?>/chinh-sach"
+                                        <a href="<?=ROOT_URL?>/bao-hanh"
                                             title="Orders" rel="nofollow">
                                             Chính sách bảo hành
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="<?=ROOT_URL?>/chinh-sach"
-                                            title="Credit slips" rel="nofollow">
-                                            Chính sách hoàn tiền
-                                        </a>
-                                    </li>
+                                  
                                     
 
                                 </ul>

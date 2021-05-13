@@ -41,7 +41,7 @@
             case "product":$this->product();break;
             case "changepass":$this->changePass();break;
             case "contact":$this->contact();break;
-            case "aboutus":$this->aboutus();break;
+            case "aboutus":$this->baohanh();break;
             case "impressum":$this->impressum();break;
             case "privacypolicy":$this->privacypolicy();break;
             case "termofservice":$this->termofservice();break;
@@ -501,6 +501,7 @@
 			  $_SESSION['idDH'] = $idDH;
 			  
 			  $giohang = $_SESSION['cart'];
+unset($_SESSION['cart']);
 			  $this->model->luugiohangnhe($idDH, $giohang);
 			  header('location: '.ROOT_URL.'/donecheckout');
 		   }  
@@ -539,12 +540,12 @@
 		   if($exist != null){
 			  $checklogin = $this->modelUser->checkUser($email,$pass);
 			  if($checklogin == true){
-				 header('location: ./home');
+				 header('location: ./trang-chu');
 			  }else{
-				 $checkloginwarn = 'Your password is not valid';
+				 $checkloginwarn = 'Mật khẩu của bạn không hợp lệ';
 			  }
 		   }else{
-			  $emailexist= 'Your email does not exist!';
+			  $emailexist= 'Email của bạn không tồn tại!';
 		   }
 		}
 
@@ -560,10 +561,10 @@
 		   $password = $_POST['password'];
 		   $exist = $this->modelUser->checkEmailTonTai($email);
 		   if($name == '' || $email == '' ||$password == '' ){
-			  $nullerror = "You have not entered enough information";
+			  $nullerror = "Bạn chưa nhập đủ thông tin";
 		   }else{
 			  if($exist != null){
-				 $emailexist= 'Email already exists!';
+				 $emailexist= 'Email đã tồn tại!';
 			  }else{
 				 $exist = $this->modelUser->registerUser($name,$email,$password);
 				$_SESSION['thongbao'] = "Đăng kí thành công";
@@ -593,7 +594,7 @@
 		unset($_SESSION['suser']);
 		unset($_SESSION['sid']);
 		unset($_SESSION['srole']);
-		header('location: '.ROOT_URL.'');
+		header('location: ./trang-chu');
 	 }
 	 function forgotPass(){
 
@@ -622,8 +623,9 @@
 		$viewFile ="views/contact.php";
 		require_once "views/layout.php";
 	 }
-	 function aboutus(){
-		$viewFile = "views/aboutus.php";
+	 function baohanh(){
+		$getMenuParent = $this->model->getMenuParent();
+		$viewFile = "views/baohanh.php";
 	   require_once "views/layout.php";
 	 }
 	 function impressum(){
@@ -631,15 +633,17 @@
 	   require_once "views/layout.php";
 	 }
 	 function privacypolicy(){
+
 		$viewFile = "views/privacypolicy.php";
 	   require_once "views/layout.php";
 	 }
 	 function termofservice(){
+		$getMenuParent = $this->model->getMenuParent();
 		$viewFile = "views/termofservice.php";
 	   require_once "views/layout.php";
 	 }
 	 function notification(){
-		require_once "../languages/".$_SESSION['lang'].".php";	
+			
 		if(isset($_SESSION['thongbao'])){
 			$thongbao = $_SESSION['thongbao'];
 			unset($_SESSION['thongbao']);
