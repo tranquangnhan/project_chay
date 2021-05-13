@@ -8,7 +8,7 @@ switch ($_POST['action']) {
     case 'add':
         $array = array();
         
-        $array['StatusCode']= $model->storeContactForDetail($_POST['name'],$_POST['email'],$_POST['id_contact'],$_POST['message'],$_POST['idsp'])? 1: 0;
+        $array['StatusCode']= $model->storeContactForDetail($_POST['name'],$_POST['phone'],$_POST['id_contact'],$_POST['message'],$_POST['idsp'])? 1: 0;
         
         echo json_encode($array);
 

@@ -601,14 +601,14 @@ class Model_home extends Model_db{
         }
         return $this->result1(0,$sql,$id);
     }
-    function storeContact($name,$email,$subject,$messenge)
+    function storeContact($name,$phone,$subject,$messenge)
     {
-        $sql = "INSERT INTO contact(name,email,subject,messeges) VALUE(?,?,?,?)";
-        return $this->exec1($sql,$name,$email,$subject,$messenge);
+        $sql = "INSERT INTO contact(name,phone,subject,messeges) VALUE(?,?,?,?)";
+        return $this->exec1($sql,$name,$phone,$subject,$messenge);
     }
-    function storeContactForDetail($name,$email,$subject,$messenge,$idsp)
+    function storeContactForDetail($name,$phone,$subject,$messenge,$idsp)
     {
-        $sql = "INSERT INTO contact(name,email,subject,messeges,idsp) VALUE(?,?,?,?,?)";
-        return $this->exec1($sql,$name,$email,$subject,$messenge,$idsp);
+        $sql = "INSERT INTO contact(name,phone,subject,messeges,idsp) VALUE(?,?,?,?,?)";
+        return $this->exec1($sql,$name,$phone,$subject,$messenge,$idsp);
     }
 }

@@ -610,14 +610,14 @@ unset($_SESSION['cart']);
 		$getMenuParent = $this->model->getMenuParent();
 		if(isset($_POST['submitMessage'])){
 		   $name = $_POST['name'];
-		   $email = $_POST['email'];
+		   $phone = $_POST['phone'];
 		   $subject = $_POST['id_contact'];
 		   $message = $_POST['message'];
-		   if($name == '' || $email == '' ||$message == '' ){
-			  $nullerror = "You have not entered enough information";
+		   if($name == '' || $phone == '' ||$message == '' ){
+			  $nullerror = "Bạn chưa điền đủ thông tin";
 		   }else{
-			  $this->model->storeContact($name,$email,$subject,$message);
-			  echo '<script>alert("We wil call you soon !")</script>';
+			  $this->model->storeContact($name,$phone,$subject,$message);
+			  echo '<script>alert("Chúng tôi sẽ liên hệ bạn sớm nhất !")</script>';
 		   } 
 		}
 		$viewFile ="views/contact.php";

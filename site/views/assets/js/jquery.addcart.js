@@ -118,8 +118,8 @@ function contact() {
 <option value="2">Dịch vụ khách hàng</option>
 <option value="1">Thông tin sản phẩm</option>
 </select>
-<input id="name" placeholder="Tên" class="swal2-input">
-<input id="email" placeholder="email" class="swal2-input">
+<input id="name" placeholder="Họ và tên" class="swal2-input">
+<input id="phone" placeholder="Số điện thoại" class="swal2-input">
 <textarea id="message" class="form-control swal2-input" name="message" placeholder="Tôi có thể giúp gì?" rows="3" cols="3"></textarea>`
 
     swal.fire({
@@ -129,9 +129,9 @@ function contact() {
         preConfirm: async() => {
             var id_contact = document.getElementById('id_contact').value;
             var name = document.getElementById('name').value;
-            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
             var message = document.getElementById('message').value;
-            if (id_contact == '' || name == '' || email == '' || message == '') {
+            if (id_contact == '' || name == '' || phone == '' || message == '') {
 
                 Swal.fire({
                     icon: 'error',
@@ -142,7 +142,7 @@ function contact() {
             } else {
                 var formData = new FormData();
                 formData.append('name', name);
-                formData.append('email', email);
+                formData.append('phone', phone);
                 formData.append('message', message);
                 formData.append('idsp', idsp);
                 formData.append('id_contact', id_contact);

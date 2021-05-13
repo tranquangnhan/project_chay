@@ -78,9 +78,9 @@
                                                                                  </div>
 
                                                                                  <div class="form-group row">
-                                                                                          <label class="col-md-3 form-control-label">Email</label>
+                                                                                          <label class="col-md-3 form-control-label">Số điện thoại</label>
                                                                                           <div class="col-md-6">
-                                                                                                   <input class="form-control" name="email" type="email" value="" placeholder="Email" />
+                                                                                                   <input class="form-control" name="phone" type="text" value="" placeholder="Số điện thoại" />
                                                                                           </div>
                                                                                  </div>
 

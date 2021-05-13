@@ -17,11 +17,12 @@
                                         <thead>
                                         <tr>
                                         <th width="3%">STT</th>
-                                        <th>Tên KH</th>
-                                        <th width="25%">Email</th>
+                                        <th width="15%">Tên KH</th>
+                                        <th width="10%">SĐT</th>
                                         <th width="20%">Hỗ trợ</th>
                                         <th width="40%">Tin nhắn</th>
                                         <th >ID sản phẩm</th>
+                                        <th >Tên SP</th>
                                         
                                         </tr>
                                         </thead>
@@ -29,6 +30,8 @@
 
                                         <tbody>
                                         <?php
+                                        require_once "models/product.php"; 
+                                        $pro = new Model_product();
                                         $stt = 1;
                                             foreach ($listcontact as $key) {
                                                 if($key['subject'] == 2){
@@ -36,14 +39,15 @@
                                                 }else{
                                                     $sub = 'Sản phẩm mới';
                                                 }
+                                                $infosp = $pro->showOnePhone($key['idsp']);
                                                 echo '<tr>
-                                                <td width="3%">'.$stt++.'</td>
+                                                <td >'.$stt++.'</td>
                                                 <td>'.$key['name'].'</td>
-                                                <td width="25%">'.$key['email'].'</td>
+                                                <td >'.$key['phone'].'</td>
                                                 <td>'.$sub.'</td>
-                                                <td width="40%">'.$key['messeges'].'</td>
-                                                <td width="40%">'.$key['idsp'].'</td>
-                                                
+                                                <td >'.$key['messeges'].'</td>
+                                                <td >'.$key['idsp'].'</td>
+                                                <td >'.$infosp['name'].'</td>
                                                 </tr>';
                                             }
                                         ?>

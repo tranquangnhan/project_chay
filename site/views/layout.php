@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <base href="/site/">
+    <base href="/project_chay/site/">
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Shop </title>
