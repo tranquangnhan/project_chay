@@ -21,7 +21,7 @@ class Model_user extends Model_db{
         $email = $this->result1(1,$sql,$email,$pass);
         if(is_array($email)){
             $_SESSION['sid'] = $email['idUser'];
-            $_SESSION['suser']= $email['firstname'];
+            $_SESSION['suser']= $email['name'];
             $_SESSION['srole'] = $email['role'];
             return true;
         }else{
@@ -56,7 +56,7 @@ class Model_user extends Model_db{
         return $this->result1(1,$sql,$user);
     }
     function registerUser($name,$email,$pass){
-        $sql = "INSERT INTO user(firstname,email,pass) VALUE(?,?,?)";
+        $sql = "INSERT INTO user(name,email,pass) VALUE(?,?,?)";
         return $this->exec1($sql,$name,$email,$pass);
     }
     function IsExist ($user){ // kiểm tra xem user đã tồn tại hay chưa
