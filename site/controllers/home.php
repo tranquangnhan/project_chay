@@ -47,6 +47,7 @@
             case "termofservice":$this->termofservice();break;
 			case "notification":$this->notification();break;
 			case "donecheckout": $this->donecheckout();break;
+			case "gioithieu": $this->gioithieu();break;
            }
            
         }
@@ -98,34 +99,7 @@
 			// $GetProductListCosan = $this->model->GetProductListByloai($_GET['slug1'],$_GET['maloai'],$PageNum);
 			$getsizeALLpro = $this->model->getsizeALLpro();
 		}
-        //  if(isset($_GET['sortBy'])) $sortBy = $_GET['sortBy']; else $sortBy = NULL;
-   
-        //  if(isset($_GET['order'])) $order = $_GET['order']; else $order = NULL;
-   
-      
-        //  if(isset($_GET['maloai'])==true&&($_GET['maloai']>0))
-        //  $maLoai= $_GET['maloai'];
-   
-        
-   
-        //  if($maLoai)
-        //  {
-        //      $ds = $this->model-> GetProductList($maLoai,$PageNum,$sortBy,$order);
-        //      $TotalProduct = (int)$this->model->countAllProductControl($maLoai,$sortBy,$order);
-        //      if($TotalProduct == 0) $TotalProduct =1;
-        //      $BaseLink= 'cate';
-        //     $PageSize = PAGE_SIZE_PRO;
-        //     $Pagination =  $this->model->Page($TotalProduct ,$PageNum,$PageSize, $BaseLink);
-        //  }else{
-        //     $PageNum = $_GET['slug'];
-        //     if($PageNum<=0) $PageNum = 1;
-        //     $ds = $this->model-> GetProductList2($PageNum,$sortBy,$order);
-        //     $TotalProduct = (int)$this->model->countAllProductControl2($sortBy,$order);
-        //     if($TotalProduct == 0) $TotalProduct =1;
-        //     $BaseLink= 'cate';
-        //     $PageSize = PAGE_SIZE_PRO;
-        //     $Pagination =  $this->model->PageNotCate($TotalProduct ,$PageNum,$PageSize, $BaseLink);
-        //  }
+       
    
          $page_title ="Danh sách nhà sản xuất";
          $viewFile = "views/product.php";
@@ -143,7 +117,12 @@
            $viewFile = "views/Product-Detail.php";     
            require_once "views/layout.php";  
         }
-   
+		function gioithieu()
+        {
+              
+           $viewFile = "views/gioithieu.php";     
+           require_once "views/layout.php";  
+        }
         function cat(){
    
             $producer = $this->model->getAllProducer();

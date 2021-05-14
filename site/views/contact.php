@@ -11,7 +11,7 @@
                                              <div class="block">
                                                       <div class="icon"><i class="material-icons">&#xE55F;</i></div>
                                                       <div class="data">
-                                                      2/9 Đoàn Thị Điểm phường 1 Phú Nhuận
+                                                      2/9 Đoàn Thị Điểm phường 1 Phú Nhuận, TP.HCM
                                                       <br />
                                                               
                                                       </div>

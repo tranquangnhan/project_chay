@@ -511,7 +511,7 @@
                         <div class="parallax-inner">
 
                             <div class="parallax-caption1 ">Thời trang và hàng hiệu</div>
-                            <div class="parallax-caption2 ">Sản phẩm được nhập chính hãng với giá tốt nhất
+                            <div class="parallax-caption2 ">Sản phẩm được chọn lọc những phiên bản cao cấp và tốt nhất
                             </div>
                             <div class="parallax-btn "><a href="<?=ROOT_URL?>/san-pham/tat-ca/trang-1" class="shopnow-button">Mua ngay</a></div>
 
@@ -868,7 +868,7 @@
 
     <div class="kkmanufacturer container hb-animate-element bottom-to-top clearfix">
 
-        <h3 class="kk-title">nhãn hiệu</h3>
+        <h3 class="kk-title">Thương hiệu phổ biến</h3>
 
 
         <div class="block_content row">
@@ -889,7 +889,46 @@
                         </a>
                     </div>
                 </div>
-                
+                <div class="items">
+                    <div class="image-container">
+                        <a href="#"
+                            title="Manufacture4">
+                            <img src="views/assets/img/logo-chanel.jpg" alt="Manufacture4" />
+                        </a>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="image-container">
+                        <a href="#"
+                            title="Manufacture4">
+                            <img src="views/assets/img/logo-dior.png" alt="Manufacture4" />
+                        </a>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="image-container">
+                        <a href="#"
+                            title="Manufacture4">
+                            <img src="views/assets/img/logo-gucci.png" alt="Manufacture4" />
+                        </a>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="image-container">
+                        <a href="#"
+                            title="Manufacture4">
+                            <img src="views/assets/img/logo-jordan.png" alt="Manufacture4" />
+                        </a>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="image-container">
+                        <a href="#"
+                            title="Manufacture4">
+                            <img src="views/assets/img/logo-louis-vuitton.jpg" alt="Manufacture4" />
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
 

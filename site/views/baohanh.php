@@ -10,11 +10,11 @@
                 </div>
             </div>
             <div class="text">
-            - khách hàng mua sản phẩm đầu tiên bảo hành 6 tháng. </div>
+            - Khách hàng mua sản phẩm đầu tiên bảo hành 6 tháng. </div>
              <div class="text">
-             - khách hàng mua 2 đôi trở lên bảo hành vĩnh viễn.</div>
+             - Khách hàng mua 2 đôi trở lên bảo hành vĩnh viễn.</div>
              <div class="text">
-             - bảo hành các lỗi như sau : keo, còn những lỗi do sử dụng lâu về chất liệu, shop hỗ trợ 30%  dành cho những khách hàng thân  thiết.</div>
+             - Bảo hành các lỗi như sau : keo, còn những lỗi do sử dụng lâu về chất liệu, shop hỗ trợ 30%  dành cho những khách hàng thân  thiết.</div>
         </div>
     </div>  
    

@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <base href="/site/">
+    <base href="/project_chay/site/">
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Shop </title>
@@ -659,7 +659,7 @@
                                                 <div class="subicon subicon1"><span class="hide">icon</span></div>
                                                 <div class="servicedec">
                                                     <div class="subtitile subtitile1">Miễn phí giao hàng</div>
-                                                    <div class="subtitile subtitile2">Đơn hàng từ 500.000đ</div>
+                                                    <div class="subtitile subtitile2">Đơn hàng từ 2 sản phẩm</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -759,7 +759,13 @@
                                                     Liên hệ
                                                 </a>
                                             </li>
-                                           
+                                            <li>
+                                                <a id="link-cms-page-4-2" class="cms-page-link"
+                                                    href="<?=ROOT_URL?>/gioi-thieu"
+                                                    title="Learn more about us">
+                                                    Giới thiệu
+                                                </a>
+                                            </li>
                                           
                                         </ul>
                                     </div>
@@ -815,7 +821,7 @@
                                 <ul id="contact-footer" class="collapse">
                                     <li class="block">
                                         <div class="icon"><i class="material-icons">&#xE55F;</i></div>
-                                        <div class="data">2/9 Đoàn Thị Điểm phường 1 Phú Nhuận<br /></div>
+                                        <div class="data">2/9 Đoàn Thị Điểm phường 1 Phú Nhuận, TP.HCM<br /></div>
 
                                     </li>
                                     <li class="block">
