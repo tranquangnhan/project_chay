@@ -119,7 +119,7 @@
         }
 		function gioithieu()
         {
-              
+			$getMenuParent = $this->model->getMenuParent();
            $viewFile = "views/gioithieu.php";     
            require_once "views/layout.php";  
         }

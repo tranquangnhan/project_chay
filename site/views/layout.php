@@ -862,6 +862,7 @@
     });
     </script>
 <script src="views/assets/js/cartview.js"></script>
+<script src="https://sp.zalo.me/plugins/sdk.js"></script>
 <!-- ============== DOAN NAY SANG THEM VAO ======================= -->
 
 </body>
