@@ -637,7 +637,62 @@
                     <div class="container">
                         <div class="row">
 
-                            
+                            <div id="kkservice-block" class="kkservicecms links col-lg-12 col-xs-12 clearfix  hb-animate-element right-to-left">
+
+                                <div class="title  hidden-md-up" data-toggle="collapse"
+                                    data-target="#kkservice_block_container">
+                                    <span class="h3 block-contact-title">Dịch vụ</span>
+                                    <span class="float-xs-right">
+                                        <span class="navbar-toggler collapse-icons">
+                                            <i class="material-icons add">&#xE145;</i>
+                                            <i class="material-icons remove">&#xE15B;</i>
+                                        </span>
+                                    </span>
+                                </div>
+
+
+                                <div class="container">
+                                    <div id="kkservice_block_container" class="service-inner collapse row">
+                                        <div class="subtitle-part subtitle-part1 col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                            <div class="serviceblock subbanner-part-maininnner1">
+                                                <div class="subicon subicon1"><span class="hide">icon</span></div>
+                                                <div class="servicedec">
+                                                    <div class="subtitile subtitile1">Miễn phí giao hàng</div>
+                                                    <div class="subtitile subtitile2">Đơn hàng từ 2 sản phẩm</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="subtitle-part subtitle-part2 col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                            <div class="serviceblock subbanner-part-maininnner2">
+                                                <div class="subicon subicon2"><span class="hide">icon</span></div>
+                                                <div class="servicedec">
+                                                    <div class="subtitile subtitile1"> Tiết kiệm lớn</div>
+                                                    <div class="subtitile subtitile2"> Đảm bảo hoàn tiền</div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="subtitle-part subtitle-part3 col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                            <div class="serviceblock subbanner-part-maininnner3">
+                                                <div class="subicon subicon3"><span class="hide">icon</span></div>
+                                                <div class="servicedec">
+                                                    <div class="subtitile subtitile1"> phiếu quà tặng</div>
+                                                    <div class="subtitile subtitile2"> miễn phí quà tặng</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="subtitle-part subtitle-part4 col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                            <div class="serviceblock subbanner-part-maininnner4">
+                                                <div class="subicon subicon4"><span class="hide">icon</span></div>
+                                                <div class="servicedec">
+                                                    <div class="subtitile subtitile1">24X7 hỗ trợ</div>
+                                                    <div class="subtitile subtitile2">Miễn phí hỗ trợ online</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="col-lg-6 linklist links">
                                 <div class="row">
                                     <div class="col-md-6 wrapper hb-animate-element bottom-to-top">
