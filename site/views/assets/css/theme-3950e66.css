@@ -12900,9 +12900,9 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
     .footer-before {
         padding: 25px 0 0
     }
-    #footer {
-        background-size: 100% 410px;
-    }
+    /* #footer {
+        background-size: 100% 810px;
+    } */
     #danhmucdoc {
         display: none;
     }
