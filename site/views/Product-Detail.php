@@ -285,14 +285,14 @@ if(is_array($sp)){
                                                             href="http://www.facebook.com/sharer.php?u=<?=$actual_link?>"
                                                             class="text-hide" title="Share" target="_blank">Share</a>
                                                     </li>
-                                                    <li class="twitter icon-gray"><a
-                                                            href="https://twitter.com/intent/tweet?text=Aliquam Lorem Ante <?=$actual_link?>"
-                                                            class="text-hide" title="Tweet" target="_blank">Tweet</a>
+                                                    <li  class=" zalo-share-button" data-href="<?=$actual_link?>" style="overflow: hidden; display: inline-block; width: 70px; height: 20px;" data-oaid="579745863508352884" data-layout="2" data-color="blue" data-customize=false>
+                                                    
                                                     </li>
-                                                    <li class="pinterest icon-gray"><a
+                                                     
+                                                    <!-- <li class="pinterest icon-gray"><a
                                                             href="http://www.pinterest.com/pin/create/button/?media=<?=$actual_link?>"
                                                             class="text-hide" title="Pinterest"
-                                                            target="_blank">Pinterest</a></li>
+                                                            target="_blank">Pinterest</a></li>  -->
                                                 </ul>
                                             </div>
 
