@@ -29,7 +29,7 @@
                                     $link = ROOT_URL."/hang/".$row['slug']."-".$row['hangcosan']."/trang-1";
                                     echo '<li><a href="'.$link.'">'.$row['name'].'</a>';
                                     // show sản phẩm của danh mục
-                                    $probybrand = $this->model->getProByBrand($row['name'],$row['hangcosan']);
+                                    $probybrand = $this->model->getProByBrand($row['slug'],$row['hangcosan']);
                                     if($probybrand){
                                         echo '<div class="pro_already1">
                                         <ul>';
