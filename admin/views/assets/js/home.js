@@ -74,7 +74,7 @@ function checkDeleteCate(link, IDCATE, style, slug) {
                             showCancelButton: false,
                             icon: "success"
                         });
-                        // window.location.href = link
+                        window.location.href = link
 
                     } else if (response[0] === 1) {
                         Swal.fire({

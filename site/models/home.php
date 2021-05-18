@@ -4,7 +4,7 @@
  use SendGrid\Mail\TypeException;
 class Model_home extends Model_db{
     function getMenuParent(){
-        $sql = "SELECT * FROM catalog WHERE parent =0 and style=0 LIMIT 5";
+        $sql = "SELECT * FROM catalog WHERE parent =0 and style=0 ";
         return $this->result1(0,$sql);
     }
     function showDmCon($id){
