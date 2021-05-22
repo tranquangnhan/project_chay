@@ -26,7 +26,24 @@
 
 
                     
+                <div class="featured-products clearfix mt-3 hb-animate-element right-to-left hb-in-viewport ">
 
+                <p class="text-uppercase h6 hidden-sm-down">Lọc Giá</p>
+
+
+                <section class="facet clearfix">
+                    <p class="h6 facet-title hidden-sm-down"></p>
+                    <ul class="collapse">
+                        <input type="hidden" id="hidden_minimum_price" value="10000" />
+                        <label for="customRange3" class="form-label">10.000đ - 60.000.000đ</label>
+                        <input type="range" class="form-range" min="10000" max="60000000" step="10000" id="hidden_maximum_price" value="60000000"> <br>
+                        <span class="ml-0 mt-2" id="SHOW_PRICE_FILTER">60000000đ</span>
+                    </ul>
+
+
+                </section>
+
+                </div>
                     <div id="search_filters_wrapper" class="hidden-sm-down">
                         <div id="search_filter_controls" class="hidden-md-up">
                             <span id="_mobile_search_filters_clear_all"></span>
@@ -35,60 +52,47 @@
                                 OK
                             </button>
                         </div>
-                        <div id="search_filters">
+                       
+                        <?php
+                            function getCateFromSlugAndCosan($slug,$cosan)
+                            {
+                                $db = new Model_db();
+                                $sql ="SELECT * FROM catalog WHERE slug = ? AND hangcosan = ?";
+                                return  $db->result1(1,$sql,$slug,$cosan);
+                            }
+                            function getCateFromParent($par)
+                            {
+                                $db = new Model_db();
+                                $sql ="SELECT * FROM catalog WHERE parent = ?";
+                                return  $db->result1(0,$sql,$par);
+                            }
+                            if(isset($_GET['slug']) && $_GET['slug'] != "")
+                            {
+                                $par = getCateFromSlugAndCosan($_GET['slug'],$_GET['maloai']);
+                                if($par['parent'] != 129 && $par['parent'] != 130){
+                                    // air 2020
+                           ?>
 
-                            <p class="text-uppercase h6 hidden-sm-down">Lọc Giá</p>
+                        
 
+                        <?php } else{ ?>
 
-                            <section class="facet clearfix">
-                                <p class="h6 facet-title hidden-sm-down">GIÁ</p>
-
-                                <div class="title hidden-md-up" data-target="#facet_21014" data-toggle="collapse">
-                                    <p class="h6 facet-title">GIÁ</p>
-                                    <span class="float-xs-right">
-                                        <span class="navbar-toggler collapse-icons">
-                                            <i class="material-icons add">&#xE145;</i>
-                                            <i class="material-icons remove">&#xE15B;</i>
-                                        </span>
-                                    </span>
-                                </div>
-                                <ul id="facet_21014" class="collapse">
-                                <input type="hidden" id="hidden_minimum_price" value="10000" />
-                                <label for="customRange3" class="form-label">10.000đ - 60.000.000đ</label>
-                                <input type="range" class="form-range" min="10000" max="60000000" step="10000" id="hidden_maximum_price" value="60000000"> <br>
-                                <span class="ml-0 mt-2" id="SHOW_PRICE_FILTER">60000000đ</span>
-                         </ul>
-
-
-                            </section>
-                            
-                        </div>
-                        <div id="search_filters">
+                            <div id="search_filters">
 
                             <p class="text-uppercase h6 hidden-sm-down">Lọc</p>
 
 
                             <section class="facet clearfix">
-                                <p class="h6 facet-title hidden-sm-down">THƯƠNG HIỆU</p>
+                                <ul id="facet_21014" class="collapse p-1">
+                                <?php
+                                    $this->model = new Model_home();
+                                    $getCateBrand1 = $this->model->getCateBrand1($_GET['slug'],$_GET['maloai']);
+                                    $getbrandofbrand = $this->model->getbrandofbrandbyid($getCateBrand1['id']);
 
-                                <div class="title hidden-md-up" data-target="#facet_21014" data-toggle="collapse">
-                                    <p class="h6 facet-title">THƯƠNG HIỆU</p>
-                                    <span class="float-xs-right">
-                                        <span class="navbar-toggler collapse-icons">
-                                            <i class="material-icons add">&#xE145;</i>
-                                            <i class="material-icons remove">&#xE15B;</i>
-                                        </span>
-                                    </span>
-                                </div>
-
-
-                                <ul id="facet_21014" class="collapse">
-                                  <?php
-                                      $this->model = new Model_home();
-                                      $arr = [];
-                                      $i =0;
-                                      foreach ($getsizeALLpro as $row) {
-                                            
+                                    $arr = [];
+                                    $i =0;
+                                    foreach ($getbrandofbrand as $row) {
+                                            // echo '<p class="h6 facet-title ">'.$row['name'].'</p>';
                                         echo '  <li>
                                             <label class="facet-label" for="facet_input_21014_0'.$i.'">
                                                 <span class="custom-checkbox">
@@ -99,21 +103,245 @@
 
                                                 <a  class="" >
                                                     '.$row['name'].'
-                                                   
+                                                
                                                 </a>
                                             </label>
                                         </li>';
                                         $i++;
-                                      }
-                                  ?>
-                                  
+                                    }
+                                ?>
+                                
 
                                 </ul>
 
 
                             </section>
-                            
-                        </div>
+
+                            </div>
+                        <?php }}else if(isset($_GET['slug1']) && $_GET['slug1'] != ""){ 
+                            $par = $this->model->getCateFromId($_GET['maloai']); 
+                            if($par['parent'] !=2){
+                                
+                             
+                        ?>
+                            <div id="search_filters">
+
+                                <p class="text-uppercase h6 hidden-sm-down">Lọc</p>
+                                    <?php
+                                        $this->model = new Model_home();
+                                        
+                                        $getCateBrand1 = $this->model->getCateBrandcap1($par['hangcosan']);
+
+                                        $arr = [];
+                                        $i =0;
+                                        $h=0;
+                                        foreach ($getCateBrand1 as $row) {
+                                            
+                                            $getCateBrand2 = $this->model->getCateBrandcap2($row['id']);
+                                            if($getCateBrand2){
+                                                echo '<section class="facet clearfix">
+                                                <div class="title " data-target="#facet_47311'.$h.'" data-toggle="collapse">
+                                                  <p class="h6 facet-title">'.$row['name'].'</p>
+                                                  <span class="float-xs-right">
+                                                    <span class="navbar-toggler collapse-icons">
+                                                      <i class="material-icons add">&#xE145;</i>
+                                                      <i class="material-icons remove">&#xE15B;</i>
+                                                    </span>
+                                                  </span>
+                                                </div>
+                                                <ul id="facet_47311'.$h.'" class="collapse"> ';
+                                                foreach ($getCateBrand2 as $row) {
+                                                    echo '  <li>
+                                                    <label class="facet-label" for="facet_input_21014_0'.$i.'">
+                                                        <span class="custom-checkbox">
+                                                            <input id="facet_input_21014_0'.$i.'" type="checkbox" value="'.$row['name'].'" class="common_selector brand">
+                                                            <span class="ps-shown-by-js"><i
+                                                                    class="material-icons rtl-no-flip checkbox-checked">&#xE5CA;</i></span>
+                                                        </span>
+    
+                                                        <a  class="" >
+                                                            '.$row['name'].'
+                                                        
+                                                        </a>
+                                                    </label>
+                                                </li>';
+                                                $i++;
+                                                }
+                                                echo '</ul>
+                                                </section>';
+                                            }
+                                            
+                                           
+                                        }
+                                    ?>
+                            </div>
+                        <?php }else{ ?>
+                            <div id="search_filters">
+
+                                <p class="text-uppercase h6 hidden-sm-down">Lọc</p>
+
+                                    <?php
+                                         $this->model = new Model_home();
+                                        
+                                         $getCateBrand1 = $this->model->getCateBrandcap1All();
+ 
+                                         $arr = [];
+                                         $i =0;
+                                         $h=0;
+                                         foreach ($getCateBrand1 as $row) {
+                                             
+                                             $getCateBrand2 = $this->model->getCateBrandcap2($row['id']);
+                                             if($getCateBrand2){
+                                                 if($row['hangcosan'] == 1){
+                                                     echo '<section class="facet clearfix">
+                                                     <div class="title " data-target="#facet_47311'.$h.'" data-toggle="collapse">
+                                                       <p class="h6 facet-title">'.$row['name'].' - ORDER</p>
+                                                       <span class="float-xs-right">
+                                                         <span class="navbar-toggler collapse-icons">
+                                                           <i class="material-icons add">&#xE145;</i>
+                                                           <i class="material-icons remove">&#xE15B;</i>
+                                                         </span>
+                                                       </span>
+                                                     </div>
+                                                     
+                                             
+                                                               
+                                                         <ul id="facet_47311'.$h.'" class="collapse"> 
+                                                         ';
+                                                 } 
+                                                 else{
+                                                     echo '<section class="facet clearfix">
+                                                     <div class="title " data-target="#facet_47311'.$h.'" data-toggle="collapse">
+                                                       <p class="h6 facet-title">'.$row['name'].'</p>
+                                                       <span class="float-xs-right">
+                                                         <span class="navbar-toggler collapse-icons">
+                                                           <i class="material-icons add">&#xE145;</i>
+                                                           <i class="material-icons remove">&#xE15B;</i>
+                                                         </span>
+                                                       </span>
+                                                     </div>
+                                                    
+                                             
+                                                               
+                                                         <ul id="facet_47311'.$h.'" class="collapse">  
+                                                             ';
+                                                 } 
+                                                 $h++;
+                                                     foreach ($getCateBrand2 as $row) {
+                                                         echo '  <li>
+                                                                     <label class="facet-label" for="facet_input_21014_0'.$i.'">
+                                                                         <span class="custom-checkbox">
+                                                                             <input id="facet_input_21014_0'.$i.'" type="checkbox" value="'.$row['name'].'" class="common_selector brand">
+                                                                             <span class="ps-shown-by-js">
+                                                                             <i class="material-icons rtl-no-flip checkbox-checked">&#xE5CA;</i></span>
+                                                                         </span>
+ 
+                                                                         <a class="_gray-darker search-link js-search-link">
+                                                                             '.$row['name'].'
+                                                                         
+                                                                         </a>
+                                                                     </label>
+                                                                 </li>';
+                                                     $i++;
+                                                     }
+                                                 echo '</ul>
+                                                 </section>';
+                                             }
+                                             
+                                             
+                                         }
+                                    ?>
+                                    
+<!-- 
+                                        </ul>
+
+
+                                    </section> -->
+
+                                </div>
+                        <?php }}else{
+                            ?>
+                            <div id="search_filters">
+
+                                <p class="text-uppercase h6 hidden-sm-down">Lọc</p>
+
+                                    <?php
+                                        $this->model = new Model_home();
+                                        
+                                        $getCateBrand1 = $this->model->getCateBrandcap1All();
+
+                                        $arr = [];
+                                        $i =0;
+                                        $h=0;
+                                        foreach ($getCateBrand1 as $row) {
+                                            
+                                            $getCateBrand2 = $this->model->getCateBrandcap2($row['id']);
+                                            if($getCateBrand2){
+                                                if($row['hangcosan'] == 1){
+                                                    echo '<section class="facet clearfix">
+                                                    <div class="title " data-target="#facet_47311'.$h.'" data-toggle="collapse">
+                                                      <p class="h6 facet-title">'.$row['name'].' - ORDER</p>
+                                                      <span class="float-xs-right">
+                                                        <span class="navbar-toggler collapse-icons">
+                                                          <i class="material-icons add">&#xE145;</i>
+                                                          <i class="material-icons remove">&#xE15B;</i>
+                                                        </span>
+                                                      </span>
+                                                    </div>
+                                                    
+                                            
+                                                              
+                                                        <ul id="facet_47311'.$h.'" class="collapse"> 
+                                                        ';
+                                                } 
+                                                else{
+                                                    echo '<section class="facet clearfix">
+                                                    <div class="title " data-target="#facet_47311'.$h.'" data-toggle="collapse">
+                                                      <p class="h6 facet-title">'.$row['name'].'</p>
+                                                      <span class="float-xs-right">
+                                                        <span class="navbar-toggler collapse-icons">
+                                                          <i class="material-icons add">&#xE145;</i>
+                                                          <i class="material-icons remove">&#xE15B;</i>
+                                                        </span>
+                                                      </span>
+                                                    </div>
+                                                   
+                                            
+                                                              
+                                                        <ul id="facet_47311'.$h.'" class="collapse">  
+                                                            ';
+                                                } 
+                                                $h++;
+                                                    foreach ($getCateBrand2 as $row) {
+                                                        echo '  <li>
+                                                                    <label class="facet-label" for="facet_input_21014_0'.$i.'">
+                                                                        <span class="custom-checkbox">
+                                                                            <input id="facet_input_21014_0'.$i.'" type="checkbox" value="'.$row['name'].'" class="common_selector brand">
+                                                                            <span class="ps-shown-by-js">
+                                                                            <i class="material-icons rtl-no-flip checkbox-checked">&#xE5CA;</i></span>
+                                                                        </span>
+
+                                                                        <a class="_gray-darker search-link js-search-link">
+                                                                            '.$row['name'].'
+                                                                        
+                                                                        </a>
+                                                                    </label>
+                                                                </li>';
+                                                    $i++;
+                                                    }
+                                                echo '</ul>
+                                                </section>';
+                                            }
+                                            
+                                            
+                                        }
+                                    ?>
+                                    
+
+                                      
+
+                            </div>
+                            <?php }?>
                         
                     </div>
                     <section class="featured-products clearfix mt-3 hb-animate-element right-to-left">
@@ -526,13 +754,17 @@
                             </li>
 
 
-
-                            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                <a itemprop="item" href="#">
-                                    <span itemprop="name"><?=$getCateFromId['name']?></span>
-                                </a>
-                                <meta itemprop="position" content="2">
-                            </li>
+                                    <?php
+                                        if(isset($getCateFromId['name']) && $getCateFromId['name']!=""){
+                                            echo ' <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                            <a itemprop="item" href="#">
+                                                <span itemprop="name">'.$getCateFromId['name'].'</span>
+                                            </a>
+                                            <meta itemprop="position" content="2">
+                                        </li>';
+                                        }
+                                    ?>
+                           
 
 
 
@@ -577,40 +809,39 @@
                                 <div id="js-product-list-top" class="row products-selection">
                                     <div class="col-md-6 hidden-sm-down total-products">
                                         <!-- Grid-List Buttons -->
-                                        <div class="grid-list col-md-2">
+                                        <div class="grid-list col-md-3">
                                             <span id="kkgrid" class="active"></span>
                                             <span id="kklist"></span>
                                         </div>
 
 
-                                        <p>Có tất cả <?= $TotalProduct?> sản phẩm. </p>
+                                        <p>Có tất cả <span id="total_product"></span> sản phẩm. </p>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="row sort-by-row"><span class="col-sm-8 col-md-8 hidden-sm-down sort-by"> Sắp xếp</span>
-                                            <div class="col-sm-4 col-md-4 products-sort-order dropdown">
-                                            <div class="input-group ">
-                                                <select class="custom-select" id="sort_by">
-                                             
-                                                    <option value="price ASC" class="select-list ">
-                                                        Giá từ thấp - cao
-                                                    </option>
-                                                    <option value="price DESC" class="select-list" >
-                                                        Giá từ cao - thấp
-                                                    </option>
-                                                    <option value="hot DESC" class="select-list ">
-                                                        Sản phẩm hot nhất
-                                                    </option>
-                                                </select>
-                                              
+                                        <div class="row sort-by-row">
+                                            <span class="col-sm-3 col-md-3 hidden-sm-down sort-by"> Sắp xếp</span>
+                                            <div class="col-sm-9 col-xs-8 col-md-9 products-sort-order dropdown">
+                                                <div class="input-group ">
+                                                    <select class="custom-select " id="sort_by">
+                                                    <i class="material-icons float-xs-right">&#xE5C5;</i>
+                                                        <option value="price ASC" class="select-list ">
+                                                            Giá từ thấp - cao
+                                                        </option>
+                                                        <option value="price DESC" class="select-list" >
+                                                            Giá từ cao - thấp
+                                                        </option>
+                                                        <option value="hot DESC" class="select-list ">
+                                                            Sản phẩm hot nhất
+                                                        </option>
+                                                    </select>
+                                                    
                                                 </div>
-                                               
-                                                
                                             </div>
 
 
                                             <div class="col-sm-3 col-xs-4 hidden-md-up filter-button">
                                                 <button id="search_filter_toggler" class="btn btn-secondary">
-                                                    Filter
+                                                    Lọc
                                                 </button>
                                             </div>
                                         </div>
@@ -694,7 +925,7 @@
                                                 var slug1 = $("#slug1").val();
                                                 var slug2 = $("#slug2").val();
                                                 var maloai = $("#maloai").val();
-                                                var page = <?php if(isset($_GET['Page'])) echo $_GET['Page']; else echo 1;?>;
+                                                var page = <?php if(isset($_GET['Page']) && $_GET['Page']>0) echo $_GET['Page']; else echo 1;?>;
                                                 
                                                 var brand = get_filter('brand');
                                                 var arrBrand = brand.join();
@@ -762,26 +993,68 @@
                                                     data: { action: action, minimum_price: minimum_price, maximum_price: maximum_price, brand: brand, key: sort_by, slug: slug, slug1: slug1,slug2: slug2, maloai: maloai,page:page },
                                                     success: function(data) {
                                                         console.log(data.query);
+                                                        $("#total_product").html(data.tongsp);
                                                         $('#filter_data').html(data.html);
                                                         let sotrang = Math.ceil(data.tongsp / data.tongsp1trang);
                                                         let pageString = '';
                                                         if(data.choose == ""){
+                                                            if(page > 3){
+                                                                    let link2 = "<?=ROOT_URL?>/" +data.ca+"/tat-ca/trang-1"
+                                                                    pageString += '<li><a href="'+link2+'" class="page ">Đầu</a></li>';
+                                                            }
+                                                            if(page > 1){
+                                                                    let prev = page - 1
+                                                                    let link3 = "<?=ROOT_URL?>/" +data.ca+"/tat-ca/trang-"+prev
+                                                                    pageString += '<li><a href="'+link3+'" class="page "><</a></li>';
+                                                            }
                                                             for (let i = 1; i <= sotrang; i++) {
                                                                 let link = "<?=ROOT_URL?>/" +data.ca+"/tat-ca/trang-"+i
+                                                                
                                                                 if(page == i){
                                                                     pageString += '<li><a href="'+link+'" class="page active">'+ i + '</a></li>';
                                                                 }else{
-                                                                    pageString += '<li><a href="'+link+'" class="page ">'+ i + '</a></li>';
+                                                                    if(i > page - 3 && i < page + 3){
+                                                                        pageString += '<li><a href="'+link+'" class="page ">'+ i + '</a></li>';
+                                                                    }  
                                                                 }
                                                             }
+                                                            if(page < sotrang - 1){
+                                                                    let next = page + 1
+                                                                    let link3 = "<?=ROOT_URL?>/" +data.ca+"/tat-ca/trang-"+next
+                                                                    pageString += '<li><a href="'+link3+'" class="page ">></a></li>';
+                                                            }
+                                                            if(page < sotrang - 3){
+                                                                let link2 = "<?=ROOT_URL?>/" +data.ca+"/tat-ca/trang-"+sotrang
+                                                                    pageString += '<li><a href="'+link2+'" class="page ">Cuối</a></li>';
+                                                            }
                                                         }else{
+                                                            if(page > 3){
+                                                                    let link2 = "<?=ROOT_URL?>/" +data.ca+"/"+data.choose+ "-" + <?php if(isset($_GET['maloai'])) echo $_GET['maloai'];?>+ "/trang-1"
+                                                                    pageString += '<li><a href="'+link2+'" class="page ">Đầu</a></li>';
+                                                            }
+                                                            if(page > 1){
+                                                                    let prev = page - 1
+                                                                    let link3 = "<?=ROOT_URL?>/" +data.ca+"/"+data.choose+ "-" + <?php if(isset($_GET['maloai'])) echo $_GET['maloai'];?>+ "/trang-"+prev
+                                                                    pageString += '<li><a href="'+link3+'" class="page "><</a></li>';
+                                                            }
                                                             for (let i = 1; i <= sotrang; i++) {
                                                                 let link = "<?=ROOT_URL?>/" +data.ca+"/" +data.choose+ "-" + <?php if(isset($_GET['maloai'])) echo $_GET['maloai'];?> +"/trang-"+i
                                                                 if(page == i){
                                                                     pageString += '<li><a href="'+link+'" class="page active">'+ i + '</a></li>';
                                                                 }else{
-                                                                    pageString += '<li><a href="'+link+'" class="page ">'+ i + '</a></li>';
+                                                                    if(i > page - 3 && i < page + 3){
+                                                                        pageString += '<li><a href="'+link+'" class="page ">'+ i + '</a></li>';
+                                                                    }            
                                                                 }
+                                                            }
+                                                            if(page < sotrang - 1){
+                                                                    let next = page + 1
+                                                                    let link3 = "<?=ROOT_URL?>/" +data.ca+"/"+data.choose+ "-" + <?php if(isset($_GET['maloai'])) echo $_GET['maloai'];?>+ "/trang-"+next
+                                                                    pageString += '<li><a href="'+link3+'" class="page ">></a></li>';
+                                                            }
+                                                            if(page < sotrang - 3){
+                                                                let link2 = "<?=ROOT_URL?>/" +data.ca+"/"+data.choose+ "-" + <?php if(isset($_GET['maloai'])) echo $_GET['maloai'];?>+ "/trang-"+sotrang
+                                                                    pageString += '<li><a href="'+link2+'" class="page ">Cuối</a></li>';
                                                             }
                                                         }
                                                        

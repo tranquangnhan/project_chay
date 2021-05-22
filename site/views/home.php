@@ -28,17 +28,31 @@
                                 foreach ($getMenuchilddoc as $row) {
                                     $link = ROOT_URL."/hang/".$row['slug']."-".$row['hangcosan']."/trang-1";
                                     echo '<li><a href="'.$link.'">'.$row['name'].'</a>';
-                                    // show sản phẩm của danh mục
-                                    $probybrand = $this->model->getProByBrand($row['slug'],$row['hangcosan']);
-                                    if($probybrand){
+                                    // show danh mục con cấp 3
+                                    $getMenuchilddoc1 = $this->model->showDmCondoc($row['id']);
+                                    if($getMenuchilddoc1){
                                         echo '<div class="pro_already1">
                                         <ul>';
-                                        foreach ($probybrand as $row) {
-                                            $link = ROOT_URL."/san-pham-chi-tiet/".$row['slug'];
-                                            echo '<li><a href="'.$link.'">'.$row['name'].'</a></li>';
+                                        foreach ($getMenuchilddoc1 as $row) {
+                                            $link = ROOT_URL."/hang/".$row['slug']."-".$row['hangcosan']."/trang-1";
+                                            echo '<li><a href="'.$link.'">'.$row['name'].'</a>';
+                                                 // show sản phẩm của danh mục
+                                                $probybrand = $this->model->getProByBrand($row['slug'],$row['hangcosan']);
+                                                if($probybrand){
+                                                    echo '<div class="pro_already2">
+                                                    <ul>';
+                                                    foreach ($probybrand as $row) {
+                                                        $link = ROOT_URL."/san-pham-chi-tiet/".$row['slug'];
+                                                        echo '<li><a href="'.$link.'">'.$row['name'].'</a></li>';
+                                                    }
+                                                    echo '</ul></div>';
+                                                }
+                                            echo '</li>';
                                         }
                                         echo '</ul></div>';
                                     }
+                                    
+                                   
                                     echo '</li>';
                                 }
                                 echo '</ul></div>';

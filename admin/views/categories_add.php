@@ -74,7 +74,11 @@
                                             <?php
                                                 foreach ($listchild as $key) {
                                                     $name_Cate= $this->model->showOneProducer($key['parent']);
-                                                    if($key['style'] == 1) $style= " (dọc)(".$name_Cate['name'].")"; else $style = "(".$name_Cate['name'].")";
+                                                    if($key['style'] == 1) $style= " - (dọc)(".$name_Cate['name'].")"; 
+                                                    else{
+                                                        if($name_Cate['name']) $style = " - (".$name_Cate['name'].")";
+                                                        else $style = "";
+                                                    } 
                                                     echo '<option value="'.$key['id'].'">'.$key['name'].''.$style.'</option>
                                                     i';
                                                 }

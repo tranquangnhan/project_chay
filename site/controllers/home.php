@@ -92,13 +92,7 @@
          settype($PageNum,"int");
    
          if($PageNum<=0) $PageNum = 1;
-		if(isset($_GET['slug'])){
-			// $GetProductListCosan = $this->model->GetProductListCosan($_GET['maloai'],$_GET['slug'],$PageNum);
-			$getsizeALLpro = $this->model->getsizeALLpro();
-		}else{
-			// $GetProductListCosan = $this->model->GetProductListByloai($_GET['slug1'],$_GET['maloai'],$PageNum);
-			$getsizeALLpro = $this->model->getsizeALLpro();
-		}
+		
        
    
          $page_title ="Danh sách nhà sản xuất";

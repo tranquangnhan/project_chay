@@ -110,16 +110,20 @@
                                                     <select class="form-control" name="brand">
                                                     <?php 
                                                             foreach ($listcate as $row) {
-                                                                if($row['hangcosan'] == 1) $co = " (Hàng order)"; else $co = "";
-                                                                if ($row['slug'] == $oneRecode['Brand'] && $row['hangcosan'] == $oneRecode['cosan']) {
-                                                                    if($row['hangcosan'] == 0){
-                                                                        echo '<option value="'.$row['name'].'" selected>'.$row['name'].'</option>';
+                                                                $brand2 =$this->modelCate->getCateBrand2($row['id']);
+                                                                foreach ($brand2 as $key) {
+                                                                    if($key['hangcosan'] == 1) $co = ' - ('.$row['name'].') - (ORDER)'; else $co = "";
+                                                                if ($key['slug'] == $oneRecode['Brand'] && $key['hangcosan'] == $oneRecode['cosan']) {
+                                                                    if($key['hangcosan'] == 0){
+                                                                        echo '<option value="'.$key['name'].'" selected>'.$key['name'].'</option>';
                                                                     }else{
-                                                                        echo '<option value="'.$row['name'].'" selected>'.$row['name'].''.$co.'</option>';
+                                                                        echo '<option value="'.$key['name'].'" selected>'.$key['name'].''.$co.'</option>';
                                                                     }
                                                                 }else{
-                                                                    echo '<option value="'.$row['name'].'">'.$row['name'].''.$co.'</option>';
+                                                                    echo '<option value="'.$key['name'].'">'.$key['name'].''.$co.'</option>';
                                                                 }
+                                                                }
+                                                                
                                                                 
                                                             }
                                                         ?>
