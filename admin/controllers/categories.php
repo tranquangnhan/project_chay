@@ -44,6 +44,7 @@ class categories{
             $page_title ="Sửa danh mục";
             $page_file = "views/categories_edit.php";
         }else{
+            $oneRecode = $this->model->showOneProducer($_GET['id']);
             $listchild = $this->model->showChildrenCategori();
             $page_title ="Thêm danh mục";
             $page_file = "views/categories_add.php";
@@ -69,11 +70,13 @@ class categories{
             }
             $IDcate = $_POST['IDcate'];
             $kieu = $_POST['kieu_menu'];
-            if($_POST['cosan']){
-                $hang=0;
+            $cosan = $_POST['cosan'];
+            if (isset($cosan)) {
+                $hang = 0;
             }else{
-                $hang=1;
+                $hang = 1;
             }
+            
             
             $des_category = $_POST['des_category'];
             $slug = $this->lib->slug($name);
@@ -129,12 +132,12 @@ class categories{
         if(isset($_GET['id'])&&($_GET['ctrl']=='categories')){
             $id = $_GET['id'];
             settype($id,"int");
-            // if($this->model->deleteCate($id)){
-            //     echo "<script>alert('Xoá thành công')</script>";
-            //     header("location: ?ctrl=categories");
-            // }else{
-            //     echo "<script>alert('Xoá thất bại')</script>";
-            // }
+            if($this->model->deleteCate($id)){
+                echo "<script>alert('Xoá thành công')</script>";
+                header("location: ?ctrl=categories");
+            }else{
+                echo "<script>alert('Xoá thất bại')</script>";
+            }
         }
         require_once "views/layout.php";
     }

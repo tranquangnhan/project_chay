@@ -58,12 +58,12 @@ class Product{
         if(isset($_GET['id'])&&($_GET['act']='product')){
             $oneRecode = $this->model->showOnePhone($_GET['id']);
             $producer = $this->modelCate->getParentOfPro();
-            $listcate = $this->modelCate->listRecordsdoc();
+            $listcate = $this->modelCate->getCateBrand1();
             $page_title ="Sửa Điện Thoại";
             $page_file = "views/product_edit.php";
         }else{
             $producer = $this->modelCate->getParentOfPro();
-            $listcate = $this->modelCate->listRecordsdoc();
+            $listcate = $this->modelCate->getCateBrand1();
             $page_title ="Thêm Điện Thoại";
             $page_file = "views/product_add.php";
         }

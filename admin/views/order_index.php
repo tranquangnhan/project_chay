@@ -18,7 +18,7 @@
                                         <th>Tên KH</th>
                                         <th>Giờ đặt</th>
                                         <th>SĐT</th>
-                                        <th>Số nhà - Đường</th>
+                                        <th>Địa chỉ</th>
                                     
                                         <th>Ghi chú</th>  
                                         <th>Tổng Tiền</th>
@@ -44,7 +44,7 @@
                                                         <td>'.$row['firstname'].' '.$row['lastname'].'</td>
                                                         <td>'.$row['ngaydat'].'</td>
                                                         <td>'.$row['phone'].'</td>
-                                                        <td>'.$row['housenumber'].'-'.$row['street'].'</td>
+                                                        <td>'.$row['address'].'</td>
                                                         <td>'.strip_tags(substr($row['note'],0,100)).'</td>
                                                         <td>'.$this->lib->forMatTien($row['total']).' đ</td>   
                                                         '.$status.'

@@ -89,7 +89,7 @@
                                                         
                                                         <?php 
                                                             foreach ($producer as $row) {
-                                                               echo '<option value="'.$row['parent'].'">'.$row['name'].'</option>';
+                                                               echo '<option value="'.$row['id'].'">'.$row['name'].'</option>';
                                                             }   
                                                         ?>
                                                     </select>
@@ -113,8 +113,12 @@
                                                     <select class="form-control" name="brand">
                                                         <?php 
                                                             foreach ($listcate as $row) {
-                                                                if($row['hangcosan'] == 1) $co = " (Hàng order)"; else $co = "";
-                                                                echo '<option value="'.$row['name'].'">'.$row['name'].''.$co.'</option>';
+                                                                $brand2 =$this->modelCate->getCateBrand2($row['id']);
+                                                                foreach ($brand2 as $key) {
+                                                                    if($key['hangcosan'] == 1) $co = ' - ('.$row['name'].')-(ORDER)'; else $co = "";
+                                                                    echo '<option value="'.$key['name'].'">'.$key['name'].''.$co.'</option>';
+                                                                }
+                                                                
                                                             }
                                                         ?>
                                                     </select>

@@ -22,34 +22,83 @@ function formatMoney($number, $fractional=false) {
     }
     return $number;
 }
-
+function getCateFromSlugAndCosan($slug,$cosan)
+   {
+    $model = new Model_db();
+    $sql ="SELECT * FROM catalog WHERE slug = ? AND hangcosan = ?";
+    return  $model->result1(1,$sql,$slug,$cosan);
+   }
+   function getCateFromParent($par)
+   {
+    $model = new Model_db();
+    $sql ="SELECT * FROM catalog WHERE parent = ?";
+    return  $model->result1(0,$sql,$par);
+   }
 if(isset($_POST["action"]))
 {
     $array = array();
        
     if(isset($_POST['slug']) && $_POST['slug'] != "")
     {
-        $query ="SELECT * from product where cosan=? and Brand=?"; 
-        if(isset($_POST["minimum_price"], $_POST["maximum_price"]) && !empty($_POST["minimum_price"]) && !empty($_POST["maximum_price"]))
-        {
-            $query .= " AND price BETWEEN ".$_POST["minimum_price"]." AND ".$_POST["maximum_price"]."";
+        $par = getCateFromSlugAndCosan($_POST['slug'],$_POST['maloai']);
+        if($par['parent'] != 129 && $par['parent'] != 130){
+            $query ="SELECT * from product where cosan=? and Brand=?"; 
+            if(isset($_POST["minimum_price"], $_POST["maximum_price"]) && !empty($_POST["minimum_price"]) && !empty($_POST["maximum_price"]))
+            {
+                $query .= " AND price BETWEEN ".$_POST["minimum_price"]." AND ".$_POST["maximum_price"]."";
+            }
+            if(isset($_POST["brand"]) && $_POST["brand"] !="")
+            {
+                $brand_filter = implode("','", $_POST["brand"]);
+                $query .= " AND Brand IN('".$brand_filter."')";
+            }
+            
+            if(isset($_POST["key"]))
+            {
+                $key = $_POST["key"];
+                $query .= " ORDER BY ".$key;
+            }
+            $kqtongsp = $model->result1(0,$query,$_POST['maloai'],$_POST['slug']);
+                $query .=" LIMIT ".($_POST["page"] - 1) * PAGE_SIZE_PRO.", ".PAGE_SIZE_PRO; 
+            $kqne = $model->result1(0,$query,$_POST['maloai'],$_POST['slug']);  
+            
+        }else{
+            $par1 = getCateFromParent($par['id']);
+            $slug_brand = [];
+            foreach ($par1 as $row) {
+                  array_push($slug_brand,$row['slug']);
+            }
+            $slug_brand = implode("','",$slug_brand);
+            if(isset($_POST["brand"]) && $_POST["brand"] !="")
+            {
+                $query ="SELECT * from product where cosan=? "; 
+                for ($i=0; $i < count($_POST['brand']); $i++) { 
+                    $_POST["brand"][$i] = str_replace(" ","-",$_POST["brand"][$i]);
+                }
+                $brand_filter = implode("','", $_POST["brand"]);
+                $query .= "AND Brand IN('".$brand_filter."')";
+            }
+            else
+            {
+                $query ="SELECT * from product where cosan=? and Brand IN('".$slug_brand."')"; 
+            }
+            if(isset($_POST["minimum_price"], $_POST["maximum_price"]) && !empty($_POST["minimum_price"]) && !empty($_POST["maximum_price"]))
+            {
+                $query .= " AND price BETWEEN ".$_POST["minimum_price"]." AND ".$_POST["maximum_price"]."";
+            }
+            
+            
+            if(isset($_POST["key"]))
+            {
+                $key = $_POST["key"];
+                $query .= " ORDER BY ".$key;
+            }
+            $kqtongsp = $model->result1(0,$query,$_POST['maloai']);
+                $query .=" LIMIT ".($_POST["page"] - 1) * PAGE_SIZE_PRO.", ".PAGE_SIZE_PRO; 
+            $kqne = $model->result1(0,$query,$_POST['maloai']);  
+            
         }
-        if(isset($_POST["brand"]) && $_POST["brand"] !="")
-        {
-            $brand_filter = implode("','", $_POST["brand"]);
-            // $brand_filter = $lib->slug($brand_filter);
-            $query .= " AND Brand IN('".$brand_filter."')";
-        }
-        
-        if(isset($_POST["key"]))
-        {
-            $key = $_POST["key"];
-            $query .= " ORDER BY ".$key;
-        }
-        $kqtongsp = $model->result1(0,$query,$_POST['maloai'],$_POST['slug']);
-            $query .=" LIMIT ".($_POST["page"] - 1) * PAGE_SIZE_PRO.", ".PAGE_SIZE_PRO; 
-      $kqne = $model->result1(0,$query,$_POST['maloai'],$_POST['slug']);  
-      $choose = 1;
+        $choose = 1;
     }
     else if(isset($_POST['slug1']) && $_POST['slug1'] != "")
     {
@@ -65,8 +114,10 @@ if(isset($_POST["action"]))
             }
             if(isset($_POST["brand"]) && $_POST["brand"] !="")
             {
+                for ($i=0; $i < count($_POST['brand']); $i++) { 
+                    $_POST["brand"][$i] = str_replace(" ","-",$_POST["brand"][$i]);
+                }
                 $brand_filter = implode("','", $_POST["brand"]);
-                // $brand_filter = $lib->slug($brand_filter);
                 $query .= " AND Brand IN('".$brand_filter."')";
             }
             
@@ -86,8 +137,10 @@ if(isset($_POST["action"]))
             }
             if(isset($_POST["brand"]) && $_POST["brand"] !="")
             {
+                for ($i=0; $i < count($_POST['brand']); $i++) { 
+                    $_POST["brand"][$i] = str_replace(" ","-",$_POST["brand"][$i]);
+                }
                 $brand_filter = implode("','", $_POST["brand"]);
-                // $brand_filter = $lib->slug($brand_filter);
                 $query .= " AND Brand IN('".$brand_filter."')";
             }
             
@@ -112,8 +165,10 @@ if(isset($_POST["action"]))
         }
         if(isset($_POST["brand"]) && $_POST["brand"] !="")
         {
+            for ($i=0; $i < count($_POST['brand']); $i++) { 
+                $_POST["brand"][$i] = str_replace(" ","-",$_POST["brand"][$i]);
+            }
             $brand_filter = implode("','", $_POST["brand"]);
-            // $brand_filter = $lib->slug($brand_filter);
             $query .= " AND Brand IN('".$brand_filter."')";
         }
         

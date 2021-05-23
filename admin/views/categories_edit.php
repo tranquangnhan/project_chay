@@ -92,7 +92,11 @@
                                                 if($oneRecode['parent']!=0){                                                    
                                                     foreach ($listchild as $row) {
                                                         $name_Cate= $this->model->showOneProducer($row['parent']);
-                                                        if($row['style'] == 1) $style= " (dọc)(".$name_Cate['name'].")"; else $style = "(".$name_Cate['name'].")";
+                                                        if($row['style'] == 1) $style= " - (dọc)(".$name_Cate['name'].")";
+                                                        else{
+                                                            if($name_Cate['name']) $style = " - (".$name_Cate['name'].")";
+                                                            else $style = "";
+                                                        } 
                                                         if($row['id'] == $oneRecode['parent'] && $row['style'] == $oneRecode['style']){
                                                             if($row['style'] == 1){
                                                                 echo '<option value='.$row['id'].' selected>'.$row['name'].''.$style.'</option>';

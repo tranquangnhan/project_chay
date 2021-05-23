@@ -60,7 +60,7 @@
                                 <table>
                                     <tr>
                                         <td>Tên KH:  </td>
-                                        <td><strong><?= $getInfoDetail['name']?></strong></td>
+                                        <td><strong><?= $getInfoDetail['firstname']?></strong></td>
                                     </tr>
                                     <tr>
                                         <td>Email: </td>
@@ -72,7 +72,7 @@
                                     </tr>
                                     <tr>
                                         <td>Địa chỉ: </td>
-                                        <td><strong><?php echo $getInfoDetail['housenumber'].'-'.$getInfoDetail['street'].''.$getInfoDetail['city'].''.$getInfoDetail['country']  ?></strong></td>
+                                        <td><strong><?php echo $getInfoDetail['address']  ?></strong></td>
                                     </tr>
                                     <tr>
                                         <td>Ghi chú: </td>
@@ -88,7 +88,7 @@
                                     </tr>
                                     <tr>
                                         <td>Order time: </td>
-                                        <td><strong><?= $getInfoDetail['ThoiDiemDatHang']?></strong></td>
+                                        <td><strong><?= $getInfoDetail['ngaydat']?></strong></td>
                                     </tr>
                                     <!-- <tr>
                                         <td>Thời Điểm Giao Hàng: </td>

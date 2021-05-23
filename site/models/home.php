@@ -4,7 +4,7 @@
  use SendGrid\Mail\TypeException;
 class Model_home extends Model_db{
     function getMenuParent(){
-        $sql = "SELECT * FROM catalog WHERE parent =0 and style=0 LIMIT 5";
+        $sql = "SELECT * FROM catalog WHERE parent =0 and style=0 ";
         return $this->result1(0,$sql);
     }
     function showDmCon($id){
@@ -396,10 +396,32 @@ class Model_home extends Model_db{
     $sql ="SELECT * FROM catalog WHERE parent>0  ORDER BY id DESC LIMIT 15";
     return  $this->result1(0,$sql);
    }
-   function getsizeALLpro()
+   function getCateBrand1($slug,$cosan)
    {
   
-    $sql ="SELECT DISTINCT name FROM catalog where parent !=0 and style = 1";
+    $sql ="SELECT id FROM catalog where slug=? and hangcosan = ?";
+    return  $this->result1(1,$sql,$slug,$cosan);
+   }
+   function getbrandofbrandbyid($id)
+   {
+  
+    $sql ="SELECT DISTINCT name FROM catalog where parent=?";
+    return  $this->result1(0,$sql,$id);
+   }
+   function getCateBrandcap1($cosan)
+   {
+    $sql ="SELECT  name,id FROM catalog where hangcosan = ? AND parent BETWEEN 129 AND 130 and style = 1";
+    return  $this->result1(0,$sql,$cosan);
+   }
+   function getCateBrandcap2($par)
+   {
+  
+    $sql ="SELECT name FROM catalog where parent =? and style = 1";
+    return  $this->result1(0,$sql,$par);
+   }
+   function getCateBrandcap1All()
+   {
+    $sql ="SELECT  name,id,hangcosan FROM catalog where parent BETWEEN 129 AND 130 and style = 1 order by hangcosan,id";
     return  $this->result1(0,$sql);
    }
    function countAllProduct($id)

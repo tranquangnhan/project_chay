@@ -3807,7 +3807,7 @@ tbody.collapse.in {
 
 .custom-select {
     display: inline-block;
-    max-width: 100%;
+    width: 100%;
     height: calc(2.5rem - 2px);
     padding: .375rem 1.75rem .375rem .75rem;
     padding-right: .75rem\9;
@@ -4223,6 +4223,10 @@ tbody.collapse.in {
         position: static;
         float: none
     }
+    .products-selection .col-md-6 {
+        float: left;
+        width: 100%
+    }
 }
 
 @media (min-width:992px) {
@@ -4411,7 +4415,7 @@ tbody.collapse.in {
     clear: both
 }
 
-@media (max-width:767px) {
+@media (max-width:769px) {
     .navbar-toggleable-sm .navbar-nav .nav-item {
         float: none;
         margin-left: 0
@@ -10118,9 +10122,10 @@ body#checkout #gift_message textarea {
     font-size: 14px;
     line-height: 28px;
     margin-bottom: 0;
-    padding: 5px 0;
+    /* padding: 5px 0; */
     letter-spacing: .4px;
-    text-transform: uppercase
+    text-transform: uppercase;
+    display: inline-block;
 }
 
 #search_filters .facet .facet-label,
@@ -10230,7 +10235,9 @@ body#checkout #gift_message textarea {
     display: block;
     height: 35px;
     padding: 8px;
-    width: 35px
+    min-width: 35px;
+    margin: 0 0 0 1px;
+    border-radius: 2px;
 }
 
 .pagination a:hover {
@@ -10417,7 +10424,13 @@ body#checkout #gift_message textarea {
 
 .products-selection .filter-button .btn-secondary,
 .products-selection .filter-button .btn-tertiary {
-    padding: .75rem .5rem .6875rem
+    padding: .75rem .5rem .6875rem;
+    width: 100%;
+}
+
+#facet_21014 {
+    display: block !important;
+    margin: 0;
 }
 
 .advertising-block {
@@ -12896,6 +12909,12 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
     }
 }
 
+@media (max-width:769px) {
+    .pro_already {
+        left: 160px !important;
+    }
+}
+
 @media (max-width:543px) {
     .footer-before {
         padding: 25px 0 0
@@ -14448,7 +14467,8 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
     }
 }
 
-@media (max-width:991px) {
+
+/* @media (max-width: 991px) {
     #category #left-column #search_filter_controls {
         text-align: center;
         margin-bottom: 1rem
@@ -14543,7 +14563,7 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
         float: left;
         width: 100%
     }
-}
+} */
 
 #search_filters .facet .facet-label a:hover {
     color: var(--it-brand-primary)
@@ -14602,9 +14622,35 @@ li.product-flag:not(.discount):not(.on-sale)~li.product-flag {
     width: 100%
 }
 
-#search_filters .facet .collapse {
+#search_filters .facet .collapse.in {
     display: block;
     margin: 0
+}
+
+#search_filters .facet .collapse {
+    display: none;
+    margin: 0
+}
+
+#search_filters .facet .title .collapse-icons .remove {
+    display: none
+}
+
+#search_filters .facet .title[aria-expanded="true"] .collapse-icons .add {
+    display: none
+}
+
+#search_filters .facet .title[aria-expanded="true"] .collapse-icons .remove {
+    display: inline-block
+}
+
+#search_filters .facet {
+    padding: 5px 10px!important;
+    border-bottom: 1px solid #eee;
+}
+
+#search_filters .facet:last-child {
+    border: none;
 }
 
 #search_filters_wrapper #search_filters ul li label>span {
@@ -22716,7 +22762,7 @@ html[xmlns] .flexslider .slides {
 .pro_already {
     position: absolute;
     top: 0px;
-    left: 344px;
+    left: 314px;
     display: none;
     width: 200px;
     min-height: 30px;
@@ -22726,10 +22772,10 @@ html[xmlns] .flexslider .slides {
     transition: .3s;
 }
 
-.pro_already1 {
+.pro_already1,
+.pro_already2 {
     position: absolute;
     top: 0px;
-    left: 200px;
     display: none;
     width: 280px;
     min-height: 30px;
@@ -22746,11 +22792,21 @@ html[xmlns] .flexslider .slides {
     border-bottom: 1px solid rgb(236, 236, 236);
 }
 
-.pro_already1>ul>li {
+.pro_already1>ul>li,
+.pro_already2>ul>li {
+    position: relative;
     /* float: left; */
     margin: 0;
     padding: 12px 20px;
     border-bottom: 1px solid rgb(236, 236, 236);
+}
+
+.pro_already1 {
+    left: 200px;
+}
+
+.pro_already2 {
+    left: 280px;
 }
 
 #danhmucdoc ul li:hover .pro_already {
@@ -22758,6 +22814,10 @@ html[xmlns] .flexslider .slides {
 }
 
 #danhmucdoc ul li ul li:hover .pro_already1 {
+    display: block;
+}
+
+#danhmucdoc ul li ul li ul li:hover .pro_already2 {
     display: block;
 }
 
