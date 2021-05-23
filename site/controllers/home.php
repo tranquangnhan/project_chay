@@ -627,6 +627,7 @@ unset($_SESSION['cart']);
 			$thongbao = $_SESSION['thongbao'];
 			unset($_SESSION['thongbao']);
 		}else{
+		
 			$thongbao = "no notification";
 		}
 		require_once "views/thankyou.php";
@@ -635,5 +636,7 @@ unset($_SESSION['cart']);
 		$viewFile ="views/donecheckout.php";
 		require_once "views/layout.php";
 	 }
+
+	
 }
    ?>

@@ -289,10 +289,7 @@ if(is_array($sp)){
                                                     
                                                     </li>
                                                      
-                                                    <!-- <li class="pinterest icon-gray"><a
-                                                            href="http://www.pinterest.com/pin/create/button/?media=<?=$actual_link?>"
-                                                            class="text-hide" title="Pinterest"
-                                                            target="_blank">Pinterest</a></li>  -->
+
                                                 </ul>
                                             </div>
 

@@ -12,10 +12,10 @@
              <div class="text">
              - NHẬP TRỰC TIẾP KHÔNG QUA TRUNG GIAN.</div>
              <div class="text">
-             CHẤT LƯỢNG COPY ĐẠT 95% - 97% !
+             - CHẤT LƯỢNG COPY ĐẠT 95% - 97% !
              </div>
              <div class="text">
-             SHOP LUÔN LUÔN CHỌN PHIÊN BẢN CAO CẤP TỪ CÁC NHÀ MÁY OG,G5,H12,S2,DONGGUAN,GOD,X,BC,PK,LJR,GT,ST...
+             - SHOP LUÔN LUÔN CHỌN PHIÊN BẢN CAO CẤP TỪ CÁC NHÀ MÁY OG,G5,H12,S2,DONGGUAN,GOD,X,BC,PK,LJR,GT,ST...
              </div>
         </div>
     </div>  
