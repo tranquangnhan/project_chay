@@ -405,18 +405,18 @@ class Model_home extends Model_db{
    function getbrandofbrandbyid($id)
    {
   
-    $sql ="SELECT DISTINCT name FROM catalog where parent=?";
+    $sql ="SELECT name,slug FROM catalog where parent=?";
     return  $this->result1(0,$sql,$id);
    }
    function getCateBrandcap1($cosan)
    {
-    $sql ="SELECT  name,id FROM catalog where hangcosan = ? AND parent BETWEEN 129 AND 130 and style = 1";
+    $sql ="SELECT  name,id,hangcosan FROM catalog where hangcosan = ? AND parent BETWEEN 129 AND 130 and style = 1";
     return  $this->result1(0,$sql,$cosan);
    }
    function getCateBrandcap2($par)
    {
   
-    $sql ="SELECT name FROM catalog where parent =? and style = 1";
+    $sql ="SELECT name,hangcosan,slug FROM catalog where parent =? and style = 1";
     return  $this->result1(0,$sql,$par);
    }
    function getCateBrandcap1All()

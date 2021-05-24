@@ -28,7 +28,7 @@
                                     <h4 class="header-title mt-0 mb-3">Danh mục</h4>
 
                                     <form data-parsley-validate novalidate method="post" enctype="multipart/form-data">
-                                    <div class="boxform boxshowimg ">
+                                    <!-- <div class="boxform boxshowimg ">
                                             <div class="ouputimg">
                                                 <br>
                                                 <div class="output-fet"><output id="list"></output></div>
@@ -42,7 +42,7 @@
                                            <input type="file" name="img1[]" style=" position: absolute;" class="imagefet" id="control" multiple>
                                             </div>
                                             
-                                        </div>
+                                        </div> -->
                                         <div class="form-group">
                                             <label for="">Tên danh mục</label>
                                             <input type="text" name="name_category" value="<?=$oneRecode['name']?>"  parsley-trigger="change" required

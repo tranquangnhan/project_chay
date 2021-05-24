@@ -113,7 +113,7 @@
                                                                 $brand2 =$this->modelCate->getCateBrand2($row['id']);
                                                                 foreach ($brand2 as $key) {
                                                                     if($key['hangcosan'] == 1) $co = ' - ('.$row['name'].') - (ORDER)'; else $co = "";
-                                                                if ($key['slug'] == $oneRecode['Brand'] && $key['hangcosan'] == $oneRecode['cosan']) {
+                                                                if ($key['slug'].'-'.$key['hangcosan'] == $oneRecode['Brand'] && $key['hangcosan'] == $oneRecode['cosan']) {
                                                                     if($key['hangcosan'] == 0){
                                                                         echo '<option value="'.$key['name'].'" selected>'.$key['name'].'</option>';
                                                                     }else{

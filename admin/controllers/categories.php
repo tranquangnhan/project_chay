@@ -54,20 +54,20 @@ class categories{
             $name = $_POST['name_category'];
             $img = $_FILES['img1'];
             
-            $imgs = $this->lib->checkUpLoadMany($img);
+            // $imgs = $this->lib->checkUpLoadMany($img);
             
-            if($imgs){
-                $checkIMG = explode(",",$imgs);
+            // if($imgs){
+            //     $checkIMG = explode(",",$imgs);
             
-                for ($i=0; $i <count($checkIMG) ; $i++) { 
-                    $checkIMG[$i] = explode(".",$checkIMG[$i]);
-                    $checkIMG[$i][1] = strtolower($checkIMG[$i][1]);
-                    if($checkIMG[$i][1] != "jpg" && $checkIMG[$i][1] != "jpeg" && $checkIMG[$i][1] != "png" && $checkIMG[$i][1] != "gif" && $checkIMG[$i][1] != "webp"){
-                        $checkimg = "This is not IMAGE";
-                        break;
-                    }
-                }
-            }
+            //     for ($i=0; $i <count($checkIMG) ; $i++) { 
+            //         $checkIMG[$i] = explode(".",$checkIMG[$i]);
+            //         $checkIMG[$i][1] = strtolower($checkIMG[$i][1]);
+            //         if($checkIMG[$i][1] != "jpg" && $checkIMG[$i][1] != "jpeg" && $checkIMG[$i][1] != "png" && $checkIMG[$i][1] != "gif" && $checkIMG[$i][1] != "webp"){
+            //             $checkimg = "This is not IMAGE";
+            //             break;
+            //         }
+            //     }
+            // }
             $IDcate = $_POST['IDcate'];
             $kieu = $_POST['kieu_menu'];
             $cosan = $_POST['cosan'];
@@ -84,9 +84,9 @@ class categories{
             if(isset($_GET['id'])){
                 $id = $_GET['id'];
                 settype($id,"int");
-                $this->edit($name,$imgs,$IDcate,$slug,$des_category,$kieu,$hang,$id);
+                $this->edit($name,$IDcate,$slug,$des_category,$kieu,$hang,$id);
             }else{
-                $this->store($name,$imgs,$IDcate,$slug,$des_category,$kieu,$hang);
+                $this->store($name,$IDcate,$slug,$des_category,$kieu,$hang);
             }
            
         }
@@ -95,9 +95,9 @@ class categories{
     }//thêm mới dữ liệu vào db
 
 
-    function store($name,$imgs,$IDcate,$slug,$des_category,$kieu,$hang){   
+    function store($name,$IDcate,$slug,$des_category,$kieu,$hang){   
         $name = $this->lib->stripTags($name);
-        if($this->model->addNewCate($name,$imgs,$IDcate,$slug,$des_category,$kieu,$hang))
+        if($this->model->addNewCate($name,$IDcate,$slug,$des_category,$kieu,$hang))
         {
             echo "<script>alert('Thêm thành công')</script>";
             header("location: ?ctrl=categories");
@@ -109,12 +109,12 @@ class categories{
         require_once "views/layout.php";
     }
 
-    function edit($name,$imgs,$IDcate,$slug,$des_category,$kieu,$hang,$id)
+    function edit($name,$IDcate,$slug,$des_category,$kieu,$hang,$id)
     {
         if(isset($_GET['id']))
         {
             
-            if($this->model->editCategory($name,$imgs,$IDcate,$slug,$des_category,$kieu,$hang,$id))
+            if($this->model->editCategory($name,$IDcate,$slug,$des_category,$kieu,$hang,$id))
             {
                 echo "<script>alert('Sửa thành công')</script>";
                 header("location: ?ctrl=categories");

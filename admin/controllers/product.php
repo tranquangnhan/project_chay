@@ -108,9 +108,11 @@ class Product{
             $size = $_POST['size'];
             $brand = $_POST['brand'];
             $brand = $this->lib->slug($brand);
+            $brand = $brand.'-'.$cosan;
             $Description = $_POST['Description'];
             $Properties = $_POST['Properties'];
             $slug = $this->lib->slug($name);
+            
             
 
             settype($price,"float");

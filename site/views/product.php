@@ -96,7 +96,7 @@
                                         echo '  <li>
                                             <label class="facet-label" for="facet_input_21014_0'.$i.'">
                                                 <span class="custom-checkbox">
-                                                    <input id="facet_input_21014_0'.$i.'" type="checkbox" value="'.$row['name'].'" class="common_selector brand">
+                                                    <input id="facet_input_21014_0'.$i.'" type="checkbox" value="'.$row['slug'].'-'.$_GET['maloai'].'" class="common_selector brand">
                                                     <span class="ps-shown-by-js"><i
                                                             class="material-icons rtl-no-flip checkbox-checked">&#xE5CA;</i></span>
                                                 </span>
@@ -135,13 +135,13 @@
                                         $arr = [];
                                         $i =0;
                                         $h=0;
-                                        foreach ($getCateBrand1 as $row) {
+                                        foreach ($getCateBrand1 as $key) {
                                             
-                                            $getCateBrand2 = $this->model->getCateBrandcap2($row['id']);
+                                            $getCateBrand2 = $this->model->getCateBrandcap2($key['id']);
                                             if($getCateBrand2){
                                                 echo '<section class="facet clearfix">
                                                 <div class="title " data-target="#facet_47311'.$h.'" data-toggle="collapse">
-                                                  <p class="h6 facet-title">'.$row['name'].'</p>
+                                                  <p class="h6 facet-title">'.$key['name'].'</p>
                                                   <span class="float-xs-right">
                                                     <span class="navbar-toggler collapse-icons">
                                                       <i class="material-icons add">&#xE145;</i>
@@ -150,11 +150,12 @@
                                                   </span>
                                                 </div>
                                                 <ul id="facet_47311'.$h.'" class="collapse"> ';
+                                                $h++;
                                                 foreach ($getCateBrand2 as $row) {
                                                     echo '  <li>
                                                     <label class="facet-label" for="facet_input_21014_0'.$i.'">
                                                         <span class="custom-checkbox">
-                                                            <input id="facet_input_21014_0'.$i.'" type="checkbox" value="'.$row['name'].'" class="common_selector brand">
+                                                            <input id="facet_input_21014_0'.$i.'" type="checkbox" value="'.$row['slug'].'-'.$key['hangcosan'].'" class="common_selector brand">
                                                             <span class="ps-shown-by-js"><i
                                                                     class="material-icons rtl-no-flip checkbox-checked">&#xE5CA;</i></span>
                                                         </span>
@@ -178,7 +179,7 @@
                         <?php }else{ ?>
                             <div id="search_filters">
 
-                                <p class="text-uppercase h6 hidden-sm-down">Lọc</p>
+                                <p class="text-uppercase h6 hidden-sm-down">Lọc 1</p>
 
                                     <?php
                                          $this->model = new Model_home();
@@ -188,14 +189,14 @@
                                          $arr = [];
                                          $i =0;
                                          $h=0;
-                                         foreach ($getCateBrand1 as $row) {
+                                         foreach ($getCateBrand1 as $key) {
                                              
-                                             $getCateBrand2 = $this->model->getCateBrandcap2($row['id']);
+                                             $getCateBrand2 = $this->model->getCateBrandcap2($key['id']);
                                              if($getCateBrand2){
-                                                 if($row['hangcosan'] == 1){
+                                                 if($key['hangcosan'] == 1){
                                                      echo '<section class="facet clearfix">
                                                      <div class="title " data-target="#facet_47311'.$h.'" data-toggle="collapse">
-                                                       <p class="h6 facet-title">'.$row['name'].' - ORDER</p>
+                                                       <p class="h6 facet-title">'.$key['name'].' - ORDER</p>
                                                        <span class="float-xs-right">
                                                          <span class="navbar-toggler collapse-icons">
                                                            <i class="material-icons add">&#xE145;</i>
@@ -212,7 +213,7 @@
                                                  else{
                                                      echo '<section class="facet clearfix">
                                                      <div class="title " data-target="#facet_47311'.$h.'" data-toggle="collapse">
-                                                       <p class="h6 facet-title">'.$row['name'].'</p>
+                                                       <p class="h6 facet-title">'.$key['name'].'</p>
                                                        <span class="float-xs-right">
                                                          <span class="navbar-toggler collapse-icons">
                                                            <i class="material-icons add">&#xE145;</i>
@@ -231,7 +232,7 @@
                                                          echo '  <li>
                                                                      <label class="facet-label" for="facet_input_21014_0'.$i.'">
                                                                          <span class="custom-checkbox">
-                                                                             <input id="facet_input_21014_0'.$i.'" type="checkbox" value="'.$row['name'].'" class="common_selector brand">
+                                                                             <input id="facet_input_21014_0'.$i.'" type="checkbox" value="'.$row['slug'].'-'.$key['hangcosan'].'" class="common_selector brand">
                                                                              <span class="ps-shown-by-js">
                                                                              <i class="material-icons rtl-no-flip checkbox-checked">&#xE5CA;</i></span>
                                                                          </span>
@@ -263,7 +264,7 @@
                             ?>
                             <div id="search_filters">
 
-                                <p class="text-uppercase h6 hidden-sm-down">Lọc</p>
+                                <p class="text-uppercase h6 hidden-sm-down">Lọc 1</p>
 
                                     <?php
                                         $this->model = new Model_home();
@@ -273,14 +274,14 @@
                                         $arr = [];
                                         $i =0;
                                         $h=0;
-                                        foreach ($getCateBrand1 as $row) {
+                                        foreach ($getCateBrand1 as $key) {
                                             
-                                            $getCateBrand2 = $this->model->getCateBrandcap2($row['id']);
+                                            $getCateBrand2 = $this->model->getCateBrandcap2($key['id']);
                                             if($getCateBrand2){
-                                                if($row['hangcosan'] == 1){
+                                                if($key['hangcosan'] == 1){
                                                     echo '<section class="facet clearfix">
                                                     <div class="title " data-target="#facet_47311'.$h.'" data-toggle="collapse">
-                                                      <p class="h6 facet-title">'.$row['name'].' - ORDER</p>
+                                                      <p class="h6 facet-title">'.$key['name'].' - ORDER</p>
                                                       <span class="float-xs-right">
                                                         <span class="navbar-toggler collapse-icons">
                                                           <i class="material-icons add">&#xE145;</i>
@@ -297,7 +298,7 @@
                                                 else{
                                                     echo '<section class="facet clearfix">
                                                     <div class="title " data-target="#facet_47311'.$h.'" data-toggle="collapse">
-                                                      <p class="h6 facet-title">'.$row['name'].'</p>
+                                                      <p class="h6 facet-title">'.$key['name'].'</p>
                                                       <span class="float-xs-right">
                                                         <span class="navbar-toggler collapse-icons">
                                                           <i class="material-icons add">&#xE145;</i>
@@ -316,7 +317,7 @@
                                                         echo '  <li>
                                                                     <label class="facet-label" for="facet_input_21014_0'.$i.'">
                                                                         <span class="custom-checkbox">
-                                                                            <input id="facet_input_21014_0'.$i.'" type="checkbox" value="'.$row['name'].'" class="common_selector brand">
+                                                                            <input id="facet_input_21014_0'.$i.'" type="checkbox" value="'.$row['slug'].'-'.$key['hangcosan'].'" class="common_selector brand">
                                                                             <span class="ps-shown-by-js">
                                                                             <i class="material-icons rtl-no-flip checkbox-checked">&#xE5CA;</i></span>
                                                                         </span>

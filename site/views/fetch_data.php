@@ -58,15 +58,15 @@ if(isset($_POST["action"]))
                 $key = $_POST["key"];
                 $query .= " ORDER BY ".$key;
             }
-            $kqtongsp = $model->result1(0,$query,$_POST['maloai'],$_POST['slug']);
+            $kqtongsp = $model->result1(0,$query,$_POST['maloai'],$_POST['slug'].'-'.$_POST['maloai']);
                 $query .=" LIMIT ".($_POST["page"] - 1) * PAGE_SIZE_PRO.", ".PAGE_SIZE_PRO; 
-            $kqne = $model->result1(0,$query,$_POST['maloai'],$_POST['slug']);  
+            $kqne = $model->result1(0,$query,$_POST['maloai'],$_POST['slug'].'-'.$_POST['maloai']);  
             
         }else{
             $par1 = getCateFromParent($par['id']);
             $slug_brand = [];
             foreach ($par1 as $row) {
-                  array_push($slug_brand,$row['slug']);
+                  array_push($slug_brand,$row['slug'].'-'.$_POST['maloai']);
             }
             $slug_brand = implode("','",$slug_brand);
             if(isset($_POST["brand"]) && $_POST["brand"] !="")
