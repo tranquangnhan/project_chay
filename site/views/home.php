@@ -76,7 +76,7 @@
 
                     <a href="<?=ROOT_URL?>/san-pham/tat-ca/trang-1"
                         title="kslider-1">
-                        <img src="views/assets/img/bannergiay17.jpg" alt="kslider-1" title="KSlider1" />
+                        <img src="<?=PATH_IMG_SITE.$banner[0]['bannerImage']?>" alt="kslider-1" title="KSlider1" />
                     </a>
 
                 </li>
@@ -84,14 +84,14 @@
 
                     <a href="<?=ROOT_URL?>/san-pham/tat-ca/trang-1"
                         title="kslider-2">
-                        <img src="views/assets/img/bannergiay28.jpg" alt="kslider-2" title="KSlider2" />
+                        <img src="<?=PATH_IMG_SITE.$banner[1]['bannerImage']?>" alt="kslider-2" title="KSlider2" />
                     </a>
 
                 </li>
                 <li class="slide">
                     <a href="<?=ROOT_URL?>/san-pham/tat-ca/trang-1"
                         title="kslider-3">
-                        <img src="views/assets/img/bannergiay18.jpg" alt="kslider-3" title="KSlider3" />
+                        <img src="<?=PATH_IMG_SITE.$banner[2]['bannerImage']?>" alt="kslider-3" title="KSlider3" />
                     </a>
                 </li>
              
@@ -109,7 +109,7 @@
                 <div class="center-banner list-unstyled">
                     <div class="slider banner2 col-lg-4 col-md-12">
                         <a href="<?=ROOT_URL?>/san-pham/tat-ca/trang-1" class="kk-customhover-fadeintopbottom">
-                            <img src="views/assets/img/bannergiay19.jpg" alt="kbanner-1"
+                            <img src="<?=PATH_IMG_SITE.$banner[3]['bannerImage']?>" alt="kbanner-1"
                                 class="img-responsive center-block" />
                         </a>
                         <div class="overlay"></div>
@@ -117,14 +117,14 @@
 
                     <div class="slider banner2  col-lg-4 col-md-12">
                         <a href="<?=ROOT_URL?>/san-pham/tat-ca/trang-1" class="kk-customhover-fadeintopbottom">
-                            <img src="views/assets/img/bannergiay20.jpg" alt="kbanner-2"
+                            <img src="<?=PATH_IMG_SITE.$banner[4]['bannerImage']?>" alt="kbanner-2"
                                 class="img-responsive center-block" />
                         </a>
                         <div class="overlay"></div>
                     </div>
                     <div class="slider banner2  col-lg-4 col-md-12">
                         <a href="<?=ROOT_URL?>/san-pham/tat-ca/trang-1" class="kk-customhover-fadeintopbottom">
-                            <img src="views/assets/img/bannergiay21.jpg" alt="kbanner-3"
+                            <img src="<?=PATH_IMG_SITE.$banner[5]['bannerImage']?>" alt="kbanner-3"
                                 class="img-responsive center-block" />
                         </a>
                         <div class="overlay"></div>
@@ -518,7 +518,7 @@
             </div>
         </div>
         <div id="kkparallaxcms" class="parallax parallaxcms-outer hb-animate-element bottom-to-top "
-            data-source-url="views/assets/img/bannergiay25.jpg">
+            data-source-url="<?=PATH_IMG_SITE.$banner[6]['bannerImage']?>">
             <div class="container">
                 <div class="parallaxcms-inner container">
                     <div class="parallaxcms">
@@ -699,7 +699,7 @@
                                 <div class="slider banner1  col-lg-4 col-xs-12 hb-animate-element bottom-to-top">
                                     <div  class="kk-customhover-fadeintopbottom" title="This is Caption">
                                         <div class="kkmultibanner-hover">
-                                            <img src="views/assets/img/bannergiay22.jpg" class="img-responsive"
+                                            <img src="<?=PATH_IMG_SITE.$banner[7]['bannerImage']?>" class="img-responsive"
                                                 alt="This is Caption" />
                                                 
                                         </div>
@@ -713,7 +713,7 @@
                                 </div><div class="slider banner1  col-lg-4 col-xs-12 hb-animate-element bottom-to-top">
                                     <div  class="kk-customhover-fadeintopbottom" title="This is Caption">
                                         <div class="kkmultibanner-hover">
-                                            <img src="views/assets/img/bannergiay23.jpg" class="img-responsive"
+                                            <img src="<?=PATH_IMG_SITE.$banner[8]['bannerImage']?>" class="img-responsive"
                                                 alt="This is Caption" />
                                                 
                                         </div>
@@ -727,7 +727,7 @@
                                 </div><div class="slider banner1  col-lg-4 col-xs-12 hb-animate-element bottom-to-top">
                                     <div  class="kk-customhover-fadeintopbottom" title="This is Caption">
                                         <div class="kkmultibanner-hover">
-                                            <img src="views/assets/img/bannergiay2.jpg" class="img-responsive"
+                                            <img src="<?=PATH_IMG_SITE.$banner[9]['bannerImage']?>" class="img-responsive"
                                                 alt="This is Caption" />
                                                 
                                         </div>

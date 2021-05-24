@@ -151,11 +151,7 @@
                                         <?=$oneRecode["description"]?>
                                         </textarea>
                                       
-                                        <br>
-                                        <label for="">Thuộc tính </label>
-                                        <textarea id="editor2" style="height: 300px;width:100%" name="Properties" >
-                                           
-                                        </textarea>
+                                       
                                         
                                       
                                         <div class="form-group text-right mb-0 mt-5">

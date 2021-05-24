@@ -226,13 +226,13 @@
                     <div id="sidebar-menu">
 
                         <ul class="metismenu" id="side-menu">
-
-
                             <li>
-                                <a href="?ctrl=home">
-                                    <i class="mdi mdi-view-dashboard"></i>
-                                    <span> Dashboard </span>
+                                <a href="?ctrl=banner">
+                                    <i class="mdi mdi-page-layout-sidebar-left"></i>
+                                    <span>Banner</span>
+                                    
                                 </a>
+                                
                             </li>
 
                             <li>
@@ -274,6 +274,7 @@
                                 </a>
                                 
                             </li>
+                          
                         </ul>
 
                     </div>

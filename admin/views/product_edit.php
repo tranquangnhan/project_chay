@@ -156,11 +156,6 @@
                                         <?=$oneRecode["description"]?>
                                         </textarea>
                                         
-                                        <label for="">Thuộc tính</label>
-                                        <textarea id="editor2" style="height: 300px;width:100%" name="Properties" >
-                                        <?=$oneRecode["properties"]?>
-                                        </textarea>
-                                        
 
                                         <div class="form-group text-right mb-0 mt-5">
                                             <input type="submit" name="them" class="btn btn-primary waves-effect waves-light mr-1" value="Sửa">

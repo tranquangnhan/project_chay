@@ -7,10 +7,10 @@ class Model_product extends Model_db{
         return $this->result1(0,$sql);
     }
    
-    function addNewProduct($name,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$cosan,$brand,$color,$Description,$Properties)
+    function addNewProduct($name,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$cosan,$brand,$color,$Description)
     {
-        $sql = "INSERT INTO product(name,slug,price,discount,image_list,catalog_id,hot,size,cosan,brand,color,description,properties) VALUE(?,?,?,?,?,?,?,?,?,?,?,?,?)";
-        return $this->getLastId($sql,$name,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$cosan,$brand,$color,$Description,$Properties);
+        $sql = "INSERT INTO product(name,slug,price,discount,image_list,catalog_id,hot,size,cosan,brand,color,description) VALUE(?,?,?,?,?,?,?,?,?,?,?,?)";
+        return $this->getLastId($sql,$name,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$cosan,$brand,$color,$Description);
     }
 
     function deleteProduct($id)
@@ -19,15 +19,15 @@ class Model_product extends Model_db{
         return $this->exec1($sql,$id);
     }
     
-    function editProduct($name,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$cosan,$brand,$color,$Description,$Properties,$id){
+    function editProduct($name,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$cosan,$brand,$color,$Description,$id){
         if($imgs == "")
         {
-            $sql = "UPDATE product SET name= ?,slug=?,price=?,discount=?,catalog_id=?,hot=?,size=?,cosan=?,brand=?,color=?,description=?,properties=? WHERE id=?";
-            return $this->exec1($sql,$name,$slug,$price,$discount,$IDCate,$hot,$size,$cosan,$brand,$color,$Description,$Properties,$id);
+            $sql = "UPDATE product SET name= ?,slug=?,price=?,discount=?,catalog_id=?,hot=?,size=?,cosan=?,brand=?,color=?,description=? WHERE id=?";
+            return $this->exec1($sql,$name,$slug,$price,$discount,$IDCate,$hot,$size,$cosan,$brand,$color,$Description,$id);
         }else
         {
-            $sql = "UPDATE product SET name= ?,slug=?,price=?,discount=?,image_list=?,catalog_id=?,hot=?,size=?,cosan=?,brand=?,color=?,description=?,properties=? WHERE id=?";
-            return $this->exec1($sql,$name,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$cosan,$brand,$color,$Description,$Properties,$id);
+            $sql = "UPDATE product SET name= ?,slug=?,price=?,discount=?,image_list=?,catalog_id=?,hot=?,size=?,cosan=?,brand=?,color=?,description=? WHERE id=?";
+            return $this->exec1($sql,$name,$slug,$price,$discount,$imgs,$IDCate,$hot,$size,$cosan,$brand,$color,$Description,$id);
         }
     }
 
@@ -143,5 +143,10 @@ class Model_product extends Model_db{
             $sql .= " GROUP BY id order by id desc LIMIT ".($CurrentPage - 1) * PAGE_SIZE.", ".PAGE_SIZE;
         }
         return $this->result1(0,$sql);
+    }
+    
+    function getLastestIdProduct(){
+        $sql = "SELECT id as lastid FROM product ORDER BY id DESC LIMIT 1";
+        return $this->result1(1,$sql)['lastid'];
     }
 }

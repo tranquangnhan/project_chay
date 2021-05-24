@@ -12,7 +12,7 @@
            $this->model = new model_home();
            $this->modelUser = new Model_user();
            $this->lib = new lib();
-          
+           
            if(isset($_GET['q'])){
                $this->cat();
             }
@@ -51,12 +51,10 @@
            }
            
         }
-   	function test()
-   	{
-   		echo "ssssssssss";
-   	}
+ 
         function home()
         {
+			$banner = $this->model->getAllBanner();
            $getAllProSpecial = $this->model->getAllProSpecial();
            $getAllProAsc = $this->model->getAllProAsc(10,0);
            $getAllByHotAsc = $this->model->getAllByHotAsc();
@@ -73,7 +71,7 @@
         function product()
         {
 			
-         
+		 $banner = $this->model->getAllBanner();
          $getMenuParent = $this->model->getMenuParent();
 		 if(isset($_GET['maloai'])){
 			 $getCateFromId = $this->model->getCateFromId($_GET['maloai']);
