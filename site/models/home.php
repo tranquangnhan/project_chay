@@ -633,4 +633,9 @@ class Model_home extends Model_db{
         $sql = "INSERT INTO contact(name,phone,subject,messeges,idsp) VALUE(?,?,?,?,?)";
         return $this->exec1($sql,$name,$phone,$subject,$messenge,$idsp);
     }
+
+    function getAllBanner(){
+        $sql = "SELECT bannerImage FROM banner";
+        return $this->result1(0,$sql);
+    }
 }

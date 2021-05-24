@@ -784,7 +784,7 @@
                     <div class="block-category card card-block hidden-sm-down">
 
                         <div class="category-cover">
-                            <img src="views/assets/img/bannergiay11.jpg" 
+                            <img src="<?=PATH_IMG_SITE.$banner[10]['bannerImage']?>" 
                                 alt="Clothes">
                         </div>
                         <?php

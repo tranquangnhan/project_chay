@@ -4177,6 +4177,9 @@ tbody.collapse.in {
         position: static;
         float: none
     }
+    .imgdetail {
+        height: 250px;
+    }
 }
 
 @media (min-width:576px) {
