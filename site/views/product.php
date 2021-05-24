@@ -34,8 +34,8 @@
                 <section class="facet clearfix">
                     <p class="h6 facet-title hidden-sm-down"></p>
                     <ul class="collapse">
-                        <input type="hidden" id="hidden_minimum_price" value="10000" />
-                        <label for="customRange3" class="form-label">10.000đ - 60.000.000đ</label>
+                        <input type="hidden" id="hidden_minimum_price" value="1" />
+                        <label for="customRange3" class="form-label">0đ - 60.000.000đ</label>
                         <input type="range" class="form-range" min="10000" max="60000000" step="10000" id="hidden_maximum_price" value="60000000"> <br>
                         <span class="ml-0 mt-2" id="SHOW_PRICE_FILTER">60000000đ</span>
                     </ul>
@@ -179,7 +179,7 @@
                         <?php }else{ ?>
                             <div id="search_filters">
 
-                                <p class="text-uppercase h6 hidden-sm-down">Lọc 1</p>
+                                <p class="text-uppercase h6 hidden-sm-down">Lọc</p>
 
                                     <?php
                                          $this->model = new Model_home();
@@ -264,7 +264,7 @@
                             ?>
                             <div id="search_filters">
 
-                                <p class="text-uppercase h6 hidden-sm-down">Lọc 1</p>
+                                <p class="text-uppercase h6 hidden-sm-down">Lọc</p>
 
                                     <?php
                                         $this->model = new Model_home();

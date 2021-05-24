@@ -45,7 +45,7 @@ if(isset($_POST["action"]))
             $query ="SELECT * from product where cosan=? and Brand=?"; 
             if(isset($_POST["minimum_price"], $_POST["maximum_price"]) && !empty($_POST["minimum_price"]) && !empty($_POST["maximum_price"]))
             {
-                $query .= " AND price BETWEEN ".$_POST["minimum_price"]." AND ".$_POST["maximum_price"]."";
+                $query .= " AND price BETWEEN 0 AND ".$_POST["maximum_price"]."";
             }
             if(isset($_POST["brand"]) && $_POST["brand"] !="")
             {
@@ -84,7 +84,7 @@ if(isset($_POST["action"]))
             }
             if(isset($_POST["minimum_price"], $_POST["maximum_price"]) && !empty($_POST["minimum_price"]) && !empty($_POST["maximum_price"]))
             {
-                $query .= " AND price BETWEEN ".$_POST["minimum_price"]." AND ".$_POST["maximum_price"]."";
+                $query .= " AND price BETWEEN 0 AND ".$_POST["maximum_price"]."";
             }
             
             
@@ -110,7 +110,7 @@ if(isset($_POST["action"]))
             $id = $par['hangcosan'];
             if(isset($_POST["minimum_price"], $_POST["maximum_price"]) && !empty($_POST["minimum_price"]) && !empty($_POST["maximum_price"]))
             {
-                $query .= " AND price BETWEEN ".$_POST["minimum_price"]." AND ".$_POST["maximum_price"]."";
+                $query .= " AND price BETWEEN 0 AND ".$_POST["maximum_price"]."";
             }
             if(isset($_POST["brand"]) && $_POST["brand"] !="")
             {
@@ -133,7 +133,7 @@ if(isset($_POST["action"]))
             $idcatalog = $par['id'];
             if(isset($_POST["minimum_price"], $_POST["maximum_price"]) && !empty($_POST["minimum_price"]) && !empty($_POST["maximum_price"]))
             {
-                $query .= " AND price BETWEEN ".$_POST["minimum_price"]." AND ".$_POST["maximum_price"]."";
+                $query .= " AND price BETWEEN 0 AND ".$_POST["maximum_price"]."";
             }
             if(isset($_POST["brand"]) && $_POST["brand"] !="")
             {
@@ -161,7 +161,7 @@ if(isset($_POST["action"]))
         $query ="SELECT * from product"; 
         if(isset($_POST["minimum_price"], $_POST["maximum_price"]) && !empty($_POST["minimum_price"]) && !empty($_POST["maximum_price"]))
         {
-            $query .= " WHERE price BETWEEN ".$_POST["minimum_price"]." AND ".$_POST["maximum_price"]."";
+            $query .= " WHERE price BETWEEN 0 AND ".$_POST["maximum_price"]."";
         }
         if(isset($_POST["brand"]) && $_POST["brand"] !="")
         {
