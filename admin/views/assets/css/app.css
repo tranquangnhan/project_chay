@@ -19,6 +19,14 @@ body {
     overflow-x: hidden;
 }
 
+#table_product_length {
+    display: none;
+}
+
+#table_product_filter {
+    float: right;
+}
+
 .metismenu {
     padding: 0;
 }

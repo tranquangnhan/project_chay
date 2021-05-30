@@ -1,3 +1,7 @@
+$(document).ready(function() {
+    $('#table_product').DataTable();
+});
+
 function submitForm() {
 
     let message = document.getElementById("ErrorColor");

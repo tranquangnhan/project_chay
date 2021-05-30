@@ -31,7 +31,7 @@
             <div class="navbar-custom">
                 <ul class="list-unstyled topnav-menu float-right mb-0">
 
-                    <li class="d-none d-sm-block">
+                    <!-- <li class="d-none d-sm-block">
                         <form class="app-search">
                             <div class="app-search-box">
                                 <div class="input-group">
@@ -44,7 +44,7 @@
                                 </div>
                             </div>
                         </form>
-                    </li>
+                    </li> -->
         
                     <li class="dropdown notification-list">
                         <a class="nav-link dropdown-toggle  waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
