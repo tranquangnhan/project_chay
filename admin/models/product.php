@@ -140,7 +140,7 @@ class Model_product extends Model_db{
         $sql = "SELECT * FROM product WHERE id != 0 ";
         if ($CurrentPage !== 0)
         {
-            $sql .= " GROUP BY id order by id desc LIMIT ".($CurrentPage - 1) * PAGE_SIZE.", ".PAGE_SIZE;
+            $sql .= " GROUP BY id order by id desc";
         }
         return $this->result1(0,$sql);
     }

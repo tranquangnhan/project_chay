@@ -69,9 +69,7 @@
                             <div class="col-lg-5">
                                 <nav>
                                     <ul class="pagination pagination-split">
-                                        <?php
-                                        echo $Pagination;
-                                        ?>      
+                                              
                                     </ul>
                                 </nav>    
                                   
