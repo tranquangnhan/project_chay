@@ -12,7 +12,7 @@
                                     <p class="text-muted font-14 mb-3">
                                     This is product.
                                     </p>
-                                    <table class="table mb-0">
+                                    <table class="table mb-0" id="table_product">
                                             <thead class="thead-light">
                                                 <tr>
                                                     <th width="5px">STT</th>
@@ -69,9 +69,7 @@
                             <div class="col-lg-5">
                                 <nav>
                                     <ul class="pagination pagination-split">
-                                        <?php
-                                        echo $Pagination;
-                                        ?>      
+                                          
                                     </ul>
                                 </nav>    
                                   
