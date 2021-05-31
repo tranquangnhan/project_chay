@@ -63,7 +63,7 @@
            $getMenuParent = $this->model->getMenuParent();
 		   $getMenuParentdoc = $this->model->getMenuParentdoc();
 		   
-           $page_title ="Danh sách nhà sản xuất";
+           $page_title ="Lê Quân Sneaker";
            $viewFile = "views/home.php";
            require_once "views/layout.php";  
         }

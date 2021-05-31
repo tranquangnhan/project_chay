@@ -22765,14 +22765,14 @@ html[xmlns] .flexslider .slides {
 .pro_already {
     position: absolute;
     top: 0px;
-    left: 314px;
+    left: 307px;
     display: none;
     width: 200px;
     min-height: 30px;
     background-color: white;
     box-shadow: 0px 0px 2px rgb(190, 190, 190);
     z-index: 10123;
-    transition: .3s;
+    transition: 1s ease-in-out;
 }
 
 .pro_already1,
@@ -22785,7 +22785,7 @@ html[xmlns] .flexslider .slides {
     background-color: white;
     box-shadow: 0px 0px 2px rgb(190, 190, 190);
     z-index: 10123;
-    transition: .3s;
+    transition: 1s;
 }
 
 .pro_already>ul>li {
@@ -22814,6 +22814,7 @@ html[xmlns] .flexslider .slides {
 
 #danhmucdoc ul li:hover .pro_already {
     display: block;
+    transition: 1s;
 }
 
 #danhmucdoc ul li ul li:hover .pro_already1 {

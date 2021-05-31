@@ -6,10 +6,23 @@
     <base href="/project_chay/site/">
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Shop </title>
-    <meta name="description" content="Shop powered by PrestaShop">
+    <title>Lê Quân Sneaker </title>
+    <meta name="description" content="Lê Quân sneaker, Chuyên cung cấp giày đẹp.">
+    <meta property="og:url" content="lequansneaker.com" />
+    <meta property="og:site_name" content="Lê Quân sneaker" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="keywords" content="">
+
+    <link rel="canonical" href="lequansneaker.com" />
+
+    <meta name="google-site-verification" content="eljW5VzhSrlBMFBV6CcqcUaUAsksU0dALCnmDdXywYs" />
    
+    <meta property="article:author" content="https://www.facebook.com/profile.php?id=100067965655732" />
+    <meta property="og:image" content="http://lequansneaker.com/uploads/logo.png" />
+    <meta property="og:image:width" content="426" />
+    <meta property="og:image:height" content="271" />
+
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/vnd.microsoft.icon" href="<?=ROOT_URL?>/uploads/logo.png">
