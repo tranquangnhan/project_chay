@@ -677,20 +677,26 @@
                                         </div>
                                         <div class="subtitle-part subtitle-part2 col-lg-3 col-md-6 col-sm-12 col-xs-12">
                                             <div class="serviceblock subbanner-part-maininnner2">
-                                                <div class="subicon subicon2"><span class="hide">icon</span></div>
+                                                <div class="subicon subicon22"><img src="../uploads/ship.png" alt=""></div>
                                                 <div class="servicedec">
-                                                    <div class="subtitile subtitile1"> Tiết kiệm lớn</div>
-                                                    <div class="subtitile subtitile2"> Đảm bảo hoàn tiền</div>
+                                                    <div class="subtitile subtitile1"> Được kiểm tra hàng</div>
+                                                    <div class="subtitile subtitile1">  trước khi thanh toán</div>
+
+                                                    <!-- <div class="subtitile subtitile2"> Đảm bảo hoàn tiền</div> -->
 
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="subtitle-part subtitle-part3 col-lg-3 col-md-6 col-sm-12 col-xs-12">
                                             <div class="serviceblock subbanner-part-maininnner3">
-                                                <div class="subicon subicon3"><span class="hide">icon</span></div>
+                                                <div class="subicon subicon32"><img src="../uploads/9746646271543238922-16.png" alt="">
+                                                <img src="../uploads/9746646271543238922-16.png" alt="">
+                                                <img src="../uploads/9746646271543238922-16.png" alt="">
+                                                <img src="../uploads/9746646271543238922-16.png" alt="">
+                                                <img src="../uploads/9746646271543238922-16.png" alt=""></div>
                                                 <div class="servicedec">
-                                                    <div class="subtitile subtitile1"> phiếu quà tặng</div>
-                                                    <div class="subtitile subtitile2"> miễn phí quà tặng</div>
+                                                    <div class="subtitile subtitile1">chất lượng</div>
+                                                    <!-- <div class="subtitile subtitile2"> miễn phí quà tặng</div> -->
                                                 </div>
                                             </div>
                                         </div>
